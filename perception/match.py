@@ -12,6 +12,7 @@ import numpy as np
 
 from . import rerank as _rerank
 from .embed import embed
+from .head import encoder
 from .index import index_dir, load
 
 SHORTLIST = 40      # views re-ranked by point matching (about 0.1 s each)
@@ -102,11 +103,13 @@ def match_photo(building_id, image_path, k=10, rerank=True):
     matched points."""
     emb, meta = load(building_id)
     rows = meta["rows"]
+    encode = encoder(building_id)          # trained per-building layer, if there is one
+    emb = encode(emb)
     tag = hashlib.sha1(open(image_path, "rb").read()).hexdigest()[:10]
     ev_dir = os.path.join(index_dir(building_id), "evidence", tag)
     os.makedirs(ev_dir, exist_ok=True)
     img = _read_photo(image_path, ev_dir)
-    q = embed([img])[0]
+    q = encode(embed([img]))[0]
     if rerank:
         cands = rank_reranked(emb, rows, q, img, k)
     else:

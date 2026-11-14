@@ -77,7 +77,8 @@ def room_of(meta):
     return out
 
 
-def score(emb, meta, queries, truth, held_out, rerank=False, limit=None, seed=0):
+def score(emb, meta, queries, truth, held_out, rerank=False, limit=None, seed=0, encode=None):
+    """encode: optional function applied to the query embeddings (perception.head)."""
     rows = meta["rows"]
     room = room_of(meta)
     pos = {r["node_id"]: (r["model_id"], r["xyz"]) for r in rows}
@@ -86,6 +87,8 @@ def score(emb, meta, queries, truth, held_out, rerank=False, limit=None, seed=0)
         return pos[a][0] == pos[b][0] and math.dist(pos[a][1], pos[b][1]) <= NEAR_M
 
     q = embed(queries)
+    if encode is not None:
+        q = encode(q)
     top1 = top5 = n = room1 = room5 = conf = conf_right = 0
     errs, chance = [], []
     todo = list(range(len(truth)))
@@ -113,8 +116,13 @@ def score(emb, meta, queries, truth, held_out, rerank=False, limit=None, seed=0)
         errs.append(math.dist(pos[got[0]][1], pos[t][1]) if pos[got[0]][0] == pos[t][0] else None)
         chance.append(len(right) / (len(pos) - (1 if held_out else 0)))
     same_scan = [e for e in errs if e is not None]
+    counts = {"n": n, "room1": room1, "room5": room5, "top1": top1, "top5": top5,
+              "conf": conf, "conf_right": conf_right}
+    if n == 0:
+        return {"queries": 0, "counts": counts}
     extra = ({"confirmed_share": round(conf / n, 3),
               "room_top1_when_confirmed": round(conf_right / conf, 3) if conf else None} if rerank else {})
+    extra["counts"] = counts
     return {**extra, "queries": n, "room_top1": round(room1 / n, 3), "room_top5": round(room5 / n, 3),
             "rooms": len({v for v in room.values() if v}),
             "top1": round(top1 / n, 3), "top5": round(top5 / n, 3),
