@@ -1,0 +1,21 @@
+{
+ "_note": "Which Matterport scans make up a building for matching. Listed buildings use exactly these scans (the one lane A's graph is built from); unlisted buildings use every scan CoStar lists for the property.",
+ "10352309": [
+  "mZ4TqsMaSk8"
+ ],
+ "259587": [
+  "rDU2DaDBbyz"
+ ],
+ "6550930": [
+  "YJLLXyw1xbf"
+ ],
+ "234036": [
+  "7uM5JKssTED"
+ ],
+ "248192": [
+  "MFhskYSBMMe"
+ ],
+ "248351": [
+  "cqDGKrH5ZTu"
+ ]
+}

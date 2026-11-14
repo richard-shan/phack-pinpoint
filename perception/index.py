@@ -35,7 +35,14 @@ def index_dir(building_id):
 
 
 def models_for(building_id):
-    """Matterport model ids CoStar lists for a property, in file order."""
+    """Matterport scans that make up a building: the ones named in
+    perception/buildings.json if the building is listed there, otherwise every scan
+    CoStar lists for the property, in file order."""
+    pinned = os.path.join(os.path.dirname(os.path.abspath(__file__)), "buildings.json")
+    if os.path.exists(pinned):
+        listed = json.load(open(pinned)).get(str(building_id))
+        if listed:
+            return list(listed)
     load_dotenv()
     kit = os.environ.get("COSTAR_KIT_DIR")
     if not kit:
