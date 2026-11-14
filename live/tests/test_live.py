@@ -163,6 +163,33 @@ class WithConsole(_Base):
         self.assertEqual(box["console_decision"]["decision"], "approved")
         self.assertEqual(self.console.get(cid)["status"], "approved")   # nothing was written after approval
 
+    def test_caller_answers_in_the_console(self):
+        box = {}
+        t = threading.Thread(target=lambda: box.update(run.run_incident(
+            BUILDING, None, position=TARGET, console=self.console, ask="console", ask_timeout_s=20,
+            approve_timeout_s=30)))
+        t.start()
+        end, cid, asked = time.time() + 20, None, None
+        while time.time() < end and asked is None:               # wait for the agent's question
+            rows = self.console.incidents()
+            if rows:
+                cid = rows[0]["id"]
+                asked = next((m for m in self.console.get(cid)["messages"]
+                              if m["role"] == "dispatcher" and m["text"].startswith("Pinpoint asks")), None)
+            time.sleep(0.2)
+        self.assertIsNotNone(asked, "the agent never asked the caller anything")
+        time.sleep(1.2)                                          # let the agent start listening
+        self.console.message(cid, "caller", "no I can't see any")
+        end = time.time() + 20
+        while time.time() < end and "trace to a source" not in (self.console.get(cid).get("notes") or ""):
+            time.sleep(0.2)
+        self.console.decide(cid, "approved")
+        t.join(timeout=20)
+        self.assertEqual(box.get("decision"), "approve")
+        first = tools.SESSION["asked"][0]
+        self.assertEqual(first["source"], "caller, typed in the console")
+        self.assertIs(first["raw"], False)
+
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()
         self.console.decide(cid, "rejected", "wrong wing")

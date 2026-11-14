@@ -335,12 +335,27 @@ class LivePacketWriter(PacketWriter):
         if self.audit:
             a = self.audit
             fields["notes"] = (f"Drafted by the Pinpoint agent in {trace.elapsed_ms() / 1000:.1f} s. "
-                               f"{a.get('supported')} of {a.get('checked')} packet lines trace to a source.")
+                               f"{a.get('supported')} of {a.get('checked')} packet lines trace to a source. "
+                               + self._activity())[:10000]
         else:
             fields["notes"] = "The Pinpoint agent is working on this incident."
         fields["unconfirmed"] = [u[:1000] for u in self.unconfirmed()][:50] or ["Nothing listed yet."]
         fields["packetMarkdown"] = self.render()[:102400]
         return fields
+
+    def _activity(self) -> str:
+        """The agent's steps and how long each took, from its trace."""
+        import json
+        steps = []
+        try:
+            for line in (self.path.parent / "trace.jsonl").read_text().splitlines():
+                r = json.loads(line)
+                if r.get("dt_ms") is not None and r.get("actor") not in ("console", "system"):
+                    took = f"{r['dt_ms'] / 1000:.1f} s" if r["dt_ms"] >= 100 else f"{round(r['dt_ms'])} ms"
+                    steps.append(f"{r['actor']}: {r['tool'].replace('_', ' ')} ({took})")
+        except (OSError, ValueError):
+            return ""
+        return "Agent steps: " + "; ".join(steps) + "." if steps else ""
 
     def _push(self):
         console, cid = tools.SESSION.get("console"), tools.SESSION.get("console_incident")
