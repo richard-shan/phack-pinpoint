@@ -41,14 +41,14 @@ B_QUESTION_KEYS = ("room_type", "floor_surface", "has_window", "furnished", "sta
 
 QUESTIONS = {
     "floor": "What floor are you on?",
-    "room_type": "What kind of room are you in (hallway, office, lobby, restroom)?",
+    "room_type": "What kind of room are you in?",
     "near_elevator": "Can you see elevator doors from where you are? (yes or no)",
     "elevator_visible": "Can you see elevator doors from where you are? (yes or no)",
     "stairs_visible": "Can you see stairs from where you are? (yes or no)",
     "near_outside_door": "Can you see a door that leads outside from where you are? (yes or no)",
     "near_stairs": "Can you see a staircase or a stairwell door from where you are? (yes or no)",
     "has_window": "Is there a window near you? (yes or no)",
-    "floor_surface": "Is the floor carpet, tile, or bare concrete?",
+    "floor_surface": "What is the floor made of?",
     "furnished": "Is there furniture in the room? (yes or no)",
     "has_exit_sign": "Can you see a lit EXIT sign? (yes or no)",
     "has_fire_extinguisher": "Can you see a fire extinguisher? (yes or no)",
@@ -325,9 +325,9 @@ def _parse_reply(attr, text, values):
              "one": 1, "two": 2, "three": 3, "four": 4, "five": 5}
     num = re.search(r"\d+", t)
     n = int(num.group()) if num else next((v for w, v in words.items() if re.search(rf"\b{w}\b", t)), None)
-    for v in values:
+    for v in sorted(values, key=lambda v: -len(str(v))):       # "elevator lobby" before "lobby"
         s = str(v).lower()
-        if s in t or t in s:
+        if s in t or t in s or s.replace("_", " ") in t:
             return v
         if attr == "floor" and n is not None and re.search(rf"\b{n}\b", s):
             return v
@@ -341,6 +341,9 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     question = QUESTIONS.get(attr, f"Can you tell me about: {attr}?")
     values = sorted({str(c["attributes"].get(attr)) for c in SESSION.get("candidates") or []})
     typed = [c["attributes"].get(attr) for c in SESSION.get("candidates") or [] if attr in c["attributes"]]
+    if typed and not all(isinstance(v, bool) for v in typed) and "(" not in question:
+        options = [v.replace("_", " ") for v in values if v != "None"]      # offer what the candidates hold
+        question += " (" + (" or ".join(options) if len(options) <= 2 else ", ".join(options)) + ")"
     console, cid = SESSION.get("console"), SESSION.get("console_incident")
     mode = SESSION.get("ask", "simulate")
     t0 = time.time()

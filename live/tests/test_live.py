@@ -131,6 +131,8 @@ class WithoutConsole(_Base):
         self.assertEqual(p("floor", "we're on the second floor", ["Floor 1", "Floor 2"]), "Floor 2")
         self.assertEqual(p("floor", "14", ["Floor 13", "Floor 14"]), "Floor 14")
         self.assertEqual(p("room_type", "in a hallway", ["Hallway", "Office"]), "Hallway")
+        self.assertEqual(p("room_type", "an elevator lobby I think", ["lobby", "elevator_lobby", "corridor"]), "elevator_lobby")
+        self.assertEqual(p("room_type", "the lobby", ["lobby", "elevator_lobby"]), "lobby")
 
 
 @unittest.skipUnless(shutil.which("node") and (ROOT / "app" / "local-server.mjs").exists(), "console not available")
