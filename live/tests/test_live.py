@@ -190,6 +190,25 @@ class WithConsole(_Base):
         self.assertEqual(first["source"], "caller, typed in the console")
         self.assertIs(first["raw"], False)
 
+    def test_watcher_runs_new_incidents_once_and_leaves_handled_ones_alone(self):
+        state = run.STATE
+        run.STATE = Path(self.tmp.name) / "state"
+        try:
+            done = run.run_incident(BUILDING, None, position=TARGET, console=self.console, auto_approve=True)
+            rev = self.console.get(done["console_incident"])["revision"]
+            photo = Path(self.tmp.name) / "caller.jpg"
+            from PIL import Image
+            Image.new("RGB", (64, 48), "gray").save(photo)
+            fresh = self.console.create(BUILDING, "help", str(photo))["id"]
+            run.watch(self.console, once=True, auto_approve=True, position=TARGET)
+            self.assertEqual(self.console.get(done["console_incident"])["revision"], rev)   # untouched
+            self.assertEqual(self.console.get(fresh)["status"], "approved")
+            rev2 = self.console.get(fresh)["revision"]
+            run.watch(self.console, once=True, auto_approve=True, position=TARGET)
+            self.assertEqual(self.console.get(fresh)["revision"], rev2)                     # not run twice
+        finally:
+            run.STATE = state
+
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()
         self.console.decide(cid, "rejected", "wrong wing")

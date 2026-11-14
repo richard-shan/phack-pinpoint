@@ -174,6 +174,28 @@ def _simulated_candidates(building_id, truth, k):
     return out
 
 
+def _publish(path, rank):
+    """A match-evidence image as a path relative to the repo. With a console attached, the
+    best match is also copied to where the console can serve it (app/assets/real/ is
+    git-ignored), and that address is returned instead."""
+    if not path:
+        return path
+    src = Path(path)
+    cid = SESSION.get("console_incident")
+    if rank == 0 and SESSION.get("console") and cid and src.is_file():
+        dest = ROOT / "app" / "assets" / "real" / "live" / cid / "match.jpg"
+        try:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(src.read_bytes())
+            return "/" + str(dest.relative_to(ROOT / "app"))
+        except OSError:
+            pass
+    try:
+        return str(src.resolve().relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 @trace.traced("locator")
 def match_photo(building_id, image_path, k=10):
     """photo -> ranked positions [{node_id, score, evidence_path, attributes}] with node ids
@@ -207,7 +229,8 @@ def match_photo(building_id, image_path, k=10):
         node = c["node_id"] if c["node_id"] in g.nodes else str(c["node_id"]).rsplit("/", 1)[-1]
         if node not in g.nodes:
             continue                                   # another scan of the same property
-        out.append(dict(c, node_id=node, attributes=question_attributes(building_id, node)))
+        out.append(dict(c, node_id=node, attributes=question_attributes(building_id, node),
+                        evidence_path=_publish(c.get("evidence_path"), len(out))))
     if not out:
         raise EmptyCandidates("no matched position is inside the scan this building's graph covers")
     SESSION["candidates"] = out

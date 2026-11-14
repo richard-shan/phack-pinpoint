@@ -138,7 +138,10 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
             photo_key = (inc.get("photo") or {}).get("name", "") + str(len((inc.get("photo") or {}).get("dataUrl", "")))
             if seen.get(inc["id"]) == photo_key:
                 continue
+            first_sight = inc["id"] not in seen
             _mark(seen, inc["id"], photo_key)
+            if first_sight and (inc.get("packetMarkdown") or inc.get("status") != "review"):
+                continue                # already handled by an earlier run; a new photo will rerun it
             path = save_photo(inc, STATE / inc["id"])
             if not path:
                 continue
@@ -165,6 +168,7 @@ def main(argv=None) -> None:
     ap.add_argument("--console", nargs="?", const="http://localhost:4175", metavar="URL",
                     help="show the incident in the console (default URL http://localhost:4175)")
     ap.add_argument("--watch", action="store_true", help="run on incidents started in the console")
+    ap.add_argument("--once", action="store_true", help="with --watch: handle what is waiting now, then stop")
     ap.add_argument("--truth", metavar="NODE", help="where the photo was really taken: the simulated caller "
                     "answers from it, and the result says whether the match was right")
     ap.add_argument("--position", metavar="NODE", help="skip photo matching and use this position")
@@ -173,10 +177,9 @@ def main(argv=None) -> None:
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
     a = ap.parse_args(argv)
 
-    console = Console(a.console) if (a.console or a.watch) else None
+    console = Console(a.console or "http://localhost:4175") if (a.console or a.watch) else None
     if a.watch:
-        console = console or Console()
-        watch(console, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
+        watch(console, once=a.once, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
         return
     if not a.building or not (a.photo or a.position):
         ap.error("give --building and --photo (or --position), or --watch")
