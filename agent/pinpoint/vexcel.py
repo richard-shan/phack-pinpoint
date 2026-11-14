@@ -25,8 +25,7 @@ TIMEOUT = 5.0  # strict: Site runs on the critical parallel path
 _API_TXT = FIXTURES.parent.parent.parent / "api.txt"
 
 
-class VexcelUnavailable(Exception):
-    """Raised on any Vexcel failure. Caller falls back to stub site features."""
+from .errors import VexcelUnavailable  # noqa: F401
 
 
 def _load_key():

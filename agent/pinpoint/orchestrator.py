@@ -18,12 +18,18 @@ import concurrent.futures as cf
 from pathlib import Path
 
 from . import stubs, routing, localization, trace, learning
+from .errors import (PinpointFailure, PropertyNotFound, MatterportUnavailable,
+                     EmptyCandidates, IntakeIncomplete, ExhaustedCandidates)
 from .config import (INCIDENTS, DEMO_BUILDING, CONFIDENCE_THRESHOLD, MAX_QUESTIONS, AGENTS_MD)
 from .packet import PacketWriter
 
 
-def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None):
-    incident_id = intake.get("incident_id") or time.strftime("inc-%Y%m%d-%H%M%S")
+def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None,
+                 simulate_rejection_all=False):
+    # ---- intake validation (fire before subagents) ----
+    required = ("address", "caller_photo_path", "building_id")
+    missing = [f for f in required if not (intake or {}).get(f)]
+    incident_id = (intake or {}).get("incident_id") or time.strftime("inc-%Y%m%d-%H%M%S")
     idir = INCIDENTS / incident_id
     # if two runs fall in the same second (common in tests), append a suffix
     _suffix = 0
@@ -36,6 +42,12 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     _write(idir / "intake.json", intake)
 
     trace.start(idir)
+    if missing:
+        for m in missing:
+            trace.log("commander", f"intake_missing:{m}",
+                      args={"field": m}, result_summary="required field absent",
+                      phase="validation")
+        return _unable_intake_incomplete(idir, intake, missing, auto_approve, approve_fn)
     building_id = intake["building_id"]
 
     # ---- learned corrections for this building (AGENTS.md) ----
@@ -57,6 +69,8 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     # ---- Records / Locator / Site IN PARALLEL ----
     trace.log("commander", "task:parallel", args=["records", "locator", "site"], phase="delegate")
     brief = location = site = None
+    locator_failure = None
+    records_failure = None
     with cf.ThreadPoolExecutor(max_workers=3) as ex:
         futures = {
             ex.submit(_records, idir, intake): "records",
@@ -66,23 +80,108 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
         # flush each packet section as its future finishes (not in submit order)
         for fut in cf.as_completed(futures):
             kind = futures[fut]
+            try:
+                result = fut.result()
+            except PropertyNotFound as exc:
+                records_failure = exc
+                trace.log("commander", f"failure_mode:{exc.failure_mode}",
+                          result_summary=str(exc), phase="failure")
+                continue
+            except (MatterportUnavailable, EmptyCandidates) as exc:
+                locator_failure = exc
+                trace.log("commander", f"failure_mode:{exc.failure_mode}",
+                          result_summary=str(exc), phase="failure")
+                continue
             if kind == "records":
-                brief = fut.result()
+                brief = result
                 packet.set_brief(brief); packet.flush()
             elif kind == "locator":
-                location = fut.result()
+                location = result
                 packet.set_location(location); packet.flush()
             else:
-                site = fut.result()
+                site = result
                 packet.set_site(site); packet.flush()
 
-    # ---- Router (needs all three) ----
-    route_bundle = _router(idir, building_id, location, site)
-    packet.set_route(route_bundle); packet.flush()
+    # ---- short-circuit: hard failure means skip Router and mark packet UNABLE ----
+    failure_sources = {}
+    if records_failure is not None:
+        # Clear any partial state the Locator/Site futures left behind (they may have
+        # finished OK in parallel while Records failed; we do not want to render them).
+        packet.brief = packet.location = packet.site = packet.route = None
+        brief = location = site = None
+        packet.set_failure(
+            status="UNABLE",
+            mode=records_failure.failure_mode,
+            sentence="Address not found in the property database. "
+                     "Dispatcher must verify the address and re-run.",
+            cite_tag="costar.lookup_miss",
+            attempted={"address": intake.get("address")},
+        )
+        def _or_missing(x):
+            return x if x not in (None, "") else "(missing)"
+        failure_sources = {
+            "costar": {"lookup_miss": _or_missing(intake.get("address"))},
+            "intake": {"address": _or_missing(intake.get("address")),
+                       "caller_photo_path": _or_missing(intake.get("caller_photo_path")),
+                       "building_id": _or_missing(intake.get("building_id"))},
+            "failure": {"mode": records_failure.failure_mode,
+                        "detail": str(records_failure)},
+        }
+        location = {"node_id": None, "confidence": 0.0, "questions_asked": 0,
+                    "evidence_path": None, "failure_mode": records_failure.failure_mode}
+    elif locator_failure is not None:
+        # Clear the Location section so an empty/None candidate does not render.
+        packet.location = None
+        is_mp = isinstance(locator_failure, MatterportUnavailable)
+        sentence = ("Unable to match the caller photo to a position in this building. "
+                    "Dispatcher must direct responders to the main entrance and relay "
+                    "room info by voice.")
+        cite = "matterport.unavailable" if is_mp else "locator.empty_result"
+        src_block = ({"matterport": {"unavailable": str(locator_failure)}} if is_mp
+                     else {"locator": {"empty_result": str(locator_failure)}})
+        packet.set_failure(
+            status="DEGRADED", mode=locator_failure.failure_mode,
+            sentence=sentence, cite_tag=cite,
+            attempted={"caller_photo_path": intake.get("caller_photo_path")},
+        )
+        _m = lambda x: x if x not in (None, "") else "(missing)"
+        failure_sources = {**src_block,
+                           "intake": {"caller_photo_path": _m(intake.get("caller_photo_path")),
+                                      "address": _m(intake.get("address")),
+                                      "building_id": _m(intake.get("building_id"))},
+                           "failure": {"mode": locator_failure.failure_mode,
+                                       "detail": str(locator_failure)}}
+        # Degraded: we still have brief + site; default the staging door to ext_main.
+        route_bundle = {
+            "foot": {"entrance_id": "ext_main", "path": [], "seconds": None},
+            "stretcher": {"entrance_id": "ext_main", "path": [], "seconds": None},
+            "under_belief": None, "foot_directions": [], "stretcher_directions": [],
+            "hazards": [], "equipment": [],
+            "front_door_baseline": None, "stretcher_differs": False,
+            "seconds_saved_vs_front": None}
+        packet.set_route(route_bundle); packet.flush()
+        location = {"node_id": None, "confidence": 0.0, "questions_asked": 0,
+                    "evidence_path": None,
+                    "failure_mode": locator_failure.failure_mode}
+    else:
+        # ---- Router (needs all three) ----
+        route_bundle = _router(idir, building_id, location, site)
+        packet.set_route(route_bundle); packet.flush()
 
-    # ---- Verifier ----
-    audit = _verifier(idir, packet, brief, location, site, route_bundle, corrections)
+    # ---- Verifier (runs on EVERY packet, degraded or not) ----
+    audit = _verifier(idir, packet,
+                      brief if records_failure is None else {"failure_mode": "property_not_found"},
+                      location,
+                      site if records_failure is None else {},
+                      route_bundle if (records_failure is None or locator_failure is not None) else None,
+                      corrections, extra_sources=failure_sources)
+    if records_failure is not None or locator_failure is not None:
+        audit["status"] = "UNABLE" if records_failure is not None else "DEGRADED"
+    else:
+        audit["status"] = "OK"
     packet.set_audit(audit); packet.flush()
+    import json as _json
+    (idir / "audit.json").write_text(_json.dumps(audit, indent=2, default=str))
 
     seconds_to_draft = trace.elapsed_ms() / 1000.0
     trace.log("commander", "draft_ready", result_summary=f"{seconds_to_draft:.2f}s to draft packet",
@@ -115,7 +214,56 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
                         "corrected": corrected_room_id},
                   result_summary=f"appended to {path}", phase="learning")
 
+    # ---- rejection-retry / exhausted-candidates ----
+    if simulate_rejection_all and decision == "approve":
+        # Override: simulate the dispatcher rejecting with no correction, replan once, reject
+        # again, and finish UNABLE/exhausted_candidates. The approval-gate contract still holds:
+        # we log every reject event and the final UNABLE packet is still verified.
+        trace.log("dispatcher", "approval",
+                  result_summary="reject (no correction)", phase="interrupt")
+        blacklisted = [location["node_id"]] if location and location.get("node_id") else []
+        try:
+            location2 = _locator(idir, intake, mock_llm, blacklist=set(blacklisted))
+            packet.set_location(location2); packet.flush()
+            route_bundle = _router(idir, building_id, location2, site)
+            packet.set_route(route_bundle); packet.flush()
+            trace.log("commander", "replan_after_reject",
+                      result_summary=f"blacklisted={blacklisted}", phase="recovery")
+            location = location2
+        except (MatterportUnavailable, EmptyCandidates) as exc:
+            trace.log("commander", f"replan_failed:{exc.failure_mode}",
+                      result_summary=str(exc), phase="recovery")
+        trace.log("dispatcher", "approval",
+                  result_summary="reject again (no correction)", phase="interrupt")
+        packet.set_failure(
+            status="UNABLE", mode="exhausted_candidates",
+            sentence=("Dispatcher rejected the top candidate twice without providing a "
+                      "correction. The agent cannot propose a different room without more "
+                      "input. Hand off to the dispatcher for manual direction."),
+            cite_tag="candidates.exhausted",
+            attempted={"blacklisted": ",".join(blacklisted) or "(none)"})
+        _m2 = lambda x: x if x not in (None, "") else "(missing)"
+        extra_fs = {
+            "candidates": {"exhausted":
+                           f"blacklisted after two rejections: {blacklisted}"},
+            "intake": {"blacklisted": ",".join(blacklisted) or "(none)",
+                       "address": _m2(intake.get("address")),
+                       "caller_photo_path": _m2(intake.get("caller_photo_path")),
+                       "building_id": _m2(intake.get("building_id"))},
+            "failure": {"mode": "exhausted_candidates",
+                        "detail": "two consecutive dispatcher rejections"},
+        }
+        audit = _verifier(idir, packet, brief, location, site, route_bundle, corrections,
+                          extra_sources=extra_fs)
+        audit["status"] = "UNABLE"
+        packet.set_audit(audit); packet.flush()
+        _write(idir / "audit.json", audit)
+        trace.log("commander", "failure_mode:exhausted_candidates",
+                  result_summary="two rejects, no corrections", phase="failure")
+        decision = "exhausted"
+
     total = trace.elapsed_ms() / 1000.0
+    trace.log("commander", "done", result_summary=f"{total:.2f}s total", phase="end")
     trace.log("system", "incident_complete", result_summary=f"{total:.2f}s total", phase="end")
     _write(idir / "summary.json", {"incident_id": incident_id, "decision": decision,
             "corrected_room_id": corrected_room_id,
@@ -140,9 +288,13 @@ def _records(idir, intake):
     return brief
 
 
-def _locator(idir, intake, mock_llm):
+def _locator(idir, intake, mock_llm, blacklist=None):
     building_id = intake["building_id"]
     cands = stubs.match_photo(building_id, intake["caller_photo_path"], k=10)
+    if blacklist:
+        cands = [c for c in cands if c.get("node_id") not in blacklist]
+    if not cands:
+        raise EmptyCandidates("no candidates remain after blacklist")
     localization.normalize_belief(cands)
     _write(idir / "candidates.json", {"candidates": cands})
 
@@ -232,9 +384,12 @@ def _router(idir, building_id, location, site):
     return bundle
 
 
-def _verifier(idir, packet, brief, location, site, route_bundle, corrections=None):
+def _verifier(idir, packet, brief, location, site, route_bundle, corrections=None,
+              extra_sources=None):
     sources = {"brief": brief, "location": location, "site": site, "route": route_bundle,
                "corrections": corrections or []}
+    if extra_sources:
+        sources.update(extra_sources)
     results = [stubs.check_claim(c, sources) for c in packet.tagged_claims()]
     unsupported = [r for r in results if not r["supported"]]
     audit = {"checked": len(results), "supported": len(results) - len(unsupported),
@@ -303,3 +458,52 @@ Steps 1-3 run in parallel. Step 4 needs all three.
 
 def _write(path: Path, obj):
     path.write_text(json.dumps(obj, indent=2, default=str))
+
+# --------------------------- failure-mode helpers ---------------------------
+def _unable_intake_incomplete(idir, intake, missing, auto_approve, approve_fn):
+    """Fast-path UNABLE packet when the intake lacks address / photo_path / building_id."""
+    packet = PacketWriter(idir / "packet.md", intake or {})
+    packet.set_failure(
+        status="UNABLE",
+        mode="intake_incomplete",
+        sentence=("Required intake field(s) missing: " + ", ".join(missing) +
+                  ". Dispatcher must complete the intake and re-run."),
+        cite_tag="intake.incomplete",
+        attempted={f: (intake or {}).get(f) for f in ("address", "caller_photo_path",
+                                                      "building_id")},
+    )
+    packet.flush()
+    _m = lambda x: x if x not in (None, "") else "(missing)"
+    extra = {
+        "intake": {"incomplete": ", ".join(missing),
+                   "address": _m((intake or {}).get("address")),
+                   "caller_photo_path": _m((intake or {}).get("caller_photo_path")),
+                   "building_id": _m((intake or {}).get("building_id"))},
+        "failure": {"mode": "intake_incomplete",
+                    "detail": "intake missing: " + ", ".join(missing)},
+    }
+    audit = _verifier(idir, packet, brief={}, location={}, site={}, route_bundle=None,
+                      corrections=[], extra_sources=extra)
+    audit["status"] = "UNABLE"
+    packet.set_audit(audit); packet.flush()
+    import json as _json
+    (idir / "audit.json").write_text(_json.dumps(audit, indent=2, default=str))
+    trace.log("commander", "failure_mode:intake_incomplete",
+              result_summary="missing: " + ", ".join(missing), phase="failure")
+    # Approval gate still fires so D can see the UNABLE packet.
+    decision = _approval_gate(intake.get("incident_id") or idir.name, packet,
+                              auto_approve, approve_fn)
+    if isinstance(decision, dict):
+        decision = decision.get("decision", "approve")
+    trace.log("dispatcher", "approval", result_summary=decision, phase="interrupt")
+    trace.log("commander", "done", result_summary="UNABLE/intake_incomplete", phase="end")
+    _write(idir / "summary.json",
+           {"incident_id": idir.name, "status": "UNABLE",
+            "failure_mode": "intake_incomplete", "missing_fields": missing,
+            "seconds_to_draft": round(trace.elapsed_ms() / 1000.0, 2),
+            "decision": decision})
+    return {"incident_id": idir.name, "dir": str(idir), "status": "UNABLE",
+            "failure_mode": "intake_incomplete", "decision": decision,
+            "seconds_to_draft": round(trace.elapsed_ms() / 1000.0, 2),
+            "seconds_total": round(trace.elapsed_ms() / 1000.0, 2)}
+

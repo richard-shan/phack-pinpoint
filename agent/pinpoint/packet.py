@@ -16,6 +16,11 @@ class PacketWriter:
         self.brief = self.location = self.site = self.route = self.audit = None
         self.correction_notes = []  # markdown lines from learning.summarize_for_packet
         self.sent = False
+        self.status = "OK"             # OK | DEGRADED | UNABLE
+        self.failure_mode = None
+        self.failure_sentence = None
+        self.failure_cite_tag = None   # resolves under sources
+        self.attempted_fields = {}     # {field: value} cited by [src:intake.*]
 
     def set_brief(self, b): self.brief = b
     def set_location(self, l): self.location = l
@@ -24,6 +29,16 @@ class PacketWriter:
     def set_audit(self, a): self.audit = a
     def set_correction_notes(self, lines): self.correction_notes = list(lines or [])
     def mark_sent(self): self.sent = True
+    def set_failure(self, status, mode, sentence, cite_tag, attempted=None):
+        """Record a failure so render() produces an UNABLE/DEGRADED packet with a
+        sourced claim. cite_tag is the dotted [src:...] key (e.g. 'costar.lookup_miss'),
+        which the orchestrator must also populate in the verifier's sources dict."""
+        self.status = status
+        self.failure_mode = mode
+        self.failure_sentence = sentence
+        self.failure_cite_tag = cite_tag
+        if attempted is not None:
+            self.attempted_fields = dict(attempted)
 
     def flush(self):
         self.path.write_text(self.render())
@@ -34,8 +49,31 @@ class PacketWriter:
 
     def render(self):
         L = []
-        status = "✅ APPROVED & SENT" if self.sent else "🟡 DRAFT — awaiting dispatcher approval"
-        L += [f"# Responder Packet — {self.intake['address']}", "", f"**Status:** {status}", ""]
+        if self.status == "UNABLE":
+            status = "UNABLE - dispatcher action required"
+        elif self.status == "DEGRADED":
+            status = "DEGRADED - partial information; see detail below"
+        elif self.sent:
+            status = "✅ APPROVED & SENT"
+        else:
+            status = "🟡 DRAFT - awaiting dispatcher approval"
+        addr = (self.intake or {}).get("address") or "(no address supplied)"
+        L += [f"# Responder Packet - {addr}", "", f"**Status:** {status}", ""]
+        if self.failure_sentence:
+            L += ["## Status detail"]
+            if self.failure_cite_tag:
+                L += [f"- {self.failure_sentence} [src:{self.failure_cite_tag}]"]
+            else:
+                L += [f"- {self.failure_sentence}"]
+            for k, v in sorted(self.attempted_fields.items()):
+                shown = v if v not in (None, "") else "(missing)"
+                L += [f"- Attempted {k}: `{shown}` [src:intake.{k}]"]
+            L += [""]
+        if self.status == "UNABLE":
+            # Short-circuit: suppress the normal body sections on UNABLE packets so the
+            # dispatcher sees only the Status detail. Keeps the audit clean and the UI
+            # focused on the decision they have to make.
+            return "\n".join(L)
 
         # Location
         L += ["## Location"]
