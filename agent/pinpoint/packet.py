@@ -14,6 +14,7 @@ class PacketWriter:
         self.path = Path(path)
         self.intake = intake
         self.brief = self.location = self.site = self.route = self.audit = None
+        self.correction_notes = []  # markdown lines from learning.summarize_for_packet
         self.sent = False
 
     def set_brief(self, b): self.brief = b
@@ -21,6 +22,7 @@ class PacketWriter:
     def set_site(self, s): self.site = s
     def set_route(self, r): self.route = r
     def set_audit(self, a): self.audit = a
+    def set_correction_notes(self, lines): self.correction_notes = list(lines or [])
     def mark_sent(self): self.sent = True
 
     def flush(self):
@@ -49,6 +51,12 @@ class PacketWriter:
         else:
             L += [PENDING]
         L += [""]
+
+        # Dispatcher notes for this building (from AGENTS.md learned corrections)
+        if self.correction_notes:
+            L += ["## Dispatcher notes for this building"]
+            L += list(self.correction_notes)
+            L += [""]
 
         # Stage + Enter
         L += ["## Stage here"]

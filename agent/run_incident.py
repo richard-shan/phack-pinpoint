@@ -23,6 +23,9 @@ def main():
     ap.add_argument("--intake", help="path to an intake.json (default: sample fixture)")
     ap.add_argument("--interactive", action="store_true", help="prompt at the approval gate")
     ap.add_argument("--real", action="store_true", help="use real deepagents (needs install+key)")
+    ap.add_argument("--simulate-rejection", metavar="CORRECTED_ROOM_ID",
+                    help="auto-reject the packet with this room as the dispatcher's correction, "
+                         "then log it to agent/buildings/<id>/AGENTS.md")
     args = ap.parse_args()
 
     intake = json.loads(Path(args.intake).read_text()) if args.intake \
@@ -33,8 +36,15 @@ def main():
         print(deep_agent.run_incident(intake))
         return
 
+    approve_fn = None
+    if args.simulate_rejection:
+        _corrected = args.simulate_rejection
+        def approve_fn(incident_id, packet_path):
+            return {"decision": "reject", "corrected_room_id": _corrected}
+
     res = orchestrator.run_incident(intake, mock_llm=True,
-                                    auto_approve=not args.interactive)
+                                    auto_approve=(not args.interactive) and approve_fn is None,
+                                    approve_fn=approve_fn)
     print("\n=== incident complete ===")
     print(json.dumps(res, indent=2))
     print(f"\npacket:  {res['dir']}/packet.md")
