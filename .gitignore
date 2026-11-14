@@ -1,0 +1,2 @@
+# Vexcel cached aerial tiles (regenerated per building; can be large)
+agent/pinpoint/fixtures/*/vexcel_tile.*

@@ -111,10 +111,35 @@ def _synth_candidates(truth_node_id, k=10):
 
 
 @traced("site")
-def detect_site_features(building_id):
+def detect_site_features(building_id, address=None, lat=None, lon=None):
+    """Site features. Tries Vexcel aerial first (real API) then falls back to fixture.
+    When Vexcel returns, merges its property attributes under 'aerial_features' and sets
+    'aerial_tile_path' so the packet can carry a citation. On any Vexcel failure the
+    fallback trace event is already logged inside vexcel.fetch_aerial."""
+    from . import vexcel  # local import so tests can monkeypatch
     s = _load("site.json")
-    return {"entrances": s["entrances"], "staging": s["staging"],
-            "obstructions": s["obstructions"], "tile_path": s["tile_path"]}
+    base = {"entrances": s["entrances"], "staging": s["staging"],
+            "obstructions": s["obstructions"], "tile_path": s["tile_path"],
+            "evidence_path": "fixtures/building_bayou/site.json"}
+    # Use building fixture lat/lon if caller didn't supply.
+    if lat is None or lon is None:
+        try:
+            prop = _load("property.json")
+            lat = lat if lat is not None else prop.get("lat")
+            lon = lon if lon is not None else prop.get("lon")
+        except Exception:
+            pass
+    if lat is None or lon is None:
+        base["source"] = "fixture_only"
+        return base
+    try:
+        real = vexcel.fetch_aerial(address or "unknown", lat, lon, building_id=building_id)
+        base["aerial_tile_path"] = real["tile_path"]
+        base["aerial_features"] = real["features"]
+        base["source"] = "vexcel+fixture"
+    except vexcel.VexcelUnavailable:
+        base["source"] = "fixture_only"
+    return base
 
 
 @traced("router")

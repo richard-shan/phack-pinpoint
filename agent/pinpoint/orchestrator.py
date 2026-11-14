@@ -45,7 +45,7 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     with cf.ThreadPoolExecutor(max_workers=3) as ex:
         f_records = ex.submit(_records, idir, intake)
         f_locator = ex.submit(_locator, idir, intake, mock_llm)
-        f_site = ex.submit(_site, idir, building_id)
+        f_site = ex.submit(_site, idir, building_id, address=intake.get("address"))
 
         # stream each section the instant its subagent returns
         brief = f_records.result()
@@ -179,8 +179,8 @@ def _locator(idir, intake, mock_llm):
     return location
 
 
-def _site(idir, building_id):
-    feats = stubs.detect_site_features(building_id)
+def _site(idir, building_id, address=None, lat=None, lon=None):
+    feats = stubs.detect_site_features(building_id, address=address, lat=lat, lon=lon)
     _write(idir / "site.json", feats)
     return feats
 
