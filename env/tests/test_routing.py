@@ -284,6 +284,17 @@ class RoutingOnToy(unittest.TestCase):
         steps = routing.directions(self.g, ["room_204", "f2_west", "elev2", "elev1", "lobby"])
         self.assertIn("Take the lobby elevator down to floor 1.", [s["text"] for s in steps])
 
+    def test_floor_names_follow_the_graphs_own_numbering(self):
+        # this lane's graphs count scan floors from 0
+        self.assertIn("Take Stair B up to floor 2.", [s["text"] for s in routing.directions(self.g, ["c3", "stair1", "stair2"])])
+        # another lane's graph that already holds building floor numbers (indoor floors from 1)
+        data = toy_graph()
+        for n in data["nodes"]:
+            if n["kind"] == "pano":
+                n["floor"] += 1
+        g = Graph(data)
+        self.assertIn("Take Stair B up to floor 2.", [s["text"] for s in routing.directions(g, ["c3", "stair1", "stair2"])])
+
     # ---------------------------------------------------------------- unscanned approach
     def test_approach_adds_the_unscanned_leg(self):
         data = toy_graph()

@@ -5,7 +5,7 @@ Lane B: read `env/HANDOFF_B.md` first. It says what is ready and what is not.
 
 ```
 pip install -r env/requirements.txt
-python3 -m unittest discover -s env/tests -t .     # 43 tests, no network
+python3 -m unittest discover -s env/tests -t .     # 44 tests, no network
 python3 -m env.tools                                # worked example on the toy building
 ```
 

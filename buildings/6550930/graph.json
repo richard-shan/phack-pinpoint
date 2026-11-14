@@ -3,7 +3,7 @@
  "matterport_model_id": "YJLLXyw1xbf",
  "name": "7900 Fannin St (medical office building), ground-floor lobby",
  "address": "7900 Fannin St, Houston, TX, 77054, US",
- "generated_at": "2026-11-14T14:51:01",
+ "generated_at": "2026-11-14T15:00:57",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -84,7 +84,8 @@
    "latlon": [
     29.691580274615248,
     -95.40357248286196
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "xtp0p0gch30g6xdpqhd809g2a",
@@ -118,7 +119,8 @@
    "latlon": [
     29.69155589273081,
     -95.4035401214947
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "321hn5xzdcsk6ps2dc9ibazwb",
@@ -152,7 +154,8 @@
    "latlon": [
     29.69170309347587,
     -95.40343759720074
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "32dnsm5igidd889a9kms3rkic",
@@ -186,7 +189,8 @@
    "latlon": [
     29.691683406391785,
     -95.40355127588064
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "5tt4sf5b28mcfqfd9w3is81rc",
@@ -220,7 +224,8 @@
    "latlon": [
     29.691554208646,
     -95.40351983172171
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "6ttqtdumk2qgufmafrymmdfmd",
@@ -254,7 +259,8 @@
    "latlon": [
     29.691702068651022,
     -95.40352483555417
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "6tm9tky8ehef6yfhg8ymq2s5b",
@@ -290,7 +296,8 @@
    "latlon": [
     29.691510967466698,
     -95.40354515830988
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "8at2ztyg1n2gxprucakrd8u5b",
@@ -324,7 +331,8 @@
    "latlon": [
     29.691763830499834,
     -95.40357512142187
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "gbqgw9g56m1ksrcfpim7dxawa",
@@ -358,7 +366,8 @@
    "latlon": [
     29.691697767963962,
     -95.40346701824271
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "i3d7aunib0nbrnnaifmribxzb",
@@ -394,7 +403,8 @@
    "latlon": [
     29.691794006285875,
     -95.40354174348931
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "uu1q7fr5dcime6876ftewseta",
@@ -428,7 +438,8 @@
    "latlon": [
     29.691616083757147,
     -95.40354926877967
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "03afxnw9x5w49ef200fwhc1ha",
@@ -462,7 +473,8 @@
    "latlon": [
     29.691713083407365,
     -95.40349416389043
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "6um1hs6bq33qz59h4u6in33cc",
@@ -496,7 +508,8 @@
    "latlon": [
     29.6915223122794,
     -95.40357003048513
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "p4wrp86gfw5mci9i6g68kt4tb",
@@ -530,7 +543,8 @@
    "latlon": [
     29.691767942525395,
     -95.40352875584291
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "1critzn0zw01cfrk66y4det0a",
@@ -564,7 +578,8 @@
    "latlon": [
     29.691763998274347,
     -95.40355207240803
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "6c9fx3wcmb1ezepyp07mkzccd",
@@ -598,7 +613,8 @@
    "latlon": [
     29.691646162781417,
     -95.40355051011039
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "7nqbt4tfwg1siyuagpebidzzc",
@@ -632,7 +648,8 @@
    "latlon": [
     29.691731969084362,
     -95.40355477340759
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "9nydrbq3ga21s4wq6cdairckc",
@@ -666,7 +683,8 @@
    "latlon": [
     29.69150697176127,
     -95.40351748765535
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ap6xz3rf3zqmhu11i616r66mb",
@@ -700,7 +718,8 @@
    "latlon": [
     29.691619812415013,
     -95.40354839893983
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "kezdx0b0ab202hrua4y0fb2za",
@@ -734,7 +753,8 @@
    "latlon": [
     29.691731279141862,
     -95.40353122904114
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "3eqw3q7ghda5ign8hgyp7phib",
@@ -768,7 +788,8 @@
    "latlon": [
     29.69173141572301,
     -95.40357797508608
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "3ymmrb20g30hctysc1fq4ztpc",
@@ -803,7 +824,8 @@
    "latlon": [
     29.69169353410485,
     -95.4036566420229
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "76n4r494787eh31ak38kgyagc",
@@ -837,7 +859,8 @@
    "latlon": [
     29.691701291971988,
     -95.40360504588635
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "e7xf1kc4sqb4ngy3d86ify0qd",
@@ -871,7 +894,8 @@
    "latlon": [
     29.691795355202217,
     -95.4035718859246
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "g74ficgqec4ueewb3gyc8h6xb",
@@ -905,7 +929,8 @@
    "latlon": [
     29.691515688951142,
     -95.40353609847874
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "g7nntzmngy2g6eychqh7dp4pd",
@@ -939,7 +964,8 @@
    "latlon": [
     29.69154928382764,
     -95.40357325070582
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "7qz45zfpayr71pefr62w2wt7a",
@@ -973,7 +999,8 @@
    "latlon": [
     29.69151647510509,
     -95.40356760917818
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "mr2kbkhd2370x1u2mx6nnxyza",
@@ -1007,7 +1034,8 @@
    "latlon": [
     29.691607930527102,
     -95.40357481554811
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "nrc4p9486g06kftrmqg6wue5a",
@@ -1041,7 +1069,8 @@
    "latlon": [
     29.69161131029627,
     -95.40352787789595
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ugmz8k0i4x0800rw5h2zsti5b",
@@ -1075,7 +1104,8 @@
    "latlon": [
     29.691665343665058,
     -95.40355038353862
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ihtu6tz9w72hwg267u7atx1wd",
@@ -1109,7 +1139,8 @@
    "latlon": [
     29.691586064512357,
     -95.40352605197975
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "msysb3x4q828mapu8ascxgyrc",
@@ -1143,7 +1174,8 @@
    "latlon": [
     29.69170202583058,
     -95.40355201210156
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "rhy0xg4gpxxgwg7isa6heykhd",
@@ -1177,7 +1209,8 @@
    "latlon": [
     29.691707273345386,
     -95.40362919974068
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "t1ibwtt1z43yx3gispc9mfunb",
@@ -1211,7 +1244,8 @@
    "latlon": [
     29.691529753517575,
     -95.40351917109417
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "2sk80bsyap2zwkiskmr0aqfzb",
@@ -1245,7 +1279,8 @@
    "latlon": [
     29.69170294515093,
     -95.4035783916948
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1282,7 +1317,8 @@
    ],
    "floor": 0,
    "confirmed": true,
-   "evidence_path": "buildings/6550930/evidence/door_south_plaza.jpg"
+   "evidence_path": "buildings/6550930/evidence/door_south_plaza.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1312,7 +1348,8 @@
    ],
    "floor": 0,
    "confirmed": true,
-   "evidence_path": "buildings/6550930/evidence/door_north_revolving.jpg"
+   "evidence_path": "buildings/6550930/evidence/door_north_revolving.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1347,7 +1384,8 @@
    ],
    "floor": 0,
    "confirmed": true,
-   "evidence_path": "buildings/6550930/evidence/door_north_swing_east.jpg"
+   "evidence_path": "buildings/6550930/evidence/door_north_swing_east.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1381,7 +1419,8 @@
    ],
    "floor": 0,
    "confirmed": true,
-   "evidence_path": "buildings/6550930/evidence/door_north_swing_west.jpg"
+   "evidence_path": "buildings/6550930/evidence/door_north_swing_west.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1423,7 +1462,8 @@
     29.691659107730583,
     -95.40356757489674
    ],
-   "evidence_path": "buildings/6550930/evidence/elev_lobby.jpg"
+   "evidence_path": "buildings/6550930/evidence/elev_lobby.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1452,7 +1492,8 @@
     29.691607633366555,
     -95.40351132932709
    ],
-   "evidence_path": "buildings/6550930/evidence/fire_alarm_panel.jpg"
+   "evidence_path": "buildings/6550930/evidence/fire_alarm_panel.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1482,7 +1523,8 @@
     29.691589457686483,
     -95.40354743805857
    ],
-   "evidence_path": "buildings/6550930/evidence/security_desk.jpg"
+   "evidence_path": "buildings/6550930/evidence/security_desk.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1510,7 +1552,8 @@
     29.691689184797475,
     -95.40359820082487
    ],
-   "evidence_path": "buildings/6550930/evidence/directory_board.jpg"
+   "evidence_path": "buildings/6550930/evidence/directory_board.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1535,7 +1578,8 @@
     47.1,
     1.05,
     0.0
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "pano_path": null,
@@ -1559,7 +1603,8 @@
     -28.2,
     -33.4,
     0.0
-   ]
+   ],
+   "floor_name": "Floor 1"
   }
  ],
  "edges": [

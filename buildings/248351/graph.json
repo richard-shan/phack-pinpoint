@@ -3,7 +3,7 @@
  "matterport_model_id": "cqDGKrH5ZTu",
  "name": "3800 Barham Blvd (Barham Plaza), Suite 200: ground floor and 2nd floor",
  "address": "3800 Barham Blvd, 200, Los Angeles, CA, 90068, US",
- "generated_at": "2026-11-14T14:51:00",
+ "generated_at": "2026-11-14T15:00:56",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -100,7 +100,8 @@
    "latlon": [
     34.14373199280877,
     -118.34069171029438
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "aafsxtq27uqshe71h51045y1d",
@@ -134,7 +135,8 @@
    "latlon": [
     34.14371859234656,
     -118.34065247738457
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "aad84nzzewgcifd57ss0dmu3c",
@@ -168,7 +170,8 @@
    "latlon": [
     34.143610456587204,
     -118.34070264430765
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "b2t3y17ywprr5594zqhd3qp8d",
@@ -202,7 +205,8 @@
    "latlon": [
     34.14361260095328,
     -118.34067384257825
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "c2f7db63cqki6h5fbmd673w4a",
@@ -236,7 +240,8 @@
    "latlon": [
     34.14360126520231,
     -118.34061648853051
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "e2sshfx4y2905ix6ftx4a04bc",
@@ -270,7 +275,8 @@
    "latlon": [
     34.143712316053616,
     -118.34070234452219
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "hin3u4w6geed4busmhezqa00b",
@@ -304,7 +310,8 @@
    "latlon": [
     34.14362292231839,
     -118.3406407991837
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "pa0qbmwrbhk9akx5tmphaamza",
@@ -338,7 +345,8 @@
    "latlon": [
     34.143653414341195,
     -118.34060418572817
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "st9td11itp6y98n9r1x3wewkd",
@@ -372,7 +380,8 @@
    "latlon": [
     34.143634480405126,
     -118.3407406925016
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "ttfaxqy8cqt9n6d6as1rnmt9b",
@@ -406,7 +415,8 @@
    "latlon": [
     34.143690305638,
     -118.34069791190416
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "t2u6t8eiud4xcp2c42x01btkc",
@@ -443,7 +453,8 @@
    "latlon": [
     34.14353865207141,
     -118.34064963154698
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "12f8kn11zfw2wn96unm8afdra",
@@ -477,7 +488,8 @@
    "latlon": [
     34.14363286069486,
     -118.34063095848617
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "5iywuf8iupr98027t5hwafb6d",
@@ -511,7 +523,8 @@
    "latlon": [
     34.14371120072553,
     -118.34067590191619
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "82ts6dhtfzma9w6dacdauasqc",
@@ -545,7 +558,8 @@
    "latlon": [
     34.14364135387039,
     -118.34070915189265
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "cbmarsmmwzq3hh5zkm8tzd79b",
@@ -579,7 +593,8 @@
    "latlon": [
     34.143606314468904,
     -118.34077046250212
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "dbbbrqicz5iaearupawdkhqha",
@@ -613,7 +628,8 @@
    "latlon": [
     34.14369007961043,
     -118.34060137899989
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ek69hib79y679emkasn79mcpa",
@@ -647,7 +663,8 @@
    "latlon": [
     34.14372231008258,
     -118.3406693379811
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "hkwbq6z6khztzfa74ih2rr18a",
@@ -681,7 +698,8 @@
    "latlon": [
     34.14358322311928,
     -118.34066561679217
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ykt27c1th8bzyeyge7smk0m1c",
@@ -715,7 +733,8 @@
    "latlon": [
     34.14365146123214,
     -118.34066819870753
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "335sk9308u4y28tc16qkrh0fc",
@@ -749,7 +768,8 @@
    "latlon": [
     34.14366742626082,
     -118.34072183999858
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "4bpqydguu91wn220a4q8tp98c",
@@ -783,7 +803,8 @@
    "latlon": [
     34.14362335742152,
     -118.34069354778102
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "5k00wz9xngg039pxb2r5agu6a",
@@ -817,7 +838,8 @@
    "latlon": [
     34.1436869052395,
     -118.34068952945051
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "8kmrqxrxd216f3st56tnfrdcb",
@@ -851,7 +873,8 @@
    "latlon": [
     34.14380893807382,
     -118.3406833840963
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "cmy5a3ggar53e9y634i7g2ira",
@@ -885,7 +908,8 @@
    "latlon": [
     34.143662710821886,
     -118.34063991734143
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "cmf2byk1bwx68u1ucgi1x328a",
@@ -919,7 +943,8 @@
    "latlon": [
     34.14363940768999,
     -118.3407337365734
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "c4kfdwkw51bz9hihi57g44m0c",
@@ -953,7 +978,8 @@
    "latlon": [
     34.14357927588089,
     -118.34063082185305
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "fcr4r1m31h9knpi642fhy5qnb",
@@ -987,7 +1013,8 @@
    "latlon": [
     34.14376300615832,
     -118.34062042282554
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "hc1sknukdi9q9gzf3cgruhghd",
@@ -1021,7 +1048,8 @@
    "latlon": [
     34.1438253660452,
     -118.34077127283861
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "p4rqrybmxupcrn3w1b8380xxc",
@@ -1055,7 +1083,8 @@
    "latlon": [
     34.14376182029691,
     -118.34070815641435
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "xwfdad39p9w4etd0p28s5881d",
@@ -1089,7 +1118,8 @@
    "latlon": [
     34.143634140060556,
     -118.34071886308632
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "zwk2xnhmkw9bdd3pypwrw7asd",
@@ -1123,7 +1153,8 @@
    "latlon": [
     34.14376719723404,
     -118.34069627569679
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "z45b6fchh3cqgm8xqqehywg3c",
@@ -1157,7 +1188,8 @@
    "latlon": [
     34.14373577764462,
     -118.34057319643922
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "5c05kk7rt9bcicpp6f8myrm9a",
@@ -1191,7 +1223,8 @@
    "latlon": [
     34.14361132813641,
     -118.34066415816125
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "6m2pwuawh9s8idi5x9wed47yc",
@@ -1226,7 +1259,8 @@
    "latlon": [
     34.14372204071422,
     -118.34075179196032
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "8wayna1t9ffsu35s0xxhn4b1c",
@@ -1260,7 +1294,8 @@
    "latlon": [
     34.14376841177137,
     -118.34067575470813
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "ax9etdt3p592c9ixhbu6e356d",
@@ -1294,7 +1329,8 @@
    "latlon": [
     34.14367879779161,
     -118.34060681597404
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "gnsc1e2mhh2x1nngyqwfcwhsd",
@@ -1328,7 +1364,8 @@
    "latlon": [
     34.14377872034376,
     -118.34065138816146
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "iddc5b2eu9b0nf5zqik7y0f2a",
@@ -1362,7 +1399,8 @@
    "latlon": [
     34.14368384712175,
     -118.34055965338655
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "nxszec0x6f28cmp120aqmgq2a",
@@ -1396,7 +1434,8 @@
    "latlon": [
     34.14355181900124,
     -118.34068322009168
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "qde6he93s40a116cy08s4dyeb",
@@ -1430,7 +1469,8 @@
    "latlon": [
     34.143766247093346,
     -118.34074686122105
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "tn64b5ra7fb2qwex4kbasz7ec",
@@ -1465,7 +1505,8 @@
    "latlon": [
     34.14371294326375,
     -118.34073201806389
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ydy9wxb1ek7321pswirca8n0c",
@@ -1502,7 +1543,8 @@
    "latlon": [
     34.143584608389276,
     -118.3406888796572
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "05qprkwpmbqyweyhprc4iw9rc",
@@ -1536,7 +1578,8 @@
    "latlon": [
     34.14362684231334,
     -118.34072538623191
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "55td7hz9f6274p8icqk8xw63d",
@@ -1570,7 +1613,8 @@
    "latlon": [
     34.143752238645725,
     -118.3406825977418
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "85qmbpmgs28q5ccc4f73yrs2a",
@@ -1604,7 +1648,8 @@
    "latlon": [
     34.14362024285156,
     -118.34074355002808
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "8x4qf8nks0abaw463310qp56a",
@@ -1639,7 +1684,8 @@
    "latlon": [
     34.14372308701732,
     -118.34074559250699
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ayfwnxkh8supzs1y8wg57pmpb",
@@ -1673,7 +1719,8 @@
    "latlon": [
     34.14366623411308,
     -118.34077023394866
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "k64y8ws4dikh4t3y6dx2034pc",
@@ -1707,7 +1754,8 @@
    "latlon": [
     34.14371524066973,
     -118.34064435755762
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "ne4m54zyz2cdidx2s41ra6rua",
@@ -1744,7 +1792,8 @@
    "latlon": [
     34.143789072850694,
     -118.34068155221675
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "16dyzi80z2zcrh7862yp2xpic",
@@ -1779,7 +1828,8 @@
    "latlon": [
     34.14372574458784,
     -118.34070090728359
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "2e3f6cxzgu6rtp2azg42x5tpd",
@@ -1813,7 +1863,8 @@
    "latlon": [
     34.14364388896225,
     -118.34073501237344
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "9psurmcaqzgu5xzgi32agbmsa",
@@ -1847,7 +1898,8 @@
    "latlon": [
     34.143606767660266,
     -118.34065003005068
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "b79siy8e2emcax6pyu6aeg0fd",
@@ -1881,7 +1933,8 @@
    "latlon": [
     34.143636928121424,
     -118.34081392571275
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "df4xh9e7au0zbumtyqi7s43rb",
@@ -1915,7 +1968,8 @@
    "latlon": [
     34.14370854149825,
     -118.34069395852278
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "gf7ie678921b1w9p5ifmmd3db",
@@ -1949,7 +2003,8 @@
    "latlon": [
     34.14367098182108,
     -118.34066379205747
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "gz5k8dk53pd94ekr64z9nc7na",
@@ -1983,7 +2038,8 @@
    "latlon": [
     34.14368818584677,
     -118.34066089397365
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "kfyb63gg0gnbhp2bm94bi9eec",
@@ -2017,7 +2073,8 @@
    "latlon": [
     34.14361001759171,
     -118.3406108200162
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "kqyxc2a1agzfqxr689u1te29b",
@@ -2051,7 +2108,8 @@
    "latlon": [
     34.14362875533815,
     -118.3407573426084
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "wqa9sdrmbnzqtyns3uxgmbr0c",
@@ -2085,7 +2143,8 @@
    "latlon": [
     34.14370125687759,
     -118.34052743045565
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "w7h7bnqr0n6mna61bqndw2tcb",
@@ -2119,7 +2178,8 @@
    "latlon": [
     34.14360104649224,
     -118.3406697672772
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "crz8h37ia83xby11fpfhikapc",
@@ -2153,7 +2213,8 @@
    "latlon": [
     34.14361692959177,
     -118.34062285184375
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "d0azburuxpmhct3ckkz9xr7nd",
@@ -2187,7 +2248,8 @@
    "latlon": [
     34.14356222791931,
     -118.34062322128662
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "d0bt0gxdf68i8pmccifheambc",
@@ -2221,7 +2283,8 @@
    "latlon": [
     34.14367274268098,
     -118.34059272983431
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "dg8zf6rmfq6kdnxkytz2d85cd",
@@ -2255,7 +2318,8 @@
    "latlon": [
     34.143587099568116,
     -118.34072002079621
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "g8ptqi2ac9mwqx8wzngmuumra",
@@ -2289,7 +2353,8 @@
    "latlon": [
     34.143565026580795,
     -118.34067693557415
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "k8hp8841b5g3b3q4ri28np4uc",
@@ -2323,7 +2388,8 @@
    "latlon": [
     34.14361438320382,
     -118.34064774418592
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "n0kbze6z786ff4ugt7qqi32ha",
@@ -2357,7 +2423,8 @@
    "latlon": [
     34.14367818729439,
     -118.34065896935225
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "pgy5pcez4tnbbdmum97q73a0a",
@@ -2391,7 +2458,8 @@
    "latlon": [
     34.143657980213824,
     -118.34071728517263
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "p87aqpyuqu5zdkp9trn8e0hyc",
@@ -2425,7 +2493,8 @@
    "latlon": [
     34.143628057518505,
     -118.34081778034977
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "r82kd53sewgxqhcq1wswtkibb",
@@ -2459,7 +2528,8 @@
    "latlon": [
     34.14358341342923,
     -118.3407449676064
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "trn7gs7b1eband5mprrhax99b",
@@ -2493,7 +2563,8 @@
    "latlon": [
     34.14358046233257,
     -118.34067805029795
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "u8z3x3gq98wwubdmussf4w19c",
@@ -2527,7 +2598,8 @@
    "latlon": [
     34.14371506188954,
     -118.3406634109756
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "y8aw3nzaf2ufcbfz589crx0pb",
@@ -2561,7 +2633,8 @@
    "latlon": [
     34.14375727504044,
     -118.34060317883356
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "8g77ah8pc5n2sd78nczirb85c",
@@ -2595,7 +2668,8 @@
    "latlon": [
     34.14372719971772,
     -118.34068344576097
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "h9hxnhqpkiyh0itngkp4c288a",
@@ -2629,7 +2703,8 @@
    "latlon": [
     34.143695866277795,
     -118.34071322518858
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "s1xrrgpufimg65qmqr9k1wkia",
@@ -2663,7 +2738,8 @@
    "latlon": [
     34.14376141778089,
     -118.34072876286159
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "u9me8tqkpbbhm0awbg558r8ib",
@@ -2697,7 +2773,8 @@
    "latlon": [
     34.14378007632317,
     -118.34080357276697
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "ussyhip42ps6ckqm5km31egib",
@@ -2731,7 +2808,8 @@
    "latlon": [
     34.14356124400232,
     -118.34066671279096
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "11qs98shms46qsy5z7e45tefb",
@@ -2766,7 +2844,8 @@
    "latlon": [
     34.1437717703487,
     -118.34063944755387
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "2hinmsgdpkrypzyg6fteq382c",
@@ -2800,7 +2879,8 @@
    "latlon": [
     34.143795041581754,
     -118.34069513933525
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "4he4cbbm2ysypb2snk150kpnc",
@@ -2835,7 +2915,8 @@
    "latlon": [
     34.14371155331351,
     -118.34071444805797
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "49baw4fbr69z2t8ud5ak524aa",
@@ -2869,7 +2950,8 @@
    "latlon": [
     34.14368099740142,
     -118.34075602062023
-   ]
+   ],
+   "floor_name": "Floor 2"
   },
   {
    "id": "512pszwqs288n8pqgyq1pffyd",
@@ -2903,7 +2985,8 @@
    "latlon": [
     34.143629492910115,
     -118.34062220222647
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "5shau7ksc3hrhccwq86x6h16b",
@@ -2937,7 +3020,8 @@
    "latlon": [
     34.14366220407213,
     -118.3407306710837
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "913i1gd90z0c0r1ytkaer5gdb",
@@ -2971,7 +3055,8 @@
    "latlon": [
     34.143736083983576,
     -118.3407141982351
-   ]
+   ],
+   "floor_name": "Floor 1"
   },
   {
    "id": "door_td16m8qw_0",
@@ -3002,7 +3087,8 @@
     34.14383852275114,
     -118.34074185022793
    ],
-   "evidence_path": "buildings/248351/evidence/door_td16m8qw_0.jpg"
+   "evidence_path": "buildings/248351/evidence/door_td16m8qw_0.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "id": "door_dgxrhkeq_0",
@@ -3034,7 +3120,8 @@
     34.14378638673556,
     -118.34064354696199
    ],
-   "evidence_path": "buildings/248351/evidence/door_dgxrhkeq_0.jpg"
+   "evidence_path": "buildings/248351/evidence/door_dgxrhkeq_0.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "id": "door_czbcxy3c_0",
@@ -3065,7 +3152,8 @@
     34.14373494069743,
     -118.34054272780203
    ],
-   "evidence_path": "buildings/248351/evidence/door_czbcxy3c_0.jpg"
+   "evidence_path": "buildings/248351/evidence/door_czbcxy3c_0.jpg",
+   "floor_name": "Floor 1"
   },
   {
    "id": "door_b59c4d41_0",
@@ -3103,7 +3191,8 @@
     34.14374317727493,
     -118.34066101452832
    ],
-   "evidence_path": "buildings/248351/evidence/door_b59c4d41_0.jpg"
+   "evidence_path": "buildings/248351/evidence/door_b59c4d41_0.jpg",
+   "floor_name": "Floor 2"
   },
   {
    "id": "door_wxtytqm0_0",
@@ -3141,7 +3230,8 @@
     34.14356635334149,
     -118.340697724942
    ],
-   "evidence_path": "buildings/248351/evidence/door_wxtytqm0_0.jpg"
+   "evidence_path": "buildings/248351/evidence/door_wxtytqm0_0.jpg",
+   "floor_name": "Floor 2"
   },
   {
    "pano_path": null,
@@ -3171,7 +3261,8 @@
     34.14353033363084,
     -118.34065455538888
    ],
-   "evidence_path": "buildings/248351/evidence/door_exit_ground.jpg"
+   "evidence_path": "buildings/248351/evidence/door_exit_ground.jpg",
+   "floor_name": "Floor 1"
   }
  ],
  "edges": [

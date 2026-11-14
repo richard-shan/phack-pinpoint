@@ -556,6 +556,15 @@ def build(model_id: str, building_id: str | None = None, *, geo: bool = True,
     for k in ("name", "address", "scope"):
         if overrides.get(k):
             graph[k] = overrides[k]
+    labels = {f["floor"]: f.get("label") for f in graph["floors"]}
+    for n in nodes:            # what to call this node's floor in a packet
+        seq = n.get("floor")
+        if seq is None:
+            continue
+        if graph["floor_offset"] or not labels.get(seq):
+            n["floor_name"] = f"Floor {seq + 1 + graph['floor_offset']}"
+        else:
+            n["floor_name"] = labels[seq]
     return fill_costs(graph, force=True)
 
 

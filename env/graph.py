@@ -32,11 +32,18 @@ def edge_key(a: str, b: str) -> tuple[str, str]:
 
 class Graph:
     def __init__(self, data: dict):
-        self.data = fill_costs(data)
-        self.building_id = str(data.get("building_id", ""))
         self.nodes: dict[str, dict] = {n["id"]: n for n in data["nodes"]}
         if len(self.nodes) != len(data["nodes"]):
             raise ValueError("duplicate node ids in graph")
+        for e in data["edges"]:
+            # A stair or elevator edge that does not say how far it climbs takes it from
+            # the floors of its two ends.
+            if e.get("type") in ("stairs", "elevator") and e.get("floors") is None \
+                    and e.get("rise_m") is None and e.get("a") in self.nodes and e.get("b") in self.nodes:
+                climb = abs((self.nodes[e["a"]].get("floor") or 0) - (self.nodes[e["b"]].get("floor") or 0))
+                e["floors"] = climb or 1
+        self.data = fill_costs(data)
+        self.building_id = str(data.get("building_id", ""))
         self.edges: dict[tuple[str, str], dict] = {}
         self.adj: dict[str, list[tuple[str, dict]]] = {n: [] for n in self.nodes}
         for e in data["edges"]:
@@ -81,8 +88,19 @@ class Graph:
         return edge["seconds"][profile]
 
     def kind(self, node_id: str) -> str:
+        """pano, entrance, staging, arrival, elevator, ... A graph written by another lane
+        may not say: then an entrance is an entrance, and a node flagged
+        `attributes.staging`, or one reached only by outside edges, is a staging spot."""
         n = self.nodes[node_id]
-        return n.get("kind") or ("entrance" if n.get("is_entrance") else "pano")
+        if n.get("kind"):
+            return n["kind"]
+        if n.get("is_entrance"):
+            return "entrance"
+        links = self.adj.get(node_id) or []
+        if (n.get("attributes") or {}).get("staging") or \
+                (links and all(e["type"] in EXTERIOR for _, e in links)):
+            return "staging"
+        return "pano"
 
     def entrances(self) -> list[dict]:
         return [n for n in self.nodes.values() if n.get("is_entrance")]

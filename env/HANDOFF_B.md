@@ -5,7 +5,7 @@ layout; this note says what is ready, what is not, and what lane A needs back.
 
 ## Good to go
 
-- **Every tool in `env/tools.py`.** 43 tests pass with no network
+- **Every tool in `env/tools.py`.** 44 tests pass with no network
   (`python3 -m unittest discover -s env/tests -t .`).
 - **Routing in all six buildings.** 693 scanned positions, every one reachable on foot.
   Each marked door and elevator has an evidence crop under `buildings/<id>/evidence/`.
@@ -84,6 +84,28 @@ Lane A read `origin/perception` at commit 9f96966. Both lanes use the CoStar Pro
 - **Site output is not joined yet.** `detect_site_features` returns staging spots and
   entrance candidates with lat/lon. Lane A still places staging by eye and has not
   written the step that turns your output into staging nodes.
+
+## For lane C: swapping `agent/pinpoint/routing.py` for `env/tools.py`
+
+Lane A ran `origin/connor/work`'s routing module and its `building_bayou` fixture graph
+side by side with `env/routing.py`, with the same time constants on both sides:
+`route()` agrees on all 420 node pairs for both profiles. What changes on the swap:
+
+- **`best_entry` ranks by outside plus inside time**, as the plan says; the stub ranks by
+  inside time only. The door changed for 12 of the fixture's 30 targets. `inside_seconds`
+  and `outside_seconds` are both returned.
+- **`best_entry(...)["path"]` starts at the staging spot** when the building has one, not
+  at the door. `entrance_id` is the door.
+- **The front door is not `ext_main`.** Use `best_entry(...)["front_door"]`
+  (`{entrance_id, seconds, seconds_saved, is_best}`) or `tools.front_door(building_id)`.
+- **`question_worth_asking`** here means "knowing the room would save more than 15 s", not
+  "the candidates disagree on a door". `all_candidates_same_door` is also returned if you
+  prefer your rule. Candidates may carry `belief`, `p` or `score`; `belief` wins.
+- **`floor` on a node is the scan's floor index from 0.** Show `floor_name` instead
+  ("Floor 14", "Basement 1").
+- **Two sets of time constants exist**: `agent/pinpoint/config.py` and `env/config.py`
+  (`ROUTING`). They differ (locked door 30 s there, 90 s here). Pick one.
+- `tools.load_graph(building_id)` returns the `{nodes, adj, edges}` shape your code reads.
 
 ## What lane A needs back
 

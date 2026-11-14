@@ -381,8 +381,10 @@ def exit_route(g: Graph, from_node: str, profile: str = "foot", *, blocked=()) -
 
 # =============================================================== uncertainty
 def _normalize(candidates: list[dict]) -> list[tuple[str, float]]:
-    """[(node_id, probability)] from candidates carrying `p` or a raw `score`."""
-    pairs = [(c["node_id"], float(c.get("p", c.get("score", 0.0)))) for c in candidates]
+    """[(node_id, probability)] from candidates carrying `belief` (lane C's updated
+    belief), `p`, or a raw match `score`, in that order of preference."""
+    pairs = [(c["node_id"], float(next((c[k] for k in ("belief", "p", "score") if c.get(k) is not None), 0.0)))
+             for c in candidates]
     total = sum(max(p, 0.0) for _, p in pairs)
     if not pairs or total <= 0:
         raise ValueError("candidates need positive p or score values")
@@ -511,12 +513,17 @@ def _floor_name(g: Graph, node_id: str) -> str:
         return str(n["floor_label"])
     offset = int(g.data.get("floor_offset", 0) or 0)
     seq = int(n.get("floor", 0))
+    floors = g.data.get("floors") or []
     if not offset:              # a suite scan with an offset has "Floor 1" for, say, floor 14
-        for f in g.data.get("floors") or []:
+        for f in floors:
             if f.get("floor") == seq and f.get("label"):
                 label = str(f["label"])
                 return label[:1].lower() + label[1:] if label.lower().startswith("floor") else label
-    return f"floor {seq + 1 + offset}"
+    # Graphs built here count scan floors from 0. A graph from another lane that numbers
+    # its indoor floors from 1 (outside nodes at 0) already holds building floor numbers.
+    indoor = [int(m.get("floor", 0)) for m in g.nodes.values() if g.kind(m["id"]) == "pano"]
+    one_based = not floors and bool(indoor) and min(indoor) >= 1
+    return f"floor {seq + offset + (0 if one_based else 1)}"
 
 
 def _meters_text(m: float) -> str:

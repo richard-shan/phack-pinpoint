@@ -83,6 +83,28 @@ def list_buildings() -> list[dict]:
     return out
 
 
+@_tool
+def load_graph(building_id: str) -> dict:
+    """{nodes: {id: node}, adj: {id: [edges]}, edges: [...]}: the shape lane C's stub
+    routing module exposes. `floor` on a node is the scan's floor index starting at 0;
+    use `floor_name` ("Floor 14", "Basement 1") for anything a person reads."""
+    g = _g(building_id)
+    return {"building_id": g.building_id, "nodes": g.nodes,
+            "adj": {n: [e for _, e in links] for n, links in g.adj.items()},
+            "edges": list(g.edges.values()), "scope": g.data.get("scope"),
+            "matterport_model_id": g.data.get("matterport_model_id")}
+
+
+@_tool
+def front_door(building_id: str) -> dict | None:
+    """The entrance marked as the one at the street address, or None if none is marked.
+    `best_entry(...)["front_door"]` already compares against it."""
+    g = _g(building_id)
+    n = next((n for n in g.entrances() if n.get("primary")), None)
+    return n and {"entrance_id": n["id"], "node_id": n["id"], "label": g.label(n["id"]),
+                  "latlon": n.get("latlon")}
+
+
 # ------------------------------------------------------------------ the environment
 def _find_graph(node_id: str, building_id: str | None) -> Graph:
     if building_id is not None:
@@ -121,7 +143,8 @@ def look(node_id: str, building_id: str | None = None) -> dict:
                           "heading_deg": heading, "floor": g.nodes[other].get("floor"),
                           "label": g.label(other), "room": g.room(other)})
     return {"node_id": node_id, "building_id": g.building_id, "image_path": image,
-            "attributes": dict(n.get("attributes") or {}, floor=n.get("floor"), kind=g.kind(node_id),
+            "attributes": dict(n.get("attributes") or {}, floor=n.get("floor"),
+                               floor_name=n.get("floor_name"), kind=g.kind(node_id),
                                room=g.room(node_id), label=g.label(node_id), xyz=n.get("xyz"),
                                latlon=n.get("latlon"), is_entrance=bool(n.get("is_entrance")),
                                equipment=n.get("equipment") or []),
