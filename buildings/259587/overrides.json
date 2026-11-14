@@ -71,15 +71,32 @@
     0.0
    ],
    "stops": {
+    "0": "h0u7yd4xsuagytmumifqqyw8a",
     "1": "x5bksrgdxudq96y0cbga96r6c",
     "2": "ipk3g6mkddmi86pyhu7q5kk3b",
     "3": "aewkibq8d3nf32wdpah5n5mha",
     "4": "cy9hnqnn97bmi7n4xrpnehtna"
    },
-   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2"
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
+   "note": "Basement 2 has no sweep in front of the door: its stop is seen from across the garage, so nodes.elev_f0 sets the position instead of offset_xy"
   }
  ],
+ "remove_edges": [
+  [
+   "36w2zndh3891i4u29m0ui2dic",
+   "s1gug953knbg95w0xagzkhira"
+  ]
+ ],
+ "remove_edges_note": "36w2zndh - s1gug953 (open, 7.8 m, Floor 1): the straight line crosses the raised room's waist-high walls topped with glass on its north and west sides, which the wall plan does not record. Seen from s1gug953 at heading 214 and from 36w2zndh at heading 34. The walkable way is the corridor through upipmfak and c78wykhg.",
  "nodes": {
+  "elev_f0": {
+   "xyz": [
+    3.867,
+    -8.34,
+    -9.042
+   ],
+   "note": "Basement 2 stop: teal sliding door in the block core with a call button and an 'in case of fire' sign beside it, seen from h0u7yd4x at heading about 309, about 6.9 m away. Position is not offset_xy from the sweep: the wall plan's door recess here (x 3.04, y -8.87 to -7.81) is the same as Floor 1's, so the stop is placed directly below the Floor 1 stop elev_f2 (same x, y; inferred, the car itself is not seen). Height is the sweep's floor height."
+  },
   "door_xizaxwh3_0": {
    "label": "the side exit door",
    "note": "exit door with a panic bar; probably cannot be opened from outside",
@@ -97,6 +114,12 @@
    "confidence": 0.6,
    "note": "panic bar seen from inside: likely exit-only, so entry from outside is assumed to need forcing",
    "evidence_path": "buildings/259587/evidence/door_xizaxwh3_0.jpg"
+  },
+  {
+   "a": "h0u7yd4xsuagytmumifqqyw8a",
+   "b": "elev_f0",
+   "meters": 7.43,
+   "note": "straight-line distance across open garage floor from the sweep to the elevator stop; replaces the 2.2 m that offset_xy assumes"
   }
  ]
 }

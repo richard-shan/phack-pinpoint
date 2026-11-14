@@ -1988,7 +1988,7 @@
  "scope": "A two-level tenant suite at the southwest end of the building: its ground floor and 2nd floor, joined by an open internal stair. The building lobby, the two passenger elevators, Stair 1 and Stair 2, the outside exit stair and floors 3 to 6 are not scanned.",
  "provenance": {
   "source": "lane A graph (env/build_graph.py), exported by env/console.py",
-  "generated": "2026-11-14T18:01:12",
+  "generated": "2026-11-14T18:28:02",
   "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
   "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
   "aerial": "Vexcel. Staging spots are placed by eye."

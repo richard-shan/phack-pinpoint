@@ -254,10 +254,15 @@ class LivePacketWriter(PacketWriter):
                 L += [f"{i}. {step['text']} [src:route.foot.path]"]
             total = f"- About {_secs(foot.get('seconds'))}"
             if foot.get("outside_seconds") is not None:
-                leg = (foot.get("approach") or {}).get("via")
-                first = (f"{_secs(foot.get('outside_seconds'))} to reach the scanned floor by {leg}, an estimate "
-                         "for the part of the building that is not scanned" if leg
-                         else f"{_secs(foot.get('outside_seconds'))} outside")
+                ap = foot.get("approach") or {}
+                if ap.get("via"):
+                    first = (f"{_secs(foot.get('outside_seconds'))} to reach the scanned floor by {ap['via']}, an "
+                             "estimate for the part of the building that is not scanned")
+                elif ap.get("walk_m"):
+                    first = (f"{_secs(foot.get('outside_seconds'))} through a part of the building that is not "
+                             "scanned, an estimate")
+                else:
+                    first = f"{_secs(foot.get('outside_seconds'))} outside"
                 total += f" ({first}; {_secs(foot.get('inside_seconds'))} inside the scan)"
             L += [total + f", {round(foot.get('meters') or 0)} m [src:route.foot.seconds]"]
             if self._route_image:

@@ -3,7 +3,7 @@
  "matterport_model_id": "cqDGKrH5ZTu",
  "name": "3800 Barham Blvd (Barham Plaza), Suite 200: ground floor and 2nd floor",
  "address": "3800 Barham Blvd, 200, Los Angeles, CA, 90068, US",
- "generated_at": "2026-11-14T18:01:12",
+ "generated_at": "2026-11-14T18:28:02",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -4389,6 +4389,10 @@
    "confirmed": true,
    "primary": true,
    "note": "black double doors with panic bars on the suite side; the left leaf is signed EXIT TO LOBBY and the right leaf PLEASE USE OTHER DOOR. They open onto the building lobby, which the posted Ground Floor evacuation plan shows holding the two passenger elevators. The lobby side was not scanned, so what the doors look like from the lobby is unknown.",
+   "approach": {
+    "walk_m": 12,
+    "note": "through the building's ground-floor lobby from the street entrance. The lobby is not scanned: 12 m is a guess from the posted evacuation plan's proportions, not a measurement"
+   },
    "latlon": [
     34.14378638673556,
     -118.34064354696199
