@@ -1,0 +1,8 @@
+agent/incidents/
+agent/buildings/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Vexcel cached aerial tiles (regenerated per building; can be large)
+agent/pinpoint/fixtures/*/vexcel_tile.*

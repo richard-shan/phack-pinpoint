@@ -1,0 +1,17 @@
+{
+  "_source": "STUB detect_site_features() output — replaced by Person B vision model on the Vexcel aerial tile. Pixel points let Person D draw overlays. Exterior node ids match graph.json so Person A can join them.",
+  "building_id": "bayou-medical-plaza",
+  "tile_path": "fixtures/building_bayou/aerial/tile.png",
+  "entrances": [
+    {"entrance_id": "ext_main", "node_id": "ext_main", "side": "west",  "latlon": [29.7570, -95.3660], "pixel": [120, 310], "label": "Front entrance (street address side)"},
+    {"entrance_id": "ext_dock", "node_id": "ext_dock", "side": "east",  "latlon": [29.7571, -95.3652], "pixel": [540, 300], "label": "Loading dock door"},
+    {"entrance_id": "ext_side", "node_id": "ext_side", "side": "south", "latlon": [29.7568, -95.3656], "pixel": [330, 470], "label": "Side door (badge access)"}
+  ],
+  "staging": [
+    {"staging_id": "staging_lot", "node_id": "staging_lot", "latlon": [29.7567, -95.3650], "pixel": [600, 520], "label": "East lot — fits 2 engines + ambulance", "surface": "asphalt"}
+  ],
+  "obstructions": [
+    {"type": "gate", "pixel": [470, 360], "note": "Bollard gate at dock approach — passable for ambulance"},
+    {"type": "parked_vehicles", "pixel": [160, 360], "note": "Front loop often congested at street address"}
+  ]
+}

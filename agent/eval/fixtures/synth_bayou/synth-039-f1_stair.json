@@ -1,0 +1,11 @@
+{
+  "_source": "synth generator \u2014 bayou-medical-plaza interior node sampled uniformly.",
+  "incident_id": "synth-039-f1_stair",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/synth/node_f1_stair.jpg",
+  "caller_text": "my mom is confused and can't stand, we're near a stairwell",
+  "ground_truth_node_id": "f1_stair",
+  "ground_truth_room_id": "F1 East Stair",
+  "ground_truth_best_entry_id": "ext_dock"
+}

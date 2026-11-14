@@ -1,0 +1,18 @@
+{
+  "_source": "STUB match_photo() output — replaced by Person B FAISS retrieve + re-rank. Scores are embedding similarities (not yet a normalized belief). Top candidates are deliberately AMBIGUOUS (floor-2 east cluster) so best_question/update_belief have real work.",
+  "building_id": "bayou-medical-plaza",
+  "query_image_path": "incidents/{incident_id}/caller_photo.jpg",
+  "candidates": [
+    {"node_id": "suite210_interior", "score": 0.71, "evidence_path": "fixtures/building_bayou/evidence/match_suite210_interior.png",
+     "attributes": {"floor": 2, "has_window": true,  "near_elevator": false, "floor_surface": "tile",   "room_type": "clinic"}},
+    {"node_id": "f2_waiting",        "score": 0.66, "evidence_path": "fixtures/building_bayou/evidence/match_f2_waiting.png",
+     "attributes": {"floor": 2, "has_window": true,  "near_elevator": false, "floor_surface": "carpet", "room_type": "waiting"}},
+    {"node_id": "f2_reception",      "score": 0.52, "evidence_path": "fixtures/building_bayou/evidence/match_f2_reception.png",
+     "attributes": {"floor": 2, "has_window": true,  "near_elevator": false, "floor_surface": "carpet", "room_type": "reception"}},
+    {"node_id": "suite210_door",     "score": 0.41, "evidence_path": "fixtures/building_bayou/evidence/match_suite210_door.png",
+     "attributes": {"floor": 2, "has_window": false, "near_elevator": false, "floor_surface": "tile",   "room_type": "clinic_entry"}},
+    {"node_id": "f1_reception",      "score": 0.22, "evidence_path": "fixtures/building_bayou/evidence/match_f1_reception.png",
+     "attributes": {"floor": 1, "has_window": true,  "near_elevator": false, "floor_surface": "tile",   "room_type": "reception"}}
+  ],
+  "ground_truth_node": "suite210_interior"
+}

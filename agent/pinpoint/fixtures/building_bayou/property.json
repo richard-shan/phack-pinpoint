@@ -1,0 +1,44 @@
+{
+  "building_id": "bayou-medical-plaza",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "use_type": "Office / Medical",
+  "stories": 2,
+  "year_built": 1998,
+  "sqft": 54000,
+  "scan_date": "2025-09-12",
+  "tenants": [
+    {
+      "suite": "110",
+      "name": "Gulf Coast Title Co.",
+      "floor": 1,
+      "use": "office"
+    },
+    {
+      "suite": "120",
+      "name": "Bayou Caf\u00e9",
+      "floor": 1,
+      "use": "retail_food"
+    },
+    {
+      "suite": "205",
+      "name": "Lone Star Accounting",
+      "floor": 2,
+      "use": "office"
+    },
+    {
+      "suite": "210",
+      "name": "Houston Dialysis Center",
+      "floor": 2,
+      "use": "clinic",
+      "occupancy_risk": "non_ambulatory_patients"
+    }
+  ],
+  "contact": {
+    "name": "Rivera Property Mgmt",
+    "phone": "+1-713-555-0142",
+    "role": "manager"
+  },
+  "_source": "STUB fixture \u2014 replaced by Person A get_property() from CoStar commercial-property.jsonl",
+  "lat": 29.7589,
+  "lon": -95.3677
+}

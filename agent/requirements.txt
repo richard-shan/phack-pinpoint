@@ -1,0 +1,12 @@
+# Part C — agent lane deps.
+# NOTE: pin exact versions on first real install; confirm deepagents version against
+#       agent/DEEPAGENTS_NOTES.md (subagent fields + async-subagents) before wiring deep_agent.py.
+#
+# The fallback orchestrator (orchestrator.py) + stubs + eval run on the STDLIB ALONE.
+# Nothing below is needed to run `python agent/run_incident.py` today.
+
+deepagents>=0.7,<0.8        # CONFIRM exact version; v0.7 made TodoListMiddleware opt-in
+langgraph>=0.2              # MemorySaver + Command(resume=...) for interrupts
+langchain>=0.3
+langchain-anthropic>=0.2    # anthropic:claude-* models
+anthropic>=0.40
