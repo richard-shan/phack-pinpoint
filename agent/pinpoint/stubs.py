@@ -1,13 +1,4 @@
-"""STUB tool layer — every contract tool (plan 5 + 4A) as a function returning FIXED, valid,
-realistic data INSTANTLY. Fixtures live in pinpoint/fixtures/building_bayou/*.json so they are
-easy to eyeball and swap.
-
-Ownership of the real versions (plan 6):
-  Person A: get_property, look, entrances, ALL routing tools (see routing.py)
-  Person B: match_photo, detect_site_features, node attributes, find_equipment, hazards_along
-  Person C (REAL already): best_question, update_belief (localization.py); Verifier's check_claim
-  Person D: ask_caller, send_packet, notify_contact (channel + approval UI)
-"""
+# Contract tools — fixtures today; A/B/D swap real backends later.
 import copy
 import json
 from functools import lru_cache
@@ -25,17 +16,12 @@ def _load_cached(name):
 
 
 def _load(name):
-    # deepcopy so callers can mutate (e.g. belief fields) without poisoning the cache
-    return copy.deepcopy(_load_cached(name))
+    return copy.deepcopy(_load_cached(name))  # callers mutate belief fields
 
 
-# ---------- Person A (records + env) ----------
 @traced("records")
 def get_property(address):
-    """address -> normalized CoStar record. STUB: single demo building.
-
-    Raises PropertyNotFound if the address does not resolve. In stub mode this
-    fires when the address is missing or carries the sentinel 'UNKNOWN'."""
+    # CoStar brief for address. Raises PropertyNotFound on UNKNOWN/empty.
     if not address or "UNKNOWN" in str(address).upper():
         raise PropertyNotFound(f"address not in CoStar: {address!r}")
     p = _load("property.json")
@@ -52,7 +38,7 @@ def get_tenants(building_id):
 
 @traced("locator")
 def look(node_id):
-    """node_id -> image + attributes + neighbors. STUB from graph fixture."""
+    # Pano + attributes + neighbors for a node.
     g = _load("graph.json")
     node = next((n for n in g["nodes"] if n["id"] == node_id), None)
     if not node:
@@ -70,16 +56,9 @@ def entrances(building_id):
     return s["entrances"]
 
 
-# ---------- Person B (perception) ----------
 @traced("locator")
 def match_photo(building_id, image_path, k=10):
-    """photo -> ranked candidate positions with evidence overlay. STUB behavior:
-      * if image_path contains 'synth/node_<id>.jpg', build a synthetic candidate set centered on
-        that node (top candidate = truth with score 0.72, plus 3-4 distractors sampled from
-        nearby nodes on the same floor with mild score decay). Lets the eval harness drive the
-        pipeline across many ground-truth nodes without a real matcher.
-      * otherwise return the fixed ambiguous set from match.json (demo behavior)."""
-    # Failure injection paths used by the graceful-failure tests.
+    # Ranked room candidates. synth/node_<id>.jpg → synthetic set; else match.json.
     if building_id == "no_twin" or str(image_path).startswith("no_twin://"):
         raise MatterportUnavailable(
             f"no Matterport twin for building {building_id!r}")
@@ -87,8 +66,6 @@ def match_photo(building_id, image_path, k=10):
         raise EmptyCandidates("caller photo path missing")
     from pathlib import Path as _P
     _p = _P(str(image_path))
-    # fixture relative paths may resolve relative to FIXTURES; we treat anything
-    # that is explicitly absent or empty-on-disk as "unreadable".
     if _p.is_absolute() and (not _p.exists() or _p.stat().st_size == 0):
         raise EmptyCandidates(f"caller photo unreadable: {image_path}")
     if "no_match" in str(image_path):
@@ -102,9 +79,7 @@ def match_photo(building_id, image_path, k=10):
 
 
 def _synth_candidates(truth_node_id, k=10):
-    """Build an ambiguous-but-correct candidate set around truth_node_id. Top-1 is the truth
-    with score 0.72; distractors are same-floor neighbors with score decay. If the truth node
-    has fewer than k same-floor peers, pad with other-floor nodes to keep the set interesting."""
+    # Eval helper: truth on top, same-floor distractors with score decay.
     import random
     g = _load("graph.json")
     nodes = {n["id"]: n for n in g["nodes"]}
@@ -112,14 +87,11 @@ def _synth_candidates(truth_node_id, k=10):
         return _load("match.json")["candidates"][:k]
     truth = nodes[truth_node_id]
     truth_floor = truth.get("floor")
-    # Peers on the same floor, excluding entrances and the truth itself
     peers = [n for nid, n in nodes.items()
              if nid != truth_node_id and n.get("floor") == truth_floor and not n.get("is_entrance")]
-    # Deterministic shuffle keyed by the truth node id so synth incidents are reproducible
     rng = random.Random(hash(truth_node_id) & 0xFFFFFFFF)
     rng.shuffle(peers)
     distractors = peers[:max(0, k - 1)]
-    # Pad with other floors if still short
     if len(distractors) < k - 1:
         others = [n for nid, n in nodes.items()
                   if nid != truth_node_id and n.get("floor") != truth_floor
@@ -141,16 +113,12 @@ def _synth_candidates(truth_node_id, k=10):
 
 @traced("site")
 def detect_site_features(building_id, address=None, lat=None, lon=None):
-    """Site features. Tries Vexcel aerial first (real API) then falls back to fixture.
-    When Vexcel returns, merges its property attributes under 'aerial_features' and sets
-    'aerial_tile_path' so the packet can carry a citation. On any Vexcel failure the
-    fallback trace event is already logged inside vexcel.fetch_aerial."""
-    from . import vexcel  # local import so tests can monkeypatch
+    # Entrances/staging; prefers live Vexcel tile, else fixture.
+    from . import vexcel  # local so tests can patch
     s = _load("site.json")
     base = {"entrances": s["entrances"], "staging": s["staging"],
             "obstructions": s["obstructions"], "tile_path": s["tile_path"],
             "evidence_path": "fixtures/building_bayou/site.json"}
-    # Use building fixture lat/lon if caller didn't supply.
     if lat is None or lon is None:
         try:
             prop = _load("property.json")
@@ -176,7 +144,7 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
 
 @traced("router")
 def find_equipment(building_id, type, near_node):
-    """Nearest equipment of a type. STUB: scans graph node equipment + approx hops."""
+    # Nodes tagged with equipment type (meters TBD).
     g = _load("graph.json")
     hits = []
     for n in g["nodes"]:
@@ -188,7 +156,7 @@ def find_equipment(building_id, type, near_node):
 
 @traced("router")
 def hazards_along(building_id, path):
-    """Hazards on a route. STUB: flag locked doors + narrow/low-confidence doors on the path."""
+    # Locked / low-confidence doors on the path.
     g = _load("graph.json")
     pset = set(path or [])
     out = []
@@ -203,13 +171,10 @@ def hazards_along(building_id, path):
     return out
 
 
-# ---------- Person D (channel + gates) ----------
 @traced("commander")
 def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
-    """Send the caller a question, return their reply. STUB: in mock mode the 'caller' answers
-    truthfully from the ground-truth node's attributes so the belief loop converges in the demo."""
+    # Ask the caller; mock mode answers from ground-truth attrs.
     if _mock_truth_attrs is not None:
-        # The orchestrator passes the attribute being asked; answer from ground truth.
         attr = (text or "").strip()
         val = _mock_truth_attrs.get(attr)
         return {"reply": _phrase_answer(attr, val), "raw": val, "images": images or []}
@@ -229,16 +194,12 @@ def _phrase_answer(attr, val):
 
 
 def send_packet(incident_id):
-    """APPROVAL GATE (plan 5). The orchestrator / deepagents interrupt_on handles the actual pause;
-    this only runs AFTER a human approves. STUB: marks the packet sent."""
+    # Mark packet sent (gate already approved upstream).
     return {"status": "sent", "incident_id": incident_id, "channel": "sms+link"}
 
 
 def notify_contact(incident_id, contact):
-    """APPROVAL GATE. Stub: records the notification as evidence by writing notify.json under
-    the incident folder. Returns no_contact_available when the brief has no usable contact.
-    The orchestrator wraps the call in trace events (interrupt + approval + gate) so this
-    function itself does not emit trace events."""
+    # Write notify.json; returns no_contact_available if brief has no usable contact.
     import json as _json
     from .config import INCIDENTS
     if not contact:
@@ -254,13 +215,9 @@ def notify_contact(incident_id, contact):
     return payload
 
 
-# ---------- Person C (verifier) ----------
 def check_claim(claim_text, sources):
-    """Verifier primitive: does this packet sentence have a backing source among the incident files?
-    STUB heuristic — real version asks the LLM to map sentence -> file+field. Here: a claim is
-    'supported' if its tagged source key exists in the provided sources dict and is non-empty."""
+    # Supported iff [src:dotted.key] resolves to a non-empty value.
     src_key = None
-    # claims are tagged like '... [src:brief.use_type]'
     if "[src:" in claim_text:
         src_key = claim_text.split("[src:", 1)[1].split("]", 1)[0].strip()
     supported = bool(src_key) and _resolve(sources, src_key) not in (None, "", [], {})
