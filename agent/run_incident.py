@@ -22,7 +22,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--intake", help="path to an intake.json (default: sample fixture)")
     ap.add_argument("--interactive", action="store_true", help="prompt at the approval gate")
-    ap.add_argument("--real", action="store_true", help="use real deepagents (needs install+key)")
+    ap.add_argument("--real-llm", "--real", dest="real_llm", action="store_true",
+                    help="use real deepagents (needs Python 3.11+ install and ANTHROPIC_API_KEY)")
     ap.add_argument("--simulate-rejection-all", action="store_true",
                     help="simulate the dispatcher rejecting all candidates: replan once with the top blacklisted, then end UNABLE/exhausted_candidates.")
     ap.add_argument("--simulate-rejection", metavar="CORRECTED_ROOM_ID",
@@ -33,9 +34,23 @@ def main():
     intake = json.loads(Path(args.intake).read_text()) if args.intake \
         else json.loads((FIXTURES / "intake_sample.json").read_text())
 
-    if args.real:
+    if args.real_llm:
         from pinpoint import deep_agent
-        print(deep_agent.run_incident(intake))
+        from pinpoint.config import INCIDENTS
+        import time
+        incident_id = intake.get("incident_id") or f"inc-{int(time.time())}"
+        idir = INCIDENTS / incident_id
+        try:
+            summary = deep_agent.run_real_agent(intake, idir, auto_approve=not args.interactive)
+        except deep_agent.DeepAgentsNotConfigured as e:
+            print(f"real-llm mode unavailable: {e}")
+            print("falling back to the deterministic orchestrator; pass --real-llm again once the "
+                  "install and key are in place.")
+            return
+        print("\n=== real-llm incident complete ===")
+        print(summary)
+        print(f"\npacket:  {idir}/packet.md")
+        print(f"trace:   {idir}/trace.jsonl")
         return
 
     approve_fn = None
