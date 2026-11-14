@@ -3,7 +3,7 @@
  "matterport_model_id": "cqDGKrH5ZTu",
  "name": "3800 Barham Blvd (Barham Plaza), Suite 200: ground floor and 2nd floor",
  "address": "3800 Barham Blvd, 200, Los Angeles, CA, 90068, US",
- "generated_at": "2026-11-14T15:00:56",
+ "generated_at": "2026-11-14T18:01:12",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -58,6 +58,7 @@
   "sweeps_without_floor": 0,
   "auto_entrances": 3,
   "other_exterior_doors": 2,
+  "attribute_ids_not_in_graph": 0,
   "nodes": 91,
   "edges": 139,
   "components": 1,
@@ -88,10 +89,27 @@
     0.5609992742538452
    ],
    "pano_path": "buildings/248351/panos/aipa440cwmki4xys0ub0egc7c.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal-railed stairs descend along the right side of the corridor edge, visible ahead and to the right, with a drop to a lower level beside the walkway.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "open metal-railed stair edge beside brick corridor with outdoor-view window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -123,10 +141,27 @@
     0.7087101936340332
    ],
    "pano_path": "buildings/248351/panos/aafsxtq27uqshe71h51045y1d.jpg",
-   "room_label": "Office",
+   "room_label": "Storage",
    "attributes": {
     "room_id": "b4qtykzcazp4iumkamm7y7h2b",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "storage",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase with metal railings runs along the corridor to the left of the right view, leading up toward a window.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "low",
+    "landmark_text": "small plain white room with a closed door, next to a corridor with stairs"
    },
    "is_entrance": false,
    "equipment": [],
@@ -158,10 +193,20 @@
     0.5843421816825867
    ],
    "pano_path": "buildings/248351/panos/aad84nzzewgcifd57ss0dmu3c.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "peina19mpqedsku6a3huu38md",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "large open room with white column and brick wall beside glass office entrance"
    },
    "is_entrance": false,
    "equipment": [],
@@ -193,13 +238,29 @@
     0.20559382438659668
    ],
    "pano_path": "buildings/248351/panos/b2t3y17ywprr5594zqhd3qp8d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "teal push-bar door beside exposed brick wall"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Possible small red device on the wall above the teal door; looks like a fire alarm, not confirmed.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -231,7 +292,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "b2kez6wsw32fm2x3ui593u3hc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with windows and brick-walled corridor doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -263,10 +334,32 @@
     0.6610969305038452
    ],
    "pano_path": "buildings/248351/panos/e2sshfx4y2905ix6ftx4a04bc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal-railed staircase descends beside the open stairwell in the right image.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y090_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Black metal railing along an open stair edge on the left side of the behind image.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "open stairwell railing beside exposed brick corridor wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -298,10 +391,20 @@
     0.839339554309845
    ],
    "pano_path": "buildings/248351/panos/hin3u4w6geed4busmhezqa00b.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "skylit corridor with open glass-door office on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -336,7 +439,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with tall windows facing trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -371,7 +484,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "kuc0fpmsgqxff63egrxrycfud",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "empty room with wood floor and outdoor windows to the right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -403,10 +526,27 @@
     -0.30761322379112244
    ],
    "pano_path": "buildings/248351/panos/ttfaxqy8cqt9n6d6as1rnmt9b.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase with metal railings rises along the left side of the right view, next to the corridor.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "staircase and reception desk corridor beside glass partition"
    },
    "is_entrance": false,
    "equipment": [],
@@ -438,13 +578,28 @@
     0.998112142086029
    ],
    "pano_path": "buildings/248351/panos/t2u6t8eiud4xcp2c42x01btkc.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with gray exit door and vertical blinds on right"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red wall-mounted device on the left wall partway down the corridor, possibly a fire alarm pull station",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y180_p+00.jpg"
+    },
     "fire_alarm_pull_station"
    ],
    "kind": "pano",
@@ -476,10 +631,20 @@
     0.9281988143920898
    ],
    "pano_path": "buildings/248351/panos/12f8kn11zfw2wn96unm8afdra.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor junction beside open room with outdoor-facing windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -514,7 +679,24 @@
    "room_label": "Hallway",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal staircase with railings rises to the left, with a handrail running along the walkway beside it.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "empty gray room with wood floor beside glass corridor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -546,13 +728,29 @@
     0.6805062294006348
    ],
    "pano_path": "buildings/248351/panos/82ts6dhtfzma9w6dacdauasqc.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-framed doorway with frosted panel beside open white door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical box on the far wall of the corridor, possibly a panel.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -584,10 +782,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "green planted wall beside floor-to-ceiling windows"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red box with white symbol on the lower left green wall, possibly a fire alarm pull station; text not readable",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -619,7 +833,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty studio room with mirror wall, wood floor, and black baseboards"
    },
    "is_entrance": false,
    "equipment": [],
@@ -651,10 +875,27 @@
     0.6902584433555603
    ],
    "pano_path": "buildings/248351/panos/ek69hib79y679emkasn79mcpa.jpg",
-   "room_label": "Hallway",
+   "room_label": "Lobby",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "lobby",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal staircase with railings on the left side of the right view, beside the open floor area.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "open lobby with metal staircase and reception counter"
    },
    "is_entrance": false,
    "equipment": [],
@@ -686,10 +927,20 @@
     0.9999867677688599
    ],
    "pano_path": "buildings/248351/panos/hkwbq6z6khztzfa74ih2rr18a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor with glass-walled office doors and an artwork panel at far end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -724,10 +975,33 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Stairs visible through a glass-framed door on the left side of the room.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "gray room with wood floor and electrical panel ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel mounted on the left wall near the ceiling.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -756,10 +1030,20 @@
     0.9758774638175964
    ],
    "pano_path": "buildings/248351/panos/335sk9308u4y28tc16qkrh0fc.jpg",
-   "room_label": null,
+   "room_label": "Lobby",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "lobby",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open room with brick wall and glass doors on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -794,7 +1078,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white column beside brick partition and glass-walled vestibule"
    },
    "is_entrance": false,
    "equipment": [],
@@ -829,10 +1123,43 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase rising along the right side beyond the glass wall",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y000_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Staircase with railings on the left side of the view",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y090_p+00.jpg"
+     },
+     {
+      "type": "step_or_level_change",
+      "note": "Raised wooden platform with a step up across the room",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "Glass-walled entry beside a staircase, with a wood-floored room and raised platform"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Electrical panel mounted on the left wall",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -864,7 +1191,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3ygfq6yfyyw3hi9x7u5rm2iqa",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small white room with outdoor window and door on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -896,10 +1233,20 @@
     0.9509807229042053
    ],
    "pano_path": "buildings/248351/panos/cmy5a3ggar53e9y634i7g2ira.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "empty open room with wood floor and outdoor-view window wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -931,10 +1278,20 @@
     0.7235304117202759
    ],
    "pano_path": "buildings/248351/panos/cmf2byk1bwx68u1ucgi1x328a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor with black-framed glass doors and speckled floor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -969,7 +1326,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "b2kez6wsw32fm2x3ui593u3hc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with outdoor window wall and brick-lined doorway on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1001,13 +1368,36 @@
     0.9886073470115662
    ],
    "pano_path": "buildings/248351/panos/fcr4r1m31h9knpi642fhy5qnb.jpg",
-   "room_label": "Utility Room",
+   "room_label": "Utility",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Utility Room"
+    "room_class": "Utility Room",
+    "room_type": "utility",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Loose cable bundles and debris lie on the floor at the lower left of the view",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "electrical panel wall with exposed cabling beside server racks"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Large gray electrical panel box on the wall with cabling above it",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1036,10 +1426,20 @@
     0.7943500280380249
    ],
    "pano_path": "buildings/248351/panos/hc1sknukdi9q9gzf3cgruhghd.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with floor-to-ceiling windows onto trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1071,10 +1471,32 @@
     0.6548837423324585
    ],
    "pano_path": "buildings/248351/panos/p4rqrybmxupcrn3w1b8380xxc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Open metal-railed staircase descends along the left side of the corridor.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y270_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Metal-railed stair run with open railings is visible behind the spot, descending.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "brick corridor beside metal-railed stairs down"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1106,13 +1528,29 @@
     0.9999154806137085
    ],
    "pano_path": "buildings/248351/panos/xwfdad39p9w4etd0p28s5881d.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long white corridor with speckled gray floor and dark door at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray wall-mounted electrical box visible on the far wall in the left view.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1141,10 +1579,27 @@
     0.699416995048523
    ],
    "pano_path": "buildings/248351/panos/zwk2xnhmkw9bdd3pypwrw7asd.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase with black metal railings and several steps rising in the corridor, visible in the behind image.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "low",
+    "landmark_text": "corridor with black-railed staircase and wall window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1179,10 +1634,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "mirrored dance studio with ballet barres and wood floor"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red device high near the ceiling at top of right image, possibly a pull station; uncertain",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1211,10 +1682,20 @@
     0.9571604132652283
    ],
    "pano_path": "buildings/248351/panos/5c05kk7rt9bcicpp6f8myrm9a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-framed doorway opening onto wood-floored office beyond"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1246,11 +1727,33 @@
     -0.49721625447273254
    ],
    "pano_path": "buildings/248351/panos/6m2pwuawh9s8idi5x9wed47yc.jpg",
-   "room_label": "Staircase",
+   "room_label": "Office",
    "attributes": {
     "room_id": "2573jk91479",
     "room_class": "Staircase",
-    "stairs": true
+    "stairs": true,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal-railed staircase on the right side of the open area behind the caller spot.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y180_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Railing and steps visible at the upper left edge, beyond a white wall.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "small office with outdoor window and staircase railing behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1285,7 +1788,24 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3ygfq6yfyyw3hi9x7u5rm2iqa",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Black railing spans the corridor beyond the doorway, suggesting a level change or drop ahead",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with green lower wall and corridor doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1317,10 +1837,20 @@
     0.9305303692817688
    ],
    "pano_path": "buildings/248351/panos/ax9etdt3p592c9ixhbu6e356d.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white door beside mirrored wood-floor room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1352,13 +1882,48 @@
     0.7961366176605225
    ],
    "pano_path": "buildings/248351/panos/gnsc1e2mhh2x1nngyqwfcwhsd.jpg",
-   "room_label": "Hallway",
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "EXIT TO LOBBY"
+    ],
+    "door_count": 4,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal staircase with railings on the right side toward the far end of the corridor.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "reception counter with fire extinguisher beside far glass door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red pull station mounted high on the left wall of the corridor.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y000_p+00.jpg"
+    },
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher mounted on the wall beside the far glass door.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y090_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Sign reading EXIT TO LOBBY above the door.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1390,7 +1955,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with wood floor and outdoor-view window wall on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1422,13 +1997,29 @@
     0.8166947960853577
    ],
    "pano_path": "buildings/248351/panos/nxszec0x6f28cmp120aqmgq2a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with ceiling light panels and dark doors"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red device on the wall near the door at the far end, appears to be a fire alarm",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1457,10 +2048,20 @@
     0.9999703764915466
    ],
    "pano_path": "buildings/248351/panos/qde6he93s40a116cy08s4dyeb.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open wood-floor room with glass wall partitions and windows facing trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1492,11 +2093,38 @@
     0.6336456537246704
    ],
    "pano_path": "buildings/248351/panos/tn64b5ra7fb2qwex4kbasz7ec.jpg",
-   "room_label": "Staircase",
+   "room_label": "Stairwell",
    "attributes": {
     "room_id": "2573jk91479",
     "room_class": "Staircase",
-    "stairs": true
+    "stairs": true,
+    "room_type": "stairwell",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Stairs with black metal railings lead down from this landing, so a stretcher cannot pass without a stair route.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y000_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Steps with metal railings run along the right side, visible as a stair run descending.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y090_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Carpeted stairs with a metal railing descend to the left of the landing.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted stairwell with black metal railings and glass-panel landing"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1528,13 +2156,30 @@
     -0.3354267179965973
    ],
    "pano_path": "buildings/248351/panos/ydy9wxb1ek7321pswirca8n0c.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "concrete",
+    "signage_text": [
+     "EMERGENCY EXIT ONLY"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "brick corner wall beside gray emergency exit door"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red manual fire alarm pull station on the left wall.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y000_p+00.jpg"
+    },
     "fire_alarm_pull_station"
    ],
    "kind": "pano",
@@ -1566,13 +2211,36 @@
     0.6848817467689514
    ],
    "pano_path": "buildings/248351/panos/05qprkwpmbqyweyhprc4iw9rc.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Visible step or ledge at the open doorway where the grey corridor floor meets the wood-floor room",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "wood-floor room with exterior windows; glass-walled corridor behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Grey electrical panel box on the far wall of the wood-floor room seen through the open doorway",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1601,10 +2269,32 @@
     0.9950546622276306
    ],
    "pano_path": "buildings/248351/panos/55td7hz9f6274p8icqk8xw63d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal stair railings along the right side suggest a staircase or level change beside the corridor.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y090_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Black metal railing on the left leads down to a lower level with a step or stair change.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "brick-walled corridor with black metal stair railing on the right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1639,7 +2329,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty open room with outdoor-view windows, closed white door in corridor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1671,11 +2371,33 @@
     0.5936019420623779
    ],
    "pano_path": "buildings/248351/panos/8x4qf8nks0abaw463310qp56a.jpg",
-   "room_label": "Staircase",
+   "room_label": "Stairwell",
    "attributes": {
     "room_id": "2573jk91479",
     "room_class": "Staircase",
-    "stairs": true
+    "stairs": true,
+    "room_type": "stairwell",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Carpeted staircase rises ahead with metal handrails on both sides, and a landing sits at the top.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y000_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Stair flight with metal railings runs up along the right side, toward an upper landing.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted staircase with metal railings and brick wall at top"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1710,7 +2432,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty office corner with outdoor window and white door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1742,13 +2474,29 @@
     0.6268556118011475
    ],
    "pano_path": "buildings/248351/panos/k64y8ws4dikh4t3y6dx2034pc.jpg",
-   "room_label": "Office",
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "q5n62dpd3mrc1exy2hr84132b",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small kitchenette with sink and checkered floor, corridor opening behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red round device on the wall above the checkered floor, possibly a fire alarm pull station; not clearly identified.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1777,10 +2525,27 @@
     0.7784469723701477
    ],
    "pano_path": "buildings/248351/panos/ne4m54zyz2cdidx2s41ra6rua.jpg",
-   "room_label": "Hallway",
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase with black metal railings visible beyond the counter.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "reception counter facing staircase with black metal railings"
    },
    "is_entrance": false,
    "equipment": [
@@ -1815,11 +2580,33 @@
     -0.13164420425891876
    ],
    "pano_path": "buildings/248351/panos/16dyzi80z2zcrh7862yp2xpic.jpg",
-   "room_label": "Staircase",
+   "room_label": "Reception",
    "attributes": {
     "room_id": "2573jk91479",
     "room_class": "Staircase",
-    "stairs": true
+    "stairs": true,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase descends to the left with black railings along the open side.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y000_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Staircase ascends with metal railings on both sides, leading to an upper landing.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "stairs beside curved reception counter"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1851,10 +2638,27 @@
     0.8395156860351562
    ],
    "pano_path": "buildings/248351/panos/2e3f6cxzgu6rtp2azg42x5tpd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Black metal railing runs down the middle-right of the corridor, suggesting a stair or step change beyond the glass doors.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "Glass double doors set in brick wall at corridor junction"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1886,10 +2690,20 @@
     0.9869199991226196
    ],
    "pano_path": "buildings/248351/panos/9psurmcaqzgu5xzgi32agbmsa.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with glass-walled office and dark doors"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1924,7 +2738,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "kuc0fpmsgqxff63egrxrycfud",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with floor-to-ceiling windows along one wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1956,13 +2780,36 @@
     -0.28619709610939026
    ],
    "pano_path": "buildings/248351/panos/df4xh9e7au0zbumtyqi7s43rb.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "n2yqr30509t7i8whfdf2htwic",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal-railed stairs with diagonal bars run along the walking path ahead",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "railed stairs by brick wall with fire extinguisher"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted fire extinguisher on the wall beside the door frame",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1991,10 +2838,20 @@
     0.8489251136779785
    ],
    "pano_path": "buildings/248351/panos/gf7ie678921b1w9p5ifmmd3db.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor with green door at far end and brick glass-walled office beside it"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2026,10 +2883,20 @@
     0.4758465886116028
    ],
    "pano_path": "buildings/248351/panos/gz5k8dk53pd94ekr64z9nc7na.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "checkered floor kitchen with sink and wall cabinets"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2061,10 +2928,20 @@
     0.944837212562561
    ],
    "pano_path": "buildings/248351/panos/kfyb63gg0gnbhp2bm94bi9eec.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white closed door beside window wall showing outdoor trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2099,7 +2976,24 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal railing and step-like surface visible beyond the open doorway at the back of the room",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "green living wall ahead and open doorway behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2134,10 +3028,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-floored studio with mirrored walls and handrail along window wall"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red device mounted high on the wall above the door, possibly a fire alarm; not clearly identifiable",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2166,10 +3076,20 @@
     0.967758297920227
    ],
    "pano_path": "buildings/248351/panos/w7h7bnqr0n6mna61bqndw2tcb.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-framed corridor door beside empty room with wood floor and windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2204,7 +3124,24 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Raised wooden platform crosses the floor in the middle of the room, a step up for a stretcher",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "open room with raised wooden platform and teal-framed windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2239,7 +3176,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with floor-to-ceiling street-facing windows and open white door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2274,7 +3221,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "19ab05tns5h6y4qm42esqqpea",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "teal-framed window overlooking trees and parked car"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2309,7 +3266,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "peina19mpqedsku6a3huu38md",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled doorway with black frame facing open area"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2341,10 +3308,20 @@
     0.9984814524650574
    ],
    "pano_path": "buildings/248351/panos/g8ptqi2ac9mwqx8wzngmuumra.jpg",
-   "room_label": "Hallway",
+   "room_label": "Office",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open white door beside outdoor-view window wall and wood-floored room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2376,10 +3353,20 @@
     0.7937784194946289
    ],
    "pano_path": "buildings/248351/panos/k8hp8841b5g3b3q4ri28np4uc.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room, outdoor windows right, brick-walled doorway behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2414,10 +3401,38 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Raised wood platform with a step up across the back of the room.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y180_p+00.jpg"
+     },
+     {
+      "type": "step_or_level_change",
+      "note": "Edge of the raised wood platform visible at the lower left of the image.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "gray room with raised wood platform and glass-walled office"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel mounted on the left wall near the open door.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2446,10 +3461,20 @@
     0.7398022413253784
    ],
    "pano_path": "buildings/248351/panos/pgy5pcez4tnbbdmum97q73a0a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled corridor with outdoor-facing windows at its end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2484,10 +3509,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "green wall panel facing floor-to-ceiling outdoor-view windows"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Possible small wall-mounted box on green wall at left; uncertain identification",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2519,7 +3560,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with wood floor facing glass-paneled corridor door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2554,10 +3605,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "b2kez6wsw32fm2x3ui593u3hc",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open wood-floor room with glass wall to brick corridor and gray door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red device mounted on the wall above and beside the gray door",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2589,10 +3656,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "n2yqr30509t7i8whfdf2htwic",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "white wall with framed window and wall-mounted fire extinguisher"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted fire extinguisher on the wall below a red sign, near the window",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2621,10 +3704,20 @@
     0.9000004529953003
    ],
    "pano_path": "buildings/248351/panos/y8aw3nzaf2ufcbfz589crx0pb.jpg",
-   "room_label": "Utility Room",
+   "room_label": "Utility",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Utility Room"
+    "room_class": "Utility Room",
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "utility room with electrical panels and plywood-backed server rack"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2656,10 +3749,20 @@
     0.7343043684959412
    ],
    "pano_path": "buildings/248351/panos/8g77ah8pc5n2sd78nczirb85c.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Corridor with railed staircase, reception counter behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2694,7 +3797,29 @@
    "room_label": null,
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Metal staircase with railing descends along the right side of the view.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y180_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Black railing borders an open drop with stairs descending to the left of the corridor.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with exposed brick wall beside open stair railing"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2726,10 +3851,32 @@
     0.828517735004425
    ],
    "pano_path": "buildings/248351/panos/s1xrrgpufimg65qmqr9k1wkia.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Open stairwell edge with a railing in the right-hand view; floor drops to a lower level beyond the rail.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y090_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Stairs descend beside a railing; the stair opening is in the behind view.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "corridor landing beside open stairwell railing with outdoor window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2761,10 +3908,20 @@
     -0.07236485928297043
    ],
    "pano_path": "buildings/248351/panos/u9me8tqkpbbhm0awbg558r8ib.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open wood-floor room with tall street-facing windows and glass partition"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2799,7 +3956,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with window blinds and window overlooking trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2831,13 +3998,34 @@
     0.9996309280395508
    ],
    "pano_path": "buildings/248351/panos/11qs98shms46qsy5z7e45tefb.jpg",
-   "room_label": "Utility Room",
+   "room_label": "Utility",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Utility Room"
+    "room_class": "Utility Room",
+    "room_type": "utility",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "electrical panel wall with cabling beside a single chair"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Large electrical panel with breakers and cabling on the wall ahead.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y000_p+00.jpg"
+    },
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher mounted on the wall beside the reception desk.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "note": "telephone equipment room; the door beside the lobby doors is signed TEL. EQUIP",
@@ -2870,10 +4058,26 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty wood-floor room with outdoor windows beside reception counter"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red wall-mounted device on the far wall of the corridor view; exact type is uncertain.",
+     "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2902,11 +4106,33 @@
     0.5968513488769531
    ],
    "pano_path": "buildings/248351/panos/4he4cbbm2ysypb2snk150kpnc.jpg",
-   "room_label": "Staircase",
+   "room_label": "Stairwell",
    "attributes": {
     "room_id": "2573jk91479",
     "room_class": "Staircase",
-    "stairs": true
+    "stairs": true,
+    "room_type": "stairwell",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Carpeted stair treads run along the right side with a black metal railing, leading up or down out of view.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y000_p+00.jpg"
+     },
+     {
+      "type": "stairs",
+      "note": "Carpeted staircase with black metal railings rises diagonally toward the upper right, next to a vertical steel post.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted staircase with black metal railings beside open stairwell"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2941,7 +4167,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "qaw2kb68nca",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass double doors opening to open office space"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2976,7 +4212,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "19ab05tns5h6y4qm42esqqpea",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with wall of windows facing trees and a glass door with blinds"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3008,10 +4254,20 @@
     0.816045343875885
    ],
    "pano_path": "buildings/248351/panos/5shau7ksc3hrhccwq86x6h16b.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with glass-walled office on right and window showing trees"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3046,7 +4302,24 @@
    "room_label": "Hallway",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Staircase with black metal railings and carpeted treads rises behind the spot, beside a doorway.",
+      "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "Staircase with black railings beside a doorway"
    },
    "is_entrance": false,
    "equipment": [],

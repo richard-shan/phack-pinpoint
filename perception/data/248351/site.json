@@ -1,0 +1,262 @@
+{
+ "building_id": "248351",
+ "address": "3800 Barham Blvd, Los Angeles, CA",
+ "latlon": [
+  34.143825,
+  -118.34073
+ ],
+ "location_source": "costar:commercial-property/248351",
+ "tile_path": "cache/vexcel/248351/ortho.jpg",
+ "tile_size": [
+  2370,
+  2451
+ ],
+ "tile_bounds_lonlat": [
+  -118.3415514,
+  34.1431248,
+  -118.3399626,
+  34.1444842
+ ],
+ "meters_per_pixel": 0.0618,
+ "tile_capture": {
+  "collection": "us-ca-losangeles_rf07-2026",
+  "layer": "urban-r",
+  "captured": [
+   "2026-07-02T21:48:15",
+   "2026-07-09T16:57:47"
+  ],
+  "note": "newest collection at this point; the tile is the best available of urban,urban-r,wide-area,urban-g"
+ },
+ "evidence_path": "cache/vexcel/248351/overlay.jpg",
+ "oblique_paths": {
+  "oblique-north": "cache/vexcel/248351/oblique-north.jpg",
+  "oblique-south": "cache/vexcel/248351/oblique-south.jpg",
+  "oblique-east": "cache/vexcel/248351/oblique-east.jpg",
+  "oblique-west": "cache/vexcel/248351/oblique-west.jpg"
+ },
+ "footprint_wkt": "POLYGON ((-118.340941 34.14356, -118.34095 34.143569, -118.340961 34.143577, -118.340961 34.143578, -118.34098 34.143595, -118.340991 34.143603, -118.340992 34.143603, -118.34102 34.143626, -118.34102 34.143627, -118.341034 34.143638, -118.341035 34.143638, -118.341035 34.143639, -118.341037 34.14364, -118.341048 34.14365, -118.341049 34.14365, -118.341053 34.143654, -118.341061 34.14366, -118.341063 34.143663, -118.341063 34.143666, -118.341061 34.143669, -118.341061 34.14367, -118.341059 34.14367, -118.341059 34.143671, -118.341057 34.143672, -118.341053 34.143676, -118.341052 34.143676, -118.341052 34.143677, -118.341051 34.143678, -118.340935 34.143774, -118.340935 34.143775, -118.340981 34.143814, -118.340983 34.143815, -118.340984 34.143816, -118.340984 34.143817, -118.340987 34.14382, -118.340987 34.143825, -118.340935 34.143869, -118.340928 34.143874, -118.340928 34.143875, -118.340927 34.143875, -118.340924 34.143877, -118.340924 34.143878, -118.340875 34.143919, -118.340874 34.143919, -118.340681 34.144079, -118.340674 34.14408, -118.340475 34.143918, -118.340473 34.143917, -118.340472 34.143916, -118.340472 34.143915, -118.340453 34.143899, -118.340451 34.143895, -118.340452 34.143894, -118.340451 34.143894, -118.340461 34.143886, -118.340461 34.143885, -118.340507 34.143847, -118.340512 34.143842, -118.340513 34.143842, -118.340532 34.143826, -118.340533 34.143826, -118.340566 34.143798, -118.340567 34.143798, -118.34058 34.143787, -118.340581 34.143787, -118.340587 34.143781, -118.34059 34.14378, -118.340609 34.143764, -118.34061 34.143764, -118.340611 34.143762, -118.340642 34.143737, -118.340644 34.143736, -118.340644 34.143735, -118.340645 34.143734, -118.340646 34.143734, -118.340688 34.143697, -118.340688 34.143696, -118.340764 34.143632, -118.340766 34.143629, -118.340782 34.143615, -118.340784 34.143614, -118.340804 34.143597, -118.340807 34.143596, -118.340833 34.143577, -118.340833 34.143576, -118.340834 34.143576, -118.340835 34.143574, -118.340847 34.143565, -118.340852 34.14356, -118.340856 34.143557, -118.340857 34.143556, -118.340857 34.143555, -118.340862 34.143551, -118.340862 34.14355, -118.340865 34.143549, -118.340873 34.143542, -118.340889 34.14353, -118.340892 34.143529, -118.3409 34.143529, -118.340905 34.143533, -118.340908 34.143534, -118.340912 34.143537, -118.340913 34.143536, -118.340913 34.143533, -118.340929 34.143533, -118.340933 34.143535, -118.340935 34.143535, -118.340941 34.143537, -118.340945 34.143539, -118.340947 34.143539, -118.34095 34.143542, -118.34095 34.143543, -118.340951 34.143543, -118.340952 34.143545, -118.340956 34.143548, -118.34096 34.143547, -118.340965 34.143543, -118.340965 34.143542, -118.340968 34.14354, -118.340968 34.143539, -118.340971 34.143539, -118.340975 34.143542, -118.340975 34.143544, -118.340978 34.143545, -118.340988 34.143553, -118.340988 34.143554, -118.34099 34.143555, -118.340997 34.143563, -118.341002 34.143567, -118.341002 34.143568, -118.341004 34.143569, -118.341004 34.14357, -118.341005 34.14357, -118.341006 34.143572, -118.34101 34.143576, -118.341012 34.143577, -118.341004 34.143577, -118.341004 34.143574, -118.340999 34.143572, -118.340997 34.14357, -118.340992 34.143568, -118.340985 34.143568, -118.34098 34.14357, -118.340975 34.143569, -118.340976 34.143567, -118.340973 34.143565, -118.34097 34.143567, -118.340973 34.143569, -118.340973 34.14357, -118.34097 34.143572, -118.340967 34.143572, -118.340963 34.143569, -118.340963 34.143568, -118.340962 34.143567, -118.340955 34.143567, -118.340954 34.143566, -118.340954 34.143565, -118.340947 34.143559, -118.340942 34.143557, -118.34094 34.143555, -118.340935 34.143553, -118.340934 34.143554, -118.340934 34.143555, -118.340936 34.143556, -118.340936 34.143557, -118.340939 34.143558, -118.34094 34.14356, -118.340941 34.14356))",
+ "ground_elevation_m": 165.922,
+ "entrances": [
+  {
+   "kind": "main",
+   "covered": true,
+   "description": "Southwest corner entrance at the street intersection; glass canopy/awning visible in east and north side views with a walkway and landscaped plaza leading from the corner sidewalk.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.5,
+   "side": "southwest",
+   "pixel": [
+    896.3,
+    1649.3
+   ],
+   "latlon": [
+    34.1435694,
+    -118.3409506
+   ],
+   "entrance_id": "E1",
+   "evidence_path": "cache/vexcel/248351/crops/E1.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "Signage and storefront-style glass at the west end of the corner facade with a sidewalk approach; possible second door.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.7,
+   "side": "southwest",
+   "pixel": [
+    799.2,
+    1553.8
+   ],
+   "latlon": [
+    34.1436224,
+    -118.3410156
+   ],
+   "entrance_id": "E2",
+   "evidence_path": "cache/vexcel/248351/crops/E2.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "A walkway along the southeast facade from the boulevard sidewalk suggests a possible side door; this is not confirmed.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.3,
+   "side": "southeast",
+   "pixel": [
+    1425.0,
+    1278.9
+   ],
+   "latlon": [
+    34.1437749,
+    -118.3405961
+   ],
+   "entrance_id": "E3",
+   "evidence_path": "cache/vexcel/248351/crops/E3.jpg"
+  }
+ ],
+ "staging": [
+  {
+   "staging_id": "S1",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of the southern boulevard just east of the corner, next to the corner entrance plaza.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1019.1,
+    1789.2
+   ],
+   "latlon": [
+    34.1434918,
+    -118.3408682
+   ],
+   "nearest_entrance": "E1",
+   "meters_to_entrance": 11.5,
+   "evidence_path": "cache/vexcel/248351/crops/S1.jpg"
+  },
+  {
+   "staging_id": "S2",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of the western avenue alongside the building's west corner, close to the corner entrance.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    639.9,
+    1519.6
+   ],
+   "latlon": [
+    34.1436414,
+    -118.3411224
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 10.1,
+   "evidence_path": "cache/vexcel/248351/crops/S2.jpg"
+  },
+  {
+   "staging_id": "S3",
+   "kind": "street",
+   "vehicle": "ambulance",
+   "description": "Curb lane of the boulevard along the southeast frontage.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1374.6,
+    1568.6
+   ],
+   "latlon": [
+    34.1436142,
+    -118.3406299
+   ],
+   "nearest_entrance": "E3",
+   "meters_to_entrance": 18.2,
+   "evidence_path": "cache/vexcel/248351/crops/S3.jpg"
+  }
+ ],
+ "obstructions": [
+  {
+   "type": "median_or_curb",
+   "description": "Curved curb, planter beds and a triangular pedestrian island at the intersection between the street and the corner entrance.",
+   "confidence": 0.8,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    782.1,
+    1715.7
+   ],
+   "latlon": [
+    34.1435326,
+    -118.3410271
+   ],
+   "obstruction_id": "O1",
+   "evidence_path": "cache/vexcel/248351/crops/O1.jpg"
+  },
+  {
+   "type": "trees",
+   "description": "Mature trees and landscaping line the southeast frontage, limiting access to that facade.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1374.6,
+    1470.6
+   ],
+   "latlon": [
+    34.1436686,
+    -118.3406299
+   ],
+   "obstruction_id": "O2",
+   "evidence_path": "cache/vexcel/248351/crops/O2.jpg"
+  },
+  {
+   "type": "other",
+   "description": "Landscaped planters at the corner plaza narrow the stretcher path to the door.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    876.9,
+    1617.7
+   ],
+   "latlon": [
+    34.143587,
+    -118.3409636
+   ],
+   "obstruction_id": "O3",
+   "evidence_path": "cache/vexcel/248351/crops/O3.jpg"
+  }
+ ],
+ "vehicle_access": "There is no on-site lot or drive visible. Access is from the curb lanes of the two arterials meeting at the building's southwest corner, a multi-lane avenue to the west and a boulevard to the southeast. The stretcher path crosses the sidewalk and corner plaza to the canopy entrance.",
+ "summary": "Six-story glass office building at a busy corner. The likely main entrance is the canopied southwest corner facing the intersection. Stage in the boulevard or avenue curb lane near the corner. Watch for curbs, planters and the traffic island at the intersection, and for trees along the southeast side.",
+ "vision_model": "claude-opus-5-5",
+ "notes": [
+  "Entrances are inferred from overhead signs (canopies, walkways, recesses), snapped to the building outline. Confirm against the interior scan before relying on one.",
+  "Pixel coordinates are [x, y] in the image at tile_path, origin top-left, north up.",
+  "The yellow outline is the ground footprint. Roofs of taller buildings appear shifted a few metres from it because the overhead image is not perfectly vertical."
+ ],
+ "disaster": {
+  "covered": true,
+  "events": [
+   {
+    "event": "us-ca-losangeles-fire-2025",
+    "event_name": "Los Angeles wildfires (January 2025)",
+    "collection": "graydata-720",
+    "captured": [
+     "2025-02-02T20:16:16",
+     "2025-02-02T22:03:47"
+    ],
+    "source": "vexcel:graysky/graydata-720",
+    "before_path": "cache/vexcel/248351/ortho.jpg",
+    "before_after_path": "cache/vexcel/248351/disaster_graydata-720_before_after.jpg",
+    "after_path": "cache/vexcel/248351/disaster_graydata-720.jpg",
+    "water_visible": false,
+    "damage_visible": false,
+    "approach_affected": "none",
+    "obstructions": [],
+    "summary": "No disaster effects are visible around the outlined building in the 2025-02-02 image. The roof and structure look intact, with no burn scars, debris, or standing water. The adjacent streets and the corner plaza appear clear, with normal traffic moving on them, so the approach is open. The differences from the recent capture are ordinary ones: cars, shadows, lighting and vegetation tone.",
+    "evidence_path": "cache/vexcel/248351/disaster_graydata-720_overlay.jpg",
+    "image_size": [
+     2370,
+     2451
+    ]
+   }
+  ],
+  "note": "Coverage means a post-event flight imaged this ground. It does not mean the building was damaged; see each event's findings."
+ }
+}

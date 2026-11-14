@@ -25,7 +25,7 @@
     "y": -0.285,
     "z": -11.072
    },
-   "label": "Scan 0 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 0 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "dasb3dy976au0uga6yw2y1qea",
@@ -36,7 +36,7 @@
     "y": 0.013,
     "z": -9.54
    },
-   "label": "Scan 1 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 1 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "ei0876yem1p81yq9xzdh2n2tc",
@@ -58,7 +58,7 @@
     "y": -0.349,
     "z": 4.155
    },
-   "label": "Scan 3 \u00b7 Floor 3"
+   "label": "Scan 3 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "qt2pr2bwq0b311zb27r8wrweb",
@@ -69,7 +69,7 @@
     "y": -0.28,
     "z": -13.231
    },
-   "label": "Scan 4 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 4 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "u226dbirissbeisd3u6pxmgdb",
@@ -91,7 +91,7 @@
     "y": 0.022,
     "z": -7.743
    },
-   "label": "Scan 6 \u00b7 Floor 3"
+   "label": "Scan 6 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "z21xf42csctpmc0x93fg2dacb",
@@ -102,7 +102,7 @@
     "y": 0.009,
     "z": -7.436
    },
-   "label": "Scan 7 \u00b7 Floor 3"
+   "label": "Scan 7 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "8ts003pki3hw0rq4rqz2eecac",
@@ -113,7 +113,7 @@
     "y": 0.004,
     "z": -1.798
    },
-   "label": "Scan 8 \u00b7 Floor 3"
+   "label": "Scan 8 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "cb39hmrrannkhh6466ikep2eb",
@@ -124,7 +124,7 @@
     "y": -0.27,
     "z": -11.031
    },
-   "label": "Scan 9 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 9 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "gkws9uei491z2md1rwzpiftka",
@@ -146,7 +146,7 @@
     "y": -0.323,
     "z": 5.558
    },
-   "label": "Scan 11 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 11 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "kuxs6sihfcg69hgn440uumbqb",
@@ -157,7 +157,7 @@
     "y": -0.27,
     "z": -3.642
    },
-   "label": "Scan 12 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 12 \u00b7 Floor 3 \u00b7 Waiting room"
   },
   {
    "id": "n3wn7hmp3cwey7eat3yegz76d",
@@ -179,7 +179,7 @@
     "y": -0.284,
     "z": 5.587
    },
-   "label": "Scan 14 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 14 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "xuhtwbmsxqp8ykd84qhkdn0hc",
@@ -201,7 +201,7 @@
     "y": -0.269,
     "z": -4.732
    },
-   "label": "Scan 16 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 16 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "3upuw151phiww9qg7m7c7a8ec",
@@ -223,7 +223,7 @@
     "y": 0.016,
     "z": 3.333
    },
-   "label": "Scan 18 \u00b7 Floor 3"
+   "label": "Scan 18 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "8k58biu4ukesmngcg1fc59e7a",
@@ -245,7 +245,7 @@
     "y": -0.274,
     "z": -9.747
    },
-   "label": "Scan 20 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 20 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "9kh8win2mfxreasxsiguqitud",
@@ -256,7 +256,7 @@
     "y": -0.25,
     "z": 0.763
    },
-   "label": "Scan 21 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 21 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "a4d0zmyhma3bhn0addm8y2feb",
@@ -311,7 +311,7 @@
     "y": -0.281,
     "z": -9.659
    },
-   "label": "Scan 26 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 26 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "h4za5cw31pb999pzhr2za317d",
@@ -333,7 +333,7 @@
     "y": -0.238,
     "z": 3.945
    },
-   "label": "Scan 28 \u00b7 Floor 3"
+   "label": "Scan 28 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "mcm8nepmnihwb52189zu1m9fa",
@@ -344,7 +344,7 @@
     "y": -0.234,
     "z": 5.568
    },
-   "label": "Scan 29 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 29 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "nm2t27hwccyhk3xahq0pbzh1d",
@@ -355,7 +355,7 @@
     "y": -0.003,
     "z": -4.574
    },
-   "label": "Scan 30 \u00b7 Floor 3"
+   "label": "Scan 30 \u00b7 Floor 3 \u00b7 Office"
   },
   {
    "id": "p48c8gwcr16epcr7q2hm89xzc",
@@ -366,7 +366,7 @@
     "y": -0.258,
     "z": -5.429
    },
-   "label": "Scan 31 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 31 \u00b7 Floor 3 \u00b7 Reception"
   },
   {
    "id": "qmfm6fcimhkg6z72ng4b8ffsd",
@@ -377,7 +377,7 @@
     "y": -0.351,
     "z": 4.526
    },
-   "label": "Scan 32 \u00b7 Floor 3"
+   "label": "Scan 32 \u00b7 Floor 3 \u00b7 Storage"
   },
   {
    "id": "u4cyy1a4izt8fpmrftzrffd9b",
@@ -388,7 +388,7 @@
     "y": -0.223,
     "z": 3.979
    },
-   "label": "Scan 33 \u00b7 Floor 3"
+   "label": "Scan 33 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "xcm6f6xnwu2zqd9hxwqd6wt1a",
@@ -399,7 +399,7 @@
     "y": -0.351,
     "z": 3.653
    },
-   "label": "Scan 34 \u00b7 Floor 3"
+   "label": "Scan 34 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "ywcd5qh8xb5htmq1ifg4ph4ac",
@@ -410,7 +410,7 @@
     "y": 0.001,
     "z": 1.251
    },
-   "label": "Scan 35 \u00b7 Floor 3"
+   "label": "Scan 35 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "04kd3gsp391ff9q58y8un986b",
@@ -421,7 +421,7 @@
     "y": 0.015,
     "z": -9.699
    },
-   "label": "Scan 36 \u00b7 Floor 3"
+   "label": "Scan 36 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "3c4kn6352xtz861itpezuptac",
@@ -443,7 +443,7 @@
     "y": -0.009,
     "z": 1.356
    },
-   "label": "Scan 38 \u00b7 Floor 3"
+   "label": "Scan 38 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "6c7t910cyq4ckc1r7pa6xck2b",
@@ -454,7 +454,7 @@
     "y": 0.002,
     "z": -8.218
    },
-   "label": "Scan 39 \u00b7 Floor 3"
+   "label": "Scan 39 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "6c4cfz95wyg4sn133x1zbe5rb",
@@ -465,7 +465,7 @@
     "y": 0.03,
     "z": -6.669
    },
-   "label": "Scan 40 \u00b7 Floor 3"
+   "label": "Scan 40 \u00b7 Floor 3 \u00b7 Storage"
   },
   {
    "id": "9cxxyn11q568bmui7p2i418bc",
@@ -487,7 +487,7 @@
     "y": -0.073,
     "z": -9.673
    },
-   "label": "Scan 42 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 42 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "e5k5pnhyuwqd6byccxb4fkudd",
@@ -520,7 +520,7 @@
     "y": -0.266,
     "z": -2.418
    },
-   "label": "Scan 45 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 45 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "exgzawdp99ytggmhaeersufhc",
@@ -531,7 +531,7 @@
     "y": -0.231,
     "z": 4.225
    },
-   "label": "Scan 46 \u00b7 Floor 3"
+   "label": "Scan 46 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "h5cs8dr54833site2prsbp04a",
@@ -575,7 +575,7 @@
     "y": -0.267,
     "z": -11.108
    },
-   "label": "Scan 50 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 50 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "0diiu02wp1y12a9uyafqiyy2b",
@@ -597,7 +597,7 @@
     "y": -0.238,
     "z": 5.585
    },
-   "label": "Scan 52 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 52 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "0xwmkmdb5py95hhtgp7xquqkc",
@@ -608,7 +608,7 @@
     "y": -0.23,
     "z": 5.529
    },
-   "label": "Scan 53 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 53 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "35cf5a9kub057mhuqpu9bug3d",
@@ -619,7 +619,7 @@
     "y": -0.268,
     "z": -3.042
    },
-   "label": "Scan 54 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 54 \u00b7 Floor 3 \u00b7 Reception"
   },
   {
    "id": "35nkicfub0ibi8dsmzmmwmykb",
@@ -630,7 +630,7 @@
     "y": 0.016,
     "z": -9.722
    },
-   "label": "Scan 55 \u00b7 Floor 3"
+   "label": "Scan 55 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "9nix76tkuw2kxtadk1iap4m8d",
@@ -641,7 +641,7 @@
     "y": -0.276,
     "z": -13.737
    },
-   "label": "Scan 56 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 56 \u00b7 Floor 3 \u00b7 Conference room"
   },
   {
    "id": "95kncws2p5t5xrws39pc27xgd",
@@ -652,7 +652,7 @@
     "y": 0.001,
     "z": -1.192
    },
-   "label": "Scan 57 \u00b7 Floor 3"
+   "label": "Scan 57 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "ay2k5k6fsye6u3izzx2xsed9c",
@@ -663,7 +663,7 @@
     "y": -0.276,
     "z": -13.048
    },
-   "label": "Scan 58 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 58 \u00b7 Floor 3 \u00b7 Kitchen break room"
   },
   {
    "id": "aebyk64g54x8fq8293up71mra",
@@ -674,7 +674,7 @@
     "y": -0.245,
     "z": 5.571
    },
-   "label": "Scan 59 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 59 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "beiz3hh5gph2eyrdcf5fztrma",
@@ -685,7 +685,7 @@
     "y": -0.33,
     "z": -11.14
    },
-   "label": "Scan 60 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 60 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "dp5a2irdhb9cxu1bwu5tidfbb",
@@ -696,7 +696,7 @@
     "y": -0.001,
     "z": -4.234
    },
-   "label": "Scan 61 \u00b7 Floor 3"
+   "label": "Scan 61 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "ep6ir718kms5qtghirzdu66cc",
@@ -718,7 +718,7 @@
     "y": -0.287,
     "z": -11.109
    },
-   "label": "Scan 63 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 63 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "gy3pbbsyfykqzn73r9bqe730b",
@@ -751,7 +751,7 @@
     "y": 0.011,
     "z": -6.445
    },
-   "label": "Scan 66 \u00b7 Floor 3"
+   "label": "Scan 66 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "pyceuntsxa242bbx3tag8thpc",
@@ -773,7 +773,7 @@
     "y": 0.01,
     "z": -7.436
    },
-   "label": "Scan 68 \u00b7 Floor 3"
+   "label": "Scan 68 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "tpxbcp5zuixcqeeem8cg6dzta",
@@ -784,7 +784,7 @@
     "y": -0.308,
     "z": -11.213
    },
-   "label": "Scan 69 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 69 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "zpnqhnc1ar565q3n943u2mbzc",
@@ -795,7 +795,7 @@
     "y": -0.004,
     "z": -0.655
    },
-   "label": "Scan 70 \u00b7 Floor 3"
+   "label": "Scan 70 \u00b7 Floor 3 \u00b7 Storage"
   },
   {
    "id": "zpx4qias1i5x4ye9fp6bc6bkd",
@@ -828,7 +828,7 @@
     "y": -0.272,
     "z": -6.994
    },
-   "label": "Scan 73 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 73 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "aqws3fnuntku01dh55t95fk4b",
@@ -839,7 +839,7 @@
     "y": -0.245,
     "z": 3.912
    },
-   "label": "Scan 74 \u00b7 Floor 3"
+   "label": "Scan 74 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "czy828qe2g6udwze824uy84db",
@@ -850,7 +850,7 @@
     "y": -0.006,
     "z": -1.791
    },
-   "label": "Scan 75 \u00b7 Floor 3"
+   "label": "Scan 75 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "d7s74mukruxr3yunybewedmtb",
@@ -861,7 +861,7 @@
     "y": -0.008,
     "z": -1.181
    },
-   "label": "Scan 76 \u00b7 Floor 3"
+   "label": "Scan 76 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "ffq6kygt0ys03u6uwcw8m744b",
@@ -883,7 +883,7 @@
     "y": -0.349,
     "z": -11.163
    },
-   "label": "Scan 78 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 78 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "hfmiksyyg215fhayqcnuh26ga",
@@ -905,7 +905,7 @@
     "y": -0.27,
     "z": -12.524
    },
-   "label": "Scan 80 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 80 \u00b7 Floor 3 \u00b7 Conference room"
   },
   {
    "id": "pz5dxsc53mthwcqyrq86c531a",
@@ -927,7 +927,7 @@
     "y": -0.238,
     "z": 5.553
    },
-   "label": "Scan 82 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 82 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "rzz4dkgypmzqqi8a49fnsxuha",
@@ -960,7 +960,7 @@
     "y": -0.258,
     "z": -10.949
    },
-   "label": "Scan 85 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 85 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "wzz2zxux3i3wb5ym11te8d8ra",
@@ -982,7 +982,7 @@
     "y": 0.016,
     "z": -9.726
    },
-   "label": "Scan 87 \u00b7 Floor 3"
+   "label": "Scan 87 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "zqg3dxd8xmqku20umabrniu2a",
@@ -993,7 +993,7 @@
     "y": 0.015,
     "z": -9.704
    },
-   "label": "Scan 88 \u00b7 Floor 3"
+   "label": "Scan 88 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "1ft8esuxc0t26wkpcai7b1eha",
@@ -1004,7 +1004,7 @@
     "y": 0.016,
     "z": -9.54
    },
-   "label": "Scan 89 \u00b7 Floor 3"
+   "label": "Scan 89 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "2ftrkcxxf1pzhsz7aawezwb5b",
@@ -1015,7 +1015,7 @@
     "y": -0.273,
     "z": -13.461
    },
-   "label": "Scan 90 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 90 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "6f8mdz7pubc9d82qmbykng50d",
@@ -1037,7 +1037,7 @@
     "y": -0.27,
     "z": -9.549
    },
-   "label": "Scan 92 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 92 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "hggrzssiu9p53m7wbi74ya8td",
@@ -1048,7 +1048,7 @@
     "y": -0.334,
     "z": 5.363
    },
-   "label": "Scan 93 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 93 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "mr2i6z7s300795fw4d5wgeusa",
@@ -1059,7 +1059,7 @@
     "y": -0.005,
     "z": 1.58
    },
-   "label": "Scan 94 \u00b7 Floor 3"
+   "label": "Scan 94 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "m0i7s1ig55x2yrs35bf8pf70d",
@@ -1081,7 +1081,7 @@
     "y": -0.277,
     "z": -12.54
    },
-   "label": "Scan 96 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 96 \u00b7 Floor 3 \u00b7 Conference room"
   },
   {
    "id": "p040basywgt3dp0433phkpuza",
@@ -1092,7 +1092,7 @@
     "y": -0.305,
     "z": 5.584
    },
-   "label": "Scan 97 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 97 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "sgdqc4385q67t59k96xmmw2ya",
@@ -1103,7 +1103,7 @@
     "y": -0.274,
     "z": -11.212
    },
-   "label": "Scan 98 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 98 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "sgh1z60uu5pa2d4c584ah10za",
@@ -1114,7 +1114,7 @@
     "y": -0.003,
     "z": 1.349
    },
-   "label": "Scan 99 \u00b7 Floor 3"
+   "label": "Scan 99 \u00b7 Floor 3 \u00b7 Storage"
   },
   {
    "id": "t8ug2cp93umssn3x6w4up2dec",
@@ -1125,7 +1125,7 @@
     "y": -0.28,
     "z": 5.573
    },
-   "label": "Scan 100 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 100 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "w8r5nesytbxkdbpau2w0bu9sd",
@@ -1136,7 +1136,7 @@
     "y": -0.26,
     "z": 0.014
    },
-   "label": "Scan 101 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 101 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "w81rdadrhc93pw37ruiepsgcb",
@@ -1191,7 +1191,7 @@
     "y": -0.364,
     "z": -11.184
    },
-   "label": "Scan 106 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 106 \u00b7 Floor 3 \u00b7 Open office"
   },
   {
    "id": "z093kzkb699snyi86g8sw7qdc",
@@ -1213,7 +1213,7 @@
     "y": -0.001,
     "z": 1.289
    },
-   "label": "Scan 108 \u00b7 Floor 3"
+   "label": "Scan 108 \u00b7 Floor 3 \u00b7 Storage"
   },
   {
    "id": "68q3s6xhkr9g72mni9rpds0dc",
@@ -1224,7 +1224,7 @@
     "y": -0.283,
     "z": -11.946
    },
-   "label": "Scan 109 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 109 \u00b7 Floor 3 \u00b7 Waiting room"
   },
   {
    "id": "8gc6kik1mg5eec6061rqt2r5a",
@@ -1235,7 +1235,7 @@
     "y": -0.27,
     "z": -7.094
    },
-   "label": "Scan 110 \u00b7 Floor 3 \u00b7 Kitchen"
+   "label": "Scan 110 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "98fgxu6w26k5dwmq702i03red",
@@ -1268,7 +1268,7 @@
     "y": 0.011,
     "z": 0.629
    },
-   "label": "Scan 113 \u00b7 Floor 3"
+   "label": "Scan 113 \u00b7 Floor 3 \u00b7 Utility"
   },
   {
    "id": "p9k8ydhh1aw4gf9gbkf9f1s0c",
@@ -1279,7 +1279,7 @@
     "y": -0.005,
     "z": -4.248
    },
-   "label": "Scan 114 \u00b7 Floor 3"
+   "label": "Scan 114 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "p99ku5qicywd9f9mndq6is5ac",
@@ -1301,7 +1301,7 @@
     "y": -0.252,
     "z": -11.056
    },
-   "label": "Scan 116 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 116 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "ys2ztxk5nxumrfac7pbgarxac",
@@ -1312,7 +1312,7 @@
     "y": -0.283,
     "z": -12.735
    },
-   "label": "Scan 117 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 117 \u00b7 Floor 3 \u00b7 Waiting room"
   },
   {
    "id": "yhgt6kkeb1e9685rrxpxkuc2a",
@@ -1323,7 +1323,7 @@
     "y": -0.233,
     "z": 5.206
    },
-   "label": "Scan 118 \u00b7 Floor 3 \u00b7 Hallway"
+   "label": "Scan 118 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "39wyr10nrfepp3fh34p4gpu5d",
@@ -1334,7 +1334,7 @@
     "y": -0.273,
     "z": -5.767
    },
-   "label": "Scan 119 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 119 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "3hnzt48tmnetw4wp23sqzxk3a",
@@ -1345,7 +1345,7 @@
     "y": -0.28,
     "z": -11.031
    },
-   "label": "Scan 120 \u00b7 Floor 3 \u00b7 Office"
+   "label": "Scan 120 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "7h0hmnn48neyy3w092eaqzbpd",
@@ -1367,7 +1367,7 @@
     "y": -0.009,
     "z": 1.452
    },
-   "label": "Scan 122 \u00b7 Floor 3"
+   "label": "Scan 122 \u00b7 Floor 3 \u00b7 Corridor"
   },
   {
    "id": "9h6g487pxixdi5yw6kd6i3dfb",
@@ -2576,7 +2576,7 @@
  "scope": "3rd floor only: Suite 301 (Xfernet offices and data hall), the vestibule outside its double doors, and about 50 m of the terrazzo corridor along the suite's south side. The elevator hall, the stairwells, the corridor west of the last sweep, the rooms behind the 'Protected Area' doors on the corridor's south side and the ramp beyond the data hall's west glass door are not scanned.",
  "provenance": {
   "source": "lane A graph (env/build_graph.py), exported by env/console.py",
-  "generated": "2026-11-14T16:59:24",
+  "generated": "2026-11-14T18:01:11",
   "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
   "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
   "aerial": "Vexcel. Staging spots are placed by eye."

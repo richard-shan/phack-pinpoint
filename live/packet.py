@@ -156,6 +156,13 @@ class LivePacketWriter(PacketWriter):
                 L += [f"- Aerial reference: `{site['tile_path']}` [src:site.tile_path]"]
         else:
             L += ["- No staging spot is marked for this door."]
+        aerial = (site or {}).get("aerial_features") or {}
+        if rt is not None and aerial.get("vehicle_access"):
+            L += [f"- Vehicle access, read from the aerial image: {aerial['vehicle_access']} "
+                  "[src:site.aerial_features.vehicle_access]"]
+        for o in (aerial.get("obstructions") or [])[:3] if rt is not None else []:
+            if (o.get("confidence") or 0) >= 0.6 and o.get("description"):
+                L += [f"- Seen from above: {o['description']} [src:site.aerial_features.obstructions]"]
         L += ["", "## Enter here"]
         if rt is None:
             L += [PENDING]
@@ -308,6 +315,9 @@ class LivePacketWriter(PacketWriter):
             out.append("Caller answers in this run were simulated from a known position.")
         if tools.SESSION.get("simulate_match"):
             out.append("Caller position was supplied to this run, not matched from the photo.")
+        if ((self.site or {}).get("aerial_features") or {}).get("vehicle_access"):
+            out.append("Vehicle access and obstructions were read from the aerial image by a vision model; "
+                       "nobody has checked them.")
         if self.route is not None:
             out.append("Travel times use assumed walking speeds and door delays; nobody has timed these routes.")
             out.append("Door states (locked, open, blocked) are as scanned, not current.")

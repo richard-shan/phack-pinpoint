@@ -36,10 +36,15 @@ ASSETS = ROOT / "app" / "assets" / "real" / "live"
 
 NEAR_M = 12.0          # "can you see it from where you are": straight line, same floor
 
+B_DATA = ROOT / "perception" / "data"          # lane B's attribute and site passes, committed per building
+B_QUESTION_KEYS = ("room_type", "floor_surface", "has_window", "furnished", "stairs_visible", "elevator_visible")
+
 QUESTIONS = {
     "floor": "What floor are you on?",
     "room_type": "What kind of room are you in (hallway, office, lobby, restroom)?",
     "near_elevator": "Can you see elevator doors from where you are? (yes or no)",
+    "elevator_visible": "Can you see elevator doors from where you are? (yes or no)",
+    "stairs_visible": "Can you see stairs from where you are? (yes or no)",
     "near_outside_door": "Can you see a door that leads outside from where you are? (yes or no)",
     "near_stairs": "Can you see a staircase or a stairwell door from where you are? (yes or no)",
     "has_window": "Is there a window near you? (yes or no)",
@@ -90,41 +95,63 @@ def _landmarks(g: Graph) -> dict[str, list[str]]:
 
 
 def question_attributes(building_id, node_id) -> dict:
-    """What a caller at this position could say about it, from the graph alone: floor,
-    room type where the scan names rooms, and whether an elevator, an outside door or
-    stairs is within sight. Lane B's per-node attributes are merged in when they exist."""
+    """What a caller at this position could say about it. From the graph: floor, room name
+    where the scan names rooms, and whether an outside door is within sight. From lane B's
+    attribute pass, where it has run: room type, floor surface, window, furniture, and
+    whether stairs or elevator doors are in view. Without lane B's pass, elevator and
+    stairs come from the graph (within 12 m on the same floor)."""
     g = _graph(building_id)
     n = g.nodes[node_id]
     lm = _landmarks(g)
+    seen = _perception_attributes(building_id).get(node_id) or {}
     out = {"floor": n.get("floor_name") or f"Floor {(n.get('floor') or 0) + 1}"}
-    if g.room(node_id):
-        out["room_type"] = g.room(node_id)
-    if lm["elevator"]:
-        out["near_elevator"] = _near(g, node_id, lm["elevator"])
     if lm["outside_door"]:
         out["near_outside_door"] = _near(g, node_id, lm["outside_door"])
-    if lm["stairs"]:
-        out["near_stairs"] = _near(g, node_id, lm["stairs"])
-    extra = _perception_attributes(building_id).get(node_id)
-    if extra:
-        out.update({k: v for k, v in extra.items() if v is not None and k != "room_type"})
+    if seen:
+        out.update({k: v for k, v in seen.items() if v is not None and v != "other"})
+    else:
+        if g.room(node_id):
+            out["room_type"] = g.room(node_id)
+        if lm["elevator"]:
+            out["near_elevator"] = _near(g, node_id, lm["elevator"])
+        if lm["stairs"]:
+            out["near_stairs"] = _near(g, node_id, lm["stairs"])
     return out
 
 
 def _perception_attributes(building_id) -> dict:
+    """{graph node id: {attribute: value}} from perception/data/<id>/attributes.json."""
     cache = SESSION.setdefault("_b_attributes", {})
     if building_id not in cache:
-        cache[building_id] = {}
+        rows = {}
         try:
-            from perception import tools as B
+            import json
             g = _graph(building_id)
-            for ref, row in B.question_attributes(str(building_id)).items():
-                tail = ref.rsplit("/", 1)[-1]
-                if tail in g.nodes:
-                    cache[building_id][tail] = row
-        except Exception:                      # no attribute cache, or perception not installed
-            pass
+            for ref, a in json.loads((B_DATA / str(building_id) / "attributes.json").read_text()).items():
+                node = ref.rsplit("/", 1)[-1]
+                if node in g.nodes:
+                    rows[node] = {k: a.get(k) for k in B_QUESTION_KEYS}
+        except (OSError, ValueError):
+            pass                                   # lane B has not run this building
+        cache[building_id] = rows
     return cache[building_id]
+
+
+def site_reading(building_id) -> dict | None:
+    """Lane B's reading of the aerial image (perception/data/<id>/site.json), trimmed to
+    what a packet can use. Not hand-checked: entrances there are inferred from above."""
+    try:
+        import json
+        s = json.loads((B_DATA / str(building_id) / "site.json").read_text())
+    except (OSError, ValueError):
+        return None
+    keep = lambda rows, keys: [{k: r.get(k) for k in keys} for r in rows or []]
+    return {"summary": s.get("summary"), "vehicle_access": s.get("vehicle_access"),
+            "staging": keep(s.get("staging"), ("staging_id", "kind", "vehicle", "description", "confidence", "latlon")),
+            "entrances": keep(s.get("entrances"), ("entrance_id", "kind", "side", "description", "confidence", "latlon")),
+            "obstructions": keep(s.get("obstructions"), ("obstruction_id", "type", "description", "confidence", "latlon")),
+            "source": f"perception/data/{building_id}/site.json ({s.get('vision_model') or 'vision model'} on the Vexcel tile)",
+            "tile_capture": s.get("tile_capture")}
 
 
 def _floor_number(g: Graph, node_id) -> int | None:
@@ -259,16 +286,10 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
            "tile_path": str(aerial.relative_to(ROOT)) if aerial.exists() else None,
            "evidence_path": f"buildings/{building_id}/overrides.json",
            "scope": g.data.get("scope"), "source": "lane A graph: doors from the scan, staging from the aerial"}
-    try:                                   # lane B's reading of the aerial, only if already cached
-        import os
-        if os.environ.get("ANTHROPIC_API_KEY"):
-            from perception import tools as B
-            feats = B.detect_site_features(building_id)
-            if not feats.get("stub"):
-                out["aerial_features"] = feats
-                out["source"] += "; lane B aerial reading attached"
-    except Exception:
-        pass
+    reading = site_reading(building_id)
+    if reading:
+        out["aerial_features"] = reading
+        out["source"] += "; lane B's reading of the aerial image attached (not hand-checked)"
     return out
 
 

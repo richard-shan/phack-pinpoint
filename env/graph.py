@@ -113,6 +113,16 @@ class Graph:
         n = self.nodes[node_id]
         return n.get("label") or (n.get("attributes") or {}).get("landmark") or None
 
+    def landmark(self, node_id: str) -> str | None:
+        """What a person standing here sees ("the directory board between stone pillars"),
+        from lane B's attribute pass. Unlike a label it exists for every position."""
+        text = (self.nodes[node_id].get("attributes") or {}).get("landmark_text")
+        if not text:
+            return None
+        text = text.strip().rstrip(".")
+        text = text[:1].lower() + text[1:]
+        return text if text.split(" ", 1)[0] in ("the", "a", "an") else "the " + text
+
     def room(self, node_id: str) -> str | None:
         """The room this node is in ("Hallway", "Suite 210"), if known."""
         return self.nodes[node_id].get("room_label") or None

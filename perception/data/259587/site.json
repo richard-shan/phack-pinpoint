@@ -1,0 +1,262 @@
+{
+ "building_id": "259587",
+ "address": "911 Broxton Ave, Los Angeles, CA",
+ "latlon": [
+  34.063404,
+  -118.447304
+ ],
+ "location_source": "costar:commercial-property/259587",
+ "tile_path": "cache/vexcel/259587/ortho.jpg",
+ "tile_size": [
+  1783,
+  1942
+ ],
+ "tile_bounds_lonlat": [
+  -118.4479499,
+  34.0628617,
+  -118.4467545,
+  34.0639396
+ ],
+ "meters_per_pixel": 0.0618,
+ "tile_capture": {
+  "collection": "us-ca-losangeles_rf07-2026",
+  "layer": "urban-r",
+  "captured": [
+   "2026-07-02T21:48:15",
+   "2026-07-09T16:57:47"
+  ],
+  "note": "newest collection at this point; the tile is the best available of urban,urban-r,wide-area,urban-g"
+ },
+ "evidence_path": "cache/vexcel/259587/overlay.jpg",
+ "oblique_paths": {
+  "oblique-north": "cache/vexcel/259587/oblique-north.jpg",
+  "oblique-south": "cache/vexcel/259587/oblique-south.jpg",
+  "oblique-east": "cache/vexcel/259587/oblique-east.jpg",
+  "oblique-west": "cache/vexcel/259587/oblique-west.jpg"
+ },
+ "footprint_wkt": "POLYGON ((-118.44746 34.0635296, -118.447255 34.0635354, -118.4472508 34.0634319, -118.4472514 34.0634319, -118.4472466 34.0634245, -118.447256 34.0634206, -118.447262 34.0634106, -118.4472714 34.0634145, -118.447281 34.06341, -118.4472806 34.0633989, -118.4472735 34.0633991, -118.4472731 34.0633886, -118.447263 34.0633889, -118.4472629 34.0633851, -118.447254 34.0633829, -118.4472493 34.0633895, -118.4472426 34.0633784, -118.4472516 34.0633618, -118.4472504 34.0633314, -118.4472432 34.0633316, -118.4472425 34.0633187, -118.447251 34.0633184, -118.4472498 34.0632897, -118.4472433 34.0632812, -118.4472483 34.0632716, -118.4474496 34.0632659, -118.4474519 34.0633235, -118.4474578 34.0633234, -118.4474619 34.0634245, -118.4474557 34.0634247, -118.44746 34.0635296))",
+ "ground_elevation_m": 103.632,
+ "entrances": [
+  {
+   "kind": "main",
+   "covered": false,
+   "description": "North facade on main street sidewalk; storefront frontage visible in south-looking view with street trees and sidewalk leading to wall",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.3,
+   "side": "north",
+   "pixel": [
+    891.6,
+    733.2
+   ],
+   "latlon": [
+    34.0635327,
+    -118.4473521
+   ],
+   "entrance_id": "E1",
+   "evidence_path": "cache/vexcel/259587/crops/E1.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "East side recessed facade with balconies/stepped openings along side street, possible side door from sidewalk",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.9,
+   "side": "northeast",
+   "pixel": [
+    1055.0,
+    1011.1
+   ],
+   "latlon": [
+    34.0633784,
+    -118.4472426
+   ],
+   "entrance_id": "E2",
+   "evidence_path": "cache/vexcel/259587/crops/E2.jpg"
+  },
+  {
+   "kind": "service",
+   "covered": false,
+   "description": "South wall on rear alley; north-looking view shows ground-floor openings/garage area facing the alley",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.8,
+   "side": "south",
+   "pixel": [
+    945.3,
+    1206.9
+   ],
+   "latlon": [
+    34.0632697,
+    -118.4473161
+   ],
+   "entrance_id": "E3",
+   "evidence_path": "cache/vexcel/259587/crops/E3.jpg"
+  }
+ ],
+ "staging": [
+  {
+   "staging_id": "S1",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of main street directly in front of north facade",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    891.5,
+    602.0
+   ],
+   "latlon": [
+    34.0636055,
+    -118.4473522
+   ],
+   "nearest_entrance": "E1",
+   "meters_to_entrance": 8.1,
+   "evidence_path": "cache/vexcel/259587/crops/S1.jpg"
+  },
+  {
+   "staging_id": "S2",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Side street east of building, travel lane next to east facade",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1230.3,
+    971.0
+   ],
+   "latlon": [
+    34.0634006,
+    -118.4471251
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 11.1,
+   "evidence_path": "cache/vexcel/259587/crops/S2.jpg"
+  },
+  {
+   "staging_id": "S3",
+   "kind": "driveway",
+   "vehicle": "ambulance",
+   "description": "Rear alley south of building near service side",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    802.4,
+    1242.9
+   ],
+   "latlon": [
+    34.0632497,
+    -118.447412
+   ],
+   "nearest_entrance": "E3",
+   "meters_to_entrance": 9.1,
+   "evidence_path": "cache/vexcel/259587/crops/S3.jpg"
+  }
+ ],
+ "obstructions": [
+  {
+   "type": "trees",
+   "description": "Street trees along north sidewalk canopy over curb",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    927.2,
+    660.3
+   ],
+   "latlon": [
+    34.0635731,
+    -118.4473283
+   ],
+   "obstruction_id": "O1",
+   "evidence_path": "cache/vexcel/259587/crops/O1.jpg"
+  },
+  {
+   "type": "trees",
+   "description": "Row of street trees and parked cars along east curb",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1176.8,
+    1068.1
+   ],
+   "latlon": [
+    34.0633468,
+    -118.4471609
+   ],
+   "obstruction_id": "O2",
+   "evidence_path": "cache/vexcel/259587/crops/O2.jpg"
+  },
+  {
+   "type": "parked_vehicles",
+   "description": "White truck/van parked in alley behind building narrowing passage",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    980.7,
+    1223.5
+   ],
+   "latlon": [
+    34.0632605,
+    -118.4472924
+   ],
+   "obstruction_id": "O3",
+   "evidence_path": "cache/vexcel/259587/crops/O3.jpg"
+  }
+ ],
+ "vehicle_access": "Approach via main street on north or side street on east; rear alley along south side reachable from side street, narrow with parked vehicle.",
+ "summary": "Mid-block corner commercial building with frontage on north main street and east side street; likely main entry on north facade, possible side entry east and service access from south alley. Stage on street curb lanes; watch street trees and alley parked vehicles.",
+ "vision_model": "claude-opus-5-5",
+ "notes": [
+  "Entrances are inferred from overhead signs (canopies, walkways, recesses), snapped to the building outline. Confirm against the interior scan before relying on one.",
+  "Pixel coordinates are [x, y] in the image at tile_path, origin top-left, north up.",
+  "The yellow outline is the ground footprint. Roofs of taller buildings appear shifted a few metres from it because the overhead image is not perfectly vertical."
+ ],
+ "disaster": {
+  "covered": true,
+  "events": [
+   {
+    "event": "us-ca-losangeles-fire-2025",
+    "event_name": "Los Angeles wildfires (January 2025)",
+    "collection": "graydata-720",
+    "captured": [
+     "2025-02-02T20:16:16",
+     "2025-02-02T22:03:47"
+    ],
+    "source": "vexcel:graysky/graydata-720",
+    "before_path": "cache/vexcel/259587/ortho.jpg",
+    "before_after_path": "cache/vexcel/259587/disaster_graydata-720_before_after.jpg",
+    "after_path": "cache/vexcel/259587/disaster_graydata-720.jpg",
+    "water_visible": false,
+    "damage_visible": false,
+    "approach_affected": "none",
+    "obstructions": [],
+    "summary": "No disaster effects are visible around the outlined building in the 2025-02-02 image. The roof appears intact with no burn scars, the adjacent streets and alley are open with normal traffic and parked cars, and there is no standing water or debris on the approaches. The building's footprint looks somewhat different between the captures, but this is consistent with viewing angle or registration offset rather than damage. The blue tarp on the roof of the building to the south (around x 58-72, y 75-80) is also present in the recent image, so it is not attributable to the fire. An emergency crew would have had an unobstructed approach.",
+    "evidence_path": "cache/vexcel/259587/disaster_graydata-720_overlay.jpg",
+    "image_size": [
+     1783,
+     1942
+    ]
+   }
+  ],
+  "note": "Coverage means a post-event flight imaged this ground. It does not mean the building was damaged; see each event's findings."
+ }
+}

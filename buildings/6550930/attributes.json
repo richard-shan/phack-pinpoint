@@ -1,0 +1,709 @@
+{
+ "03afxnw9x5w49ef200fwhc1ha": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Raised strip where the tile floor meets the carpet at the left, a small level change",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stone pillar restroom sign near elevator bank"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign above the glass door on the right",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "1critzn0zw01cfrk66y4det0a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [
+    "Ultrasound Department"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Revolving glass door at left, not usable for a stretcher; the crew would need the adjacent route if one exists.",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled ultrasound department entrance beside revolving door"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "2sk80bsyap2zwkiskmr0aqfzb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY",
+    "FLOOR 1"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "elevator bank beside directory wall with floor one sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign mounted on the ceiling above the corridor toward the glass entrance doors.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "321hn5xzdcsk6ps2dc9ibazwb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with wall-mounted drinking fountain ahead and steel door on left"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "32dnsm5igidd889a9kms3rkic": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "Stainless two-panel elevator beside wood-veneer wall with call panel"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign above the automatic sliding glass entrance doors at the far end",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "3eqw3q7ghda5ign8hgyp7phib": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "directory board between stone pillars with elevators behind"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "3ymmrb20g30hctysc1fq4ztpc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "COLON & RECTAL SURGERY",
+    "GYNECOLOGIC ONCOLOGY"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled corridor with colon and rectal surgery sign"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "5tt4sf5b28mcfqfd9w3is81rc": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [
+    "BUSINESS HOURS",
+    "MONDAY - FRIDAY",
+    "EMERGENCY CONTACT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Lobby with hours sign ahead, outdoor glass doors behind"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "6c9fx3wcmb1ezepyp07mkzccd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Freestanding stainless steel trash receptacle standing on the floor between the two elevator doors, near the right elevator.",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stainless elevator doors flanked by wood and stone wall panels in lobby"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "6tm9tky8ehef6yfhg8ymq2s5b": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "glass-walled lobby area with potted orchid and bench"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "6ttqtdumk2qgufmafrymmdfmd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "FLOOR 4",
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Level change where the tile corridor meets a raised carpeted area with a visible step edge at the far end",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "elevator bank beside Floor 4 directory board"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "6um1hs6bq33qz59h4u6in33cc": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass double doors with potted plants and lounge seating"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "76n4r494787eh31ak38kgyagc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY",
+    "Walgreens Pharmacy"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Tiled floor transition with a yellow tactile strip ahead in the corridor, possibly a small level change",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor past glass storefront with toy displays and wall directory board"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted high on the ceiling at the far left of the corridor",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "7nqbt4tfwg1siyuagpebidzzc": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "lobby with directory board and revolving doors ahead-right"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "7qz45zfpayr71pefr62w2wt7a": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled entry vestibule with potted plant and outdoor view"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "8at2ztyg1n2gxprucakrd8u5b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "Financial Department",
+    "the stork club"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled corridor with potted plant near Financial Department"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "9nydrbq3ga21s4wq6cdairckc": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled lobby with tile floor and outdoor windows"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "ap6xz3rf3zqmhu11i616r66mb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "lobby with stone and wood elevator wall and tiled floor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign on ceiling at far end of lobby",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "e7xf1kc4sqb4ngy3d86ify0qd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "tiled lobby with glass partition, potted plant and bench beside white wall"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "et88m14680cqfd29hhch2h1cb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "stone reception desk facing glass-walled lounge with outdoor windows"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "g74ficgqec4ueewb3gyc8h6xb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled lobby with tan sofa and white orchid arrangement"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "g7nntzmngy2g6eychqh7dp4pd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "lobby with glass entrance doors and reception counter"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "gbqgw9g56m1ksrcfpim7dxawa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "two facing doors and potted plant at corridor end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit-style sign visible above the glass-walled room at upper left.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "i3d7aunib0nbrnnaifmribxzb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [
+    "PLEASE USE REVOLVING DOOR"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Revolving door with sign directing use; stretcher cannot pass through it",
+     "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "benches beside glass entrance doors and revolving door"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red pull station mounted on wall center of ahead view",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "ihtu6tz9w72hwg267u7atx1wd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "reception desk lounge with glass wall and potted boxwood"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "kezdx0b0ab202hrua4y0fb2za": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "lobby with stone wall and wood panels beside corridor"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "mr2kbkhd2370x1u2mx6nnxyza": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "FedEx"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled lobby with FedEx kiosk alcove ahead and elevator bank to the right"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "msysb3x4q828mapu8ascxgyrc": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "stone and wood paneled pillar beside stainless elevator doors"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign hangs from the ceiling above the glass entrance doors.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "nrc4p9486g06kftrmqg6wue5a": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "open lobby with elevator bank on left and glass-walled seating area on right"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "p4wrp86gfw5mci9i6g68kt4tb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "Ultrasound Department"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled corridor toward Ultrasound Department sign and glass-walled shop"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "rhy0xg4gpxxgwg7isa6heykhd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "DIRECTORY"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "directory sign beside stone and wood wall panels"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "t1ibwtt1z43yx3gispc9mfunb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass lobby with white orchid planter ahead and reception desk left"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "ugmz8k0i4x0800rw5h2zsti5b": {
+  "attributes": {
+   "room_type": "elevator_lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "FLOOR 1"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "stainless steel elevator beside stone and wood panels, glass storefronts across corridor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted above the glass entrance doors at the far end of the corridor.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Elevator lobby"
+ },
+ "uu1q7fr5dcime6876ftewseta": {
+  "attributes": {
+   "room_type": "elevator_lobby",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "two elevator doors beside bronze-panel wall, glass entrance doors ahead"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign at upper left of the behind view above the reception area",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Elevator lobby"
+ },
+ "xtp0p0gch30g6xdpqhd809g2a": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open lobby with lounge seating and glass double doors to outside"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ }
+}

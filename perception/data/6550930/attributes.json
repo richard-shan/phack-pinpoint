@@ -1,0 +1,1123 @@
+{
+ "YJLLXyw1xbf/03afxnw9x5w49ef200fwhc1ha": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "EXIT"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "behind",
+    "note": "Red EXIT sign above the glass door on the right",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "ahead",
+    "note": "Raised strip where the tile floor meets the carpet at the left, a small level change",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "stone pillar restroom sign near elevator bank",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/03afxnw9x5w49ef200fwhc1ha",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_03afxnw9x5w49ef200fwhc1ha_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1046
+  }
+ },
+ "YJLLXyw1xbf/1critzn0zw01cfrk66y4det0a": {
+  "room_type": "corridor",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [
+   "Ultrasound Department"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "narrow_passage",
+    "view": "left",
+    "note": "Revolving glass door at left, not usable for a stretcher; the crew would need the adjacent route if one exists.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "glass-walled ultrasound department entrance beside revolving door",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/1critzn0zw01cfrk66y4det0a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_1critzn0zw01cfrk66y4det0a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1026
+  }
+ },
+ "YJLLXyw1xbf/2sk80bsyap2zwkiskmr0aqfzb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY",
+   "FLOOR 1"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "right",
+    "note": "Red EXIT sign mounted on the ceiling above the corridor toward the glass entrance doors.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "elevator bank beside directory wall with floor one sign",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/2sk80bsyap2zwkiskmr0aqfzb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_2sk80bsyap2zwkiskmr0aqfzb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 999
+  }
+ },
+ "YJLLXyw1xbf/321hn5xzdcsk6ps2dc9ibazwb": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "corridor with wall-mounted drinking fountain ahead and steel door on left",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/321hn5xzdcsk6ps2dc9ibazwb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_321hn5xzdcsk6ps2dc9ibazwb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_321hn5xzdcsk6ps2dc9ibazwb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_321hn5xzdcsk6ps2dc9ibazwb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_321hn5xzdcsk6ps2dc9ibazwb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 590
+  }
+ },
+ "YJLLXyw1xbf/32dnsm5igidd889a9kms3rkic": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "EXIT"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "left",
+    "note": "Red EXIT sign above the automatic sliding glass entrance doors at the far end",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "Stainless two-panel elevator beside wood-veneer wall with call panel",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/32dnsm5igidd889a9kms3rkic",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_32dnsm5igidd889a9kms3rkic_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 881
+  }
+ },
+ "YJLLXyw1xbf/3eqw3q7ghda5ign8hgyp7phib": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "directory board between stone pillars with elevators behind",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/3eqw3q7ghda5ign8hgyp7phib",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_3eqw3q7ghda5ign8hgyp7phib_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3eqw3q7ghda5ign8hgyp7phib_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3eqw3q7ghda5ign8hgyp7phib_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3eqw3q7ghda5ign8hgyp7phib_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 791
+  }
+ },
+ "YJLLXyw1xbf/3ymmrb20g30hctysc1fq4ztpc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "COLON & RECTAL SURGERY",
+   "GYNECOLOGIC ONCOLOGY"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "tiled corridor with colon and rectal surgery sign",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/3ymmrb20g30hctysc1fq4ztpc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_3ymmrb20g30hctysc1fq4ztpc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3ymmrb20g30hctysc1fq4ztpc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3ymmrb20g30hctysc1fq4ztpc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_3ymmrb20g30hctysc1fq4ztpc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 936
+  }
+ },
+ "YJLLXyw1xbf/5tt4sf5b28mcfqfd9w3is81rc": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [
+   "BUSINESS HOURS",
+   "MONDAY - FRIDAY",
+   "EMERGENCY CONTACT"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "Lobby with hours sign ahead, outdoor glass doors behind",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/5tt4sf5b28mcfqfd9w3is81rc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_5tt4sf5b28mcfqfd9w3is81rc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_5tt4sf5b28mcfqfd9w3is81rc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_5tt4sf5b28mcfqfd9w3is81rc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_5tt4sf5b28mcfqfd9w3is81rc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1055
+  }
+ },
+ "YJLLXyw1xbf/6c9fx3wcmb1ezepyp07mkzccd": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 0,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "obstruction_in_path",
+    "view": "behind",
+    "note": "Freestanding stainless steel trash receptacle standing on the floor between the two elevator doors, near the right elevator.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "stainless elevator doors flanked by wood and stone wall panels in lobby",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/6c9fx3wcmb1ezepyp07mkzccd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6c9fx3wcmb1ezepyp07mkzccd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 986
+  }
+ },
+ "YJLLXyw1xbf/6tm9tky8ehef6yfhg8ymq2s5b": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled lobby area with potted orchid and bench",
+  "confidence": "low",
+  "node_id": "YJLLXyw1xbf/6tm9tky8ehef6yfhg8ymq2s5b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_6tm9tky8ehef6yfhg8ymq2s5b_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6tm9tky8ehef6yfhg8ymq2s5b_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6tm9tky8ehef6yfhg8ymq2s5b_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6tm9tky8ehef6yfhg8ymq2s5b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 840
+  }
+ },
+ "YJLLXyw1xbf/6ttqtdumk2qgufmafrymmdfmd": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "FLOOR 4",
+   "EXIT"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "ahead",
+    "note": "Level change where the tile corridor meets a raised carpeted area with a visible step edge at the far end",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "elevator bank beside Floor 4 directory board",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/6ttqtdumk2qgufmafrymmdfmd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6ttqtdumk2qgufmafrymmdfmd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 838
+  }
+ },
+ "YJLLXyw1xbf/6um1hs6bq33qz59h4u6in33cc": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass double doors with potted plants and lounge seating",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/6um1hs6bq33qz59h4u6in33cc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_6um1hs6bq33qz59h4u6in33cc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6um1hs6bq33qz59h4u6in33cc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6um1hs6bq33qz59h4u6in33cc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_6um1hs6bq33qz59h4u6in33cc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 875
+  }
+ },
+ "YJLLXyw1xbf/76n4r494787eh31ak38kgyagc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY",
+   "Walgreens Pharmacy"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "behind",
+    "note": "Red exit sign mounted high on the ceiling at the far left of the corridor",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "ahead",
+    "note": "Tiled floor transition with a yellow tactile strip ahead in the corridor, possibly a small level change",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "corridor past glass storefront with toy displays and wall directory board",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/76n4r494787eh31ak38kgyagc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_76n4r494787eh31ak38kgyagc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1088
+  }
+ },
+ "YJLLXyw1xbf/7nqbt4tfwg1siyuagpebidzzc": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "lobby with directory board and revolving doors ahead-right",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/7nqbt4tfwg1siyuagpebidzzc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_7nqbt4tfwg1siyuagpebidzzc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7nqbt4tfwg1siyuagpebidzzc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7nqbt4tfwg1siyuagpebidzzc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7nqbt4tfwg1siyuagpebidzzc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 833
+  }
+ },
+ "YJLLXyw1xbf/7qz45zfpayr71pefr62w2wt7a": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled entry vestibule with potted plant and outdoor view",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/7qz45zfpayr71pefr62w2wt7a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_7qz45zfpayr71pefr62w2wt7a_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7qz45zfpayr71pefr62w2wt7a_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7qz45zfpayr71pefr62w2wt7a_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_7qz45zfpayr71pefr62w2wt7a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 682
+  }
+ },
+ "YJLLXyw1xbf/8at2ztyg1n2gxprucakrd8u5b": {
+  "room_type": "corridor",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "Financial Department",
+   "the stork club"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled corridor with potted plant near Financial Department",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/8at2ztyg1n2gxprucakrd8u5b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_8at2ztyg1n2gxprucakrd8u5b_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_8at2ztyg1n2gxprucakrd8u5b_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_8at2ztyg1n2gxprucakrd8u5b_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_8at2ztyg1n2gxprucakrd8u5b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 992
+  }
+ },
+ "YJLLXyw1xbf/9nydrbq3ga21s4wq6cdairckc": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled lobby with tile floor and outdoor windows",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/9nydrbq3ga21s4wq6cdairckc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_9nydrbq3ga21s4wq6cdairckc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_9nydrbq3ga21s4wq6cdairckc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_9nydrbq3ga21s4wq6cdairckc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_9nydrbq3ga21s4wq6cdairckc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 821
+  }
+ },
+ "YJLLXyw1xbf/ap6xz3rf3zqmhu11i616r66mb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "EXIT"
+  ],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "right",
+    "note": "Red EXIT sign on ceiling at far end of lobby",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "lobby with stone and wood elevator wall and tiled floor",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/ap6xz3rf3zqmhu11i616r66mb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ap6xz3rf3zqmhu11i616r66mb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 869
+  }
+ },
+ "YJLLXyw1xbf/e7xf1kc4sqb4ngy3d86ify0qd": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "tiled lobby with glass partition, potted plant and bench beside white wall",
+  "confidence": "low",
+  "node_id": "YJLLXyw1xbf/e7xf1kc4sqb4ngy3d86ify0qd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_e7xf1kc4sqb4ngy3d86ify0qd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_e7xf1kc4sqb4ngy3d86ify0qd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_e7xf1kc4sqb4ngy3d86ify0qd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_e7xf1kc4sqb4ngy3d86ify0qd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 746
+  }
+ },
+ "YJLLXyw1xbf/et88m14680cqfd29hhch2h1cb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "stone reception desk facing glass-walled lounge with outdoor windows",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/et88m14680cqfd29hhch2h1cb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_et88m14680cqfd29hhch2h1cb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_et88m14680cqfd29hhch2h1cb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_et88m14680cqfd29hhch2h1cb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_et88m14680cqfd29hhch2h1cb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 910
+  }
+ },
+ "YJLLXyw1xbf/g74ficgqec4ueewb3gyc8h6xb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled lobby with tan sofa and white orchid arrangement",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/g74ficgqec4ueewb3gyc8h6xb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_g74ficgqec4ueewb3gyc8h6xb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g74ficgqec4ueewb3gyc8h6xb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g74ficgqec4ueewb3gyc8h6xb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g74ficgqec4ueewb3gyc8h6xb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 779
+  }
+ },
+ "YJLLXyw1xbf/g7nntzmngy2g6eychqh7dp4pd": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "lobby with glass entrance doors and reception counter",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/g7nntzmngy2g6eychqh7dp4pd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_g7nntzmngy2g6eychqh7dp4pd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g7nntzmngy2g6eychqh7dp4pd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g7nntzmngy2g6eychqh7dp4pd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_g7nntzmngy2g6eychqh7dp4pd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 806
+  }
+ },
+ "YJLLXyw1xbf/gbqgw9g56m1ksrcfpim7dxawa": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "behind",
+    "note": "Red exit-style sign visible above the glass-walled room at upper left.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "two facing doors and potted plant at corridor end",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/gbqgw9g56m1ksrcfpim7dxawa",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_gbqgw9g56m1ksrcfpim7dxawa_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 877
+  }
+ },
+ "YJLLXyw1xbf/i3d7aunib0nbrnnaifmribxzb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [
+   "PLEASE USE REVOLVING DOOR"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "ahead",
+    "note": "Red pull station mounted on wall center of ahead view",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "narrow_passage",
+    "view": "left",
+    "note": "Revolving door with sign directing use; stretcher cannot pass through it",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "benches beside glass entrance doors and revolving door",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/i3d7aunib0nbrnnaifmribxzb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_i3d7aunib0nbrnnaifmribxzb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1010
+  }
+ },
+ "YJLLXyw1xbf/ihtu6tz9w72hwg267u7atx1wd": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "reception desk lounge with glass wall and potted boxwood",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/ihtu6tz9w72hwg267u7atx1wd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_ihtu6tz9w72hwg267u7atx1wd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ihtu6tz9w72hwg267u7atx1wd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ihtu6tz9w72hwg267u7atx1wd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ihtu6tz9w72hwg267u7atx1wd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 894
+  }
+ },
+ "YJLLXyw1xbf/kezdx0b0ab202hrua4y0fb2za": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "lobby with stone wall and wood panels beside corridor",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/kezdx0b0ab202hrua4y0fb2za",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_kezdx0b0ab202hrua4y0fb2za_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_kezdx0b0ab202hrua4y0fb2za_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_kezdx0b0ab202hrua4y0fb2za_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_kezdx0b0ab202hrua4y0fb2za_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1015
+  }
+ },
+ "YJLLXyw1xbf/mr2kbkhd2370x1u2mx6nnxyza": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "FedEx"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "tiled lobby with FedEx kiosk alcove ahead and elevator bank to the right",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/mr2kbkhd2370x1u2mx6nnxyza",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_mr2kbkhd2370x1u2mx6nnxyza_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_mr2kbkhd2370x1u2mx6nnxyza_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_mr2kbkhd2370x1u2mx6nnxyza_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_mr2kbkhd2370x1u2mx6nnxyza_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 657
+  }
+ },
+ "YJLLXyw1xbf/msysb3x4q828mapu8ascxgyrc": {
+  "room_type": "lobby",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "EXIT"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "left",
+    "note": "Red EXIT sign hangs from the ceiling above the glass entrance doors.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "stone and wood paneled pillar beside stainless elevator doors",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/msysb3x4q828mapu8ascxgyrc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_msysb3x4q828mapu8ascxgyrc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1174
+  }
+ },
+ "YJLLXyw1xbf/nrc4p9486g06kftrmqg6wue5a": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open lobby with elevator bank on left and glass-walled seating area on right",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/nrc4p9486g06kftrmqg6wue5a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_nrc4p9486g06kftrmqg6wue5a_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_nrc4p9486g06kftrmqg6wue5a_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_nrc4p9486g06kftrmqg6wue5a_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_nrc4p9486g06kftrmqg6wue5a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 807
+  }
+ },
+ "YJLLXyw1xbf/p4wrp86gfw5mci9i6g68kt4tb": {
+  "room_type": "corridor",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "Ultrasound Department"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "tiled corridor toward Ultrasound Department sign and glass-walled shop",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/p4wrp86gfw5mci9i6g68kt4tb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_p4wrp86gfw5mci9i6g68kt4tb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_p4wrp86gfw5mci9i6g68kt4tb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_p4wrp86gfw5mci9i6g68kt4tb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_p4wrp86gfw5mci9i6g68kt4tb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 856
+  }
+ },
+ "YJLLXyw1xbf/rhy0xg4gpxxgwg7isa6heykhd": {
+  "room_type": "corridor",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "DIRECTORY"
+  ],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "directory sign beside stone and wood wall panels",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/rhy0xg4gpxxgwg7isa6heykhd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_rhy0xg4gpxxgwg7isa6heykhd_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_rhy0xg4gpxxgwg7isa6heykhd_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_rhy0xg4gpxxgwg7isa6heykhd_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_rhy0xg4gpxxgwg7isa6heykhd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 732
+  }
+ },
+ "YJLLXyw1xbf/t1ibwtt1z43yx3gispc9mfunb": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass lobby with white orchid planter ahead and reception desk left",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/t1ibwtt1z43yx3gispc9mfunb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_t1ibwtt1z43yx3gispc9mfunb_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_t1ibwtt1z43yx3gispc9mfunb_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_t1ibwtt1z43yx3gispc9mfunb_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_t1ibwtt1z43yx3gispc9mfunb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 607
+  }
+ },
+ "YJLLXyw1xbf/ugmz8k0i4x0800rw5h2zsti5b": {
+  "room_type": "elevator_lobby",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [
+   "FLOOR 1"
+  ],
+  "door_count": 0,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "left",
+    "note": "Red exit sign mounted above the glass entrance doors at the far end of the corridor.",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "stainless steel elevator beside stone and wood panels, glass storefronts across corridor",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/ugmz8k0i4x0800rw5h2zsti5b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_ugmz8k0i4x0800rw5h2zsti5b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 815
+  }
+ },
+ "YJLLXyw1xbf/uu1q7fr5dcime6876ftewseta": {
+  "room_type": "elevator_lobby",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": true,
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "view": "behind",
+    "note": "Red exit sign at upper left of the behind view above the reception area",
+    "evidence_path": "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "two elevator doors beside bronze-panel wall, glass entrance doors ahead",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/uu1q7fr5dcime6876ftewseta",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_uu1q7fr5dcime6876ftewseta_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 853
+  }
+ },
+ "YJLLXyw1xbf/xtp0p0gch30g6xdpqhd809g2a": {
+  "room_type": "lobby",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open lobby with lounge seating and glass double doors to outside",
+  "confidence": "medium",
+  "node_id": "YJLLXyw1xbf/xtp0p0gch30g6xdpqhd809g2a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_xtp0p0gch30g6xdpqhd809g2a_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_xtp0p0gch30g6xdpqhd809g2a_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_xtp0p0gch30g6xdpqhd809g2a_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_xtp0p0gch30g6xdpqhd809g2a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 697
+  }
+ },
+ "YJLLXyw1xbf/zh1114rdpzamw60y9gukbqxmc": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "concrete",
+  "signage_text": [],
+  "door_count": 0,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "curved stone bench beside red-flowering shrub planter",
+  "confidence": "low",
+  "node_id": "YJLLXyw1xbf/zh1114rdpzamw60y9gukbqxmc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_zh1114rdpzamw60y9gukbqxmc_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zh1114rdpzamw60y9gukbqxmc_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zh1114rdpzamw60y9gukbqxmc_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zh1114rdpzamw60y9gukbqxmc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 795
+  }
+ },
+ "YJLLXyw1xbf/zqy85a1u4m24smq9qbkf8n59d": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "concrete",
+  "signage_text": [
+   "NO EXIT"
+  ],
+  "door_count": 0,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "Outdoor drive with yellow NO EXIT sign by landscaped island",
+  "confidence": "low",
+  "node_id": "YJLLXyw1xbf/zqy85a1u4m24smq9qbkf8n59d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/6550930/crops/YJLLXyw1xbf_zqy85a1u4m24smq9qbkf8n59d_y000_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zqy85a1u4m24smq9qbkf8n59d_y090_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zqy85a1u4m24smq9qbkf8n59d_y180_p+00.jpg",
+   "cache/index/6550930/crops/YJLLXyw1xbf_zqy85a1u4m24smq9qbkf8n59d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 610
+  }
+ }
+}

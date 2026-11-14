@@ -1,0 +1,2195 @@
+{
+ "0mp62e97rtkgr1i6936ri1hta": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "sloped-ceiling corner beside open doorway to wood-floored room"
+  },
+  "equipment": []
+ },
+ "0ucknz8a861c9f45mr16g7yad": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Metal shelving units and a leaning ladder-style shelf stand on the floor in the walking path.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_0ucknz8a861c9f45mr16g7yad_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "kitchenette with granite counter niche and ceiling fan"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "1a4pzmg8hz9guun97ada45s1a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted stairs visible along the left side of the right-facing view, beside the corridor wall",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_1a4pzmg8hz9guun97ada45s1a_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow hallway with red EXIT sign ahead and wooden door at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign mounted above the corridor at the far end ahead",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_1a4pzmg8hz9guun97ada45s1a_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "1stmetqtt1qb1kizndfeeew0d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty tiled room with arched window with blinds and ceiling fan"
+  },
+  "equipment": []
+ },
+ "1w7gn0eqwy4er5777e6k34wwc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Doorway beside granite-topped counter, next to bathroom"
+  },
+  "equipment": []
+ },
+ "2ckfa3hhhddyd20ukzdnfb3md": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with arched window, blinds, and ceiling fan"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "2hicfgn46xg4h5uczshhc7g4c": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with wooden handrail descending along the left wall; a step down into the stairwell.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_2hicfgn46xg4h5uczshhc7g4c_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "kitchen with black stove; exit-signed stairs on left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Illuminated red EXIT sign mounted on the ceiling above the stairwell entrance.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_2hicfgn46xg4h5uczshhc7g4c_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "2wmxt1nwcnxche9qeectkt7ca": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "wood-floored hallway with open white doors at far end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "346zmufqpxzn762c2nrxtp4bc": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "dark wood built-in cabinets with open shelves and countertop"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "3a1554tnuknd739zw23ck7mpa": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small kitchenette with stainless double sink and white refrigerator"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "3a3yrdwi2c3a5gh5k9kidiuwc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small tiled room with arched window and white panel door"
+  },
+  "equipment": []
+ },
+ "3i0p5kz8kmdspa5igiekikr7a": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with wooden handrail beyond the partition wall to the right, past the open corridor.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_3i0p5kz8kmdspa5igiekikr7a_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "kitchenette with black refrigerator and stove beside white door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted above the stairway opening in the right-facing view.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_3i0p5kz8kmdspa5igiekikr7a_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "3mrmmq0wmxaqfwe01wiihgqbd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty carpeted room, arched blinded window, white door left"
+  },
+  "equipment": []
+ },
+ "3y86wi2fu3m6a66uab6ttt8dc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "ELECTRICAL ROOM"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted corridor beside white door labeled electrical room"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "gray electrical panel mounted on wall beside the electrical room door",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_3y86wi2fu3m6a66uab6ttt8dc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "408ctk2h1duuumhy2r1aef8hd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "hallway with rug runner to wooden front door"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on wall beside shelving",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_408ctk2h1duuumhy2r1aef8hd_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign above doorway down the hallway",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_408ctk2h1duuumhy2r1aef8hd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "42wdmaru7ax1cxf1mfqe7nmqb": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "textured glass enclosure next to white paneled door"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "4b044acn63m5y5q5z203ic7sa": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "galley kitchen with white refrigerator and double sink"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "50c36m892n632srfrfp9e23qb": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small utility room with stainless sink and upper wood cabinet"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "5sr73dnsfr1k13n6nbw0aaaia": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted stairs descend or rise from the lower center toward the upper left, with a wall on the left side of the flight.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_5sr73dnsfr1k13n6nbw0aaaia_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Carpeted stair run runs along the wall beneath a wood handrail at the lower left of the image.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_5sr73dnsfr1k13n6nbw0aaaia_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted stairwell with wood handrail and white baseboard trim"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "5t1c5ehd8s0umr7mpctrer44c": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted staircase rises ahead and to the left with a wooden handrail along the right wall; stretcher must be carried on the stairs.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_5t1c5ehd8s0umr7mpctrer44c_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted stairwell with wooden handrail rising ahead"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "65dag1038wycy0xcrn1ccsgkc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "tiled hallway junction beside bathroom with vanity and toilet"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "6ei6iqa2gaxiab0hyb41sm2ua": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small carpeted room with brown sofa and ceiling fan"
+  },
+  "equipment": []
+ },
+ "6fbsqhawbt4ptc30aye948y3d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open white door beside gold wall cabinets and countertop"
+  },
+  "equipment": []
+ },
+ "6heuhy7ie01bpdc5744yn2k6a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood-floored room with arched window and red exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted high above the wooden door on the left wall",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_6heuhy7ie01bpdc5744yn2k6a_y090_p+00.jpg"
+   }
+  ]
+ },
+ "6qfywy5wwa8cnk2c5qsu6r9ad": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Tall black metal shelving unit with stored items stands in the walking path in front of the cabinets.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_6qfywy5wwa8cnk2c5qsu6r9ad_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "White kitchen cabinets and black metal shelving beside an open white door"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "6y79nadm3gbkfg6dds8satbtb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with white paneled doors and window overlooking lawn and building"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "82dsk1nq0ndbrm95exuqzce8c": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "small room with beige upper cabinets over a sink and a white door"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "83kqeyqpw80hsyabyhdsr47ha": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with lit exit sign and carpeted room ahead"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "86pidewu1iw9hq8kgxeazahbd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled-floor room corner with wall outlets beside an open doorway"
+  },
+  "equipment": []
+ },
+ "8h0z71e0cdfgc2ri8e22h193a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty tiled room with arched window and blinds, open doorway to left"
+  },
+  "equipment": []
+ },
+ "8mhqwgw5862s453qb8hi8393b": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white door beside framed picture and gray cabinet"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "99egbxgeyzs0ti1z11ibbih9d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty tiled room with doorway opening onto hallway with wall sink and fire extinguisher"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher on the left wall of the hallway beyond the doorway, near the shelving and sink.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_99egbxgeyzs0ti1z11ibbih9d_y270_p+00.jpg"
+   }
+  ]
+ },
+ "aeby9wnfx8kmfefyei4sz2znc": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "kitchen with black refrigerator, beige cabinets, and ceiling fan"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "ap2ufgi4fr1emh7z5pnmp7w6c": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "White open-cubby shelving unit stands in the room in front of the vanity, in the walking path.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ap2ufgi4fr1emh7z5pnmp7w6c_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "tiled bathroom with freestanding tub and oval wall mirror"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "as5xpf3s2wxh21csgn56ngg4c": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood-floor hallway past open doorway to kitchen"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "awiumd3qh499u65362c66sg1c": {
+  "attributes": {
+   "room_type": "reception",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "granite-topped curved counter near solid wood entry door with EXIT sign"
+  },
+  "equipment": [],
+  "room_label": "Reception"
+ },
+ "b1znkesiz0chhcmtqg1s06w2b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with curved dark counter and arched window"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign above the wooden door at the top left",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_b1znkesiz0chhcmtqg1s06w2b_y270_p+00.jpg"
+   }
+  ]
+ },
+ "b1zzn6z6itz73muic9tpzwusb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Pink upholstered armchair in lower left foreground near the white door; may need to be moved for stretcher.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_b1zzn6z6itz73muic9tpzwusb_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "small carpeted room with pink armchair and white door"
+  },
+  "equipment": []
+ },
+ "c8t3887rq7yuipd9tysbwch4a": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "sink corner beside white door with wall cabinet"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "ce3k7pwgps0f50i5afm3ugw9a": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Dark stored furniture and boxes stacked on the left side of the view, near the window.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ce3k7pwgps0f50i5afm3ugw9a_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "storage room with black wire shelving and light tile floor"
+  },
+  "equipment": [],
+  "room_label": "Storage"
+ },
+ "cexh777se3m8i1diq5p1hn9fd": {
+  "attributes": {
+   "room_type": "reception",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white paneled door beside granite counter top with exit sign above"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted high on the ceiling above the white paneled door",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_cexh777se3m8i1diq5p1hn9fd_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign partly visible at the upper left near the ceiling fan",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_cexh777se3m8i1diq5p1hn9fd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Reception"
+ },
+ "d0z2qwypkc6ag747ipcw0fagd": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow hallway with red EXIT sign and arched window at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red illuminated EXIT sign above the hallway ahead on the left side",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_d0z2qwypkc6ag747ipcw0fagd_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "dpk4uaympun0fmup21a13r8ud": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "small plain white room with door on right and carpeted corner behind"
+  },
+  "equipment": []
+ },
+ "dw5n9kx3a3amgczn0p822fe1d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "White half-wall railing with wood floor dropping away below it",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_dw5n9kx3a3amgczn0p822fe1d_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "hallway with arched-window room ahead and railing overlook to right"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit-style sign at upper left of right image; text not readable",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_dw5n9kx3a3amgczn0p822fe1d_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "e62ehd7a7ktnyf7z1yw4hq61b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood-floored room with arched window and dark wood cabinets"
+  },
+  "equipment": []
+ },
+ "eczh0e8zbu0c9nw2wiygksr4c": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Raised granite counter ledge with a lower floor section at its base, creating a level change along the right side.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_eczh0e8zbu0c9nw2wiygksr4c_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "granite-counter kitchen with ceiling fan behind open white door"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "ee51dmzqamp8igqdr59e2wqgb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Wood-edged step or drop visible at the floor of the narrow passage behind",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ee51dmzqamp8igqdr59e2wqgb_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted corridor with black range at far kitchen end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ehf3dbgbz6dip59u1pq4gmr5b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "arched window with blinds and tile floor, open doorway to left"
+  },
+  "equipment": []
+ },
+ "er6np4qwtbs26k8rte3n2da8c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "room with arched window and open white door to restroom"
+  },
+  "equipment": []
+ },
+ "f3k8901gutf08txwdph7h2mnc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "arched white door beside kitchen counter with fire extinguisher"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher on the floor at the lower right, beside the kitchen counter.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_f3k8901gutf08txwdph7h2mnc_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "fays2gi27s78ggx765sd083ra": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "ELECTRICAL ROOM"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor beside open electrical room door with breaker panel"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray breaker panel mounted on the wall beside the open electrical room door",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_fays2gi27s78ggx765sd083ra_y270_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical box mounted high on the right wall near the cable bundle",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_fays2gi27s78ggx765sd083ra_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "fhx8qh5phzects3qffzzfu6cd": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted staircase rises ahead and to the right, with a bare white wall beside it.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_fhx8qh5phzects3qffzzfu6cd_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Carpeted stair treads climb toward the upper landing along a wood handrail.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_fhx8qh5phzects3qffzzfu6cd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted staircase with wood handrail beside white door frame"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "fq9kxz4sub1s34uzicryia9id": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open white door beside kitchen sink cabinets"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "g89seufbuaxygaczac7fu97ua": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "plain beige corridor corner with hardwood hallway to the right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ggpcpdq1803p4g5hugb8mqpkc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "hallway with arched window and restroom to left"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ggqgih8s8q5rmp3fruwnpg00d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with arched window and tile floor"
+  },
+  "equipment": []
+ },
+ "hmu7gp2z1r88ua71rwa0g238a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "White railing edge in foreground suggests a drop or stairwell opening beside the corridor",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_hmu7gp2z1r88ua71rwa0g238a_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "hallway with open white door and wooden EXIT door"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "hq7fbqhgph6icp77ptdgs9ehd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small carpeted room with brown leather couch and white partially open door"
+  },
+  "equipment": []
+ },
+ "hqdas43kysiwpnm88wchz0hwa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood-floored hallway with open white door to tiled room ahead"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "iuzauum2sdi9pg7tcyw95z3ud": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "bathroom with oval mirror, granite vanity, arched windows"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "iz28e3u6teuby62e9iwr2fygb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow wood-floored corridor with exit sign at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red exit sign mounted on the ceiling at the far end of the corridor.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_iz28e3u6teuby62e9iwr2fygb_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "k45zypz7znw1h9srz45szxryb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "arched window with white blinds facing tiled corner"
+  },
+  "equipment": []
+ },
+ "kyrw61fz5zrhctzkaa5qw50qa": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted room with arched blinded window and ceiling fan"
+  },
+  "equipment": []
+ },
+ "m0ciz1gd88tduznpmkc9p5pfa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "carpeted corridor with gray electrical panel on wall behind"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray metal electrical panel with latched door mounted on the wall",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_m0ciz1gd88tduznpmkc9p5pfa_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "m5084pr73bp19rz9gfs3kxc5d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "small empty tiled room with white crown molding and green-lit wall outlet"
+  },
+  "equipment": []
+ },
+ "mqpn20r85iyurhn33d8fr60ia": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairs descend beyond the white column, with a wooden handrail along the stair edge",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_mqpn20r85iyurhn33d8fr60ia_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "kitchen with black appliances and stairs descending past white column"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "myqu0p81q92wc69ngbn29655c": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white paneled door beside blinded window and granite sink"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "myrr1afqdw7qwqfqw91365y7b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "plain room corner beside open doorway to tiled bathroom"
+  },
+  "equipment": []
+ },
+ "n7y89004xrupkc06ta11ht2rb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "open white door beside plain wall with key hooks"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "n9nmh4ry0ttwb1cc4dnpgehgb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "plain room with white paneled door and window blinds showing trees outside"
+  },
+  "equipment": []
+ },
+ "nb4ti7xk52q4xd1bdzt2awp5a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty carpeted room with arched window blinds and ceiling fan"
+  },
+  "equipment": []
+ },
+ "nib7b4bradwgwieg9bdh6134d": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled room with washer hookup box and open doorway ahead"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "p0afshpif7e7t1qzr0amk0mgd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "empty carpeted room with arched blinded window and ceiling fan"
+  },
+  "equipment": []
+ },
+ "pa7nzs64it0xnzwnibb12cu9d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white arched-panel door with kitchen visible to the right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "peud69ss87pxxk8f9symq5nsb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "white paneled door with plaque, hallway to left"
+  },
+  "equipment": []
+ },
+ "pge6wt46uzphzchtt7cy10mrc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with wooden handrail and lit edge visible to the right, past a wall corner",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_pge6wt46uzphzchtt7cy10mrc_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with staircase on right and kitchen behind"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "prddiw9bm449pc77yt3dyph9b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "A flat wooden ledge or bench projects from the wall at low height into the passage on the left side.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_prddiw9bm449pc77yt3dyph9b_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "wood-floored corridor with arched window and wood door"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ps43y653xsymmbbwb99yzei9d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small room with wall-mounted sink and fire extinguisher seen through doorway ahead"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall of the small room seen through the doorway.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ps43y653xsymmbbwb99yzei9d_y000_p+00.jpg"
+   }
+  ]
+ },
+ "pxbbmri9bskqheax4bbebfb7d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "white door beside granite-topped counter"
+  },
+  "equipment": []
+ },
+ "q253rf7z35x3a5738at93pznb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with arched blinded window and wood door behind"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "qehwg5c65cinqy1q6z4rugzsd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "room with ceiling fan, arched blind window, and rug; corridor doorway on left"
+  },
+  "equipment": []
+ },
+ "qess2engr3x9mmysn5qntnzrb": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood floor room with arched window and dark wood cabinets"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "qkxigfr952ce96iq6f812bixd": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted staircase descends along the right side of the view, with a white handrail beside it.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_qkxigfr952ce96iq6f812bixd_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Carpeted stair treads run down along the left edge beside a wooden handrail, so a stretcher must go past the stairs.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_qkxigfr952ce96iq6f812bixd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted staircase with wooden handrail and white textured walls"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "qqz0rdrwfpedft5ffca5xm23d": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "A white counter or cabinet edge projects into the floor area at lower right of the left view.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_qqz0rdrwfpedft5ffca5xm23d_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "restroom with tub-shower and white door beside vanity"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "rss5pxc1nxq9niysi84x5kfcd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small carpeted room with brown sofa and white arched panel door"
+  },
+  "equipment": []
+ },
+ "rz4g5x7s4ucurz7btt7a5iasb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Wood-floored hallway, EXIT sign, brown wooden end door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign mounted high on the wall above the open white door on the right, ahead",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_rz4g5x7s4ucurz7btt7a5iasb_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "s82h4xcznu6e67sdfwm4cfswb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted staircase rising along the right side of the view, ahead of the viewer.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_s82h4xcznu6e67sdfwm4cfswb_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Carpeted stairs run upward with a wood handrail along the right side of the view.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_s82h4xcznu6e67sdfwm4cfswb_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted staircase with wood handrail beside white door"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "sadk80f39wqc5ig0hxg5annsa": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "White open cube shelf unit stands on the tiled floor in the foreground, left of center, in the walking path.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_sadk80f39wqc5ig0hxg5annsa_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "tiled restroom with glass shower and white cube shelf"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "scdfnbgn2eick02yqxnhaezab": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted staircase rising to the right with a wooden handrail, visible at the edge of the corridor.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_scdfnbgn2eick02yqxnhaezab_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Carpeted staircase beside wood-floored corridor with black-framed interior window"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small red exit sign above the doorway in the room ahead.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_scdfnbgn2eick02yqxnhaezab_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "t1fiuh7ttwisics5wxp4unrud": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "arched windows with white blinds and brown wooden door ahead"
+  },
+  "equipment": []
+ },
+ "t8cd0dncb1y9ksh383d8gq9cc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow white corridor with wood floor and paneled doors"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "u2r4geibr25b3tx2r1ir8s5zd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with arched window and dark built-in cabinets beside doorway"
+  },
+  "equipment": []
+ },
+ "u8dtyrquqbwfmaeu2m2wak7uc": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Kitchenette with black refrigerator, carpeted entry, white door behind"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "ubiqr0w676uphwx137zgay0bd": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small room with wall sink, upper cabinet and tiled floor"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "w1m7w98bw88w6umhbg9ma0agc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor junction with restroom doorway on left and open room beyond"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "w1z8zsf0mtnh73snawq3cdf6c": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "tall cream cabinets beside arched blinded window alcove"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "w6ip3sme93bd76dd21wbs0a3b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Narrow corridor with wooden door at far end and EXIT sign ahead"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign above the wooden door at the top of the ahead image",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_w6ip3sme93bd76dd21wbs0a3b_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign at the far end of the corridor in the behind image",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_w6ip3sme93bd76dd21wbs0a3b_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "whr37q0zc8deatws4dqdufyza": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "tiled room with arched window and open white door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "x1564pwfqfh4x0u9tcqb9yshc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Arched blinded window beside closed wooden door"
+  },
+  "equipment": []
+ },
+ "x1qapuutc6rw20i25ha5zbg1a": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "white paneled door beside granite-topped counter with wood floors"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "x486nmgncc2ntxwdy3xtkfmgd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "white six-panel door beside brown wooden door on hardwood floor"
+  },
+  "equipment": []
+ },
+ "xdahtxxrbb1haasxe64ru4mxb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "hallway with runner rug leading to wooden door at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign mounted on ceiling above the wooden door",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_xdahtxxrbb1haasxe64ru4mxb_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "xddma3k4ymeym4tfrww97tz3d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Dark mat or threshold piece visible at the bottom of the open doorway on the left, may catch a stretcher wheel",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_xddma3k4ymeym4tfrww97tz3d_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "open doorway on left beside framed wall box"
+  },
+  "equipment": []
+ },
+ "xtnxknw28esx14e34rsehnixc": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "Please close door quietly",
+    "This door must remain locked"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wooden door with please close door quietly sign near shelving"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "y2wgz730y2198bmi13gtnccqb": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Tile floor meets carpeted hallway at the open doorway threshold, a level change a stretcher may need to cross.",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_y2wgz730y2198bmi13gtnccqb_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "restroom with tiled shower and white vanity"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "yemifhm1es7nq3iwwcm27xuka": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "empty room with white door and window with blinds"
+  },
+  "equipment": []
+ },
+ "ysn98fkeemw12sq4zym7exg8b": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairway opening with handrail descending beyond the wall to the left, visible in left view",
+     "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ysn98fkeemw12sq4zym7exg8b_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "kitchenette with black stove; stairs down to left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Illuminated EXIT sign on ceiling above the opening to the left",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_ysn98fkeemw12sq4zym7exg8b_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "yyb6bixpxdds1pe91a4w629td": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "Arched blinded window in corner room beside wood-floor corridor"
+  },
+  "equipment": []
+ },
+ "z0e0yqsteu6ep0d0ucxxnfrrd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": true,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "tiled corridor with arched window and tall open shelving"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher beside a paper towel dispenser and sink",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_z0e0yqsteu6ep0d0ucxxnfrrd_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "z1htmrkr88n24cr1dp7sc0aya": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "granite-topped counter beside wood-floored room with ceiling fan"
+  },
+  "equipment": []
+ },
+ "z2fh6t8w00aewesz7ys25123a": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "kitchen with black refrigerator and sink beneath a textured ceiling vent"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "z497sy8hdi65u6ynsuz5n6rba": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor with fire extinguisher and sink behind"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall beside the sink",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_z497sy8hdi65u6ynsuz5n6rba_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "zb86s3duckdhp1kbii12aihgb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open white doorway onto long wood-floored hallway"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small illuminated sign above the hallway entrance; text not legible",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_zb86s3duckdhp1kbii12aihgb_y000_p+00.jpg"
+   }
+  ]
+ },
+ "zr40yy4u4yinuybe3ywnkdyra": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "White paneled door at corridor end with wood floor and red EXIT sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Red EXIT sign at upper right of the ahead view, above the corridor beyond the white paneled door.",
+    "evidence_path": "cache/index/10352309/crops/mZ4TqsMaSk8_zr40yy4u4yinuybe3ywnkdyra_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ }
+}
