@@ -345,15 +345,22 @@ def _carry_point(g: Graph, target: str, profile: str, blocked=frozenset()) -> di
     both = [n for n in reach if n in on_foot]
     if not both:
         return None
-    node = min(both, key=lambda n: (on_foot[n], reach[n], n))
+    # The crew walks the carry twice, in without the patient and out with them, so a second
+    # of carry counts double against a second of wheeling the stretcher closer.
+    node = min(both, key=lambda n: (reach[n] + 2.0 * on_foot[n], on_foot[n], n))
     wheeled = _walk_back(reach_prev, node)                 # entrance ... carry point
     carried = _walk_back(foot_prev, node)[::-1]            # carry point ... target
     first = g.edge(carried[0], carried[1]) if len(carried) > 1 else None
+    rise = (g.xyz(target) or (0, 0, 0))[2] - (g.xyz(node) or (0, 0, 0))[2]
     return {"node_id": node, "label": g.label(node), "room": g.room(node),
             "floor": g.nodes[node].get("floor"), "entrance_id": wheeled[0],
             "seconds_to_carry_point": round(reach[node], 1),
             "carry_seconds_on_foot": round(on_foot[node], 1),
             "blocked_by": first["type"] if first else None,
+            "blocked_width_m": first.get("width_m") if first else None,
+            "carry_direction": "up" if rise > 1.0 else "down" if rise < -1.0 else "level",
+            "carry_uses_stairs": any((g.edge(a, b) or {}).get("type") == "stairs"
+                                     for a, b in zip(carried, carried[1:])),
             "path_to_carry_point": _walk_back(out_prev, wheeled[0]) + wheeled[1:],
             "carry_path": carried}
 
@@ -606,8 +613,12 @@ def directions(g: Graph, path: list[str]) -> list[dict]:
             up = (g.nodes[end].get("floor", 0), (g.xyz(end) or (0, 0, 0))[2]) >= \
                  (g.nodes[start].get("floor", 0), (g.xyz(start) or (0, 0, 0))[2])
             name = g.label(start) or ("the stairs" if kind == "stairs" else "the elevator")
+            same_floor = g.nodes[end].get("floor", 0) == g.nodes[start].get("floor", 0)
+            where = "" if (kind == "stairs" and same_floor) else f" to {_floor_name(g, end)}"
+            if kind == "stairs" and same_floor and name == "the stairs":
+                name = "the steps"                      # a flight or a few steps within one floor
             steps.append({"kind": kind, "node_id": start, "to_node_id": end, "up": up, "name": name,
-                          "text": f"Take {name} {'up' if up else 'down'} to {_floor_name(g, end)}.",
+                          "text": f"Take {name} {'up' if up else 'down'}{where}.",
                           "meters": sum(l["meters"] for l in legs[i:j + 1]),
                           "heading_deg": _deg(leg["heading"])})
             carry_heading = legs[j]["heading"]      # None for a vertical shaft
@@ -688,7 +699,10 @@ def _go_text(g: Graph, s: dict, first: bool, last: bool) -> str:
     came_in = bool(g.nodes[start].get("is_entrance")) and (
         first or prev["kind"] in ("drive", "approach") or bool(prev.get("outside")))
     if came_in:
-        lead = f"Enter through {here}" if here else "Enter"
+        if g.kind(start) == "elevator":                    # the way in to an upper-floor scan
+            lead = f"Leave {here}" if here else "Leave the elevator"
+        else:
+            lead = f"Enter through {here}" if here else "Enter"
         if (g.nodes[start].get("approach") or {}).get("locked_entry"):
             lead += " (expect it locked from this side)"
     elif prev is not None and prev["kind"] == "stairs":
@@ -785,6 +799,9 @@ def hazards_along(g: Graph, path: list[str]) -> list[dict]:
         if e["type"] == "locked_door":
             out.append({"node_id": a, "type": "locked_door", "evidence_path": e.get("evidence_path")})
         elif float(e.get("confidence", 1.0)) < 0.7 or e.get("assumed"):
+            if e["type"] == "door" and any(g.nodes[n].get("is_entrance") and g.nodes[n].get("confirmed")
+                                           for n in (a, b)):
+                continue                                   # a marked door that somebody checked
             out.append({"node_id": a, "type": f"unconfirmed_{e['type']}",
                         "evidence_path": e.get("evidence_path")})
     return out
