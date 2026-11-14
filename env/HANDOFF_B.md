@@ -108,6 +108,22 @@ side by side with `env/routing.py`, with the same time constants on both sides:
   (`ROUTING`). They differ (locked door 30 s there, 90 s here). Pick one.
 - `tools.load_graph(building_id)` returns the `{nodes, adj, edges}` shape your code reads.
 
+## Update, Saturday evening: everything is on `main` and wired together
+
+All four lanes are merged into `main`, and `live/` runs one incident through all of them
+on real data (root `README.md` has the commands). What changed relative to the notes
+below:
+
+- The console now opens its 3D route view for any building with
+  `app/data/<PropertyId>-scan.json`. `python3 -m live.setup` writes that file for every
+  lane A building, so nothing has to be copied by hand.
+- The agent's stub tools are replaced at run time by `live/tools.py`, which calls
+  `env/tools.py` and `perception.tools.match_photo`. No file in `agent/` was edited.
+- Node ids from the matcher (`"<model id>/<sweep id>"`) are mapped to graph ids in
+  `live/tools.py`. Matches in a scan the graph does not cover are dropped.
+
+The sections below are the notes each lane was given before the merge.
+
 ## For lane D: the console (checked Saturday 5:45 PM)
 
 Lane A read pull request 1 (`codex/lane-d-dispatch-console`, commit 476342d), ran its 35

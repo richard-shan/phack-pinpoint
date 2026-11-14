@@ -17,3 +17,4 @@
 @media(max-width:800px){.property-aerial-frame{height:min(84vw,400px);min-height:0}}
 
 .spatial-view-controls [hidden]{display:none!important}
+.match-evidence{display:block;max-width:100%;height:auto;border-radius:6px;margin-top:8px}
