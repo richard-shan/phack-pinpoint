@@ -1,12 +1,13 @@
 """Run one incident end to end on real data, or watch the console for new ones.
 
     # one incident from a photo, shown in the console, dispatcher approves there
-    .venv/bin/python -m live.run --building 6550930 --photo demo/fannin_lobby.jpg --console
+    .venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9_h095.jpg --console
 
     # pick up incidents the dispatcher starts in the console (a caller photo is required)
     .venv/bin/python -m live.run --watch
 
-    # no photo matching installed: say where the caller is and run everything else
+    # the caller's position is already known (or photo matching is not installed):
+    # skip matching and run everything else
     python3 -m live.run --building 6550930 --position 9nydrb --auto-approve
 
 What runs: the agent's orchestrator (agent/pinpoint/orchestrator.py) with its tools
@@ -48,9 +49,15 @@ def _node(building_id: str, prefix: str | None) -> str | None:
 
 def run_incident(building_id: str, photo: str | None, text: str = "", *, console: Console | None = None,
                  console_incident: str | None = None, truth: str | None = None, position: str | None = None,
-                 ask: str | None = None, auto_approve: bool = False, approve_timeout_s: float | None = None,
-                 ask_timeout_s: float = 90.0, address: str | None = None) -> dict:
-    """-> the agent's summary, plus `console_incident` and `console_decision` when a console is attached."""
+                 simulate_match: str | None = None, ask: str | None = None, auto_approve: bool = False,
+                 approve_timeout_s: float | None = None, ask_timeout_s: float = 90.0,
+                 address: str | None = None) -> dict:
+    """-> the agent's summary, plus `console_incident` and `console_decision` when a console
+    is attached, and `problem` when the packet is not a full one (no match, no record).
+
+    position        the caller's position is known: no matching, no questions
+    simulate_match  stand in for the matcher with an uncertain match around this position
+    truth           where the photo was really taken, for a simulated caller's answers"""
     building_id = str(building_id)
     prop = A.get_property(building_id)
     if not prop.get("building_id"):
@@ -59,16 +66,19 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
     address = address or ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
     truth, position = _node(building_id, truth), _node(building_id, position)
+    simulate_match = _node(building_id, simulate_match)
 
     if console is not None and not console.alive():
         raise SystemExit(f"the console is not answering at {console.base}: start it with `python3 -m live.serve`")
     if console is not None and console_incident is None:
-        console_incident = console.create(building_id, text or "Caller sent a photo.", photo)["id"]
+        said = text or ("Caller sent a photo." if photo else "Position given by the dispatcher; no photo.")
+        console_incident = console.create(building_id, said, photo)["id"]
     if ask is None:
         ask = "console" if (console is not None and not truth and not auto_approve) else "simulate"
 
     tools.install()
-    tools.reset(building_id=building_id, truth_node=truth or position, simulate_match=position,
+    tools.reset(building_id=building_id, truth_node=truth or position or simulate_match,
+                given_position=position, simulate_match=simulate_match,
                 console=console, console_incident=console_incident, ask=ask, ask_timeout_s=ask_timeout_s,
                 console_scan=bool(console and console.has_scan(building_id)))
 
@@ -95,12 +105,17 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         return "approve" if d["decision"] == "approved" else "reject"
 
     intake = {"address": address, "building_id": building_id, "caller_photo_path": photo or "(position given)",
-              "caller_text": text, "ground_truth_node_id": truth or position,
+              "caller_text": text, "ground_truth_node_id": truth or position or simulate_match,
               "console_incident": console_incident}
     t0 = time.time()
     out = orchestrator.run_incident(intake, mock_llm=True, auto_approve=False, approve_fn=approve)
     out.update(console_incident=console_incident, console_decision=decision_box or None,
                wall_seconds=round(time.time() - t0, 2))
+    audit = Path(out["dir"]) / "audit.json"
+    status = json.loads(audit.read_text()).get("status") if audit.exists() else out.get("status")
+    if status and status != "OK":
+        out["problem"] = f"{status}: " + (tools.SESSION.get("match_error") or "see packet.md")
+        print(f"  NOT A FULL PACKET. {out['problem']}", file=sys.stderr, flush=True)
     return out
 
 
@@ -150,7 +165,7 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
                 res = run_incident(inc["propertyId"], path, inc.get("callerText") or "", console=console,
                                    console_incident=inc["id"], **kw)
                 print("  " + json.dumps({k: res.get(k) for k in ("incident_id", "decision", "seconds_to_draft",
-                                                                 "console_decision")}), flush=True)
+                                                                 "console_decision", "problem")}), flush=True)
             except SystemExit as exc:
                 print(f"  skipped: {exc}", flush=True)
             except Exception as exc:                        # keep watching whatever one incident does
@@ -171,7 +186,9 @@ def main(argv=None) -> None:
     ap.add_argument("--once", action="store_true", help="with --watch: handle what is waiting now, then stop")
     ap.add_argument("--truth", metavar="NODE", help="where the photo was really taken: the simulated caller "
                     "answers from it, and the result says whether the match was right")
-    ap.add_argument("--position", metavar="NODE", help="skip photo matching and use this position")
+    ap.add_argument("--position", metavar="NODE", help="the caller's position is known: skip photo matching")
+    ap.add_argument("--simulate-match", metavar="NODE", help="stand in for the matcher with an uncertain match "
+                    "around this position, to exercise the agent's questions without the matcher installed")
     ap.add_argument("--ask", choices=("console", "simulate", "none"), help="who answers the agent's questions")
     ap.add_argument("--ask-timeout", type=float, default=90.0, help="seconds to wait for the caller's reply")
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
@@ -181,10 +198,11 @@ def main(argv=None) -> None:
     if a.watch:
         watch(console, once=a.once, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
         return
-    if not a.building or not (a.photo or a.position):
+    if not a.building or not (a.photo or a.position or a.simulate_match):
         ap.error("give --building and --photo (or --position), or --watch")
     res = run_incident(a.building, a.photo, a.text, console=console, truth=a.truth, position=a.position,
-                       ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
+                       simulate_match=a.simulate_match, ask=a.ask, auto_approve=a.auto_approve,
+                       ask_timeout_s=a.ask_timeout)
     idir = Path(res["dir"])
     print(json.dumps(res, indent=1))
     loc = json.loads((idir / "location.json").read_text()) if (idir / "location.json").exists() else {}
@@ -197,6 +215,8 @@ def main(argv=None) -> None:
     print(f"packet: {idir / 'packet.md'}")
     if console is not None:
         print(f"console: {console.base}/live.html#incident/{res['console_incident']}")
+    if res.get("problem"):
+        sys.exit(2)
 
 
 if __name__ == "__main__":

@@ -80,13 +80,16 @@ class WithoutConsole(_Base):
             self.assertIn(heading, f["packet"])
         self.assertNotIn("ext_main", f["packet"])
         self.assertNotIn("Bayou", f["packet"])
-        self.assertIn("supplied to this run, not matched from the photo", f["packet"])
+        self.assertIn("given by the dispatcher, not matched from a photo", f["packet"])
+        self.assertEqual((f["location"]["node_id"], f["location"]["confidence"], f["location"]["questions_asked"]),
+                         (TARGET, 1.0, 0))                       # a known position: no questions
+        self.assertNotIn("problem", res)
         picture = Path(res["dir"]) / "route.jpg"
         self.assertTrue(picture.exists() and picture.stat().st_size > 20000)
         self.assertIn("Route on the floor plan", f["packet"])
 
     def test_question_loop_raises_confidence_in_the_true_position(self):
-        res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
+        res = run.run_incident(BUILDING, None, simulate_match=TARGET, auto_approve=True)
         loc = self.files(res)["location"]
         self.assertGreaterEqual(loc["questions_asked"], 1)
         self.assertEqual(loc["node_id"], TARGET)
@@ -97,7 +100,7 @@ class WithoutConsole(_Base):
 
     def test_no_question_when_it_would_not_change_the_door(self):
         tools._simulated_candidates = self.old_sim                   # truth plus its nearest neighbours
-        res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
+        res = run.run_incident(BUILDING, None, simulate_match=TARGET, auto_approve=True)
         loc = self.files(res)["location"]
         self.assertEqual(loc["questions_asked"], 0)
         self.assertIn("share room", loc["skip_reason"])
@@ -114,6 +117,8 @@ class WithoutConsole(_Base):
         f = self.files(res)
         self.assertEqual(f["audit"]["status"], "DEGRADED")
         self.assertIn("DEGRADED", f["packet"])
+        self.assertIn("could not be read", res["problem"])       # the run says so, and so does the packet
+        self.assertIn("- Why: the caller photo could not be read", f["packet"])
         self.assertIn("south plaza doors", f["packet"])          # falls back to the front door by name
 
     def test_install_and_uninstall(self):
@@ -160,14 +165,18 @@ class WithConsole(_Base):
         super().tearDown()
 
     def test_console_shows_the_incident_and_takes_the_route(self):
-        res = run.run_incident(BUILDING, None, "collapsed in the lobby", position=TARGET, console=self.console,
-                               auto_approve=True)
+        res = run.run_incident(BUILDING, None, "collapsed in the lobby", simulate_match=TARGET,
+                               console=self.console, auto_approve=True)
         inc = self.console.get(res["console_incident"])
         self.assertEqual(inc["status"], "approved")
         self.assertTrue(inc["packetId"])
         self.assertIn("## Enter here", inc["packetMarkdown"])
         self.assertIn("packet lines trace to a source", inc["notes"])
         self.assertIn(f"/assets/real/live/{inc['id']}/route.jpg", inc["packetMarkdown"])
+        self.assertNotIn("**Status:**", inc["packetMarkdown"])   # the console shows its own status
+        texts = [e["text"] for e in inc["events"]]
+        self.assertTrue(any(t.startswith("Agent updated the packet") for t in texts))
+        self.assertFalse(any(t.startswith("Dispatcher edited") for t in texts))
         sr = inc["spatialRoute"]
         best = A.best_entry(BUILDING, TARGET, "foot")
         self.assertEqual((sr["status"], sr["updatedBy"], sr["entryId"]), ("ready", "agent", best["entrance_id"]))
@@ -204,7 +213,7 @@ class WithConsole(_Base):
     def test_caller_answers_in_the_console(self):
         box = {}
         t = threading.Thread(target=lambda: box.update(run.run_incident(
-            BUILDING, None, position=TARGET, console=self.console, ask="console", ask_timeout_s=20,
+            BUILDING, None, simulate_match=TARGET, console=self.console, ask="console", ask_timeout_s=20,
             approve_timeout_s=30)))
         t.start()
         end, cid, asked = time.time() + 20, None, None

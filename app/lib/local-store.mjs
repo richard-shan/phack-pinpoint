@@ -102,13 +102,14 @@ export function createLocalStore({ directory, getCatalog }) {
       await atomic(incident.id, incident); return clone(incident);
     }); },
     update(id, body) { return run(async () => {
-      object(body, ['expectedRevision', 'notes', 'unconfirmed', 'location', 'route', 'packetMarkdown', 'photo']);
-      if (!Object.keys(body).some(key => key !== 'expectedRevision')) fail(400, 'EMPTY_UPDATE', 'No changes were supplied.');
+      object(body, ['expectedRevision', 'notes', 'unconfirmed', 'location', 'route', 'packetMarkdown', 'photo', 'updatedBy']);
+      if (own(body, 'updatedBy') && !['agent', 'dispatcher'].includes(body.updatedBy)) fail(400, 'INVALID_FIELD', 'updatedBy must be agent or dispatcher.');
+      if (!Object.keys(body).some(key => key !== 'expectedRevision' && key !== 'updatedBy')) fail(400, 'EMPTY_UPDATE', 'No changes were supplied.');
       const incident = await current(id, body.expectedRevision);
       for (const [key, max] of [['notes', 10000], ['location', 1000], ['route', 10000], ['packetMarkdown', 102400]]) if (own(body,key)) incident[key] = text(body[key], key, max);
       if (own(body, 'photo')) incident.photo = photo(body.photo);
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
-      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated locally. A new packet approval is required.' : 'Dispatcher edited the packet. A new approval is required.' });
+      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated locally. A new packet approval is required.' : body.updatedBy === 'agent' ? 'Agent updated the packet. Dispatcher approval is required.' : 'Dispatcher edited the packet. A new approval is required.' });
       await atomic(id, incident); return clone(incident);
     }); },
     setRoute(id, revision, spatialRoute, route, location) { return run(async () => {

@@ -1,7 +1,7 @@
 """Prepare this machine to run an incident end to end.
 
     python3 -m live.setup                 # console data: catalog, scan graphs, viewer
-    python3 -m live.setup --no-viewer     # skip the Matterport viewer download (about 40 MB)
+    python3 -m live.setup --no-viewer     # skip the Matterport viewer download (about 11 MB)
     python3 -m live.setup --check         # only report what is ready
 
 What it writes (all git-ignored, all rebuilt from what is in the repo):

@@ -56,9 +56,10 @@ QUESTIONS = {
 
 
 def reset(**values) -> dict:
-    """Start a run. Keys: building_id, truth_node, simulate_match, console (a
-    live.console_api.Console), console_incident, ask ("console" | "simulate" | "none"),
-    ask_timeout_s."""
+    """Start a run. Keys: building_id, truth_node, given_position (the caller's position
+    is known: no matching), simulate_match (pretend the matcher returned an uncertain match
+    around this position), console (a live.console_api.Console), console_incident,
+    ask ("console" | "simulate" | "none"), ask_timeout_s."""
     SESSION.clear()
     SESSION.update({"ask": "simulate", "ask_timeout_s": 90.0, "asked": []}, **values)
     return SESSION
@@ -212,6 +213,34 @@ def publish(src: Path, name: str) -> str:
     return f"/assets/real/live/{SESSION['console_incident']}/{name}"
 
 
+def _match(building_id, image_path, k):
+    if SESSION.get("given_position"):
+        g = _graph(building_id)
+        node = SESSION["given_position"]
+        return [{"node_id": node, "score": 1.0, "given": True, "evidence_path": g.nodes[node].get("pano_path")}]
+    if SESSION.get("simulate_match"):
+        return _simulated_candidates(building_id, SESSION["simulate_match"], k)
+    if not image_path:
+        raise EmptyCandidates("caller photo path missing")
+    if not Path(image_path).exists() or Path(image_path).stat().st_size == 0:
+        raise EmptyCandidates(f"the caller photo could not be read: {image_path}")
+    try:
+        from . import keys
+        keys.export_env()
+        from perception import tools as B
+    except ImportError as exc:
+        raise MatterportUnavailable(
+            "photo matching is not installed in this Python (lane B's packages: torch, kornia, "
+            f"anthropic). Use the Python environment described in README.md. ({exc})")
+    try:
+        return B.match_photo(building_id, str(image_path), k)
+    except FileNotFoundError as exc:
+        raise MatterportUnavailable(f"there is no photo index for building {building_id} on this machine. "
+                                    f"Build it with: python -m live.index {building_id}")
+    except ValueError as exc:
+        raise EmptyCandidates(str(exc))
+
+
 def _publish(path, rank):
     """A match-evidence image as a path relative to the repo. With a console attached, the
     best match is also copied to where the console can serve it (app/assets/real/ is
@@ -236,28 +265,11 @@ def match_photo(building_id, image_path, k=10):
     """photo -> ranked positions [{node_id, score, evidence_path, attributes}] with node ids
     as the graph spells them. Positions in a scan the graph does not cover are dropped."""
     building_id = str(building_id)
-    if not image_path:
-        raise EmptyCandidates("caller photo path missing")
-    if SESSION.get("simulate_match"):
-        cands = _simulated_candidates(building_id, SESSION["simulate_match"], k)
-    else:
-        if not Path(image_path).exists() or Path(image_path).stat().st_size == 0:
-            raise EmptyCandidates(f"caller photo unreadable: {image_path}")
-        try:
-            from . import keys
-            keys.export_env()
-            from perception import tools as B
-        except ImportError as exc:
-            raise MatterportUnavailable(
-                "photo matching needs lane B's packages (torch, kornia). Run this with "
-                f".venv/bin/python after `python -m live.setup`. ({exc})")
-        try:
-            cands = B.match_photo(building_id, str(image_path), k)
-        except FileNotFoundError as exc:
-            raise MatterportUnavailable(f"no photo index for building {building_id}: "
-                                        f"run .venv/bin/python -m live.index {building_id} ({exc})")
-        except ValueError as exc:
-            raise EmptyCandidates(str(exc))
+    try:
+        cands = _match(building_id, image_path, k)
+    except (MatterportUnavailable, EmptyCandidates) as exc:
+        SESSION["match_error"] = str(exc)          # the packet and the terminal say why
+        raise
     g = _graph(building_id)
     out = []
     for c in cands:

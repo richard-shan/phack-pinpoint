@@ -86,6 +86,8 @@ def _panel(g: Graph, seq: int, path: list[str], target: str, door: str | None, s
     pad = PAD_M * ppm
     x0, y0 = min(p[0] for p in pts) - pad, min(p[1] for p in pts) - pad
     x1, y1 = max(p[0] for p in pts) + pad, max(p[1] for p in pts) + pad
+    if max(plan.width, plan.height) <= 3.0 * max(x1 - x0, y1 - y0):   # small floor: show all of it
+        x0, y0, x1, y1 = min(x0, 0), min(y0, 0), max(x1, plan.width), max(y1, plan.height)
     if (x1 - x0) < 2.2 * (y1 - y0):                       # keep panels wide enough for labels
         cx, half = (x0 + x1) / 2, 1.1 * (y1 - y0)
         x0, x1 = cx - half, cx + half

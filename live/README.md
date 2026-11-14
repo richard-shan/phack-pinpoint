@@ -79,7 +79,7 @@ Not connected yet:
 
 ## Demo walkthrough
 
-1. `python3 -m live.serve` in one terminal, `.venv/bin/python -m live.run --watch` in
+1. `.venv/bin/python -m live.serve` in one terminal, `.venv/bin/python -m live.run --watch` in
    another. Open `http://localhost:4175/live.html` (use `localhost`: the Matterport
    viewer key is tied to that name).
 2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
@@ -127,10 +127,13 @@ photos were located exactly. Lane B reports about 2.5 s per photo on a laptop wi
 | `--console [URL]` | show it in the console and wait there for approval |
 | `--watch` | run on incidents started in the console that have a caller photo |
 | `--truth NODE` | where the photo was taken: a simulated caller answers, and the output says whether the match was right |
-| `--position NODE` | skip photo matching and use this position |
+| `--position NODE` | the caller's position is known: no matching and no questions |
+| `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
 
-Each run writes `agent/incidents/<id>/` with the agent's files: `brief.json`,
-`candidates.json`, `location.json`, `site.json`, `route.json`, `audit.json`, `packet.md`
-and `trace.jsonl` (every tool call with its time).
+Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
+`brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,
+`audit.json`, `packet.md`, `route.jpg` (the route on the floor plan), `summary.json`
+and `trace.jsonl` (every tool call with its time). A run that could not produce a full
+packet prints the reason and exits with status 2.
