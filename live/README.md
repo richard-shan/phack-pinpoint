@@ -110,23 +110,29 @@ Not connected yet:
 
 The first photo in a session takes longer because the matcher's two models load.
 
-## Measured on 7900 Fannin St
+## Measured
 
-`.venv/bin/python -m live.evaluate 6550930 --n 14`, on a laptop CPU with no GPU:
+`.venv/bin/python -m live.evaluate <building> --n <count>`, on a laptop CPU with no GPU.
+Each incident renders a photo at a random scanned position, runs the whole chain with a
+simulated caller, and compares the result with where the photo was taken.
 
-| | |
-|---|---|
-| Photos located at the exact scanned position | 14 of 14 |
-| Right door chosen | 14 of 14 |
-| Packet lines without a source | 0 |
-| Time per incident, photo to draft packet | about 32 s, nearly all of it photo matching |
+| Building | Photos located at the exact position | Right door | Packet lines without a source |
+|---|---|---|---|
+| 7900 Fannin St (lobby, 35 positions) | 14 of 14 | 14 of 14 | 0 |
+| 3160 Geneva St (one bare floor, 23 positions) | 8 of 8 | 8 of 8 | 0 |
+| 12814 Willow Centre Dr (two floors, 114 positions) | 8 of 8 | 8 of 8 | 0 |
+
+Time per incident, photo to draft packet: about 32 s, nearly all of it photo matching.
+Lane B reports about 2.5 s per photo on a laptop with a GPU.
 
 These photos are rendered from the scan on a scanned position, so the match is easier
-than it would be for a real phone photo; treat 14 of 14 as an upper bound. With a
+than it would be for a real phone photo; treat 30 of 30 as an upper bound. With a
 dark, blurred, zoomed photo (`demo/6550930_3ymmrb_h200_hard.jpg`) the matcher was 53%
 sure, the agent asked three questions (furniture, kind of room, elevator doors in
-view), and it ended on the right position at 81%. At 3160 Geneva St, 8 of 8 rendered
-photos were located exactly. Lane B reports about 2.5 s per photo on a laptop with a GPU.
+view), and it ended on the right position at 81%.
+
+A separate sweep of 31 incidents with the position given, across all seven buildings,
+had no crash, no audit failure, and the same door as `best_entry` in every packet.
 
 ## Options for `live.run`
 
