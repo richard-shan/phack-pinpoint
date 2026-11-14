@@ -17,7 +17,7 @@ import cv2
 import numpy as np
 
 from .crops import load_faces, view
-from .embed import MODEL_NAME, embed
+from .embed import MODEL_NAME, RES, embed, weights_name
 from .matterport import REPO, Matterport, load_dotenv
 
 YAWS = tuple(range(0, 360, 45))     # 8 headings
@@ -77,7 +77,7 @@ def build(building_id, model_ids=None, mp=None):
         print("  %s %-28s %d sweeps" % (mid, model["name"][:28], len(model["locations"])), flush=True)
     emb = embed(images)
     np.save(os.path.join(out, "emb.npy"), emb)
-    json.dump({"building_id": str(building_id), "model": MODEL_NAME, "fov": FOV, "yaws": YAWS,
+    json.dump({"building_id": str(building_id), "model": MODEL_NAME, "weights": weights_name(), "input_res": RES, "fov": FOV, "yaws": YAWS,
                "pitches": PITCHES, "rows": meta, "skipped": skipped},
               open(os.path.join(out, "meta.json"), "w"))
     return {"building_id": str(building_id), "views": len(meta),

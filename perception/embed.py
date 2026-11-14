@@ -1,9 +1,19 @@
 """Image embeddings from a self-supervised vision model (DINOv2), on the laptop GPU."""
+import os
+
 import numpy as np
 import torch
 from PIL import Image
 
-MODEL_NAME = "facebook/dinov2-base"
+# Model and input size can be overridden for experiments. An index must be built
+# and queried with the same settings; perception.index records them.
+MODEL_NAME = os.environ.get("PINPOINT_EMBED_MODEL", "facebook/dinov2-base")
+RES = int(os.environ.get("PINPOINT_EMBED_RES", "224"))      # multiple of 14
+# Weights fine-tuned on scans of other buildings (perception.finetune). Used when
+# present; set PINPOINT_EMBED_STOCK=1 to ignore them. An index must be built and
+# queried with the same weights.
+FINETUNED = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "cache", "models", "dinov2_ft.pt")
 _state = {}
 
 
@@ -11,10 +21,24 @@ def _load():
     if not _state:
         from transformers import AutoImageProcessor, AutoModel
         dev = "mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu")
-        _state["proc"] = AutoImageProcessor.from_pretrained(MODEL_NAME)
-        _state["model"] = AutoModel.from_pretrained(MODEL_NAME).to(dev).eval()
+        if RES == 224:
+            _state["proc"] = AutoImageProcessor.from_pretrained(MODEL_NAME)     # resize 256, centre crop 224
+        else:                                                               # whole image at RES x RES
+            _state["proc"] = AutoImageProcessor.from_pretrained(
+                MODEL_NAME, size={"shortest_edge": RES}, crop_size={"height": RES, "width": RES})
+        model = AutoModel.from_pretrained(MODEL_NAME)
+        _state["weights"] = "stock"
+        if os.path.exists(FINETUNED) and not os.environ.get("PINPOINT_EMBED_STOCK"):
+            model.load_state_dict(torch.load(FINETUNED, map_location="cpu"))
+            _state["weights"] = "finetuned"
+        _state["model"] = model.to(dev).eval()
         _state["dev"] = dev
     return _state
+
+
+def weights_name():
+    """"stock" or "finetuned": which weights embed() is using."""
+    return _load()["weights"]
 
 
 def embed(images, batch=32):

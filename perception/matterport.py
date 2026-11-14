@@ -12,7 +12,10 @@ import base64
 import contextlib
 import json
 import os
+import random
 import socket
+import time
+import urllib.error
 import urllib.request
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,10 +48,19 @@ def _ipv4_only():
         socket.getaddrinfo = real
 
 
-def _fetch(req_or_url, timeout):
-    with _ipv4_only():
-        with urllib.request.urlopen(req_or_url, timeout=timeout) as r:
-            return r.read()
+def _fetch(req_or_url, timeout, tries=7):
+    """GET or POST with IPv4 only, backing off on rate limits and transient errors.
+    429 = rate limited (the key and the image server are shared by the whole team)."""
+    for attempt in range(tries):
+        try:
+            with _ipv4_only():
+                with urllib.request.urlopen(req_or_url, timeout=timeout) as r:
+                    return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 502, 503, 504) or attempt == tries - 1:
+                raise
+            wait = float(e.headers.get("Retry-After") or 0) or min(5 * 2 ** attempt, 120)
+            time.sleep(wait + random.random())
 
 
 def load_dotenv(path=None):
