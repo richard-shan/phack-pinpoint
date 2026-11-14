@@ -3865,13 +3865,6 @@
    "source": "lane-a:open"
   },
   {
-   "id": "111-180",
-   "a": "36w2zndh3891i4u29m0ui2dic",
-   "b": "s1gug953knbg95w0xagzkhira",
-   "kind": "walk",
-   "source": "lane-a:open"
-  },
-  {
    "id": "9-164",
    "a": "w05ay7u40y2bbi5hdhe3pbr3b",
    "b": "xif7dfwe5yhht551sggzg931a",
@@ -3964,6 +3957,35 @@
    ]
   },
   {
+   "id": "85-155",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "h0u7yd4xsuagytmumifqqyw8a",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f3, elev_f0",
+   "points": [
+    {
+     "x": 1.811,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 4.011,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 3.867,
+     "y": -9.042,
+     "z": 8.34
+    },
+    {
+     "x": -1.316,
+     "y": -9.042,
+     "z": 3.022
+    }
+   ]
+  },
+  {
    "id": "85-92",
    "a": "aewkibq8d3nf32wdpah5n5mha",
    "b": "ipk3g6mkddmi86pyhu7q5kk3b",
@@ -4022,6 +4044,35 @@
    ]
   },
   {
+   "id": "88-155",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "h0u7yd4xsuagytmumifqqyw8a",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f4, elev_f0",
+   "points": [
+    {
+     "x": 1.44,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 3.64,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 3.867,
+     "y": -9.042,
+     "z": 8.34
+    },
+    {
+     "x": -1.316,
+     "y": -9.042,
+     "z": 3.022
+    }
+   ]
+  },
+  {
    "id": "88-92",
    "a": "cy9hnqnn97bmi7n4xrpnehtna",
    "b": "ipk3g6mkddmi86pyhu7q5kk3b",
@@ -4066,6 +4117,64 @@
      "x": 3.64,
      "y": 3.436,
      "z": 8.429
+    },
+    {
+     "x": 4.07,
+     "y": -6.01,
+     "z": 8.339
+    },
+    {
+     "x": 1.87,
+     "y": -6.01,
+     "z": 8.339
+    }
+   ]
+  },
+  {
+   "id": "92-155",
+   "a": "h0u7yd4xsuagytmumifqqyw8a",
+   "b": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f0, elev_f2",
+   "points": [
+    {
+     "x": -1.316,
+     "y": -9.042,
+     "z": 3.022
+    },
+    {
+     "x": 3.867,
+     "y": -9.042,
+     "z": 8.34
+    },
+    {
+     "x": 3.867,
+     "y": -3.395,
+     "z": 8.34
+    },
+    {
+     "x": 1.667,
+     "y": -3.395,
+     "z": 8.34
+    }
+   ]
+  },
+  {
+   "id": "71-155",
+   "a": "h0u7yd4xsuagytmumifqqyw8a",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f0, elev_f1",
+   "points": [
+    {
+     "x": -1.316,
+     "y": -9.042,
+     "z": 3.022
+    },
+    {
+     "x": 3.867,
+     "y": -9.042,
+     "z": 8.34
     },
     {
      "x": 4.07,
@@ -4169,7 +4278,7 @@
  "scope": null,
  "provenance": {
   "source": "lane A graph (env/build_graph.py), exported by env/console.py",
-  "generated": "2026-11-14T18:01:13",
+  "generated": "2026-11-14T18:30:04",
   "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
   "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
   "aerial": "Vexcel. Staging spots are placed by eye."

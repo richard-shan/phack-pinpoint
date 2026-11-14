@@ -350,7 +350,9 @@ def _carry_point(g: Graph, target: str, profile: str, blocked=frozenset()) -> di
     node = min(both, key=lambda n: (reach[n] + 2.0 * on_foot[n], on_foot[n], n))
     wheeled = _walk_back(reach_prev, node)                 # entrance ... carry point
     carried = _walk_back(foot_prev, node)[::-1]            # carry point ... target
-    first = g.edge(carried[0], carried[1]) if len(carried) > 1 else None
+    # What stops the stretcher: the first link on the carry that this profile cannot cross.
+    links = [g.edge(a, b) for a, b in zip(carried, carried[1:])]
+    first = next((e for e in links if e is not None and g.cost(e, profile) is None), links[0] if links else None)
     rise = (g.xyz(target) or (0, 0, 0))[2] - (g.xyz(node) or (0, 0, 0))[2]
     return {"node_id": node, "label": g.label(node), "room": g.room(node),
             "floor": g.nodes[node].get("floor"), "entrance_id": wheeled[0],
@@ -621,7 +623,9 @@ def directions(g: Graph, path: list[str]) -> list[dict]:
                           "text": f"Take {name} {'up' if up else 'down'}{where}.",
                           "meters": sum(l["meters"] for l in legs[i:j + 1]),
                           "heading_deg": _deg(leg["heading"])})
-            carry_heading = legs[j]["heading"]      # None for a vertical shaft
+            # An elevator ride has no direction of travel to turn from: the stops sit a few
+            # centimetres apart on the plan, and that noise must not become "turn sharply left".
+            carry_heading = None if kind == "elevator" else legs[j]["heading"]
             i = j + 1
             continue
         if kind == "exterior_vehicle":

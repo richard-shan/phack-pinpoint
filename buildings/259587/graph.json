@@ -3,7 +3,7 @@
  "matterport_model_id": "rDU2DaDBbyz",
  "name": "911 Broxton Ave (Broxton Plaza)",
  "address": "911 Broxton Ave, Los Angeles, CA, 90024, US",
- "generated_at": "2026-11-14T18:01:13",
+ "generated_at": "2026-11-14T18:30:04",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 2,
@@ -103,12 +103,12 @@
   "auto_entrances": 1,
   "other_exterior_doors": 6,
   "attribute_ids_not_in_graph": 0,
-  "nodes": 204,
-  "edges": 278,
+  "nodes": 205,
+  "edges": 282,
   "components": 1,
-  "largest_component": 204,
+  "largest_component": 205,
   "entrances": 2,
-  "elevator_edges": 6,
+  "elevator_edges": 10,
   "stairs_edges": 29,
   "door_edges": 90
  },
@@ -10283,12 +10283,39 @@
    "room_label": null,
    "attributes": {
     "elevator": true,
+    "seen_from": "h0u7yd4xsuagytmumifqqyw8a"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "elevator",
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
+   "id": "elev_f0",
+   "floor": 0,
+   "xyz": [
+    3.867,
+    -8.34,
+    -9.042
+   ],
+   "label": "the elevator",
+   "note": "Basement 2 stop: teal sliding door in the block core with a call button and an 'in case of fire' sign beside it, seen from h0u7yd4x at heading about 309, about 6.9 m away. Position is not offset_xy from the sweep: the wall plan's door recess here (x 3.04, y -8.87 to -7.81) is the same as Floor 1's, so the stop is placed directly below the Floor 1 stop elev_f2 (same x, y; inferred, the car itself is not seen). Height is the sweep's floor height.",
+   "latlon": [
+    34.06334248057045,
+    -118.44740160882218
+   ],
+   "evidence_path": "buildings/259587/evidence/elev_f0.jpg",
+   "floor_name": "Basement 2"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "elevator": true,
     "seen_from": "x5bksrgdxudq96y0cbga96r6c"
    },
    "is_entrance": false,
    "equipment": [],
    "kind": "elevator",
-   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2",
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
    "id": "elev_f1",
    "floor": 1,
    "xyz": [
@@ -10314,7 +10341,7 @@
    "is_entrance": false,
    "equipment": [],
    "kind": "elevator",
-   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2",
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
    "id": "elev_f2",
    "floor": 2,
    "xyz": [
@@ -10340,7 +10367,7 @@
    "is_entrance": false,
    "equipment": [],
    "kind": "elevator",
-   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2",
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
    "id": "elev_f3",
    "floor": 3,
    "xyz": [
@@ -10366,7 +10393,7 @@
    "is_entrance": false,
    "equipment": [],
    "kind": "elevator",
-   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2",
+   "source": "hand: elevator doors and call buttons seen on all five levels (Basement 2, Basement 1, Floors 1 to 3)",
    "id": "elev_f4",
    "floor": 4,
    "xyz": [
@@ -14681,23 +14708,6 @@
    }
   },
   {
-   "meters": 7.77,
-   "confidence": 0.9,
-   "evidence_path": null,
-   "type": "open",
-   "wall_checked": true,
-   "a": "36w2zndh3891i4u29m0ui2dic",
-   "b": "s1gug953knbg95w0xagzkhira",
-   "seconds": {
-    "foot": 5.55,
-    "stretcher": 7.77
-   },
-   "passable": {
-    "foot": true,
-    "stretcher": true
-   }
-  },
-  {
    "meters": 7.8,
    "confidence": 0.9,
    "evidence_path": null,
@@ -15037,6 +15047,24 @@
    "confidence": 0.9,
    "evidence_path": null,
    "assumed": false,
+   "a": "h0u7yd4xsuagytmumifqqyw8a",
+   "b": "elev_f0",
+   "type": "open",
+   "meters": 7.43,
+   "note": "straight-line distance across open garage floor from the sweep to the elevator stop; replaces the 2.2 m that offset_xy assumes",
+   "seconds": {
+    "foot": 5.31,
+    "stretcher": 7.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
    "a": "x5bksrgdxudq96y0cbga96r6c",
    "b": "elev_f1",
    "type": "open",
@@ -15095,6 +15123,78 @@
    "seconds": {
     "foot": 1.57,
     "stretcher": 2.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_f0",
+   "b": "elev_f1",
+   "type": "elevator",
+   "floors": 1,
+   "meters": 3.03,
+   "seconds": {
+    "foot": 35.0,
+    "stretcher": 45.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_f0",
+   "b": "elev_f2",
+   "type": "elevator",
+   "floors": 2,
+   "meters": 5.65,
+   "seconds": {
+    "foot": 40.0,
+    "stretcher": 50.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_f0",
+   "b": "elev_f3",
+   "type": "elevator",
+   "floors": 3,
+   "meters": 9.06,
+   "seconds": {
+    "foot": 45.0,
+    "stretcher": 55.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_f0",
+   "b": "elev_f4",
+   "type": "elevator",
+   "floors": 4,
+   "meters": 12.48,
+   "seconds": {
+    "foot": 50.0,
+    "stretcher": 60.0
    },
    "passable": {
     "foot": true,
