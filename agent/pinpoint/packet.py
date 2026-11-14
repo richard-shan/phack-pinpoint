@@ -63,7 +63,7 @@ class PacketWriter:
             saved = self.route.get("seconds_saved_vs_front")
             note = ""
             if ent != "ext_main":
-                note = f"  — NOT the street-address door; saves ~{saved}s vs front [src:route.seconds_saved_vs_front]"
+                note = f"  — NOT the street-address door; saves ~{saved}s vs front"
             L += [f"- Door `{ent}`{note} [src:route.foot.entrance_id]"]
         else:
             L += [PENDING]

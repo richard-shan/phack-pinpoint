@@ -38,17 +38,18 @@ def _entropy(weights):
     return -sum(w * math.log(w, 2) for w in weights if w > 0)
 
 
-def best_question(candidates):
+def best_question(candidates, exclude=None):
     """Pick the attribute whose answer is expected to shrink the belief's entropy the most
     (max expected information gain). Only attributes present on every candidate are eligible,
-    so the partition is well defined. Returns the attribute + a phrasing hint + diagnostics."""
+    so the partition is well defined. `exclude` skips already-asked attributes (don't re-ask).
+    Returns the attribute + a phrasing hint + diagnostics."""
     normalize_belief(candidates)
     prior_h = _entropy([c["belief"] for c in candidates])
 
     attrs = set(candidates[0].get("attributes", {}))
     for c in candidates[1:]:
         attrs &= set(c.get("attributes", {}))
-    attrs.discard("floor") if False else None  # floor stays eligible; it's a strong splitter
+    attrs -= set(exclude or ())  # never re-ask what the caller already answered
 
     best = None
     for attr in sorted(attrs):

@@ -1,0 +1,5 @@
+incidents/
+buildings/
+__pycache__/
+*.pyc
+.venv/

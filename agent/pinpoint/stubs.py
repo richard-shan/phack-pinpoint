@@ -143,7 +143,7 @@ def check_claim(claim_text, sources):
     src_key = None
     # claims are tagged like '... [src:brief.use_type]'
     if "[src:" in claim_text:
-        src_key = claim_text.split("[src:", 1)[1].rstrip("]").strip()
+        src_key = claim_text.split("[src:", 1)[1].split("]", 1)[0].strip()
     supported = bool(src_key) and _resolve(sources, src_key) not in (None, "", [], {})
     return {"claim": claim_text, "source_key": src_key, "supported": supported,
             "confidence": 0.9 if supported else 0.0}

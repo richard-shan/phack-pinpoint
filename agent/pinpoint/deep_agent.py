@@ -92,8 +92,8 @@ def build_agent(checkpointer=None):
 
 def run_incident(intake: dict):  # pragma: no cover - needs API key
     """Real end-to-end run. Mirrors DEEPAGENTS_NOTES.md interrupt/resume flow."""
+    agent = build_agent()  # raises the friendly install message if deepagents/langgraph missing
     from langgraph.types import Command
-    agent = build_agent()
     config = {"configurable": {"thread_id": intake.get("incident_id", "inc-live")}}
     user = (f"Incident at {intake['address']}. Caller photo: {intake['caller_photo_path']}. "
             f"Caller said: {intake.get('caller_text','')}. Produce the responder packet.")

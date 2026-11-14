@@ -108,18 +108,20 @@ def _locator(idir, intake, mock_llm):
 
     truth = _ground_truth_attrs(building_id)
     asked = 0
+    asked_attrs = []
     log = []
     while asked < MAX_QUESTIONS:
         conf = localization.top_confidence(cands)
         if conf >= CONFIDENCE_THRESHOLD:
             break
-        q = localization.best_question(cands)
+        q = localization.best_question(cands, exclude=asked_attrs)
         if not q.get("eligible"):
             break
         # Commander phrases + asks; mock caller answers from ground truth
         reply = stubs.ask_caller(intake["incident_id"], text=q["attribute"],
                                  _mock_truth_attrs=truth)
         localization.update_belief(cands, q["attribute"], reply["raw"])
+        asked_attrs.append(q["attribute"])
         asked += 1
         log.append({"q": q["attribute"], "hint": q["question_hint"],
                     "info_gain": q["expected_info_gain"], "answer": reply["raw"],

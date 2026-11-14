@@ -237,7 +237,7 @@ def directions(building_id, path):
         # floor change -> emit its own step
         if a["floor"] != b["floor"] and a["floor"] and b["floor"]:
             steps.append(_flush_run(run_start, nodes[path[i]], run_m))
-            via = "elevator" if seg and seg["type"] == "elevator" else f"Stair to floor {b['floor']}"
+            via = "elevator" if seg and seg["type"] == "elevator" else "stairs"
             steps.append({"text": f"Take the {via} to floor {b['floor']}.",
                           "meters": 0, "node_id": path[i + 1],
                           "thumbnail_path": b.get("pano_path")})
