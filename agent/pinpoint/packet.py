@@ -63,6 +63,8 @@ class PacketWriter:
         if self.site and self.site.get("staging"):
             s = self.site["staging"][0]
             L += [f"- {s['label']} (`{s['node_id']}`) [src:site.staging]"]
+            if self.site.get("aerial_tile_path"):
+                L += [f"- Aerial reference: `{self.site['aerial_tile_path']}` [src:site.aerial_tile_path]"]
         else:
             L += [PENDING]
         L += ["", "## Enter here"]

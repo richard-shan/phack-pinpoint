@@ -61,7 +61,7 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
         futures = {
             ex.submit(_records, idir, intake): "records",
             ex.submit(_locator, idir, intake, mock_llm): "locator",
-            ex.submit(_site, idir, building_id): "site",
+            ex.submit(_site, idir, building_id, address=intake.get("address")): "site",
         }
         # flush each packet section as its future finishes (not in submit order)
         for fut in cf.as_completed(futures):
@@ -195,8 +195,8 @@ def _locator(idir, intake, mock_llm):
     return location
 
 
-def _site(idir, building_id):
-    feats = stubs.detect_site_features(building_id)
+def _site(idir, building_id, address=None, lat=None, lon=None):
+    feats = stubs.detect_site_features(building_id, address=address, lat=lat, lon=lon)
     _write(idir / "site.json", feats)
     return feats
 
