@@ -1,0 +1,11 @@
+{
+  "_source": "synth generator \u2014 bayou-medical-plaza interior node sampled uniformly.",
+  "incident_id": "synth-029-f1_corr_e",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/synth/node_f1_corr_e.jpg",
+  "caller_text": "chest pain, breathing weird, we're in a waiting area",
+  "ground_truth_node_id": "f1_corr_e",
+  "ground_truth_room_id": "F1 East Corridor",
+  "ground_truth_best_entry_id": "ext_dock"
+}

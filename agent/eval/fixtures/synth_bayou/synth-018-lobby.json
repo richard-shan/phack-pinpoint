@@ -1,0 +1,11 @@
+{
+  "_source": "synth generator \u2014 bayou-medical-plaza interior node sampled uniformly.",
+  "incident_id": "synth-018-lobby",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/synth/node_lobby.jpg",
+  "caller_text": "severe allergic reaction, we're on the ground level reception",
+  "ground_truth_node_id": "lobby",
+  "ground_truth_room_id": "Main Lobby",
+  "ground_truth_best_entry_id": "ext_main"
+}

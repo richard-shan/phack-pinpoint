@@ -106,11 +106,41 @@ def _locator(idir, intake, mock_llm):
     localization.normalize_belief(cands)
     _write(idir / "candidates.json", {"candidates": cands})
 
-    truth = _ground_truth_attrs(building_id)
+    truth = _ground_truth_attrs(building_id, intake=intake)
     asked = 0
     asked_attrs = []
     log = []
-    while asked < MAX_QUESTIONS:
+    skip_reason = None
+
+    def _would_question_change_route(cands_now):
+        """If every candidate above belief 0.1 routes to the same best entrance AND lives in
+        the same room_id, asking the caller cannot change the dispatched route. Returns
+        (skip: bool, reason: str|None, under_belief_snapshot: dict|None)."""
+        above = [c for c in cands_now if c.get("belief", 0.0) > 0.1]
+        if len(above) < 2:
+            return True, "only one candidate above belief 0.1", None
+        g = json.loads((stubs._B / "graph.json").read_text())
+        nodes_by_id = {n["id"]: n for n in g["nodes"]}
+        rooms = set()
+        for c in above:
+            n = nodes_by_id.get(c["node_id"], {})
+            rooms.add(n.get("room_label") or c["node_id"])
+        if len(rooms) > 1:
+            return False, None, None
+        ub = routing.best_entry_under_belief(building_id, cands_now, "foot")
+        per = ub.get("per_candidate_best_door", {})
+        above_ids = {c["node_id"] for c in above}
+        best_doors = {per[nid] for nid in above_ids if nid in per}
+        if len(best_doors) == 1:
+            return True, f"all top candidates share room={next(iter(rooms))} and best_entry={next(iter(best_doors))}", ub
+        return False, None, None
+
+    skip, skip_reason, _ub = _would_question_change_route(cands)
+    if skip:
+        trace.log("commander", "question_skipped",
+                  result_summary=skip_reason, phase="optimization")
+
+    while not skip and asked < MAX_QUESTIONS:
         conf = localization.top_confidence(cands)
         if conf >= CONFIDENCE_THRESHOLD:
             break
@@ -135,7 +165,10 @@ def _locator(idir, intake, mock_llm):
     location = {"node_id": top["node_id"], "confidence": round(top["belief"], 3),
                 "floor": top["attributes"].get("floor"),
                 "room_type": top["attributes"].get("room_type"),
-                "questions_asked": asked, "question_log": log,
+                "questions_asked": asked,
+                "question_skipped": skip,
+                "skip_reason": skip_reason,
+                "question_log": log,
                 "runner_up": {"node_id": cands_sorted[1]["node_id"],
                               "confidence": round(cands_sorted[1]["belief"], 3)}
                              if len(cands_sorted) > 1 else None,
@@ -209,8 +242,14 @@ def _approval_gate(incident_id, packet, auto_approve, approve_fn):
 
 
 # --------------------------- helpers ---------------------------
-def _ground_truth_attrs(building_id):
-    gt = json.loads((stubs._B / "match.json").read_text())["ground_truth_node"]
+def _ground_truth_attrs(building_id, intake=None):
+    """For mock caller answers. If the intake carries a ground_truth_node_id (synth eval), use
+    that; otherwise fall back to the fixture's ground_truth_node (demo behavior)."""
+    gt = None
+    if intake:
+        gt = intake.get("ground_truth_node_id")
+    if not gt:
+        gt = json.loads((stubs._B / "match.json").read_text())["ground_truth_node"]
     g = json.loads((stubs._B / "graph.json").read_text())
     node = next((n for n in g["nodes"] if n["id"] == gt), None)
     return node.get("attributes", {}) if node else {}

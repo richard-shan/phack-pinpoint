@@ -1,0 +1,11 @@
+{
+  "_source": "synth generator \u2014 bayou-medical-plaza interior node sampled uniformly.",
+  "incident_id": "synth-013-suite210_interior",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/synth/node_suite210_interior.jpg",
+  "caller_text": "someone's unconscious here, I think it's the second floor",
+  "ground_truth_node_id": "suite210_interior",
+  "ground_truth_room_id": "Suite 210 Treatment Floor",
+  "ground_truth_best_entry_id": "ext_dock"
+}

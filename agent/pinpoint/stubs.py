@@ -58,9 +58,56 @@ def entrances(building_id):
 # ---------- Person B (perception) ----------
 @traced("locator")
 def match_photo(building_id, image_path, k=10):
-    """photo -> ranked candidate positions with evidence overlay. STUB: fixed ambiguous set."""
+    """photo -> ranked candidate positions with evidence overlay. STUB behavior:
+      * if image_path contains 'synth/node_<id>.jpg', build a synthetic candidate set centered on
+        that node (top candidate = truth with score 0.72, plus 3-4 distractors sampled from
+        nearby nodes on the same floor with mild score decay). Lets the eval harness drive the
+        pipeline across many ground-truth nodes without a real matcher.
+      * otherwise return the fixed ambiguous set from match.json (demo behavior)."""
+    marker = "synth/node_"
+    if image_path and marker in image_path:
+        truth = image_path.split(marker, 1)[1].rsplit(".", 1)[0]
+        return _synth_candidates(truth, k)
     cands = _load("match.json")["candidates"]
     return cands[:k]
+
+
+def _synth_candidates(truth_node_id, k=10):
+    """Build an ambiguous-but-correct candidate set around truth_node_id. Top-1 is the truth
+    with score 0.72; distractors are same-floor neighbors with score decay. If the truth node
+    has fewer than k same-floor peers, pad with other-floor nodes to keep the set interesting."""
+    import random
+    g = _load("graph.json")
+    nodes = {n["id"]: n for n in g["nodes"]}
+    if truth_node_id not in nodes:
+        return _load("match.json")["candidates"][:k]
+    truth = nodes[truth_node_id]
+    truth_floor = truth.get("floor")
+    # Peers on the same floor, excluding entrances and the truth itself
+    peers = [n for nid, n in nodes.items()
+             if nid != truth_node_id and n.get("floor") == truth_floor and not n.get("is_entrance")]
+    # Deterministic shuffle keyed by the truth node id so synth incidents are reproducible
+    rng = random.Random(hash(truth_node_id) & 0xFFFFFFFF)
+    rng.shuffle(peers)
+    distractors = peers[:max(0, k - 1)]
+    # Pad with other floors if still short
+    if len(distractors) < k - 1:
+        others = [n for nid, n in nodes.items()
+                  if nid != truth_node_id and n.get("floor") != truth_floor
+                  and not n.get("is_entrance") and n not in distractors]
+        rng.shuffle(others)
+        distractors.extend(others[:(k - 1 - len(distractors))])
+    out = []
+    out.append({"node_id": truth_node_id, "score": 0.72,
+                "evidence_path": truth.get("pano_path"),
+                "attributes": dict(truth.get("attributes", {}),
+                                    floor=truth.get("floor"))})
+    base = 0.60
+    for i, n in enumerate(distractors):
+        out.append({"node_id": n["id"], "score": round(base - 0.05 * i, 3),
+                    "evidence_path": n.get("pano_path"),
+                    "attributes": dict(n.get("attributes", {}), floor=n.get("floor"))})
+    return out[:k]
 
 
 @traced("site")

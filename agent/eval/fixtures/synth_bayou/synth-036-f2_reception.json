@@ -1,0 +1,11 @@
+{
+  "_source": "synth generator \u2014 bayou-medical-plaza interior node sampled uniformly.",
+  "incident_id": "synth-036-f2_reception",
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/synth/node_f2_reception.jpg",
+  "caller_text": "diabetic emergency, we're inside the clinic suite",
+  "ground_truth_node_id": "f2_reception",
+  "ground_truth_room_id": "F2 Reception",
+  "ground_truth_best_entry_id": "ext_dock"
+}
