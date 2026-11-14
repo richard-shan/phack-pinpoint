@@ -3,7 +3,7 @@
  "matterport_model_id": "MFhskYSBMMe",
  "name": "3250 Wilshire Blvd, Suite 301 (Xfernet), 3rd floor",
  "address": "3250 Wilshire, Los Angeles, CA, 90005, US",
- "generated_at": "2026-11-14T15:00:55",
+ "generated_at": "2026-11-14T18:01:11",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 2,
  "grade_floor": 0,
@@ -43,6 +43,7 @@
   "sweeps_without_floor": 0,
   "auto_entrances": 7,
   "other_exterior_doors": 0,
+  "attribute_ids_not_in_graph": 0,
   "nodes": 126,
   "edges": 166,
   "components": 1,
@@ -73,13 +74,36 @@
     -0.1021091565489769
    ],
    "pano_path": "buildings/248192/panos/bi2itp7sw4yp22i1sfizn1rgd.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Handrail-lined drop from the entry area to a lower carpeted floor on the left, possibly a step or stairs.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_bi2itp7sw4yp22i1sfizn1rgd_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "glass door with white handrail beside open-plan office"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red wall-mounted box on gray wall, likely a fire alarm pull station.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_bi2itp7sw4yp22i1sfizn1rgd_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -108,10 +132,27 @@
     -0.0031102069187909365
    ],
    "pano_path": "buildings/248192/panos/dasb3dy976au0uga6yw2y1qea.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Railings line a sloped or stepped section of floor behind, possible level change",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dasb3dy976au0uga6yw2y1qea_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "long tiled corridor with glass-walled rooms and blue ceiling"
    },
    "is_entrance": false,
    "equipment": [],
@@ -146,7 +187,24 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Wheeled cart or stand with a chair-like seat sits on the floor in the aisle toward the far end.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ei0876yem1p81yq9xzdh2n2tc_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow aisle between gray metal cabinets on raised tile floor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -178,13 +236,36 @@
     0.9997751712799072
    ],
    "pano_path": "buildings/248192/panos/g2cnngtdwntz65xhk39d19bfa.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Folding step ladder leaning against the right-hand wall at the near end of the alcove",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_g2cnngtdwntz65xhk39d19bfa_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "dead-end alcove with step ladder beside gray electrical cabinet"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray wall-mounted cabinet with a small display along the left edge of the ahead image",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_g2cnngtdwntz65xhk39d19bfa_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -213,10 +294,20 @@
     0.4139871895313263
    ],
    "pano_path": "buildings/248192/panos/qt2pr2bwq0b311zb27r8wrweb.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "red-based monitor desk beside whiteboard and potted plant"
    },
    "is_entrance": false,
    "equipment": [],
@@ -251,10 +342,28 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "PULL"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Narrow raised-floor aisle between dark server racks with blue overhead cable tray"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "White wall-mounted electrical panel with a black door, on the right wall",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u226dbirissbeisd3u6pxmgdb_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -283,13 +392,29 @@
     0.49344348907470703
    ],
    "pano_path": "buildings/248192/panos/ztarf16nq64yn0g0h9izsn8pa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor beside glass-walled office with fire extinguisher on right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher in wall-mounted cabinet beside a framed picture, visible through the glass wall in the right image.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ztarf16nq64yn0g0h9izsn8pa_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -318,10 +443,20 @@
     0.655447244644165
    ],
    "pano_path": "buildings/248192/panos/z21xf42csctpmc0x93fg2dacb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white-tiled aisle between black server cabinets with closed gray door ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -353,10 +488,20 @@
     -0.1422073245048523
    ],
    "pano_path": "buildings/248192/panos/8ts003pki3hw0rq4rqz2eecac.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor lined with floor-to-ceiling metal cabinet doors, open office at far end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -388,10 +533,20 @@
     -0.10857377201318741
    ],
    "pano_path": "buildings/248192/panos/cb39hmrrannkhh6466ikep2eb.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled corridor with potted plants at far end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -426,7 +581,19 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "PDU-4"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long server-rack aisle with raised white floor tiles and PDU-4 cabinet"
    },
    "is_entrance": false,
    "equipment": [],
@@ -458,13 +625,29 @@
     -0.03478667512536049
    ],
    "pano_path": "buildings/248192/panos/kutx0en1030x5iike1qfiwzsc.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor with glass-paneled doors on right side"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign visible at the far end of the corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_kutx0en1030x5iike1qfiwzsc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -493,13 +676,31 @@
     0.9405736327171326
    ],
    "pano_path": "buildings/248192/panos/kuxs6sihfcg69hgn440uumbqb.jpg",
-   "room_label": "Office",
+   "room_label": "Waiting room",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "waiting_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "waiting area with two leather chairs beside exit door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Illuminated EXIT sign mounted above the wooden door at the upper right of the image",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_kuxs6sihfcg69hgn440uumbqb_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -531,7 +732,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "rows of black server cabinets beside plain white wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -563,13 +774,29 @@
     -0.0014848862774670124
    ],
    "pano_path": "buildings/248192/panos/xk7ur6iy6kzx2swydt2m9casc.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long straight corridor with ceiling light panels and doors at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small ceiling-mounted sign partway down the corridor; text not legible",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xk7ur6iy6kzx2swydt2m9casc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -601,10 +828,33 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "CRAC-5"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Server aisle beside CRAC-5 unit and red extinguisher"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher mounted on the wall, left side of the spot.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xuhtwbmsxqp8ykd84qhkdn0hc_y270_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Gray wall-mounted electrical disconnect box with an OFF label and conduit running down to the floor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xuhtwbmsxqp8ykd84qhkdn0hc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -633,13 +883,34 @@
     0.9160711765289307
    ],
    "pano_path": "buildings/248192/panos/1bi2ayktd57u5riwhmmafxqzb.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with large framed map and glass-panel doors"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted unit on the left wall of the corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_1bi2ayktd57u5riwhmmafxqzb_y000_p+00.jpg"
+    },
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red box on the wall above the framed map.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_1bi2ayktd57u5riwhmmafxqzb_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -671,7 +942,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "dark server racks behind wire mesh cages in a data center aisle"
    },
    "is_entrance": false,
    "equipment": [],
@@ -703,13 +984,29 @@
     0.560544490814209
    ],
    "pano_path": "buildings/248192/panos/83r725rdmkhfq1a8m3fsb44zc.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wire mesh caged enclosure beside long tiled corridor with electrical panels"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Two gray electrical panel boxes with handles are mounted on the far wall at the end of the corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_83r725rdmkhfq1a8m3fsb44zc_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -741,7 +1038,24 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Rolling cart with a monitor stands at the far end of the aisle in the right image, possibly in the walking path.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_8k58biu4ukesmngcg1fc59e7a_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "long aisle between rows of gray server cabinets with overhead light strip"
    },
    "is_entrance": false,
    "equipment": [],
@@ -773,10 +1087,20 @@
     0.3472069501876831
    ],
    "pano_path": "buildings/248192/panos/9bdezrcm5a3wteups7hw5aaid.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open office with glass partition wall and tall potted plant"
    },
    "is_entrance": false,
    "equipment": [],
@@ -808,13 +1132,31 @@
     -0.0008871510508470237
    ],
    "pano_path": "buildings/248192/panos/9kh8win2mfxreasxsiguqitud.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "Global Internet Map"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with wall-mounted Global Internet Map display"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Wall-mounted electrical panel box on the white wall in the middle of the view.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_9kh8win2mfxreasxsiguqitud_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "note": "Just inside the Suite 301 doors. The wood door on the south wall is signed 'Employees Only' and 'PRE-ACTION VALVE INSIDE' (sprinkler pre-action valve room).",
@@ -847,7 +1189,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long aisle between server racks on white raised floor tiles"
    },
    "is_entrance": false,
    "equipment": [],
@@ -882,10 +1234,38 @@
    "room_label": null,
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Coiled cables and a long metal profile lie on the concrete floor in front of the wall.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y090_p+00.jpg"
+     },
+     {
+      "type": "obstruction_in_path",
+      "note": "Large industrial machinery with a low floor-level frame fills much of the forward view.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "industrial loom bay beside roll-up shutter door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel mounted on the wall at the right edge of the left view, beside the roll-up shutter.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -917,7 +1297,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white raised-floor server room aisle with cabinets and overhead cable trays"
    },
    "is_entrance": false,
    "equipment": [],
@@ -952,7 +1342,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server room aisle with black equipment racks and raised gray floor tiles"
    },
    "is_entrance": false,
    "equipment": [],
@@ -984,10 +1384,20 @@
     -0.41612690687179565
    ],
    "pano_path": "buildings/248192/panos/gca2iy6zhgb3nn9qdy2s0ym6c.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled corridor with wall handrail beside a multi-monitor control desk"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1022,10 +1432,33 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "CRAC-A"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Tiled server room aisle beside CRAC-A cooling unit with gray cabinets"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted fire extinguisher on the right side of the left view, near the corner.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_h4za5cw31pb999pzhr2za317d_y270_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Two gray electrical boxes mounted on the wall in the left view.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_h4za5cw31pb999pzhr2za317d_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1054,13 +1487,48 @@
     -0.04929902032017708
    ],
    "pano_path": "buildings/248192/panos/im711qe8neuwex0b18kwce1yc.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [
+     "FED FROM UPS-1"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "narrow_passage",
+      "note": "Corridor between the electrical cabinets on the left and the wall on the right is narrow.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y000_p+00.jpg"
+     },
+     {
+      "type": "narrow_passage",
+      "note": "Passage between the dark cabinet run on the left and the roll-up shutter on the right is narrow.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow concrete service corridor with electrical cabinets and UPS-1 feed panel"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel cabinets line the left side of the corridor ahead.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y000_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel door with a sign reading FED FROM UPS-1 mounted above it.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1089,10 +1557,22 @@
     -0.012201111763715744
    ],
    "pano_path": "buildings/248192/panos/mcm8nepmnihwb52189zu1m9fa.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "CONFERENCE ROOM 4"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor with glossy speckled floor and Conference Room 4 sign"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1124,10 +1604,22 @@
     0.8851549625396729
    ],
    "pano_path": "buildings/248192/panos/nm2t27hwccyhk3xahq0pbzh1d.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "red diamond floor marking in room with blue ceiling"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1159,10 +1651,23 @@
     0.6359743475914001
    ],
    "pano_path": "buildings/248192/panos/p48c8gwcr16epcr7q2hm89xzc.jpg",
-   "room_label": "Office",
+   "room_label": "Reception",
    "attributes": {
     "room_id": "b4qtykzcazp4iumkamm7y7h2b",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "XFERNET",
+     "www.xfernet"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "gray wall with XFERNET logo, desk and plant behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1194,13 +1699,36 @@
     0.2274305522441864
    ],
    "pano_path": "buildings/248192/panos/qmfm6fcimhkg6z72ng4b8ffsd.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Coiled black cables lie on the floor along the right side near the wall.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qmfm6fcimhkg6z72ng4b8ffsd_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "gray roll-up shutter door beside stacked metal shelving in storage corridor"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel on the left wall ahead, near the roll-up shutter door.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qmfm6fcimhkg6z72ng4b8ffsd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1229,13 +1757,36 @@
     0.7349919080734253
    ],
    "pano_path": "buildings/248192/panos/u4cyy1a4izt8fpmrftzrffd9b.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Black folding step ladder standing on the floor against the white wall.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u4cyy1a4izt8fpmrftzrffd9b_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "low",
+    "landmark_text": "dark closed panel ahead with folding step ladder on right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Wall of electrical panels and boxes with conduit above a gray ledge.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u4cyy1a4izt8fpmrftzrffd9b_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1264,13 +1815,46 @@
     0.012070809490978718
    ],
    "pano_path": "buildings/248192/panos/xcm6f6xnwu2zqd9hxwqd6wt1a.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Cardboard boxes and a black bin sit on the floor along the left side of the aisle.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "gray electrical cabinets beside a roll-up shutter in narrow utility aisle"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Tall gray electrical switchgear cabinets fill the wall ahead.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y000_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Tall gray electrical cabinet stands on the right beside a stacked cardboard box area.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y090_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Gray electrical panel door with a recessed breaker box on the left wall.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1299,10 +1883,20 @@
     0.04689345508813858
    ],
    "pano_path": "buildings/248192/panos/ywcd5qh8xb5htmq1ifg4ph4ac.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow tiled corridor lined with gray metal cabinets and louvered wall vents"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1334,10 +1928,20 @@
     0.6724472045898438
    ],
    "pano_path": "buildings/248192/panos/04kd3gsp391ff9q58y8un986b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor lined with black server racks and glass office wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1372,7 +1976,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server aisle between metal cabinets with monitor and keyboard"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1404,10 +2018,20 @@
     -0.22498781979084015
    ],
    "pano_path": "buildings/248192/panos/3wx6sm5qf3b4nu7s6teeqk0hc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "long corridor with white wall-mounted cabinet on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1439,10 +2063,20 @@
     -0.3978153169155121
    ],
    "pano_path": "buildings/248192/panos/6c7t910cyq4ckc1r7pa6xck2b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "perception_confidence": "medium",
+    "landmark_text": "blue ceiling corridor with glass-fronted elevator on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1474,13 +2108,31 @@
     0.2642228901386261
    ],
    "pano_path": "buildings/248192/panos/6c4cfz95wyg4sn133x1zbe5rb.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "PDU-6"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow tiled aisle between gray metal cabinets with PDU-6 panel and chain-link cage"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Power distribution panel labeled PDU-6 on the wall to the right, with a small blue sign above it.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_6c4cfz95wyg4sn133x1zbe5rb_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1512,7 +2164,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server rack aisle with tiled raised floor and ceiling dome camera"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1544,13 +2206,29 @@
     0.07226994633674622
    ],
    "pano_path": "buildings/248192/panos/a51g73nby4xz9zkn979w1yzfc.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with glass door and open office beyond"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Small red wall-mounted item near the ceiling on the right wall, possibly a fire extinguisher",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_a51g73nby4xz9zkn979w1yzfc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1582,7 +2260,19 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "XFERNET"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood door beside wall-mounted TV and glass-walled corridor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1617,7 +2307,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "server room with wire mesh cages and tall gray equipment racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1649,13 +2349,31 @@
     0.05775107070803642
    ],
    "pano_path": "buildings/248192/panos/en84aibzyd5eha5pzds6zi7qa.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with framed map on right wall and EXIT sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green EXIT sign mounted above the corridor ceiling, past the center wood door.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_en84aibzyd5eha5pzds6zi7qa_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1684,10 +2402,32 @@
     0.6932026147842407
    ],
    "pano_path": "buildings/248192/panos/exgzawdp99ytggmhaeersufhc.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Gray trash bin standing on the floor in front of the wall, with a white tub beside it.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_exgzawdp99ytggmhaeersufhc_y000_p+00.jpg"
+     },
+     {
+      "type": "obstruction_in_path",
+      "note": "Yellow-edged wheeled item on the floor along the right side of the narrow corridor.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_exgzawdp99ytggmhaeersufhc_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "gray trash bin beside white tub, concrete utility room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1722,7 +2462,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server room aisle with tall dark cabinets and a rolling monitor cart"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1757,10 +2507,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "raised-floor server aisle with orange extinguisher on wall"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Orange cylinder in a wall bracket near the passage entrance, likely a fire extinguisher.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_mdwntufqpdsu1qi1u0b7q7bua_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1792,7 +2558,24 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Chain-link cage partition with a horizontal rail crosses the view behind",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qn6rw160f5x12dyine5tatt5d_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "Black server racks ahead and left, chain-link cage behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1824,13 +2607,29 @@
     -0.353945791721344
    ],
    "pano_path": "buildings/248192/panos/sn12etr7txcd51msx8u9kzz2a.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "glass-walled server room beside open cubicle row with plant"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red device on the wall at the right edge, possibly a pull station; not clearly legible.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sn12etr7txcd51msx8u9kzz2a_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1862,7 +2661,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "server racks lining a narrow aisle with white raised floor tiles"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1894,10 +2703,20 @@
     0.008676579222083092
    ],
    "pano_path": "buildings/248192/panos/0x4csy2rac9dmmniy6z8xw2fa.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long straight corridor with gray doors and recessed ceiling lights"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1929,13 +2748,31 @@
     -0.015566754154860973
    ],
    "pano_path": "buildings/248192/panos/0xwmkmdb5py95hhtgp7xquqkc.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long narrow corridor with green EXIT sign at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green illuminated EXIT sign mounted on ceiling at the far end of the corridor",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_0xwmkmdb5py95hhtgp7xquqkc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1964,10 +2801,22 @@
     0.7631212472915649
    ],
    "pano_path": "buildings/248192/panos/35cf5a9kub057mhuqpu9bug3d.jpg",
-   "room_label": "Office",
+   "room_label": "Reception",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "FERNET"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled reception counter with FERNET sign and tall potted plant"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1999,10 +2848,20 @@
     0.6764953136444092
    ],
    "pano_path": "buildings/248192/panos/35nkicfub0ibi8dsmzmmwmykb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor between server racks and frosted glass walls"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2034,13 +2893,31 @@
     -0.15898409485816956
    ],
    "pano_path": "buildings/248192/panos/9nix76tkuw2kxtadk1iap4m8d.jpg",
-   "room_label": "Office",
+   "room_label": "Conference room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "conference_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wall-mounted whiteboard on frosted glass wall beside snake plant"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green EXIT sign above a door on the left side of the room",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_9nix76tkuw2kxtadk1iap4m8d_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2069,10 +2946,20 @@
     0.9989299774169922
    ],
    "pano_path": "buildings/248192/panos/95kncws2p5t5xrws39pc27xgd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "narrow corridor, dark ceiling, light floor at far end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2104,10 +2991,27 @@
     0.06856474280357361
    ],
    "pano_path": "buildings/248192/panos/ay2k5k6fsye6u3izzx2xsed9c.jpg",
-   "room_label": "Office",
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "kitchen_break_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Metal railing and raised edge at lower left, possibly a step or level change",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ay2k5k6fsye6u3izzx2xsed9c_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "low",
+    "landmark_text": "kitchen sink counter facing a whiteboard panel with open office behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2139,13 +3043,29 @@
     0.002796696498990059
    ],
    "pano_path": "buildings/248192/panos/aebyk64g54x8fq8293up71mra.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor with glossy floor and green exit sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green illuminated exit sign above the door at the far end of the corridor",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aebyk64g54x8fq8293up71mra_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2174,13 +3094,29 @@
     -0.23894837498664856
    ],
    "pano_path": "buildings/248192/panos/beiz3hh5gph2eyrdcf5fztrma.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "recessed fire extinguisher cabinet beside long carpeted corridor with blinded windows"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher in a recessed stainless steel wall cabinet on the left wall of the corridor",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_beiz3hh5gph2eyrdcf5fztrma_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2209,10 +3145,27 @@
     0.6158157587051392
    ],
    "pano_path": "buildings/248192/panos/dp5a2irdhb9cxu1bwu5tidfbb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "narrow_passage",
+      "note": "Narrow aisle between tall server racks on both sides, visibly tighter than a normal corridor.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dp5a2irdhb9cxu1bwu5tidfbb_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow corridor between server racks with glass office wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2247,7 +3200,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "narrow_passage",
+      "note": "Narrow aisle between wire mesh enclosure walls, appears narrower than a normal doorway.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ep6ir718kms5qtghirzdu66cc_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow aisle between wire mesh cages under green exit sign"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2279,13 +3251,36 @@
     -0.2789623737335205
    ],
    "pano_path": "buildings/248192/panos/gypbqz1efusbqsfc8wehg6u6b.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Large potted plant in an orange pot stands on the carpeted aisle between cubicles.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gypbqz1efusbqsfc8wehg6u6b_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with roller-shaded windows and open office cubicles to the right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Wall-mounted box at left edge of view, possibly an electrical or alarm panel; not clearly identifiable.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gypbqz1efusbqsfc8wehg6u6b_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2317,7 +3312,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long server room aisle with black racks and white raised floor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2352,7 +3357,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "server room aisle with white raised-tile floor and wire mesh cages"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2384,10 +3399,32 @@
     0.007754317484796047
    ],
    "pano_path": "buildings/248192/panos/pyfbedi9fitzss78799et29tb.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "narrow_passage",
+      "note": "Tiled aisle runs between tall gray metal cabinets and appears narrower than a normal doorway, ending at a plain light wall with a dark threshold strip at the floor.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyfbedi9fitzss78799et29tb_y000_p+00.jpg"
+     },
+     {
+      "type": "obstruction_in_path",
+      "note": "A desk with a monitor and equipment sits along the left side of the aisle behind, narrowing the walking space.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyfbedi9fitzss78799et29tb_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow tiled aisle between gray metal cabinets under a long overhead light"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2422,7 +3459,24 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Tall black cabinet stands in the central aisle, partly blocking the walking path toward the far end.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyceuntsxa242bbx3tag8thpc_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server aisle with tall black cabinet and caged racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2454,10 +3508,20 @@
     -0.0025601154193282127
    ],
    "pano_path": "buildings/248192/panos/t6m5tw36t29u9tt5imhu6g4gc.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "server room with white raised floor tiles and black equipment racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2489,10 +3553,20 @@
     -0.18550601601600647
    ],
    "pano_path": "buildings/248192/panos/tpxbcp5zuixcqeeem8cg6dzta.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor between cubicles with blinded windows and a tall potted plant"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2524,13 +3598,29 @@
     0.8051366806030273
    ],
    "pano_path": "buildings/248192/panos/zpnqhnc1ar565q3n943u2mbzc.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open room with wire shelving of red and yellow bins"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign on left wall above the window line; text not legible",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_zpnqhnc1ar565q3n943u2mbzc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2562,10 +3652,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "server room with black equipment racks and a glass door at the far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red fire extinguisher on a wall bracket on the right side of the corridor, about halfway down.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_zpx4qias1i5x4ye9fp6bc6bkd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2597,7 +3703,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "row of mesh-front server racks beside a chain-link caged area"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2629,10 +3745,20 @@
     -0.010097352787852287
    ],
    "pano_path": "buildings/248192/panos/aq6pp98zc3e216z3fy3196rnc.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with wall-mounted map, glass door, and patterned carpet runner"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2664,13 +3790,39 @@
     -0.39445269107818604
    ],
    "pano_path": "buildings/248192/panos/aqws3fnuntku01dh55t95fk4b.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "concrete",
+    "signage_text": [
+     "ON",
+     "OFF"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Debris or scattered material lies on the floor in the bottom right corner of the view.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aqws3fnuntku01dh55t95fk4b_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "corner of plain walls beside grey Eaton electrical disconnect panels"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Grey Eaton disconnect switch enclosures with ON/OFF labels mounted on the wall, with a red emergency-style knob on the right box.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aqws3fnuntku01dh55t95fk4b_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2699,10 +3851,20 @@
     -0.17738504707813263
    ],
    "pano_path": "buildings/248192/panos/czy828qe2g6udwze824uy84db.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor between dark server cabinets with glass office wall on one side"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2734,10 +3896,20 @@
     0.9995360970497131
    ],
    "pano_path": "buildings/248192/panos/d7s74mukruxr3yunybewedmtb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "narrow dark-walled corridor with light tile floor leading to lighter room ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2772,7 +3944,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wall-mounted whiteboard with hanging straw hats beside a wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2804,13 +3986,29 @@
     -0.09710108488798141
    ],
    "pano_path": "buildings/248192/panos/gffce5q9yfiff37rs0tfr0f8a.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor beside blinded window wall with open office cubicles"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted unit on the right wall, likely a fire extinguisher cabinet",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gffce5q9yfiff37rs0tfr0f8a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2842,10 +4040,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long gray-tiled corridor lined with mesh-fronted server racks"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "alarm_panel",
+     "note": "Small wall panel with a red display on the left wall, text not readable, so type is uncertain.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hfmiksyyg215fhayqcnuh26ga_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2874,10 +4088,20 @@
     0.031724534928798676
    ],
    "pano_path": "buildings/248192/panos/iqwmiqug752bdzb9i95ebhheb.jpg",
-   "room_label": "Office",
+   "room_label": "Conference room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "conference_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "conference room with long table and wall-mounted whiteboard"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2912,7 +4136,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled corridor opposite rows of server racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2944,13 +4178,29 @@
     -0.013119727373123169
    ],
    "pano_path": "buildings/248192/panos/rqz6ckzkfimp0r2140c771r7b.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Narrow corridor, speckled floor, lit exit sign at end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Illuminated green exit sign at the far end of the corridor",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_rqz6ckzkfimp0r2140c771r7b_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2982,7 +4232,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long server aisle between dark metal cabinets on white raised floor tiles"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3017,7 +4277,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "white-tiled aisle between tall grey server cabinets with overhead cable tray"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3049,10 +4319,27 @@
     -0.4871787130832672
    ],
    "pano_path": "buildings/248192/panos/wz69amhfe67xm3qf0h1mdkcfa.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Folding step ladder leaning against the right wall beside the cubicle desk; may sit near the walking path.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_wz69amhfe67xm3qf0h1mdkcfa_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "glass-walled server room window beside cubicle office"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3087,7 +4374,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "grey raised tile floor with wooden desks and monitors behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3119,13 +4416,29 @@
     -0.00860299076884985
    ],
    "pano_path": "buildings/248192/panos/y7gt2xg8su3cdsepfp17x6k6d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "server racks on left, glass-walled office on right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small white box with red marking on wall right of the glass door, likely a pull station",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_y7gt2xg8su3cdsepfp17x6k6d_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3154,10 +4467,20 @@
     0.6731733679771423
    ],
    "pano_path": "buildings/248192/panos/zqg3dxd8xmqku20umabrniu2a.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor between black server racks and glass wall panels"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3189,10 +4512,20 @@
     -0.03806328773498535
    ],
    "pano_path": "buildings/248192/panos/1ft8esuxc0t26wkpcai7b1eha.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long server room corridor with black racks and white cabinets"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3224,10 +4557,20 @@
     0.40896502137184143
    ],
    "pano_path": "buildings/248192/panos/2ftrkcxxf1pzhsz7aawezwb5b.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "monitor desks with black cabinet and frosted glass wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3262,7 +4605,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "long server room aisle lined with black perforated equipment racks and overhead cable trays"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3294,10 +4647,20 @@
     0.9991838932037354
    ],
    "pano_path": "buildings/248192/panos/agicqxn7ahsr56nh8uxam9bzc.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corridor with painted mural wall and brown door at far end"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3329,13 +4692,40 @@
     0.701610267162323
    ],
    "pano_path": "buildings/248192/panos/hggrzssiu9p53m7wbi74ya8td.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Coiled black cables on floor and metal rods/shelving stacked in front, blocking the path",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y000_p+00.jpg"
+     },
+     {
+      "type": "obstruction_in_path",
+      "note": "Black bag resting on floor at lower left of view",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "long corridor with grey roll-down shutter on left"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign visible at far end of corridor; text not readable",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y090_p+00.jpg"
+    },
     "evacuation_chair"
    ],
    "kind": "pano",
@@ -3367,13 +4757,31 @@
     -0.019984478130936623
    ],
    "pano_path": "buildings/248192/panos/mr2i6z7s300795fw4d5wgeusa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow tiled corridor with gray metal cabinets on one side and green EXIT sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green EXIT sign mounted above the corridor ceiling, seen in the behind image.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_mr2i6z7s300795fw4d5wgeusa_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3405,7 +4813,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long white-tiled aisle between rows of server racks and cabinets"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3437,13 +4855,31 @@
     0.01938374526798725
    ],
    "pano_path": "buildings/248192/panos/pgzggd119dz8t3za9psz55rgd.jpg",
-   "room_label": "Office",
+   "room_label": "Conference room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "conference_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "conference room with long table and wall-mounted TV"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign above the door on the right side of the room.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pgzggd119dz8t3za9psz55rgd_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3472,13 +4908,30 @@
     0.006912769749760628
    ],
    "pano_path": "buildings/248192/panos/p040basywgt3dp0433phkpuza.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "301"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor by room 301 door and red fire alarm"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red fire alarm pull station on the wall to the left of the door marked 301",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_p040basywgt3dp0433phkpuza_y180_p+00.jpg"
+    },
     "fire_alarm_pull_station"
    ],
    "kind": "pano",
@@ -3510,10 +4963,20 @@
     -0.36385151743888855
    ],
    "pano_path": "buildings/248192/panos/sgdqc4385q67t59k96xmmw2ya.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open office cubicles beside black plum blossom wall art"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3545,13 +5008,41 @@
     0.6771740317344666
    ],
    "pano_path": "buildings/248192/panos/sgh1z60uu5pa2d4c584ah10za.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Wire shelving unit and a black metal step stool stand along the left side near the corridor, and an orange folding ladder leans against the right side, so the path may be narrowed.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "long narrow tiled corridor with wire mesh storage cages on one side"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "electrical_panel",
+     "note": "Gray wall-mounted cabinet with breakers or switches visible at the far end of the corridor on the right side.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y090_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign mounted on the ceiling far down the corridor ahead on the left-side view.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3580,13 +5071,34 @@
     -0.07225710898637772
    ],
    "pano_path": "buildings/248192/panos/t8ug2cp93umssn3x6w4up2dec.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with gray door and fire alarm pull station"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red fire alarm pull station on the wall beside the gray door at the far end of the corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_t8ug2cp93umssn3x6w4up2dec_y180_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Green exit sign mounted above the gray door at the far end of the corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_t8ug2cp93umssn3x6w4up2dec_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3615,10 +5127,20 @@
     0.9817578792572021
    ],
    "pano_path": "buildings/248192/panos/w8r5nesytbxkdbpau2w0bu9sd.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood double doors opposite framed global internet map poster"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3653,7 +5175,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "raised-floor equipment room with long aisle between racks and gray lockers"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3688,7 +5220,24 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Black bin sits on the floor at the right edge of the corridor near the wall.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_w85zb86ybp59501x3w4qa6gdd_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow wire-mesh caged aisle lined with server racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3723,7 +5272,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "raised-floor equipment corridor with grey mat ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3755,13 +5314,30 @@
     0.5589665770530701
    ],
    "pano_path": "buildings/248192/panos/z8b69gr7ip4itb1arx90n8ymb.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "WOMEN"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor beside women's restroom with fire extinguisher cabinet"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Fire extinguisher in a recessed wall cabinet with a glass window.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_z8b69gr7ip4itb1arx90n8ymb_y270_p+00.jpg"
+    },
     "fire_extinguisher"
    ],
    "kind": "pano",
@@ -3793,10 +5369,20 @@
     -0.010048598982393742
    ],
    "pano_path": "buildings/248192/panos/z0n0pw4i6fm23pwthbecw95zc.jpg",
-   "room_label": "Office",
+   "room_label": "Open office",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "open_office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open office corridor with frosted glass wall and cubicles on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3831,7 +5417,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "office corner with filing cabinets, whiteboard and window blinds"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3863,13 +5459,29 @@
     0.7480089664459229
    ],
    "pano_path": "buildings/248192/panos/0g7657itrnyge24pxm8pw2p4d.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "v5aiinb80ve",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "storage room with red and yellow bins"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small green illuminated sign on far wall near ceiling; text not legible",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_0g7657itrnyge24pxm8pw2p4d_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3898,13 +5510,29 @@
     0.2946041226387024
    ],
    "pano_path": "buildings/248192/panos/68q3s6xhkr9g72mni9rpds0dc.jpg",
-   "room_label": "Office",
+   "room_label": "Waiting room",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "waiting_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "lounge with leather sofas beside glass-walled office and wooden door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red wall-mounted box on the wall above the TV, likely a pull station.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_68q3s6xhkr9g72mni9rpds0dc_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3933,13 +5561,31 @@
     0.7076892256736755
    ],
    "pano_path": "buildings/248192/panos/8gc6kik1mg5eec6061rqt2r5a.jpg",
-   "room_label": "Kitchen",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "ediidma5zg15dufx3n0qyq21a",
-    "room_class": "Kitchen"
+    "room_class": "Kitchen",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "FIRST AID"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "white wall with wall-mounted blue FIRST AID cabinet"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "first_aid_kit",
+     "note": "Wall-mounted white cabinet with blue FIRST AID sign on the wall ahead.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_8gc6kik1mg5eec6061rqt2r5a_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3971,10 +5617,31 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "Server room aisle with raised tile floor and enclosed equipment racks"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small green exit sign visible on ceiling near back of aisle",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_98fgxu6w26k5dwmq702i03red_y270_p+00.jpg"
+    },
+    {
+     "type": "electrical_panel",
+     "note": "Large gray electrical or power cabinets along left wall",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_98fgxu6w26k5dwmq702i03red_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4006,7 +5673,29 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "narrow_passage",
+      "note": "Aisle between tall dark racks appears narrower than a normal doorway and may be tight for a stretcher.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_es9acbwguh6ha3ftne8iigmfb_y000_p+00.jpg"
+     },
+     {
+      "type": "narrow_passage",
+      "note": "Same narrow aisle between racks continues back toward the entry, tight for a stretcher.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_es9acbwguh6ha3ftne8iigmfb_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "narrow server room aisle between tall black equipment racks"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4038,10 +5727,27 @@
     -0.007097418885678053
    ],
    "pano_path": "buildings/248192/panos/m1b95g7rck2zk0s5n8hwdiq2b.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Large dark freestanding cabinet stands in the white-tiled aisle, left of center, with red floor markings nearby.",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_m1b95g7rck2zk0s5n8hwdiq2b_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "white-tiled server aisle with mesh cage walls"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4073,10 +5779,20 @@
     -0.18509529531002045
    ],
    "pano_path": "buildings/248192/panos/p9k8ydhh1aw4gf9gbkf9f1s0c.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corridor with recessed wall panel and dark ceiling"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4111,7 +5827,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "caged server racks behind wire mesh walls under overhead cable trays"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4143,10 +5869,27 @@
     -0.49634990096092224
    ],
    "pano_path": "buildings/248192/panos/xh0ptu320bs98yuud43rc70ua.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "oxpe8kgxd66",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Upright vacuum cleaner and folded ladder standing on the floor against the wall",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xh0ptu320bs98yuud43rc70ua_y180_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "server cabinets behind glass wall ahead, open office right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4178,13 +5921,29 @@
     0.14654618501663208
    ],
    "pano_path": "buildings/248192/panos/ys2ztxk5nxumrfac7pbgarxac.jpg",
-   "room_label": "Office",
+   "room_label": "Waiting room",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "waiting_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "leather sofas beside wood door and blinded windows"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Possible small red wall device near top left; uncertain identification",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ys2ztxk5nxumrfac7pbgarxac_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4213,10 +5972,27 @@
     0.6961507201194763
    ],
    "pano_path": "buildings/248192/panos/yhgt6kkeb1e9685rrxpxkuc2a.jpg",
-   "room_label": "Hallway",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": "Hallway"
+    "room_class": "Hallway",
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "White cylindrical bin and a dark floor machine sit in the corner ahead, in the walking area",
+      "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_yhgt6kkeb1e9685rrxpxkuc2a_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "speckled corridor with elevator door on right and metal roll-down shutter on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4248,13 +6024,29 @@
     0.7698094248771667
    ],
    "pano_path": "buildings/248192/panos/39wyr10nrfepp3fh34p4gpu5d.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with wall-mounted fire extinguisher facing office area"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted fire extinguisher on white wall in the ahead view",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_39wyr10nrfepp3fh34p4gpu5d_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4283,13 +6075,29 @@
     -0.03597903624176979
    ],
    "pano_path": "buildings/248192/panos/3hnzt48tmnetw4wp23sqzxk3a.jpg",
-   "room_label": "Office",
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with world map and glass door at end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small green exit sign at the far end of the corridor near the ceiling",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_3hnzt48tmnetw4wp23sqzxk3a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4321,7 +6129,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "narrow aisle between tall dark equipment racks on white tiled floor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4353,10 +6171,20 @@
     0.9999324679374695
    ],
    "pano_path": "buildings/248192/panos/81f9atzbm1np8d1rfp4q1i9xa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "raised-floor server room corridor with mesh-walled racks on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4391,7 +6219,17 @@
    "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": "Office"
+    "room_class": "Office",
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "brown wood door with blue lever handle beside thermostat"
    },
    "is_entrance": false,
    "equipment": [],

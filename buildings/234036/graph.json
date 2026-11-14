@@ -3,7 +3,7 @@
  "matterport_model_id": "7uM5JKssTED",
  "name": "1315 St Joseph Pkwy, 14th floor",
  "address": "1315 St Joseph Pkwy, Houston, TX, 77002, US",
- "generated_at": "2026-11-14T15:00:55",
+ "generated_at": "2026-11-14T18:01:11",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 13,
  "grade_floor": 0,
@@ -42,6 +42,7 @@
   "sweeps_without_floor": 0,
   "auto_entrances": 0,
   "other_exterior_doors": 0,
+  "attribute_ids_not_in_graph": 0,
   "nodes": 149,
   "edges": 205,
   "components": 1,
@@ -72,10 +73,20 @@
     0.040977902710437775
    ],
    "pano_path": "buildings/234036/panos/atwsdwfh4sidfg4067xpnbq8a.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood door beside kitchenette with granite counter and sink"
    },
    "is_entrance": false,
    "equipment": [],
@@ -107,13 +118,31 @@
     -0.2767191231250763
    ],
    "pano_path": "buildings/234036/panos/at0xcae1rprur5tg0rqy2d3dc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-framed glass door under red exit sign in carpeted corridor"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted above the wood-framed glass door.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_at0xcae1rprur5tg0rqy2d3dc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -142,13 +171,32 @@
     0.6772285103797913
    ],
    "pano_path": "buildings/234036/panos/bidr0pifgmstmxxxtzdpi1w8d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "c3ctq0c1byg9mgt7sigxpg6rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "STAIRS",
+     "NO RE-ENTRY",
+     "WOMEN"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor beside women's restroom with stairs no-re-entry sign"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red manual fire alarm pull station mounted on the wall to the right of the stairs sign.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_bidr0pifgmstmxxxtzdpi1w8d_y000_p+00.jpg"
+    },
     "fire_alarm_pull_station"
    ],
    "kind": "pano",
@@ -180,10 +228,23 @@
     -0.2245640754699707
    ],
    "pano_path": "buildings/234036/panos/hazt2anz9fryp7q7rfqqdhqsd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT",
+     "STAIR B"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long carpeted corridor with wall-mounted drinking fountain and STAIR B door"
    },
    "is_entrance": false,
    "equipment": [
@@ -218,10 +279,20 @@
     0.9979393482208252
    ],
    "pano_path": "buildings/234036/panos/kik7gmkwgpxq906y8z0m4pa5a.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "q5n62dpd3mrc1exy2hr84132b",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "kitchenette with granite counter, stainless sink, and wall cabinet"
    },
    "is_entrance": false,
    "equipment": [],
@@ -253,10 +324,22 @@
     0.9048237204551697
    ],
    "pano_path": "buildings/234036/panos/kaw42tabfc85qti2bhzirsdrd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with EXIT-marked wooden door ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -288,10 +371,20 @@
     0.8610809445381165
    ],
    "pano_path": "buildings/234036/panos/mappcci3h2yu5umi1re76gfua.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small room with wood counter and wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -323,10 +416,20 @@
     0.9901269674301147
    ],
    "pano_path": "buildings/234036/panos/madeqfsx5emk86a24d9qsydxc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long granite-topped counter run beside blinded window wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -361,10 +464,28 @@
    "room_label": null,
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "OFFICE"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige corridor with OFFICE sign above granite counter"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign visible at the far end of the corridor near the ceiling.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_q2e1i1eb96bex00q7k1gen15a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -396,10 +517,31 @@
    "room_label": null,
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Yellow shuttered room beside carpeted corridor with exit sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on ceiling at far end of the carpeted corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_r2c6ys5ye183id9xm0pcwgk8a_y270_p+00.jpg"
+    },
+    {
+     "type": "fire_extinguisher",
+     "note": "Red wall-mounted item at top right edge, possibly a fire extinguisher cabinet",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_r2c6ys5ye183id9xm0pcwgk8a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -428,13 +570,29 @@
     0.9999248385429382
    ],
    "pano_path": "buildings/234036/panos/u2nbb26aztckkfya808yz1gab.jpg",
-   "room_label": null,
+   "room_label": "Lobby",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "lobby",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open lobby with red columns and frosted glass doors"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign partly visible at upper right of the behind image",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_u2nbb26aztckkfya808yz1gab_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -463,10 +621,20 @@
     0.976180911064148
    ],
    "pano_path": "buildings/234036/panos/wahyhp7zazc523euqfx1373yc.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "q5n62dpd3mrc1exy2hr84132b",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open wood door opening onto room with kitchen sink"
    },
    "is_entrance": false,
    "equipment": [],
@@ -498,13 +666,29 @@
     0.6393150091171265
    ],
    "pano_path": "buildings/234036/panos/xa42e1a2h6qe23gs1i9cnpfza.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Reception counter with granite top beside patterned-carpet corridor"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted in the ceiling of the corridor behind.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_xa42e1a2h6qe23gs1i9cnpfza_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -533,10 +717,20 @@
     -0.017216186970472336
    ],
    "pano_path": "buildings/234036/panos/zi7771aikmfk6fmnqck1s4ybb.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "19ab05tns5h6y4qm42esqqpea",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige kitchen counter with stainless sink beside yellow-floored hallway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -568,10 +762,20 @@
     0.13208161294460297
    ],
    "pano_path": "buildings/234036/panos/026gueuqgx1wnwbet5606q5ta.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "frosted glass office partition with wood-framed glass door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -603,13 +807,31 @@
     0.7029289603233337
    ],
    "pano_path": "buildings/234036/panos/32eg8hzyqc2ya3fzde47i1wya.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with red exit sign and reception counter on right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on the ceiling at the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_32eg8hzyqc2ya3fzde47i1wya_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -638,10 +860,20 @@
     0.999967634677887
    ],
    "pano_path": "buildings/234036/panos/3tqzx22088wpuig1qmmeu02za.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open carpeted room with wooden door on left wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -673,10 +905,20 @@
     0.2199242264032364
    ],
    "pano_path": "buildings/234036/panos/4i6zer44abzxwxmuwy170mmka.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "room with blinded window wall and counter on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -708,13 +950,29 @@
     0.9819323420524597
    ],
    "pano_path": "buildings/234036/panos/626xt9h376s6pxdk5d4ghqf9d.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 5,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "curved granite reception counter with exam room doorway to right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on ceiling in the corridor beyond the curved counter",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_626xt9h376s6pxdk5d4ghqf9d_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -743,10 +1001,20 @@
     0.9562557935714722
    ],
    "pano_path": "buildings/234036/panos/7a2988e810705grrf38u674fc.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "b4qtykzcazp4iumkamm7y7h2b",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small office with open wooden door and blinded city-view windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -778,13 +1046,36 @@
     0.9884957075119019
    ],
    "pano_path": "buildings/234036/panos/7icsdrfqbni0c6r7kb80f7r6d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with shuttered window alcove ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated EXIT sign mounted above the wall, reading EXIT with arrow",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_7icsdrfqbni0c6r7kb80f7r6d_y090_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Small red illuminated exit sign in the ceiling at the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_7icsdrfqbni0c6r7kb80f7r6d_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -813,13 +1104,31 @@
     0.9879059195518494
    ],
    "pano_path": "buildings/234036/panos/au0kpek9wp53cq0rkt24xxi2b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "STORAGE"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with storage door ahead and exam room doorway behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated exit sign mounted on the ceiling down the corridor to the right.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_au0kpek9wp53cq0rkt24xxi2b_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -848,10 +1157,22 @@
     -0.20311294496059418
    ],
    "pano_path": "buildings/234036/panos/bbceccx3s635rmddkcpfq759c.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor near EXIT sign and kitchen doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -886,7 +1207,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted open area with blinded windows and red-framed door behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -918,10 +1249,20 @@
     0.8892433047294617
    ],
    "pano_path": "buildings/234036/panos/e32x1x86ihn9xhe5ikuk352uc.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "b2kez6wsw32fm2x3ui593u3hc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite counter and sink beside dark-framed doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -953,10 +1294,27 @@
     -0.3615930378437042
    ],
    "pano_path": "buildings/234036/panos/fuda46a8uipb0eb3g784ghhxd.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "tyz3uyd99x00wa88mxhmugrxa",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Raised tile-and-stone platform with a ledge runs along the right wall, likely a step up that a stretcher would need to clear.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_fuda46a8uipb0eb3g784ghhxd_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "sink counter room with open wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -988,13 +1346,31 @@
     0.7031948566436768
    ],
    "pano_path": "buildings/234036/panos/fudnzszyuysb1e261nkmd2ebb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with EXIT sign above wooden door ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign mounted above the doorway ahead.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_fudnzszyuysb1e261nkmd2ebb_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1023,10 +1399,20 @@
     0.7748863101005554
    ],
    "pano_path": "buildings/234036/panos/gkm9269xw5pe2bk0amn3sbihc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 5,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "brown stethoscope sign beside open wood door, reception counter with columns"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1058,10 +1444,20 @@
     0.9045574069023132
    ],
    "pano_path": "buildings/234036/panos/g39d08rrqz8r0zu98n70tewsb.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "f97s719x9ctqkce19r6s01b5a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small tan room with sink, paper towel dispenser and window beside wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1093,10 +1489,20 @@
     0.9015634655952454
    ],
    "pano_path": "buildings/234036/panos/hum92h1mt4qqk63dxbupu1zbc.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corner of wood-look wall beside open wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1128,13 +1534,32 @@
     0.8135064244270325
    ],
    "pano_path": "buildings/234036/panos/kbew59tzi3uxcyn616mgemnyd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT",
+     "NURSE STATION"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with NURSE STATION sign and curved counter on left"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on the ceiling at the far end of the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_kbew59tzi3uxcyn616mgemnyd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1163,13 +1588,31 @@
     0.7146251797676086
    ],
    "pano_path": "buildings/234036/panos/k36ubn76h0t7u3a005s2c4cid.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with red EXIT sign behind and wood door on right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign on the left wall of the corridor behind",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_k36ubn76h0t7u3a005s2c4cid_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1198,13 +1641,29 @@
     0.9857240319252014
    ],
    "pano_path": "buildings/234036/panos/mu7c73uz202wt55p9bwnr0ftc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "Carpeted corridor with red exit sign at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign at the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_mu7c73uz202wt55p9bwnr0ftc_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1233,10 +1692,29 @@
     0.8443317413330078
    ],
    "pano_path": "buildings/234036/panos/q3i2nxdgduke3zg2ceqh6515d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "CARE AREA"
+    ],
+    "door_count": 3,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Carpeted stairs visible at lower right edge of the right view, leading down from the corridor opening.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_q3i2nxdgduke3zg2ceqh6515d_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with stairs down to the right and CARE AREA sign"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1268,13 +1746,31 @@
     0.8116196990013123
    ],
    "pano_path": "buildings/234036/panos/tuupi4rm25z0hpbxqs7xnuedd.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "perception_confidence": "medium",
+    "landmark_text": "granite reception counter beside corridor toward elevators"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign above the corridor ahead.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_tuupi4rm25z0hpbxqs7xnuedd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1303,13 +1799,36 @@
     0.8924501538276672
    ],
    "pano_path": "buildings/234036/panos/ubb65ttrcnrnhmghnewyb2m5b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "pksbu53py2kqgiahqc3d44p7d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor beside open doorway with white glass-front extinguisher cabinet"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "White wall-mounted cabinet with glass front, near the open doorway",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_ubb65ttrcnrnhmghnewyb2m5b_y270_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted at the upper right of the ceiling area",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_ubb65ttrcnrnhmghnewyb2m5b_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1338,10 +1857,20 @@
     -0.43199723958969116
    ],
    "pano_path": "buildings/234036/panos/u3rqhz62xfr9ya51tbeb5xscd.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with kitchenette cabinets and blinded windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1376,10 +1905,28 @@
    "room_label": null,
    "attributes": {
     "room_id": "40zku7irh3zwswpnc4emt870d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small empty carpeted room with wooden door and exit sign behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Illuminated EXIT sign mounted in the ceiling of the corridor visible through the doorway behind.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_1kssqph4t7huq084ddy53yz1d_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1408,13 +1955,31 @@
     0.9935351610183716
    ],
    "pano_path": "buildings/234036/panos/4bse6naceiug990m50a9zg1ba.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with wooden doors and a fountain"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Red extinguisher on the wall near the drinking fountain, left side of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_4bse6naceiug990m50a9zg1ba_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1443,10 +2008,20 @@
     0.25059014558792114
    ],
    "pano_path": "buildings/234036/panos/6bwrusmb4knk23n14kucyf3ub.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open wood-framed doorway beside plain wall with light switch"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1478,13 +2053,29 @@
     0.7883442044258118
    ],
    "pano_path": "buildings/234036/panos/63mihyw2sw6g031k0y7m4bzpc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "curved reception counter with carpeted hallway to the right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "aed",
+     "note": "Green-framed wall sign with an AED-style icon beside the doorway",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_63mihyw2sw6g031k0y7m4bzpc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1513,10 +2104,20 @@
     0.9937224388122559
    ],
    "pano_path": "buildings/234036/panos/8u6gk76q5ttpm7y08h9ruhsia.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "40zku7irh3zwswpnc4emt870d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "short dead-end hallway with open wooden door behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1548,10 +2149,20 @@
     0.9451908469200134
    ],
    "pano_path": "buildings/234036/panos/ec7iciz95b52msb3cw3fe122d.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "kuc0fpmsgqxff63egrxrycfud",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Sink counter and wood-grain corner; dark-framed doorway behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1583,10 +2194,20 @@
     -0.10246236622333527
    ],
    "pano_path": "buildings/234036/panos/f463u43pm1r63xzh1aus5523a.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long carpeted corridor with brown wooden door on left and exit sign ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1618,10 +2239,22 @@
     0.9169981479644775
    ],
    "pano_path": "buildings/234036/panos/fm3w9q3gd6bumw1sggmbrp10d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with red column, hardwood floor, and EXIT sign ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1653,13 +2286,29 @@
     -0.004623153246939182
    ],
    "pano_path": "buildings/234036/panos/f4qgpp6wdhc15x1nwthriw8rc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted area, left counter, glass-panel door ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "small red sign above central door, possibly an exit sign",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_f4qgpp6wdhc15x1nwthriw8rc_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1688,10 +2337,20 @@
     -0.11635972559452057
    ],
    "pano_path": "buildings/234036/panos/gmk8h2m65xnzpd9297h2ap8ab.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small kitchenette with stainless sink beside wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1723,10 +2382,20 @@
     -0.13788236677646637
    ],
    "pano_path": "buildings/234036/panos/im3pgkd7eakbbdpk7kpwr544b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with wooden door and wall sconces"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1759,13 +2428,29 @@
     0.7152968049049377
    ],
    "pano_path": "buildings/234036/panos/u4g8zr7bits3by70ig73bk7nd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with red exit sign and kitchen opening on left"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on the ceiling down the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_u4g8zr7bits3by70ig73bk7nd_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -1797,7 +2482,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "lime green wall and glass double doors ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1829,10 +2524,20 @@
     0.4972083270549774
    ],
    "pano_path": "buildings/234036/panos/x48r12dmaehw47tgwe0uefqdb.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "bmpu8rc0bpgc1bruwia8kktzd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "kitchenette with granite counter, sink and wood-grain walls"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1864,10 +2569,20 @@
     0.8532174229621887
    ],
    "pano_path": "buildings/234036/panos/ywa5gsssrnx67u3rfuf3fknyb.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "curved granite reception counter with pink soffit and window wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1899,10 +2614,20 @@
     0.9827651381492615
    ],
    "pano_path": "buildings/234036/panos/yc159hm7nu054suz591cb524c.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small empty room with open wooden door and adjacent doorway to second room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1934,10 +2659,20 @@
     -0.11333317309617996
    ],
    "pano_path": "buildings/234036/panos/0wq8b3z2t3gcamyms28t2q5zd.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite counter with pendant lights beside wood-framed glass door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -1969,13 +2704,36 @@
     0.9033663868904114
    ],
    "pano_path": "buildings/234036/panos/1m21wip3ze5byhrf4yhfpz25d.jpg",
-   "room_label": null,
+   "room_label": "Elevator lobby",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "elevator_lobby",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": true,
+    "perception_confidence": "medium",
+    "landmark_text": "elevator lobby with two elevator doors and red fire alarm pull station"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red fire alarm pull station on the wall beside the glass panel, right of the elevator doors.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_1m21wip3ze5byhrf4yhfpz25d_y000_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated EXIT sign mounted on the ceiling above the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_1m21wip3ze5byhrf4yhfpz25d_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": "the glass doors at the end of the elevator lobby",
    "note": "sweep 1.5 m outside the glass double doors of the elevator lobby (heading 90)",
@@ -2008,7 +2766,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "yxhkt9gfk9zcmduwmxx131a6a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-framed open doorway beside a wall light switch"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2040,13 +2808,31 @@
     0.8269854784011841
    ],
    "pano_path": "buildings/234036/panos/3w2apia7s265i6n06riab5zgd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "STORAGE"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with STORAGE door and water heater alcove"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated exit sign mounted on the ceiling ahead",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_3w2apia7s265i6n06riab5zgd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2075,10 +2861,20 @@
     0.9849905371665955
    ],
    "pano_path": "buildings/234036/panos/343e4ncfp4c8ruug5g7mbweta.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "ediidma5zg15dufx3n0qyq21a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small corner office with yellow lower walls and blinded corner window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2110,10 +2906,20 @@
     -0.1139557808637619
    ],
    "pano_path": "buildings/234036/panos/44fc71qeqxyx57m7w63ck9cda.jpg",
-   "room_label": null,
+   "room_label": "Conference room",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "conference_room",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "room with white shutter-style windows and a frosted glass sliding door to a kitchen"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2145,10 +2951,20 @@
     0.03448104113340378
    ],
    "pano_path": "buildings/234036/panos/5c5egg2ftnh3fkfk0bry95u2c.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "round orange pillar in open reception area with granite-topped counters"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2180,10 +2996,20 @@
     -0.3733885884284973
    ],
    "pano_path": "buildings/234036/panos/6m3za4p52gfuz38eeq9f0b3fa.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-grain wall, sink counter, open wood door to right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2215,13 +3041,29 @@
     0.9527906775474548
    ],
    "pano_path": "buildings/234036/panos/9wxh5xquk9f8y5kc6r8i783ad.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Corridor with arched wooden doors and a red exit sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign visible at far end of the left corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_9wxh5xquk9f8y5kc6r8i783ad_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2250,13 +3092,31 @@
     0.8033843636512756
    ],
    "pano_path": "buildings/234036/panos/a5pnr8xfxc6be068a3t55ipec.jpg",
-   "room_label": null,
+   "room_label": "Lobby",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "lobby",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite-topped reception counters beside red-walled lobby"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign on ceiling at upper left of the ahead view",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_a5pnr8xfxc6be068a3t55ipec_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2285,13 +3145,29 @@
     0.9250167608261108
    ],
    "pano_path": "buildings/234036/panos/bns8y1n0ihhmypahn90ach9wb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with exam room doors and a hanging curtain on the left"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated exit sign near the ceiling at the top of the behind view.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_bns8y1n0ihhmypahn90ach9wb_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2320,10 +3196,20 @@
     0.929158091545105
    ],
    "pano_path": "buildings/234036/panos/cnfz4d1p9h5xppstgganw4b6a.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "b4qtykzcazp4iumkamm7y7h2b",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Yellow-walled corner office beside tall wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2355,10 +3241,20 @@
     0.8735722899436951
    ],
    "pano_path": "buildings/234036/panos/cxcs60ckpm3g52d27r85mfz9c.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "closed wood door facing small room with counter"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2390,13 +3286,37 @@
     0.8286842703819275
    ],
    "pano_path": "buildings/234036/panos/dnnyukgt8y5t0ztenukn0471a.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "pksbu53py2kqgiahqc3d44p7d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "STORAGE",
+     "EXIT"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with brown wood door under EXIT sign"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated EXIT sign mounted on the ceiling above the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_dnnyukgt8y5t0ztenukn0471a_y000_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign mounted above the brown wooden door at the end of the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_dnnyukgt8y5t0ztenukn0471a_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2425,10 +3345,20 @@
     0.9440041780471802
    ],
    "pano_path": "buildings/234036/panos/ext7qa5tezmbe42enzxuzmnsc.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted room with open wooden door and blinded corner window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2460,13 +3390,29 @@
     0.644009530544281
    ],
    "pano_path": "buildings/234036/panos/i5dtness9epkguy6k4f0i3ctd.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "green-walled alcove beside granite counter, corridor of pendant lights"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on wall ahead of the corridor on the right side of the view",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_i5dtness9epkguy6k4f0i3ctd_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2495,10 +3441,20 @@
     0.0686596930027008
    ],
    "pano_path": "buildings/234036/panos/mdxzwcpx8r0k2y48u51m50iyb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with wooden door on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2530,10 +3486,20 @@
     -0.04906584694981575
    ],
    "pano_path": "buildings/234036/panos/n50itd7kqebn4rm3b6sw8tqwb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with granite-topped reception counter on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2565,13 +3531,32 @@
     -0.08111871778964996
    ],
    "pano_path": "buildings/234036/panos/r54ee0tdge2hbxx4y2hunf0pa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "STORAGE",
+     "EXIT"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with tiled floor and wooden door ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted above the wooden door at the end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_r54ee0tdge2hbxx4y2hunf0pa_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2603,7 +3588,20 @@
    "room_label": null,
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "CAUTION",
+     "X-RAY IN USE"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "X-RAY IN USE caution sign on right wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2635,10 +3633,20 @@
     -0.10374855995178223
    ],
    "pano_path": "buildings/234036/panos/yd22pbdc3ugkpcep7m4n06r2a.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty room with wood floor, blinded window, and stone counter corner"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2670,13 +3678,29 @@
     0.9766405820846558
    ],
    "pano_path": "buildings/234036/panos/35598x1akysqmrnwdc4c0960c.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "4mpd3yxnm0wrnpak1ibnr29wc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Exam room beside wooden door to carpeted hallway"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on the ceiling at the top left of the hallway beyond the open doorway",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_35598x1akysqmrnwdc4c0960c_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2705,10 +3729,20 @@
     0.0414481945335865
    ],
    "pano_path": "buildings/234036/panos/7xrem4n106isq4xtk5haf76wd.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "yellow-walled room with blinded window and built-in yellow cabinets"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2740,10 +3774,22 @@
     -0.07361508905887604
    ],
    "pano_path": "buildings/234036/panos/8xxf02910sqti20turw2pggfc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EMPLOYEES ONLY"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "reception counter beside wood-framed Employees Only door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2775,10 +3821,27 @@
     0.7224358916282654
    ],
    "pano_path": "buildings/234036/panos/a68rdyairnuy8d70geqkthdkd.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Raised tile platform edge along the left side of the foreground floor creates a level change.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_a68rdyairnuy8d70geqkthdkd_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "open room with amber pendant lights and kitchen cabinets on left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2813,7 +3876,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "xwmb36qphpzp9se68715kxfhb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open doorway with brown frame on right near ceiling panel corner"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2845,10 +3918,20 @@
     0.7089933156967163
    ],
    "pano_path": "buildings/234036/panos/d6aa9k14ddmzatz01zst2mf3c.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-floored room with frosted glass partition and mauve column"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2880,10 +3963,20 @@
     0.7313897609710693
    ],
    "pano_path": "buildings/234036/panos/epnsh24spnkxcyeckshepe9qa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with wooden door and wall plaque on right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2916,10 +4009,27 @@
     -0.3939531147480011
    ],
    "pano_path": "buildings/234036/panos/ky2ei84c14ttnpmkkrkxbdfpb.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "n81qfe51azs8iexnbqwspye6c",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": true,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "stairs",
+      "note": "Raised step or stair section with speckled surface at lower right, blocks direct wheeled path to the right.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_ky2ei84c14ttnpmkkrkxbdfpb_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "exam room corner with sink counter and open wood door to adjacent room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -2954,10 +4064,33 @@
    "room_label": null,
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Raised stone-look step or ledge along the floor at the right side of the alcove.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_kyr8a4xbtcx2km0f5x29fnrda_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "Corner alcove beside shuttered window and raised stone step"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red wall-mounted box beside the corridor door, likely a fire alarm pull station.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_kyr8a4xbtcx2km0f5x29fnrda_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -2989,7 +4122,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "kuc0fpmsgqxff63egrxrycfud",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "tan room with sink counter and arched wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3021,10 +4164,20 @@
     0.9706566333770752
    ],
    "pano_path": "buildings/234036/panos/py4934sqt0qk4dqxuakmtdp7c.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "ediidma5zg15dufx3n0qyq21a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small office with open wood door and blinded windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3056,13 +4209,31 @@
     0.9080222845077515
    ],
    "pano_path": "buildings/234036/panos/qyetwen21u24n1k6kqwpix57d.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "curved reception counter with pink soffit and blue cabinets"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on ceiling above the open area",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_qyetwen21u24n1k6kqwpix57d_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3091,10 +4262,20 @@
     -0.15145786106586456
    ],
    "pano_path": "buildings/234036/panos/ry5wfeui65dahk2cupfbfmr9b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [],
+    "door_count": 5,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corridor junction with large carpeted room ahead and green-walled room left"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3126,10 +4307,20 @@
     0.9751026630401611
    ],
    "pano_path": "buildings/234036/panos/x6wr01604cgk64qmi5g2pzt3d.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "room corner with granite counter, sink, and side doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3161,10 +4352,20 @@
     0.9271805286407471
    ],
    "pano_path": "buildings/234036/panos/yynhz9d20cypf73bu3srrq04a.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite island with pendant lights beside red-walled doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3196,10 +4397,20 @@
     0.823032796382904
    ],
    "pano_path": "buildings/234036/panos/zpzw287k7wb5phwn1fda7sk2c.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "yxhkt9gfk9zcmduwmxx131a6a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corner of plain walls beside open wood-framed doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3231,13 +4442,29 @@
     0.8785747289657593
    ],
    "pano_path": "buildings/234036/panos/1pafh2x5fmaax09s14ukqzaca.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "shuttered window alcove with granite ledge beside carpeted corridor"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red wall-mounted box on the wall beside the door, possibly a fire alarm pull station",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_1pafh2x5fmaax09s14ukqzaca_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3269,10 +4496,28 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open carpeted room with red columns and ringed gold ceiling"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign on ceiling near the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_36tbkaz166u3ce27hexz9z68d_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3301,10 +4546,20 @@
     0.8524801135063171
    ],
    "pano_path": "buildings/234036/panos/3em0txe6aburym17fcs6amgic.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "xwmb36qphpzp9se68715kxfhb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "tall wood door next to beige wall with wall outlet"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3336,13 +4591,31 @@
     0.6643556356430054
    ],
    "pano_path": "buildings/234036/panos/8pc8wdb6snusqhhdaymy5mhmb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with exit sign behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated EXIT sign on the ceiling at the upper left of the view behind.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_8pc8wdb6snusqhhdaymy5mhmb_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3371,10 +4644,20 @@
     0.922679603099823
    ],
    "pano_path": "buildings/234036/panos/96zt71cckx409d9r86738db2a.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "4mpd3yxnm0wrnpak1ibnr29wc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "exam room with granite counter and open wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3406,10 +4689,20 @@
     0.7020623683929443
    ],
    "pano_path": "buildings/234036/panos/azk5ezfs30e48wqa7fn82fuea.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Shuttered window wall; wooden door to right"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3441,10 +4734,27 @@
     0.7135491371154785
    ],
    "pano_path": "buildings/234036/panos/cz51inmc807xybahu52h2s8fc.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "f97s719x9ctqkce19r6s01b5a",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Open wooden door leaf projects into the space near the center of the view, possibly narrowing the passage.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_cz51inmc807xybahu52h2s8fc_y090_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "granite-top kitchenette with white wall cabinets"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3476,13 +4786,29 @@
     0.8687320947647095
    ],
    "pano_path": "buildings/234036/panos/kzn78gb58kanycg1igqbhs42b.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "n2yqr30509t7i8whfdf2htwic",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small room with laminate counter beside open wooden door"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign visible at top left in the carpeted corridor beyond the open wooden door",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_kzn78gb58kanycg1igqbhs42b_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3511,13 +4837,31 @@
     0.7136785387992859
    ],
    "pano_path": "buildings/234036/panos/nfayra9araxhd5wxg01a1sxqb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "pksbu53py2kqgiahqc3d44p7d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "EXIT",
+     "OFFICE"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with white fire extinguisher cabinet and exit sign ahead"
    },
    "is_entrance": false,
    "equipment": [
+    {
+     "type": "fire_extinguisher",
+     "note": "Fire extinguisher in a white glass-front wall cabinet on the wall to the left.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_nfayra9araxhd5wxg01a1sxqb_y270_p+00.jpg"
+    },
     "fire_extinguisher"
    ],
    "kind": "pano",
@@ -3549,13 +4893,29 @@
     0.8390772938728333
    ],
    "pano_path": "buildings/234036/panos/pf1ty3ad5xs7n9xukwz1zw7aa.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with doors on right and window ahead"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated exit sign mounted on the ceiling at the far end of the corridor behind.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_pf1ty3ad5xs7n9xukwz1zw7aa_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3584,13 +4944,33 @@
     0.6775928735733032
    ],
    "pano_path": "buildings/234036/panos/sqzu8a8018bcghf0tmyyk5fpb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [
+     "EXIT",
+     "THIS DOOR TO REMAIN UNLOCKED WHEN THE BUILDING IS OCCUPIED",
+     "EMPLOYEES ONLY"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Carpeted corridor with red EXIT sign at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_hose_cabinet",
+     "note": "Recessed white cabinet with glass front on left wall near the corridor entrance",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_sqzu8a8018bcghf0tmyyk5fpb_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3622,7 +5002,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "tyz3uyd99x00wa88mxhmugrxa",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "tan room with wood door and framed wall panel"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3657,10 +5047,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beaded fringe curtain beside red fire alarm pull station"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red pull station mounted on the right wall near the corner",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_t7a77h2dwh7czmn80m7dd9yhd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3689,10 +5095,20 @@
     0.654319703578949
    ],
    "pano_path": "buildings/234036/panos/wfm3gmg0gfqc46h4igzrcn06d.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige office with wooden door and blinded corner window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3724,13 +5140,29 @@
     0.9302477836608887
    ],
    "pano_path": "buildings/234036/panos/w71enf8ddkhb0dk7k22sfznmb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "corridor with dark built-in bookshelf cabinet and whiteboard on right wall"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red illuminated exit-style sign on the left wall in the upper left of the ahead view; text not legible.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_w71enf8ddkhb0dk7k22sfznmb_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3759,10 +5191,20 @@
     0.8903923034667969
    ],
    "pano_path": "buildings/234036/panos/y76xh9h9kx3mny2wusbsq5i5b.jpg",
-   "room_label": null,
+   "room_label": "Utility",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "utility",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite counter with white upper cabinets beside plantation-shutter windows"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3794,10 +5236,22 @@
     0.5507845282554626
    ],
    "pano_path": "buildings/234036/panos/07f4i058fywrh2e1qzt5q0mpd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "ELECTRICAL ROOM AND STORAGE"
+    ],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "tiled corridor with wooden door marked electrical room and storage"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3830,10 +5284,20 @@
     0.3186790347099304
    ],
    "pano_path": "buildings/234036/panos/4fff8zp78feqqubcnnxeeb21b.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "kitchenette with speckled counter and mosaic tile backsplash beside frosted glass wall"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3865,13 +5329,29 @@
     0.9615359902381897
    ],
    "pano_path": "buildings/234036/panos/77pehezx90tzb0xzghqi1t6gc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open brown wooden door beside carpeted corridor with wall sconce"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Illuminated orange-red sign on ceiling in the corridor to the left of the frame; text not legible.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_77pehezx90tzb0xzghqi1t6gc_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -3900,10 +5380,20 @@
     0.9510114789009094
    ],
    "pano_path": "buildings/234036/panos/bgwxh7y8qd7d923pap9shukzd.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "m8npxsuk79xy21dd09x9wtped",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small empty room with wooden arched door and lever handle"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3935,10 +5425,29 @@
     0.6723650693893433
    ],
    "pano_path": "buildings/234036/panos/d091be7s3up71r03yqr6ytdid.jpg",
-   "room_label": null,
+   "room_label": "Storage",
    "attributes": {
     "room_id": "h3xqwmf70zit9a8t16sa0kt9b",
-    "room_class": null
+    "room_class": null,
+    "room_type": "storage",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [
+     "ELECTRICAL ROOM"
+    ],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "obstruction_in_path",
+      "note": "Stacked white material with a yellow top sits in the lower-left corner of the alcove.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_d091be7s3up71r03yqr6ytdid_y000_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "medium",
+    "landmark_text": "alcove with stacked insulation beside electrical room door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -3974,10 +5483,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted room with long counters and a wall of blinded windows"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small red illuminated sign above a doorway in the behind view; text not legible.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_d8npf4eif5t2qz3kc3ffqf3hd_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4006,10 +5531,20 @@
     0.536675751209259
    ],
    "pano_path": "buildings/234036/panos/e0a3uzdhe6nsbaih8qm1w824d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "fac10mmacdecyd8fn9ph2gbhc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "short wall corner beside wood door opening to hallway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4041,10 +5576,20 @@
     0.9999821186065674
    ],
    "pano_path": "buildings/234036/panos/e0bnks59iz8ik29htfsm3qffd.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "4zgy5afdb9eadqxq8qmauzh0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "small carpeted room with blinded window ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4076,10 +5621,20 @@
     0.9352516531944275
    ],
    "pano_path": "buildings/234036/panos/fgaxen1mfc0h710idppiur67d.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "curved reception counter with granite top and blinded windows ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4114,10 +5669,28 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 0,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "yellow room with shuttered windows and curved pink column"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign visible at upper left of the hallway view.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_k0f18mphfpysrrda6w4hf6ewd_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4146,10 +5719,20 @@
     0.9600237011909485
    ],
    "pano_path": "buildings/234036/panos/k87pu4i133s2sfi9kryt5dkuc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige corridor with open wooden door beside sink room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4181,10 +5764,20 @@
     0.8506099581718445
    ],
    "pano_path": "buildings/234036/panos/nr1gxedfim25ybb6krp55cnra.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "small frosted glass room with wood frame and white plantation shutters"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4216,13 +5809,29 @@
     0.9951543807983398
    ],
    "pano_path": "buildings/234036/panos/qg2ws1qfg2ts77y1w4ppmzs1a.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor with granite-topped reception counter on left"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red wall-mounted box with white icon on right wall near doorway, likely a pull station",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_qg2ws1qfg2ts77y1w4ppmzs1a_y090_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4251,10 +5860,20 @@
     0.9850629568099976
    ],
    "pano_path": "buildings/234036/panos/q8gx4cmq09zg4gpa6gp9pbc4b.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "pcez6b4tqeep953kmm04hme9c",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "kitchenette with sink and upper cabinet beside open wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4286,10 +5905,20 @@
     -0.3691771626472473
    ],
    "pano_path": "buildings/234036/panos/t0tfsp4gt8m6fkg72uq5346rd.jpg",
-   "room_label": null,
+   "room_label": "Exam room",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "exam_room",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "cabinets and countertop beside hanging curtain near carpeted doorway"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4321,10 +5950,20 @@
     0.8371616005897522
    ],
    "pano_path": "buildings/234036/panos/t8q6997ai6g49i59egn5hfzxc.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "bmpu8rc0bpgc1bruwia8kktzd",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "yellow-walled room with sink, countertop and paper towel dispenser beside wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4359,7 +5998,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "empty yellow-walled room with blinds and red-framed doors behind"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4391,10 +6040,20 @@
     -0.11993049085140228
    ],
    "pano_path": "buildings/234036/panos/30ca2ux4c515s56qgm1aggfda.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open brown wooden door beside beige wall with blinded window beyond"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4426,13 +6085,29 @@
     -0.46956002712249756
    ],
    "pano_path": "buildings/234036/panos/6gitqk7pxqub5g539zy5yd8ic.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 3,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "open-door corridor beside curved yellow reception counter"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on the ceiling at the far end of the corridor ahead.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_6gitqk7pxqub5g539zy5yd8ic_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4464,10 +6139,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "frosted glass door in wood frame beside granite counter"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign mounted on the ceiling in the open lobby area to the left",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_8r9im3py1m2quie333xkxh96a_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4496,10 +6187,20 @@
     0.9526042342185974
    ],
    "pano_path": "buildings/234036/panos/9ruh8dnuzcprq1f5fyr4kcd4b.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "b2kez6wsw32fm2x3ui593u3hc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige room with wood-grain walls and granite-top sink counter"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4531,13 +6232,31 @@
     0.7293362021446228
    ],
    "pano_path": "buildings/234036/panos/ah2pwc9hre2tpz9prf3d2am3d.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [
+     "EXIT"
+    ],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long carpeted corridor with reception counter to the right"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on ceiling in the corridor ahead",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_ah2pwc9hre2tpz9prf3d2am3d_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4569,10 +6288,26 @@
    "room_label": null,
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "pink column with wall sconce beside red curtain"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red EXIT sign above the corridor ceiling in the behind view",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_d9g8fn1iy3bbte3asw79u04pb_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4601,13 +6336,29 @@
     0.7346870303153992
    ],
    "pano_path": "buildings/234036/panos/g9a4s8wtd4kqpxfgn20uzpi8d.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "Carpeted corridor with light panels and red fire alarm box"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red fire alarm box on left wall near the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_g9a4s8wtd4kqpxfgn20uzpi8d_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4636,10 +6387,20 @@
     0.9461851716041565
    ],
    "pano_path": "buildings/234036/panos/h1siiayatpdrb6a2eip2w9ifb.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "other",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "beige corridor with wood door on left and brown wall plaque"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4671,10 +6432,20 @@
     0.0303497314453125
    ],
    "pano_path": "buildings/234036/panos/q1t0iq925mq0a0tbgkyf6uxsc.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "3m54yff1z7crxaywd8if9rb0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "wood",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "wood-floor corridor ending at door beside kitchenette counter"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4706,10 +6477,20 @@
     0.9564233422279358
    ],
    "pano_path": "buildings/234036/panos/qsu969pcz1z51atabifdib4qc.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "pcez6b4tqeep953kmm04hme9c",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "beige room with built-in counter and wooden door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4741,10 +6522,20 @@
     -0.023644542321562767
    ],
    "pano_path": "buildings/234036/panos/r9h8w02ts70dn5b0b0tz8wkfa.jpg",
-   "room_label": null,
+   "room_label": "Kitchen break room",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "kitchen_break_room",
+    "furnished": true,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "break room with yellow cabinets and blinded window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4776,10 +6567,20 @@
     0.9999914169311523
    ],
    "pano_path": "buildings/234036/panos/ss1ff02nsiqq0bmpi5qw9pztd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "4zgy5afdb9eadqxq8qmauzh0d",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "narrow carpeted corridor with wood-framed door and blinded window ahead"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4811,10 +6612,27 @@
     0.594828724861145
    ],
    "pano_path": "buildings/234036/panos/tsa8297es17hczpq4u7pu89td.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "a5f9age4zzxewres6iqux2emc",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "hazards": [
+     {
+      "type": "step_or_level_change",
+      "note": "Floor edge with a lower gray surface visible at bottom left of the left view.",
+      "evidence_path": "cache/index/234036/crops/7uM5JKssTED_tsa8297es17hczpq4u7pu89td_y270_p+00.jpg"
+     }
+    ],
+    "perception_confidence": "low",
+    "landmark_text": "hallway with open wooden door and small wall window"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4846,10 +6664,20 @@
     -0.4808717668056488
    ],
    "pano_path": "buildings/234036/panos/t9uuddqq3sn5ew8kq68xdimsd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "i3emtmx7sim7ifqtsc807qtxa",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "corner beside brown-framed doorway into carpeted room"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4881,10 +6709,20 @@
     -0.3737606704235077
    ],
    "pano_path": "buildings/234036/panos/u9m6gquaa32e6x5gp6zskamab.jpg",
-   "room_label": null,
+   "room_label": "Reception",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "reception",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 5,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "granite-topped counter along corridor beside open office"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4916,13 +6754,36 @@
     -0.13919784128665924
    ],
    "pano_path": "buildings/234036/panos/xs0squ82sa51gdffpb2i1mcwc.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "613htqkzf66zz7hf7n8kzszed",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "tile",
+    "signage_text": [
+     "GENERAL OFFICE"
+    ],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "tiled corridor with General Office sign and wall sconce"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign above the far end of the corridor.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_xs0squ82sa51gdffpb2i1mcwc_y000_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on the right wall near the ceiling at the far end.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_xs0squ82sa51gdffpb2i1mcwc_y180_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -4954,7 +6815,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "19ab05tns5h6y4qm42esqqpea",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": true,
+    "has_window": true,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "room with window bank and cabinets, yellow floor"
    },
    "is_entrance": false,
    "equipment": [],
@@ -4986,10 +6857,20 @@
     0.6588741540908813
    ],
    "pano_path": "buildings/234036/panos/0srbx954cg9n7eekg1ximui1c.jpg",
-   "room_label": null,
+   "room_label": "Office",
    "attributes": {
     "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
-    "room_class": null
+    "room_class": null,
+    "room_type": "office",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 1,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "closed wood door with brass lever handle"
    },
    "is_entrance": false,
    "equipment": [],
@@ -5021,13 +6902,39 @@
     0.08670403063297272
    ],
    "pano_path": "buildings/234036/panos/0h5ew97xzeb1qft62x64e9tza.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long carpeted corridor with built-in cabinets and counter at far end"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign on left wall near the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_0h5ew97xzeb1qft62x64e9tza_y000_p+00.jpg"
+    },
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Small red wall-mounted device on right wall near the far end, possibly a pull station",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_0h5ew97xzeb1qft62x64e9tza_y000_p+00.jpg"
+    },
+    {
+     "type": "exit_sign",
+     "note": "Red exit sign above the doorway straight ahead down the left-side corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_0h5ew97xzeb1qft62x64e9tza_y270_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -5056,13 +6963,29 @@
     -0.2019025981426239
    ],
    "pano_path": "buildings/234036/panos/1sn7fphnbk8kpbhim1gehp9bd.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "cdz3fkt38kae7tapstpt0eaeb",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 4,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "long carpeted corridor with red exit sign at far end and wall fire alarm"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "fire_alarm_pull_station",
+     "note": "Red pull station on the left wall partway down the corridor, next to a door.",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_1sn7fphnbk8kpbhim1gehp9bd_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [
@@ -5094,7 +7017,17 @@
    "room_label": null,
    "attributes": {
     "room_id": "n2yqr30509t7i8whfdf2htwic",
-    "room_class": null
+    "room_class": null,
+    "room_type": "other",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "vinyl",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "low",
+    "landmark_text": "wood-look corner wall beside sink countertop and open wood door"
    },
    "is_entrance": false,
    "equipment": [],
@@ -5126,13 +7059,29 @@
     0.1772765964269638
    ],
    "pano_path": "buildings/234036/panos/99bfsh9hwqyuz42k49n6q7f1b.jpg",
-   "room_label": null,
+   "room_label": "Corridor",
    "attributes": {
     "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
-    "room_class": null
+    "room_class": null,
+    "room_type": "corridor",
+    "furnished": false,
+    "has_window": false,
+    "floor_surface": "carpet",
+    "signage_text": [],
+    "door_count": 2,
+    "stairs_visible": false,
+    "elevator_visible": false,
+    "perception_confidence": "medium",
+    "landmark_text": "carpeted corridor ending at red-framed glass door with open office behind"
    },
    "is_entrance": false,
-   "equipment": [],
+   "equipment": [
+    {
+     "type": "exit_sign",
+     "note": "Small red exit sign above the red-framed glass door at the far end of the corridor",
+     "evidence_path": "cache/index/234036/crops/7uM5JKssTED_99bfsh9hwqyuz42k49n6q7f1b_y000_p+00.jpg"
+    }
+   ],
    "kind": "pano",
    "label": null,
    "latlon": [

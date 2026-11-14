@@ -127,10 +127,12 @@ class Overrides(unittest.TestCase):
             "MODEL/gone": {"room_type": "office"}}
         patches, counts = convert(records, g)
         self.assertEqual(counts, {"imported": 1, "other_scan": 1, "not_in_graph": 1})
-        self.assertEqual(patches["lobby"]["label"], "the marble reception desk")
+        self.assertNotIn("label", patches["lobby"])          # a description of the view is not a name
+        self.assertEqual(patches["lobby"]["attributes"]["landmark_text"], "the marble reception desk")
         self.assertEqual(patches["lobby"]["room_label"], "Lobby")
         bg.apply_attributes(g["nodes"], patches)
         graph = Graph(g)
+        self.assertEqual(graph.landmark("lobby"), "the marble reception desk")
         from env import routing
         self.assertEqual(routing.hazards_along(graph, ["lobby", "c1"])[0]["type"], "obstruction_in_path")
         hit = routing.find_equipment(graph, "aed", "c1")[0]

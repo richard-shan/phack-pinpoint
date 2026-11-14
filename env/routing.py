@@ -669,8 +669,10 @@ def directions(g: Graph, path: list[str]) -> list[dict]:
         s["thumbnail_path"] = g.nodes[s["node_id"]].get("pano_path")
     end = path[-1]
     where = g.label(end) or _room_phrase(g.room(end))
+    seen = g.landmark(end) if not g.label(end) else None
+    arrive = f"Arrive at {where}" if where else "Arrive at the caller's position"
     steps.append({"kind": "arrive", "node_id": end, "to_node_id": end,
-                  "text": f"Arrive at {where}." if where else "Arrive at the caller's position.",
+                  "text": arrive + (f". Look for {seen}." if seen else "."),
                   "meters": 0, "heading_deg": None, "floor": g.nodes[end].get("floor"),
                   "thumbnail_path": g.nodes[end].get("pano_path")})
     return steps
@@ -702,7 +704,7 @@ def _go_text(g: Graph, s: dict, first: bool, last: bool) -> str:
 
     turn = s["turn"]
     if turn:
-        spot = g.label(s["turn_node"])
+        spot = g.label(s["turn_node"]) or g.landmark(s["turn_node"])
         turn_text = f"{turn} at {spot}" if spot and lead is None else turn
         lead = f"{lead}, {turn_text}" if lead else _cap(turn_text)
     elif lead is None:

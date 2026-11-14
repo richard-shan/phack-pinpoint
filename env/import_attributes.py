@@ -45,7 +45,9 @@ def convert(records: dict, graph: dict) -> tuple[dict, dict]:
         if a.get("room_type") and a["room_type"] != "other":
             patch["room_label"] = a["room_type"].replace("_", " ").capitalize()
         if a.get("landmark"):
-            patch["label"] = a["landmark"]
+            # A description of what is in view ("directory board between stone pillars"), written
+            # for every position. Directions use it at turns only; `label` stays for named places.
+            attrs["landmark_text"] = a["landmark"]
         out[sweep] = patch
         counts["imported"] += 1
     return out, counts

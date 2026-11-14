@@ -23,11 +23,25 @@ from pinpoint import orchestrator, stubs
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 BUILDING = "6550930"                       # 7900 Fannin St: lobby scan, four doors, 17 health care tenants
-TARGET = "9nydrbq3ga21s4wq6cdairckc"
+TARGET = "3ymmrb20g30hctysc1fq4ztpc"       # the Suite 1200 door, in the cross corridor
+
+
+SOUTH, NORTH = "6tm9tky8ehef6yfhg8ymq2s5b", "i3d7aunib0nbrnnaifmribxzb"    # lobby, by the doors at each end
+
+
+def _ambiguous(building_id, truth, k):
+    """A match that cannot tell the corridor position from two lobby positions at opposite
+    doors. The agent only asks the caller when the candidates are in different rooms or
+    the answer would change the door, so its question loop needs a spread like this."""
+    g = tools._graph(building_id)
+    return [{"node_id": n, "score": score, "simulated": True, "evidence_path": g.nodes[n].get("pano_path")}
+            for n, score in ((truth, 0.42), (SOUTH, 0.33), (NORTH, 0.25))]
 
 
 class _Base(unittest.TestCase):
     def setUp(self):
+        self.old_sim = tools._simulated_candidates
+        tools._simulated_candidates = _ambiguous
         self.tmp = tempfile.TemporaryDirectory()
         self.old_incidents, self.old_assets = orchestrator.INCIDENTS, tools.ASSETS
         orchestrator.INCIDENTS = Path(self.tmp.name) / "incidents"
@@ -36,6 +50,7 @@ class _Base(unittest.TestCase):
 
     def tearDown(self):
         tools.uninstall()
+        tools._simulated_candidates = self.old_sim
         orchestrator.INCIDENTS, tools.ASSETS = self.old_incidents, self.old_assets
         self.tmp.cleanup()
 
@@ -70,13 +85,29 @@ class WithoutConsole(_Base):
         self.assertTrue(picture.exists() and picture.stat().st_size > 20000)
         self.assertIn("Route on the floor plan", f["packet"])
 
-    def test_question_loop_uses_graph_attributes(self):
+    def test_question_loop_raises_confidence_in_the_true_position(self):
         res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
         loc = self.files(res)["location"]
         self.assertGreaterEqual(loc["questions_asked"], 1)
+        self.assertEqual(loc["node_id"], TARGET)
+        self.assertGreater(loc["confidence"], 0.42)                  # the match alone gave 0.42
         asked = tools.SESSION["asked"][0]
         self.assertIn(asked["attribute"], tools.QUESTIONS)
         self.assertTrue(asked["source"].startswith("simulated caller"))
+
+    def test_no_question_when_it_would_not_change_the_door(self):
+        tools._simulated_candidates = self.old_sim                   # truth plus its nearest neighbours
+        res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
+        loc = self.files(res)["location"]
+        self.assertEqual(loc["questions_asked"], 0)
+        self.assertIn("share room", loc["skip_reason"])
+
+    def test_lane_b_data_reaches_the_packet(self):
+        res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
+        f = self.files(res)
+        self.assertIn("room_type", tools.question_attributes(BUILDING, TARGET))       # from perception/data
+        self.assertIn("Vehicle access, read from the aerial image", f["packet"])
+        self.assertTrue(any("Turn" in s["text"] and " at the " in s["text"] for s in f["route"]["foot_directions"]))
 
     def test_unknown_photo_degrades_instead_of_crashing(self):
         res = run.run_incident(BUILDING, str(Path(self.tmp.name) / "missing.jpg"), auto_approve=True)

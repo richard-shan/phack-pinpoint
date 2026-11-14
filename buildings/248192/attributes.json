@@ -1,0 +1,2547 @@
+{
+ "04kd3gsp391ff9q58y8un986b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor lined with black server racks and glass office wall"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "0diiu02wp1y12a9uyafqiyy2b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "server racks lining a narrow aisle with white raised floor tiles"
+  },
+  "equipment": []
+ },
+ "0g7657itrnyge24pxm8pw2p4d": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "storage room with red and yellow bins"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green illuminated sign on far wall near ceiling; text not legible",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_0g7657itrnyge24pxm8pw2p4d_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Storage"
+ },
+ "0x4csy2rac9dmmniy6z8xw2fa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long straight corridor with gray doors and recessed ceiling lights"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "0xwmkmdb5py95hhtgp7xquqkc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long narrow corridor with green EXIT sign at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated EXIT sign mounted on ceiling at the far end of the corridor",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_0xwmkmdb5py95hhtgp7xquqkc_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "1bi2ayktd57u5riwhmmafxqzb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with large framed map and glass-panel doors"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted unit on the left wall of the corridor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_1bi2ayktd57u5riwhmmafxqzb_y000_p+00.jpg"
+   },
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red box on the wall above the framed map.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_1bi2ayktd57u5riwhmmafxqzb_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "1ft8esuxc0t26wkpcai7b1eha": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long server room corridor with black racks and white cabinets"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "2ftrkcxxf1pzhsz7aawezwb5b": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "monitor desks with black cabinet and frosted glass wall"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "35cf5a9kub057mhuqpu9bug3d": {
+  "attributes": {
+   "room_type": "reception",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "FERNET"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled reception counter with FERNET sign and tall potted plant"
+  },
+  "equipment": [],
+  "room_label": "Reception"
+ },
+ "35nkicfub0ibi8dsmzmmwmykb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor between server racks and frosted glass walls"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "39wyr10nrfepp3fh34p4gpu5d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with wall-mounted fire extinguisher facing office area"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher on white wall in the ahead view",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_39wyr10nrfepp3fh34p4gpu5d_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "3c4kn6352xtz861itpezuptac": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server aisle between metal cabinets with monitor and keyboard"
+  },
+  "equipment": []
+ },
+ "3hnzt48tmnetw4wp23sqzxk3a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with world map and glass door at end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign at the far end of the corridor near the ceiling",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_3hnzt48tmnetw4wp23sqzxk3a_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "3upuw151phiww9qg7m7c7a8ec": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "dark server racks behind wire mesh cages in a data center aisle"
+  },
+  "equipment": []
+ },
+ "3wx6sm5qf3b4nu7s6teeqk0hc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "long corridor with white wall-mounted cabinet on right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "68q3s6xhkr9g72mni9rpds0dc": {
+  "attributes": {
+   "room_type": "waiting_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "lounge with leather sofas beside glass-walled office and wooden door"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red wall-mounted box on the wall above the TV, likely a pull station.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_68q3s6xhkr9g72mni9rpds0dc_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Waiting room"
+ },
+ "6c4cfz95wyg4sn133x1zbe5rb": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "PDU-6"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow tiled aisle between gray metal cabinets with PDU-6 panel and chain-link cage"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Power distribution panel labeled PDU-6 on the wall to the right, with a small blue sign above it.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_6c4cfz95wyg4sn133x1zbe5rb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Storage"
+ },
+ "6c7t910cyq4ckc1r7pa6xck2b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "blue ceiling corridor with glass-fronted elevator on right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "6f8mdz7pubc9d82qmbykng50d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "long server room aisle lined with black perforated equipment racks and overhead cable trays"
+  },
+  "equipment": []
+ },
+ "7h0hmnn48neyy3w092eaqzbpd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "narrow aisle between tall dark equipment racks on white tiled floor"
+  },
+  "equipment": []
+ },
+ "81f9atzbm1np8d1rfp4q1i9xa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "raised-floor server room corridor with mesh-walled racks on left"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "83r725rdmkhfq1a8m3fsb44zc": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wire mesh caged enclosure beside long tiled corridor with electrical panels"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Two gray electrical panel boxes with handles are mounted on the far wall at the end of the corridor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_83r725rdmkhfq1a8m3fsb44zc_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "8en9a5rf1yuzcyn934s0pqfic": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "row of mesh-front server racks beside a chain-link caged area"
+  },
+  "equipment": []
+ },
+ "8gc6kik1mg5eec6061rqt2r5a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "FIRST AID"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "white wall with wall-mounted blue FIRST AID cabinet"
+  },
+  "equipment": [
+   {
+    "type": "first_aid_kit",
+    "note": "Wall-mounted white cabinet with blue FIRST AID sign on the wall ahead.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_8gc6kik1mg5eec6061rqt2r5a_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "8k58biu4ukesmngcg1fc59e7a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Rolling cart with a monitor stands at the far end of the aisle in the right image, possibly in the walking path.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_8k58biu4ukesmngcg1fc59e7a_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "long aisle between rows of gray server cabinets with overhead light strip"
+  },
+  "equipment": []
+ },
+ "8ts003pki3hw0rq4rqz2eecac": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor lined with floor-to-ceiling metal cabinet doors, open office at far end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "95kncws2p5t5xrws39pc27xgd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "narrow corridor, dark ceiling, light floor at far end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "98fgxu6w26k5dwmq702i03red": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "Server room aisle with raised tile floor and enclosed equipment racks"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign visible on ceiling near back of aisle",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_98fgxu6w26k5dwmq702i03red_y270_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Large gray electrical or power cabinets along left wall",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_98fgxu6w26k5dwmq702i03red_y270_p+00.jpg"
+   }
+  ]
+ },
+ "9bdezrcm5a3wteups7hw5aaid": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open office with glass partition wall and tall potted plant"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "9cxxyn11q568bmui7p2i418bc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server rack aisle with tiled raised floor and ceiling dome camera"
+  },
+  "equipment": []
+ },
+ "9h6g487pxixdi5yw6kd6i3dfb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "brown wood door with blue lever handle beside thermostat"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "9kh8win2mfxreasxsiguqitud": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "Global Internet Map"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted corridor with wall-mounted Global Internet Map display"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Wall-mounted electrical panel box on the white wall in the middle of the view.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_9kh8win2mfxreasxsiguqitud_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "9nix76tkuw2kxtadk1iap4m8d": {
+  "attributes": {
+   "room_type": "conference_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wall-mounted whiteboard on frosted glass wall beside snake plant"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above a door on the left side of the room",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_9nix76tkuw2kxtadk1iap4m8d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Conference room"
+ },
+ "a4d0zmyhma3bhn0addm8y2feb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long aisle between server racks on white raised floor tiles"
+  },
+  "equipment": []
+ },
+ "a51g73nby4xz9zkn979w1yzfc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with glass door and open office beyond"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Small red wall-mounted item near the ceiling on the right wall, possibly a fire extinguisher",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_a51g73nby4xz9zkn979w1yzfc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "aebyk64g54x8fq8293up71mra": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor with glossy floor and green exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated exit sign above the door at the far end of the corridor",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aebyk64g54x8fq8293up71mra_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "agicqxn7ahsr56nh8uxam9bzc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "corridor with painted mural wall and brown door at far end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "aq6pp98zc3e216z3fy3196rnc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with wall-mounted map, glass door, and patterned carpet runner"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "aqws3fnuntku01dh55t95fk4b": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "ON",
+    "OFF"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Debris or scattered material lies on the floor in the bottom right corner of the view.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aqws3fnuntku01dh55t95fk4b_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corner of plain walls beside grey Eaton electrical disconnect panels"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Grey Eaton disconnect switch enclosures with ON/OFF labels mounted on the wall, with a red emergency-style knob on the right box.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_aqws3fnuntku01dh55t95fk4b_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "ay2k5k6fsye6u3izzx2xsed9c": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Metal railing and raised edge at lower left, possibly a step or level change",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ay2k5k6fsye6u3izzx2xsed9c_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "kitchen sink counter facing a whiteboard panel with open office behind"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "beiz3hh5gph2eyrdcf5fztrma": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "recessed fire extinguisher cabinet beside long carpeted corridor with blinded windows"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher in a recessed stainless steel wall cabinet on the left wall of the corridor",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_beiz3hh5gph2eyrdcf5fztrma_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "bi2itp7sw4yp22i1sfizn1rgd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Handrail-lined drop from the entry area to a lower carpeted floor on the left, possibly a step or stairs.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_bi2itp7sw4yp22i1sfizn1rgd_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "glass door with white handrail beside open-plan office"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red wall-mounted box on gray wall, likely a fire alarm pull station.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_bi2itp7sw4yp22i1sfizn1rgd_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "cb39hmrrannkhh6466ikep2eb": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled corridor with potted plants at far end"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "czy828qe2g6udwze824uy84db": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long corridor between dark server cabinets with glass office wall on one side"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "d7s74mukruxr3yunybewedmtb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "narrow dark-walled corridor with light tile floor leading to lighter room ahead"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "dasb3dy976au0uga6yw2y1qea": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Railings line a sloped or stepped section of floor behind, possible level change",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dasb3dy976au0uga6yw2y1qea_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "long tiled corridor with glass-walled rooms and blue ceiling"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "dp5a2irdhb9cxu1bwu5tidfbb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Narrow aisle between tall server racks on both sides, visibly tighter than a normal corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dp5a2irdhb9cxu1bwu5tidfbb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor between server racks with glass office wall"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "dw4wcitii9t78286r5xn2rw8c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled cables and a long metal profile lie on the concrete floor in front of the wall.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y090_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Large industrial machinery with a low floor-level frame fills much of the forward view.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "industrial loom bay beside roll-up shutter door"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel mounted on the wall at the right edge of the left view, beside the roll-up shutter.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_dw4wcitii9t78286r5xn2rw8c_y270_p+00.jpg"
+   }
+  ]
+ },
+ "e5k5pnhyuwqd6byccxb4fkudd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "XFERNET"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood door beside wall-mounted TV and glass-walled corridor"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "edmrd06cg5ie17umyy6ifhz8b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "server room with wire mesh cages and tall gray equipment racks"
+  },
+  "equipment": []
+ },
+ "ei0876yem1p81yq9xzdh2n2tc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Wheeled cart or stand with a chair-like seat sits on the floor in the aisle toward the far end.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ei0876yem1p81yq9xzdh2n2tc_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow aisle between gray metal cabinets on raised tile floor"
+  },
+  "equipment": []
+ },
+ "emwehitizg6g6uid1urdi52xa": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white raised-floor server room aisle with cabinets and overhead cable trays"
+  },
+  "equipment": []
+ },
+ "en84aibzyd5eha5pzds6zi7qa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with framed map on right wall and EXIT sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign mounted above the corridor ceiling, past the center wood door.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_en84aibzyd5eha5pzds6zi7qa_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "ep6ir718kms5qtghirzdu66cc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Narrow aisle between wire mesh enclosure walls, appears narrower than a normal doorway.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ep6ir718kms5qtghirzdu66cc_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow aisle between wire mesh cages under green exit sign"
+  },
+  "equipment": []
+ },
+ "es9acbwguh6ha3ftne8iigmfb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Aisle between tall dark racks appears narrower than a normal doorway and may be tight for a stretcher.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_es9acbwguh6ha3ftne8iigmfb_y000_p+00.jpg"
+    },
+    {
+     "type": "narrow_passage",
+     "note": "Same narrow aisle between racks continues back toward the entry, tight for a stretcher.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_es9acbwguh6ha3ftne8iigmfb_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server room aisle between tall black equipment racks"
+  },
+  "equipment": []
+ },
+ "exgzawdp99ytggmhaeersufhc": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Gray trash bin standing on the floor in front of the wall, with a white tub beside it.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_exgzawdp99ytggmhaeersufhc_y000_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Yellow-edged wheeled item on the floor along the right side of the narrow corridor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_exgzawdp99ytggmhaeersufhc_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "gray trash bin beside white tub, concrete utility room"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "ffq6kygt0ys03u6uwcw8m744b": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wall-mounted whiteboard with hanging straw hats beside a wood door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "fmr4hx797kt17isdf9zt6b42a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server room aisle with black equipment racks and raised gray floor tiles"
+  },
+  "equipment": []
+ },
+ "g2cnngtdwntz65xhk39d19bfa": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Folding step ladder leaning against the right-hand wall at the near end of the alcove",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_g2cnngtdwntz65xhk39d19bfa_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "dead-end alcove with step ladder beside gray electrical cabinet"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray wall-mounted cabinet with a small display along the left edge of the ahead image",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_g2cnngtdwntz65xhk39d19bfa_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "gca2iy6zhgb3nn9qdy2s0ym6c": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled corridor with wall handrail beside a multi-monitor control desk"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "gffce5q9yfiff37rs0tfr0f8a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long corridor beside blinded window wall with open office cubicles"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted unit on the right wall, likely a fire extinguisher cabinet",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gffce5q9yfiff37rs0tfr0f8a_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "gkws9uei491z2md1rwzpiftka": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "PDU-4"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long server-rack aisle with raised white floor tiles and PDU-4 cabinet"
+  },
+  "equipment": []
+ },
+ "gy3pbbsyfykqzn73r9bqe730b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long server room aisle with black racks and white raised floor"
+  },
+  "equipment": []
+ },
+ "gypbqz1efusbqsfc8wehg6u6b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Large potted plant in an orange pot stands on the carpeted aisle between cubicles.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gypbqz1efusbqsfc8wehg6u6b_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with roller-shaded windows and open office cubicles to the right"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Wall-mounted box at left edge of view, possibly an electrical or alarm panel; not clearly identifiable.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_gypbqz1efusbqsfc8wehg6u6b_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "h4za5cw31pb999pzhr2za317d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "CRAC-A"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Tiled server room aisle beside CRAC-A cooling unit with gray cabinets"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher on the right side of the left view, near the corner.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_h4za5cw31pb999pzhr2za317d_y270_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Two gray electrical boxes mounted on the wall in the left view.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_h4za5cw31pb999pzhr2za317d_y270_p+00.jpg"
+   }
+  ]
+ },
+ "h5cs8dr54833site2prsbp04a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server room aisle with tall dark cabinets and a rolling monitor cart"
+  },
+  "equipment": []
+ },
+ "hfmiksyyg215fhayqcnuh26ga": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long gray-tiled corridor lined with mesh-fronted server racks"
+  },
+  "equipment": [
+   {
+    "type": "alarm_panel",
+    "note": "Small wall panel with a red display on the left wall, text not readable, so type is uncertain.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hfmiksyyg215fhayqcnuh26ga_y090_p+00.jpg"
+   }
+  ]
+ },
+ "hggrzssiu9p53m7wbi74ya8td": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled black cables on floor and metal rods/shelving stacked in front, blocking the path",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y000_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Black bag resting on floor at lower left of view",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "long corridor with grey roll-down shutter on left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign visible at far end of corridor; text not readable",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_hggrzssiu9p53m7wbi74ya8td_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "im711qe8neuwex0b18kwce1yc": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "FED FROM UPS-1"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Corridor between the electrical cabinets on the left and the wall on the right is narrow.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y000_p+00.jpg"
+    },
+    {
+     "type": "narrow_passage",
+     "note": "Passage between the dark cabinet run on the left and the roll-up shutter on the right is narrow.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow concrete service corridor with electrical cabinets and UPS-1 feed panel"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel cabinets line the left side of the corridor ahead.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y000_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel door with a sign reading FED FROM UPS-1 mounted above it.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_im711qe8neuwex0b18kwce1yc_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "iqwmiqug752bdzb9i95ebhheb": {
+  "attributes": {
+   "room_type": "conference_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "conference room with long table and wall-mounted whiteboard"
+  },
+  "equipment": [],
+  "room_label": "Conference room"
+ },
+ "kutx0en1030x5iike1qfiwzsc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long corridor with glass-paneled doors on right side"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign visible at the far end of the corridor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_kutx0en1030x5iike1qfiwzsc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "kuxs6sihfcg69hgn440uumbqb": {
+  "attributes": {
+   "room_type": "waiting_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "waiting area with two leather chairs beside exit door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Illuminated EXIT sign mounted above the wooden door at the upper right of the image",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_kuxs6sihfcg69hgn440uumbqb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Waiting room"
+ },
+ "kyi7azyg5u0q8i1q4sn02fu0d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "server room aisle with white raised-tile floor and wire mesh cages"
+  },
+  "equipment": []
+ },
+ "m0i7s1ig55x2yrs35bf8pf70d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long white-tiled aisle between rows of server racks and cabinets"
+  },
+  "equipment": []
+ },
+ "m1b95g7rck2zk0s5n8hwdiq2b": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Large dark freestanding cabinet stands in the white-tiled aisle, left of center, with red floor markings nearby.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_m1b95g7rck2zk0s5n8hwdiq2b_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "white-tiled server aisle with mesh cage walls"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "mcm8nepmnihwb52189zu1m9fa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "CONFERENCE ROOM 4"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long corridor with glossy speckled floor and Conference Room 4 sign"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "mdwntufqpdsu1qi1u0b7q7bua": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "raised-floor server aisle with orange extinguisher on wall"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Orange cylinder in a wall bracket near the passage entrance, likely a fire extinguisher.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_mdwntufqpdsu1qi1u0b7q7bua_y270_p+00.jpg"
+   }
+  ]
+ },
+ "mr2i6z7s300795fw4d5wgeusa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow tiled corridor with gray metal cabinets on one side and green EXIT sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign mounted above the corridor ceiling, seen in the behind image.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_mr2i6z7s300795fw4d5wgeusa_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "n3wn7hmp3cwey7eat3yegz76d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "rows of black server cabinets beside plain white wall"
+  },
+  "equipment": []
+ },
+ "nm2t27hwccyhk3xahq0pbzh1d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "red diamond floor marking in room with blue ceiling"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "p040basywgt3dp0433phkpuza": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "301"
+   ],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor by room 301 door and red fire alarm"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red fire alarm pull station on the wall to the left of the door marked 301",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_p040basywgt3dp0433phkpuza_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "p48c8gwcr16epcr7q2hm89xzc": {
+  "attributes": {
+   "room_type": "reception",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "XFERNET",
+    "www.xfernet"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "gray wall with XFERNET logo, desk and plant behind"
+  },
+  "equipment": [],
+  "room_label": "Reception"
+ },
+ "p99ku5qicywd9f9mndq6is5ac": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "caged server racks behind wire mesh walls under overhead cable trays"
+  },
+  "equipment": []
+ },
+ "p9k8ydhh1aw4gf9gbkf9f1s0c": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "corridor with recessed wall panel and dark ceiling"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "pgzggd119dz8t3za9psz55rgd": {
+  "attributes": {
+   "room_type": "conference_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "conference room with long table and wall-mounted TV"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above the door on the right side of the room.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pgzggd119dz8t3za9psz55rgd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Conference room"
+ },
+ "pyceuntsxa242bbx3tag8thpc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Tall black cabinet stands in the central aisle, partly blocking the walking path toward the far end.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyceuntsxa242bbx3tag8thpc_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow server aisle with tall black cabinet and caged racks"
+  },
+  "equipment": []
+ },
+ "pyfbedi9fitzss78799et29tb": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Tiled aisle runs between tall gray metal cabinets and appears narrower than a normal doorway, ending at a plain light wall with a dark threshold strip at the floor.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyfbedi9fitzss78799et29tb_y000_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "A desk with a monitor and equipment sits along the left side of the aisle behind, narrowing the walking space.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_pyfbedi9fitzss78799et29tb_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow tiled aisle between gray metal cabinets under a long overhead light"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "pz5dxsc53mthwcqyrq86c531a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled corridor opposite rows of server racks"
+  },
+  "equipment": []
+ },
+ "qmfm6fcimhkg6z72ng4b8ffsd": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled black cables lie on the floor along the right side near the wall.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qmfm6fcimhkg6z72ng4b8ffsd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "gray roll-up shutter door beside stacked metal shelving in storage corridor"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel on the left wall ahead, near the roll-up shutter door.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qmfm6fcimhkg6z72ng4b8ffsd_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Storage"
+ },
+ "qn6rw160f5x12dyine5tatt5d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Chain-link cage partition with a horizontal rail crosses the view behind",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_qn6rw160f5x12dyine5tatt5d_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Black server racks ahead and left, chain-link cage behind"
+  },
+  "equipment": []
+ },
+ "qt2pr2bwq0b311zb27r8wrweb": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "red-based monitor desk beside whiteboard and potted plant"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "rqz6ckzkfimp0r2140c771r7b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Narrow corridor, speckled floor, lit exit sign at end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Illuminated green exit sign at the far end of the corridor",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_rqz6ckzkfimp0r2140c771r7b_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "rzz4dkgypmzqqi8a49fnsxuha": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long server aisle between dark metal cabinets on white raised floor tiles"
+  },
+  "equipment": []
+ },
+ "sfxpg8h4gu5hmxge8dwqgih5a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white-tiled aisle between tall grey server cabinets with overhead cable tray"
+  },
+  "equipment": []
+ },
+ "sgdqc4385q67t59k96xmmw2ya": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open office cubicles beside black plum blossom wall art"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "sgh1z60uu5pa2d4c584ah10za": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Wire shelving unit and a black metal step stool stand along the left side near the corridor, and an orange folding ladder leans against the right side, so the path may be narrowed.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "long narrow tiled corridor with wire mesh storage cages on one side"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray wall-mounted cabinet with breakers or switches visible at the far end of the corridor on the right side.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign mounted on the ceiling far down the corridor ahead on the left-side view.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sgh1z60uu5pa2d4c584ah10za_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Storage"
+ },
+ "sn12etr7txcd51msx8u9kzz2a": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "glass-walled server room beside open cubicle row with plant"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red device on the wall at the right edge, possibly a pull station; not clearly legible.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_sn12etr7txcd51msx8u9kzz2a_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "t6m5tw36t29u9tt5imhu6g4gc": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "server room with white raised floor tiles and black equipment racks"
+  },
+  "equipment": [],
+  "room_label": "Utility"
+ },
+ "t8ug2cp93umssn3x6w4up2dec": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with gray door and fire alarm pull station"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red fire alarm pull station on the wall beside the gray door at the far end of the corridor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_t8ug2cp93umssn3x6w4up2dec_y180_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign mounted above the gray door at the far end of the corridor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_t8ug2cp93umssn3x6w4up2dec_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "tpxbcp5zuixcqeeem8cg6dzta": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "carpeted corridor between cubicles with blinded windows and a tall potted plant"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "u226dbirissbeisd3u6pxmgdb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "PULL"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Narrow raised-floor aisle between dark server racks with blue overhead cable tray"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "White wall-mounted electrical panel with a black door, on the right wall",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u226dbirissbeisd3u6pxmgdb_y090_p+00.jpg"
+   }
+  ]
+ },
+ "u4cyy1a4izt8fpmrftzrffd9b": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Black folding step ladder standing on the floor against the white wall.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u4cyy1a4izt8fpmrftzrffd9b_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "dark closed panel ahead with folding step ladder on right"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Wall of electrical panels and boxes with conduit above a gray ledge.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_u4cyy1a4izt8fpmrftzrffd9b_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "w81rdadrhc93pw37ruiepsgcb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "raised-floor equipment room with long aisle between racks and gray lockers"
+  },
+  "equipment": []
+ },
+ "w85zb86ybp59501x3w4qa6gdd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Black bin sits on the floor at the right edge of the corridor near the wall.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_w85zb86ybp59501x3w4qa6gdd_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow wire-mesh caged aisle lined with server racks"
+  },
+  "equipment": []
+ },
+ "w8r5nesytbxkdbpau2w0bu9sd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "wood double doors opposite framed global internet map poster"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "wz69amhfe67xm3qf0h1mdkcfa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Folding step ladder leaning against the right wall beside the cubicle desk; may sit near the walking path.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_wz69amhfe67xm3qf0h1mdkcfa_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled server room window beside cubicle office"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "wzz2zxux3i3wb5ym11te8d8ra": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "grey raised tile floor with wooden desks and monitors behind"
+  },
+  "equipment": []
+ },
+ "x8qzmpy63fr192f0sxb9eytqd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "raised-floor equipment corridor with grey mat ahead"
+  },
+  "equipment": []
+ },
+ "xcm6f6xnwu2zqd9hxwqd6wt1a": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Cardboard boxes and a black bin sit on the floor along the left side of the aisle.",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "gray electrical cabinets beside a roll-up shutter in narrow utility aisle"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Tall gray electrical switchgear cabinets fill the wall ahead.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y000_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Tall gray electrical cabinet stands on the right beside a stacked cardboard box area.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y090_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel door with a recessed breaker box on the left wall.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xcm6f6xnwu2zqd9hxwqd6wt1a_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "xh0ptu320bs98yuud43rc70ua": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Upright vacuum cleaner and folded ladder standing on the floor against the wall",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xh0ptu320bs98yuud43rc70ua_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "server cabinets behind glass wall ahead, open office right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "xk7ur6iy6kzx2swydt2m9casc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long straight corridor with ceiling light panels and doors at far end"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small ceiling-mounted sign partway down the corridor; text not legible",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xk7ur6iy6kzx2swydt2m9casc_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "xuhtwbmsxqp8ykd84qhkdn0hc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [
+    "CRAC-5"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Server aisle beside CRAC-5 unit and red extinguisher"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall, left side of the spot.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xuhtwbmsxqp8ykd84qhkdn0hc_y270_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Gray wall-mounted electrical disconnect box with an OFF label and conduit running down to the floor.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_xuhtwbmsxqp8ykd84qhkdn0hc_y180_p+00.jpg"
+   }
+  ]
+ },
+ "y7gt2xg8su3cdsepfp17x6k6d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "server racks on left, glass-walled office on right"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small white box with red marking on wall right of the glass door, likely a pull station",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_y7gt2xg8su3cdsepfp17x6k6d_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "yhgt6kkeb1e9685rrxpxkuc2a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "White cylindrical bin and a dark floor machine sit in the corner ahead, in the walking area",
+     "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_yhgt6kkeb1e9685rrxpxkuc2a_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "speckled corridor with elevator door on right and metal roll-down shutter on left"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ys2ztxk5nxumrfac7pbgarxac": {
+  "attributes": {
+   "room_type": "waiting_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "leather sofas beside wood door and blinded windows"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Possible small red wall device near top left; uncertain identification",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ys2ztxk5nxumrfac7pbgarxac_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Waiting room"
+ },
+ "ywcd5qh8xb5htmq1ifg4ph4ac": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow tiled corridor lined with gray metal cabinets and louvered wall vents"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "z093kzkb699snyi86g8sw7qdc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "office corner with filing cabinets, whiteboard and window blinds"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "z0n0pw4i6fm23pwthbecw95zc": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "carpet",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open office corridor with frosted glass wall and cubicles on left"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "z21xf42csctpmc0x93fg2dacb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white-tiled aisle between black server cabinets with closed gray door ahead"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "z8b69gr7ip4itb1arx90n8ymb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "WOMEN"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor beside women's restroom with fire extinguisher cabinet"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Fire extinguisher in a recessed wall cabinet with a glass window.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_z8b69gr7ip4itb1arx90n8ymb_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "zpnqhnc1ar565q3n943u2mbzc": {
+  "attributes": {
+   "room_type": "storage",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open room with wire shelving of red and yellow bins"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on left wall above the window line; text not legible",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_zpnqhnc1ar565q3n943u2mbzc_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Storage"
+ },
+ "zpx4qias1i5x4ye9fp6bc6bkd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "server room with black equipment racks and a glass door at the far end"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher on a wall bracket on the right side of the corridor, about halfway down.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_zpx4qias1i5x4ye9fp6bc6bkd_y000_p+00.jpg"
+   }
+  ]
+ },
+ "zqg3dxd8xmqku20umabrniu2a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor between black server racks and glass wall panels"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "ztarf16nq64yn0g0h9izsn8pa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor beside glass-walled office with fire extinguisher on right"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher in wall-mounted cabinet beside a framed picture, visible through the glass wall in the right image.",
+    "evidence_path": "cache/index/248192/crops/MFhskYSBMMe_ztarf16nq64yn0g0h9izsn8pa_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ }
+}

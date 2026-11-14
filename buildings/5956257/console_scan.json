@@ -500,7 +500,7 @@
  "scope": "Ground floor of the north wing only: one east-west line of scan positions about 80 m long with the entrance lobby in the middle. The floor is stripped to bare concrete (no partitions, ceilings or finishes), so there are no rooms to name. The rest of the building, the upper floors, the stairwells and the 4th Street side are not scanned. Three single glass doors on the north wall open onto the planted strip along Geneva St and are not marked, because their positions could only be estimated from across the floor.",
  "provenance": {
   "source": "lane A graph (env/build_graph.py), exported by env/console.py",
-  "generated": "2026-11-14T16:59:23",
+  "generated": "2026-11-14T18:01:13",
   "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
   "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
   "aerial": "Vexcel. Staging spots are placed by eye."

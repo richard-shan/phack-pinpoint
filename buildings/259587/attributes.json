@@ -1,0 +1,4307 @@
+{
+ "027fz1guxfikfbm2zeh0zr9cc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor junction beside kitchen with stainless trash can"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated EXIT sign above the corridor ceiling, down the hallway.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_027fz1guxfikfbm2zeh0zr9cc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "06bex1ru4dzmay2tr01ss5e5a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "hallway with glass door to outside and kitchen behind"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Lit exit sign above the far end of the corridor behind",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_06bex1ru4dzmay2tr01ss5e5a_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "0e7qyi4xbs0e5bk8bw473nr0c": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open white door beside plain textured wall in corridor"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "0qf7c10my2ekxxs06p4cg8gyc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "12"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open underground parking bay with painted number 12"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray wall-mounted electrical panels along the far wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_0qf7c10my2ekxxs06p4cg8gyc_y000_p+00.jpg"
+   }
+  ]
+ },
+ "0qu49ziy9nekdugqcuuynqw7d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with drop ceiling, light-wood floor, open doorway behind"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "0t15m4sznebtgw6xgygkumaya": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open rooftop terrace beside yellow-walled building with glass panels"
+  },
+  "equipment": []
+ },
+ "0zxzn4xrt49znq6f1d2n6i0rd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "CAUTION",
+    "WATCH FOR OPPOSING TRAFFIC"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "underground parking aisle beside CAUTION watch for opposing traffic sign"
+  },
+  "equipment": []
+ },
+ "1ddmbnnxwz5qezn2y4k2dtama": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "accessible men's restroom door with blue wheelchair sign"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "1myf8k2dk7msczum3k4dypbrc": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "restroom with steel grab bar and recessed paper towel dispenser"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "1q0rbpsdx3rekwx5mgz4a957a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue object on the floor inside the room, visible through the open doorway on the right.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_1q0rbpsdx3rekwx5mgz4a957a_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "empty white room, open doorway to corridor on right"
+  },
+  "equipment": []
+ },
+ "1qekf399114ut72hg17gp21hd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with white handrail at the right edge of the image",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_1qekf399114ut72hg17gp21hd_y180_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Staircase with dark treads visible at the far left edge of the image",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_1qekf399114ut72hg17gp21hd_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with stairs and gray louvered door on left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign glowing in the distance down the corridor, text not legible",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_1qekf399114ut72hg17gp21hd_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "1x61a1kh6imed7w8ka9k172kb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "underground concrete parking level with yellow and blue painted lane lines"
+  },
+  "equipment": []
+ },
+ "252gr0aixzzbe01qydue67m5b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled hose or cord lies on the floor in the foreground at the lower right of the view",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_252gr0aixzzbe01qydue67m5b_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with blue coiled hose on floor"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted unit near the grey door on the right side of the room, appears to be a fire extinguisher",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_252gr0aixzzbe01qydue67m5b_y180_p+00.jpg"
+   }
+  ]
+ },
+ "27kuwkfgkf8it4r42sx4t0qhd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty alcove beside long corridor with dark-framed glass door"
+  },
+  "equipment": []
+ },
+ "29kqmkpt3eyg9a6bfx7bush7d": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue object on the floor just inside the doorway, low and unlikely to stop a stretcher",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_29kqmkpt3eyg9a6bfx7bush7d_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office with glass door to outdoors on right"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "2au0z0gennuwai7dm3p54s4pb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "narrow_passage",
+     "note": "Narrow concrete passage ahead between a wooden-panel wall and a grey wall, with a concrete step up and a metal railing.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_2au0z0gennuwai7dm3p54s4pb_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Metal staircase rising along the right side, with a handrail, in the walking path toward the upper level.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_2au0z0gennuwai7dm3p54s4pb_y180_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Underside of a steel staircase with concrete block walls, showing stair structure overhead.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_2au0z0gennuwai7dm3p54s4pb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "narrow concrete stairwell passage with metal stair railing and wooden-panel wall"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "2irh24dtmu28dipuupzu5r11b": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open area with white partition wall and frosted glass panels, door to the left ahead"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "2z0bfugih2rmn0dhei3n9hu9d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open-door white hallway beside glass wall to terrace"
+  },
+  "equipment": []
+ },
+ "3224kwpf6hdxydw07707uwzbd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase visible at far end of the open office area, beyond the glass partition walls",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_3224kwpf6hdxydw07707uwzbd_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office with glass partitions and distant staircase"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "32aubch2yi6qt49w9bg117gbb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Metal-tread stairs with a handrail rise in the passage behind the viewpoint",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_32aubch2yi6qt49w9bg117gbb_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete block stair passage with open doorway to outdoors on left"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "32q0352k5busfgreyc495c7ib": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "other",
+   "signage_text": [
+    "FIRE HOSE"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white wall-mounted fire hose cabinet beside a light-floored corridor with a window"
+  },
+  "equipment": [
+   {
+    "type": "fire_hose_cabinet",
+    "note": "White wall-mounted fire hose cabinet with a FIRE HOSE sign, on the wall to the left of the view.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_32q0352k5busfgreyc495c7ib_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "330qbhnnycsma19p9i9m0g19a": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steep staircase with metal handrail rising along concrete block wall",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_330qbhnnycsma19p9i9m0g19a_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair flight with metal railings and a landing ahead of the viewer",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_330qbhnnycsma19p9i9m0g19a_y180_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair flight above with exposed metal stringers and underside visible",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_330qbhnnycsma19p9i9m0g19a_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete block stairwell with metal handrails and landing"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "342n912ymk4epm2g8pw516t1c": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "dark-framed doorway between two windows showing outdoors"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "36w2zndh3891i4u29m0ui2dic": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairs rise or drop along the left side of the corridor ahead, with a handrail on the left wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_36w2zndh3891i4u29m0ui2dic_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with stairs on left and glass partition wall on right"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign mounted above the corridor ceiling in the behind view.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_36w2zndh3891i4u29m0ui2dic_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "3ak5eppp4m0r9kk44ze91xz4c": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow corridor with side window wall and glass door at far end"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "3pfth34xcbzmdr7a3szmqe35c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open hallway with two open doors and light wood-look floor"
+  },
+  "equipment": []
+ },
+ "3sw6f1ay3m3fy13dm0xcyxccc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue coiled cord or hose lying on the floor in the open floor area.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_3sw6f1ay3m3fy13dm0xcyxccc_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Hallway with open white doors opposite a blank white wall"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above a dark-framed door on the right wall, text not legible.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_3sw6f1ay3m3fy13dm0xcyxccc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "461f70ix2pa86cgqetchqri5d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue safety goggles lying on the floor in the foreground center",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_461f70ix2pa86cgqetchqri5d_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open white room with central white column and glass entry doors to the left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on the ceiling in the far distance ahead",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_461f70ix2pa86cgqetchqri5d_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "4d9asfdtpb3bfz5bmfee22hqd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Step or ledge with a dark edge strip beyond a dark-framed opening, with a white handrail on the left wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_4d9asfdtpb3bfz5bmfee22hqd_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "dark-framed opening to steps beside a white handrail"
+  },
+  "equipment": []
+ },
+ "4f3c82wi41h08xkcwd61ygcwa": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled blue hose lying on the floor in the open room",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_4f3c82wi41h08xkcwd61ygcwa_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open lobby with elevator doors and coiled blue hose"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "4mbg69t6zhnx235m6iimqwbdc": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with metal handrail rises up and to the left; treads visible at the lower left of the frame.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_4mbg69t6zhnx235m6iimqwbdc_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair treads with metal handrail at the lower right of the frame, ascending along the wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_4mbg69t6zhnx235m6iimqwbdc_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stairwell with metal handrail and closed gray door behind"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "5fszt1q9xz37zz5q44rd2qazc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty white room with ceiling light panel"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "5nys95m485zxqhmzbyy6700na": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty office with exterior window and closed door to right"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "5rsu4zs83futu3dkk4z8i06da": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Straight run of concrete stairs with metal handrail rising beyond a green metal door, likely a stairwell",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_5rsu4zs83futu3dkk4z8i06da_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open concrete parking garage beside green metal stairwell door"
+  },
+  "equipment": []
+ },
+ "5stm18mzfz8k3274t7fr6qt8b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "5"
+   ],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "concrete parking bay numbered 5 with exposed pipe"
+  },
+  "equipment": []
+ },
+ "5whnzzx4an1crx5x0sum1m39d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with open white door and wood-look floor"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "62tdyc7ixkgu4zs8myxsw2nsb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corner room with floor-to-ceiling window overlooking street and parked cars"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "633wgb7qa5qg1cm69f0aued4d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "FIRE EXTINGUISHER"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cable lying on the floor in the open area near the left side",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_633wgb7qa5qg1cm69f0aued4d_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open corridor with light wood-look floor and glass doors at far end"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red vertical FIRE EXTINGUISHER sign on wall; extinguisher itself not visible",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_633wgb7qa5qg1cm69f0aued4d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "6f259wu6cm2r84emzmxfqkzpd": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Metal-railed staircase descends from this spot, visible in the ahead image.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6f259wu6cm2r84emzmxfqkzpd_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Carpeted-tread stairs rise to the right of the left view, with a wall handrail running alongside.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6f259wu6cm2r84emzmxfqkzpd_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete block stairwell with black metal railing and push-bar door"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "6hruge1prcenqbqn830nke90c": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Open metal staircase with steel stringers and railings rises along the left wall, visible in the left image.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6hruge1prcenqbqn830nke90c_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete block stairwell with open metal staircase and white door"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "6my6i0d5t65a5tcixqrr40e6b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white-walled room with dark-framed open doorway to large hall on right"
+  },
+  "equipment": []
+ },
+ "6nw9qay3063u2wh71b11gea4d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty office with closed white door on right and dark-framed hallway doorway behind"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "6p0ig4eyixab9087yh6856i2a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open rooftop terrace beside yellow wall with tall window"
+  },
+  "equipment": []
+ },
+ "6y3y27mwu2qzn5xd03gnuw2ec": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Concrete floor drops at an edge guarded by a horizontal metal pipe railing across the path",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6y3y27mwu2qzn5xd03gnuw2ec_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Steep concrete staircase with metal handrails descending to the left, beside the doorway",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6y3y27mwu2qzn5xd03gnuw2ec_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "wood-paneled door beside basement stairs with metal railing"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Brown metal wall-mounted box on block wall, possibly an electrical panel",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_6y3y27mwu2qzn5xd03gnuw2ec_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "72pwstp0qx7gt54hg1m784xad": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Wood-look vinyl corridor with glass-walled entrance ahead"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on ceiling at far end of corridor",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_72pwstp0qx7gt54hg1m784xad_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "78a54qd6crscsabr0f8ihekmc": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue object lying on the floor in the open area toward the left.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_78a54qd6crscsabr0f8ihekmc_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office with white column and wood-look vinyl floor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign partly visible at top right of the behind view; text not readable.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_78a54qd6crscsabr0f8ihekmc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "7dw6f5wgm66h27197esh4sgnc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white room with wood-look vinyl floor and brass-handled door on left"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "81bagw7nhg11m9ycta78rp7zd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Raised white ledge with glass railing along the right side, with the wood-look floor lower in front",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_81bagw7nhg11m9ycta78rp7zd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "white door with gold panic bar under exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the white door at upper right",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_81bagw7nhg11m9ycta78rp7zd_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Small green EXIT sign in the ceiling in the distance",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_81bagw7nhg11m9ycta78rp7zd_y090_p+00.jpg"
+   }
+  ]
+ },
+ "8af63bzf0tqa3410uyanmresb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue cord or object lies on the floor in the open area beyond the doorway, not in the doorway itself.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_8af63bzf0tqa3410uyanmresb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Small empty corner room with open doorway to left"
+  },
+  "equipment": []
+ },
+ "8i0079ts9h4wg7zyq9w5xh3nc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with plank vinyl floor and drop ceiling"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign visible beyond the doorway in the right view, text not legible.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_8i0079ts9h4wg7zyq9w5xh3nc_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "9eea9fwxbbm5gsw85r7p51dqa": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small room with long window wall, glass sliding door, and white cabinets in corner"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "9pe1gn0c53dhkz8q9yubzyffb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Vaulted corridor with columns and push-bar exit door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above a push-bar exit door on the right side of the left view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9pe1gn0c53dhkz8q9yubzyffb_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "9qpc0s48qk05zf5ru5m42c3yc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corner of small room facing doorway to glass-walled corridor"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red fire alarm pull station on the wall beside a glass-walled corridor doorway",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9qpc0s48qk05zf5ru5m42c3yc_y270_p+00.jpg"
+   }
+  ]
+ },
+ "9tdtsgq5qs01zcdpz4x961zza": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with dark-framed doorway on the right"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "9trau4dr0weq8700biau0urkd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass storefront with street view and open doorways"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red device on the wall near the right side, partly visible.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9trau4dr0weq8700biau0urkd_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the ceiling, center of the view.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9trau4dr0weq8700biau0urkd_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the glass door at the far end.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9trau4dr0weq8700biau0urkd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "9w5fpk5s966pf66yetfe3x4xc": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open room with glass double doors to outdoors ahead"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated EXIT sign at top left of the behind image, above the wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_9w5fpk5s966pf66yetfe3x4xc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "a6a5u1nnzg99bef8p9c0s10pa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "narrow white corridor with restroom opening on the right and white door ahead"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red wall box to the right of the white door, possibly a fire alarm pull station",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_a6a5u1nnzg99bef8p9c0s10pa_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "a7dnxp1c2x27s96etk6akgdrb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT",
+    "FIRE EXTINGUISHER"
+   ],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small coiled blue cord on the floor in the center of the room.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_a7dnxp1c2x27s96etk6akgdrb_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Staircase against the far right wall, not in the main walking path.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_a7dnxp1c2x27s96etk6akgdrb_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Empty room with light wood-look floor, EXIT sign, and staircase on far right wall"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Wall sign reads FIRE EXTINGUISHER; the extinguisher itself is not clearly visible.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_a7dnxp1c2x27s96etk6akgdrb_y090_p+00.jpg"
+   }
+  ]
+ },
+ "aewkibq8d3nf32wdpah5n5mha": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "elevator doors at corridor corner beside electrical panel"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel mounted on the wall beside the corridor corner, right view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_aewkibq8d3nf32wdpah5n5mha_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "ayasysutdw6yy1uqyfm1whdib": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "GENDER NEUTRAL"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "gender neutral restroom with tiled walls and grab bars"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "ayugrgbz7hh2h2nkdiqud6apd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white office with glass partitions and frosted glass double doors to the right"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "be02mr0259kwdcy91m7d7r01d": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steep concrete stair treads with a metal handrail run down along the right side, next to the wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_be02mr0259kwdcy91m7d7r01d_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Metal-railed stairs rise and fall beyond the landing, with a doorway opening to the right of the stairs.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_be02mr0259kwdcy91m7d7r01d_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete stairwell landing with metal handrails and a cracked gray wall"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "bgg14c5c58zc0diudhn4486td": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cable or hose lying on the floor in the open room",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_bgg14c5c58zc0diudhn4486td_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office with blue cable on floor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Illuminated sign above the door on the right wall; text not legible",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_bgg14c5c58zc0diudhn4486td_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "bhtuut6hcfb3g61h6y20p8eic": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with light wood-look vinyl floor and open doorway behind"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "bqwcxryuzxr3ai5ct4mg4e07d": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass-walled room, corridor exit sign to right"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated exit sign mounted on the ceiling above the corridor, visible in the right image.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_bqwcxryuzxr3ai5ct4mg4e07d_y090_p+00.jpg"
+   }
+  ]
+ },
+ "bwfm30ifizams62mw14tc2n3c": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "small room with square pass-through opening in wall"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "bzty56qe45068is5swu1xdznb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Flight of stairs with black-nosed treads rising away to the right; a white handrail runs along the left side of the stairs.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_bzty56qe45068is5swu1xdznb_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stair flight with black-nosed treads rising to the right"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "c6p689bsptaen1yfq6uk98qwa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Metal-railed stairs with gray treads descend or rise at the lower left of the right view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_c6p689bsptaen1yfq6uk98qwa_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "gray metal door beside block wall with stairs visible to the right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "c78wykhgct8h70sbmq9xbp6rd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Open edge beyond glass railing drops to a lower level; handrail runs down the right side of the descent",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_c78wykhgct8h70sbmq9xbp6rd_y000_p+00.jpg"
+    },
+    {
+     "type": "step_or_level_change",
+     "note": "Dark step edge visible at the bottom right of the corridor",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_c78wykhgct8h70sbmq9xbp6rd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open stair edge with glass railing beside restroom doors"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "cadkzuzsuk83uchpw8ex9q63d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with glass sliding doors onto outdoor patio"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "cy9hnqnn97bmi7n4xrpnehtna": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Two loose blue straps lie on the floor in the open floor area",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_cy9hnqnn97bmi7n4xrpnehtna_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Elevator with stainless steel doors beside open doorway"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher on wall beside open doorway, mid-height",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_cy9hnqnn97bmi7n4xrpnehtna_y270_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above doorway at top of wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_cy9hnqnn97bmi7n4xrpnehtna_y270_p+00.jpg"
+   }
+  ]
+ },
+ "d0r40dqrx7wtzttdwhpz3bgsb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty corner room with outdoor-view window and doorway"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "d1t9zxr3rxi9su7bidt0a8tnd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with electrical panels on right wall, open hall behind"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel cabinets with breakers mounted on the left wall of the corridor.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_d1t9zxr3rxi9su7bidt0a8tnd_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "d3nwciuwtqq6p2zxwcrmfsyua": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled blue cord lying on the floor in the foreground of the behind view",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_d3nwciuwtqq6p2zxwcrmfsyua_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "empty office room with exit sign and blue cord"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on ceiling in the right-hand view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_d3nwciuwtqq6p2zxwcrmfsyua_y090_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Grey electrical panel on far wall in the right-hand view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_d3nwciuwtqq6p2zxwcrmfsyua_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "dcsy20nwhuxf7tb3cdrpnnt2a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled blue cable lying on the open floor in the walking area",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_dcsy20nwhuxf7tb3cdrpnnt2a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open area with white column and coiled blue cable"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red device on the far wall, likely a pull station",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_dcsy20nwhuxf7tb3cdrpnnt2a_y090_p+00.jpg"
+   }
+  ]
+ },
+ "dh7nsquum9zhuukxrdiu31d2a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled cable lying on the floor in the open walkway, foreground right.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_dh7nsquum9zhuukxrdiu31d2a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Open hallway with glass entrance doors to outside on left"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "dpytmxqdffm4e1ezwtauzyzub": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Empty white-walled room with doorway opening to open room with glass doors"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green sign above the glass doors in the open area beyond the doorway; text not readable.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_dpytmxqdffm4e1ezwtauzyzub_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "e0fwgzcy8a7b6qnwy5x34bmdd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Metal-railed stairway descending from the doorway on the right.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e0fwgzcy8a7b6qnwy5x34bmdd_y090_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled item on the floor in the foreground at lower left.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e0fwgzcy8a7b6qnwy5x34bmdd_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with red fire extinguisher and open metal-railed stairwell door on right"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall ahead.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e0fwgzcy8a7b6qnwy5x34bmdd_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign above a doorway in the open room to the left.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e0fwgzcy8a7b6qnwy5x34bmdd_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "e60zfswc7n6393q2ig85ain6a": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Open metal stair treads rise alongside a gray metal handrail, blocking the path to the right.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e60zfswc7n6393q2ig85ain6a_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stairs with metal handrails on the left side lead up toward a mezzanine.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e60zfswc7n6393q2ig85ain6a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete stairwell with metal handrail beside gray doors"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "e7q3w1qmuag72b5tgc4fd2yxa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "corridor with glass-walled doors and wood-look vinyl floor"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "e9ag4f4fsfqc96b169n6zd4pb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with black-edged treads rises or descends beside the spot, with a landing at the top left of the view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e9ag4f4fsfqc96b169n6zd4pb_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair edge visible at the bottom right of the view, alongside a white handrail running diagonally down the wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_e9ag4f4fsfqc96b169n6zd4pb_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "white wall-mounted handrail beside staircase with black-edged treads"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "egg3x1agm8r9wmn7x8pi5tecb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue electrical cable with plug lying on the floor in the middle of the room.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_egg3x1agm8r9wmn7x8pi5tecb_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Staircase going up along the far right wall of the room.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_egg3x1agm8r9wmn7x8pi5tecb_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with three doors ahead and stairs on right"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on wall above the area near the stairs.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_egg3x1agm8r9wmn7x8pi5tecb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "em47t0qm21bzue7iratamf2kc": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "accessible restroom with blue wheelchair sign on open door"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "et86995btkxsyhhh5rrd81tbd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room, dark-framed doorway opening to open office"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "f2p4szqrxufrrkddqk983809a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty corner room with vertical pipe and open doorway behind"
+  },
+  "equipment": []
+ },
+ "f8x006wbt3f83f8dxtg8n9xwa": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "plain white room with one outdoor window and doorway to right"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red and white wall-mounted box visible inside the doorway on the right wall, possibly an alarm device.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_f8x006wbt3f83f8dxtg8n9xwa_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "fciaf9h5updh855nm62zuf7hd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with push-bar exit door and red fire extinguisher on right wall"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher on wall to the right of the push-bar exit door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fciaf9h5updh855nm62zuf7hd_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Lit green EXIT sign above the push-bar door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fciaf9h5updh855nm62zuf7hd_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "fe76qpxpiegrybys3kn55tkua": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 6,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairs with railing go down behind the door on the left side of the rear view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fe76qpxpiegrybys3kn55tkua_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with steel exit door and stairwell behind"
+  },
+  "equipment": []
+ },
+ "ff8sce16qmmm6t3qd4w9msrzb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty office beside doorway to bright open office"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "fg93sn7cdarw549k928sfrq0b": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cables lying on the floor of the open office in the walking path",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fg93sn7cdarw549k928sfrq0b_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office with floor cables and exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above a doorway in the open office area",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fg93sn7cdarw549k928sfrq0b_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "fgyknythf4ng8kbw63ybiwhaa": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "corner room with glass storefront facing parking lot"
+  },
+  "equipment": []
+ },
+ "fie41wuna0wmtd5tkmg0qc4pa": {
+  "attributes": {
+   "room_type": "utility",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "White bucket and cleaning bottles sit on the floor near the corner by the plywood panel.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fie41wuna0wmtd5tkmg0qc4pa_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "utility room with plywood panel, exposed pipes and floor bucket"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray metal electrical panel mounted on wall beside exposed pipes and valves.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fie41wuna0wmtd5tkmg0qc4pa_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Utility"
+ },
+ "fqryiembct5kz7p1u2nxaw04d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with light wood-look floor and recessed ceiling lights"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "fuyw19mk0kkbnsfbq3cwf06pd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with street-facing window wall and wood-look floor"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "fwmkbxzbfa3s7qqr3emrwgafa": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with a single open doorway and dark door frame"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Red wall-mounted device visible past the doorway in the corridor, likely a pull station",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_fwmkbxzbfa3s7qqr3emrwgafa_y180_p+00.jpg"
+   }
+  ]
+ },
+ "g09puf5uiewfdzx8q0xtifg9b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "25"
+   ],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairwell beyond the doorway in the back wall with a visible flight of steps going up or down",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_g09puf5uiewfdzx8q0xtifg9b_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stairwell doorway with green exit sign in parking garage"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green illuminated exit sign above the green door on the left wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_g09puf5uiewfdzx8q0xtifg9b_y270_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated exit sign above the stairwell doorway in the back wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_g09puf5uiewfdzx8q0xtifg9b_y180_p+00.jpg"
+   }
+  ]
+ },
+ "g96swdic4q5y8y6qq232csbdb": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "CAUTION",
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "gray door beside EXIT sign in parking garage"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Lit green EXIT sign mounted above a gray metal door on the wall to the right.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_g96swdic4q5y8y6qq232csbdb_y090_p+00.jpg"
+   }
+  ]
+ },
+ "gby2rbk7reiqmwi23t42n3f2b": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Straight flight of stairs with dark nosings rising toward a lit hallway, with a white handrail along the left wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_gby2rbk7reiqmwi23t42n3f2b_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "straight stairs rising toward lit hallway with white handrail on left"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "gkfz3cdkuxg7s96sptwxbam2c": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open white door next to plain wall"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "gxi4xuyzuh8hwhhhmuuzr802a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with single open doorway to corridor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign visible down the corridor beyond the doorway",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_gxi4xuyzuh8hwhhhmuuzr802a_y090_p+00.jpg"
+   }
+  ]
+ },
+ "h0u7yd4xsuagytmumifqqyw8a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with metal railing on the right side, rising or descending beside the elevator area",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_h0u7yd4xsuagytmumifqqyw8a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "underground parking garage with elevator doors and stair railing"
+  },
+  "equipment": []
+ },
+ "h3wcd67kpsf89g3s8atazp2ta": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "hexagon-tile backsplash kitchenette beside green exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on the ceiling above the left-side doorway",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_h3wcd67kpsf89g3s8atazp2ta_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "h8iunbwqri1a911aawu1fk0fc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with wide outdoor window, corridor behind"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "hmczznzyfm7fsriiiiudgup6c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Concrete support column stands in the parking space directly ahead, between the yellow-painted lines; a crew must route around it.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hmczznzyfm7fsriiiiudgup6c_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete support column between yellow-painted lines in underground parking garage"
+  },
+  "equipment": []
+ },
+ "hn7yeicz6zcraz5cinkuz7n8b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 0,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "concrete parking area with yellow painted arrow on floor"
+  },
+  "equipment": []
+ },
+ "hq5t04a7xd7hga4amh8qxnyuc": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Concrete step in front of the white metal door, with handrails on both sides.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hq5t04a7xd7hga4amh8qxnyuc_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Open metal staircase rising overhead with a steel handrail along the left side.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hq5t04a7xd7hga4amh8qxnyuc_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete block stairwell with open metal staircase and gray steel door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the gray steel door in the behind view.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hq5t04a7xd7hga4amh8qxnyuc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Stairwell"
+ },
+ "hww3rhidc0sqfh8ccx53c40mb": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue hose or cord lying on floor at bottom edge of view",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hww3rhidc0sqfh8ccx53c40mb_y000_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled hose on floor against the wall",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hww3rhidc0sqfh8ccx53c40mb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Open room with white pillar and white double doors on right"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red device on wall between the two white double doors",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_hww3rhidc0sqfh8ccx53c40mb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "ipk3g6mkddmi86pyhu7q5kk3b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "open elevator car directly ahead, corridor running right and left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Partially visible green exit sign at top left edge of the view, above the gray door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_ipk3g6mkddmi86pyhu7q5kk3b_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "is5qpax56z08f5nrdm072tsgc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty office with outdoor window and open door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "iw2f5txbc5gg83c9nt3cseuyb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with wood-look treads and white nosings runs along the left side, visible in the left view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_iw2f5txbc5gg83c9nt3cseuyb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with open white door and staircase to left"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "k1qw7fkaagxtaht8mqby013ta": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Garage bay with blue accessible parking symbol"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit-type sign on wall at left edge of right view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k1qw7fkaagxtaht8mqby013ta_y090_p+00.jpg"
+   }
+  ]
+ },
+ "k3xx77qeyew2f6221phr8g01d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with wall-mounted electrical panels leading to open room with exit sign"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on ceiling in the open room ahead",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k3xx77qeyew2f6221phr8g01d_y000_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Grey electrical panel mounted on wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k3xx77qeyew2f6221phr8g01d_y180_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Cream electrical panel mounted on wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k3xx77qeyew2f6221phr8g01d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "k3ynfd9capm727pdb9ukirr0a": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small unfurnished room with wood-look vinyl floor and open door to the right"
+  },
+  "equipment": []
+ },
+ "k67s8fpgrq7s9g0c2hgqz46wd": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open room with white column and glass-walled offices"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above the glass storefront doors at the far end of the corridor.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k67s8fpgrq7s9g0c2hgqz46wd_y090_p+00.jpg"
+   },
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel mounted on the right wall of the corridor.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_k67s8fpgrq7s9g0c2hgqz46wd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "ke416demnitgpbxtx0g4i6u2d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with push-bar exit door and green exit sign on left"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above a push-bar door on the left wall",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_ke416demnitgpbxtx0g4i6u2d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "kffi8szeayinc92hwe74ncwsd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small white room with ceiling light panel and wood-look vinyl floor"
+  },
+  "equipment": []
+ },
+ "kh6rp6zxqwrw6x4r4z7ke7zza": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with built-in ledge along wall and white door behind"
+  },
+  "equipment": []
+ },
+ "kmm0aqyhadb0y0wd3g3pqt5tc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Interior corridor with glass wall opening onto outdoor terrace"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "kywfapwdy3nqq1peswir25y5d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty office corner; open-plan glass doors visible behind"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "mhy3hhhia1gd97h2sztw5b48a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with blue restroom sign beside white door and wood-look floor"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "mr5yqb4x1xwq2u2h9s8s4qrkb": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "restroom doorway with blue gender-neutral sign on wall"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign partly visible at ceiling in corridor, right view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_mr5yqb4x1xwq2u2h9s8s4qrkb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Restroom"
+ },
+ "msfx0xuysi1ax66i9aieegc2b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor junction beside restroom door with blue sign"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "n8szyrwnsz9bybddqdirnk97c": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with outdoor window and open dark-framed doorway to right"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "nfpzw5i6whirrnyxyqp9mcwwc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "Blank white corner room beside brown lever-handle door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "nhh609nfzsuf7t9t00wn18ywd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white room with closed white door on left"
+  },
+  "equipment": []
+ },
+ "nk75ahpq272d3wrcis1iyzcqa": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "step_or_level_change",
+     "note": "Raised step with nosing at floor level beside white wall handrail",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_nk75ahpq272d3wrcis1iyzcqa_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Corridor with dark-framed door right, step behind"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "p99ck2begahqfnu93n5rxc95c": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Concrete stair treads rise and descend in the view behind, in a block-walled stairwell.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_p99ck2begahqfnu93n5rxc95c_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "grey metal door beside block stairwell with concrete steps behind"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "paekbwtih0g12hgwswqrtpp7a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "FIRE HOSE"
+   ],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with railings rises ahead, blocking a level path for a stretcher",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_paekbwtih0g12hgwswqrtpp7a_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with staircase ahead and fire hose cabinet behind"
+  },
+  "equipment": [
+   {
+    "type": "fire_hose_cabinet",
+    "note": "Recessed cabinet on left wall labeled FIRE HOSE",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_paekbwtih0g12hgwswqrtpp7a_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "pfh3miwnda0ticfgh9ea0qypd": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [
+    "GENDER NEUT"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "restroom with grab bars, sink and toilet; gender neutral sign on door"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "pm4kyacwfg0ddb6ebuf4zbptb": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cable or hose lies on the floor in the open room.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pm4kyacwfg0ddb6ebuf4zbptb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with tall gray windows and wood-look floor"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "pp4mmps8m8s9binh4pac4nzhb": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steps visible at bottom right beside a metal handrail, leading up to a doorway.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pp4mmps8m8s9binh4pac4nzhb_y090_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Freestanding grey metal frame platform with railings stands in the walking area, with a step down at its lower left.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pp4mmps8m8s9binh4pac4nzhb_y180_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Metal stair stringer and steps run diagonally along the grey block wall at lower left.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pp4mmps8m8s9binh4pac4nzhb_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stairwell landing with painted block walls and metal handrail"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "pu0u7gaf44zt1xinknyaqyxfd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "White structural column stands in open floor; crew must pass around it",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pu0u7gaf44zt1xinknyaqyxfd_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open office room with white column and glass exit door to outdoor balcony"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above glass door leading to outdoor balcony",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_pu0u7gaf44zt1xinknyaqyxfd_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "pyzdpqq8u69ufi45ii9appafb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with open white door and glass-walled office entrance"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "q4igftcg35q4hr0pyuzg9xsxa": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 6,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase rises in the background beyond the open doorway on the right",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_q4igftcg35q4hr0pyuzg9xsxa_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with staircase visible beyond doorway on right wall"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the stair area",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_q4igftcg35q4hr0pyuzg9xsxa_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on the ceiling above the corridor",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_q4igftcg35q4hr0pyuzg9xsxa_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "q72usma2k2zscrf46pdcnkkzc": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Carpeted steps rise at bottom right of view, beside a metal handrail.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_q72usma2k2zscrf46pdcnkkzc_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Open metal staircase with carpeted treads runs up and down, with a metal railing.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_q72usma2k2zscrf46pdcnkkzc_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stairwell with open metal staircase and gray door on left"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "qawsi3gqt0c2bm30sn6s0kkca": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "white column with thermostat near open office area"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above door on right side of hallway",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_qawsi3gqt0c2bm30sn6s0kkca_y000_p+00.jpg"
+   },
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher on wall left of white door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_qawsi3gqt0c2bm30sn6s0kkca_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "qfkgfd75yk07kpq0u0i5diptb": {
+  "attributes": {
+   "room_type": "elevator_lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "stainless steel elevator doors beside red fire extinguisher on wall"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall to the right of the elevator doors.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_qfkgfd75yk07kpq0u0i5diptb_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Elevator lobby"
+ },
+ "qgm2bng2fmnquy3fe2s0dz3eb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white office corner with vinyl plank floor and window on left"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "qk2cc5g0z5gwsrxiy6gmb7zzb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Grey metal stair with treads and railing rises in the walking path next to the white block wall.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_qk2cc5g0z5gwsrxiy6gmb7zzb_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "grey metal stair beside white block wall with exposed conduit"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "r0chupapabnxy05ixgg62k3gb": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "elevator and EXIT door behind, fire extinguisher beside them"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red wall-mounted fire extinguisher beside the elevator, left of the EXIT door.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_r0chupapabnxy05ixgg62k3gb_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "r5ctnskbfp62fttnwypr7yqqb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "frosted glass door with brass lever handle on left"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "r8rhh7tf87sdne27h48qki35c": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase visible in the corridor beyond the open door",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_r8rhh7tf87sdne27h48qki35c_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "small room with open white door beside glass-walled corridor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above the corridor beyond the open door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_r8rhh7tf87sdne27h48qki35c_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "rdq4hxe5yfpqmex08bkfmxi8a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Two blue coiled cords or hoses lie on the wood floor in the center of the open area.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_rdq4hxe5yfpqmex08bkfmxi8a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open corridor with blue coiled cords on wood floor"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "rekspzpzdhek17ykfrzbipf6c": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty small office with wood-look vinyl floor and blinded window"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "rfr0n2f7seu6uqff8u1ck82pc": {
+  "attributes": {
+   "room_type": "restroom",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "other",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "restroom with wall-mounted urinal, grab bars, and sink opposite a doorway with a blue round sign"
+  },
+  "equipment": [],
+  "room_label": "Restroom"
+ },
+ "rn8ra1pm3mu4918qtczkua4hb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cord or hose lying on the floor in the open floor area.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_rn8ra1pm3mu4918qtczkua4hb_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with white square column and metal elevator doors ahead"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher on wall to the right of the elevator doors.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_rn8ra1pm3mu4918qtczkua4hb_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on wall above the door at the far right.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_rn8ra1pm3mu4918qtczkua4hb_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "s1gug953knbg95w0xagzkhira": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "FIRE"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "closed white door facing frosted glass office partitions"
+  },
+  "equipment": []
+ },
+ "sfczham02auzsxqut7sc6e7ud": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty white room, ceiling light panel, lever-handle door"
+  },
+  "equipment": []
+ },
+ "sgn9xxyw1i7seu1p77um3w5bd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "bare white room with large window overlooking snowy parking lot"
+  },
+  "equipment": []
+ },
+ "sn7g0ggbkzadfbynrs9mqn3kc": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Open metal stairs with metal railings rise and descend beside the wall",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_sn7g0ggbkzadfbynrs9mqn3kc_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open metal stairwell beside gray block wall"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign mounted above the stairs",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_sn7g0ggbkzadfbynrs9mqn3kc_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Stairwell"
+ },
+ "snacttsipceqsdc14r87pt70a": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steel-railed stair with grated treads rising along the right wall; crew must not wheel a stretcher onto it.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_snacttsipceqsdc14r87pt70a_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Open metal staircase with carpeted or grit treads and railings rising and descending in this view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_snacttsipceqsdc14r87pt70a_y180_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Underside of a steel staircase overhead; stairs run above the path toward a gray metal door at left.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_snacttsipceqsdc14r87pt70a_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "concrete stairwell with open steel staircase and gray metal door at left"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "spupkxyrtyzi9iag4get9em7d": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steel stair with metal handrail descends in the walking path ahead; a stretcher cannot pass without changing level.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_spupkxyrtyzi9iag4get9em7d_y000_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair treads with a handrail run past the white door on the left, so the landing is stepped and steep.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_spupkxyrtyzi9iag4get9em7d_y270_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Stair treads and a handrail at the lower right behind the viewer mark the stair the crew came up or down.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_spupkxyrtyzi9iag4get9em7d_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Concrete block stairwell with white door on left landing"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "sr7caswup8sxrqbw377trfmxc": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room beside open dark-framed doorway"
+  },
+  "equipment": []
+ },
+ "swhp4meumwh2k2uec8w4e84ad": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Two blue coiled cords lie on the open floor in the walking path",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_swhp4meumwh2k2uec8w4e84ad_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "empty corner room beside glass sliding doors to balcony"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on ceiling above the corridor to the left",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_swhp4meumwh2k2uec8w4e84ad_y270_p+00.jpg"
+   }
+  ]
+ },
+ "t0bcfzxur2futmfr9xaheugra": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "kitchenette with gray cabinets beside a corridor with recessed hose cabinet"
+  },
+  "equipment": [
+   {
+    "type": "fire_hose_cabinet",
+    "note": "Framed recessed cabinet on the wall with a red fire hose visible inside.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_t0bcfzxur2futmfr9xaheugra_y270_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign partly visible near the ceiling down the corridor.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_t0bcfzxur2futmfr9xaheugra_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Kitchen break room"
+ },
+ "t26fkszhrkbpu4bbaycb6g5tb": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with outdoor window wall and adjacent door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "t60iqstkrxk39qnpm2u4bn48b": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "empty open room with white open door beside glass-walled partition"
+  },
+  "equipment": [],
+  "room_label": "Open office"
+ },
+ "u5dbkwqf69n9shk2f7qn9e66b": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "closed brass-lever door left, open doorway behind"
+  },
+  "equipment": []
+ },
+ "u67adapxtwzd2u75cdkke10db": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Coiled blue cable or hose lies on the floor at lower left of the view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_u67adapxtwzd2u75cdkke10db_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Open corridor with glass entrance wall at far end"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red device on the wall at right, likely a fire alarm pull station.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_u67adapxtwzd2u75cdkke10db_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "uc31hssiun7h39n2d7yf8e6nd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "plain white wall corridor with open dark-framed doorway on right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "up21rph0yps14sfpte1azbqzc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "open doorway behind to lit hallway in small room"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "upipmfak3in1uapfb13zg0ana": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "long wood-look corridor with frosted glass partitions ahead"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "uwtehh87tkd0ms6rnfqtkdqea": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Steps with a handrail on the left lead down from the opening straight ahead.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_uwtehh87tkd0ms6rnfqtkdqea_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open stairwell opening straight ahead with steps down"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red object partly visible low on the wall at the lower left, possibly a fire extinguisher.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_uwtehh87tkd0ms6rnfqtkdqea_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "w05ay7u40y2bbi5hdhe3pbr3b": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "low",
+   "landmark_text": "empty room with corner window facing trees"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "w135487257dihy7srg83g29dc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with glass entrance doors to outdoors and green exit signs"
+  },
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "note": "Gray electrical panel mounted on the wall beside the corridor",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w135487257dihy7srg83g29dc_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign at the far end of the corridor, upper right",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w135487257dihy7srg83g29dc_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT signs above the glass entrance doors",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w135487257dihy7srg83g29dc_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "w3g5q05m42pp9rgndxx45pcfd": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "dark-framed doorway into white office with wood-look floor"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "w3gqpmzqecc5uh6gy4tb4wzwd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "perception_confidence": "medium",
+   "landmark_text": "open lobby with elevators and skylit side room"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above a small wall alcove on the right side.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w3gqpmzqecc5uh6gy4tb4wzwd_y090_p+00.jpg"
+   },
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on the wall beside the metal elevator door.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w3gqpmzqecc5uh6gy4tb4wzwd_y180_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the open elevator cab.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_w3gqpmzqecc5uh6gy4tb4wzwd_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "wa0gxbqif99xfhgf1g4disf5d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "empty room with outdoor-view window and glass-walled corridor"
+  },
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "note": "Small red-and-white wall device low on the left wall, possibly a pull station; unclear",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_wa0gxbqif99xfhgf1g4disf5d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "wd5u9gxezqzhx83mmw4f87bdc": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "junction of brown-framed doorways beside a white corridor wall"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "wpr21utmpiztt5zwqpqfsyeub": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "GENDER NEUTRAL"
+   ],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Short hallway to gender neutral restroom door"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign mounted in ceiling of the corridor behind",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_wpr21utmpiztt5zwqpqfsyeub_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "x29a3bss47w3z3pznf8qemhka": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue cord or hose lying on the floor at the far left of the open office area.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_x29a3bss47w3z3pznf8qemhka_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "small blank-walled nook off open office with wood-look floor"
+  },
+  "equipment": []
+ },
+ "x5bksrgdxudq96y0cbga96r6c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Concrete stairs descend beside a metal handrail toward the open garage area, past a wooden-walled enclosure with a door.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_x5bksrgdxudq96y0cbga96r6c_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Concrete garage area beside plywood-covered column and metal stair railing"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher in a recessed wall cabinet to the right of the gray door.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_x5bksrgdxudq96y0cbga96r6c_y180_p+00.jpg"
+   }
+  ]
+ },
+ "xbs023caabui47dkwyyi3mtwd": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "frosted glass double entry doors at corridor end"
+  },
+  "equipment": [],
+  "room_label": "Lobby"
+ },
+ "xif7dfwe5yhht551sggzg931a": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled cord or hose lying on the floor in the open room",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xif7dfwe5yhht551sggzg931a_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Corridor opening to vaulted room with blue cord on floor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green illuminated exit sign above a white door; text not legible",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xif7dfwe5yhht551sggzg931a_y270_p+00.jpg"
+   },
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher on wall left of the yellow door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xif7dfwe5yhht551sggzg931a_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "xnw3g7eqskindw3sqfzskry5c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Wall handrail runs along a staircase; dark step edge visible at the bottom of the frame.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xnw3g7eqskindw3sqfzskry5c_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "empty white room with light plank floor beside a handrailed stair"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign above the glass-railed corridor at the far end.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xnw3g7eqskindw3sqfzskry5c_y180_p+00.jpg"
+   }
+  ]
+ },
+ "xti52y2iusp066re9y92rniyc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue electrical cord coiled on the floor in the open room ahead.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xti52y2iusp066re9y92rniyc_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "low",
+   "landmark_text": "Small office with frosted glass door and recessed ceiling light"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "xu6imzadx0isb1u4ipppxqcwd": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Staircase with dark railing visible through doorway at left edge of right view; stairs are not in the main walking path but are visible from this spot.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xu6imzadx0isb1u4ipppxqcwd_y090_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "corridor with stairs visible through doorway on right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "xz8cwpstfafda18wk7h4spk3d": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "tile",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": true,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Dark steps visible at the far right edge of the left view, inside the room beyond the doorway",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xz8cwpstfafda18wk7h4spk3d_y270_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "light corridor with frosted glass double entrance doors behind"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign lit near the ceiling at the far end of the corridor",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xz8cwpstfafda18wk7h4spk3d_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign lit above the doorway into the room on the left",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_xz8cwpstfafda18wk7h4spk3d_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Corridor"
+ },
+ "y62t6tcpyaarduzn0p3q0pwka": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 1,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open doorway with dark metal frame facing an empty room with city-view window"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on wall in the behind image, near a distant doorway.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_y62t6tcpyaarduzn0p3q0pwka_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "y9npc4pwx69di3ag1gix0e93a": {
+  "attributes": {
+   "room_type": "kitchen_break_room",
+   "furnished": true,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "kitchen break room with gray cabinets and sink"
+  },
+  "equipment": [],
+  "room_label": "Kitchen break room"
+ },
+ "y9we769icnkys774ep5fxhpxd": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "small empty room with drop ceiling and open door behind"
+  },
+  "equipment": []
+ },
+ "ywpsigi8ngmkt221m1h2rne1d": {
+  "attributes": {
+   "room_type": "stairwell",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "concrete",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": true,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Open-tread stairs with metal handrail rise along the right side of the spot, in the right view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_ywpsigi8ngmkt221m1h2rne1d_y090_p+00.jpg"
+    },
+    {
+     "type": "stairs",
+     "note": "Open metal staircase with blue stringers and railings rises from this spot, in the behind view.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_ywpsigi8ngmkt221m1h2rne1d_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "stairwell with open metal staircase and grey door ahead"
+  },
+  "equipment": [],
+  "room_label": "Stairwell"
+ },
+ "z5f85173g4a4fssze4bx2fq7b": {
+  "attributes": {
+   "room_type": "corridor",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "glass sliding doors to open office on right"
+  },
+  "equipment": [],
+  "room_label": "Corridor"
+ },
+ "z688imtexpf03182sx3msxrsc": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 3,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "dark-framed open doorway leading to small room with glass door"
+  },
+  "equipment": [],
+  "room_label": "Office"
+ },
+ "z7y878sep27ni5gix03r7h61d": {
+  "attributes": {
+   "room_type": "office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 2,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "Room with outdoor window and open doorway to corridor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign visible at top of far corridor beyond the open doorway",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_z7y878sep27ni5gix03r7h61d_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Office"
+ },
+ "z9hbf0ezz5nhdzgdyk4zauz5d": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Small blue item lying flat on floor in open middle area, low profile",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_z9hbf0ezz5nhdzgdyk4zauz5d_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "elevator doors and red fire extinguisher on left wall"
+  },
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "note": "Red fire extinguisher mounted on wall left of center",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_z9hbf0ezz5nhdzgdyk4zauz5d_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign above doorway in center",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_z9hbf0ezz5nhdzgdyk4zauz5d_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign above doorway ahead in right view",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_z9hbf0ezz5nhdzgdyk4zauz5d_y090_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "zny093ehg3cf6ndz5bh4dckgb": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [],
+   "door_count": 5,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled cord lying on the floor in the open area, near the center of the room.",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zny093ehg3cf6ndz5bh4dckgb_y000_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with white column and blue cord on floor"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Small green exit sign on ceiling ahead; text not legible.",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zny093ehg3cf6ndz5bh4dckgb_y000_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "zrgqbhk4n42icy5p06h12dn3c": {
+  "attributes": {
+   "room_type": "open_office",
+   "furnished": false,
+   "has_window": false,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 6,
+   "stairs_visible": true,
+   "elevator_visible": true,
+   "hazards": [
+    {
+     "type": "stairs",
+     "note": "Stairs descend behind a railing through the doorway at left, marked by an EXIT sign",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zrgqbhk4n42icy5p06h12dn3c_y180_p+00.jpg"
+    },
+    {
+     "type": "obstruction_in_path",
+     "note": "Blue coiled cord or rope lies on the floor in the foreground",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zrgqbhk4n42icy5p06h12dn3c_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "Open vaulted room with stairwell exit doorway behind and elevator to the right"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on wall above the left white door",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zrgqbhk4n42icy5p06h12dn3c_y000_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign above the doorway at left leading to the stairwell",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zrgqbhk4n42icy5p06h12dn3c_y180_p+00.jpg"
+   }
+  ],
+  "room_label": "Open office"
+ },
+ "zyapugz9zbagxn7m1yc9b0rgb": {
+  "attributes": {
+   "room_type": "lobby",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "vinyl",
+   "signage_text": [
+    "EXIT"
+   ],
+   "door_count": 4,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "perception_confidence": "medium",
+   "landmark_text": "open-plan suite with four doors and green EXIT signs"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on ceiling at far right of the open room",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zyapugz9zbagxn7m1yc9b0rgb_y180_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "note": "Green EXIT sign on ceiling above the corridor toward the glass doors",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zyapugz9zbagxn7m1yc9b0rgb_y270_p+00.jpg"
+   }
+  ],
+  "room_label": "Lobby"
+ },
+ "zzgsr9rteeu8wssmzr1g0dx8c": {
+  "attributes": {
+   "room_type": "other",
+   "furnished": false,
+   "has_window": true,
+   "floor_surface": "wood",
+   "signage_text": [],
+   "door_count": 6,
+   "stairs_visible": false,
+   "elevator_visible": false,
+   "hazards": [
+    {
+     "type": "obstruction_in_path",
+     "note": "Two blue coiled cords lie on the floor in the open room",
+     "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zzgsr9rteeu8wssmzr1g0dx8c_y180_p+00.jpg"
+    }
+   ],
+   "perception_confidence": "medium",
+   "landmark_text": "open room with blue floor cords and glass doors"
+  },
+  "equipment": [
+   {
+    "type": "exit_sign",
+    "note": "Green exit sign on the ceiling at the back of the open room",
+    "evidence_path": "cache/index/259587/crops/rDU2DaDBbyz_zzgsr9rteeu8wssmzr1g0dx8c_y180_p+00.jpg"
+   }
+  ]
+ }
+}
