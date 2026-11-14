@@ -15,7 +15,7 @@ import time
 from pathlib import Path
 from typing import Any, Optional
 
-from . import stubs, routing, localization, trace
+from . import stubs, routing, localization, trace, streaming
 from .config import AGENT_DIR
 
 DEFAULT_COMMANDER_MODEL = os.environ.get(
@@ -259,7 +259,11 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
     interactive mode prompts on stdin.
 
     Writes packet.md into incident_dir; returns a summary dict:
-        {thread_id, elapsed_s, interrupts, final_messages, dir}
+        {thread_id, elapsed_s, interrupts, dir}
+
+    Streaming: iterates ``agent.stream(..., stream_mode=["updates", "messages"])`` so
+    node deltas and LLM tokens flow to trace.jsonl + events.jsonl as they fire. D's
+    console tails events.jsonl.
     """
     incident_dir = Path(incident_dir)
     incident_dir.mkdir(parents=True, exist_ok=True)
@@ -272,6 +276,8 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
         raise DeepAgentsNotConfigured(f"langgraph.types.Command missing: {e}")
 
     trace.start(incident_dir)
+    streaming.start_events_file(incident_dir)
+
     thread_id = intake.get("incident_id") or f"inc-{int(time.time())}"
     config = {"configurable": {"thread_id": thread_id}}
 
@@ -286,26 +292,68 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
     t0 = time.time()
     trace.log("commander", "real_agent:start",
               args={"thread_id": thread_id}, phase="start")
-    result = agent.invoke(
-        {"messages": [{"role": "user", "content": user_msg}]}, config=config
+
+    def _drain(stream_iter):
+        """Forward every chunk; return the __interrupt__ payload if one was seen."""
+        pending = None
+        for item in stream_iter:
+            if (isinstance(item, tuple) and len(item) == 2
+                    and isinstance(item[0], str)):
+                mode, chunk = item
+            else:
+                mode, chunk = "updates", item
+            streaming.forward_chunk(mode, chunk, incident_dir)
+            if mode == "updates" and streaming.chunk_is_interrupt(chunk):
+                pending = chunk["__interrupt__"]
+        return pending
+
+    def _interrupt_requests(pending):
+        """Pull the list of action_requests out of an Interrupt payload. Tolerates
+        both the Interrupt object shape (`.value`) and the plain-dict shape used by
+        test mocks."""
+        if not pending:
+            return []
+        first = pending[0] if isinstance(pending, list) and pending else pending
+        if hasattr(first, "value"):
+            v = first.value or {}
+        elif isinstance(first, dict):
+            v = first.get("value", first)
+        else:
+            v = {}
+        return v.get("action_requests", []) if isinstance(v, dict) else []
+
+    stream_iter = agent.stream(
+        {"messages": [{"role": "user", "content": user_msg}]},
+        config=config,
+        stream_mode=["updates", "messages"],
     )
+    pending = _drain(stream_iter)
 
     interrupt_count = 0
-    while result.get("__interrupt__"):
+    while pending:
         interrupt_count += 1
-        req = result["__interrupt__"][0].value.get("action_requests", [])
-        actions = [r.get("action") or r.get("tool") for r in req]
-        trace.log("commander",
-                  f"interrupt:{','.join(str(a) for a in actions)}",
-                  args={"n_requests": len(req)}, phase="interrupt")
+        req = _interrupt_requests(pending)
+        actions = [r.get("action") or r.get("tool")
+                   for r in req if isinstance(r, dict)]
+        trace.log(
+            "commander",
+            f"interrupt:{','.join(str(a) for a in actions) or 'unknown'}",
+            args={"n_requests": len(req)},
+            phase="interrupt",
+        )
+        n_decisions = max(len(req), 1)
         if auto_approve:
-            decisions = [{"type": "approve"} for _ in req]
+            decisions = [{"type": "approve"} for _ in range(n_decisions)]
         else:
             ans = input(f"[APPROVAL GATE] approve {actions}? [y/N] ").strip().lower()
-            decisions = [
-                {"type": "approve" if ans == "y" else "reject"} for _ in req
-            ]
-        result = agent.invoke(Command(resume={"decisions": decisions}), config=config)
+            dec = "approve" if ans == "y" else "reject"
+            decisions = [{"type": dec} for _ in range(n_decisions)]
+        stream_iter = agent.stream(
+            Command(resume={"decisions": decisions}),
+            config=config,
+            stream_mode=["updates", "messages"],
+        )
+        pending = _drain(stream_iter)
 
     elapsed = time.time() - t0
     trace.log("commander", "real_agent:done",
@@ -313,12 +361,10 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
                     "elapsed_s": round(elapsed, 2)},
               phase="milestone")
 
-    msgs = result.get("messages", [])
     return {
         "thread_id": thread_id,
         "elapsed_s": round(elapsed, 2),
         "interrupts": interrupt_count,
-        "final_messages": len(msgs),
         "dir": str(incident_dir),
     }
 
