@@ -17,7 +17,7 @@ import time
 import concurrent.futures as cf
 from pathlib import Path
 
-from . import stubs, routing, localization, trace
+from . import stubs, routing, localization, trace, learning
 from .config import (INCIDENTS, DEMO_BUILDING, CONFIDENCE_THRESHOLD, MAX_QUESTIONS, AGENTS_MD)
 from .packet import PacketWriter
 
@@ -25,6 +25,12 @@ from .packet import PacketWriter
 def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None):
     incident_id = intake.get("incident_id") or time.strftime("inc-%Y%m%d-%H%M%S")
     idir = INCIDENTS / incident_id
+    # if two runs fall in the same second (common in tests), append a suffix
+    _suffix = 0
+    while idir.exists() and intake.get("incident_id") is None:
+        _suffix += 1
+        incident_id = time.strftime("inc-%Y%m%d-%H%M%S") + f"-{_suffix}"
+        idir = INCIDENTS / incident_id
     idir.mkdir(parents=True, exist_ok=True)
     intake = dict(intake, incident_id=incident_id)
     _write(idir / "intake.json", intake)
@@ -32,12 +38,20 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     trace.start(idir)
     building_id = intake["building_id"]
 
+    # ---- learned corrections for this building (AGENTS.md) ----
+    corrections = learning.read_corrections(building_id)
+    trace.log("commander", "read_corrections",
+              args={"building_id": building_id},
+              result_summary=f"{len(corrections)} prior correction(s)",
+              phase="context")
+
     # ---- Commander plans (plan.md) ----
     plan_md = _plan_md(incident_id, intake)
     (idir / "plan.md").write_text(plan_md)
     trace.log("commander", "write_todos", result_summary="6-step incident plan", phase="plan")
 
     packet = PacketWriter(idir / "packet.md", intake)
+    packet.set_correction_notes(learning.summarize_for_packet(corrections))
     packet.flush()  # empty skeleton visible immediately
 
     # ---- Records / Locator / Site IN PARALLEL ----
@@ -62,7 +76,7 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     packet.set_route(route_bundle); packet.flush()
 
     # ---- Verifier ----
-    audit = _verifier(idir, packet, brief, location, site, route_bundle)
+    audit = _verifier(idir, packet, brief, location, site, route_bundle, corrections)
     packet.set_audit(audit); packet.flush()
 
     seconds_to_draft = trace.elapsed_ms() / 1000.0
@@ -70,18 +84,39 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
               phase="milestone")
 
     # ---- APPROVAL GATE (interrupt) ----
-    decision = _approval_gate(incident_id, packet, auto_approve, approve_fn)
+    decision_raw = _approval_gate(incident_id, packet, auto_approve, approve_fn)
+    if isinstance(decision_raw, dict):
+        decision = decision_raw.get("decision", "approve")
+        corrected_room_id = decision_raw.get("corrected_room_id")
+    else:
+        decision = decision_raw
+        corrected_room_id = None
     trace.log("dispatcher", "approval", result_summary=decision, phase="interrupt")
     if decision == "approve":
         res = stubs.send_packet(incident_id)
         trace.log("commander", "send_packet", result_summary=res, phase="gate")
         packet.mark_sent(); packet.flush()
+    elif decision == "reject" and corrected_room_id:
+        rejected_label = (location.get("room_type") or location.get("node_id"))
+        path = learning.append_correction(
+            building_id=building_id,
+            rejected_room_id={"node_id": location.get("node_id"),
+                              "room_label": rejected_label},
+            corrected_room_id=corrected_room_id,
+            caller_text=intake.get("caller_text", ""),
+        )
+        trace.log("commander", "correction_logged",
+                  args={"rejected": location.get("node_id"),
+                        "corrected": corrected_room_id},
+                  result_summary=f"appended to {path}", phase="learning")
 
     total = trace.elapsed_ms() / 1000.0
     trace.log("system", "incident_complete", result_summary=f"{total:.2f}s total", phase="end")
     _write(idir / "summary.json", {"incident_id": incident_id, "decision": decision,
+            "corrected_room_id": corrected_room_id,
             "seconds_to_draft": round(seconds_to_draft, 2), "seconds_total": round(total, 2),
-            "questions_asked": location.get("questions_asked", 0)})
+            "questions_asked": location.get("questions_asked", 0),
+            "prior_corrections_read": len(corrections)})
     return {"incident_id": incident_id, "dir": str(idir), "decision": decision,
             "seconds_to_draft": round(seconds_to_draft, 2), "seconds_total": round(total, 2)}
 
@@ -216,8 +251,9 @@ def _router(idir, building_id, location, site):
     return bundle
 
 
-def _verifier(idir, packet, brief, location, site, route_bundle):
-    sources = {"brief": brief, "location": location, "site": site, "route": route_bundle}
+def _verifier(idir, packet, brief, location, site, route_bundle, corrections=None):
+    sources = {"brief": brief, "location": location, "site": site, "route": route_bundle,
+               "corrections": corrections or []}
     results = [stubs.check_claim(c, sources) for c in packet.tagged_claims()]
     unsupported = [r for r in results if not r["supported"]]
     audit = {"checked": len(results), "supported": len(results) - len(unsupported),
