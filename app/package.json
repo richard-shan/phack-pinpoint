@@ -1,0 +1,21 @@
+{
+  "name": "pinpoint-dispatch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pinpoint D-lane dispatcher console \u2014 local fixture adapter",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check src/app.js && node --check src/adapter.js && node --check src/fixtures.js && node --check src/views.js",
+    "test": "node --test tests/*.test.mjs",
+    "dev:real": "node local-server.mjs",
+    "check:real": "node --check local-server.mjs && node --check lib/local-store.mjs && node --check src/live.js && node --check src/live-utils.js && node --check src/live-spatial.js && node --check src/live-route-model.js && node --check lib/spatial-service.mjs && node --check lib/vexcel-service.mjs && node --check src/live-aerial.js",
+    "data:build": "python3 scripts/build-catalog.py",
+    "setup:los-angeles": "node scripts/setup-los-angeles.mjs",
+    "setup:princeton": "node scripts/setup-princeton.mjs"
+  }
+}

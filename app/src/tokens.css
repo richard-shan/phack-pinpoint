@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Public Sans";
+  src: url("/assets/fonts/public-sans.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --canvas: #f4f6f7;
+  --surface: #ffffff;
+  --ink: #182026;
+  --muted: #59636d;
+  --border: #dce0e4;
+  --subtle: #edf0f2;
+  --red: #c72535;
+  --red-hover: #a71927;
+  --red-soft: #fff1f2;
+  --red-ink: #a31d2b;
+  --navy: #294960;
+  --warning: #73520e;
+  --warning-bg: #fff8e8;
+  --success: #286347;
+  --success-bg: #edf7f1;
+  --font:
+    "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "SFMono-Regular", Consolas, monospace;
+  --radius: 4px;
+  --focus: #294960;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-display: 3rem;
+  --leading-body: 1.5;
+  --leading-heading: 1.25;
+  --weight-body: 400;
+  --weight-label: 600;
+  --weight-heading: 700;
+  --control-border: #a6b0b8;
+  --shadow-overlay: 0 16px 48px #18202626;
+  --motion-fast: 160ms ease-out;
+}
