@@ -1,0 +1,2675 @@
+{
+ "cqDGKrH5ZTu/05qprkwpmbqyweyhprc4iw9rc": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "behind",
+    "note": "Grey electrical panel box on the far wall of the wood-floor room seen through the open doorway",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "behind",
+    "note": "Visible step or ledge at the open doorway where the grey corridor floor meets the wood-floor room",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "wood-floor room with exterior windows; glass-walled corridor behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/05qprkwpmbqyweyhprc4iw9rc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_05qprkwpmbqyweyhprc4iw9rc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1190
+  }
+ },
+ "cqDGKrH5ZTu/11qs98shms46qsy5z7e45tefb": {
+  "room_type": "utility",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "ahead",
+    "note": "Large electrical panel with breakers and cabling on the wall ahead.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y000_p+00.jpg"
+   },
+   {
+    "type": "fire_extinguisher",
+    "view": "behind",
+    "note": "Red fire extinguisher mounted on the wall beside the reception desk.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "electrical panel wall with cabling beside a single chair",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/11qs98shms46qsy5z7e45tefb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_11qs98shms46qsy5z7e45tefb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1224
+  }
+ },
+ "cqDGKrH5ZTu/12f8kn11zfw2wn96unm8afdra": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "corridor junction beside open room with outdoor-facing windows",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/12f8kn11zfw2wn96unm8afdra",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_12f8kn11zfw2wn96unm8afdra_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_12f8kn11zfw2wn96unm8afdra_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_12f8kn11zfw2wn96unm8afdra_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_12f8kn11zfw2wn96unm8afdra_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 788
+  }
+ },
+ "cqDGKrH5ZTu/16dyzi80z2zcrh7862yp2xpic": {
+  "room_type": "reception",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Staircase descends to the left with black railings along the open side.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y000_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Staircase ascends with metal railings on both sides, leading to an upper landing.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "stairs beside curved reception counter",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/16dyzi80z2zcrh7862yp2xpic",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_16dyzi80z2zcrh7862yp2xpic_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 902
+  }
+ },
+ "cqDGKrH5ZTu/2e3f6cxzgu6rtp2azg42x5tpd": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Black metal railing runs down the middle-right of the corridor, suggesting a stair or step change beyond the glass doors.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "Glass double doors set in brick wall at corridor junction",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/2e3f6cxzgu6rtp2azg42x5tpd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2e3f6cxzgu6rtp2azg42x5tpd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 898
+  }
+ },
+ "cqDGKrH5ZTu/2hinmsgdpkrypzyg6fteq382c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "right",
+    "note": "Red wall-mounted device on the far wall of the corridor view; exact type is uncertain.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "empty wood-floor room with outdoor windows beside reception counter",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/2hinmsgdpkrypzyg6fteq382c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_2hinmsgdpkrypzyg6fteq382c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1150
+  }
+ },
+ "cqDGKrH5ZTu/335sk9308u4y28tc16qkrh0fc": {
+  "room_type": "lobby",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open room with brick wall and glass doors on right",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/335sk9308u4y28tc16qkrh0fc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_335sk9308u4y28tc16qkrh0fc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_335sk9308u4y28tc16qkrh0fc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_335sk9308u4y28tc16qkrh0fc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_335sk9308u4y28tc16qkrh0fc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 599
+  }
+ },
+ "cqDGKrH5ZTu/49baw4fbr69z2t8ud5ak524aa": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass double doors opening to open office space",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/49baw4fbr69z2t8ud5ak524aa",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_49baw4fbr69z2t8ud5ak524aa_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_49baw4fbr69z2t8ud5ak524aa_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_49baw4fbr69z2t8ud5ak524aa_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_49baw4fbr69z2t8ud5ak524aa_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 607
+  }
+ },
+ "cqDGKrH5ZTu/4bpqydguu91wn220a4q8tp98c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "white column beside brick partition and glass-walled vestibule",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/4bpqydguu91wn220a4q8tp98c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_4bpqydguu91wn220a4q8tp98c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4bpqydguu91wn220a4q8tp98c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4bpqydguu91wn220a4q8tp98c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4bpqydguu91wn220a4q8tp98c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 894
+  }
+ },
+ "cqDGKrH5ZTu/4he4cbbm2ysypb2snk150kpnc": {
+  "room_type": "stairwell",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Carpeted stair treads run along the right side with a black metal railing, leading up or down out of view.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y000_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Carpeted staircase with black metal railings rises diagonally toward the upper right, next to a vertical steel post.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "carpeted staircase with black metal railings beside open stairwell",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/4he4cbbm2ysypb2snk150kpnc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_4he4cbbm2ysypb2snk150kpnc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 715
+  }
+ },
+ "cqDGKrH5ZTu/512pszwqs288n8pqgyq1pffyd": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room with wall of windows facing trees and a glass door with blinds",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/512pszwqs288n8pqgyq1pffyd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_512pszwqs288n8pqgyq1pffyd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_512pszwqs288n8pqgyq1pffyd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_512pszwqs288n8pqgyq1pffyd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_512pszwqs288n8pqgyq1pffyd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 552
+  }
+ },
+ "cqDGKrH5ZTu/55td7hz9f6274p8icqk8xw63d": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Metal stair railings along the right side suggest a staircase or level change beside the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y090_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Black metal railing on the left leads down to a lower level with a step or stair change.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "brick-walled corridor with black metal stair railing on the right",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/55td7hz9f6274p8icqk8xw63d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_55td7hz9f6274p8icqk8xw63d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 871
+  }
+ },
+ "cqDGKrH5ZTu/5c05kk7rt9bcicpp6f8myrm9a": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-framed doorway opening onto wood-floored office beyond",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/5c05kk7rt9bcicpp6f8myrm9a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_5c05kk7rt9bcicpp6f8myrm9a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5c05kk7rt9bcicpp6f8myrm9a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5c05kk7rt9bcicpp6f8myrm9a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5c05kk7rt9bcicpp6f8myrm9a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 930
+  }
+ },
+ "cqDGKrH5ZTu/5iywuf8iupr98027t5hwafb6d": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Metal staircase with railings rises to the left, with a handrail running along the walkway beside it.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "empty gray room with wood floor beside glass corridor",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/5iywuf8iupr98027t5hwafb6d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5iywuf8iupr98027t5hwafb6d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 935
+  }
+ },
+ "cqDGKrH5ZTu/5k00wz9xngg039pxb2r5agu6a": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "behind",
+    "note": "Electrical panel mounted on the left wall",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Staircase rising along the right side beyond the glass wall",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y000_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Staircase with railings on the left side of the view",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y090_p+00.jpg"
+   },
+   {
+    "type": "step_or_level_change",
+    "view": "left",
+    "note": "Raised wooden platform with a step up across the room",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "Glass-walled entry beside a staircase, with a wood-floored room and raised platform",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/5k00wz9xngg039pxb2r5agu6a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5k00wz9xngg039pxb2r5agu6a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1280
+  }
+ },
+ "cqDGKrH5ZTu/5shau7ksc3hrhccwq86x6h16b": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "corridor with glass-walled office on right and window showing trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/5shau7ksc3hrhccwq86x6h16b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_5shau7ksc3hrhccwq86x6h16b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5shau7ksc3hrhccwq86x6h16b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5shau7ksc3hrhccwq86x6h16b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_5shau7ksc3hrhccwq86x6h16b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 745
+  }
+ },
+ "cqDGKrH5ZTu/6m2pwuawh9s8idi5x9wed47yc": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Metal-railed staircase on the right side of the open area behind the caller spot.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y180_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Railing and steps visible at the upper left edge, beyond a white wall.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "small office with outdoor window and staircase railing behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/6m2pwuawh9s8idi5x9wed47yc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_6m2pwuawh9s8idi5x9wed47yc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1033
+  }
+ },
+ "cqDGKrH5ZTu/82ts6dhtfzma9w6dacdauasqc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "ahead",
+    "note": "Gray electrical box on the far wall of the corridor, possibly a panel.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "glass-framed doorway with frosted panel beside open white door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/82ts6dhtfzma9w6dacdauasqc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_82ts6dhtfzma9w6dacdauasqc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 972
+  }
+ },
+ "cqDGKrH5ZTu/85qmbpmgs28q5ccc4f73yrs2a": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty open room with outdoor-view windows, closed white door in corridor",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/85qmbpmgs28q5ccc4f73yrs2a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_85qmbpmgs28q5ccc4f73yrs2a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_85qmbpmgs28q5ccc4f73yrs2a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_85qmbpmgs28q5ccc4f73yrs2a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_85qmbpmgs28q5ccc4f73yrs2a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 753
+  }
+ },
+ "cqDGKrH5ZTu/8g77ah8pc5n2sd78nczirb85c": {
+  "room_type": "corridor",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "Corridor with railed staircase, reception counter behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/8g77ah8pc5n2sd78nczirb85c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_8g77ah8pc5n2sd78nczirb85c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8g77ah8pc5n2sd78nczirb85c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8g77ah8pc5n2sd78nczirb85c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8g77ah8pc5n2sd78nczirb85c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1201
+  }
+ },
+ "cqDGKrH5ZTu/8kmrqxrxd216f3st56tnfrdcb": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "small white room with outdoor window and door on left",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/8kmrqxrxd216f3st56tnfrdcb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_8kmrqxrxd216f3st56tnfrdcb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8kmrqxrxd216f3st56tnfrdcb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8kmrqxrxd216f3st56tnfrdcb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8kmrqxrxd216f3st56tnfrdcb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 643
+  }
+ },
+ "cqDGKrH5ZTu/8wayna1t9ffsu35s0xxhn4b1c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "behind",
+    "note": "Black railing spans the corridor beyond the doorway, suggesting a level change or drop ahead",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "empty room with green lower wall and corridor doorway",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/8wayna1t9ffsu35s0xxhn4b1c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8wayna1t9ffsu35s0xxhn4b1c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 999
+  }
+ },
+ "cqDGKrH5ZTu/8x4qf8nks0abaw463310qp56a": {
+  "room_type": "stairwell",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 0,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Carpeted staircase rises ahead with metal handrails on both sides, and a landing sits at the top.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y000_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Stair flight with metal railings runs up along the right side, toward an upper landing.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "carpeted staircase with metal railings and brick wall at top",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/8x4qf8nks0abaw463310qp56a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_8x4qf8nks0abaw463310qp56a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 765
+  }
+ },
+ "cqDGKrH5ZTu/913i1gd90z0c0r1ytkaer5gdb": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Staircase with black metal railings and carpeted treads rises behind the spot, beside a doorway.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "Staircase with black railings beside a doorway",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/913i1gd90z0c0r1ytkaer5gdb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_913i1gd90z0c0r1ytkaer5gdb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1210
+  }
+ },
+ "cqDGKrH5ZTu/9psurmcaqzgu5xzgi32agbmsa": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "corridor with glass-walled office and dark doors",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/9psurmcaqzgu5xzgi32agbmsa",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_9psurmcaqzgu5xzgi32agbmsa_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_9psurmcaqzgu5xzgi32agbmsa_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_9psurmcaqzgu5xzgi32agbmsa_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_9psurmcaqzgu5xzgi32agbmsa_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 701
+  }
+ },
+ "cqDGKrH5ZTu/aad84nzzewgcifd57ss0dmu3c": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "large open room with white column and brick wall beside glass office entrance",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/aad84nzzewgcifd57ss0dmu3c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_aad84nzzewgcifd57ss0dmu3c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aad84nzzewgcifd57ss0dmu3c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aad84nzzewgcifd57ss0dmu3c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aad84nzzewgcifd57ss0dmu3c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 836
+  }
+ },
+ "cqDGKrH5ZTu/aafsxtq27uqshe71h51045y1d": {
+  "room_type": "storage",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "concrete",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Staircase with metal railings runs along the corridor to the left of the right view, leading up toward a window.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "small plain white room with a closed door, next to a corridor with stairs",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/aafsxtq27uqshe71h51045y1d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aafsxtq27uqshe71h51045y1d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1057
+  }
+ },
+ "cqDGKrH5ZTu/aipa440cwmki4xys0ub0egc7c": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Metal-railed stairs descend along the right side of the corridor edge, visible ahead and to the right, with a drop to a lower level beside the walkway.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "open metal-railed stair edge beside brick corridor with outdoor-view window",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/aipa440cwmki4xys0ub0egc7c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_aipa440cwmki4xys0ub0egc7c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1006
+  }
+ },
+ "cqDGKrH5ZTu/ax9etdt3p592c9ixhbu6e356d": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "white door beside mirrored wood-floor room",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ax9etdt3p592c9ixhbu6e356d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ax9etdt3p592c9ixhbu6e356d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ax9etdt3p592c9ixhbu6e356d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ax9etdt3p592c9ixhbu6e356d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ax9etdt3p592c9ixhbu6e356d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 858
+  }
+ },
+ "cqDGKrH5ZTu/ayfwnxkh8supzs1y8wg57pmpb": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty office corner with outdoor window and white door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ayfwnxkh8supzs1y8wg57pmpb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ayfwnxkh8supzs1y8wg57pmpb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ayfwnxkh8supzs1y8wg57pmpb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ayfwnxkh8supzs1y8wg57pmpb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ayfwnxkh8supzs1y8wg57pmpb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 609
+  }
+ },
+ "cqDGKrH5ZTu/b2t3y17ywprr5594zqhd3qp8d": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "left",
+    "note": "Possible small red device on the wall above the teal door; looks like a fire alarm, not confirmed.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "teal push-bar door beside exposed brick wall",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/b2t3y17ywprr5594zqhd3qp8d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b2t3y17ywprr5594zqhd3qp8d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1054
+  }
+ },
+ "cqDGKrH5ZTu/b79siy8e2emcax6pyu6aeg0fd": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with floor-to-ceiling windows along one wall",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/b79siy8e2emcax6pyu6aeg0fd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_b79siy8e2emcax6pyu6aeg0fd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b79siy8e2emcax6pyu6aeg0fd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b79siy8e2emcax6pyu6aeg0fd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_b79siy8e2emcax6pyu6aeg0fd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 582
+  }
+ },
+ "cqDGKrH5ZTu/c2f7db63cqki6h5fbmd673w4a": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with windows and brick-walled corridor doorway",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/c2f7db63cqki6h5fbmd673w4a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_c2f7db63cqki6h5fbmd673w4a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c2f7db63cqki6h5fbmd673w4a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c2f7db63cqki6h5fbmd673w4a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c2f7db63cqki6h5fbmd673w4a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 801
+  }
+ },
+ "cqDGKrH5ZTu/c4kfdwkw51bz9hihi57g44m0c": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with outdoor window wall and brick-lined doorway on left",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/c4kfdwkw51bz9hihi57g44m0c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_c4kfdwkw51bz9hihi57g44m0c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c4kfdwkw51bz9hihi57g44m0c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c4kfdwkw51bz9hihi57g44m0c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_c4kfdwkw51bz9hihi57g44m0c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 939
+  }
+ },
+ "cqDGKrH5ZTu/cbmarsmmwzq3hh5zkm8tzd79b": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "ahead",
+    "note": "Small red box with white symbol on the lower left green wall, possibly a fire alarm pull station; text not readable",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "green planted wall beside floor-to-ceiling windows",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/cbmarsmmwzq3hh5zkm8tzd79b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cbmarsmmwzq3hh5zkm8tzd79b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 972
+  }
+ },
+ "cqDGKrH5ZTu/cmf2byk1bwx68u1ucgi1x328a": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "long corridor with black-framed glass doors and speckled floor",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/cmf2byk1bwx68u1ucgi1x328a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmf2byk1bwx68u1ucgi1x328a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmf2byk1bwx68u1ucgi1x328a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmf2byk1bwx68u1ucgi1x328a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmf2byk1bwx68u1ucgi1x328a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 745
+  }
+ },
+ "cqDGKrH5ZTu/cmy5a3ggar53e9y634i7g2ira": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty open room with wood floor and outdoor-view window wall",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/cmy5a3ggar53e9y634i7g2ira",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmy5a3ggar53e9y634i7g2ira_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmy5a3ggar53e9y634i7g2ira_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmy5a3ggar53e9y634i7g2ira_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_cmy5a3ggar53e9y634i7g2ira_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1002
+  }
+ },
+ "cqDGKrH5ZTu/crz8h37ia83xby11fpfhikapc": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "right",
+    "note": "Raised wooden platform crosses the floor in the middle of the room, a step up for a stretcher",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "open room with raised wooden platform and teal-framed windows",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/crz8h37ia83xby11fpfhikapc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_crz8h37ia83xby11fpfhikapc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 761
+  }
+ },
+ "cqDGKrH5ZTu/d0azburuxpmhct3ckkz9xr7nd": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room with floor-to-ceiling street-facing windows and open white door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/d0azburuxpmhct3ckkz9xr7nd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0azburuxpmhct3ckkz9xr7nd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0azburuxpmhct3ckkz9xr7nd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0azburuxpmhct3ckkz9xr7nd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0azburuxpmhct3ckkz9xr7nd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 577
+  }
+ },
+ "cqDGKrH5ZTu/d0bt0gxdf68i8pmccifheambc": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "teal-framed window overlooking trees and parked car",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/d0bt0gxdf68i8pmccifheambc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0bt0gxdf68i8pmccifheambc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0bt0gxdf68i8pmccifheambc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0bt0gxdf68i8pmccifheambc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_d0bt0gxdf68i8pmccifheambc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 679
+  }
+ },
+ "cqDGKrH5ZTu/dbbbrqicz5iaearupawdkhqha": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty studio room with mirror wall, wood floor, and black baseboards",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/dbbbrqicz5iaearupawdkhqha",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_dbbbrqicz5iaearupawdkhqha_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dbbbrqicz5iaearupawdkhqha_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dbbbrqicz5iaearupawdkhqha_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dbbbrqicz5iaearupawdkhqha_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 841
+  }
+ },
+ "cqDGKrH5ZTu/df4xh9e7au0zbumtyqi7s43rb": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "view": "right",
+    "note": "Red wall-mounted fire extinguisher on the wall beside the door frame",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Metal-railed stairs with diagonal bars run along the walking path ahead",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "railed stairs by brick wall with fire extinguisher",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/df4xh9e7au0zbumtyqi7s43rb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_df4xh9e7au0zbumtyqi7s43rb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1220
+  }
+ },
+ "cqDGKrH5ZTu/dg8zf6rmfq6kdnxkytz2d85cd": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled doorway with black frame facing open area",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/dg8zf6rmfq6kdnxkytz2d85cd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_dg8zf6rmfq6kdnxkytz2d85cd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dg8zf6rmfq6kdnxkytz2d85cd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dg8zf6rmfq6kdnxkytz2d85cd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_dg8zf6rmfq6kdnxkytz2d85cd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 635
+  }
+ },
+ "cqDGKrH5ZTu/e2sshfx4y2905ix6ftx4a04bc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Metal-railed staircase descends beside the open stairwell in the right image.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y090_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Black metal railing along an open stair edge on the left side of the behind image.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "open stairwell railing beside exposed brick corridor wall",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/e2sshfx4y2905ix6ftx4a04bc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_e2sshfx4y2905ix6ftx4a04bc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 997
+  }
+ },
+ "cqDGKrH5ZTu/ek69hib79y679emkasn79mcpa": {
+  "room_type": "lobby",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Metal staircase with railings on the left side of the right view, beside the open floor area.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "open lobby with metal staircase and reception counter",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ek69hib79y679emkasn79mcpa",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ek69hib79y679emkasn79mcpa_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 945
+  }
+ },
+ "cqDGKrH5ZTu/fcr4r1m31h9knpi642fhy5qnb": {
+  "room_type": "utility",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "ahead",
+    "note": "Large gray electrical panel box on the wall with cabling above it",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "obstruction_in_path",
+    "view": "ahead",
+    "note": "Loose cable bundles and debris lie on the floor at the lower left of the view",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "electrical panel wall with exposed cabling beside server racks",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/fcr4r1m31h9knpi642fhy5qnb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_fcr4r1m31h9knpi642fhy5qnb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1080
+  }
+ },
+ "cqDGKrH5ZTu/g8ptqi2ac9mwqx8wzngmuumra": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open white door beside outdoor-view window wall and wood-floored room",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/g8ptqi2ac9mwqx8wzngmuumra",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_g8ptqi2ac9mwqx8wzngmuumra_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_g8ptqi2ac9mwqx8wzngmuumra_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_g8ptqi2ac9mwqx8wzngmuumra_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_g8ptqi2ac9mwqx8wzngmuumra_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 703
+  }
+ },
+ "cqDGKrH5ZTu/gf7ie678921b1w9p5ifmmd3db": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "long corridor with green door at far end and brick glass-walled office beside it",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/gf7ie678921b1w9p5ifmmd3db",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_gf7ie678921b1w9p5ifmmd3db_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gf7ie678921b1w9p5ifmmd3db_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gf7ie678921b1w9p5ifmmd3db_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gf7ie678921b1w9p5ifmmd3db_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 810
+  }
+ },
+ "cqDGKrH5ZTu/gnsc1e2mhh2x1nngyqwfcwhsd": {
+  "room_type": "reception",
+  "furnished": true,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [
+   "EXIT TO LOBBY"
+  ],
+  "door_count": 4,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "ahead",
+    "note": "Red pull station mounted high on the left wall of the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y000_p+00.jpg"
+   },
+   {
+    "type": "fire_extinguisher",
+    "view": "right",
+    "note": "Red fire extinguisher mounted on the wall beside the far glass door.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y090_p+00.jpg"
+   },
+   {
+    "type": "exit_sign",
+    "view": "behind",
+    "note": "Sign reading EXIT TO LOBBY above the door.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Metal staircase with railings on the right side toward the far end of the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y000_p+00.jpg"
+   }
+  ],
+  "landmark": "reception counter with fire extinguisher beside far glass door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/gnsc1e2mhh2x1nngyqwfcwhsd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gnsc1e2mhh2x1nngyqwfcwhsd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1429
+  }
+ },
+ "cqDGKrH5ZTu/gz5k8dk53pd94ekr64z9nc7na": {
+  "room_type": "kitchen_break_room",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "tile",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "checkered floor kitchen with sink and wall cabinets",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/gz5k8dk53pd94ekr64z9nc7na",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_gz5k8dk53pd94ekr64z9nc7na_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gz5k8dk53pd94ekr64z9nc7na_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gz5k8dk53pd94ekr64z9nc7na_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_gz5k8dk53pd94ekr64z9nc7na_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 927
+  }
+ },
+ "cqDGKrH5ZTu/h9hxnhqpkiyh0itngkp4c288a": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "concrete",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Metal staircase with railing descends along the right side of the view.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y180_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Black railing borders an open drop with stairs descending to the left of the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "empty room with exposed brick wall beside open stair railing",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/h9hxnhqpkiyh0itngkp4c288a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_h9hxnhqpkiyh0itngkp4c288a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 892
+  }
+ },
+ "cqDGKrH5ZTu/hc1sknukdi9q9gzf3cgruhghd": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with floor-to-ceiling windows onto trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/hc1sknukdi9q9gzf3cgruhghd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_hc1sknukdi9q9gzf3cgruhghd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hc1sknukdi9q9gzf3cgruhghd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hc1sknukdi9q9gzf3cgruhghd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hc1sknukdi9q9gzf3cgruhghd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 815
+  }
+ },
+ "cqDGKrH5ZTu/hin3u4w6geed4busmhezqa00b": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "skylit corridor with open glass-door office on right",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/hin3u4w6geed4busmhezqa00b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_hin3u4w6geed4busmhezqa00b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hin3u4w6geed4busmhezqa00b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hin3u4w6geed4busmhezqa00b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hin3u4w6geed4busmhezqa00b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 758
+  }
+ },
+ "cqDGKrH5ZTu/hkwbq6z6khztzfa74ih2rr18a": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "narrow corridor with glass-walled office doors and an artwork panel at far end",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/hkwbq6z6khztzfa74ih2rr18a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_hkwbq6z6khztzfa74ih2rr18a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hkwbq6z6khztzfa74ih2rr18a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hkwbq6z6khztzfa74ih2rr18a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_hkwbq6z6khztzfa74ih2rr18a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 592
+  }
+ },
+ "cqDGKrH5ZTu/iddc5b2eu9b0nf5zqik7y0f2a": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room with wood floor and outdoor-view window wall on left",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/iddc5b2eu9b0nf5zqik7y0f2a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_iddc5b2eu9b0nf5zqik7y0f2a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_iddc5b2eu9b0nf5zqik7y0f2a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_iddc5b2eu9b0nf5zqik7y0f2a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_iddc5b2eu9b0nf5zqik7y0f2a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 594
+  }
+ },
+ "cqDGKrH5ZTu/k64y8ws4dikh4t3y6dx2034pc": {
+  "room_type": "kitchen_break_room",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "behind",
+    "note": "Small red round device on the wall above the checkered floor, possibly a fire alarm pull station; not clearly identified.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "small kitchenette with sink and checkered floor, corridor opening behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/k64y8ws4dikh4t3y6dx2034pc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k64y8ws4dikh4t3y6dx2034pc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 898
+  }
+ },
+ "cqDGKrH5ZTu/k8hp8841b5g3b3q4ri28np4uc": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room, outdoor windows right, brick-walled doorway behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/k8hp8841b5g3b3q4ri28np4uc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_k8hp8841b5g3b3q4ri28np4uc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k8hp8841b5g3b3q4ri28np4uc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k8hp8841b5g3b3q4ri28np4uc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_k8hp8841b5g3b3q4ri28np4uc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1129
+  }
+ },
+ "cqDGKrH5ZTu/kfyb63gg0gnbhp2bm94bi9eec": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "white closed door beside window wall showing outdoor trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/kfyb63gg0gnbhp2bm94bi9eec",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_kfyb63gg0gnbhp2bm94bi9eec_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kfyb63gg0gnbhp2bm94bi9eec_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kfyb63gg0gnbhp2bm94bi9eec_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kfyb63gg0gnbhp2bm94bi9eec_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 640
+  }
+ },
+ "cqDGKrH5ZTu/kqyxc2a1agzfqxr689u1te29b": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Metal railing and step-like surface visible beyond the open doorway at the back of the room",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "green living wall ahead and open doorway behind",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/kqyxc2a1agzfqxr689u1te29b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_kqyxc2a1agzfqxr689u1te29b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1130
+  }
+ },
+ "cqDGKrH5ZTu/n0kbze6z786ff4ugt7qqi32ha": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "ahead",
+    "note": "Gray electrical panel mounted on the left wall near the open door.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "behind",
+    "note": "Raised wood platform with a step up across the back of the room.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y180_p+00.jpg"
+   },
+   {
+    "type": "step_or_level_change",
+    "view": "left",
+    "note": "Edge of the raised wood platform visible at the lower left of the image.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "gray room with raised wood platform and glass-walled office",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/n0kbze6z786ff4ugt7qqi32ha",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_n0kbze6z786ff4ugt7qqi32ha_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 901
+  }
+ },
+ "cqDGKrH5ZTu/ne4m54zyz2cdidx2s41ra6rua": {
+  "room_type": "reception",
+  "furnished": true,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Staircase with black metal railings visible beyond the counter.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "reception counter facing staircase with black metal railings",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ne4m54zyz2cdidx2s41ra6rua",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ne4m54zyz2cdidx2s41ra6rua_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 982
+  }
+ },
+ "cqDGKrH5ZTu/nxszec0x6f28cmp120aqmgq2a": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "left",
+    "note": "Small red device on the wall near the door at the far end, appears to be a fire alarm",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "corridor with ceiling light panels and dark doors",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/nxszec0x6f28cmp120aqmgq2a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_nxszec0x6f28cmp120aqmgq2a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 911
+  }
+ },
+ "cqDGKrH5ZTu/p4rqrybmxupcrn3w1b8380xxc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Open metal-railed staircase descends along the left side of the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y270_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Metal-railed stair run with open railings is visible behind the spot, descending.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "brick corridor beside metal-railed stairs down",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/p4rqrybmxupcrn3w1b8380xxc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p4rqrybmxupcrn3w1b8380xxc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 847
+  }
+ },
+ "cqDGKrH5ZTu/p87aqpyuqu5zdkp9trn8e0hyc": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "behind",
+    "note": "Possible small wall-mounted box on green wall at left; uncertain identification",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "green wall panel facing floor-to-ceiling outdoor-view windows",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/p87aqpyuqu5zdkp9trn8e0hyc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_p87aqpyuqu5zdkp9trn8e0hyc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1020
+  }
+ },
+ "cqDGKrH5ZTu/pa0qbmwrbhk9akx5tmphaamza": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with tall windows facing trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/pa0qbmwrbhk9akx5tmphaamza",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_pa0qbmwrbhk9akx5tmphaamza_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pa0qbmwrbhk9akx5tmphaamza_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pa0qbmwrbhk9akx5tmphaamza_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pa0qbmwrbhk9akx5tmphaamza_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 646
+  }
+ },
+ "cqDGKrH5ZTu/pgy5pcez4tnbbdmum97q73a0a": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 4,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-walled corridor with outdoor-facing windows at its end",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/pgy5pcez4tnbbdmum97q73a0a",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_pgy5pcez4tnbbdmum97q73a0a_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pgy5pcez4tnbbdmum97q73a0a_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pgy5pcez4tnbbdmum97q73a0a_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_pgy5pcez4tnbbdmum97q73a0a_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1161
+  }
+ },
+ "cqDGKrH5ZTu/qde6he93s40a116cy08s4dyeb": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open wood-floor room with glass wall partitions and windows facing trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/qde6he93s40a116cy08s4dyeb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_qde6he93s40a116cy08s4dyeb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_qde6he93s40a116cy08s4dyeb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_qde6he93s40a116cy08s4dyeb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_qde6he93s40a116cy08s4dyeb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 735
+  }
+ },
+ "cqDGKrH5ZTu/r82kd53sewgxqhcq1wswtkibb": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room with wood floor facing glass-paneled corridor door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/r82kd53sewgxqhcq1wswtkibb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_r82kd53sewgxqhcq1wswtkibb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_r82kd53sewgxqhcq1wswtkibb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_r82kd53sewgxqhcq1wswtkibb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_r82kd53sewgxqhcq1wswtkibb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 764
+  }
+ },
+ "cqDGKrH5ZTu/s1xrrgpufimg65qmqr9k1wkia": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "step_or_level_change",
+    "view": "right",
+    "note": "Open stairwell edge with a railing in the right-hand view; floor drops to a lower level beyond the rail.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y090_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Stairs descend beside a railing; the stair opening is in the behind view.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "corridor landing beside open stairwell railing with outdoor window",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/s1xrrgpufimg65qmqr9k1wkia",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_s1xrrgpufimg65qmqr9k1wkia_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1099
+  }
+ },
+ "cqDGKrH5ZTu/st9td11itp6y98n9r1x3wewkd": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty room with wood floor and outdoor windows to the right",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/st9td11itp6y98n9r1x3wewkd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_st9td11itp6y98n9r1x3wewkd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_st9td11itp6y98n9r1x3wewkd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_st9td11itp6y98n9r1x3wewkd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_st9td11itp6y98n9r1x3wewkd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 699
+  }
+ },
+ "cqDGKrH5ZTu/t2u6t8eiud4xcp2c42x01btkc": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "behind",
+    "note": "Small red wall-mounted device on the left wall partway down the corridor, possibly a fire alarm pull station",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y180_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "corridor with gray exit door and vertical blinds on right",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/t2u6t8eiud4xcp2c42x01btkc",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_t2u6t8eiud4xcp2c42x01btkc_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 981
+  }
+ },
+ "cqDGKrH5ZTu/tn64b5ra7fb2qwex4kbasz7ec": {
+  "room_type": "stairwell",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 0,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "ahead",
+    "note": "Stairs with black metal railings lead down from this landing, so a stretcher cannot pass without a stair route.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y000_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Steps with metal railings run along the right side, visible as a stair run descending.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y090_p+00.jpg"
+   },
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Carpeted stairs with a metal railing descend to the left of the landing.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "carpeted stairwell with black metal railings and glass-panel landing",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/tn64b5ra7fb2qwex4kbasz7ec",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_tn64b5ra7fb2qwex4kbasz7ec_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 661
+  }
+ },
+ "cqDGKrH5ZTu/trn7gs7b1eband5mprrhax99b": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "right",
+    "note": "Red device mounted on the wall above and beside the gray door",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "open wood-floor room with glass wall to brick corridor and gray door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/trn7gs7b1eband5mprrhax99b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_trn7gs7b1eband5mprrhax99b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1042
+  }
+ },
+ "cqDGKrH5ZTu/ttfaxqy8cqt9n6d6as1rnmt9b": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "right",
+    "note": "Staircase with metal railings rises along the left side of the right view, next to the corridor.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y090_p+00.jpg"
+   }
+  ],
+  "landmark": "staircase and reception desk corridor beside glass partition",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ttfaxqy8cqt9n6d6as1rnmt9b",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ttfaxqy8cqt9n6d6as1rnmt9b_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1069
+  }
+ },
+ "cqDGKrH5ZTu/u8z3x3gq98wwubdmussf4w19c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "carpet",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_extinguisher",
+    "view": "right",
+    "note": "Red wall-mounted fire extinguisher on the wall below a red sign, near the window",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "white wall with framed window and wall-mounted fire extinguisher",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/u8z3x3gq98wwubdmussf4w19c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u8z3x3gq98wwubdmussf4w19c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 837
+  }
+ },
+ "cqDGKrH5ZTu/u9me8tqkpbbhm0awbg558r8ib": {
+  "room_type": "open_office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "open wood-floor room with tall street-facing windows and glass partition",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/u9me8tqkpbbhm0awbg558r8ib",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_u9me8tqkpbbhm0awbg558r8ib_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u9me8tqkpbbhm0awbg558r8ib_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u9me8tqkpbbhm0awbg558r8ib_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_u9me8tqkpbbhm0awbg558r8ib_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 650
+  }
+ },
+ "cqDGKrH5ZTu/ussyhip42ps6ckqm5km31egib": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 1,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "empty wood-floor room with window blinds and window overlooking trees",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ussyhip42ps6ckqm5km31egib",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ussyhip42ps6ckqm5km31egib_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ussyhip42ps6ckqm5km31egib_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ussyhip42ps6ckqm5km31egib_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ussyhip42ps6ckqm5km31egib_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 661
+  }
+ },
+ "cqDGKrH5ZTu/w7h7bnqr0n6mna61bqndw2tcb": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "other",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "glass-framed corridor door beside empty room with wood floor and windows",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/w7h7bnqr0n6mna61bqndw2tcb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_w7h7bnqr0n6mna61bqndw2tcb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_w7h7bnqr0n6mna61bqndw2tcb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_w7h7bnqr0n6mna61bqndw2tcb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_w7h7bnqr0n6mna61bqndw2tcb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 789
+  }
+ },
+ "cqDGKrH5ZTu/wqa9sdrmbnzqtyns3uxgmbr0c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "left",
+    "note": "Red device mounted high on the wall above the door, possibly a fire alarm; not clearly identifiable",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "wood-floored studio with mirrored walls and handrail along window wall",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/wqa9sdrmbnzqtyns3uxgmbr0c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_wqa9sdrmbnzqtyns3uxgmbr0c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 942
+  }
+ },
+ "cqDGKrH5ZTu/xwfdad39p9w4etd0p28s5881d": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "left",
+    "note": "Gray wall-mounted electrical box visible on the far wall in the left view.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y270_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "long white corridor with speckled gray floor and dark door at far end",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/xwfdad39p9w4etd0p28s5881d",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_xwfdad39p9w4etd0p28s5881d_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 849
+  }
+ },
+ "cqDGKrH5ZTu/y8aw3nzaf2ufcbfz589crx0pb": {
+  "room_type": "utility",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 2,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [],
+  "landmark": "utility room with electrical panels and plywood-backed server rack",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/y8aw3nzaf2ufcbfz589crx0pb",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_y8aw3nzaf2ufcbfz589crx0pb_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_y8aw3nzaf2ufcbfz589crx0pb_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_y8aw3nzaf2ufcbfz589crx0pb_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_y8aw3nzaf2ufcbfz589crx0pb_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 853
+  }
+ },
+ "cqDGKrH5ZTu/ydy9wxb1ek7321pswirca8n0c": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": true,
+  "floor_surface": "concrete",
+  "signage_text": [
+   "EMERGENCY EXIT ONLY"
+  ],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "ahead",
+    "note": "Red manual fire alarm pull station on the left wall.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "brick corner wall beside gray emergency exit door",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ydy9wxb1ek7321pswirca8n0c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ydy9wxb1ek7321pswirca8n0c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 1063
+  }
+ },
+ "cqDGKrH5ZTu/ykt27c1th8bzyeyge7smk0m1c": {
+  "room_type": "office",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "electrical_panel",
+    "view": "ahead",
+    "note": "Gray electrical panel mounted on the left wall near the ceiling.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y000_p+00.jpg"
+   }
+  ],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "left",
+    "note": "Stairs visible through a glass-framed door on the left side of the room.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y270_p+00.jpg"
+   }
+  ],
+  "landmark": "gray room with wood floor and electrical panel ahead",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/ykt27c1th8bzyeyge7smk0m1c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_ykt27c1th8bzyeyge7smk0m1c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 863
+  }
+ },
+ "cqDGKrH5ZTu/z45b6fchh3cqgm8xqqehywg3c": {
+  "room_type": "other",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "wood",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": false,
+  "elevator_visible": false,
+  "equipment": [
+   {
+    "type": "fire_alarm_pull_station",
+    "view": "right",
+    "note": "Small red device high near the ceiling at top of right image, possibly a pull station; uncertain",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y090_p+00.jpg"
+   }
+  ],
+  "hazards": [],
+  "landmark": "mirrored dance studio with ballet barres and wood floor",
+  "confidence": "medium",
+  "node_id": "cqDGKrH5ZTu/z45b6fchh3cqgm8xqqehywg3c",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_z45b6fchh3cqgm8xqqehywg3c_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 861
+  }
+ },
+ "cqDGKrH5ZTu/zwk2xnhmkw9bdd3pypwrw7asd": {
+  "room_type": "corridor",
+  "furnished": false,
+  "has_window": false,
+  "floor_surface": "vinyl",
+  "signage_text": [],
+  "door_count": 3,
+  "stairs_visible": true,
+  "elevator_visible": false,
+  "equipment": [],
+  "hazards": [
+   {
+    "type": "stairs",
+    "view": "behind",
+    "note": "Staircase with black metal railings and several steps rising in the corridor, visible in the behind image.",
+    "evidence_path": "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y180_p+00.jpg"
+   }
+  ],
+  "landmark": "corridor with black-railed staircase and wall window",
+  "confidence": "low",
+  "node_id": "cqDGKrH5ZTu/zwk2xnhmkw9bdd3pypwrw7asd",
+  "model": "claude-haiku-5-5",
+  "evidence_paths": [
+   "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y000_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y090_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y180_p+00.jpg",
+   "cache/index/248351/crops/cqDGKrH5ZTu_zwk2xnhmkw9bdd3pypwrw7asd_y270_p+00.jpg"
+  ],
+  "usage": {
+   "input": 2794,
+   "output": 758
+  }
+ }
+}

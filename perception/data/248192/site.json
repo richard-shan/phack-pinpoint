@@ -1,0 +1,238 @@
+{
+ "building_id": "248192",
+ "address": "3250 wilshire Blvd, Los Angeles, CA",
+ "latlon": [
+  34.0615626,
+  -118.2932592
+ ],
+ "location_source": "costar:commercial-property/248192",
+ "tile_path": "cache/vexcel/248192/ortho.jpg",
+ "tile_size": [
+  2137,
+  2312
+ ],
+ "tile_bounds_lonlat": [
+  -118.293974,
+  34.0608268,
+  -118.292542,
+  34.0621102
+ ],
+ "meters_per_pixel": 0.0618,
+ "tile_capture": {
+  "collection": "us-ca-losangeles_rf07-2026",
+  "layer": "urban-r",
+  "captured": [
+   "2026-07-02T21:48:15",
+   "2026-07-09T16:57:47"
+  ],
+  "note": "newest collection at this point; the tile is the best available of urban,urban-r,wide-area,urban-g"
+ },
+ "evidence_path": "cache/vexcel/248192/overlay.jpg",
+ "oblique_paths": {
+  "oblique-north": "cache/vexcel/248192/oblique-north.jpg",
+  "oblique-south": "cache/vexcel/248192/oblique-south.jpg",
+  "oblique-east": "cache/vexcel/248192/oblique-east.jpg",
+  "oblique-west": "cache/vexcel/248192/oblique-west.jpg"
+ },
+ "footprint_wkt": "POLYGON ((-118.293031 34.061706, -118.29303 34.061645, -118.293035 34.061645, -118.293035 34.061607, -118.29304 34.061607, -118.293031 34.061323, -118.293135 34.061323, -118.293178 34.06131, -118.29318 34.061232, -118.293256 34.061231, -118.29326 34.061234, -118.293253 34.061238, -118.293268 34.061242, -118.293329 34.061242, -118.29333 34.061291, -118.29331 34.061291, -118.29331 34.061317, -118.293357 34.061317, -118.293357 34.061294, -118.293424 34.061294, -118.293424 34.061298, -118.293453 34.061297, -118.293453 34.061309, -118.293472 34.061309, -118.293473 34.061347, -118.293484 34.061347, -118.293484 34.0614, -118.293474 34.0614, -118.293478 34.061661, -118.293486 34.061661, -118.293486 34.061705, -118.293437 34.061705, -118.293426 34.061696, -118.293084 34.0617, -118.293085 34.061705, -118.293031 34.061706))",
+ "ground_elevation_m": 75.8952,
+ "entrances": [
+  {
+   "kind": "main",
+   "covered": true,
+   "description": "South side projecting entry structure facing the open plaza to the south; plaza walkway leads to this wall, likely main pedestrian entrance.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 4.8,
+   "side": "west",
+   "pixel": [
+    990.9,
+    1456.6
+   ],
+   "latlon": [
+    34.0613016,
+    -118.29331
+   ],
+   "entrance_id": "E1",
+   "evidence_path": "cache/vexcel/248192/crops/E1.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "East facade along the major north-south street with sidewalk directly adjacent; likely street-side lobby door, not clearly visible due to shadow.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.1,
+   "side": "east",
+   "pixel": [
+    1398.0,
+    1063.6
+   ],
+   "latlon": [
+    34.0615198,
+    -118.2930372
+   ],
+   "entrance_id": "E2",
+   "evidence_path": "cache/vexcel/248192/crops/E2.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "North facade fronting the east-west boulevard with sidewalk; possible street entrance, hidden in shadow.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.3,
+   "side": "north",
+   "pixel": [
+    961.7,
+    744.2
+   ],
+   "latlon": [
+    34.0616971,
+    -118.2933296
+   ],
+   "entrance_id": "E3",
+   "evidence_path": "cache/vexcel/248192/crops/E3.jpg"
+  }
+ ],
+ "staging": [
+  {
+   "staging_id": "S1",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of the north-south street on the east side of the building, near the southeast corner and plaza entrance.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1453.2,
+    1387.2
+   ],
+   "latlon": [
+    34.0613402,
+    -118.2930003
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 20.3,
+   "evidence_path": "cache/vexcel/248192/crops/S1.jpg"
+  },
+  {
+   "staging_id": "S2",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of the east-west boulevard along the north facade.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1175.4,
+    647.4
+   ],
+   "latlon": [
+    34.0617509,
+    -118.2931864
+   ],
+   "nearest_entrance": "E3",
+   "meters_to_entrance": 14.5,
+   "evidence_path": "cache/vexcel/248192/crops/S2.jpg"
+  },
+  {
+   "staging_id": "S3",
+   "kind": "street",
+   "vehicle": "ambulance",
+   "description": "East street curb near the northeast portion of the building.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1453.2,
+    924.8
+   ],
+   "latlon": [
+    34.0615968,
+    -118.2930003
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 9.2,
+   "evidence_path": "cache/vexcel/248192/crops/S3.jpg"
+  }
+ ],
+ "obstructions": [
+  {
+   "type": "parked_vehicles",
+   "description": "Cars parked along the east curb may limit direct curbside stopping.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1474.5,
+    1387.2
+   ],
+   "latlon": [
+    34.0613402,
+    -118.2929859
+   ],
+   "obstruction_id": "O1",
+   "evidence_path": "cache/vexcel/248192/crops/O1.jpg"
+  },
+  {
+   "type": "other",
+   "description": "Planters and landscaping in the south plaza near the entry may narrow the stretcher path.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1239.5,
+    1525.9
+   ],
+   "latlon": [
+    34.0612631,
+    -118.2931434
+   ],
+   "obstruction_id": "O2",
+   "evidence_path": "cache/vexcel/248192/crops/O2.jpg"
+  },
+  {
+   "type": "median_or_curb",
+   "description": "Busy signalized intersection with crosswalks and bus lane at the northeast corner.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1410.4,
+    693.6
+   ],
+   "latlon": [
+    34.0617252,
+    -118.2930289
+   ],
+   "obstruction_id": "O3",
+   "evidence_path": "cache/vexcel/248192/crops/O3.jpg"
+  }
+ ],
+ "vehicle_access": "Building sits at the southwest corner of a major intersection; access is from the curb lanes of the east-west boulevard to the north and the north-south street to the east. No onsite driveway or lot visible; south side opens onto a pedestrian plaza reachable on foot from the east street.",
+ "summary": "High-rise office tower with no onsite vehicle area. Likely main entrance via the south plaza structure (medium confidence), with possible street doors on east and north facades. Stage at the east curb near the southeast corner or the north curb; watch parked cars and plaza planters.",
+ "vision_model": "claude-opus-5-5",
+ "notes": [
+  "Entrances are inferred from overhead signs (canopies, walkways, recesses), snapped to the building outline. Confirm against the interior scan before relying on one.",
+  "Pixel coordinates are [x, y] in the image at tile_path, origin top-left, north up.",
+  "The yellow outline is the ground footprint. Roofs of taller buildings appear shifted a few metres from it because the overhead image is not perfectly vertical."
+ ],
+ "disaster": {
+  "covered": false,
+  "events": [],
+  "note": "Coverage means a post-event flight imaged this ground. It does not mean the building was damaged; see each event's findings."
+ }
+}
