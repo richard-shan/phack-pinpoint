@@ -1,8 +1,18 @@
-agent/incidents/
-agent/buildings/
+# secrets and local environments
+.env
+.env.*
+!.env.example
+.venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+.DS_Store
+
+# generated per machine
+cache/
+incidents/
+agent/incidents/
+agent/buildings/
 
 # Vexcel cached aerial tiles (regenerated per building; can be large)
 agent/pinpoint/fixtures/*/vexcel_tile.*
