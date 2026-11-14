@@ -84,7 +84,7 @@ def _extract_features(property_response):
                 break
     except (AttributeError, TypeError, IndexError) as e:
         log("site", "vexcel_features_parse_error",
-            result_summary=f"{e.__class__.__name__}", phase="tool")
+            result_summary=f"{e.__class__.__name__}", phase="fallback")
     return out
 
 
@@ -98,7 +98,7 @@ def fetch_aerial(address, lat, lon, building_id="unknown"):
     try:
         key = _load_key()
     except VexcelUnavailable:
-        log("site", "vexcel_fallback", result_summary="no api key", phase="tool")
+        log("site", "vexcel_fallback", result_summary="no api key", phase="fallback")
         raise
     headers = {"X-API-KEY": key}
 
@@ -123,11 +123,11 @@ def fetch_aerial(address, lat, lon, building_id="unknown"):
         )
     except requests.RequestException as e:
         log("site", "vexcel_fallback",
-            result_summary=f"property/extract {e.__class__.__name__}", phase="tool")
+            result_summary=f"property/extract {e.__class__.__name__}", phase="fallback")
         raise VexcelUnavailable(f"property/extract network: {e.__class__.__name__}") from e
 
     if pr.status_code == 401:
-        log("site", "vexcel_fallback", result_summary="401 unauthorized", phase="tool")
+        log("site", "vexcel_fallback", result_summary="401 unauthorized", phase="fallback")
         raise VexcelUnavailable("property/extract 401 unauthorized")
 
     if pr.status_code == 404:
@@ -138,7 +138,7 @@ def fetch_aerial(address, lat, lon, building_id="unknown"):
             pj = pr.json()
         except ValueError as e:
             log("site", "vexcel_fallback", result_summary="property json decode",
-                phase="tool")
+                phase="fallback")
             raise VexcelUnavailable("property/extract bad json") from e
         features = _extract_features(pj)
         try:
@@ -157,7 +157,7 @@ def fetch_aerial(address, lat, lon, building_id="unknown"):
             area_wkt = _square_wkt(lat, lon, half_m=40)
     else:
         log("site", "vexcel_fallback",
-            result_summary=f"property/extract {pr.status_code}", phase="tool")
+            result_summary=f"property/extract {pr.status_code}", phase="fallback")
         raise VexcelUnavailable(f"property/extract {pr.status_code}")
 
     try:
@@ -177,23 +177,23 @@ def fetch_aerial(address, lat, lon, building_id="unknown"):
         )
     except requests.RequestException as e:
         log("site", "vexcel_fallback",
-            result_summary=f"ortho/extract {e.__class__.__name__}", phase="tool")
+            result_summary=f"ortho/extract {e.__class__.__name__}", phase="fallback")
         raise VexcelUnavailable(f"ortho/extract network: {e.__class__.__name__}") from e
 
     if not tr.ok:
         log("site", "vexcel_fallback",
-            result_summary=f"ortho/extract {tr.status_code}", phase="tool")
+            result_summary=f"ortho/extract {tr.status_code}", phase="fallback")
         raise VexcelUnavailable(f"ortho/extract {tr.status_code}")
     if not tr.content or len(tr.content) < 500:
         log("site", "vexcel_fallback",
-            result_summary=f"ortho/extract empty ({len(tr.content)} B)", phase="tool")
+            result_summary=f"ortho/extract empty ({len(tr.content)} B)", phase="fallback")
         raise VexcelUnavailable("ortho/extract empty response")
 
     tile_path.write_bytes(tr.content)
 
     log("site", "vexcel_ok",
         result_summary=f"tile {len(tr.content)//1024} KB, features {sum(1 for v in features.values() if v is not None)}",
-        phase="tool")
+        phase="fallback")
 
     return {
         "tile_path": str(tile_path.relative_to(FIXTURES.parent.parent)),
