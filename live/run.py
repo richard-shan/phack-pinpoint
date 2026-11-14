@@ -94,7 +94,11 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
             decision_box["decision"] = "auto"
             tools.SESSION["auto_approved"] = True
             if console is not None:
-                try:
+                try:                     # the console files every approval under "Dispatcher": say what happened
+                    notes = console.get(console_incident).get("notes") or ""
+                    console.update(console_incident, updatedBy="agent",
+                                   notes=("AUTO-APPROVED by the run (--auto-approve): no dispatcher reviewed "
+                                          "this packet. " + notes)[:10000])
                     console.decide(console_incident, "approved")
                 except ConsoleError:
                     pass

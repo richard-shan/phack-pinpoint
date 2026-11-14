@@ -172,6 +172,7 @@ class WithConsole(_Base):
         self.assertTrue(inc["packetId"])
         self.assertIn("## Enter here", inc["packetMarkdown"])
         self.assertIn("packet lines trace to a source", inc["notes"])
+        self.assertTrue(inc["notes"].startswith("AUTO-APPROVED by the run"))     # no dispatcher was involved
         self.assertIn(f"/assets/real/live/{inc['id']}/route.jpg", inc["packetMarkdown"])
         self.assertNotIn("**Status:**", inc["packetMarkdown"])   # the console shows its own status
         texts = [e["text"] for e in inc["events"]]
