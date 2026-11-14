@@ -103,6 +103,8 @@ class PacketWriter:
             L += [f"- {s['label']} (`{s['node_id']}`) [src:site.staging]"]
             if self.site.get("aerial_tile_path"):
                 L += [f"- Aerial reference: `{self.site['aerial_tile_path']}` [src:site.aerial_tile_path]"]
+            elif self.site.get("tile_path"):
+                L += [f"- Aerial reference: `{self.site['tile_path']}` (fallback) [src:site.tile_path]"]
         else:
             L += [PENDING]
         L += ["", "## Enter here"]
@@ -172,6 +174,15 @@ class PacketWriter:
         else:
             L += [PENDING]
         L += [""]
+
+        # Point of contact (building manager / tenant contact from the records brief)
+        if self.brief and (self.brief.get("contact") or {}).get("name"):
+            c = self.brief["contact"]
+            method = c.get("phone") or c.get("email") or c.get("method") or ""
+            role = f" ({c.get('role')})" if c.get("role") else ""
+            L += ["## Point of contact",
+                  f"- {c['name']}{role}: {method} [src:records.contact]",
+                  ""]
 
         # Not confirmed
         L += ["## Not confirmed"]

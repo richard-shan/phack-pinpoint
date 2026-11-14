@@ -96,7 +96,8 @@ class AuditTests(unittest.TestCase):
         self.assertIn("[src:site.aerial_tile_path]", rendered)
 
         # Now check the Verifier: every tagged claim must be supported.
-        sources = {"brief": brief, "location": location, "site": site, "route": route}
+        sources = {"brief": brief, "location": location, "site": site, "route": route,
+                   "records": {"contact": brief["contact"]}}
         results = [stubs.check_claim(c, sources) for c in pkt.tagged_claims()]
         unsupported = [r for r in results if not r["supported"]]
         self.assertEqual(unsupported, [],

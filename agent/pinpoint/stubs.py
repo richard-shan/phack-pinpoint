@@ -235,8 +235,23 @@ def send_packet(incident_id):
 
 
 def notify_contact(incident_id, contact):
-    """APPROVAL GATE. STUB."""
-    return {"status": "notified", "incident_id": incident_id, "contact": contact}
+    """APPROVAL GATE. Stub: records the notification as evidence by writing notify.json under
+    the incident folder. Returns no_contact_available when the brief has no usable contact.
+    The orchestrator wraps the call in trace events (interrupt + approval + gate) so this
+    function itself does not emit trace events."""
+    import json as _json
+    from .config import INCIDENTS
+    if not contact:
+        return {"status": "no_contact_available"}
+    has_method = contact.get("method") or contact.get("phone") or contact.get("email")
+    if not (contact.get("name") and has_method):
+        return {"status": "no_contact_available"}
+    idir = INCIDENTS / incident_id
+    idir.mkdir(parents=True, exist_ok=True)
+    payload = {"status": "notified", "contact": contact, "incident_id": incident_id,
+               "evidence_path": f"incidents/{incident_id}/notify.json"}
+    (idir / "notify.json").write_text(_json.dumps(payload, indent=2, default=str))
+    return payload
 
 
 # ---------- Person C (verifier) ----------

@@ -262,6 +262,35 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
                   result_summary="two rejects, no corrections", phase="failure")
         decision = "exhausted"
 
+    # ---- APPROVAL GATE 2: notify_contact ----
+    # Only fires when the packet was actually approved (not on reject, exhausted, or UNABLE).
+    # Separate interrupt so the dispatcher can send responders without broadcasting the
+    # incident to the building's point-of-contact (and vice versa).
+    if decision == "approve":
+        contact = (brief or {}).get("contact") if brief else None
+        has_method = bool(contact and (contact.get("phone") or contact.get("email")
+                                       or contact.get("method")))
+        if contact and contact.get("name") and has_method:
+            trace.log("commander", "interrupt:notify_contact",
+                      result_summary="awaiting dispatcher", phase="interrupt")
+            if approve_fn is not None:
+                nc_raw = approve_fn(incident_id, packet.path)
+            elif auto_approve:
+                nc_raw = "approve"
+            else:
+                ans = input(f"\n[APPROVAL GATE 2] Notify contact for {incident_id}? [y/N] ").strip().lower()
+                nc_raw = "approve" if ans == "y" else "reject"
+            nc_decision = nc_raw.get("decision", "approve") if isinstance(nc_raw, dict) else nc_raw
+            trace.log("dispatcher", "approval", result_summary=nc_decision, phase="interrupt")
+            if nc_decision == "approve":
+                nc_res = stubs.notify_contact(incident_id, contact)
+                trace.log("commander", "notify_contact",
+                          result_summary=nc_res, phase="gate")
+        else:
+            reason = "no contact in brief" if not contact else "contact missing name or method"
+            trace.log("commander", "notify_contact:skipped",
+                      result_summary=reason, phase="skip")
+
     total = trace.elapsed_ms() / 1000.0
     trace.log("commander", "done", result_summary=f"{total:.2f}s total", phase="end")
     trace.log("system", "incident_complete", result_summary=f"{total:.2f}s total", phase="end")
@@ -387,7 +416,8 @@ def _router(idir, building_id, location, site):
 def _verifier(idir, packet, brief, location, site, route_bundle, corrections=None,
               extra_sources=None):
     sources = {"brief": brief, "location": location, "site": site, "route": route_bundle,
-               "corrections": corrections or []}
+               "corrections": corrections or [],
+               "records": {"contact": (brief or {}).get("contact") if brief else None}}
     if extra_sources:
         sources.update(extra_sources)
     results = [stubs.check_claim(c, sources) for c in packet.tagged_claims()]
