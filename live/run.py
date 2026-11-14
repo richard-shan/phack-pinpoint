@@ -65,6 +65,7 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     if building_id not in list_buildings():
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
     address = address or ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
+    address = " ".join(w.capitalize() if w.isalpha() and w.islower() and len(w) > 2 else w for w in address.split(" "))
     truth, position = _node(building_id, truth), _node(building_id, position)
     simulate_match = _node(building_id, simulate_match)
 

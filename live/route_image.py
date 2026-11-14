@@ -59,6 +59,25 @@ def _plan(g: Graph, seq: int):
     return Image.new("RGB", (int(w * ppm), int(h * ppm)), (52, 56, 66)), ppm, (lambda x, y: ((x - ox) * ppm, h * ppm - (y - oy) * ppm))
 
 
+def _north(g: Graph, seq: int):
+    """Which way north points on this floor's plan, as a unit vector in image axes, from the
+    lat/lon of the two scanned positions farthest apart. The scan's rotation is reliable
+    even where its placement on the map is tens of meters off."""
+    pts = [(g.xyz(n), g.nodes[n].get("latlon")) for n in g.nodes
+           if g.kind(n) == "pano" and (g.nodes[n].get("floor") or 0) == seq and g.xyz(n) and g.nodes[n].get("latlon")]
+    if len(pts) < 2:
+        return None
+    a = min(pts, key=lambda p: p[0][0] + p[0][1])
+    b = max(pts, key=lambda p: math.dist(p[0][:2], a[0][:2]))
+    if math.dist(a[0][:2], b[0][:2]) < 5:
+        return None
+    east = (b[1][1] - a[1][1]) * math.cos(math.radians(a[1][0])) * 111320.0
+    north = (b[1][0] - a[1][0]) * 111320.0
+    turn = math.atan2(b[0][1] - a[0][1], b[0][0] - a[0][0]) - math.atan2(north, east)   # scan angle = map angle + turn
+    ang = math.pi / 2 + turn                                # north, in scan axes
+    return (math.cos(ang), -math.sin(ang))                  # image y runs down
+
+
 def _label(d: ImageDraw.ImageDraw, xy, text: str, fill, font, anchor="l"):
     x, y = xy
     box = d.textbbox((0, 0), text, font=font)
@@ -86,6 +105,9 @@ def _panel(g: Graph, seq: int, path: list[str], target: str, door: str | None, s
     pad = PAD_M * ppm
     x0, y0 = min(p[0] for p in pts) - pad, min(p[1] for p in pts) - pad
     x1, y1 = max(p[0] for p in pts) + pad, max(p[1] for p in pts) + pad
+    short = 16.0 * ppm - (x1 - x0)                        # never zoom in closer than about 16 m across
+    if short > 0:
+        x0, x1 = x0 - short / 2, x1 + short / 2
     if max(plan.width, plan.height) <= 3.0 * max(x1 - x0, y1 - y0):   # small floor: show all of it
         x0, y0, x1, y1 = min(x0, 0), min(y0, 0), max(x1, plan.width), max(y1, plan.height)
     if (x1 - x0) < 2.2 * (y1 - y0):                       # keep panels wide enough for labels
@@ -111,24 +133,39 @@ def _panel(g: Graph, seq: int, path: list[str], target: str, door: str | None, s
                 _arrow(d, a, b, RED, 15)
     by_node = dict(zip(nodes, pts))
     side = lambda p: "l" if p[0] < OUT_W * 0.7 else "r"
-    if staging in by_node:
-        p = by_node[staging]
-        d.ellipse((p[0] - 16, p[1] - 16, p[0] + 16, p[1] + 16), fill=BLUE, outline=WHITE, width=4)
-        _label(d, (p[0], p[1] - 34), "Stage", BLUE, font, side(p))
-    if door in by_node:
-        p = by_node[door]
-        d.rectangle((p[0] - 15, p[1] - 15, p[0] + 15, p[1] + 15), fill=GREEN, outline=WHITE, width=4)
-        _label(d, (p[0], p[1] + 34), "Enter", GREEN, font, side(p))
+    flip = {"l": "r", "r": "l"}
+    caller_side = side(by_node[target]) if target in by_node else None
     if target in by_node:
         p = by_node[target]
         d.ellipse((p[0] - 30, p[1] - 30, p[0] + 30, p[1] + 30), outline=RED, width=6)
         d.ellipse((p[0] - 13, p[1] - 13, p[0] + 13, p[1] + 13), fill=RED, outline=WHITE, width=4)
-        _label(d, p, "Caller", RED, font, side(p))
+        _label(d, (p[0] + (22 if caller_side == "l" else -22), p[1]), "Caller", RED, font, caller_side)
     else:                                                  # the route leaves this floor here
         p = pts[-1]
         nxt = path[path.index(nodes[-1]) + 1] if nodes[-1] != path[-1] else None
         how = (g.edge(nodes[-1], nxt) or {}).get("type", "stairs") if nxt else "stairs"
-        _label(d, p, f"{how.capitalize()} to {g.nodes[target].get('floor_name') or 'the next floor'}", RED, font, side(p))
+        _label(d, (p[0], p[1] - 44), f"{how.capitalize()} to {g.nodes[target].get('floor_name') or 'the next floor'}",
+               RED, font, side(p))
+    if staging in by_node:
+        p = by_node[staging]
+        d.ellipse((p[0] - 16, p[1] - 16, p[0] + 16, p[1] + 16), fill=BLUE, outline=WHITE, width=4)
+        _label(d, (p[0], p[1] - 34), "Stage", BLUE, font, side(p))
+    if door in by_node:                                    # drawn last so the caller ring never hides it
+        p = by_node[door]
+        d.rectangle((p[0] - 15, p[1] - 15, p[0] + 15, p[1] + 15), fill=GREEN, outline=WHITE, width=4)
+        close = target in by_node and math.dist(p, by_node[target]) < 150
+        where = flip[caller_side] if close else side(p)    # keep clear of the Caller label
+        _label(d, (p[0], p[1] + (0 if close else 34)), "Enter", GREEN, font, where)
+    north = _north(g, seq)
+    if north:                                              # the plan is in the scan's axes, not north-up
+        cx, cy, r = OUT_W - 70, 70, 34
+        tip, tail = (cx + r * north[0], cy + r * north[1]), (cx - r * north[0], cy - r * north[1])
+        d.ellipse((cx - 50, cy - 50, cx + 50, cy + 50), fill=INK, outline=WHITE, width=3)
+        d.line((tail, tip), fill=WHITE, width=6)
+        ang = math.atan2(north[1], north[0])
+        d.polygon([tip, (tip[0] + 18 * math.cos(ang + 2.6), tip[1] + 18 * math.sin(ang + 2.6)),
+                   (tip[0] + 18 * math.cos(ang - 2.6), tip[1] + 18 * math.sin(ang - 2.6))], fill=WHITE)
+        d.text((cx - 9 - 20 * north[0], cy - 13 - 20 * north[1]), "N", fill=(255, 210, 90), font=font)
     name = next((g.nodes[n].get("floor_name") for n in nodes if g.nodes[n].get("floor_name")), f"Floor {seq + 1}")
     d.rounded_rectangle((16, canvas.height - 62, 16 + d.textlength(name, font=font) + 28, canvas.height - 16), 8, fill=INK)
     d.text((30, canvas.height - 54), name, fill=WHITE, font=font)

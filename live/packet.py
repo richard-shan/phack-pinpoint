@@ -26,6 +26,8 @@ HAZARD_TEXT = {
     "locked_door": "Locked door on the route",
     "unconfirmed_locked_door": "Door expected to be locked",
     "stairs": "Stairs on the route",
+    "unconfirmed_open": "A long link between scanned positions that the scan could not confirm is walkable",
+    "unconfirmed_stairs": "Stairs inferred from the scan, not confirmed",
 }
 
 
@@ -35,6 +37,23 @@ def _secs(v) -> str:
 
 def _short(node_id: str) -> str:
     return str(node_id)[:6]
+
+
+def _cap(text: str) -> str:
+    """First letter upper case, the rest untouched ("the curb on Broxton Ave" keeps its names)."""
+    text = str(text)
+    return text[:1].upper() + text[1:]
+
+
+def _why_no_question(reason: str | None) -> str | None:
+    """The agent's own skip reason, in words for a dispatcher."""
+    if not reason:
+        return None
+    if reason.startswith("only one candidate"):
+        return "the photo match left one likely position"
+    if reason.startswith("all top candidates share room"):
+        return "the likely positions are in the same room and are reached the same way"
+    return reason
 
 
 class LivePacketWriter(PacketWriter):
@@ -124,7 +143,9 @@ class LivePacketWriter(PacketWriter):
                     L += [f"- Asked: \"{q['question']}\" Answer: \"{q['reply']}\" ({q['source']}) "
                           "[src:location.question_log]"]
             elif lo.get("skip_reason"):
-                L += [f"- No question asked: {lo['skip_reason']} [src:location.skip_reason]"]
+                L += [f"- No question asked: {_why_no_question(lo['skip_reason'])}. [src:location.skip_reason]"]
+            elif lo.get("below_threshold") and not tools.SESSION.get("given_position"):
+                L += ["- No question asked: nothing a caller could answer separates the likely positions."]
             if tools.SESSION.get("given_position"):
                 L += ["- The position was given by the dispatcher, not matched from a photo."]
             elif tools.SESSION.get("simulate_match"):
@@ -153,11 +174,14 @@ class LivePacketWriter(PacketWriter):
             L += [PENDING]
         elif foot.get("staging_id"):
             sid = foot["staging_id"]
-            L += [f"- {self._label(sid).capitalize()} [src:route.foot.staging_id]"]
+            L += [f"- {_cap(self._label(sid))} [src:route.foot.staging_id]"]
             if g and not g.nodes[sid].get("confirmed"):
                 L += ["- Placed by eye on the aerial image; not confirmed on site."]
             if site and site.get("tile_path"):
                 L += [f"- Aerial reference: `{site['tile_path']}` [src:site.tile_path]"]
+        elif ((g.nodes.get(door, {}) if (g and door) else {}).get("approach") or {}).get("via"):
+            L += ["- At the street-address entrance. The scan starts upstairs: the street entrance, the "
+                  "lobby and the way up are not in it, so no staging spot is marked."]
         else:
             L += ["- No staging spot is marked for this door."]
         aerial = (site or {}).get("aerial_features") or {}
@@ -172,7 +196,7 @@ class LivePacketWriter(PacketWriter):
             L += [PENDING]
         elif door:
             tag = " [src:route.foot.entrance_id]" if foot.get("path") else ""
-            L += [f"- {self._label(door).capitalize()}{tag}"]
+            L += [f"- {_cap(self._label(door))}{tag}"]
             saved, front_id = rt.get("seconds_saved_vs_front"), self._front_id()
             via = ((g.nodes.get(door, {}) if g else {}).get("approach") or {}).get("via")
             if via:
@@ -197,6 +221,26 @@ class LivePacketWriter(PacketWriter):
                       + (f" ({ap['floors']} floors up)." if ap.get("floors") else ".")]
             if node and not node.get("confirmed", True):
                 L += ["- Marked from the scan; nobody has confirmed where this door leads."]
+            at = node.get("attributes") or {}
+            if node.get("note"):
+                note = str(node["note"]).rstrip(".")
+                L += ["- Noted when the scan was marked: " + (note if len(note) <= 320 else note[:317] + "...") + "."]
+            if at.get("signs"):
+                L += ["- Signs on it: " + "; ".join(f'"{x}"' for x in list(at["signs"])[:3]) + "."]
+            for key, lead in (("hours", "Hours on the door"), ("lock_state", "Lock"), ("stretcher", "Stretcher")):
+                if at.get(key):
+                    L += [f"- {lead}: {str(at[key]).rstrip('.')}."]
+            near = min((r for r in foot.get("ranked") or [] if r["entrance_id"] != door),
+                       key=lambda r: r["inside_seconds"], default=None)
+            if near and near["inside_seconds"] + 10 < (foot.get("inside_seconds") or 0) \
+                    and near["inside_seconds"] <= 0.5 * (foot.get("inside_seconds") or 0):
+                locked = ((g.nodes.get(near["entrance_id"], {}) if g else {}).get("approach") or {}).get("locked_entry")
+                L += [f"- A door much closer to the caller: {near.get('label') or near['entrance_id']}, about "
+                      f"{_secs(near['inside_seconds'])} from them. "
+                      + ("It is assumed locked from outside, which is why it is not the first choice; someone "
+                         "inside can open it." if locked else
+                         f"Reaching it from outside takes about {_secs(near['outside_seconds'])}.")
+                      + " [src:route.foot.ranked]"]
         else:
             L += ["- No usable entrance found."]
         L += [""]
@@ -228,10 +272,19 @@ class LivePacketWriter(PacketWriter):
             if stretcher.get("reachable") is False or not stretcher.get("entrance_id"):
                 c = stretcher.get("carry") or {}
                 if c:
-                    L += [f"- A stretcher cannot reach the caller ({c.get('blocked_by') or 'no step-free way'}). "
+                    kind, width = c.get("blocked_by"), c.get("blocked_width_m")
+                    if kind in ("door", "locked_door") and width:
+                        why = (f"a door measured at {width:.2f} m in the scan; a stretcher needs 0.75 m, and the "
+                               "measurement could be a few centimeters off")
+                    else:
+                        why = {"stairs": "stairs, and no elevator reaches that level in the scan",
+                               "door": "a door too narrow for a stretcher"}.get(kind, "no step-free way in the scan")
+                    how = {"up": ", up the stairs", "down": ", down the stairs"}.get(c.get("carry_direction"), "") \
+                        if c.get("carry_uses_stairs") else ""
+                    L += [f"- A stretcher cannot reach the caller: {why}. "
                           f"Take it in through {self._label(c['entrance_id'])} to {self._place(c['node_id'])} "
                           f"(about {_secs(c['seconds_to_carry_point'])}), then carry: about "
-                          f"{_secs(c['carry_seconds_on_foot'])} on foot from there. [src:route.stretcher.carry]"]
+                          f"{_secs(c['carry_seconds_on_foot'])} on foot from there{how}. [src:route.stretcher.carry]"]
                 else:
                     L += ["- A stretcher cannot reach the caller, and no point close to them was found."]
             elif rt.get("stretcher_differs"):
@@ -283,7 +336,7 @@ class LivePacketWriter(PacketWriter):
         L += ["## Building brief (CoStar)"]
         if b:
             use = b.get("use_type") or "use not on record"
-            if b.get("use_subtype"):
+            if b.get("use_subtype") and str(b["use_subtype"]).lower() != "unknown":
                 use += f" ({str(b['use_subtype']).replace('_', ' ').lower()})"
             sqft = f"{round(b['sqft']):,} sq ft" if b.get("sqft") else "area not on record"
             n_st = b.get("stories")
