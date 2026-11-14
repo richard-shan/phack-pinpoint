@@ -5,7 +5,7 @@ layout; this note says what is ready, what is not, and what lane A needs back.
 
 ## Good to go
 
-- **Every tool in `env/tools.py`.** 40 tests pass with no network
+- **Every tool in `env/tools.py`.** 43 tests pass with no network
   (`python3 -m unittest discover -s env/tests -t .`).
 - **Routing in all six buildings.** 693 scanned positions, every one reachable on foot.
   Each marked door and elevator has an evidence crop under `buildings/<id>/evidence/`.
@@ -57,6 +57,33 @@ the best door is not the street-side door) but its scan has no wall plan and no 
    has no tenant on record (nobody is listed on floor 14 at St Joseph). Tenant facts are
    reliable for the other floors of the same building.
 7. **All time constants are placeholders** in `env/config.py` (`ROUTING`).
+
+## How this lines up with the `perception` branch (checked Saturday 2:55 PM)
+
+Lane A read `origin/perception` at commit 9f96966. Both lanes use the CoStar PropertyId as
+`building_id`. The differences, and what lane A did about them:
+
+- **Node ids.** Perception writes `"<model id>/<sweep id>"`; the graphs use the sweep id
+  alone. Every tool in `env/tools.py` now accepts either form and answers with the
+  graph's form. To get back to yours, prefix `graph["matterport_model_id"]`.
+- **One scan per graph.** Perception treats a building as every scan CoStar lists for the
+  property. Each graph here is built from one scan (listed in `env/README.md`). A match
+  in another scan of the same property has no route yet: 1315 St Joseph has three more
+  suite scans that are not in its graph.
+- **Attributes.** `python3 -m env.import_attributes <building_id>` converts your
+  `cache/attributes/<building_id>/_all.json` into `buildings/<building_id>/attributes.json`
+  (`landmark` becomes the node `label`, `room_type` the `room_label`, equipment and
+  hazards keep their evidence paths). Then rebuild the graph.
+- **Equipment names.** Your vocabulary (`fire_extinguisher`, `fire_alarm_pull_station`,
+  `alarm_panel`, `aed`, ...) is the one the graphs use now.
+- **`find_equipment` and `hazards_along`** exist in both lanes. Lane A's measure travel
+  time through the graph; yours measure straight-line distance. Once attributes are
+  imported, lane A's return the same items with `meters` and `seconds` along the route.
+- **Your example building 240517** (17270 Red Oak Dr, four scans) has no graph yet. Say
+  which scan matters and lane A will build it; it takes a few seconds plus marking.
+- **Site output is not joined yet.** `detect_site_features` returns staging spots and
+  entrance candidates with lat/lon. Lane A still places staging by eye and has not
+  written the step that turns your output into staging nodes.
 
 ## What lane A needs back
 

@@ -58,19 +58,19 @@
   },
   "ne4m54zyz2cdidx2s41ra6rua": {
    "equipment": [
-    "extinguisher"
+    "fire_extinguisher"
    ],
    "note": "fire extinguisher on the wall at the end of the reception desk, heading 228"
   },
   "t2u6t8eiud4xcp2c42x01btkc": {
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "note": "pull station and the Ground Floor evacuation plan (Barham Plaza) on the wall left of the exit door"
   },
   "ydy9wxb1ek7321pswirca8n0c": {
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "note": "pull station and the 2nd Floor evacuation plan (Barham Plaza) on the wall right of the emergency exit door"
   },

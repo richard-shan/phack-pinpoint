@@ -3,7 +3,7 @@
  "matterport_model_id": "MFhskYSBMMe",
  "name": "3250 Wilshire Blvd, Suite 301 (Xfernet), 3rd floor",
  "address": "3250 Wilshire, Los Angeles, CA, 90005, US",
- "generated_at": "2026-11-14T14:47:19",
+ "generated_at": "2026-11-14T14:50:59",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 2,
  "grade_floor": 0,
@@ -3382,7 +3382,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "alarm_pull_station"
+    "fire_alarm_pull_station"
    ],
    "kind": "pano",
    "label": null,
@@ -3657,7 +3657,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "extinguisher"
+    "fire_extinguisher"
    ],
    "kind": "pano",
    "label": "the Suite 301 (Xfernet) double doors",

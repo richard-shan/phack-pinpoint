@@ -54,7 +54,7 @@ def toy_graph() -> dict:
         # floor 2
         node("elev2", 5, 15, Z2, 1, "the lobby elevator", attributes={"elevator": True}),
         node("f2_west", 5, 10, Z2, 1, "the west corridor"),
-        node("f2_mid", 27.5, 10, Z2, 1, equipment=["extinguisher"]),
+        node("f2_mid", 27.5, 10, Z2, 1, equipment=["fire_extinguisher"]),
         node("f2_east", 50, 10, Z2, 1, "the east corridor"),
         node("stair2", 50, 15, Z2, 1, "Stair B", attributes={"stairs": True}),
         node("room_210", 50, 5, Z2, 1, "Suite 210", room_label="Suite 210"),

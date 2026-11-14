@@ -30,12 +30,35 @@ def _tool(fn):
     return wrapper
 
 
+def _g(building_id) -> Graph:
+    return Graph.load(str(building_id))
+
+
+def _n(g: Graph, node_id):
+    """Node id as the graph spells it. Lane B writes "<model id>/<sweep id>"; the graph
+    uses the sweep id alone. Both are accepted; results use the graph's spelling."""
+    if isinstance(node_id, str) and node_id not in g.nodes and "/" in node_id:
+        tail = node_id.rsplit("/", 1)[1]
+        if tail in g.nodes:
+            return tail
+    return node_id
+
+
+def _ns(g: Graph, node_ids):
+    return [_n(g, n) for n in node_ids or []]
+
+
 # ------------------------------------------------------------------ records
 @_tool
 def get_property(address: str) -> dict:
     """address (or PropertyId, or Matterport model id) -> {building_id, use_type, stories,
-    year_built, sqft, tenants[], contact, ...}. Each value keeps its CoStar record id."""
-    return costar.get_property(address)
+    year_built, sqft, tenants[], contact, ...}. Each value keeps its CoStar record id.
+    `scan_date` is always None: the scans carry an import date, not a capture date."""
+    out = costar.get_property(address)
+    if out.get("building_id"):
+        out.setdefault("scan_date", None)
+        out.setdefault("evidence_path", f"costar:commercial-property/{out['building_id']}")
+    return out
 
 
 @_tool
@@ -66,17 +89,20 @@ def _find_graph(node_id: str, building_id: str | None) -> Graph:
         return Graph.load(str(building_id))
     for b in _list_buildings():
         g = Graph.load(b)
-        if node_id in g.nodes:
+        if _n(g, node_id) in g.nodes:
             return g
     raise KeyError(f"node {node_id} is not in any building")
 
 
 @_tool
 def look(node_id: str, building_id: str | None = None) -> dict:
-    """What is at a node: {image_path, attributes, neighbors[]}. `image_path` is a full
-    panorama in world axes (center looks along +x), rendered on first use; it is None for
-    nodes without a panorama, such as doors and staging spots."""
+    """What is at a node: {image_path, attributes, neighbors[], neighbor_details[],
+    room_label, equipment}. `neighbors` is a list of node ids; `neighbor_details` adds the
+    edge type, distance and heading to each. `image_path` is a full panorama in world axes
+    (center looks along +x), rendered on first use; it is None for nodes without a
+    panorama, such as doors and staging spots."""
     g = _find_graph(node_id, building_id)
+    node_id = _n(g, node_id)
     if node_id not in g.nodes:
         raise KeyError(f"node {node_id} is not in building {g.building_id}")
     n = g.nodes[node_id]
@@ -99,7 +125,8 @@ def look(node_id: str, building_id: str | None = None) -> dict:
                                room=g.room(node_id), label=g.label(node_id), xyz=n.get("xyz"),
                                latlon=n.get("latlon"), is_entrance=bool(n.get("is_entrance")),
                                equipment=n.get("equipment") or []),
-            "neighbors": neighbors}
+            "room_label": g.room(node_id), "equipment": n.get("equipment") or [],
+            "neighbors": [x["node_id"] for x in neighbors], "neighbor_details": neighbors}
 
 
 @_tool
@@ -115,16 +142,20 @@ def entrances(building_id: str) -> list[dict]:
 
 # ------------------------------------------------------------------ routing (section 4A)
 @_tool
-def route(building_id: str, from_node: str, to_node: str, profile: str = "foot") -> dict:
+def route(building_id: str, from_node: str, to_node: str, profile: str = "foot",
+          blocked_edges: list | None = None) -> dict:
     """-> {path[], seconds, meters, uses_stairs, uses_elevator, reachable}"""
-    return routing.route(Graph.load(str(building_id)), from_node, to_node, profile)
+    g = _g(building_id)
+    return routing.route(g, _n(g, from_node), _n(g, to_node), profile,
+                         blocked=[_ns(g, pair) for pair in blocked_edges or []])
 
 
 @_tool
 def best_entry(building_id: str, target: str, profile: str = "foot") -> dict:
     """-> {entrance_id, staging_id, seconds, path[], runner_up, ranked[], front_door}.
     For a stretcher that cannot reach the target, `carry` says how close it can get."""
-    return routing.best_entry(Graph.load(str(building_id)), target, profile)
+    g = _g(building_id)
+    return routing.best_entry(g, _n(g, target), profile)
 
 
 @_tool
@@ -132,46 +163,55 @@ def best_entry_under_belief(building_id: str, candidates: list[dict], profile: s
     """candidates: [{node_id, p}] or [{node_id, score}] ->
     {entrance_id, visit_order[], expected_seconds, spread_seconds,
      value_of_information_seconds, ask_another_question, top_guess{...}}"""
-    return routing.best_entry_under_belief(Graph.load(str(building_id)), candidates, profile)
+    g = _g(building_id)
+    return routing.best_entry_under_belief(
+        g, [dict(c, node_id=_n(g, c["node_id"])) for c in candidates], profile)
 
 
 @_tool
 def backup_route(building_id: str, from_node: str, to_node: str, profile: str = "foot",
                  avoid_path: list[str] | None = None) -> dict:
     """-> {path[], seconds, shared_edges[], is_different}"""
-    return routing.backup_route(Graph.load(str(building_id)), from_node, to_node, profile, avoid_path)
+    g = _g(building_id)
+    return routing.backup_route(g, _n(g, from_node), _n(g, to_node), profile,
+                                _ns(g, avoid_path) if avoid_path else None)
 
 
 @_tool
 def replan(building_id: str, current_node: str, to_node: str, profile: str = "foot",
            blocked_edges: list | None = None) -> dict:
     """blocked_edges: [[a, b], ...] -> {path[], seconds, compute_ms, reachable}"""
-    return routing.replan(Graph.load(str(building_id)), current_node, to_node, profile,
-                          blocked_edges or [])
+    g = _g(building_id)
+    return routing.replan(g, _n(g, current_node), _n(g, to_node), profile,
+                          [_ns(g, pair) for pair in blocked_edges or []])
 
 
 @_tool
 def directions(building_id: str, path: list[str]) -> list[dict]:
     """-> [{text, meters, node_id, thumbnail_path, heading_deg, floor, kind}]"""
-    return routing.directions(Graph.load(str(building_id)), path)
+    g = _g(building_id)
+    return routing.directions(g, _ns(g, path))
 
 
 @_tool
 def exit_route(building_id: str, from_node: str, profile: str = "foot") -> dict:
     """-> {path[], seconds, entrance_id}"""
-    return routing.exit_route(Graph.load(str(building_id)), from_node, profile)
+    g = _g(building_id)
+    return routing.exit_route(g, _n(g, from_node), profile)
 
 
 @_tool
 def hazards_along(building_id: str, path: list[str]) -> list[dict]:
     """-> [{node_id, type, evidence_path}]"""
-    return routing.hazards_along(Graph.load(str(building_id)), path)
+    g = _g(building_id)
+    return routing.hazards_along(g, _ns(g, path))
 
 
 @_tool
 def find_equipment(building_id: str, type: str, near_node: str) -> list[dict]:
     """-> [{node_id, meters, seconds, evidence_path}] nearest first"""
-    return routing.find_equipment(Graph.load(str(building_id)), type, near_node)
+    g = _g(building_id)
+    return routing.find_equipment(g, type, _n(g, near_node))
 
 
 @_tool
@@ -185,7 +225,8 @@ def report_edge(building_id: str, a: str, b: str, status: str = "blocked", note:
         raise ValueError('status must be "blocked", "locked" or "clear"')
     path = graph_path(str(building_id))
     data = json.loads(path.read_text())
-    k = edge_key(a, b)
+    g = _g(building_id)
+    k = edge_key(_n(g, a), _n(g, b))
     edge = next((e for e in data["edges"] if edge_key(e["a"], e["b"]) == k), None)
     if edge is None:
         raise KeyError(f"no edge between {a} and {b}")

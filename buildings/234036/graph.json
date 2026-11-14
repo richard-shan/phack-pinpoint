@@ -3,7 +3,7 @@
  "matterport_model_id": "7uM5JKssTED",
  "name": "1315 St Joseph Pkwy, 14th floor",
  "address": "1315 St Joseph Pkwy, Houston, TX, 77002, US",
- "generated_at": "2026-11-14T14:47:16",
+ "generated_at": "2026-11-14T14:50:59",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 13,
  "grade_floor": 0,
@@ -147,7 +147,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "kind": "pano",
    "label": "the restroom alcove by Stair A",
@@ -184,7 +184,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "kind": "pano",
    "label": null,
@@ -3420,7 +3420,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "extinguisher"
+    "fire_extinguisher"
    ],
    "kind": "pano",
    "label": null,
@@ -5004,7 +5004,7 @@
    },
    "is_entrance": true,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "kind": "elevator",
    "source": "hand",

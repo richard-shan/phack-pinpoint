@@ -47,8 +47,25 @@ class ToolsOnToy(unittest.TestCase):
         self.assertEqual(r["building_id"], "toy")
         self.assertIsNone(r["image_path"])
         self.assertEqual(r["attributes"]["equipment"], ["aed", "alarm_panel"])
-        heads = {n["node_id"]: n["heading_deg"] for n in r["neighbors"]}
+        self.assertEqual(sorted(r["neighbors"]), ["c1", "door_front", "elev1"])
+        heads = {n["node_id"]: n["heading_deg"] for n in r["neighbor_details"]}
         self.assertEqual(heads, {"door_front": 180.0, "elev1": 90.0, "c1": 0.0})
+        self.assertEqual((r["room_label"], r["equipment"]), ("Lobby", ["aed", "alarm_panel"]))
+
+    def test_lane_b_node_ids_and_lane_c_shapes(self):
+        b = tools.best_entry("toy", "scanmodel/room_210", "foot")        # "<model>/<sweep>" form
+        self.assertEqual(b["entrance_id"], "door_dock")
+        self.assertAlmostEqual(b["runner_up"]["delta_seconds"], b["runner_up"]["seconds"] - b["seconds"], delta=0.11)
+        r = tools.route("toy", "x/door_dock", "x/room_210", "foot", blocked_edges=[["x/stair1", "stair2"]])
+        self.assertTrue(r["uses_elevator"])
+        u = tools.best_entry_under_belief("toy", [{"node_id": "m/room_210", "p": 0.4}, {"node_id": "m/room_204", "p": 0.3},
+                                                  {"node_id": "m/room_206", "p": 0.3}])
+        self.assertTrue(u["question_worth_asking"])
+        self.assertFalse(u["all_candidates_same_door"])
+        self.assertEqual(u["per_candidate_best_door"]["room_210"], "door_dock")
+        self.assertEqual(tools.find_equipment("toy", "extinguisher", "m/room_210")[0]["node_id"], "f2_mid")
+        self.assertEqual(tools.find_equipment("toy", "fire_extinguisher", "room_210")[0]["node_id"], "f2_mid")
+        self.assertIn("error", tools.route("toy", "m/nowhere", "room_210"))
 
     def test_errors_come_back_as_data(self):
         self.assertIn("error", tools.route("toy", "nowhere", "room_210"))

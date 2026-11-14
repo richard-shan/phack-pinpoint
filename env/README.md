@@ -5,7 +5,7 @@ Lane B: read `env/HANDOFF_B.md` first. It says what is ready and what is not.
 
 ```
 pip install -r env/requirements.txt
-python3 -m unittest discover -s env/tests -t .     # 40 tests, no network
+python3 -m unittest discover -s env/tests -t .     # 43 tests, no network
 python3 -m env.tools                                # worked example on the toy building
 ```
 
@@ -49,7 +49,7 @@ python3 -m env.build_graph --building <id> --render      # or --all
 | `get_property(address)` | `{building_id, use_type, stories, year_built, sqft, tenants[], contact, occupancy_risks[], ...}`; also accepts a PropertyId or a Matterport model id |
 | `get_tenants(building_id, floor=None, suite=None)` | current tenants with `risk_flags` |
 | `list_buildings()` | buildings that have a graph |
-| `look(node_id)` | `{image_path, attributes, neighbors[]}` |
+| `look(node_id)` | `{image_path, attributes, room_label, equipment, neighbors[] (ids), neighbor_details[]}` |
 | `entrances(building_id)` | `[{entrance_id, node_id, side, latlon, label, primary, confirmed, evidence_path}]` |
 | `route(building_id, from_node, to_node, profile)` | `{path[], seconds, meters, uses_stairs, uses_elevator, reachable}` |
 | `best_entry(building_id, target, profile)` | `{entrance_id, staging_id, seconds, path[], runner_up, ranked[], front_door, carry}` |
@@ -82,9 +82,12 @@ Things an agent should read in the results:
   undistorted crops use
   `env.views.view_heading(model_id, sweep_id, heading_deg, hfov_deg=90, pitch_deg=0, size=768, resolution="high")`,
   which samples the cube faces directly. The model id is `graph["matterport_model_id"]`.
-- **Node ids** in `match_photo` results must be the sweep ids in `graph.json`
-  (`kind == "pano"`). Doors, elevators and staging spots are nodes too but have no image.
-- **Per-node facts** go in `buildings/<id>/attributes.json`, then rebuild:
+- **Node ids.** The graphs use the sweep id alone. The tools also accept lane B's
+  `"<model id>/<sweep id>"` form and answer with the graph's form. Doors, elevators and
+  staging spots are nodes too but have no image.
+- **Per-node facts** go in `buildings/<id>/attributes.json`, then rebuild.
+  `python3 -m env.import_attributes <id>` writes that file from
+  `cache/attributes/<id>/_all.json`. The format, if you write it directly:
 
   ```json
   {"<node id>": {"room_label": "Exam room", "label": "the nurses' station",

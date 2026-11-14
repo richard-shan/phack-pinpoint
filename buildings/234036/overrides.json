@@ -10,19 +10,19 @@
   "bidr0pifgmstmxxxtzdpi1w8d": {
    "label": "the restroom alcove by Stair A",
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "note": "MEN door at heading 2, WOMEN door at heading 300, fire alarm pull station at heading 75 beside the Stair A door"
   },
   "hazt2anz9fryp7q7rfqqdhqsd": {
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "note": "fire alarm pull station just right of the Stair B door (heading 257); drinking fountains on the same wall at heading 217"
   },
   "nfayra9araxhd5wxg01a1sxqb": {
    "equipment": [
-    "extinguisher"
+    "fire_extinguisher"
    ],
    "note": "fire extinguisher in a wall cabinet at heading 0"
   },
@@ -53,7 +53,7 @@
    "label": "the passenger elevators",
    "confidence": 0.8,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "note": "Six passenger elevator doors, three on each side of the core lobby, each jamb marked 14; call buttons between the doors. The lobby itself is not walked by the scan: it is seen through the glass double doors at one end; a wood door at the other end opens to the corridor. The glass doors have a card reader on the lobby side, a PUSH TO OPEN DOOR button on the suite side and the lettering THIS DOOR TO REMAIN UNLOCKED WHEN BUILDING IS OCCUPIED. Fire alarm pull station on the lobby wall just inside the glass doors. Whether the cars take a stretcher is not known from the scan.",
    "approach": {

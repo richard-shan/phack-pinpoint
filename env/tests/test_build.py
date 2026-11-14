@@ -114,6 +114,29 @@ class Overrides(unittest.TestCase):
         hit = routing.find_equipment(Graph(g), "extinguisher", "lobby")[0]
         self.assertEqual((hit["node_id"], hit["evidence_path"]), ("lobby", "e.jpg"))
 
+    def test_lane_b_records_convert_to_node_patches(self):
+        from env.import_attributes import convert
+        g = dict(toy_graph(), matterport_model_id="MODEL")
+        records = {
+            "MODEL/lobby": {"room_type": "lobby", "furnished": True, "has_window": True, "floor_surface": "tile",
+                            "signage_text": ["LOBBY"], "door_count": 2, "stairs_visible": False,
+                            "elevator_visible": True, "landmark": "the marble reception desk", "confidence": "high",
+                            "equipment": [{"type": "aed", "view": "left", "note": "on the wall", "evidence_path": "c.jpg"}],
+                            "hazards": [{"type": "obstruction_in_path", "view": "ahead", "note": "planter", "evidence_path": "h.jpg"}]},
+            "OTHER/abc": {"room_type": "office"},
+            "MODEL/gone": {"room_type": "office"}}
+        patches, counts = convert(records, g)
+        self.assertEqual(counts, {"imported": 1, "other_scan": 1, "not_in_graph": 1})
+        self.assertEqual(patches["lobby"]["label"], "the marble reception desk")
+        self.assertEqual(patches["lobby"]["room_label"], "Lobby")
+        bg.apply_attributes(g["nodes"], patches)
+        graph = Graph(g)
+        from env import routing
+        self.assertEqual(routing.hazards_along(graph, ["lobby", "c1"])[0]["type"], "obstruction_in_path")
+        hit = routing.find_equipment(graph, "aed", "c1")[0]
+        self.assertEqual((hit["node_id"], hit["evidence_path"], hit["note"]), ("lobby", "c.jpg", "on the wall"))
+        self.assertEqual(graph.nodes["lobby"]["attributes"]["elevator_visible"], True)
+
     def test_unknown_ids_are_refused(self):
         with self.assertRaises(KeyError):
             bg.apply_overrides(toy_graph(), {"nodes": {"no_such_node": {"label": "x"}}})

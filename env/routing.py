@@ -317,9 +317,10 @@ def best_entry(g: Graph, target: str, profile: str = "foot", *, blocked=()) -> d
     path = _entry_path(g, best["entrance_id"], target, out_prev, inside_prev)
     out = summarize(g, path, profile)
     out["scanned_seconds"] = out["seconds"]      # the part of the time that is in the scan
+    runner_up = dict(ranked[1], delta_seconds=round(ranked[1]["seconds"] - best["seconds"], 1)) \
+        if len(ranked) > 1 else None
     out.update(best, reachable=True, target=target, profile=profile,
-               scope=g.data.get("scope"),
-               runner_up=ranked[1] if len(ranked) > 1 else None, ranked=ranked,
+               scope=g.data.get("scope"), runner_up=runner_up, ranked=ranked,
                unusable_entrances=sorted(n["id"] for n in g.entrances()
                                          if n["id"] not in {r["entrance_id"] for r in ranked}))
     front = next((r for r in ranked if g.nodes[r["entrance_id"]].get("primary")), None)
@@ -452,6 +453,9 @@ def best_entry_under_belief(g: Graph, candidates: list[dict], profile: str = "fo
         "spread_seconds": round(max(direct) - min(direct), 1),
         "value_of_information_seconds": round(voi, 1),
         "ask_another_question": voi > ROUTING["ask_threshold_s"],
+        "question_worth_asking": voi > ROUTING["ask_threshold_s"],       # the name lane C reads
+        "all_candidates_same_door": len({min(usable, key=lambda e: (total[e][c], e)) for c in nodes}) == 1,
+        "per_candidate_best_door": {c: min(usable, key=lambda e: (total[e][c], e)) for c in nodes},
         "top_guess": {"node_id": top, "entrance_id": top_door, "visit_order": top_order,
                       "expected_seconds": round(top_expected, 1),
                       "seconds_lost_vs_belief": round(top_expected - expected, 1)},
@@ -717,22 +721,40 @@ def _go_text(g: Graph, s: dict, first: bool, last: bool) -> str:
 
 
 # =============================================================== node lookups
+# Lane B's vocabulary is the canonical one; these are the other spellings in use.
+EQUIPMENT_ALIASES = {"extinguisher": "fire_extinguisher", "fire_alarm_pull": "fire_alarm_pull_station",
+                     "alarm_pull_station": "fire_alarm_pull_station", "pull_station": "fire_alarm_pull_station",
+                     "fire_alarm_panel": "alarm_panel"}
+
+
+def _equipment_name(name: str) -> str:
+    key = str(name).strip().lower().replace(" ", "_").replace("-", "_")
+    return EQUIPMENT_ALIASES.get(key, key)
+
+
 def find_equipment(g: Graph, kind: str, near_node: str, profile: str = "foot",
                    limit: int = 5) -> list[dict]:
     """Nodes whose `equipment` lists `kind` (for example "aed"), nearest by travel time."""
     _need(g, near_node)
     dist, prev = search(g, {near_node: 0.0}, profile, edge_filter=_filter_from(g, near_node))
-    want = kind.strip().lower()
+    want = _equipment_name(kind)
     hits = []
     for n in g.nodes.values():
-        for item in n.get("equipment") or []:
-            name = item if isinstance(item, str) else item.get("type", "")
-            if name.strip().lower() == want and n["id"] in dist:
-                s = summarize(g, _walk_back(prev, n["id"]), profile)
-                hits.append({"node_id": n["id"], "meters": s["meters"], "seconds": s["seconds"],
-                             "floor": n.get("floor"), "label": g.label(n["id"]),
-                             "evidence_path": (item.get("evidence_path") if isinstance(item, dict)
-                                               else None) or n.get("pano_path")})
+        if n["id"] not in dist:
+            continue
+        # One hit per node: the same item can be recorded twice (by hand as a bare name,
+        # by lane B with a crop). Prefer the record that carries evidence.
+        items = [i for i in n.get("equipment") or []
+                 if _equipment_name(i if isinstance(i, str) else i.get("type", "")) == want]
+        if not items:
+            continue
+        item = max(items, key=lambda i: isinstance(i, dict) and bool(i.get("evidence_path")))
+        s = summarize(g, _walk_back(prev, n["id"]), profile)
+        hits.append({"node_id": n["id"], "meters": s["meters"], "seconds": s["seconds"],
+                     "floor": n.get("floor"), "label": g.label(n["id"]),
+                     "note": item.get("note") if isinstance(item, dict) else None,
+                     "evidence_path": (item.get("evidence_path") if isinstance(item, dict)
+                                       else None) or n.get("pano_path")})
     return sorted(hits, key=lambda h_: h_["seconds"])[:limit]
 
 

@@ -3,7 +3,7 @@
  "matterport_model_id": "YJLLXyw1xbf",
  "name": "7900 Fannin St (medical office building), ground-floor lobby",
  "address": "7900 Fannin St, Houston, TX, 77054, US",
- "generated_at": "2026-11-14T14:47:17",
+ "generated_at": "2026-11-14T14:51:01",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -283,7 +283,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "kind": "pano",
    "label": null,
@@ -387,7 +387,7 @@
    },
    "is_entrance": false,
    "equipment": [
-    "fire_alarm_pull"
+    "fire_alarm_pull_station"
    ],
    "kind": "pano",
    "label": null,
