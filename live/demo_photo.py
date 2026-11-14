@@ -20,8 +20,11 @@ from env.graph import Graph
 
 
 def make(building_id: str, node_prefix: str, heading: float | None = None, pitch: float = -7.0,
-         fov: float = 68.0, out: str | None = None, seed: int = 7) -> tuple[Path, str, float]:
-    """-> (file, node id, heading)"""
+         fov: float = 68.0, out: str | None = None, seed: int = 7, hard: bool = False) -> tuple[Path, str, float]:
+    """-> (file, node id, heading). `hard` makes a photo like one taken in a hurry: zoomed
+    in, pointed at the floor, dark and blurred, so the match is less certain."""
+    if hard:
+        fov, pitch = min(fov, 46.0), min(pitch, -28.0)
     g = Graph.load(str(building_id))
     hits = [n for n in g.nodes if n.startswith(node_prefix) and g.kind(n) == "pano"]
     if len(hits) != 1:
@@ -37,10 +40,13 @@ def make(building_id: str, node_prefix: str, heading: float | None = None, pitch
     left = (w - crop_w) // 2 + rng.randint(-40, 40)
     img = img.crop((left, 0, left + crop_w, h)).rotate(rng.uniform(-3, 3), resample=Image.BICUBIC, expand=False)
     img = img.crop((30, 40, img.width - 30, img.height - 40))
-    img = ImageEnhance.Brightness(img).enhance(rng.uniform(0.85, 1.1)).filter(ImageFilter.GaussianBlur(0.8))
+    if hard:
+        img = ImageEnhance.Brightness(img).enhance(0.5).filter(ImageFilter.GaussianBlur(3.0))
+    else:
+        img = ImageEnhance.Brightness(img).enhance(rng.uniform(0.85, 1.1)).filter(ImageFilter.GaussianBlur(0.8))
     buf = io.BytesIO()
-    img.save(buf, "JPEG", quality=72)
-    path = Path(out) if out else Path("demo") / f"{building_id}_{node[:6]}_h{round(heading):03d}.jpg"
+    img.save(buf, "JPEG", quality=35 if hard else 72)
+    path = Path(out) if out else Path("demo") / f"{building_id}_{node[:6]}_h{round(heading):03d}{'_hard' if hard else ''}.jpg"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(buf.getvalue())
     return path, node, heading
@@ -54,6 +60,7 @@ if __name__ == "__main__":
     ap.add_argument("--pitch", type=float, default=-7.0)
     ap.add_argument("--fov", type=float, default=68.0)
     ap.add_argument("--out")
+    ap.add_argument("--hard", action="store_true", help="zoomed in, tilted down, dark and blurred")
     a = ap.parse_args()
-    path, node, heading = make(a.building_id, a.node, a.heading, a.pitch, a.fov, a.out)
+    path, node, heading = make(a.building_id, a.node, a.heading, a.pitch, a.fov, a.out, hard=a.hard)
     print(f"{path}  taken at {node}, heading {heading:.0f}")

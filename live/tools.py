@@ -31,6 +31,9 @@ from pinpoint.errors import EmptyCandidates, MatterportUnavailable, PropertyNotF
 # One incident at a time: what the tools need to know about the run in progress.
 SESSION: dict = {}
 
+# Where pictures for the console go. The console serves app/assets/, and assets/real/ is git-ignored.
+ASSETS = ROOT / "app" / "assets" / "real" / "live"
+
 NEAR_M = 12.0          # "can you see it from where you are": straight line, same floor
 
 QUESTIONS = {
@@ -174,6 +177,14 @@ def _simulated_candidates(building_id, truth, k):
     return out
 
 
+def publish(src: Path, name: str) -> str:
+    """Copy a picture to where the console serves it. -> the address the console uses"""
+    dest = ASSETS / SESSION["console_incident"] / name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(Path(src).read_bytes())
+    return f"/assets/real/live/{SESSION['console_incident']}/{name}"
+
+
 def _publish(path, rank):
     """A match-evidence image as a path relative to the repo. With a console attached, the
     best match is also copied to where the console can serve it (app/assets/real/ is
@@ -183,11 +194,8 @@ def _publish(path, rank):
     src = Path(path)
     cid = SESSION.get("console_incident")
     if rank == 0 and SESSION.get("console") and cid and src.is_file():
-        dest = ROOT / "app" / "assets" / "real" / "live" / cid / "match.jpg"
         try:
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_bytes(src.read_bytes())
-            return "/" + str(dest.relative_to(ROOT / "app"))
+            return publish(src, "match.jpg")
         except OSError:
             pass
     try:
@@ -316,12 +324,18 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     mode = SESSION.get("ask", "simulate")
     t0 = time.time()
     raw, reply, source = None, "(no answer)", "none"
-    if console and cid:
+    silent = SESSION.get("caller_silent") or mode == "none"
+    if console and cid and not silent:
         console.message(cid, "dispatcher", f"Pinpoint asks: {question}")
-    if mode == "console" and console and cid:
+    if silent:
+        source = "not asked: the caller did not answer the previous question" if SESSION.get("caller_silent") else "none"
+    elif mode == "console" and console and cid:
         got = console.wait_for_caller(cid, timeout_s=SESSION.get("ask_timeout_s", 90.0))
         if got:
             reply, raw, source = got, _parse_reply(attr, got, typed), "caller, typed in the console"
+        else:
+            SESSION["caller_silent"] = True          # do not keep the crew waiting on more questions
+            source = f"no reply within {round(SESSION.get('ask_timeout_s', 90.0))} s"
     elif mode == "simulate" and SESSION.get("truth_node"):
         raw = question_attributes(SESSION["building_id"], SESSION["truth_node"]).get(attr)
         if raw is not None:

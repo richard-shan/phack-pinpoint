@@ -42,6 +42,7 @@ class LivePacketWriter(PacketWriter):
         super().__init__(path, intake)
         self._pushed = None
         self._route_posted = None
+        self._route_image = None           # (target, where the picture is)
 
     # ------------------------------------------------------------ lookups
     def _g(self) -> Graph | None:
@@ -116,6 +117,8 @@ class LivePacketWriter(PacketWriter):
             asked = tools.SESSION.get("asked") or []
             if lo.get("questions_asked"):
                 for q in asked:
+                    if q["source"].startswith("not asked") or q["source"] == "none":
+                        continue
                     L += [f"- Asked: \"{q['question']}\" Answer: \"{q['reply']}\" ({q['source']}) "
                           "[src:location.question_log]"]
             elif lo.get("skip_reason"):
@@ -195,6 +198,8 @@ class LivePacketWriter(PacketWriter):
             if foot.get("outside_seconds") is not None:
                 total += f" ({_secs(foot.get('outside_seconds'))} outside, {_secs(foot.get('inside_seconds'))} inside)"
             L += [total + f", {round(foot.get('meters') or 0)} m [src:route.foot.seconds]"]
+            if self._route_image:
+                L += [f"- Route on the floor plan: `{self._route_image[1]}`"]
         else:
             L += ["- No route: the caller's position is not known."]
         L += [""]
@@ -313,7 +318,29 @@ class LivePacketWriter(PacketWriter):
         return out
 
     # ------------------------------------------------------------ console copy
+    def _draw_route(self):
+        """route.jpg in the incident folder: the route on the floor plan, with the caller's
+        photo. With a console attached it is also copied to where the console serves it."""
+        target = (self.location or {}).get("node_id")
+        foot = (self.route or {}).get("foot") or {}
+        if not target or not foot.get("path") or (self._route_image and self._route_image[0] == target):
+            return
+        try:
+            from . import route_image
+            out = route_image.for_incident(self.path.parent)
+            where = str(out)
+            try:
+                where = str(out.resolve().relative_to(tools.ROOT))
+            except ValueError:
+                pass
+            if tools.SESSION.get("console") and tools.SESSION.get("console_incident"):
+                where = tools.publish(out, "route.jpg")
+            self._route_image = (target, where)
+        except Exception as exc:                 # a picture is a convenience, never a reason to fail
+            trace.log("router", "route_image_failed", result_summary=str(exc)[:200], phase="render")
+
     def flush(self):
+        self._draw_route()
         super().flush()
         try:
             self._push()

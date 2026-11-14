@@ -29,13 +29,14 @@ TARGET = "9nydrbq3ga21s4wq6cdairckc"
 class _Base(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
-        self.old_incidents = orchestrator.INCIDENTS
+        self.old_incidents, self.old_assets = orchestrator.INCIDENTS, tools.ASSETS
         orchestrator.INCIDENTS = Path(self.tmp.name) / "incidents"
         orchestrator.INCIDENTS.mkdir()
+        tools.ASSETS = Path(self.tmp.name) / "assets"
 
     def tearDown(self):
         tools.uninstall()
-        orchestrator.INCIDENTS = self.old_incidents
+        orchestrator.INCIDENTS, tools.ASSETS = self.old_incidents, self.old_assets
         self.tmp.cleanup()
 
     def files(self, res):
@@ -65,6 +66,9 @@ class WithoutConsole(_Base):
         self.assertNotIn("ext_main", f["packet"])
         self.assertNotIn("Bayou", f["packet"])
         self.assertIn("supplied to this run, not matched from the photo", f["packet"])
+        picture = Path(res["dir"]) / "route.jpg"
+        self.assertTrue(picture.exists() and picture.stat().st_size > 20000)
+        self.assertIn("Route on the floor plan", f["packet"])
 
     def test_question_loop_uses_graph_attributes(self):
         res = run.run_incident(BUILDING, None, position=TARGET, auto_approve=True)
@@ -130,6 +134,7 @@ class WithConsole(_Base):
         self.assertTrue(inc["packetId"])
         self.assertIn("## Enter here", inc["packetMarkdown"])
         self.assertIn("packet lines trace to a source", inc["notes"])
+        self.assertIn(f"/assets/real/live/{inc['id']}/route.jpg", inc["packetMarkdown"])
         sr = inc["spatialRoute"]
         best = A.best_entry(BUILDING, TARGET, "foot")
         self.assertEqual((sr["status"], sr["updatedBy"], sr["entryId"]), ("ready", "agent", best["entrance_id"]))

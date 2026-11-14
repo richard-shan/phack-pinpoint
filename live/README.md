@@ -25,7 +25,9 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `setup.py` | Console data from what is in the repo: catalog, scan graphs, Matterport viewer. |
 | `serve.py` | Starts the console with the keys from `api.txt` (in memory only). |
 | `index.py` | Builds lane B's photo index for the scan a lane A graph covers. |
-| `demo_photo.py` | Renders a stand-in caller photo from a scanned position. |
+| `demo_photo.py` | Renders a stand-in caller photo from a scanned position (`--hard` for a dark, blurred, zoomed one). |
+| `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; `demo/route_*.jpg` are two examples. |
+| `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door. |
 
 Nothing in `agent/`, `perception/` or `env/` was changed to make this work. `app/` has
 three small changes so the 3D route view opens for any building that has a scan graph
@@ -74,11 +76,13 @@ Not connected yet:
    viewer key is tied to that name).
 2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
    caller said and attach `demo/6550930_gbqgw9_h095.jpg` (taken near the restrooms) or
-   `demo/6550930_3ymmrb_h020.jpg` (at the Suite 1200 door).
+   `demo/6550930_3ymmrb_h020.jpg` (at the Suite 1200 door). For a photo the matcher is
+   unsure about, so that the agent asks questions, use `demo/6550930_3ymmrb_h200_hard.jpg`.
 3. The watcher terminal prints that it is running the agent. In the console, the
    incident fills in: **Destination** and **Entry & route**, the route drawn on the
-   floor of the 3D scan from the door the agent chose, and under **Photo match
-   evidence** the caller's photo beside the matched view with the matched points joined.
+   floor of the 3D scan from the door the agent chose, **Route on the floor plan** (one
+   picture: staging spot, door, path, caller), and under **Photo match evidence** the
+   caller's photo beside the matched view with the matched points joined.
 4. If the match is ambiguous the agent's question appears in **Caller conversation**.
    Press **Open caller view** and answer it there; the agent updates its belief and
    continues. Without an answer it gives up waiting after 90 seconds and says so.
@@ -88,6 +92,23 @@ Not connected yet:
    finishing with that decision.
 
 The first photo in a session takes longer because the matcher's two models load.
+
+## Measured on 7900 Fannin St
+
+`.venv/bin/python -m live.evaluate 6550930 --n 14`, on a laptop CPU with no GPU:
+
+| | |
+|---|---|
+| Photos located at the exact scanned position | 14 of 14 |
+| Right door chosen | 14 of 14 |
+| Packet lines without a source | 0 |
+| Time per incident, photo to draft packet | about 32 s, nearly all of it photo matching |
+
+These photos are rendered from the scan on a scanned position, so the match is easier
+than it would be for a real phone photo; treat 14 of 14 as an upper bound. With a
+dark, blurred, zoomed photo (`demo/6550930_3ymmrb_h200_hard.jpg`) the matcher was 53%
+sure, the agent asked two questions, and it ended on the right position at 78%.
+Lane B reports about 2.5 s per photo on a laptop with a GPU.
 
 ## Options for `live.run`
 
