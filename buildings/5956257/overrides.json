@@ -1,0 +1,116 @@
+{
+ "name": "3160 Geneva St, ground-floor north wing",
+ "floor_offset": 0,
+ "scope": "Ground floor of the north wing only: one east-west line of scan positions about 80 m long with the entrance lobby in the middle. The floor is stripped to bare concrete (no partitions, ceilings or finishes), so there are no rooms to name. The rest of the building, the upper floors, the stairwells and the 4th Street side are not scanned. Three single glass doors on the north wall open onto the planted strip along Geneva St and are not marked, because their positions could only be estimated from across the floor.",
+ "add_nodes": [
+  {
+   "id": "door_north_main",
+   "near": "qzcixu92k3cub4tk44skis1dc",
+   "heading_deg": 262,
+   "distance_m": 2.0,
+   "edge_type": "door",
+   "is_entrance": true,
+   "primary": true,
+   "confirmed": true,
+   "confidence": 0.85,
+   "label": "the glass double doors on the Geneva St side",
+   "latlon": [34.0674983, -118.2864108],
+   "attributes": {
+    "door": "pair of glass doors in a dark metal frame with a transom; CAUTION AUTOMATIC DOOR stickers on both leaves; a brick walkway with a railed ramp runs from the doors toward Geneva St",
+    "signs": [
+     "All Deliveries Enter From 4th Street",
+     "ALL VISITORS PLEASE ENTER FROM 4th STREET PARKING STRUCTURE"
+    ],
+    "primary_reason": "this is the door on the street the address names. The signs on it send visitors and deliveries to the 4th Street side, which is not in the scan.",
+    "lock_state": "not known. The signs suggest this door was closed to the public when scanned.",
+    "distance_note": "distance estimated from the panorama; the scan has no wall plan"
+   },
+   "source": "hand: seen from the lobby sweep in front of the doors"
+  },
+  {
+   "id": "door_east_exit",
+   "near": "ykptrept21xegzr9ury27htyc",
+   "heading_deg": 180,
+   "distance_m": 2.5,
+   "edge_type": "door",
+   "is_entrance": true,
+   "confirmed": true,
+   "confidence": 0.7,
+   "label": "the east end exit doors",
+   "latlon": [34.0674503, -118.2859655],
+   "approach": {"locked_entry": true, "note": "inferred from the panic bars: an exit door of this kind is normally locked from outside"},
+   "attributes": {
+    "door": "pair of dark metal doors with glass panels, panic bars and closers; an EXIT sign above (unlit when scanned); a railed ramp or landing outside",
+    "distance_note": "distance estimated from the panorama; the scan has no wall plan"
+   },
+   "source": "hand: seen from the easternmost sweep"
+  },
+  {
+   "id": "door_south_court",
+   "near": "7di5m1gu0nxffwnwfc5hg38fc",
+   "heading_deg": 83,
+   "distance_m": 7.3,
+   "edge_type": "door",
+   "kind": "exterior_door",
+   "is_entrance": false,
+   "confirmed": false,
+   "confidence": 0.5,
+   "label": "the glass double doors to the south courtyard",
+   "attributes": {
+    "door": "pair of glass doors at the end of a short hall on the south side, with a drinking fountain beside them; a covered walkway is visible outside",
+    "why_not_an_entrance": "it opens onto what the aerial shows as an inner courtyard between two wings. Whether the courtyard connects to a street was not seen.",
+    "distance_note": "distance read off the floor plan image, not measured"
+   },
+   "source": "hand: seen down the hall from a corridor sweep about 7 m away"
+  },
+  {
+   "id": "elev_lobby",
+   "near": "5pbgr82wu6kmbhf85s02d5c6d",
+   "heading_deg": 96,
+   "distance_m": 8.0,
+   "kind": "elevator",
+   "is_entrance": false,
+   "confidence": 0.8,
+   "label": "the elevator in the lobby alcove (taped off)",
+   "attributes": {
+    "elevator": true,
+    "hazards": ["elevator doors taped off with caution tape: treat as out of service"],
+    "signs": ["Atrium / Atrio (above the wooden double doors to the right of the elevator)"],
+    "distance_note": "distance read off the floor plan image, not measured"
+   },
+   "source": "hand: seen from the south lobby sweep"
+  },
+  {
+   "id": "stage_geneva_curb",
+   "kind": "staging",
+   "floor": 0,
+   "confirmed": false,
+   "label": "the Geneva St curb in front of the main doors",
+   "latlon": [34.0677005, -118.2864032],
+   "xyz": [-0.9, -34.8, 0.0],
+   "attributes": {
+    "position_note": "south curb of Geneva St where the brick walkway meets the sidewalk, about 23 m north of the doors. Read off the aerial at the building's true position; xyz is set by hand from that distance because the scan georeference is about 25 m off."
+   },
+   "source": "hand: read off the aerial tile"
+  },
+  {
+   "id": "stage_east_curb",
+   "kind": "staging",
+   "floor": 0,
+   "confirmed": false,
+   "label": "the curb on the side street at the east end",
+   "latlon": [34.0674352, -118.2857932],
+   "xyz": [-58.1, -1.8, 0.0],
+   "attributes": {
+    "position_note": "west curb of the north-south street east of the building, about 16 m from the east exit doors. Read off the aerial; the street name was not confirmed."
+   },
+   "source": "hand: read off the aerial tile"
+  }
+ ],
+ "add_edges": [
+  {"a": "stage_geneva_curb", "b": "door_north_main", "type": "exterior_foot", "meters": 24.0,
+   "note": "along the brick walkway and ramp, measured on the aerial"},
+  {"a": "stage_east_curb", "b": "door_east_exit", "type": "exterior_foot", "meters": 16.0,
+   "note": "straight line on the aerial; the ramp outside the doors may add a few meters"}
+ ]
+}

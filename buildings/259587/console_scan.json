@@ -1,0 +1,4186 @@
+{
+ "modelId": "rDU2DaDBbyz",
+ "propertyId": "259587",
+ "name": "911 Broxton Ave (Broxton Plaza)",
+ "faceRoute": true,
+ "supportsOverview": true,
+ "georeference": {
+  "lat": 34.063404,
+  "long": -118.447304
+ },
+ "floors": [
+  {
+   "id": "0",
+   "sequence": 0,
+   "label": "Basement 2"
+  },
+  {
+   "id": "1",
+   "sequence": 1,
+   "label": "Basement 1"
+  },
+  {
+   "id": "2",
+   "sequence": 2,
+   "label": "Floor 1"
+  },
+  {
+   "id": "3",
+   "sequence": 3,
+   "label": "Floor 2"
+  },
+  {
+   "id": "4",
+   "sequence": 4,
+   "label": "Floor 3"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "cadkzuzsuk83uchpw8ex9q63d",
+   "index": 0,
+   "floor": 3,
+   "position": {
+    "x": 5.983,
+    "y": 0.02,
+    "z": -1.033
+   },
+   "label": "Scan 0 \u00b7 Floor 2"
+  },
+  {
+   "id": "et86995btkxsyhhh5rrd81tbd",
+   "index": 1,
+   "floor": 3,
+   "position": {
+    "x": 13.857,
+    "y": 0.018,
+    "z": 2.866
+   },
+   "label": "Scan 1 \u00b7 Floor 2"
+  },
+  {
+   "id": "fie41wuna0wmtd5tkmg0qc4pa",
+   "index": 2,
+   "floor": 2,
+   "position": {
+    "x": -11.357,
+    "y": -3.418,
+    "z": 13.068
+   },
+   "label": "Scan 2 \u00b7 Floor 1"
+  },
+  {
+   "id": "f2p4szqrxufrrkddqk983809a",
+   "index": 3,
+   "floor": 3,
+   "position": {
+    "x": 6.612,
+    "y": 0.03,
+    "z": -2.765
+   },
+   "label": "Scan 3 \u00b7 Floor 2"
+  },
+  {
+   "id": "paekbwtih0g12hgwswqrtpp7a",
+   "index": 4,
+   "floor": 2,
+   "position": {
+    "x": 2.266,
+    "y": -3.39,
+    "z": 10.823
+   },
+   "label": "Scan 4 \u00b7 Floor 1"
+  },
+  {
+   "id": "qawsi3gqt0c2bm30sn6s0kkca",
+   "index": 5,
+   "floor": 4,
+   "position": {
+    "x": 8.868,
+    "y": 3.434,
+    "z": 8.512
+   },
+   "label": "Scan 5 \u00b7 Floor 3"
+  },
+  {
+   "id": "t26fkszhrkbpu4bbaycb6g5tb",
+   "index": 6,
+   "floor": 3,
+   "position": {
+    "x": -9.021,
+    "y": -0.006,
+    "z": 0.508
+   },
+   "label": "Scan 6 \u00b7 Floor 2"
+  },
+  {
+   "id": "wa0gxbqif99xfhgf1g4disf5d",
+   "index": 7,
+   "floor": 3,
+   "position": {
+    "x": -6.427,
+    "y": 0.004,
+    "z": -0.701
+   },
+   "label": "Scan 7 \u00b7 Floor 2"
+  },
+  {
+   "id": "xti52y2iusp066re9y92rniyc",
+   "index": 8,
+   "floor": 4,
+   "position": {
+    "x": 14.377,
+    "y": 3.442,
+    "z": 1.875
+   },
+   "label": "Scan 8 \u00b7 Floor 3"
+  },
+  {
+   "id": "xif7dfwe5yhht551sggzg931a",
+   "index": 9,
+   "floor": 4,
+   "position": {
+    "x": -6.937,
+    "y": 3.441,
+    "z": 6.756
+   },
+   "label": "Scan 9 \u00b7 Floor 3"
+  },
+  {
+   "id": "x29a3bss47w3z3pznf8qemhka",
+   "index": 10,
+   "floor": 3,
+   "position": {
+    "x": 5.514,
+    "y": -0.017,
+    "z": 3.126
+   },
+   "label": "Scan 10 \u00b7 Floor 2"
+  },
+  {
+   "id": "027fz1guxfikfbm2zeh0zr9cc",
+   "index": 11,
+   "floor": 3,
+   "position": {
+    "x": -1.24,
+    "y": -0.0,
+    "z": 14.154
+   },
+   "label": "Scan 11 \u00b7 Floor 2"
+  },
+  {
+   "id": "0t15m4sznebtgw6xgygkumaya",
+   "index": 12,
+   "floor": 4,
+   "position": {
+    "x": 5.953,
+    "y": 3.529,
+    "z": -2.413
+   },
+   "label": "Scan 12 \u00b7 Floor 3"
+  },
+  {
+   "id": "2au0z0gennuwai7dm3p54s4pb",
+   "index": 13,
+   "floor": 1,
+   "position": {
+    "x": 3.588,
+    "y": -6.12,
+    "z": 10.681
+   },
+   "label": "Scan 13 \u00b7 Basement 1"
+  },
+  {
+   "id": "2irh24dtmu28dipuupzu5r11b",
+   "index": 14,
+   "floor": 2,
+   "position": {
+    "x": -3.395,
+    "y": -3.141,
+    "z": 9.087
+   },
+   "label": "Scan 14 \u00b7 Floor 1"
+  },
+  {
+   "id": "32aubch2yi6qt49w9bg117gbb",
+   "index": 15,
+   "floor": 1,
+   "position": {
+    "x": 5.92,
+    "y": -7.952,
+    "z": 12.901
+   },
+   "label": "Scan 15 \u00b7 Basement 1"
+  },
+  {
+   "id": "3224kwpf6hdxydw07707uwzbd",
+   "index": 16,
+   "floor": 2,
+   "position": {
+    "x": -8.249,
+    "y": -3.421,
+    "z": -1.452
+   },
+   "label": "Scan 16 \u00b7 Floor 1"
+  },
+  {
+   "id": "3ak5eppp4m0r9kk44ze91xz4c",
+   "index": 17,
+   "floor": 4,
+   "position": {
+    "x": 5.652,
+    "y": 3.436,
+    "z": 3.04
+   },
+   "label": "Scan 17 \u00b7 Floor 3"
+  },
+  {
+   "id": "32q0352k5busfgreyc495c7ib",
+   "index": 18,
+   "floor": 4,
+   "position": {
+    "x": 4.393,
+    "y": 3.449,
+    "z": 6.606
+   },
+   "label": "Scan 18 \u00b7 Floor 3"
+  },
+  {
+   "id": "62tdyc7ixkgu4zs8myxsw2nsb",
+   "index": 19,
+   "floor": 3,
+   "position": {
+    "x": -9.948,
+    "y": 0.02,
+    "z": 14.328
+   },
+   "label": "Scan 19 \u00b7 Floor 2"
+  },
+  {
+   "id": "72pwstp0qx7gt54hg1m784xad",
+   "index": 20,
+   "floor": 3,
+   "position": {
+    "x": -7.641,
+    "y": -0.005,
+    "z": 6.706
+   },
+   "label": "Scan 20 \u00b7 Floor 2"
+  },
+  {
+   "id": "8af63bzf0tqa3410uyanmresb",
+   "index": 21,
+   "floor": 3,
+   "position": {
+    "x": -1.26,
+    "y": -0.009,
+    "z": 6.776
+   },
+   "label": "Scan 21 \u00b7 Floor 2"
+  },
+  {
+   "id": "8i0079ts9h4wg7zyq9w5xh3nc",
+   "index": 22,
+   "floor": 2,
+   "position": {
+    "x": -1.541,
+    "y": -3.126,
+    "z": 8.764
+   },
+   "label": "Scan 22 \u00b7 Floor 1"
+  },
+  {
+   "id": "9trau4dr0weq8700biau0urkd",
+   "index": 23,
+   "floor": 3,
+   "position": {
+    "x": 9.812,
+    "y": -0.013,
+    "z": 1.429
+   },
+   "label": "Scan 23 \u00b7 Floor 2"
+  },
+  {
+   "id": "9tdtsgq5qs01zcdpz4x961zza",
+   "index": 24,
+   "floor": 4,
+   "position": {
+    "x": 0.69,
+    "y": 3.444,
+    "z": 14.406
+   },
+   "label": "Scan 24 \u00b7 Floor 3"
+  },
+  {
+   "id": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "index": 25,
+   "floor": 3,
+   "position": {
+    "x": -3.725,
+    "y": -0.01,
+    "z": 0.515
+   },
+   "label": "Scan 25 \u00b7 Floor 2"
+  },
+  {
+   "id": "fuyw19mk0kkbnsfbq3cwf06pd",
+   "index": 26,
+   "floor": 3,
+   "position": {
+    "x": -11.594,
+    "y": 0.012,
+    "z": 0.571
+   },
+   "label": "Scan 26 \u00b7 Floor 2"
+  },
+  {
+   "id": "gby2rbk7reiqmwi23t42n3f2b",
+   "index": 27,
+   "floor": 2,
+   "position": {
+    "x": -7.699,
+    "y": -2.428,
+    "z": 17.217
+   },
+   "label": "Scan 27 \u00b7 Floor 1"
+  },
+  {
+   "id": "gkfz3cdkuxg7s96sptwxbam2c",
+   "index": 28,
+   "floor": 2,
+   "position": {
+    "x": -4.376,
+    "y": -3.433,
+    "z": -0.853
+   },
+   "label": "Scan 28 \u00b7 Floor 1"
+  },
+  {
+   "id": "h3wcd67kpsf89g3s8atazp2ta",
+   "index": 29,
+   "floor": 3,
+   "position": {
+    "x": -0.206,
+    "y": -0.005,
+    "z": 16.274
+   },
+   "label": "Scan 29 \u00b7 Floor 2"
+  },
+  {
+   "id": "k3ynfd9capm727pdb9ukirr0a",
+   "index": 30,
+   "floor": 4,
+   "position": {
+    "x": -9.384,
+    "y": 3.436,
+    "z": 2.474
+   },
+   "label": "Scan 30 \u00b7 Floor 3"
+  },
+  {
+   "id": "k3xx77qeyew2f6221phr8g01d",
+   "index": 31,
+   "floor": 3,
+   "position": {
+    "x": 2.065,
+    "y": -0.013,
+    "z": 4.834
+   },
+   "label": "Scan 31 \u00b7 Floor 2"
+  },
+  {
+   "id": "nk75ahpq272d3wrcis1iyzcqa",
+   "index": 32,
+   "floor": 2,
+   "position": {
+    "x": -7.75,
+    "y": -2.799,
+    "z": 15.742
+   },
+   "label": "Scan 32 \u00b7 Floor 1"
+  },
+  {
+   "id": "pu0u7gaf44zt1xinknyaqyxfd",
+   "index": 33,
+   "floor": 3,
+   "position": {
+    "x": -2.873,
+    "y": -0.027,
+    "z": 2.886
+   },
+   "label": "Scan 33 \u00b7 Floor 2"
+  },
+  {
+   "id": "qk2cc5g0z5gwsrxiy6gmb7zzb",
+   "index": 34,
+   "floor": 4,
+   "position": {
+    "x": 6.646,
+    "y": 3.463,
+    "z": 10.764
+   },
+   "label": "Scan 34 \u00b7 Floor 3"
+  },
+  {
+   "id": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "index": 35,
+   "floor": 4,
+   "position": {
+    "x": -5.619,
+    "y": 3.445,
+    "z": 12.122
+   },
+   "label": "Scan 35 \u00b7 Floor 3"
+  },
+  {
+   "id": "w3g5q05m42pp9rgndxx45pcfd",
+   "index": 36,
+   "floor": 2,
+   "position": {
+    "x": -9.235,
+    "y": -3.418,
+    "z": 14.491
+   },
+   "label": "Scan 36 \u00b7 Floor 1"
+  },
+  {
+   "id": "xu6imzadx0isb1u4ipppxqcwd",
+   "index": 37,
+   "floor": 3,
+   "position": {
+    "x": 1.767,
+    "y": 0.036,
+    "z": 10.707
+   },
+   "label": "Scan 37 \u00b7 Floor 2"
+  },
+  {
+   "id": "xbs023caabui47dkwyyi3mtwd",
+   "index": 38,
+   "floor": 2,
+   "position": {
+    "x": 1.02,
+    "y": -3.458,
+    "z": 3.084
+   },
+   "label": "Scan 38 \u00b7 Floor 1"
+  },
+  {
+   "id": "330qbhnnycsma19p9i9m0g19a",
+   "index": 39,
+   "floor": 2,
+   "position": {
+    "x": 3.705,
+    "y": -4.353,
+    "z": 12.642
+   },
+   "label": "Scan 39 \u00b7 Floor 1"
+  },
+  {
+   "id": "633wgb7qa5qg1cm69f0aued4d",
+   "index": 40,
+   "floor": 3,
+   "position": {
+    "x": 12.083,
+    "y": -0.005,
+    "z": 4.974
+   },
+   "label": "Scan 40 \u00b7 Floor 2"
+  },
+  {
+   "id": "bwfm30ifizams62mw14tc2n3c",
+   "index": 41,
+   "floor": 2,
+   "position": {
+    "x": 14.991,
+    "y": -3.418,
+    "z": -3.377
+   },
+   "label": "Scan 41 \u00b7 Floor 1"
+  },
+  {
+   "id": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "index": 42,
+   "floor": 3,
+   "position": {
+    "x": -2.299,
+    "y": -0.027,
+    "z": 5.036
+   },
+   "label": "Scan 42 \u00b7 Floor 2"
+  },
+  {
+   "id": "em47t0qm21bzue7iratamf2kc",
+   "index": 43,
+   "floor": 3,
+   "position": {
+    "x": 8.467,
+    "y": 0.001,
+    "z": 14.865
+   },
+   "label": "Scan 43 \u00b7 Floor 2"
+  },
+  {
+   "id": "fciaf9h5updh855nm62zuf7hd",
+   "index": 44,
+   "floor": 4,
+   "position": {
+    "x": 6.908,
+    "y": 3.439,
+    "z": 6.602
+   },
+   "label": "Scan 44 \u00b7 Floor 3"
+  },
+  {
+   "id": "fwmkbxzbfa3s7qqr3emrwgafa",
+   "index": 45,
+   "floor": 4,
+   "position": {
+    "x": -9.145,
+    "y": 3.458,
+    "z": 6.626
+   },
+   "label": "Scan 45 \u00b7 Floor 3"
+  },
+  {
+   "id": "hmczznzyfm7fsriiiiudgup6c",
+   "index": 46,
+   "floor": 1,
+   "position": {
+    "x": 1.442,
+    "y": -6.386,
+    "z": 2.96
+   },
+   "label": "Scan 46 \u00b7 Basement 1"
+  },
+  {
+   "id": "hww3rhidc0sqfh8ccx53c40mb",
+   "index": 47,
+   "floor": 4,
+   "position": {
+    "x": 14.052,
+    "y": 3.443,
+    "z": 7.231
+   },
+   "label": "Scan 47 \u00b7 Floor 3"
+  },
+  {
+   "id": "iw2f5txbc5gg83c9nt3cseuyb",
+   "index": 48,
+   "floor": 2,
+   "position": {
+    "x": -7.762,
+    "y": -3.418,
+    "z": 13.417
+   },
+   "label": "Scan 48 \u00b7 Floor 1"
+  },
+  {
+   "id": "kmm0aqyhadb0y0wd3g3pqt5tc",
+   "index": 49,
+   "floor": 4,
+   "position": {
+    "x": 5.392,
+    "y": 3.436,
+    "z": -0.645
+   },
+   "label": "Scan 49 \u00b7 Floor 3"
+  },
+  {
+   "id": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "index": 50,
+   "floor": 4,
+   "position": {
+    "x": 9.878,
+    "y": 3.431,
+    "z": 11.678
+   },
+   "label": "Scan 50 \u00b7 Floor 3"
+  },
+  {
+   "id": "q4igftcg35q4hr0pyuzg9xsxa",
+   "index": 51,
+   "floor": 2,
+   "position": {
+    "x": 8.395,
+    "y": -3.445,
+    "z": 5.518
+   },
+   "label": "Scan 51 \u00b7 Floor 1"
+  },
+  {
+   "id": "swhp4meumwh2k2uec8w4e84ad",
+   "index": 52,
+   "floor": 3,
+   "position": {
+    "x": 7.535,
+    "y": 0.018,
+    "z": -1.708
+   },
+   "label": "Scan 52 \u00b7 Floor 2"
+  },
+  {
+   "id": "uwtehh87tkd0ms6rnfqtkdqea",
+   "index": 53,
+   "floor": 4,
+   "position": {
+    "x": 6.656,
+    "y": 3.445,
+    "z": 9.217
+   },
+   "label": "Scan 53 \u00b7 Floor 3"
+  },
+  {
+   "id": "uc31hssiun7h39n2d7yf8e6nd",
+   "index": 54,
+   "floor": 2,
+   "position": {
+    "x": 7.435,
+    "y": -3.432,
+    "z": -2.453
+   },
+   "label": "Scan 54 \u00b7 Floor 1"
+  },
+  {
+   "id": "ywpsigi8ngmkt221m1h2rne1d",
+   "index": 55,
+   "floor": 1,
+   "position": {
+    "x": 5.665,
+    "y": -6.174,
+    "z": 10.734
+   },
+   "label": "Scan 55 \u00b7 Basement 1"
+  },
+  {
+   "id": "1myf8k2dk7msczum3k4dypbrc",
+   "index": 56,
+   "floor": 4,
+   "position": {
+    "x": 15.308,
+    "y": 3.453,
+    "z": 16.062
+   },
+   "label": "Scan 56 \u00b7 Floor 3"
+  },
+  {
+   "id": "342n912ymk4epm2g8pw516t1c",
+   "index": 57,
+   "floor": 4,
+   "position": {
+    "x": -6.856,
+    "y": 3.423,
+    "z": 2.434
+   },
+   "label": "Scan 57 \u00b7 Floor 3"
+  },
+  {
+   "id": "4mbg69t6zhnx235m6iimqwbdc",
+   "index": 58,
+   "floor": 2,
+   "position": {
+    "x": 6.549,
+    "y": -2.228,
+    "z": 12.042
+   },
+   "label": "Scan 58 \u00b7 Floor 1"
+  },
+  {
+   "id": "5whnzzx4an1crx5x0sum1m39d",
+   "index": 59,
+   "floor": 4,
+   "position": {
+    "x": 14.775,
+    "y": 3.443,
+    "z": -0.62
+   },
+   "label": "Scan 59 \u00b7 Floor 3"
+  },
+  {
+   "id": "6my6i0d5t65a5tcixqrr40e6b",
+   "index": 60,
+   "floor": 4,
+   "position": {
+    "x": -6.348,
+    "y": 3.447,
+    "z": 14.483
+   },
+   "label": "Scan 60 \u00b7 Floor 3"
+  },
+  {
+   "id": "9w5fpk5s966pf66yetfe3x4xc",
+   "index": 61,
+   "floor": 3,
+   "position": {
+    "x": 6.684,
+    "y": -0.02,
+    "z": 3.146
+   },
+   "label": "Scan 61 \u00b7 Floor 2"
+  },
+  {
+   "id": "gxi4xuyzuh8hwhhhmuuzr802a",
+   "index": 62,
+   "floor": 4,
+   "position": {
+    "x": -4.623,
+    "y": 3.45,
+    "z": 14.49
+   },
+   "label": "Scan 62 \u00b7 Floor 3"
+  },
+  {
+   "id": "hn7yeicz6zcraz5cinkuz7n8b",
+   "index": 63,
+   "floor": 1,
+   "position": {
+    "x": 8.51,
+    "y": -6.402,
+    "z": 15.621
+   },
+   "label": "Scan 63 \u00b7 Basement 1"
+  },
+  {
+   "id": "rdq4hxe5yfpqmex08bkfmxi8a",
+   "index": 64,
+   "floor": 3,
+   "position": {
+    "x": 9.807,
+    "y": -0.0,
+    "z": -3.053
+   },
+   "label": "Scan 64 \u00b7 Floor 2"
+  },
+  {
+   "id": "rn8ra1pm3mu4918qtczkua4hb",
+   "index": 65,
+   "floor": 4,
+   "position": {
+    "x": -4.231,
+    "y": 3.419,
+    "z": 6.204
+   },
+   "label": "Scan 65 \u00b7 Floor 3"
+  },
+  {
+   "id": "r5ctnskbfp62fttnwypr7yqqb",
+   "index": 66,
+   "floor": 2,
+   "position": {
+    "x": -6.793,
+    "y": -3.406,
+    "z": -3.483
+   },
+   "label": "Scan 66 \u00b7 Floor 1"
+  },
+  {
+   "id": "snacttsipceqsdc14r87pt70a",
+   "index": 67,
+   "floor": 2,
+   "position": {
+    "x": 5.345,
+    "y": -5.258,
+    "z": 12.785
+   },
+   "label": "Scan 67 \u00b7 Floor 1"
+  },
+  {
+   "id": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "index": 68,
+   "floor": 2,
+   "position": {
+    "x": 3.468,
+    "y": -3.394,
+    "z": 10.828
+   },
+   "label": "Scan 68 \u00b7 Floor 1"
+  },
+  {
+   "id": "u5dbkwqf69n9shk2f7qn9e66b",
+   "index": 69,
+   "floor": 4,
+   "position": {
+    "x": 9.515,
+    "y": 3.427,
+    "z": 4.535
+   },
+   "label": "Scan 69 \u00b7 Floor 3"
+  },
+  {
+   "id": "wd5u9gxezqzhx83mmw4f87bdc",
+   "index": 70,
+   "floor": 2,
+   "position": {
+    "x": -6.158,
+    "y": -3.436,
+    "z": -0.07
+   },
+   "label": "Scan 70 \u00b7 Floor 1"
+  },
+  {
+   "id": "x5bksrgdxudq96y0cbga96r6c",
+   "index": 71,
+   "floor": 1,
+   "position": {
+    "x": 1.87,
+    "y": -6.01,
+    "z": 8.339
+   },
+   "label": "Scan 71 \u00b7 Basement 1"
+  },
+  {
+   "id": "xnw3g7eqskindw3sqfzskry5c",
+   "index": 72,
+   "floor": 2,
+   "position": {
+    "x": -9.159,
+    "y": -3.419,
+    "z": 13.261
+   },
+   "label": "Scan 72 \u00b7 Floor 1"
+  },
+  {
+   "id": "zny093ehg3cf6ndz5bh4dckgb",
+   "index": 73,
+   "floor": 3,
+   "position": {
+    "x": -7.11,
+    "y": -0.004,
+    "z": 1.348
+   },
+   "label": "Scan 73 \u00b7 Floor 2"
+  },
+  {
+   "id": "z5f85173g4a4fssze4bx2fq7b",
+   "index": 74,
+   "floor": 2,
+   "position": {
+    "x": -4.38,
+    "y": -3.445,
+    "z": 0.625
+   },
+   "label": "Scan 74 \u00b7 Floor 1"
+  },
+  {
+   "id": "1x61a1kh6imed7w8ka9k172kb",
+   "index": 75,
+   "floor": 1,
+   "position": {
+    "x": 11.279,
+    "y": -6.299,
+    "z": 10.667
+   },
+   "label": "Scan 75 \u00b7 Basement 1"
+  },
+  {
+   "id": "1ddmbnnxwz5qezn2y4k2dtama",
+   "index": 76,
+   "floor": 3,
+   "position": {
+    "x": 6.339,
+    "y": 0.009,
+    "z": 14.277
+   },
+   "label": "Scan 76 \u00b7 Floor 2"
+  },
+  {
+   "id": "252gr0aixzzbe01qydue67m5b",
+   "index": 77,
+   "floor": 4,
+   "position": {
+    "x": 14.158,
+    "y": 3.446,
+    "z": 10.988
+   },
+   "label": "Scan 77 \u00b7 Floor 3"
+  },
+  {
+   "id": "4d9asfdtpb3bfz5bmfee22hqd",
+   "index": 78,
+   "floor": 2,
+   "position": {
+    "x": -5.495,
+    "y": -2.785,
+    "z": 15.881
+   },
+   "label": "Scan 78 \u00b7 Floor 1"
+  },
+  {
+   "id": "5nys95m485zxqhmzbyy6700na",
+   "index": 79,
+   "floor": 2,
+   "position": {
+    "x": 10.625,
+    "y": -3.427,
+    "z": -2.567
+   },
+   "label": "Scan 79 \u00b7 Floor 1"
+  },
+  {
+   "id": "6nw9qay3063u2wh71b11gea4d",
+   "index": 80,
+   "floor": 3,
+   "position": {
+    "x": 14.462,
+    "y": 0.041,
+    "z": -2.545
+   },
+   "label": "Scan 80 \u00b7 Floor 2"
+  },
+  {
+   "id": "7dw6f5wgm66h27197esh4sgnc",
+   "index": 81,
+   "floor": 2,
+   "position": {
+    "x": -2.953,
+    "y": -2.775,
+    "z": 11.748
+   },
+   "label": "Scan 81 \u00b7 Floor 1"
+  },
+  {
+   "id": "ayasysutdw6yy1uqyfm1whdib",
+   "index": 82,
+   "floor": 4,
+   "position": {
+    "x": 15.478,
+    "y": 3.452,
+    "z": 13.919
+   },
+   "label": "Scan 82 \u00b7 Floor 3"
+  },
+  {
+   "id": "a6a5u1nnzg99bef8p9c0s10pa",
+   "index": 83,
+   "floor": 4,
+   "position": {
+    "x": 12.06,
+    "y": 3.439,
+    "z": 14.1
+   },
+   "label": "Scan 83 \u00b7 Floor 3"
+  },
+  {
+   "id": "ayugrgbz7hh2h2nkdiqud6apd",
+   "index": 84,
+   "floor": 2,
+   "position": {
+    "x": 0.087,
+    "y": -3.4,
+    "z": 0.054
+   },
+   "label": "Scan 84 \u00b7 Floor 1"
+  },
+  {
+   "id": "aewkibq8d3nf32wdpah5n5mha",
+   "index": 85,
+   "floor": 3,
+   "position": {
+    "x": 1.811,
+    "y": 0.015,
+    "z": 8.291
+   },
+   "label": "Scan 85 \u00b7 Floor 2"
+  },
+  {
+   "id": "be02mr0259kwdcy91m7d7r01d",
+   "index": 86,
+   "floor": 2,
+   "position": {
+    "x": 6.528,
+    "y": -3.389,
+    "z": 9.961
+   },
+   "label": "Scan 86 \u00b7 Floor 1"
+  },
+  {
+   "id": "c6p689bsptaen1yfq6uk98qwa",
+   "index": 87,
+   "floor": 4,
+   "position": {
+    "x": 3.528,
+    "y": 3.451,
+    "z": 10.911
+   },
+   "label": "Scan 87 \u00b7 Floor 3"
+  },
+  {
+   "id": "cy9hnqnn97bmi7n4xrpnehtna",
+   "index": 88,
+   "floor": 4,
+   "position": {
+    "x": 1.44,
+    "y": 3.436,
+    "z": 8.429
+   },
+   "label": "Scan 88 \u00b7 Floor 3"
+  },
+  {
+   "id": "dpytmxqdffm4e1ezwtauzyzub",
+   "index": 89,
+   "floor": 3,
+   "position": {
+    "x": -3.228,
+    "y": -0.02,
+    "z": 6.522
+   },
+   "label": "Scan 89 \u00b7 Floor 2"
+  },
+  {
+   "id": "e60zfswc7n6393q2ig85ain6a",
+   "index": 90,
+   "floor": 3,
+   "position": {
+    "x": 6.437,
+    "y": 0.974,
+    "z": 12.721
+   },
+   "label": "Scan 90 \u00b7 Floor 2"
+  },
+  {
+   "id": "fe76qpxpiegrybys3kn55tkua",
+   "index": 91,
+   "floor": 4,
+   "position": {
+    "x": -5.246,
+    "y": 3.43,
+    "z": 8.06
+   },
+   "label": "Scan 91 \u00b7 Floor 3"
+  },
+  {
+   "id": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "index": 92,
+   "floor": 2,
+   "position": {
+    "x": 1.667,
+    "y": -3.395,
+    "z": 8.34
+   },
+   "label": "Scan 92 \u00b7 Floor 1"
+  },
+  {
+   "id": "k67s8fpgrq7s9g0c2hgqz46wd",
+   "index": 93,
+   "floor": 3,
+   "position": {
+    "x": 0.571,
+    "y": -0.023,
+    "z": 3.934
+   },
+   "label": "Scan 93 \u00b7 Floor 2"
+  },
+  {
+   "id": "ke416demnitgpbxtx0g4i6u2d",
+   "index": 94,
+   "floor": 3,
+   "position": {
+    "x": -7.811,
+    "y": 0.006,
+    "z": 11.277
+   },
+   "label": "Scan 94 \u00b7 Floor 2"
+  },
+  {
+   "id": "kywfapwdy3nqq1peswir25y5d",
+   "index": 95,
+   "floor": 3,
+   "position": {
+    "x": 7.866,
+    "y": 0.006,
+    "z": 6.197
+   },
+   "label": "Scan 95 \u00b7 Floor 2"
+  },
+  {
+   "id": "pyzdpqq8u69ufi45ii9appafb",
+   "index": 96,
+   "floor": 2,
+   "position": {
+    "x": 5.439,
+    "y": -3.434,
+    "z": -1.083
+   },
+   "label": "Scan 96 \u00b7 Floor 1"
+  },
+  {
+   "id": "pp4mmps8m8s9binh4pac4nzhb",
+   "index": 97,
+   "floor": 1,
+   "position": {
+    "x": 3.456,
+    "y": -7.03,
+    "z": 12.676
+   },
+   "label": "Scan 97 \u00b7 Basement 1"
+  },
+  {
+   "id": "rekspzpzdhek17ykfrzbipf6c",
+   "index": 98,
+   "floor": 2,
+   "position": {
+    "x": -9.474,
+    "y": -3.433,
+    "z": 0.325
+   },
+   "label": "Scan 98 \u00b7 Floor 1"
+  },
+  {
+   "id": "spupkxyrtyzi9iag4get9em7d",
+   "index": 99,
+   "floor": 3,
+   "position": {
+    "x": 3.76,
+    "y": 2.506,
+    "z": 12.691
+   },
+   "label": "Scan 99 \u00b7 Floor 2"
+  },
+  {
+   "id": "t60iqstkrxk39qnpm2u4bn48b",
+   "index": 100,
+   "floor": 2,
+   "position": {
+    "x": 7.599,
+    "y": -3.435,
+    "z": -1.013
+   },
+   "label": "Scan 100 \u00b7 Floor 1"
+  },
+  {
+   "id": "upipmfak3in1uapfb13zg0ana",
+   "index": 101,
+   "floor": 2,
+   "position": {
+    "x": -5.894,
+    "y": -3.461,
+    "z": 3.849
+   },
+   "label": "Scan 101 \u00b7 Floor 1"
+  },
+  {
+   "id": "up21rph0yps14sfpte1azbqzc",
+   "index": 102,
+   "floor": 3,
+   "position": {
+    "x": -10.317,
+    "y": 0.013,
+    "z": 10.971
+   },
+   "label": "Scan 102 \u00b7 Floor 2"
+  },
+  {
+   "id": "u67adapxtwzd2u75cdkke10db",
+   "index": 103,
+   "floor": 3,
+   "position": {
+    "x": 7.653,
+    "y": -0.02,
+    "z": 4.226
+   },
+   "label": "Scan 103 \u00b7 Floor 2"
+  },
+  {
+   "id": "wpr21utmpiztt5zwqpqfsyeub",
+   "index": 104,
+   "floor": 3,
+   "position": {
+    "x": 4.527,
+    "y": 0.006,
+    "z": 14.362
+   },
+   "label": "Scan 104 \u00b7 Floor 2"
+  },
+  {
+   "id": "y62t6tcpyaarduzn0p3q0pwka",
+   "index": 105,
+   "floor": 4,
+   "position": {
+    "x": 6.944,
+    "y": 3.432,
+    "z": 3.373
+   },
+   "label": "Scan 105 \u00b7 Floor 3"
+  },
+  {
+   "id": "zyapugz9zbagxn7m1yc9b0rgb",
+   "index": 106,
+   "floor": 3,
+   "position": {
+    "x": 10.006,
+    "y": -0.003,
+    "z": -1.559
+   },
+   "label": "Scan 106 \u00b7 Floor 2"
+  },
+  {
+   "id": "z688imtexpf03182sx3msxrsc",
+   "index": 107,
+   "floor": 4,
+   "position": {
+    "x": 13.756,
+    "y": 3.44,
+    "z": 3.745
+   },
+   "label": "Scan 107 \u00b7 Floor 3"
+  },
+  {
+   "id": "0e7qyi4xbs0e5bk8bw473nr0c",
+   "index": 108,
+   "floor": 3,
+   "position": {
+    "x": 1.632,
+    "y": 0.047,
+    "z": 12.843
+   },
+   "label": "Scan 108 \u00b7 Floor 2"
+  },
+  {
+   "id": "06bex1ru4dzmay2tr01ss5e5a",
+   "index": 109,
+   "floor": 3,
+   "position": {
+    "x": -4.46,
+    "y": 0.003,
+    "z": 14.159
+   },
+   "label": "Scan 109 \u00b7 Floor 2"
+  },
+  {
+   "id": "3pfth34xcbzmdr7a3szmqe35c",
+   "index": 110,
+   "floor": 3,
+   "position": {
+    "x": 4.749,
+    "y": -0.009,
+    "z": 4.767
+   },
+   "label": "Scan 110 \u00b7 Floor 2"
+  },
+  {
+   "id": "36w2zndh3891i4u29m0ui2dic",
+   "index": 111,
+   "floor": 2,
+   "position": {
+    "x": -7.644,
+    "y": -3.418,
+    "z": 8.89
+   },
+   "label": "Scan 111 \u00b7 Floor 1"
+  },
+  {
+   "id": "461f70ix2pa86cgqetchqri5d",
+   "index": 112,
+   "floor": 3,
+   "position": {
+    "x": -5.849,
+    "y": -0.018,
+    "z": 3.074
+   },
+   "label": "Scan 112 \u00b7 Floor 2"
+  },
+  {
+   "id": "6y3y27mwu2qzn5xd03gnuw2ec",
+   "index": 113,
+   "floor": 1,
+   "position": {
+    "x": 2.262,
+    "y": -6.084,
+    "z": 10.767
+   },
+   "label": "Scan 113 \u00b7 Basement 1"
+  },
+  {
+   "id": "6p0ig4eyixab9087yh6856i2a",
+   "index": 114,
+   "floor": 4,
+   "position": {
+    "x": 10.278,
+    "y": 3.502,
+    "z": -3.246
+   },
+   "label": "Scan 114 \u00b7 Floor 3"
+  },
+  {
+   "id": "9eea9fwxbbm5gsw85r7p51dqa",
+   "index": 115,
+   "floor": 4,
+   "position": {
+    "x": -7.756,
+    "y": 3.43,
+    "z": 0.645
+   },
+   "label": "Scan 115 \u00b7 Floor 3"
+  },
+  {
+   "id": "9pe1gn0c53dhkz8q9yubzyffb",
+   "index": 116,
+   "floor": 4,
+   "position": {
+    "x": 9.304,
+    "y": 3.428,
+    "z": 6.508
+   },
+   "label": "Scan 116 \u00b7 Floor 3"
+  },
+  {
+   "id": "a7dnxp1c2x27s96etk6akgdrb",
+   "index": 117,
+   "floor": 2,
+   "position": {
+    "x": 4.431,
+    "y": -3.446,
+    "z": 4.833
+   },
+   "label": "Scan 117 \u00b7 Floor 1"
+  },
+  {
+   "id": "bzty56qe45068is5swu1xdznb",
+   "index": 118,
+   "floor": 2,
+   "position": {
+    "x": -6.391,
+    "y": -1.869,
+    "z": 17.208
+   },
+   "label": "Scan 118 \u00b7 Floor 1"
+  },
+  {
+   "id": "bqwcxryuzxr3ai5ct4mg4e07d",
+   "index": 119,
+   "floor": 3,
+   "position": {
+    "x": -7.743,
+    "y": 0.012,
+    "z": 14.065
+   },
+   "label": "Scan 119 \u00b7 Floor 2"
+  },
+  {
+   "id": "c78wykhgct8h70sbmq9xbp6rd",
+   "index": 120,
+   "floor": 2,
+   "position": {
+    "x": -7.765,
+    "y": -3.444,
+    "z": 4.94
+   },
+   "label": "Scan 120 \u00b7 Floor 1"
+  },
+  {
+   "id": "e7q3w1qmuag72b5tgc4fd2yxa",
+   "index": 121,
+   "floor": 3,
+   "position": {
+    "x": -6.32,
+    "y": 0.018,
+    "z": -3.518
+   },
+   "label": "Scan 121 \u00b7 Floor 2"
+  },
+  {
+   "id": "ff8sce16qmmm6t3qd4w9msrzb",
+   "index": 122,
+   "floor": 3,
+   "position": {
+    "x": 12.36,
+    "y": -0.01,
+    "z": 7.158
+   },
+   "label": "Scan 122 \u00b7 Floor 2"
+  },
+  {
+   "id": "fqryiembct5kz7p1u2nxaw04d",
+   "index": 123,
+   "floor": 3,
+   "position": {
+    "x": -0.753,
+    "y": -0.017,
+    "z": 11.2
+   },
+   "label": "Scan 123 \u00b7 Floor 2"
+  },
+  {
+   "id": "hq5t04a7xd7hga4amh8qxnyuc",
+   "index": 124,
+   "floor": 2,
+   "position": {
+    "x": 3.693,
+    "y": -0.92,
+    "z": 12.832
+   },
+   "label": "Scan 124 \u00b7 Floor 1"
+  },
+  {
+   "id": "kffi8szeayinc92hwe74ncwsd",
+   "index": 125,
+   "floor": 4,
+   "position": {
+    "x": 8.744,
+    "y": 3.426,
+    "z": 15.973
+   },
+   "label": "Scan 125 \u00b7 Floor 3"
+  },
+  {
+   "id": "nfpzw5i6whirrnyxyqp9mcwwc",
+   "index": 126,
+   "floor": 3,
+   "position": {
+    "x": 13.948,
+    "y": 0.024,
+    "z": 1.1
+   },
+   "label": "Scan 126 \u00b7 Floor 2"
+  },
+  {
+   "id": "pfh3miwnda0ticfgh9ea0qypd",
+   "index": 127,
+   "floor": 3,
+   "position": {
+    "x": 4.363,
+    "y": -0.003,
+    "z": 16.0
+   },
+   "label": "Scan 127 \u00b7 Floor 2"
+  },
+  {
+   "id": "q72usma2k2zscrf46pdcnkkzc",
+   "index": 128,
+   "floor": 3,
+   "position": {
+    "x": 6.586,
+    "y": 0.045,
+    "z": 10.909
+   },
+   "label": "Scan 128 \u00b7 Floor 2"
+  },
+  {
+   "id": "qfkgfd75yk07kpq0u0i5diptb",
+   "index": 129,
+   "floor": 4,
+   "position": {
+    "x": 1.792,
+    "y": 3.437,
+    "z": 6.722
+   },
+   "label": "Scan 129 \u00b7 Floor 3"
+  },
+  {
+   "id": "rfr0n2f7seu6uqff8u1ck82pc",
+   "index": 130,
+   "floor": 4,
+   "position": {
+    "x": 12.349,
+    "y": 3.43,
+    "z": 15.753
+   },
+   "label": "Scan 130 \u00b7 Floor 3"
+  },
+  {
+   "id": "sfczham02auzsxqut7sc6e7ud",
+   "index": 131,
+   "floor": 4,
+   "position": {
+    "x": -3.98,
+    "y": 3.403,
+    "z": 3.961
+   },
+   "label": "Scan 131 \u00b7 Floor 3"
+  },
+  {
+   "id": "xz8cwpstfafda18wk7h4spk3d",
+   "index": 132,
+   "floor": 2,
+   "position": {
+    "x": 1.935,
+    "y": -3.441,
+    "z": 4.716
+   },
+   "label": "Scan 132 \u00b7 Floor 1"
+  },
+  {
+   "id": "z7y878sep27ni5gix03r7h61d",
+   "index": 133,
+   "floor": 4,
+   "position": {
+    "x": 7.189,
+    "y": 3.426,
+    "z": 1.165
+   },
+   "label": "Scan 133 \u00b7 Floor 3"
+  },
+  {
+   "id": "zzgsr9rteeu8wssmzr1g0dx8c",
+   "index": 134,
+   "floor": 3,
+   "position": {
+    "x": 12.488,
+    "y": 0.022,
+    "z": -2.174
+   },
+   "label": "Scan 134 \u00b7 Floor 2"
+  },
+  {
+   "id": "0qu49ziy9nekdugqcuuynqw7d",
+   "index": 135,
+   "floor": 3,
+   "position": {
+    "x": -5.367,
+    "y": -0.002,
+    "z": 11.199
+   },
+   "label": "Scan 135 \u00b7 Floor 2"
+  },
+  {
+   "id": "0qf7c10my2ekxxs06p4cg8gyc",
+   "index": 136,
+   "floor": 1,
+   "position": {
+    "x": 9.119,
+    "y": -6.322,
+    "z": 2.889
+   },
+   "label": "Scan 136 \u00b7 Basement 1"
+  },
+  {
+   "id": "0zxzn4xrt49znq6f1d2n6i0rd",
+   "index": 137,
+   "floor": 1,
+   "position": {
+    "x": -4.432,
+    "y": -5.698,
+    "z": 15.418
+   },
+   "label": "Scan 137 \u00b7 Basement 1"
+  },
+  {
+   "id": "1qekf399114ut72hg17gp21hd",
+   "index": 138,
+   "floor": 2,
+   "position": {
+    "x": -7.827,
+    "y": -3.42,
+    "z": 11.081
+   },
+   "label": "Scan 138 \u00b7 Floor 1"
+  },
+  {
+   "id": "1q0rbpsdx3rekwx5mgz4a957a",
+   "index": 139,
+   "floor": 2,
+   "position": {
+    "x": 13.912,
+    "y": -3.426,
+    "z": -1.005
+   },
+   "label": "Scan 139 \u00b7 Floor 1"
+  },
+  {
+   "id": "27kuwkfgkf8it4r42sx4t0qhd",
+   "index": 140,
+   "floor": 3,
+   "position": {
+    "x": -7.913,
+    "y": -0.016,
+    "z": -0.655
+   },
+   "label": "Scan 140 \u00b7 Floor 2"
+  },
+  {
+   "id": "2z0bfugih2rmn0dhei3n9hu9d",
+   "index": 141,
+   "floor": 4,
+   "position": {
+    "x": 14.727,
+    "y": 3.525,
+    "z": -1.939
+   },
+   "label": "Scan 141 \u00b7 Floor 3"
+  },
+  {
+   "id": "4f3c82wi41h08xkcwd61ygcwa",
+   "index": 142,
+   "floor": 4,
+   "position": {
+    "x": -8.853,
+    "y": 3.439,
+    "z": 11.982
+   },
+   "label": "Scan 142 \u00b7 Floor 3"
+  },
+  {
+   "id": "5fszt1q9xz37zz5q44rd2qazc",
+   "index": 143,
+   "floor": 4,
+   "position": {
+    "x": -0.796,
+    "y": 3.482,
+    "z": 14.346
+   },
+   "label": "Scan 143 \u00b7 Floor 3"
+  },
+  {
+   "id": "6f259wu6cm2r84emzmxfqkzpd",
+   "index": 144,
+   "floor": 2,
+   "position": {
+    "x": 5.927,
+    "y": -2.201,
+    "z": 12.874
+   },
+   "label": "Scan 144 \u00b7 Floor 1"
+  },
+  {
+   "id": "9qpc0s48qk05zf5ru5m42c3yc",
+   "index": 145,
+   "floor": 2,
+   "position": {
+    "x": 3.932,
+    "y": -3.435,
+    "z": -0.755
+   },
+   "label": "Scan 145 \u00b7 Floor 1"
+  },
+  {
+   "id": "bgg14c5c58zc0diudhn4486td",
+   "index": 146,
+   "floor": 2,
+   "position": {
+    "x": 11.624,
+    "y": -3.43,
+    "z": -0.93
+   },
+   "label": "Scan 146 \u00b7 Floor 1"
+  },
+  {
+   "id": "d0r40dqrx7wtzttdwhpz3bgsb",
+   "index": 147,
+   "floor": 4,
+   "position": {
+    "x": 13.085,
+    "y": 3.437,
+    "z": 1.791
+   },
+   "label": "Scan 147 \u00b7 Floor 3"
+  },
+  {
+   "id": "e0fwgzcy8a7b6qnwy5x34bmdd",
+   "index": 148,
+   "floor": 4,
+   "position": {
+    "x": 1.92,
+    "y": 3.444,
+    "z": 10.774
+   },
+   "label": "Scan 148 \u00b7 Floor 3"
+  },
+  {
+   "id": "egg3x1agm8r9wmn7x8pi5tecb",
+   "index": 149,
+   "floor": 2,
+   "position": {
+    "x": 6.78,
+    "y": -3.453,
+    "z": 3.268
+   },
+   "label": "Scan 149 \u00b7 Floor 1"
+  },
+  {
+   "id": "fgyknythf4ng8kbw63ybiwhaa",
+   "index": 150,
+   "floor": 3,
+   "position": {
+    "x": 2.085,
+    "y": -0.006,
+    "z": 2.262
+   },
+   "label": "Scan 150 \u00b7 Floor 2"
+  },
+  {
+   "id": "fg93sn7cdarw549k928sfrq0b",
+   "index": 151,
+   "floor": 2,
+   "position": {
+    "x": 12.469,
+    "y": -3.448,
+    "z": 6.379
+   },
+   "label": "Scan 151 \u00b7 Floor 1"
+  },
+  {
+   "id": "f8x006wbt3f83f8dxtg8n9xwa",
+   "index": 152,
+   "floor": 4,
+   "position": {
+    "x": 4.177,
+    "y": 3.437,
+    "z": 4.667
+   },
+   "label": "Scan 152 \u00b7 Floor 3"
+  },
+  {
+   "id": "g09puf5uiewfdzx8q0xtifg9b",
+   "index": 153,
+   "floor": 0,
+   "position": {
+    "x": 5.4,
+    "y": -8.92,
+    "z": 3.188
+   },
+   "label": "Scan 153 \u00b7 Basement 2"
+  },
+  {
+   "id": "h8iunbwqri1a911aawu1fk0fc",
+   "index": 154,
+   "floor": 4,
+   "position": {
+    "x": -5.599,
+    "y": 3.419,
+    "z": 0.961
+   },
+   "label": "Scan 154 \u00b7 Floor 3"
+  },
+  {
+   "id": "h0u7yd4xsuagytmumifqqyw8a",
+   "index": 155,
+   "floor": 0,
+   "position": {
+    "x": -1.316,
+    "y": -9.042,
+    "z": 3.022
+   },
+   "label": "Scan 155 \u00b7 Basement 2"
+  },
+  {
+   "id": "mr5yqb4x1xwq2u2h9s8s4qrkb",
+   "index": 156,
+   "floor": 3,
+   "position": {
+    "x": 4.313,
+    "y": 0.006,
+    "z": 14.379
+   },
+   "label": "Scan 156 \u00b7 Floor 2"
+  },
+  {
+   "id": "n8szyrwnsz9bybddqdirnk97c",
+   "index": 157,
+   "floor": 4,
+   "position": {
+    "x": -0.379,
+    "y": 3.432,
+    "z": 4.777
+   },
+   "label": "Scan 157 \u00b7 Floor 3"
+  },
+  {
+   "id": "qgm2bng2fmnquy3fe2s0dz3eb",
+   "index": 158,
+   "floor": 2,
+   "position": {
+    "x": 12.364,
+    "y": -3.425,
+    "z": -2.226
+   },
+   "label": "Scan 158 \u00b7 Floor 1"
+  },
+  {
+   "id": "r0chupapabnxy05ixgg62k3gb",
+   "index": 159,
+   "floor": 4,
+   "position": {
+    "x": 0.003,
+    "y": 3.443,
+    "z": 12.253
+   },
+   "label": "Scan 159 \u00b7 Floor 3"
+  },
+  {
+   "id": "r8rhh7tf87sdne27h48qki35c",
+   "index": 160,
+   "floor": 2,
+   "position": {
+    "x": 5.614,
+    "y": -3.452,
+    "z": 3.215
+   },
+   "label": "Scan 160 \u00b7 Floor 1"
+  },
+  {
+   "id": "sr7caswup8sxrqbw377trfmxc",
+   "index": 161,
+   "floor": 2,
+   "position": {
+    "x": -1.415,
+    "y": -2.663,
+    "z": 11.836
+   },
+   "label": "Scan 161 \u00b7 Floor 1"
+  },
+  {
+   "id": "sgn9xxyw1i7seu1p77um3w5bd",
+   "index": 162,
+   "floor": 4,
+   "position": {
+    "x": -11.496,
+    "y": 3.437,
+    "z": 15.546
+   },
+   "label": "Scan 162 \u00b7 Floor 3"
+  },
+  {
+   "id": "t0bcfzxur2futmfr9xaheugra",
+   "index": 163,
+   "floor": 3,
+   "position": {
+    "x": 1.525,
+    "y": 0.002,
+    "z": 14.379
+   },
+   "label": "Scan 163 \u00b7 Floor 2"
+  },
+  {
+   "id": "w05ay7u40y2bbi5hdhe3pbr3b",
+   "index": 164,
+   "floor": 4,
+   "position": {
+    "x": -8.825,
+    "y": 3.441,
+    "z": 14.329
+   },
+   "label": "Scan 164 \u00b7 Floor 3"
+  },
+  {
+   "id": "zrgqbhk4n42icy5p06h12dn3c",
+   "index": 165,
+   "floor": 4,
+   "position": {
+    "x": -3.002,
+    "y": 3.437,
+    "z": 9.682
+   },
+   "label": "Scan 165 \u00b7 Floor 3"
+  },
+  {
+   "id": "5rsu4zs83futu3dkk4z8i06da",
+   "index": 166,
+   "floor": 0,
+   "position": {
+    "x": 5.817,
+    "y": -8.864,
+    "z": 8.902
+   },
+   "label": "Scan 166 \u00b7 Basement 2"
+  },
+  {
+   "id": "78a54qd6crscsabr0f8ihekmc",
+   "index": 167,
+   "floor": 3,
+   "position": {
+    "x": -0.417,
+    "y": 0.016,
+    "z": -0.61
+   },
+   "label": "Scan 167 \u00b7 Floor 2"
+  },
+  {
+   "id": "bhtuut6hcfb3g61h6y20p8eic",
+   "index": 168,
+   "floor": 3,
+   "position": {
+    "x": -9.756,
+    "y": 0.001,
+    "z": 6.288
+   },
+   "label": "Scan 168 \u00b7 Floor 2"
+  },
+  {
+   "id": "d1t9zxr3rxi9su7bidt0a8tnd",
+   "index": 169,
+   "floor": 4,
+   "position": {
+    "x": 8.014,
+    "y": 3.428,
+    "z": 14.523
+   },
+   "label": "Scan 169 \u00b7 Floor 3"
+  },
+  {
+   "id": "dh7nsquum9zhuukxrdiu31d2a",
+   "index": 170,
+   "floor": 3,
+   "position": {
+    "x": 12.384,
+    "y": 0.008,
+    "z": 1.95
+   },
+   "label": "Scan 170 \u00b7 Floor 2"
+  },
+  {
+   "id": "e9ag4f4fsfqc96b169n6zd4pb",
+   "index": 171,
+   "floor": 2,
+   "position": {
+    "x": -5.367,
+    "y": -1.173,
+    "z": 17.226
+   },
+   "label": "Scan 171 \u00b7 Floor 1"
+  },
+  {
+   "id": "g96swdic4q5y8y6qq232csbdb",
+   "index": 172,
+   "floor": 1,
+   "position": {
+    "x": -5.095,
+    "y": -6.105,
+    "z": 8.307
+   },
+   "label": "Scan 172 \u00b7 Basement 1"
+  },
+  {
+   "id": "is5qpax56z08f5nrdm072tsgc",
+   "index": 173,
+   "floor": 3,
+   "position": {
+    "x": -9.47,
+    "y": 0.02,
+    "z": -3.023
+   },
+   "label": "Scan 173 \u00b7 Floor 2"
+  },
+  {
+   "id": "kh6rp6zxqwrw6x4r4z7ke7zza",
+   "index": 174,
+   "floor": 4,
+   "position": {
+    "x": 7.089,
+    "y": 3.43,
+    "z": 16.149
+   },
+   "label": "Scan 174 \u00b7 Floor 3"
+  },
+  {
+   "id": "k1qw7fkaagxtaht8mqby013ta",
+   "index": 175,
+   "floor": 0,
+   "position": {
+    "x": 12.049,
+    "y": -8.839,
+    "z": 5.151
+   },
+   "label": "Scan 175 \u00b7 Basement 2"
+  },
+  {
+   "id": "mhy3hhhia1gd97h2sztw5b48a",
+   "index": 176,
+   "floor": 4,
+   "position": {
+    "x": 14.07,
+    "y": 3.446,
+    "z": 13.795
+   },
+   "label": "Scan 176 \u00b7 Floor 3"
+  },
+  {
+   "id": "msfx0xuysi1ax66i9aieegc2b",
+   "index": 177,
+   "floor": 4,
+   "position": {
+    "x": 10.394,
+    "y": 3.433,
+    "z": 14.1
+   },
+   "label": "Scan 177 \u00b7 Floor 3"
+  },
+  {
+   "id": "nhh609nfzsuf7t9t00wn18ywd",
+   "index": 178,
+   "floor": 2,
+   "position": {
+    "x": -5.068,
+    "y": -2.787,
+    "z": 12.594
+   },
+   "label": "Scan 178 \u00b7 Floor 1"
+  },
+  {
+   "id": "p99ck2begahqfnu93n5rxc95c",
+   "index": 179,
+   "floor": 0,
+   "position": {
+    "x": 5.913,
+    "y": -8.896,
+    "z": 10.737
+   },
+   "label": "Scan 179 \u00b7 Basement 2"
+  },
+  {
+   "id": "s1gug953knbg95w0xagzkhira",
+   "index": 180,
+   "floor": 2,
+   "position": {
+    "x": -1.187,
+    "y": -3.434,
+    "z": 4.564
+   },
+   "label": "Scan 180 \u00b7 Floor 1"
+  },
+  {
+   "id": "w135487257dihy7srg83g29dc",
+   "index": 181,
+   "floor": 3,
+   "position": {
+    "x": 1.007,
+    "y": -0.02,
+    "z": 3.116
+   },
+   "label": "Scan 181 \u00b7 Floor 2"
+  },
+  {
+   "id": "y9we769icnkys774ep5fxhpxd",
+   "index": 182,
+   "floor": 2,
+   "position": {
+    "x": 14.318,
+    "y": -3.443,
+    "z": 5.726
+   },
+   "label": "Scan 182 \u00b7 Floor 1"
+  },
+  {
+   "id": "y9npc4pwx69di3ag1gix0e93a",
+   "index": 183,
+   "floor": 3,
+   "position": {
+    "x": -3.297,
+    "y": -0.001,
+    "z": 14.152
+   },
+   "label": "Scan 183 \u00b7 Floor 2"
+  },
+  {
+   "id": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "index": 184,
+   "floor": 4,
+   "position": {
+    "x": -0.484,
+    "y": 3.415,
+    "z": 6.644
+   },
+   "label": "Scan 184 \u00b7 Floor 3"
+  },
+  {
+   "id": "29kqmkpt3eyg9a6bfx7bush7d",
+   "index": 185,
+   "floor": 3,
+   "position": {
+    "x": -3.589,
+    "y": -0.002,
+    "z": -1.54
+   },
+   "label": "Scan 185 \u00b7 Floor 2"
+  },
+  {
+   "id": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "index": 186,
+   "floor": 2,
+   "position": {
+    "x": 9.798,
+    "y": -3.438,
+    "z": 1.082
+   },
+   "label": "Scan 186 \u00b7 Floor 1"
+  },
+  {
+   "id": "5stm18mzfz8k3274t7fr6qt8b",
+   "index": 187,
+   "floor": 0,
+   "position": {
+    "x": -6.414,
+    "y": -8.712,
+    "z": 14.062
+   },
+   "label": "Scan 187 \u00b7 Basement 2"
+  },
+  {
+   "id": "6hruge1prcenqbqn830nke90c",
+   "index": 188,
+   "floor": 3,
+   "position": {
+    "x": 3.539,
+    "y": 0.04,
+    "z": 10.864
+   },
+   "label": "Scan 188 \u00b7 Floor 2"
+  },
+  {
+   "id": "81bagw7nhg11m9ycta78rp7zd",
+   "index": 189,
+   "floor": 2,
+   "position": {
+    "x": -6.455,
+    "y": -3.167,
+    "z": 9.064
+   },
+   "label": "Scan 189 \u00b7 Floor 1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "104-156",
+   "a": "mr5yqb4x1xwq2u2h9s8s4qrkb",
+   "b": "wpr21utmpiztt5zwqpqfsyeub",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "93-181",
+   "a": "k67s8fpgrq7s9g0c2hgqz46wd",
+   "b": "w135487257dihy7srg83g29dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "58-144",
+   "a": "4mbg69t6zhnx235m6iimqwbdc",
+   "b": "6f259wu6cm2r84emzmxfqkzpd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "109-183",
+   "a": "06bex1ru4dzmay2tr01ss5e5a",
+   "b": "y9npc4pwx69di3ag1gix0e93a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "10-61",
+   "a": "9w5fpk5s966pf66yetfe3x4xc",
+   "b": "x29a3bss47w3z3pznf8qemhka",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "149-160",
+   "a": "egg3x1agm8r9wmn7x8pi5tecb",
+   "b": "r8rhh7tf87sdne27h48qki35c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "4-68",
+   "a": "paekbwtih0g12hgwswqrtpp7a",
+   "b": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "111-189",
+   "a": "36w2zndh3891i4u29m0ui2dic",
+   "b": "81bagw7nhg11m9ycta78rp7zd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "36-72",
+   "a": "w3g5q05m42pp9rgndxx45pcfd",
+   "b": "xnw3g7eqskindw3sqfzskry5c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "118-171",
+   "a": "bzty56qe45068is5swu1xdznb",
+   "b": "e9ag4f4fsfqc96b169n6zd4pb",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "17-105",
+   "a": "3ak5eppp4m0r9kk44ze91xz4c",
+   "b": "y62t6tcpyaarduzn0p3q0pwka",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "150-181",
+   "a": "fgyknythf4ng8kbw63ybiwhaa",
+   "b": "w135487257dihy7srg83g29dc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "3-52",
+   "a": "f2p4szqrxufrrkddqk983809a",
+   "b": "swhp4meumwh2k2uec8w4e84ad",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "48-72",
+   "a": "iw2f5txbc5gg83c9nt3cseuyb",
+   "b": "xnw3g7eqskindw3sqfzskry5c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "82-176",
+   "a": "ayasysutdw6yy1uqyfm1whdib",
+   "b": "mhy3hhhia1gd97h2sztw5b48a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "27-118",
+   "a": "bzty56qe45068is5swu1xdznb",
+   "b": "gby2rbk7reiqmwi23t42n3f2b",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "61-103",
+   "a": "9w5fpk5s966pf66yetfe3x4xc",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "54-100",
+   "a": "t60iqstkrxk39qnpm2u4bn48b",
+   "b": "uc31hssiun7h39n2d7yf8e6nd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "146-158",
+   "a": "bgg14c5c58zc0diudhn4486td",
+   "b": "qgm2bng2fmnquy3fe2s0dz3eb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "64-106",
+   "a": "rdq4hxe5yfpqmex08bkfmxi8a",
+   "b": "zyapugz9zbagxn7m1yc9b0rgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-32",
+   "a": "gby2rbk7reiqmwi23t42n3f2b",
+   "b": "nk75ahpq272d3wrcis1iyzcqa",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "108-163",
+   "a": "0e7qyi4xbs0e5bk8bw473nr0c",
+   "b": "t0bcfzxur2futmfr9xaheugra",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "81-161",
+   "a": "7dw6f5wgm66h27197esh4sgnc",
+   "b": "sr7caswup8sxrqbw377trfmxc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "96-145",
+   "a": "9qpc0s48qk05zf5ru5m42c3yc",
+   "b": "pyzdpqq8u69ufi45ii9appafb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-53",
+   "a": "qk2cc5g0z5gwsrxiy6gmb7zzb",
+   "b": "uwtehh87tkd0ms6rnfqtkdqea",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "87-148",
+   "a": "c6p689bsptaen1yfq6uk98qwa",
+   "b": "e0fwgzcy8a7b6qnwy5x34bmdd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "125-169",
+   "a": "d1t9zxr3rxi9su7bidt0a8tnd",
+   "b": "kffi8szeayinc92hwe74ncwsd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "127-156",
+   "a": "mr5yqb4x1xwq2u2h9s8s4qrkb",
+   "b": "pfh3miwnda0ticfgh9ea0qypd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "83-177",
+   "a": "a6a5u1nnzg99bef8p9c0s10pa",
+   "b": "msfx0xuysi1ax66i9aieegc2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "83-130",
+   "a": "a6a5u1nnzg99bef8p9c0s10pa",
+   "b": "rfr0n2f7seu6uqff8u1ck82pc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "0-52",
+   "a": "cadkzuzsuk83uchpw8ex9q63d",
+   "b": "swhp4meumwh2k2uec8w4e84ad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-170",
+   "a": "dh7nsquum9zhuukxrdiu31d2a",
+   "b": "et86995btkxsyhhh5rrd81tbd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "88-129",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "qfkgfd75yk07kpq0u0i5diptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "31-93",
+   "a": "k3xx77qeyew2f6221phr8g01d",
+   "b": "k67s8fpgrq7s9g0c2hgqz46wd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "42-89",
+   "a": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "b": "dpytmxqdffm4e1ezwtauzyzub",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "37-188",
+   "a": "6hruge1prcenqbqn830nke90c",
+   "b": "xu6imzadx0isb1u4ipppxqcwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "126-170",
+   "a": "dh7nsquum9zhuukxrdiu31d2a",
+   "b": "nfpzw5i6whirrnyxyqp9mcwwc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "76-104",
+   "a": "1ddmbnnxwz5qezn2y4k2dtama",
+   "b": "wpr21utmpiztt5zwqpqfsyeub",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "166-179",
+   "a": "5rsu4zs83futu3dkk4z8i06da",
+   "b": "p99ck2begahqfnu93n5rxc95c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "169-174",
+   "a": "d1t9zxr3rxi9su7bidt0a8tnd",
+   "b": "kh6rp6zxqwrw6x4r4z7ke7zza",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "157-184",
+   "a": "n8szyrwnsz9bybddqdirnk97c",
+   "b": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "38-132",
+   "a": "xbs023caabui47dkwyyi3mtwd",
+   "b": "xz8cwpstfafda18wk7h4spk3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-22",
+   "a": "2irh24dtmu28dipuupzu5r11b",
+   "b": "8i0079ts9h4wg7zyq9w5xh3nc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "39-67",
+   "a": "330qbhnnycsma19p9i9m0g19a",
+   "b": "snacttsipceqsdc14r87pt70a",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "70-74",
+   "a": "wd5u9gxezqzhx83mmw4f87bdc",
+   "b": "z5f85173g4a4fssze4bx2fq7b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "79-146",
+   "a": "5nys95m485zxqhmzbyy6700na",
+   "b": "bgg14c5c58zc0diudhn4486td",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "57-154",
+   "a": "342n912ymk4epm2g8pw516t1c",
+   "b": "h8iunbwqri1a911aawu1fk0fc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "18-152",
+   "a": "32q0352k5busfgreyc495c7ib",
+   "b": "f8x006wbt3f83f8dxtg8n9xwa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "28-70",
+   "a": "gkfz3cdkuxg7s96sptwxbam2c",
+   "b": "wd5u9gxezqzhx83mmw4f87bdc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "151-182",
+   "a": "fg93sn7cdarw549k928sfrq0b",
+   "b": "y9we769icnkys774ep5fxhpxd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "8-107",
+   "a": "xti52y2iusp066re9y92rniyc",
+   "b": "z688imtexpf03182sx3msxrsc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "69-116",
+   "a": "9pe1gn0c53dhkz8q9yubzyffb",
+   "b": "u5dbkwqf69n9shk2f7qn9e66b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "95-103",
+   "a": "kywfapwdy3nqq1peswir25y5d",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "57-115",
+   "a": "342n912ymk4epm2g8pw516t1c",
+   "b": "9eea9fwxbbm5gsw85r7p51dqa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "80-134",
+   "a": "6nw9qay3063u2wh71b11gea4d",
+   "b": "zzgsr9rteeu8wssmzr1g0dx8c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "31-181",
+   "a": "k3xx77qeyew2f6221phr8g01d",
+   "b": "w135487257dihy7srg83g29dc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "21-42",
+   "a": "8af63bzf0tqa3410uyanmresb",
+   "b": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "83-176",
+   "a": "a6a5u1nnzg99bef8p9c0s10pa",
+   "b": "mhy3hhhia1gd97h2sztw5b48a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "87-99",
+   "a": "c6p689bsptaen1yfq6uk98qwa",
+   "b": "spupkxyrtyzi9iag4get9em7d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "90-128",
+   "a": "e60zfswc7n6393q2ig85ain6a",
+   "b": "q72usma2k2zscrf46pdcnkkzc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "5-116",
+   "a": "9pe1gn0c53dhkz8q9yubzyffb",
+   "b": "qawsi3gqt0c2bm30sn6s0kkca",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-183",
+   "a": "027fz1guxfikfbm2zeh0zr9cc",
+   "b": "y9npc4pwx69di3ag1gix0e93a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-185",
+   "a": "29kqmkpt3eyg9a6bfx7bush7d",
+   "b": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "39-68",
+   "a": "330qbhnnycsma19p9i9m0g19a",
+   "b": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "107-147",
+   "a": "d0r40dqrx7wtzttdwhpz3bgsb",
+   "b": "z688imtexpf03182sx3msxrsc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "13-55",
+   "a": "2au0z0gennuwai7dm3p54s4pb",
+   "b": "ywpsigi8ngmkt221m1h2rne1d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-73",
+   "a": "t26fkszhrkbpu4bbaycb6g5tb",
+   "b": "zny093ehg3cf6ndz5bh4dckgb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "65-91",
+   "a": "fe76qpxpiegrybys3kn55tkua",
+   "b": "rn8ra1pm3mu4918qtczkua4hb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-91",
+   "a": "fe76qpxpiegrybys3kn55tkua",
+   "b": "xif7dfwe5yhht551sggzg931a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-108",
+   "a": "0e7qyi4xbs0e5bk8bw473nr0c",
+   "b": "xu6imzadx0isb1u4ipppxqcwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "73-112",
+   "a": "461f70ix2pa86cgqetchqri5d",
+   "b": "zny093ehg3cf6ndz5bh4dckgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "56-82",
+   "a": "1myf8k2dk7msczum3k4dypbrc",
+   "b": "ayasysutdw6yy1uqyfm1whdib",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "73-140",
+   "a": "27kuwkfgkf8it4r42sx4t0qhd",
+   "b": "zny093ehg3cf6ndz5bh4dckgb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "16-98",
+   "a": "3224kwpf6hdxydw07707uwzbd",
+   "b": "rekspzpzdhek17ykfrzbipf6c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "20-168",
+   "a": "72pwstp0qx7gt54hg1m784xad",
+   "b": "bhtuut6hcfb3g61h6y20p8eic",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "96-100",
+   "a": "pyzdpqq8u69ufi45ii9appafb",
+   "b": "t60iqstkrxk39qnpm2u4bn48b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "7-73",
+   "a": "wa0gxbqif99xfhgf1g4disf5d",
+   "b": "zny093ehg3cf6ndz5bh4dckgb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "101-120",
+   "a": "c78wykhgct8h70sbmq9xbp6rd",
+   "b": "upipmfak3in1uapfb13zg0ana",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "111-138",
+   "a": "1qekf399114ut72hg17gp21hd",
+   "b": "36w2zndh3891i4u29m0ui2dic",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "13-97",
+   "a": "2au0z0gennuwai7dm3p54s4pb",
+   "b": "pp4mmps8m8s9binh4pac4nzhb",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "40-122",
+   "a": "633wgb7qa5qg1cm69f0aued4d",
+   "b": "ff8sce16qmmm6t3qd4w9msrzb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "124-188",
+   "a": "6hruge1prcenqbqn830nke90c",
+   "b": "hq5t04a7xd7hga4amh8qxnyuc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "43-76",
+   "a": "1ddmbnnxwz5qezn2y4k2dtama",
+   "b": "em47t0qm21bzue7iratamf2kc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "2-72",
+   "a": "fie41wuna0wmtd5tkmg0qc4pa",
+   "b": "xnw3g7eqskindw3sqfzskry5c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "9-45",
+   "a": "fwmkbxzbfa3s7qqr3emrwgafa",
+   "b": "xif7dfwe5yhht551sggzg931a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "19-119",
+   "a": "62tdyc7ixkgu4zs8myxsw2nsb",
+   "b": "bqwcxryuzxr3ai5ct4mg4e07d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "105-133",
+   "a": "y62t6tcpyaarduzn0p3q0pwka",
+   "b": "z7y878sep27ni5gix03r7h61d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "33-42",
+   "a": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "b": "pu0u7gaf44zt1xinknyaqyxfd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "143-159",
+   "a": "5fszt1q9xz37zz5q44rd2qazc",
+   "b": "r0chupapabnxy05ixgg62k3gb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "32-78",
+   "a": "4d9asfdtpb3bfz5bmfee22hqd",
+   "b": "nk75ahpq272d3wrcis1iyzcqa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "24-159",
+   "a": "9tdtsgq5qs01zcdpz4x961zza",
+   "b": "r0chupapabnxy05ixgg62k3gb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "65-131",
+   "a": "rn8ra1pm3mu4918qtczkua4hb",
+   "b": "sfczham02auzsxqut7sc6e7ud",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "55-67",
+   "a": "snacttsipceqsdc14r87pt70a",
+   "b": "ywpsigi8ngmkt221m1h2rne1d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "81-178",
+   "a": "7dw6f5wgm66h27197esh4sgnc",
+   "b": "nhh609nfzsuf7t9t00wn18ywd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "129-184",
+   "a": "qfkgfd75yk07kpq0u0i5diptb",
+   "b": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "139-146",
+   "a": "1q0rbpsdx3rekwx5mgz4a957a",
+   "b": "bgg14c5c58zc0diudhn4486td",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "5-53",
+   "a": "qawsi3gqt0c2bm30sn6s0kkca",
+   "b": "uwtehh87tkd0ms6rnfqtkdqea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "48-138",
+   "a": "1qekf399114ut72hg17gp21hd",
+   "b": "iw2f5txbc5gg83c9nt3cseuyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "142-164",
+   "a": "4f3c82wi41h08xkcwd61ygcwa",
+   "b": "w05ay7u40y2bbi5hdhe3pbr3b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "11-29",
+   "a": "027fz1guxfikfbm2zeh0zr9cc",
+   "b": "h3wcd67kpsf89g3s8atazp2ta",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-179",
+   "a": "32aubch2yi6qt49w9bg117gbb",
+   "b": "p99ck2begahqfnu93n5rxc95c",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "58-86",
+   "a": "4mbg69t6zhnx235m6iimqwbdc",
+   "b": "be02mr0259kwdcy91m7d7r01d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "88-148",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "e0fwgzcy8a7b6qnwy5x34bmdd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-116",
+   "a": "9pe1gn0c53dhkz8q9yubzyffb",
+   "b": "fciaf9h5updh855nm62zuf7hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-48",
+   "a": "iw2f5txbc5gg83c9nt3cseuyb",
+   "b": "nk75ahpq272d3wrcis1iyzcqa",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "37-85",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "xu6imzadx0isb1u4ipppxqcwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "169-177",
+   "a": "d1t9zxr3rxi9su7bidt0a8tnd",
+   "b": "msfx0xuysi1ax66i9aieegc2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "148-159",
+   "a": "e0fwgzcy8a7b6qnwy5x34bmdd",
+   "b": "r0chupapabnxy05ixgg62k3gb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "94-135",
+   "a": "0qu49ziy9nekdugqcuuynqw7d",
+   "b": "ke416demnitgpbxtx0g4i6u2d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "71-113",
+   "a": "6y3y27mwu2qzn5xd03gnuw2ec",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-60",
+   "a": "6my6i0d5t65a5tcixqrr40e6b",
+   "b": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "52-106",
+   "a": "swhp4meumwh2k2uec8w4e84ad",
+   "b": "zyapugz9zbagxn7m1yc9b0rgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-177",
+   "a": "msfx0xuysi1ax66i9aieegc2b",
+   "b": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-66",
+   "a": "3224kwpf6hdxydw07707uwzbd",
+   "b": "r5ctnskbfp62fttnwypr7yqqb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "117-132",
+   "a": "a7dnxp1c2x27s96etk6akgdrb",
+   "b": "xz8cwpstfafda18wk7h4spk3d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "16-70",
+   "a": "3224kwpf6hdxydw07707uwzbd",
+   "b": "wd5u9gxezqzhx83mmw4f87bdc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-44",
+   "a": "32q0352k5busfgreyc495c7ib",
+   "b": "fciaf9h5updh855nm62zuf7hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-33",
+   "a": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "b": "pu0u7gaf44zt1xinknyaqyxfd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "94-102",
+   "a": "ke416demnitgpbxtx0g4i6u2d",
+   "b": "up21rph0yps14sfpte1azbqzc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "30-57",
+   "a": "342n912ymk4epm2g8pw516t1c",
+   "b": "k3ynfd9capm727pdb9ukirr0a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "8-59",
+   "a": "5whnzzx4an1crx5x0sum1m39d",
+   "b": "xti52y2iusp066re9y92rniyc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "72-138",
+   "a": "1qekf399114ut72hg17gp21hd",
+   "b": "xnw3g7eqskindw3sqfzskry5c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-92",
+   "a": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "b": "paekbwtih0g12hgwswqrtpp7a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "106-134",
+   "a": "zyapugz9zbagxn7m1yc9b0rgb",
+   "b": "zzgsr9rteeu8wssmzr1g0dx8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-26",
+   "a": "fuyw19mk0kkbnsfbq3cwf06pd",
+   "b": "t26fkszhrkbpu4bbaycb6g5tb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-62",
+   "a": "gxi4xuyzuh8hwhhhmuuzr802a",
+   "b": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "29-163",
+   "a": "h3wcd67kpsf89g3s8atazp2ta",
+   "b": "t0bcfzxur2futmfr9xaheugra",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "124-144",
+   "a": "6f259wu6cm2r84emzmxfqkzpd",
+   "b": "hq5t04a7xd7hga4amh8qxnyuc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "18-129",
+   "a": "32q0352k5busfgreyc495c7ib",
+   "b": "qfkgfd75yk07kpq0u0i5diptb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "23-170",
+   "a": "9trau4dr0weq8700biau0urkd",
+   "b": "dh7nsquum9zhuukxrdiu31d2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-184",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-53",
+   "a": "fciaf9h5updh855nm62zuf7hd",
+   "b": "uwtehh87tkd0ms6rnfqtkdqea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-97",
+   "a": "32aubch2yi6qt49w9bg117gbb",
+   "b": "pp4mmps8m8s9binh4pac4nzhb",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "52-64",
+   "a": "rdq4hxe5yfpqmex08bkfmxi8a",
+   "b": "swhp4meumwh2k2uec8w4e84ad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-180",
+   "a": "s1gug953knbg95w0xagzkhira",
+   "b": "xbs023caabui47dkwyyi3mtwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "31-110",
+   "a": "3pfth34xcbzmdr7a3szmqe35c",
+   "b": "k3xx77qeyew2f6221phr8g01d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "146-186",
+   "a": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "b": "bgg14c5c58zc0diudhn4486td",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-44",
+   "a": "fciaf9h5updh855nm62zuf7hd",
+   "b": "qawsi3gqt0c2bm30sn6s0kkca",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-65",
+   "a": "rn8ra1pm3mu4918qtczkua4hb",
+   "b": "xif7dfwe5yhht551sggzg931a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-163",
+   "a": "027fz1guxfikfbm2zeh0zr9cc",
+   "b": "t0bcfzxur2futmfr9xaheugra",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-149",
+   "a": "egg3x1agm8r9wmn7x8pi5tecb",
+   "b": "q4igftcg35q4hr0pyuzg9xsxa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "91-165",
+   "a": "fe76qpxpiegrybys3kn55tkua",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "94-119",
+   "a": "bqwcxryuzxr3ai5ct4mg4e07d",
+   "b": "ke416demnitgpbxtx0g4i6u2d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "156-163",
+   "a": "mr5yqb4x1xwq2u2h9s8s4qrkb",
+   "b": "t0bcfzxur2futmfr9xaheugra",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "7-121",
+   "a": "e7q3w1qmuag72b5tgc4fd2yxa",
+   "b": "wa0gxbqif99xfhgf1g4disf5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "64-134",
+   "a": "rdq4hxe5yfpqmex08bkfmxi8a",
+   "b": "zzgsr9rteeu8wssmzr1g0dx8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "140-173",
+   "a": "27kuwkfgkf8it4r42sx4t0qhd",
+   "b": "is5qpax56z08f5nrdm072tsgc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-67",
+   "a": "2au0z0gennuwai7dm3p54s4pb",
+   "b": "snacttsipceqsdc14r87pt70a",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "41-158",
+   "a": "bwfm30ifizams62mw14tc2n3c",
+   "b": "qgm2bng2fmnquy3fe2s0dz3eb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "162-164",
+   "a": "sgn9xxyw1i7seu1p77um3w5bd",
+   "b": "w05ay7u40y2bbi5hdhe3pbr3b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "103-110",
+   "a": "3pfth34xcbzmdr7a3szmqe35c",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "7-25",
+   "a": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "b": "wa0gxbqif99xfhgf1g4disf5d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "33-112",
+   "a": "461f70ix2pa86cgqetchqri5d",
+   "b": "pu0u7gaf44zt1xinknyaqyxfd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-106",
+   "a": "9trau4dr0weq8700biau0urkd",
+   "b": "zyapugz9zbagxn7m1yc9b0rgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "100-186",
+   "a": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "b": "t60iqstkrxk39qnpm2u4bn48b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-170",
+   "a": "633wgb7qa5qg1cm69f0aued4d",
+   "b": "dh7nsquum9zhuukxrdiu31d2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "128-188",
+   "a": "6hruge1prcenqbqn830nke90c",
+   "b": "q72usma2k2zscrf46pdcnkkzc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-189",
+   "a": "2irh24dtmu28dipuupzu5r11b",
+   "b": "81bagw7nhg11m9ycta78rp7zd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "55-97",
+   "a": "pp4mmps8m8s9binh4pac4nzhb",
+   "b": "ywpsigi8ngmkt221m1h2rne1d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "42-93",
+   "a": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "b": "k67s8fpgrq7s9g0c2hgqz46wd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "90-99",
+   "a": "e60zfswc7n6393q2ig85ain6a",
+   "b": "spupkxyrtyzi9iag4get9em7d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "34-87",
+   "a": "c6p689bsptaen1yfq6uk98qwa",
+   "b": "qk2cc5g0z5gwsrxiy6gmb7zzb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-84",
+   "a": "ayugrgbz7hh2h2nkdiqud6apd",
+   "b": "xbs023caabui47dkwyyi3mtwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-90",
+   "a": "e60zfswc7n6393q2ig85ain6a",
+   "b": "qk2cc5g0z5gwsrxiy6gmb7zzb",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "68-86",
+   "a": "be02mr0259kwdcy91m7d7r01d",
+   "b": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-105",
+   "a": "fciaf9h5updh855nm62zuf7hd",
+   "b": "y62t6tcpyaarduzn0p3q0pwka",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "35-142",
+   "a": "4f3c82wi41h08xkcwd61ygcwa",
+   "b": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "109-119",
+   "a": "06bex1ru4dzmay2tr01ss5e5a",
+   "b": "bqwcxryuzxr3ai5ct4mg4e07d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-55",
+   "a": "330qbhnnycsma19p9i9m0g19a",
+   "b": "ywpsigi8ngmkt221m1h2rne1d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "78-178",
+   "a": "4d9asfdtpb3bfz5bmfee22hqd",
+   "b": "nhh609nfzsuf7t9t00wn18ywd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-50",
+   "a": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "b": "qawsi3gqt0c2bm30sn6s0kkca",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-112",
+   "a": "461f70ix2pa86cgqetchqri5d",
+   "b": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-169",
+   "a": "d1t9zxr3rxi9su7bidt0a8tnd",
+   "b": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "68-144",
+   "a": "6f259wu6cm2r84emzmxfqkzpd",
+   "b": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "31-85",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "k3xx77qeyew2f6221phr8g01d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-73",
+   "a": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "b": "zny093ehg3cf6ndz5bh4dckgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "47-107",
+   "a": "hww3rhidc0sqfh8ccx53c40mb",
+   "b": "z688imtexpf03182sx3msxrsc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "58-68",
+   "a": "4mbg69t6zhnx235m6iimqwbdc",
+   "b": "sn7g0ggbkzadfbynrs9mqn3kc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "23-103",
+   "a": "9trau4dr0weq8700biau0urkd",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "90-188",
+   "a": "6hruge1prcenqbqn830nke90c",
+   "b": "e60zfswc7n6393q2ig85ain6a",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "23-61",
+   "a": "9trau4dr0weq8700biau0urkd",
+   "b": "9w5fpk5s966pf66yetfe3x4xc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-165",
+   "a": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "33-93",
+   "a": "k67s8fpgrq7s9g0c2hgqz46wd",
+   "b": "pu0u7gaf44zt1xinknyaqyxfd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-99",
+   "a": "qk2cc5g0z5gwsrxiy6gmb7zzb",
+   "b": "spupkxyrtyzi9iag4get9em7d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "124-128",
+   "a": "hq5t04a7xd7hga4amh8qxnyuc",
+   "b": "q72usma2k2zscrf46pdcnkkzc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "92-132",
+   "a": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "b": "xz8cwpstfafda18wk7h4spk3d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "17-49",
+   "a": "3ak5eppp4m0r9kk44ze91xz4c",
+   "b": "kmm0aqyhadb0y0wd3g3pqt5tc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "65-165",
+   "a": "rn8ra1pm3mu4918qtczkua4hb",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "149-186",
+   "a": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "b": "egg3x1agm8r9wmn7x8pi5tecb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "47-77",
+   "a": "252gr0aixzzbe01qydue67m5b",
+   "b": "hww3rhidc0sqfh8ccx53c40mb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "65-184",
+   "a": "rn8ra1pm3mu4918qtczkua4hb",
+   "b": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-52",
+   "a": "9trau4dr0weq8700biau0urkd",
+   "b": "swhp4meumwh2k2uec8w4e84ad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "84-145",
+   "a": "9qpc0s48qk05zf5ru5m42c3yc",
+   "b": "ayugrgbz7hh2h2nkdiqud6apd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "70-101",
+   "a": "upipmfak3in1uapfb13zg0ana",
+   "b": "wd5u9gxezqzhx83mmw4f87bdc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "111-120",
+   "a": "36w2zndh3891i4u29m0ui2dic",
+   "b": "c78wykhgct8h70sbmq9xbp6rd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "58-188",
+   "a": "4mbg69t6zhnx235m6iimqwbdc",
+   "b": "6hruge1prcenqbqn830nke90c",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "165-184",
+   "a": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "159-165",
+   "a": "r0chupapabnxy05ixgg62k3gb",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "167-181",
+   "a": "78a54qd6crscsabr0f8ihekmc",
+   "b": "w135487257dihy7srg83g29dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-86",
+   "a": "330qbhnnycsma19p9i9m0g19a",
+   "b": "be02mr0259kwdcy91m7d7r01d",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "51-117",
+   "a": "a7dnxp1c2x27s96etk6akgdrb",
+   "b": "q4igftcg35q4hr0pyuzg9xsxa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "100-146",
+   "a": "bgg14c5c58zc0diudhn4486td",
+   "b": "t60iqstkrxk39qnpm2u4bn48b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-112",
+   "a": "461f70ix2pa86cgqetchqri5d",
+   "b": "72pwstp0qx7gt54hg1m784xad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-112",
+   "a": "461f70ix2pa86cgqetchqri5d",
+   "b": "dcsy20nwhuxf7tb3cdrpnnt2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-91",
+   "a": "fe76qpxpiegrybys3kn55tkua",
+   "b": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-105",
+   "a": "32q0352k5busfgreyc495c7ib",
+   "b": "y62t6tcpyaarduzn0p3q0pwka",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "134-170",
+   "a": "dh7nsquum9zhuukxrdiu31d2a",
+   "b": "zzgsr9rteeu8wssmzr1g0dx8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-151",
+   "a": "fg93sn7cdarw549k928sfrq0b",
+   "b": "q4igftcg35q4hr0pyuzg9xsxa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-40",
+   "a": "633wgb7qa5qg1cm69f0aued4d",
+   "b": "9trau4dr0weq8700biau0urkd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "106-170",
+   "a": "dh7nsquum9zhuukxrdiu31d2a",
+   "b": "zyapugz9zbagxn7m1yc9b0rgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "33-167",
+   "a": "78a54qd6crscsabr0f8ihekmc",
+   "b": "pu0u7gaf44zt1xinknyaqyxfd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-57",
+   "a": "342n912ymk4epm2g8pw516t1c",
+   "b": "xif7dfwe5yhht551sggzg931a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-77",
+   "a": "252gr0aixzzbe01qydue67m5b",
+   "b": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-114",
+   "a": "0t15m4sznebtgw6xgygkumaya",
+   "b": "6p0ig4eyixab9087yh6856i2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-103",
+   "a": "633wgb7qa5qg1cm69f0aued4d",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "74-84",
+   "a": "ayugrgbz7hh2h2nkdiqud6apd",
+   "b": "z5f85173g4a4fssze4bx2fq7b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-94",
+   "a": "72pwstp0qx7gt54hg1m784xad",
+   "b": "ke416demnitgpbxtx0g4i6u2d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-160",
+   "a": "r8rhh7tf87sdne27h48qki35c",
+   "b": "xbs023caabui47dkwyyi3mtwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "123-135",
+   "a": "0qu49ziy9nekdugqcuuynqw7d",
+   "b": "fqryiembct5kz7p1u2nxaw04d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-165",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "114-141",
+   "a": "2z0bfugih2rmn0dhei3n9hu9d",
+   "b": "6p0ig4eyixab9087yh6856i2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-186",
+   "a": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "b": "q4igftcg35q4hr0pyuzg9xsxa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "86-124",
+   "a": "be02mr0259kwdcy91m7d7r01d",
+   "b": "hq5t04a7xd7hga4amh8qxnyuc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "101-180",
+   "a": "s1gug953knbg95w0xagzkhira",
+   "b": "upipmfak3in1uapfb13zg0ana",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "47-116",
+   "a": "9pe1gn0c53dhkz8q9yubzyffb",
+   "b": "hww3rhidc0sqfh8ccx53c40mb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-145",
+   "a": "9qpc0s48qk05zf5ru5m42c3yc",
+   "b": "xbs023caabui47dkwyyi3mtwd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "77-177",
+   "a": "252gr0aixzzbe01qydue67m5b",
+   "b": "msfx0xuysi1ax66i9aieegc2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "52-61",
+   "a": "9w5fpk5s966pf66yetfe3x4xc",
+   "b": "swhp4meumwh2k2uec8w4e84ad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-116",
+   "a": "3ak5eppp4m0r9kk44ze91xz4c",
+   "b": "9pe1gn0c53dhkz8q9yubzyffb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "148-165",
+   "a": "e0fwgzcy8a7b6qnwy5x34bmdd",
+   "b": "zrgqbhk4n42icy5p06h12dn3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "91-142",
+   "a": "4f3c82wi41h08xkcwd61ygcwa",
+   "b": "fe76qpxpiegrybys3kn55tkua",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-47",
+   "a": "hww3rhidc0sqfh8ccx53c40mb",
+   "b": "qawsi3gqt0c2bm30sn6s0kkca",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-181",
+   "a": "d3nwciuwtqq6p2zxwcrmfsyua",
+   "b": "w135487257dihy7srg83g29dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-103",
+   "a": "cadkzuzsuk83uchpw8ex9q63d",
+   "b": "u67adapxtwzd2u75cdkke10db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-159",
+   "a": "r0chupapabnxy05ixgg62k3gb",
+   "b": "w3gqpmzqecc5uh6gy4tb4wzwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "159-184",
+   "a": "r0chupapabnxy05ixgg62k3gb",
+   "b": "z9hbf0ezz5nhdzgdyk4zauz5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "63-75",
+   "a": "1x61a1kh6imed7w8ka9k172kb",
+   "b": "hn7yeicz6zcraz5cinkuz7n8b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "153-166",
+   "a": "5rsu4zs83futu3dkk4z8i06da",
+   "b": "g09puf5uiewfdzx8q0xtifg9b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-77",
+   "a": "252gr0aixzzbe01qydue67m5b",
+   "b": "qawsi3gqt0c2bm30sn6s0kkca",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "151-186",
+   "a": "3sw6f1ay3m3fy13dm0xcyxccc",
+   "b": "fg93sn7cdarw549k928sfrq0b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-74",
+   "a": "xbs023caabui47dkwyyi3mtwd",
+   "b": "z5f85173g4a4fssze4bx2fq7b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "47-50",
+   "a": "hww3rhidc0sqfh8ccx53c40mb",
+   "b": "pm4kyacwfg0ddb6ebuf4zbptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-120",
+   "a": "3224kwpf6hdxydw07707uwzbd",
+   "b": "c78wykhgct8h70sbmq9xbp6rd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "153-155",
+   "a": "g09puf5uiewfdzx8q0xtifg9b",
+   "b": "h0u7yd4xsuagytmumifqqyw8a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "153-175",
+   "a": "g09puf5uiewfdzx8q0xtifg9b",
+   "b": "k1qw7fkaagxtaht8mqby013ta",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "71-172",
+   "a": "g96swdic4q5y8y6qq232csbdb",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "166-175",
+   "a": "5rsu4zs83futu3dkk4z8i06da",
+   "b": "k1qw7fkaagxtaht8mqby013ta",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "46-136",
+   "a": "0qf7c10my2ekxxs06p4cg8gyc",
+   "b": "hmczznzyfm7fsriiiiudgup6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "111-180",
+   "a": "36w2zndh3891i4u29m0ui2dic",
+   "b": "s1gug953knbg95w0xagzkhira",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-164",
+   "a": "w05ay7u40y2bbi5hdhe3pbr3b",
+   "b": "xif7dfwe5yhht551sggzg931a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "75-136",
+   "a": "0qf7c10my2ekxxs06p4cg8gyc",
+   "b": "1x61a1kh6imed7w8ka9k172kb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-145",
+   "a": "9qpc0s48qk05zf5ru5m42c3yc",
+   "b": "gkfz3cdkuxg7s96sptwxbam2c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "46-75",
+   "a": "1x61a1kh6imed7w8ka9k172kb",
+   "b": "hmczznzyfm7fsriiiiudgup6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "136-172",
+   "a": "0qf7c10my2ekxxs06p4cg8gyc",
+   "b": "g96swdic4q5y8y6qq232csbdb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-141",
+   "a": "2z0bfugih2rmn0dhei3n9hu9d",
+   "b": "5whnzzx4an1crx5x0sum1m39d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-113",
+   "a": "2au0z0gennuwai7dm3p54s4pb",
+   "b": "6y3y27mwu2qzn5xd03gnuw2ec",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "137-172",
+   "a": "0zxzn4xrt49znq6f1d2n6i0rd",
+   "b": "g96swdic4q5y8y6qq232csbdb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "155-187",
+   "a": "5stm18mzfz8k3274t7fr6qt8b",
+   "b": "h0u7yd4xsuagytmumifqqyw8a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "85-88",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "cy9hnqnn97bmi7n4xrpnehtna",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f3, elev_f4",
+   "points": [
+    {
+     "x": 1.811,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 4.011,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 3.64,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 1.44,
+     "y": 3.436,
+     "z": 8.429
+    }
+   ]
+  },
+  {
+   "id": "85-92",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f3, elev_f2",
+   "points": [
+    {
+     "x": 1.811,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 4.011,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 3.867,
+     "y": -3.395,
+     "z": 8.34
+    },
+    {
+     "x": 1.667,
+     "y": -3.395,
+     "z": 8.34
+    }
+   ]
+  },
+  {
+   "id": "71-85",
+   "a": "aewkibq8d3nf32wdpah5n5mha",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f3, elev_f1",
+   "points": [
+    {
+     "x": 1.811,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 4.011,
+     "y": 0.015,
+     "z": 8.291
+    },
+    {
+     "x": 4.07,
+     "y": -6.01,
+     "z": 8.339
+    },
+    {
+     "x": 1.87,
+     "y": -6.01,
+     "z": 8.339
+    }
+   ]
+  },
+  {
+   "id": "88-92",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f4, elev_f2",
+   "points": [
+    {
+     "x": 1.44,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 3.64,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 3.867,
+     "y": -3.395,
+     "z": 8.34
+    },
+    {
+     "x": 1.667,
+     "y": -3.395,
+     "z": 8.34
+    }
+   ]
+  },
+  {
+   "id": "71-88",
+   "a": "cy9hnqnn97bmi7n4xrpnehtna",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f4, elev_f1",
+   "points": [
+    {
+     "x": 1.44,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 3.64,
+     "y": 3.436,
+     "z": 8.429
+    },
+    {
+     "x": 4.07,
+     "y": -6.01,
+     "z": 8.339
+    },
+    {
+     "x": 1.87,
+     "y": -6.01,
+     "z": 8.339
+    }
+   ]
+  },
+  {
+   "id": "71-92",
+   "a": "ipk3g6mkddmi86pyhu7q5kk3b",
+   "b": "x5bksrgdxudq96y0cbga96r6c",
+   "kind": "elevator",
+   "source": "lane-a:via elev_f2, elev_f1",
+   "points": [
+    {
+     "x": 1.667,
+     "y": -3.395,
+     "z": 8.34
+    },
+    {
+     "x": 3.867,
+     "y": -3.395,
+     "z": 8.34
+    },
+    {
+     "x": 4.07,
+     "y": -6.01,
+     "z": 8.339
+    },
+    {
+     "x": 1.87,
+     "y": -6.01,
+     "z": 8.339
+    }
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "door_front",
+   "label": "Front doors on Broxton Ave",
+   "nodeId": "xbs023caabui47dkwyyi3mtwd",
+   "position": {
+    "x": 0.2,
+    "y": -3.4,
+    "z": -2.35
+   },
+   "lat": 34.063417928403844,
+   "lng": -118.44728929470847,
+   "approach": [
+    {
+     "lat": 34.0634115,
+     "lng": -118.4471423
+    },
+    {
+     "lat": 34.063417928403844,
+     "lng": -118.44728929470847
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": true,
+   "confirmed": true,
+   "stagingId": "stage_broxton",
+   "stagingLabel": "the curb on Broxton Ave"
+  },
+  {
+   "id": "door_xizaxwh3_0",
+   "label": "Side exit door",
+   "nodeId": "36w2zndh3891i4u29m0ui2dic",
+   "position": {
+    "x": -8.949,
+    "y": -3.418,
+    "z": 8.217
+   },
+   "lat": 34.063491924007565,
+   "lng": -118.44741185897034,
+   "approach": [
+    {
+     "lat": 34.0635813,
+     "lng": -118.4473893
+    },
+    {
+     "lat": 34.063491924007565,
+     "lng": -118.44741185897034
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off. Expect this door to be locked from outside.",
+   "primary": false,
+   "confirmed": false,
+   "stagingId": "stage_north",
+   "stagingLabel": "the curb on the north side street"
+  }
+ ],
+ "defaultDestination": "0t15m4sznebtgw6xgygkumaya",
+ "scope": null,
+ "provenance": {
+  "source": "lane A graph (env/build_graph.py), exported by env/console.py",
+  "generated": "2026-11-14T16:59:23",
+  "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
+  "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
+  "aerial": "Vexcel. Staging spots are placed by eye."
+ },
+ "aerial": {
+  "bounds": {
+   "west": -118.44806305838249,
+   "south": 34.0627751821775,
+   "east": -118.44654494161752,
+   "north": 34.06403281782249
+  },
+  "url": "/api/aerial/259587.jpg"
+ }
+}

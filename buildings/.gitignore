@@ -1,0 +1,4 @@
+# rendered panoramas are large and can be rebuilt: python -m env.views panos <id>
+*/panos/
+# floor plans with node id labels are a marking aid: python -m env.render <id> --labels
+*_labels.jpg

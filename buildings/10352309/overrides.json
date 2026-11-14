@@ -1,0 +1,79 @@
+{
+ "nodes": {
+  "door_5iaa7dee_0": {
+   "confirmed": true,
+   "primary": true,
+   "label": "the west door (reception)",
+   "note": "opens into the reception and waiting room; mail slot; faces the parking lot"
+  },
+  "door_2x8qngma_0": {
+   "confirmed": true
+  },
+  "door_szk6qmg2_0": {
+   "confirmed": true
+  },
+  "door_2ry85nac_0": {
+   "confirmed": true,
+   "approach": {
+    "locked_entry": true,
+    "note": "sign inside: 'This door must remain locked'"
+   }
+  }
+ },
+ "edges": [
+  {
+   "a": "xtnxknw28esx14e34rsehnixc",
+   "b": "door_2ry85nac_0",
+   "type": "door",
+   "confidence": 0.9,
+   "note": "sign on the inside of this door: 'Please close door quietly. This door must remain locked.'",
+   "evidence_path": "buildings/10352309/evidence/door_2ry85nac_0.jpg"
+  }
+ ],
+ "add_nodes": [
+  {
+   "id": "stage_west",
+   "kind": "staging",
+   "label": "the west parking lot",
+   "latlon": [
+    29.9631196,
+    -95.5355522
+   ],
+   "source": "hand: drive aisle read off the aerial tile",
+   "confirmed": false
+  },
+  {
+   "id": "stage_southeast",
+   "kind": "staging",
+   "label": "the southeast parking lot",
+   "latlon": [
+    29.9629996,
+    -95.5351512
+   ],
+   "source": "hand: drive aisle read off the aerial tile",
+   "confirmed": false
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "stage_west",
+   "b": "door_5iaa7dee_0",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_west",
+   "b": "door_2x8qngma_0",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_southeast",
+   "b": "door_2ry85nac_0",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_southeast",
+   "b": "door_szk6qmg2_0",
+   "type": "exterior_foot"
+  }
+ ]
+}

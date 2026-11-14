@@ -1,0 +1,102 @@
+{
+ "name": "911 Broxton Ave (Broxton Plaza)",
+ "add_nodes": [
+  {
+   "id": "door_front",
+   "floor": 2,
+   "xyz": [
+    0.2,
+    2.35,
+    -3.4
+   ],
+   "is_entrance": true,
+   "primary": true,
+   "label": "the front doors on Broxton Ave",
+   "confirmed": true,
+   "attributes": {
+    "seen_from": "xbs023caabui47dkwyyi3mtwd",
+    "door": "frosted glass double doors lettered 911 BROXTON PLAZA",
+    "fire_alarm_pull": true
+   },
+   "source": "hand: glass doors seen from the lobby; the wall plan records no opening there"
+  },
+  {
+   "id": "stage_broxton",
+   "kind": "staging",
+   "label": "the curb on Broxton Ave",
+   "latlon": [
+    34.0634115,
+    -118.4471423
+   ],
+   "source": "hand: curb read off the aerial tile",
+   "confirmed": false
+  },
+  {
+   "id": "stage_north",
+   "kind": "staging",
+   "label": "the curb on the north side street",
+   "latlon": [
+    34.0635813,
+    -118.4473893
+   ],
+   "source": "hand: curb read off the aerial tile",
+   "confirmed": false
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "xbs023caabui47dkwyyi3mtwd",
+   "b": "door_front",
+   "type": "door",
+   "confidence": 0.9,
+   "assumed": false
+  },
+  {
+   "a": "stage_broxton",
+   "b": "door_front",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_north",
+   "b": "door_xizaxwh3_0",
+   "type": "exterior_foot"
+  }
+ ],
+ "elevators": [
+  {
+   "id": "elev",
+   "label": "the elevator",
+   "offset_xy": [
+    2.2,
+    0.0
+   ],
+   "stops": {
+    "1": "x5bksrgdxudq96y0cbga96r6c",
+    "2": "ipk3g6mkddmi86pyhu7q5kk3b",
+    "3": "aewkibq8d3nf32wdpah5n5mha",
+    "4": "cy9hnqnn97bmi7n4xrpnehtna"
+   },
+   "source": "hand: elevator doors and call buttons seen on Basement 1 and Floors 1 to 3; not seen on Basement 2"
+  }
+ ],
+ "nodes": {
+  "door_xizaxwh3_0": {
+   "label": "the side exit door",
+   "note": "exit door with a panic bar; probably cannot be opened from outside",
+   "approach": {
+    "locked_entry": true,
+    "note": "panic bar seen from inside: likely exit-only (inferred)"
+   }
+  }
+ },
+ "edges": [
+  {
+   "a": "36w2zndh3891i4u29m0ui2dic",
+   "b": "door_xizaxwh3_0",
+   "type": "door",
+   "confidence": 0.6,
+   "note": "panic bar seen from inside: likely exit-only, so entry from outside is assumed to need forcing",
+   "evidence_path": "buildings/259587/evidence/door_xizaxwh3_0.jpg"
+  }
+ ]
+}

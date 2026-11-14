@@ -1,0 +1,135 @@
+{
+ "name": "1315 St Joseph Pkwy, 14th floor",
+ "floor_offset": 13,
+ "scope": "14th floor only: the whole floor around the central core. The elevator cars, both stairwells, the street-level lobby and every other floor are not scanned.",
+ "nodes": {
+  "1m21wip3ze5byhrf4yhfpz25d": {
+   "label": "the glass doors at the end of the elevator lobby",
+   "note": "sweep 1.5 m outside the glass double doors of the elevator lobby (heading 90)"
+  },
+  "bidr0pifgmstmxxxtzdpi1w8d": {
+   "label": "the restroom alcove by Stair A",
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "MEN door at heading 2, WOMEN door at heading 300, fire alarm pull station at heading 75 beside the Stair A door"
+  },
+  "hazt2anz9fryp7q7rfqqdhqsd": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station just right of the Stair B door (heading 257); drinking fountains on the same wall at heading 217"
+  },
+  "nfayra9araxhd5wxg01a1sxqb": {
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "note": "fire extinguisher in a wall cabinet at heading 0"
+  },
+  "d091be7s3up71r03yqr6ytdid": {
+   "label": "the Electrical Room and Storage anteroom",
+   "note": "door plate ELECTRICAL ROOM at heading 13; wall sign outside reads ELECTRICAL ROOM AND STORAGE"
+  },
+  "im3pgkd7eakbbdpk7kpwr544b": {
+   "note": "DATA ROOM door with a card reader at heading 305"
+  },
+  "epnsh24spnkxcyeckshepe9qa": {
+   "note": "LAB door at heading 118; wall sign at heading 350 by the double doors: THIS DOOR TO REMAIN UNLOCKED WHEN THE BUILDING IS OCCUPIED"
+  },
+  "07f4i058fywrh2e1qzt5q0mpd": {
+   "note": "door at heading 318 is marked EMPLOYEES ONLY / GENERAL OFFICE and has a card reader"
+  }
+ },
+ "add_nodes": [
+  {
+   "id": "elev_lobby",
+   "near": "1m21wip3ze5byhrf4yhfpz25d",
+   "heading_deg": 90,
+   "distance_m": 5.0,
+   "kind": "elevator",
+   "edge_type": "door",
+   "is_entrance": true,
+   "primary": true,
+   "label": "the passenger elevators",
+   "confidence": 0.8,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "Six passenger elevator doors, three on each side of the core lobby, each jamb marked 14; call buttons between the doors. The lobby itself is not walked by the scan: it is seen through the glass double doors at one end; a wood door at the other end opens to the corridor. The glass doors have a card reader on the lobby side, a PUSH TO OPEN DOOR button on the suite side and the lettering THIS DOOR TO REMAIN UNLOCKED WHEN BUILDING IS OCCUPIED. Fire alarm pull station on the lobby wall just inside the glass doors. Whether the cars take a stretcher is not known from the scan.",
+   "approach": {
+    "via": "elevator",
+    "floors": 13
+   }
+  },
+  {
+   "id": "elev_lobby_wood_door",
+   "near": "f463u43pm1r63xzh1aus5523a",
+   "heading_deg": 272,
+   "distance_m": 1.2,
+   "kind": "door",
+   "edge_type": "door",
+   "width_m": 0.92,
+   "confidence": 0.7,
+   "label": "the wood door at the end of the elevator lobby",
+   "note": "Single wood door with a closer; wall sign ELEVATOR LOBBY on the corridor side. The same door is seen through the glass doors at the far end of the elevator lobby. Not known whether it locks from the lobby side."
+  },
+  {
+   "id": "stair_a",
+   "near": "bidr0pifgmstmxxxtzdpi1w8d",
+   "heading_deg": 133,
+   "distance_m": 1.5,
+   "edge_type": "door",
+   "width_m": 0.93,
+   "is_entrance": true,
+   "confidence": 0.6,
+   "label": "the Stair A door",
+   "note": "EXIT sign above, door plate STAIR A, wall sign STAIR A NO RE-ENTRY. Locked from the stair side is inferred from that sign, not seen.",
+   "approach": {
+    "via": "stairs",
+    "floors": 13,
+    "note": "Stair A; sign beside the door reads NO RE-ENTRY, so expect the door to be locked from the stair side",
+    "locked_entry": true
+   }
+  },
+  {
+   "id": "stair_b",
+   "near": "hazt2anz9fryp7q7rfqqdhqsd",
+   "heading_deg": 290,
+   "distance_m": 1.6,
+   "edge_type": "door",
+   "width_m": 0.87,
+   "is_entrance": true,
+   "confidence": 0.6,
+   "label": "the Stair B door",
+   "note": "EXIT sign above, door plate STAIR B, wall sign STAIR B NO RE-ENTRY. Locked from the stair side is inferred from that sign, not seen.",
+   "approach": {
+    "via": "stairs",
+    "floors": 13,
+    "note": "Stair B; sign beside the door reads NO RE-ENTRY, so expect the door to be locked from the stair side",
+    "locked_entry": true
+   }
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "elev_lobby_wood_door",
+   "b": "elev_lobby",
+   "type": "open",
+   "confidence": 0.8,
+   "assumed": false,
+   "note": "inside the elevator lobby: seen through the glass doors, not walked by the scan"
+  }
+ ],
+ "edges": [
+  {
+   "a": "1m21wip3ze5byhrf4yhfpz25d",
+   "b": "elev_lobby",
+   "note": "glass double doors between the elevator lobby and the reception side: card reader on the lobby side, PUSH TO OPEN DOOR button on the suite side, lettering THIS DOOR TO REMAIN UNLOCKED WHEN BUILDING IS OCCUPIED; may be locked after hours"
+  },
+  {
+   "a": "nfayra9araxhd5wxg01a1sxqb",
+   "b": "sqzu8a8018bcghf0tmyyk5fpb",
+   "note": "door plate EMPLOYEES ONLY on the face toward the elevator side; wall sign on the other side: THIS DOOR TO REMAIN UNLOCKED WHEN THE BUILDING IS OCCUPIED"
+  }
+ ]
+}

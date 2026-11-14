@@ -1,0 +1,2592 @@
+{
+ "modelId": "mZ4TqsMaSk8",
+ "propertyId": "10352309",
+ "name": "12814 Willow Centre Dr",
+ "faceRoute": true,
+ "supportsOverview": true,
+ "georeference": {
+  "lat": 29.9630863,
+  "long": -95.5353281
+ },
+ "floors": [
+  {
+   "id": "0",
+   "sequence": 0,
+   "label": "Floor 1"
+  },
+  {
+   "id": "1",
+   "sequence": 1,
+   "label": "Floor 2"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "fays2gi27s78ggx765sd083ra",
+   "index": 0,
+   "floor": 1,
+   "position": {
+    "x": 5.821,
+    "y": 3.32,
+    "z": 11.949
+   },
+   "label": "Scan 0 \u00b7 Floor 2 \u00b7 Electrical Room"
+  },
+  {
+   "id": "nib7b4bradwgwieg9bdh6134d",
+   "index": 1,
+   "floor": 1,
+   "position": {
+    "x": 9.757,
+    "y": 3.392,
+    "z": -0.61
+   },
+   "label": "Scan 1 \u00b7 Floor 2 \u00b7 Bathroom"
+  },
+  {
+   "id": "pa7nzs64it0xnzwnibb12cu9d",
+   "index": 2,
+   "floor": 1,
+   "position": {
+    "x": 10.346,
+    "y": 3.379,
+    "z": 3.069
+   },
+   "label": "Scan 2 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "q253rf7z35x3a5738at93pznb",
+   "index": 3,
+   "floor": 0,
+   "position": {
+    "x": 2.583,
+    "y": 0.002,
+    "z": -1.552
+   },
+   "label": "Scan 3 \u00b7 Floor 1 \u00b7 Reception Area"
+  },
+  {
+   "id": "sadk80f39wqc5ig0hxg5annsa",
+   "index": 4,
+   "floor": 1,
+   "position": {
+    "x": 10.3,
+    "y": 3.38,
+    "z": 1.725
+   },
+   "label": "Scan 4 \u00b7 Floor 2 \u00b7 Bathroom"
+  },
+  {
+   "id": "u2r4geibr25b3tx2r1ir8s5zd",
+   "index": 5,
+   "floor": 0,
+   "position": {
+    "x": 8.976,
+    "y": 0.001,
+    "z": 1.782
+   },
+   "label": "Scan 5 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "xtnxknw28esx14e34rsehnixc",
+   "index": 6,
+   "floor": 0,
+   "position": {
+    "x": 15.443,
+    "y": -0.027,
+    "z": 7.641
+   },
+   "label": "Scan 6 \u00b7 Floor 1 \u00b7 Entrance"
+  },
+  {
+   "id": "y2wgz730y2198bmi13gtnccqb",
+   "index": 7,
+   "floor": 1,
+   "position": {
+    "x": 9.841,
+    "y": 3.495,
+    "z": -1.573
+   },
+   "label": "Scan 7 \u00b7 Floor 2 \u00b7 Bathroom"
+  },
+  {
+   "id": "z2fh6t8w00aewesz7ys25123a",
+   "index": 8,
+   "floor": 1,
+   "position": {
+    "x": 9.708,
+    "y": 3.353,
+    "z": 6.513
+   },
+   "label": "Scan 8 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "1a4pzmg8hz9guun97ada45s1a",
+   "index": 9,
+   "floor": 0,
+   "position": {
+    "x": 8.762,
+    "y": -0.002,
+    "z": 7.608
+   },
+   "label": "Scan 9 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "3a3yrdwi2c3a5gh5k9kidiuwc",
+   "index": 10,
+   "floor": 0,
+   "position": {
+    "x": 1.813,
+    "y": -0.005,
+    "z": 3.951
+   },
+   "label": "Scan 10 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "3i0p5kz8kmdspa5igiekikr7a",
+   "index": 11,
+   "floor": 1,
+   "position": {
+    "x": 9.281,
+    "y": 3.345,
+    "z": 8.164
+   },
+   "label": "Scan 11 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "3a1554tnuknd739zw23ck7mpa",
+   "index": 12,
+   "floor": 0,
+   "position": {
+    "x": 7.519,
+    "y": -0.006,
+    "z": 2.424
+   },
+   "label": "Scan 12 \u00b7 Floor 1 \u00b7 Kitchen"
+  },
+  {
+   "id": "42wdmaru7ax1cxf1mfqe7nmqb",
+   "index": 13,
+   "floor": 0,
+   "position": {
+    "x": 15.095,
+    "y": -0.014,
+    "z": 0.197
+   },
+   "label": "Scan 13 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "5t1c5ehd8s0umr7mpctrer44c",
+   "index": 14,
+   "floor": 1,
+   "position": {
+    "x": 6.423,
+    "y": 2.244,
+    "z": 4.145
+   },
+   "label": "Scan 14 \u00b7 Floor 2 \u00b7 Staircase"
+  },
+  {
+   "id": "82dsk1nq0ndbrm95exuqzce8c",
+   "index": 15,
+   "floor": 0,
+   "position": {
+    "x": 6.706,
+    "y": 0.004,
+    "z": -1.192
+   },
+   "label": "Scan 15 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "f3k8901gutf08txwdph7h2mnc",
+   "index": 16,
+   "floor": 0,
+   "position": {
+    "x": 5.451,
+    "y": -0.011,
+    "z": 4.091
+   },
+   "label": "Scan 16 \u00b7 Floor 1 \u00b7 Closet"
+  },
+  {
+   "id": "iuzauum2sdi9pg7tcyw95z3ud",
+   "index": 17,
+   "floor": 0,
+   "position": {
+    "x": 15.123,
+    "y": -0.018,
+    "z": -1.349
+   },
+   "label": "Scan 17 \u00b7 Floor 1 \u00b7 Bathroom"
+  },
+  {
+   "id": "nb4ti7xk52q4xd1bdzt2awp5a",
+   "index": 18,
+   "floor": 1,
+   "position": {
+    "x": 7.346,
+    "y": 3.379,
+    "z": 9.94
+   },
+   "label": "Scan 18 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "qkxigfr952ce96iq6f812bixd",
+   "index": 19,
+   "floor": 1,
+   "position": {
+    "x": 7.606,
+    "y": 1.691,
+    "z": 4.234
+   },
+   "label": "Scan 19 \u00b7 Floor 2 \u00b7 Staircase"
+  },
+  {
+   "id": "ubiqr0w676uphwx137zgay0bd",
+   "index": 20,
+   "floor": 0,
+   "position": {
+    "x": 6.868,
+    "y": 0.006,
+    "z": -2.053
+   },
+   "label": "Scan 20 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "zb86s3duckdhp1kbii12aihgb",
+   "index": 21,
+   "floor": 0,
+   "position": {
+    "x": 12.522,
+    "y": -0.01,
+    "z": 0.134
+   },
+   "label": "Scan 21 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "0ucknz8a861c9f45mr16g7yad",
+   "index": 22,
+   "floor": 0,
+   "position": {
+    "x": 6.618,
+    "y": -0.017,
+    "z": 8.887
+   },
+   "label": "Scan 22 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "4b044acn63m5y5q5z203ic7sa",
+   "index": 23,
+   "floor": 0,
+   "position": {
+    "x": 5.041,
+    "y": -0.004,
+    "z": 2.608
+   },
+   "label": "Scan 23 \u00b7 Floor 1 \u00b7 Kitchen"
+  },
+  {
+   "id": "83kqeyqpw80hsyabyhdsr47ha",
+   "index": 24,
+   "floor": 1,
+   "position": {
+    "x": 5.19,
+    "y": 3.361,
+    "z": 9.93
+   },
+   "label": "Scan 24 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "awiumd3qh499u65362c66sg1c",
+   "index": 25,
+   "floor": 0,
+   "position": {
+    "x": 3.094,
+    "y": 0.016,
+    "z": 5.41
+   },
+   "label": "Scan 25 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "dw5n9kx3a3amgczn0p822fe1d",
+   "index": 26,
+   "floor": 0,
+   "position": {
+    "x": 4.067,
+    "y": 0.006,
+    "z": 0.592
+   },
+   "label": "Scan 26 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "eczh0e8zbu0c9nw2wiygksr4c",
+   "index": 27,
+   "floor": 0,
+   "position": {
+    "x": 5.464,
+    "y": -0.008,
+    "z": 5.116
+   },
+   "label": "Scan 27 \u00b7 Floor 1 \u00b7 Reception Deck"
+  },
+  {
+   "id": "hmu7gp2z1r88ua71rwa0g238a",
+   "index": 28,
+   "floor": 0,
+   "position": {
+    "x": 3.119,
+    "y": 0.005,
+    "z": 0.441
+   },
+   "label": "Scan 28 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "k45zypz7znw1h9srz45szxryb",
+   "index": 29,
+   "floor": 0,
+   "position": {
+    "x": 0.041,
+    "y": -0.002,
+    "z": 1.865
+   },
+   "label": "Scan 29 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "scdfnbgn2eick02yqxnhaezab",
+   "index": 30,
+   "floor": 0,
+   "position": {
+    "x": 7.614,
+    "y": -0.001,
+    "z": 7.42
+   },
+   "label": "Scan 30 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "x486nmgncc2ntxwdy3xtkfmgd",
+   "index": 31,
+   "floor": 0,
+   "position": {
+    "x": 0.584,
+    "y": 0.012,
+    "z": -1.741
+   },
+   "label": "Scan 31 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "z497sy8hdi65u6ynsuz5n6rba",
+   "index": 32,
+   "floor": 0,
+   "position": {
+    "x": 11.392,
+    "y": -0.013,
+    "z": 7.372
+   },
+   "label": "Scan 32 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "0mp62e97rtkgr1i6936ri1hta",
+   "index": 33,
+   "floor": 0,
+   "position": {
+    "x": 7.625,
+    "y": -0.018,
+    "z": 4.257
+   },
+   "label": "Scan 33 \u00b7 Floor 1 \u00b7 Closet"
+  },
+  {
+   "id": "1w7gn0eqwy4er5777e6k34wwc",
+   "index": 34,
+   "floor": 0,
+   "position": {
+    "x": 0.837,
+    "y": 0.014,
+    "z": 5.659
+   },
+   "label": "Scan 34 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "2ckfa3hhhddyd20ukzdnfb3md",
+   "index": 35,
+   "floor": 0,
+   "position": {
+    "x": 12.507,
+    "y": -0.012,
+    "z": -2.208
+   },
+   "label": "Scan 35 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "2wmxt1nwcnxche9qeectkt7ca",
+   "index": 36,
+   "floor": 0,
+   "position": {
+    "x": 8.851,
+    "y": -0.018,
+    "z": 5.052
+   },
+   "label": "Scan 36 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "346zmufqpxzn762c2nrxtp4bc",
+   "index": 37,
+   "floor": 0,
+   "position": {
+    "x": 12.786,
+    "y": -0.003,
+    "z": 2.73
+   },
+   "label": "Scan 37 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "3mrmmq0wmxaqfwe01wiihgqbd",
+   "index": 38,
+   "floor": 1,
+   "position": {
+    "x": 6.995,
+    "y": 3.368,
+    "z": 11.968
+   },
+   "label": "Scan 38 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "8mhqwgw5862s453qb8hi8393b",
+   "index": 39,
+   "floor": 0,
+   "position": {
+    "x": 9.139,
+    "y": -0.03,
+    "z": 11.878
+   },
+   "label": "Scan 39 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "m5084pr73bp19rz9gfs3kxc5d",
+   "index": 40,
+   "floor": 0,
+   "position": {
+    "x": 12.635,
+    "y": -0.005,
+    "z": 4.94
+   },
+   "label": "Scan 40 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "pxbbmri9bskqheax4bbebfb7d",
+   "index": 41,
+   "floor": 0,
+   "position": {
+    "x": 6.531,
+    "y": -0.007,
+    "z": 5.452
+   },
+   "label": "Scan 41 \u00b7 Floor 1 \u00b7 Reception Deck"
+  },
+  {
+   "id": "xdahtxxrbb1haasxe64ru4mxb",
+   "index": 42,
+   "floor": 0,
+   "position": {
+    "x": 4.505,
+    "y": -0.001,
+    "z": 7.633
+   },
+   "label": "Scan 42 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "xddma3k4ymeym4tfrww97tz3d",
+   "index": 43,
+   "floor": 0,
+   "position": {
+    "x": 9.983,
+    "y": -0.01,
+    "z": 4.89
+   },
+   "label": "Scan 43 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "65dag1038wycy0xcrn1ccsgkc",
+   "index": 44,
+   "floor": 1,
+   "position": {
+    "x": 8.474,
+    "y": 3.379,
+    "z": 1.692
+   },
+   "label": "Scan 44 \u00b7 Floor 2 \u00b7 Bathroom"
+  },
+  {
+   "id": "ap2ufgi4fr1emh7z5pnmp7w6c",
+   "index": 45,
+   "floor": 1,
+   "position": {
+    "x": 7.199,
+    "y": 3.401,
+    "z": -0.981
+   },
+   "label": "Scan 45 \u00b7 Floor 2 \u00b7 Closet"
+  },
+  {
+   "id": "aeby9wnfx8kmfefyei4sz2znc",
+   "index": 46,
+   "floor": 1,
+   "position": {
+    "x": 9.662,
+    "y": 3.375,
+    "z": 4.623
+   },
+   "label": "Scan 46 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "ce3k7pwgps0f50i5afm3ugw9a",
+   "index": 47,
+   "floor": 0,
+   "position": {
+    "x": 9.265,
+    "y": -0.022,
+    "z": 8.922
+   },
+   "label": "Scan 47 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "cexh777se3m8i1diq5p1hn9fd",
+   "index": 48,
+   "floor": 0,
+   "position": {
+    "x": 6.53,
+    "y": -0.007,
+    "z": 5.453
+   },
+   "label": "Scan 48 \u00b7 Floor 1 \u00b7 Reception Deck"
+  },
+  {
+   "id": "dpk4uaympun0fmup21a13r8ud",
+   "index": 49,
+   "floor": 0,
+   "position": {
+    "x": 6.054,
+    "y": 0.003,
+    "z": -0.53
+   },
+   "label": "Scan 49 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "e62ehd7a7ktnyf7z1yw4hq61b",
+   "index": 50,
+   "floor": 0,
+   "position": {
+    "x": 11.271,
+    "y": 0.001,
+    "z": 1.679
+   },
+   "label": "Scan 50 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "ee51dmzqamp8igqdr59e2wqgb",
+   "index": 51,
+   "floor": 1,
+   "position": {
+    "x": 5.172,
+    "y": 2.824,
+    "z": 4.275
+   },
+   "label": "Scan 51 \u00b7 Floor 2 \u00b7 Staircase"
+  },
+  {
+   "id": "kyrw61fz5zrhctzkaa5qw50qa",
+   "index": 52,
+   "floor": 1,
+   "position": {
+    "x": 10.203,
+    "y": 3.381,
+    "z": 11.62
+   },
+   "label": "Scan 52 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "myqu0p81q92wc69ngbn29655c",
+   "index": 53,
+   "floor": 0,
+   "position": {
+    "x": 14.874,
+    "y": -0.017,
+    "z": -2.083
+   },
+   "label": "Scan 53 \u00b7 Floor 1 \u00b7 Bathroom"
+  },
+  {
+   "id": "myrr1afqdw7qwqfqw91365y7b",
+   "index": 54,
+   "floor": 1,
+   "position": {
+    "x": 5.515,
+    "y": 3.401,
+    "z": -1.586
+   },
+   "label": "Scan 54 \u00b7 Floor 2 \u00b7 Closet"
+  },
+  {
+   "id": "peud69ss87pxxk8f9symq5nsb",
+   "index": 55,
+   "floor": 0,
+   "position": {
+    "x": 10.249,
+    "y": 0.006,
+    "z": 3.624
+   },
+   "label": "Scan 55 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "qess2engr3x9mmysn5qntnzrb",
+   "index": 56,
+   "floor": 0,
+   "position": {
+    "x": 10.155,
+    "y": 0.005,
+    "z": 1.855
+   },
+   "label": "Scan 56 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "qehwg5c65cinqy1q6z4rugzsd",
+   "index": 57,
+   "floor": 0,
+   "position": {
+    "x": 13.865,
+    "y": -0.015,
+    "z": 0.239
+   },
+   "label": "Scan 57 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "w6ip3sme93bd76dd21wbs0a3b",
+   "index": 58,
+   "floor": 0,
+   "position": {
+    "x": 13.709,
+    "y": -0.02,
+    "z": 7.626
+   },
+   "label": "Scan 58 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "yyb6bixpxdds1pe91a4w629td",
+   "index": 59,
+   "floor": 0,
+   "position": {
+    "x": 0.01,
+    "y": 0.008,
+    "z": -0.007
+   },
+   "label": "Scan 59 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "yemifhm1es7nq3iwwcm27xuka",
+   "index": 60,
+   "floor": 0,
+   "position": {
+    "x": -0.033,
+    "y": -0.016,
+    "z": 4.123
+   },
+   "label": "Scan 60 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "3y86wi2fu3m6a66uab6ttt8dc",
+   "index": 61,
+   "floor": 1,
+   "position": {
+    "x": 5.952,
+    "y": 3.364,
+    "z": 9.848
+   },
+   "label": "Scan 61 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "6ei6iqa2gaxiab0hyb41sm2ua",
+   "index": 62,
+   "floor": 1,
+   "position": {
+    "x": 5.176,
+    "y": 3.378,
+    "z": 3.036
+   },
+   "label": "Scan 62 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "6y79nadm3gbkfg6dds8satbtb",
+   "index": 63,
+   "floor": 0,
+   "position": {
+    "x": 15.617,
+    "y": -0.036,
+    "z": 5.931
+   },
+   "label": "Scan 63 \u00b7 Floor 1 \u00b7 Entrance"
+  },
+  {
+   "id": "86pidewu1iw9hq8kgxeazahbd",
+   "index": 64,
+   "floor": 0,
+   "position": {
+    "x": 12.713,
+    "y": -0.009,
+    "z": 6.286
+   },
+   "label": "Scan 64 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "fq9kxz4sub1s34uzicryia9id",
+   "index": 65,
+   "floor": 0,
+   "position": {
+    "x": 9.91,
+    "y": -0.007,
+    "z": -2.17
+   },
+   "label": "Scan 65 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "hq7fbqhgph6icp77ptdgs9ehd",
+   "index": 66,
+   "floor": 1,
+   "position": {
+    "x": 7.245,
+    "y": 3.411,
+    "z": 0.193
+   },
+   "label": "Scan 66 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "hqdas43kysiwpnm88wchz0hwa",
+   "index": 67,
+   "floor": 0,
+   "position": {
+    "x": 4.057,
+    "y": -0.0,
+    "z": -1.469
+   },
+   "label": "Scan 67 \u00b7 Floor 1 \u00b7 Reception Area"
+  },
+  {
+   "id": "iz28e3u6teuby62e9iwr2fygb",
+   "index": 68,
+   "floor": 0,
+   "position": {
+    "x": 11.198,
+    "y": -0.007,
+    "z": 0.653
+   },
+   "label": "Scan 68 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "mqpn20r85iyurhn33d8fr60ia",
+   "index": 69,
+   "floor": 1,
+   "position": {
+    "x": 6.612,
+    "y": 3.374,
+    "z": 6.793
+   },
+   "label": "Scan 69 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "n7y89004xrupkc06ta11ht2rb",
+   "index": 70,
+   "floor": 0,
+   "position": {
+    "x": 6.237,
+    "y": -0.014,
+    "z": 4.139
+   },
+   "label": "Scan 70 \u00b7 Floor 1 \u00b7 Closet"
+  },
+  {
+   "id": "qqz0rdrwfpedft5ffca5xm23d",
+   "index": 71,
+   "floor": 1,
+   "position": {
+    "x": 8.789,
+    "y": 3.394,
+    "z": -1.24
+   },
+   "label": "Scan 71 \u00b7 Floor 2 \u00b7 Bathroom"
+  },
+  {
+   "id": "rz4g5x7s4ucurz7btt7a5iasb",
+   "index": 72,
+   "floor": 0,
+   "position": {
+    "x": 8.75,
+    "y": -0.002,
+    "z": 7.578
+   },
+   "label": "Scan 72 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "6fbsqhawbt4ptc30aye948y3d",
+   "index": 73,
+   "floor": 0,
+   "position": {
+    "x": 5.196,
+    "y": -0.001,
+    "z": -2.074
+   },
+   "label": "Scan 73 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "index": 74,
+   "floor": 0,
+   "position": {
+    "x": 9.256,
+    "y": -0.023,
+    "z": 10.301
+   },
+   "label": "Scan 74 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "c8t3887rq7yuipd9tysbwch4a",
+   "index": 75,
+   "floor": 0,
+   "position": {
+    "x": 8.593,
+    "y": -0.001,
+    "z": -1.124
+   },
+   "label": "Scan 75 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "d0z2qwypkc6ag747ipcw0fagd",
+   "index": 76,
+   "floor": 0,
+   "position": {
+    "x": 14.975,
+    "y": -0.005,
+    "z": 3.711
+   },
+   "label": "Scan 76 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "er6np4qwtbs26k8rte3n2da8c",
+   "index": 77,
+   "floor": 0,
+   "position": {
+    "x": 15.045,
+    "y": -0.001,
+    "z": 1.856
+   },
+   "label": "Scan 77 \u00b7 Floor 1 \u00b7 Conference Room"
+  },
+  {
+   "id": "ggpcpdq1803p4g5hugb8mqpkc",
+   "index": 78,
+   "floor": 0,
+   "position": {
+    "x": 3.175,
+    "y": 0.002,
+    "z": 3.32
+   },
+   "label": "Scan 78 \u00b7 Floor 1 \u00b7 Bathroom"
+  },
+  {
+   "id": "ggqgih8s8q5rmp3fruwnpg00d",
+   "index": 79,
+   "floor": 0,
+   "position": {
+    "x": 1.719,
+    "y": 0.007,
+    "z": 1.766
+   },
+   "label": "Scan 79 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "g89seufbuaxygaczac7fu97ua",
+   "index": 80,
+   "floor": 0,
+   "position": {
+    "x": 8.882,
+    "y": -0.003,
+    "z": -0.547
+   },
+   "label": "Scan 80 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "m0ciz1gd88tduznpmkc9p5pfa",
+   "index": 81,
+   "floor": 1,
+   "position": {
+    "x": 5.223,
+    "y": 3.334,
+    "z": 11.053
+   },
+   "label": "Scan 81 \u00b7 Floor 2 \u00b7 Electrical Room"
+  },
+  {
+   "id": "pge6wt46uzphzchtt7cy10mrc",
+   "index": 82,
+   "floor": 1,
+   "position": {
+    "x": 5.153,
+    "y": 3.392,
+    "z": 5.795
+   },
+   "label": "Scan 82 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "p0afshpif7e7t1qzr0amk0mgd",
+   "index": 83,
+   "floor": 1,
+   "position": {
+    "x": 10.111,
+    "y": 3.383,
+    "z": 9.956
+   },
+   "label": "Scan 83 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "prddiw9bm449pc77yt3dyph9b",
+   "index": 84,
+   "floor": 0,
+   "position": {
+    "x": 1.586,
+    "y": 0.012,
+    "z": 0.327
+   },
+   "label": "Scan 84 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "s82h4xcznu6e67sdfwm4cfswb",
+   "index": 85,
+   "floor": 0,
+   "position": {
+    "x": 7.579,
+    "y": 0.556,
+    "z": 6.411
+   },
+   "label": "Scan 85 \u00b7 Floor 1 \u00b7 Staircase"
+  },
+  {
+   "id": "t8cd0dncb1y9ksh383d8gq9cc",
+   "index": 86,
+   "floor": 0,
+   "position": {
+    "x": 8.945,
+    "y": -0.001,
+    "z": 0.623
+   },
+   "label": "Scan 86 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "u8dtyrquqbwfmaeu2m2wak7uc",
+   "index": 87,
+   "floor": 1,
+   "position": {
+    "x": 8.428,
+    "y": 3.388,
+    "z": 2.955
+   },
+   "label": "Scan 87 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "z0e0yqsteu6ep0d0ucxxnfrrd",
+   "index": 88,
+   "floor": 0,
+   "position": {
+    "x": 10.67,
+    "y": -0.003,
+    "z": 8.859
+   },
+   "label": "Scan 88 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "zr40yy4u4yinuybe3ywnkdyra",
+   "index": 89,
+   "floor": 0,
+   "position": {
+    "x": 6.026,
+    "y": 0.006,
+    "z": 0.587
+   },
+   "label": "Scan 89 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "408ctk2h1duuumhy2r1aef8hd",
+   "index": 90,
+   "floor": 0,
+   "position": {
+    "x": 10.686,
+    "y": -0.013,
+    "z": 7.705
+   },
+   "label": "Scan 90 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "50c36m892n632srfrfp9e23qb",
+   "index": 91,
+   "floor": 0,
+   "position": {
+    "x": 8.397,
+    "y": -0.007,
+    "z": -2.121
+   },
+   "label": "Scan 91 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "as5xpf3s2wxh21csgn56ngg4c",
+   "index": 92,
+   "floor": 0,
+   "position": {
+    "x": 8.705,
+    "y": -0.009,
+    "z": 2.382
+   },
+   "label": "Scan 92 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "b1znkesiz0chhcmtqg1s06w2b",
+   "index": 93,
+   "floor": 0,
+   "position": {
+    "x": 2.454,
+    "y": 0.009,
+    "z": 9.051
+   },
+   "label": "Scan 93 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "b1zzn6z6itz73muic9tpzwusb",
+   "index": 94,
+   "floor": 1,
+   "position": {
+    "x": 5.326,
+    "y": 3.397,
+    "z": 0.114
+   },
+   "label": "Scan 94 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "ehf3dbgbz6dip59u1pq4gmr5b",
+   "index": 95,
+   "floor": 0,
+   "position": {
+    "x": 15.498,
+    "y": -0.014,
+    "z": 9.005
+   },
+   "label": "Scan 95 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "fhx8qh5phzects3qffzzfu6cd",
+   "index": 96,
+   "floor": 0,
+   "position": {
+    "x": 7.58,
+    "y": 0.556,
+    "z": 6.411
+   },
+   "label": "Scan 96 \u00b7 Floor 1 \u00b7 Staircase"
+  },
+  {
+   "id": "n9nmh4ry0ttwb1cc4dnpgehgb",
+   "index": 97,
+   "floor": 0,
+   "position": {
+    "x": 11.029,
+    "y": -0.009,
+    "z": -2.011
+   },
+   "label": "Scan 97 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "ps43y653xsymmbbwb99yzei9d",
+   "index": 98,
+   "floor": 0,
+   "position": {
+    "x": 10.047,
+    "y": -0.013,
+    "z": 6.434
+   },
+   "label": "Scan 98 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "rss5pxc1nxq9niysi84x5kfcd",
+   "index": 99,
+   "floor": 1,
+   "position": {
+    "x": 7.187,
+    "y": 3.383,
+    "z": 2.89
+   },
+   "label": "Scan 99 \u00b7 Floor 2 \u00b7 Office"
+  },
+  {
+   "id": "t1fiuh7ttwisics5wxp4unrud",
+   "index": 100,
+   "floor": 0,
+   "position": {
+    "x": 0.851,
+    "y": 0.009,
+    "z": 11.022
+   },
+   "label": "Scan 100 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "w1z8zsf0mtnh73snawq3cdf6c",
+   "index": 101,
+   "floor": 0,
+   "position": {
+    "x": 6.974,
+    "y": -0.024,
+    "z": 11.983
+   },
+   "label": "Scan 101 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "whr37q0zc8deatws4dqdufyza",
+   "index": 102,
+   "floor": 0,
+   "position": {
+    "x": 12.199,
+    "y": -0.021,
+    "z": 11.37
+   },
+   "label": "Scan 102 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "w1m7w98bw88w6umhbg9ma0agc",
+   "index": 103,
+   "floor": 0,
+   "position": {
+    "x": 3.056,
+    "y": 0.008,
+    "z": 1.689
+   },
+   "label": "Scan 103 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "x1qapuutc6rw20i25ha5zbg1a",
+   "index": 104,
+   "floor": 0,
+   "position": {
+    "x": 6.573,
+    "y": -0.0,
+    "z": 7.554
+   },
+   "label": "Scan 104 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "x1564pwfqfh4x0u9tcqb9yshc",
+   "index": 105,
+   "floor": 0,
+   "position": {
+    "x": 0.72,
+    "y": 0.016,
+    "z": 7.581
+   },
+   "label": "Scan 105 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "ysn98fkeemw12sq4zym7exg8b",
+   "index": 106,
+   "floor": 1,
+   "position": {
+    "x": 7.744,
+    "y": 3.355,
+    "z": 7.954
+   },
+   "label": "Scan 106 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "z1htmrkr88n24cr1dp7sc0aya",
+   "index": 107,
+   "floor": 0,
+   "position": {
+    "x": 3.16,
+    "y": 0.018,
+    "z": 4.309
+   },
+   "label": "Scan 107 \u00b7 Floor 1 \u00b7 Bathroom"
+  },
+  {
+   "id": "1stmetqtt1qb1kizndfeeew0d",
+   "index": 108,
+   "floor": 0,
+   "position": {
+    "x": 15.459,
+    "y": -0.019,
+    "z": 11.66
+   },
+   "label": "Scan 108 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "2hicfgn46xg4h5uczshhc7g4c",
+   "index": 109,
+   "floor": 1,
+   "position": {
+    "x": 5.721,
+    "y": 3.377,
+    "z": 8.302
+   },
+   "label": "Scan 109 \u00b7 Floor 2 \u00b7 Kitchen"
+  },
+  {
+   "id": "5sr73dnsfr1k13n6nbw0aaaia",
+   "index": 110,
+   "floor": 1,
+   "position": {
+    "x": 7.588,
+    "y": 1.317,
+    "z": 5.41
+   },
+   "label": "Scan 110 \u00b7 Floor 2 \u00b7 Staircase"
+  },
+  {
+   "id": "6heuhy7ie01bpdc5744yn2k6a",
+   "index": 111,
+   "floor": 0,
+   "position": {
+    "x": 4.377,
+    "y": 0.0,
+    "z": 11.164
+   },
+   "label": "Scan 111 \u00b7 Floor 1 \u00b7 Waiting Room"
+  },
+  {
+   "id": "8h0z71e0cdfgc2ri8e22h193a",
+   "index": 112,
+   "floor": 0,
+   "position": {
+    "x": 12.592,
+    "y": -0.013,
+    "z": 8.932
+   },
+   "label": "Scan 112 \u00b7 Floor 1 \u00b7 Office"
+  },
+  {
+   "id": "99egbxgeyzs0ti1z11ibbih9d",
+   "index": 113,
+   "floor": 0,
+   "position": {
+    "x": 11.424,
+    "y": -0.011,
+    "z": 6.466
+   },
+   "label": "Scan 113 \u00b7 Floor 1 \u00b7 Office"
+  }
+ ],
+ "edges": [
+  {
+   "id": "41-48",
+   "a": "cexh777se3m8i1diq5p1hn9fd",
+   "b": "pxbbmri9bskqheax4bbebfb7d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "85-96",
+   "a": "fhx8qh5phzects3qffzzfu6cd",
+   "b": "s82h4xcznu6e67sdfwm4cfswb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-72",
+   "a": "1a4pzmg8hz9guun97ada45s1a",
+   "b": "rz4g5x7s4ucurz7btt7a5iasb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "75-80",
+   "a": "c8t3887rq7yuipd9tysbwch4a",
+   "b": "g89seufbuaxygaczac7fu97ua",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-92",
+   "a": "as5xpf3s2wxh21csgn56ngg4c",
+   "b": "u2r4geibr25b3tx2r1ir8s5zd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-61",
+   "a": "3y86wi2fu3m6a66uab6ttt8dc",
+   "b": "83kqeyqpw80hsyabyhdsr47ha",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-53",
+   "a": "iuzauum2sdi9pg7tcyw95z3ud",
+   "b": "myqu0p81q92wc69ngbn29655c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-90",
+   "a": "408ctk2h1duuumhy2r1aef8hd",
+   "b": "z497sy8hdi65u6ynsuz5n6rba",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-70",
+   "a": "f3k8901gutf08txwdph7h2mnc",
+   "b": "n7y89004xrupkc06ta11ht2rb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-20",
+   "a": "82dsk1nq0ndbrm95exuqzce8c",
+   "b": "ubiqr0w676uphwx137zgay0bd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-113",
+   "a": "99egbxgeyzs0ti1z11ibbih9d",
+   "b": "z497sy8hdi65u6ynsuz5n6rba",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "15-49",
+   "a": "82dsk1nq0ndbrm95exuqzce8c",
+   "b": "dpk4uaympun0fmup21a13r8ud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-28",
+   "a": "dw5n9kx3a3amgczn0p822fe1d",
+   "b": "hmu7gp2z1r88ua71rwa0g238a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-7",
+   "a": "nib7b4bradwgwieg9bdh6134d",
+   "b": "y2wgz730y2198bmi13gtnccqb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "78-107",
+   "a": "ggpcpdq1803p4g5hugb8mqpkc",
+   "b": "z1htmrkr88n24cr1dp7sc0aya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "75-91",
+   "a": "50c36m892n632srfrfp9e23qb",
+   "b": "c8t3887rq7yuipd9tysbwch4a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-68",
+   "a": "e62ehd7a7ktnyf7z1yw4hq61b",
+   "b": "iz28e3u6teuby62e9iwr2fygb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "16-27",
+   "a": "eczh0e8zbu0c9nw2wiygksr4c",
+   "b": "f3k8901gutf08txwdph7h2mnc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "30-104",
+   "a": "scdfnbgn2eick02yqxnhaezab",
+   "b": "x1qapuutc6rw20i25ha5zbg1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-81",
+   "a": "fays2gi27s78ggx765sd083ra",
+   "b": "m0ciz1gd88tduznpmkc9p5pfa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-107",
+   "a": "awiumd3qh499u65362c66sg1c",
+   "b": "z1htmrkr88n24cr1dp7sc0aya",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "7-71",
+   "a": "qqz0rdrwfpedft5ffca5xm23d",
+   "b": "y2wgz730y2198bmi13gtnccqb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-81",
+   "a": "83kqeyqpw80hsyabyhdsr47ha",
+   "b": "m0ciz1gd88tduznpmkc9p5pfa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "27-48",
+   "a": "cexh777se3m8i1diq5p1hn9fd",
+   "b": "eczh0e8zbu0c9nw2wiygksr4c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-89",
+   "a": "dpk4uaympun0fmup21a13r8ud",
+   "b": "zr40yy4u4yinuybe3ywnkdyra",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "50-56",
+   "a": "e62ehd7a7ktnyf7z1yw4hq61b",
+   "b": "qess2engr3x9mmysn5qntnzrb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-90",
+   "a": "408ctk2h1duuumhy2r1aef8hd",
+   "b": "z0e0yqsteu6ep0d0ucxxnfrrd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "30-96",
+   "a": "fhx8qh5phzects3qffzzfu6cd",
+   "b": "scdfnbgn2eick02yqxnhaezab",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "1-71",
+   "a": "nib7b4bradwgwieg9bdh6134d",
+   "b": "qqz0rdrwfpedft5ffca5xm23d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "30-72",
+   "a": "rz4g5x7s4ucurz7btt7a5iasb",
+   "b": "scdfnbgn2eick02yqxnhaezab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-86",
+   "a": "t8cd0dncb1y9ksh383d8gq9cc",
+   "b": "u2r4geibr25b3tx2r1ir8s5zd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "80-86",
+   "a": "g89seufbuaxygaczac7fu97ua",
+   "b": "t8cd0dncb1y9ksh383d8gq9cc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "5-56",
+   "a": "qess2engr3x9mmysn5qntnzrb",
+   "b": "u2r4geibr25b3tx2r1ir8s5zd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "12-92",
+   "a": "3a1554tnuknd739zw23ck7mpa",
+   "b": "as5xpf3s2wxh21csgn56ngg4c",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "19-110",
+   "a": "5sr73dnsfr1k13n6nbw0aaaia",
+   "b": "qkxigfr952ce96iq6f812bixd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "87-99",
+   "a": "rss5pxc1nxq9niysi84x5kfcd",
+   "b": "u8dtyrquqbwfmaeu2m2wak7uc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "27-70",
+   "a": "eczh0e8zbu0c9nw2wiygksr4c",
+   "b": "n7y89004xrupkc06ta11ht2rb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "28-103",
+   "a": "hmu7gp2z1r88ua71rwa0g238a",
+   "b": "w1m7w98bw88w6umhbg9ma0agc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "96-110",
+   "a": "5sr73dnsfr1k13n6nbw0aaaia",
+   "b": "fhx8qh5phzects3qffzzfu6cd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "44-87",
+   "a": "65dag1038wycy0xcrn1ccsgkc",
+   "b": "u8dtyrquqbwfmaeu2m2wak7uc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "64-113",
+   "a": "86pidewu1iw9hq8kgxeazahbd",
+   "b": "99egbxgeyzs0ti1z11ibbih9d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-19",
+   "a": "5t1c5ehd8s0umr7mpctrer44c",
+   "b": "qkxigfr952ce96iq6f812bixd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "79-103",
+   "a": "ggqgih8s8q5rmp3fruwnpg00d",
+   "b": "w1m7w98bw88w6umhbg9ma0agc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "40-64",
+   "a": "86pidewu1iw9hq8kgxeazahbd",
+   "b": "m5084pr73bp19rz9gfs3kxc5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-57",
+   "a": "qehwg5c65cinqy1q6z4rugzsd",
+   "b": "zb86s3duckdhp1kbii12aihgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-51",
+   "a": "5t1c5ehd8s0umr7mpctrer44c",
+   "b": "ee51dmzqamp8igqdr59e2wqgb",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "47-74",
+   "a": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "b": "ce3k7pwgps0f50i5afm3ugw9a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "98-113",
+   "a": "99egbxgeyzs0ti1z11ibbih9d",
+   "b": "ps43y653xsymmbbwb99yzei9d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-61",
+   "a": "3y86wi2fu3m6a66uab6ttt8dc",
+   "b": "nb4ti7xk52q4xd1bdzt2awp5a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "61-81",
+   "a": "3y86wi2fu3m6a66uab6ttt8dc",
+   "b": "m0ciz1gd88tduznpmkc9p5pfa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "47-88",
+   "a": "ce3k7pwgps0f50i5afm3ugw9a",
+   "b": "z0e0yqsteu6ep0d0ucxxnfrrd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "21-68",
+   "a": "iz28e3u6teuby62e9iwr2fygb",
+   "b": "zb86s3duckdhp1kbii12aihgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-67",
+   "a": "hqdas43kysiwpnm88wchz0hwa",
+   "b": "q253rf7z35x3a5738at93pznb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-97",
+   "a": "2ckfa3hhhddyd20ukzdnfb3md",
+   "b": "n9nmh4ry0ttwb1cc4dnpgehgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-103",
+   "a": "dw5n9kx3a3amgczn0p822fe1d",
+   "b": "w1m7w98bw88w6umhbg9ma0agc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "65-91",
+   "a": "50c36m892n632srfrfp9e23qb",
+   "b": "fq9kxz4sub1s34uzicryia9id",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-84",
+   "a": "hmu7gp2z1r88ua71rwa0g238a",
+   "b": "prddiw9bm449pc77yt3dyph9b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "11-106",
+   "a": "3i0p5kz8kmdspa5igiekikr7a",
+   "b": "ysn98fkeemw12sq4zym7exg8b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-17",
+   "a": "42wdmaru7ax1cxf1mfqe7nmqb",
+   "b": "iuzauum2sdi9pg7tcyw95z3ud",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "43-98",
+   "a": "ps43y653xsymmbbwb99yzei9d",
+   "b": "xddma3k4ymeym4tfrww97tz3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "61-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "3y86wi2fu3m6a66uab6ttt8dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-74",
+   "a": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "b": "8mhqwgw5862s453qb8hi8393b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "45-71",
+   "a": "ap2ufgi4fr1emh7z5pnmp7w6c",
+   "b": "qqz0rdrwfpedft5ffca5xm23d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "59-84",
+   "a": "prddiw9bm449pc77yt3dyph9b",
+   "b": "yyb6bixpxdds1pe91a4w629td",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-82",
+   "a": "ee51dmzqamp8igqdr59e2wqgb",
+   "b": "pge6wt46uzphzchtt7cy10mrc",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "69-106",
+   "a": "mqpn20r85iyurhn33d8fr60ia",
+   "b": "ysn98fkeemw12sq4zym7exg8b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "78-103",
+   "a": "ggpcpdq1803p4g5hugb8mqpkc",
+   "b": "w1m7w98bw88w6umhbg9ma0agc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "13-77",
+   "a": "42wdmaru7ax1cxf1mfqe7nmqb",
+   "b": "er6np4qwtbs26k8rte3n2da8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-73",
+   "a": "6fbsqhawbt4ptc30aye948y3d",
+   "b": "ubiqr0w676uphwx137zgay0bd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "52-83",
+   "a": "kyrw61fz5zrhctzkaa5qw50qa",
+   "b": "p0afshpif7e7t1qzr0amk0mgd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "65-75",
+   "a": "c8t3887rq7yuipd9tysbwch4a",
+   "b": "fq9kxz4sub1s34uzicryia9id",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "29-79",
+   "a": "ggqgih8s8q5rmp3fruwnpg00d",
+   "b": "k45zypz7znw1h9srz45szxryb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-46",
+   "a": "aeby9wnfx8kmfefyei4sz2znc",
+   "b": "pa7nzs64it0xnzwnibb12cu9d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "83kqeyqpw80hsyabyhdsr47ha",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-11",
+   "a": "3i0p5kz8kmdspa5igiekikr7a",
+   "b": "z2fh6t8w00aewesz7ys25123a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-63",
+   "a": "6y79nadm3gbkfg6dds8satbtb",
+   "b": "xtnxknw28esx14e34rsehnixc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-58",
+   "a": "w6ip3sme93bd76dd21wbs0a3b",
+   "b": "xtnxknw28esx14e34rsehnixc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "69-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "mqpn20r85iyurhn33d8fr60ia",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-73",
+   "a": "6fbsqhawbt4ptc30aye948y3d",
+   "b": "82dsk1nq0ndbrm95exuqzce8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-73",
+   "a": "6fbsqhawbt4ptc30aye948y3d",
+   "b": "dpk4uaympun0fmup21a13r8ud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "69-82",
+   "a": "mqpn20r85iyurhn33d8fr60ia",
+   "b": "pge6wt46uzphzchtt7cy10mrc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "55-56",
+   "a": "peud69ss87pxxk8f9symq5nsb",
+   "b": "qess2engr3x9mmysn5qntnzrb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "45-54",
+   "a": "ap2ufgi4fr1emh7z5pnmp7w6c",
+   "b": "myrr1afqdw7qwqfqw91365y7b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-44",
+   "a": "65dag1038wycy0xcrn1ccsgkc",
+   "b": "sadk80f39wqc5ig0hxg5annsa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "31-59",
+   "a": "x486nmgncc2ntxwdy3xtkfmgd",
+   "b": "yyb6bixpxdds1pe91a4w629td",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-50",
+   "a": "346zmufqpxzn762c2nrxtp4bc",
+   "b": "e62ehd7a7ktnyf7z1yw4hq61b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-60",
+   "a": "3a3yrdwi2c3a5gh5k9kidiuwc",
+   "b": "yemifhm1es7nq3iwwcm27xuka",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "76-77",
+   "a": "d0z2qwypkc6ag747ipcw0fagd",
+   "b": "er6np4qwtbs26k8rte3n2da8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-46",
+   "a": "aeby9wnfx8kmfefyei4sz2znc",
+   "b": "z2fh6t8w00aewesz7ys25123a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-112",
+   "a": "8h0z71e0cdfgc2ri8e22h193a",
+   "b": "z0e0yqsteu6ep0d0ucxxnfrrd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "66-94",
+   "a": "b1zzn6z6itz73muic9tpzwusb",
+   "b": "hq7fbqhgph6icp77ptdgs9ehd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-87",
+   "a": "pa7nzs64it0xnzwnibb12cu9d",
+   "b": "u8dtyrquqbwfmaeu2m2wak7uc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-90",
+   "a": "1a4pzmg8hz9guun97ada45s1a",
+   "b": "408ctk2h1duuumhy2r1aef8hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-105",
+   "a": "1w7gn0eqwy4er5777e6k34wwc",
+   "b": "x1564pwfqfh4x0u9tcqb9yshc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-113",
+   "a": "99egbxgeyzs0ti1z11ibbih9d",
+   "b": "m5084pr73bp19rz9gfs3kxc5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-89",
+   "a": "dw5n9kx3a3amgczn0p822fe1d",
+   "b": "zr40yy4u4yinuybe3ywnkdyra",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "62-99",
+   "a": "6ei6iqa2gaxiab0hyb41sm2ua",
+   "b": "rss5pxc1nxq9niysi84x5kfcd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "106-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "ysn98fkeemw12sq4zym7exg8b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-38",
+   "a": "3mrmmq0wmxaqfwe01wiihgqbd",
+   "b": "nb4ti7xk52q4xd1bdzt2awp5a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-67",
+   "a": "dw5n9kx3a3amgczn0p822fe1d",
+   "b": "hqdas43kysiwpnm88wchz0hwa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-28",
+   "a": "hmu7gp2z1r88ua71rwa0g238a",
+   "b": "q253rf7z35x3a5738at93pznb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-104",
+   "a": "x1qapuutc6rw20i25ha5zbg1a",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "46-87",
+   "a": "aeby9wnfx8kmfefyei4sz2znc",
+   "b": "u8dtyrquqbwfmaeu2m2wak7uc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "48-104",
+   "a": "cexh777se3m8i1diq5p1hn9fd",
+   "b": "x1qapuutc6rw20i25ha5zbg1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-67",
+   "a": "hmu7gp2z1r88ua71rwa0g238a",
+   "b": "hqdas43kysiwpnm88wchz0hwa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "43-113",
+   "a": "99egbxgeyzs0ti1z11ibbih9d",
+   "b": "xddma3k4ymeym4tfrww97tz3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-101",
+   "a": "8mhqwgw5862s453qb8hi8393b",
+   "b": "w1z8zsf0mtnh73snawq3cdf6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-33",
+   "a": "0mp62e97rtkgr1i6936ri1hta",
+   "b": "f3k8901gutf08txwdph7h2mnc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-79",
+   "a": "3a3yrdwi2c3a5gh5k9kidiuwc",
+   "b": "ggqgih8s8q5rmp3fruwnpg00d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-55",
+   "a": "e62ehd7a7ktnyf7z1yw4hq61b",
+   "b": "peud69ss87pxxk8f9symq5nsb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "68-86",
+   "a": "iz28e3u6teuby62e9iwr2fygb",
+   "b": "t8cd0dncb1y9ksh383d8gq9cc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "29-60",
+   "a": "k45zypz7znw1h9srz45szxryb",
+   "b": "yemifhm1es7nq3iwwcm27xuka",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-34",
+   "a": "1w7gn0eqwy4er5777e6k34wwc",
+   "b": "awiumd3qh499u65362c66sg1c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "93-105",
+   "a": "b1znkesiz0chhcmtqg1s06w2b",
+   "b": "x1564pwfqfh4x0u9tcqb9yshc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "31-84",
+   "a": "prddiw9bm449pc77yt3dyph9b",
+   "b": "x486nmgncc2ntxwdy3xtkfmgd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-58",
+   "a": "w6ip3sme93bd76dd21wbs0a3b",
+   "b": "z497sy8hdi65u6ynsuz5n6rba",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-35",
+   "a": "2ckfa3hhhddyd20ukzdnfb3md",
+   "b": "zb86s3duckdhp1kbii12aihgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-27",
+   "a": "awiumd3qh499u65362c66sg1c",
+   "b": "eczh0e8zbu0c9nw2wiygksr4c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-76",
+   "a": "346zmufqpxzn762c2nrxtp4bc",
+   "b": "d0z2qwypkc6ag747ipcw0fagd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-4",
+   "a": "nib7b4bradwgwieg9bdh6134d",
+   "b": "sadk80f39wqc5ig0hxg5annsa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-77",
+   "a": "346zmufqpxzn762c2nrxtp4bc",
+   "b": "er6np4qwtbs26k8rte3n2da8c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-106",
+   "a": "ysn98fkeemw12sq4zym7exg8b",
+   "b": "z2fh6t8w00aewesz7ys25123a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "102-112",
+   "a": "8h0z71e0cdfgc2ri8e22h193a",
+   "b": "whr37q0zc8deatws4dqdufyza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-23",
+   "a": "3a1554tnuknd739zw23ck7mpa",
+   "b": "4b044acn63m5y5q5z203ic7sa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-93",
+   "a": "b1znkesiz0chhcmtqg1s06w2b",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "36-72",
+   "a": "2wmxt1nwcnxche9qeectkt7ca",
+   "b": "rz4g5x7s4ucurz7btt7a5iasb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "93-100",
+   "a": "b1znkesiz0chhcmtqg1s06w2b",
+   "b": "t1fiuh7ttwisics5wxp4unrud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "82-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "pge6wt46uzphzchtt7cy10mrc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-97",
+   "a": "n9nmh4ry0ttwb1cc4dnpgehgb",
+   "b": "zb86s3duckdhp1kbii12aihgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-42",
+   "a": "awiumd3qh499u65362c66sg1c",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-47",
+   "a": "ce3k7pwgps0f50i5afm3ugw9a",
+   "b": "z497sy8hdi65u6ynsuz5n6rba",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "1-44",
+   "a": "65dag1038wycy0xcrn1ccsgkc",
+   "b": "nib7b4bradwgwieg9bdh6134d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-47",
+   "a": "0ucknz8a861c9f45mr16g7yad",
+   "b": "ce3k7pwgps0f50i5afm3ugw9a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-43",
+   "a": "m5084pr73bp19rz9gfs3kxc5d",
+   "b": "xddma3k4ymeym4tfrww97tz3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "95-108",
+   "a": "1stmetqtt1qb1kizndfeeew0d",
+   "b": "ehf3dbgbz6dip59u1pq4gmr5b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "36-92",
+   "a": "2wmxt1nwcnxche9qeectkt7ca",
+   "b": "as5xpf3s2wxh21csgn56ngg4c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "68-97",
+   "a": "iz28e3u6teuby62e9iwr2fygb",
+   "b": "n9nmh4ry0ttwb1cc4dnpgehgb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-55",
+   "a": "346zmufqpxzn762c2nrxtp4bc",
+   "b": "peud69ss87pxxk8f9symq5nsb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-42",
+   "a": "eczh0e8zbu0c9nw2wiygksr4c",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "66-99",
+   "a": "hq7fbqhgph6icp77ptdgs9ehd",
+   "b": "rss5pxc1nxq9niysi84x5kfcd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-29",
+   "a": "3a3yrdwi2c3a5gh5k9kidiuwc",
+   "b": "k45zypz7znw1h9srz45szxryb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-83",
+   "a": "nb4ti7xk52q4xd1bdzt2awp5a",
+   "b": "p0afshpif7e7t1qzr0amk0mgd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "74-101",
+   "a": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "b": "w1z8zsf0mtnh73snawq3cdf6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "93-111",
+   "a": "6heuhy7ie01bpdc5744yn2k6a",
+   "b": "b1znkesiz0chhcmtqg1s06w2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "95-112",
+   "a": "8h0z71e0cdfgc2ri8e22h193a",
+   "b": "ehf3dbgbz6dip59u1pq4gmr5b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "86-89",
+   "a": "t8cd0dncb1y9ksh383d8gq9cc",
+   "b": "zr40yy4u4yinuybe3ywnkdyra",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-94",
+   "a": "6ei6iqa2gaxiab0hyb41sm2ua",
+   "b": "b1zzn6z6itz73muic9tpzwusb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "60-79",
+   "a": "ggqgih8s8q5rmp3fruwnpg00d",
+   "b": "yemifhm1es7nq3iwwcm27xuka",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-71",
+   "a": "65dag1038wycy0xcrn1ccsgkc",
+   "b": "qqz0rdrwfpedft5ffca5xm23d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "74-90",
+   "a": "408ctk2h1duuumhy2r1aef8hd",
+   "b": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "22-74",
+   "a": "0ucknz8a861c9f45mr16g7yad",
+   "b": "6qfywy5wwa8cnk2c5qsu6r9ad",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-69",
+   "a": "mqpn20r85iyurhn33d8fr60ia",
+   "b": "z2fh6t8w00aewesz7ys25123a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-101",
+   "a": "0ucknz8a861c9f45mr16g7yad",
+   "b": "w1z8zsf0mtnh73snawq3cdf6c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-105",
+   "a": "awiumd3qh499u65362c66sg1c",
+   "b": "x1564pwfqfh4x0u9tcqb9yshc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-52",
+   "a": "3mrmmq0wmxaqfwe01wiihgqbd",
+   "b": "kyrw61fz5zrhctzkaa5qw50qa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "102-108",
+   "a": "1stmetqtt1qb1kizndfeeew0d",
+   "b": "whr37q0zc8deatws4dqdufyza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "55-86",
+   "a": "peud69ss87pxxk8f9symq5nsb",
+   "b": "t8cd0dncb1y9ksh383d8gq9cc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "18-52",
+   "a": "kyrw61fz5zrhctzkaa5qw50qa",
+   "b": "nb4ti7xk52q4xd1bdzt2awp5a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "94-99",
+   "a": "b1zzn6z6itz73muic9tpzwusb",
+   "b": "rss5pxc1nxq9niysi84x5kfcd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "100-105",
+   "a": "t1fiuh7ttwisics5wxp4unrud",
+   "b": "x1564pwfqfh4x0u9tcqb9yshc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-66",
+   "a": "6ei6iqa2gaxiab0hyb41sm2ua",
+   "b": "hq7fbqhgph6icp77ptdgs9ehd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "100-111",
+   "a": "6heuhy7ie01bpdc5744yn2k6a",
+   "b": "t1fiuh7ttwisics5wxp4unrud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-111",
+   "a": "6heuhy7ie01bpdc5744yn2k6a",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-93",
+   "a": "awiumd3qh499u65362c66sg1c",
+   "b": "b1znkesiz0chhcmtqg1s06w2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-83",
+   "a": "3mrmmq0wmxaqfwe01wiihgqbd",
+   "b": "p0afshpif7e7t1qzr0amk0mgd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-105",
+   "a": "x1564pwfqfh4x0u9tcqb9yshc",
+   "b": "xdahtxxrbb1haasxe64ru4mxb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-109",
+   "a": "2hicfgn46xg4h5uczshhc7g4c",
+   "b": "3mrmmq0wmxaqfwe01wiihgqbd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "108-112",
+   "a": "1stmetqtt1qb1kizndfeeew0d",
+   "b": "8h0z71e0cdfgc2ri8e22h193a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "95-102",
+   "a": "ehf3dbgbz6dip59u1pq4gmr5b",
+   "b": "whr37q0zc8deatws4dqdufyza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  }
+ ],
+ "entries": [
+  {
+   "id": "door_5iaa7dee_0",
+   "label": "West door (reception)",
+   "nodeId": "x1564pwfqfh4x0u9tcqb9yshc",
+   "position": {
+    "x": -0.672,
+    "y": 0.016,
+    "z": 7.648
+   },
+   "lat": 29.963065384499192,
+   "lng": -95.53539548150664,
+   "approach": [
+    {
+     "lat": 29.9631196,
+     "lng": -95.5355522
+    },
+    {
+     "lat": 29.963065384499192,
+     "lng": -95.53539548150664
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": true,
+   "confirmed": true,
+   "stagingId": "stage_west",
+   "stagingLabel": "the west parking lot"
+  },
+  {
+   "id": "door_szk6qmg2_0",
+   "label": "East door",
+   "nodeId": "42wdmaru7ax1cxf1mfqe7nmqb",
+   "position": {
+    "x": 16.297,
+    "y": -0.014,
+    "z": 0.015
+   },
+   "lat": 29.96312220147956,
+   "lng": -95.53521387216855,
+   "approach": [
+    {
+     "lat": 29.9629996,
+     "lng": -95.5351512
+    },
+    {
+     "lat": 29.96312220147956,
+     "lng": -95.53521387216855
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": "stage_southeast",
+   "stagingLabel": "the southeast parking lot"
+  },
+  {
+   "id": "door_2x8qngma_0",
+   "label": "Northwest door",
+   "nodeId": "yyb6bixpxdds1pe91a4w629td",
+   "position": {
+    "x": -1.282,
+    "y": 0.008,
+    "z": -0.005
+   },
+   "lat": 29.96313438577899,
+   "lng": -95.53539582050692,
+   "approach": [
+    {
+     "lat": 29.9631196,
+     "lng": -95.5355522
+    },
+    {
+     "lat": 29.96313438577899,
+     "lng": -95.53539582050692
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": "stage_west",
+   "stagingLabel": "the west parking lot"
+  },
+  {
+   "id": "door_2ry85nac_0",
+   "label": "Southeast door",
+   "nodeId": "xtnxknw28esx14e34rsehnixc",
+   "position": {
+    "x": 16.917,
+    "y": -0.027,
+    "z": 7.628
+   },
+   "lat": 29.963053443278795,
+   "lng": -95.53521339855112,
+   "approach": [
+    {
+     "lat": 29.9629996,
+     "lng": -95.5351512
+    },
+    {
+     "lat": 29.963053443278795,
+     "lng": -95.53521339855112
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off. Expect this door to be locked from outside.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": "stage_southeast",
+   "stagingLabel": "the southeast parking lot"
+  }
+ ],
+ "defaultDestination": "myrr1afqdw7qwqfqw91365y7b",
+ "scope": null,
+ "provenance": {
+  "source": "lane A graph (env/build_graph.py), exported by env/console.py",
+  "generated": "2026-11-14T16:59:23",
+  "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
+  "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
+  "aerial": "Vexcel. Staging spots are placed by eye."
+ },
+ "aerial": {
+  "bounds": {
+   "west": -95.5360539264454,
+   "south": 29.962457482177506,
+   "east": -95.5346022735546,
+   "north": 29.963715117822495
+  },
+  "url": "/api/aerial/10352309.jpg"
+ }
+}

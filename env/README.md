@@ -1,0 +1,139 @@
+# env: building graphs, CoStar lookup and routing (lane A)
+
+Everything the other lanes call lives in `env/tools.py`. Run commands from the repo root.
+Lanes B, C and D: read `env/HANDOFF_B.md` first. It says what is ready and what is not,
+and has a section for each lane.
+
+```
+pip install -r env/requirements.txt
+python3 -m unittest discover -s env/tests -t .     # 52 tests, no network
+python3 -m env.tools                                # worked example on the toy building
+```
+
+Keys are read from `api.txt` at the repo root (or the env vars `MATTERPORT_KEY`,
+`MATTERPORT_TOKEN`, `VEXCEL_API_KEY`).
+
+## Buildings
+
+`building_id` is the CoStar PropertyId as a string. `toy` is a hand-made test building
+with known answers.
+
+| building_id | Address | Scan covers | Map placement |
+|---|---|---|---|
+| 6550930 | 7900 Fannin St, Houston | ground-floor lobby | scan is about 23 m off; doors and staging are placed by hand |
+| 10352309 | 12814 Willow Centre Dr, Houston | whole building, 2 floors | good |
+| 259587 | 911 Broxton Ave, LA | whole building, 5 levels | good |
+| 234036 | 1315 St Joseph Pkwy, Houston | floor 14 | roughly right, within about 10 m (the tower leans in the aerial, so hard to judge) |
+| 248351 | 3800 Barham Blvd, LA | ground and 2nd floor of one suite | 20 to 30 m off; do not draw it on a map |
+| 248192 | 3250 Wilshire Blvd, LA | Suite 301 and its corridor, floor 3 | looks off: plots over the street beside the tower |
+| 5956257 | 3160 Geneva St, LA | ground floor of the north wing (stripped to concrete) | scan is about 25 m off; doors and staging are placed by hand |
+
+Per building, under `buildings/<id>/`:
+
+- `graph.json`: nodes and edges (schema in `env/graph.py`). Rebuilt by the builder; do not edit by hand.
+- `overrides.json`: hand edits (entrances, elevators, staging, locked doors). See `env/MARKING.md`.
+- `attributes.json`: lane B's per-node facts (see below). Optional.
+- `evidence/<node id>.jpg`: a crop showing each marked door and elevator.
+- `panos/<sweep id>.jpg`: one panorama per scanned position. Not in git: run
+  `python3 -m env.views panos <id>` (about 2 s each).
+- `graph_floor<n>.jpg`, `aerial.jpg`: the graph over the floor plan, and over the aerial tile.
+- `console_scan.json`: the same graph in the form lane D's console reads. Rewritten on every rebuild.
+
+Rebuild after changing `overrides.json` or `attributes.json`:
+
+```
+python3 -m env.build_graph --building <id> --render      # or --all
+```
+
+## Tools (`from env import tools`)
+
+| Tool | Returns |
+|---|---|
+| `get_property(address)` | `{building_id, use_type, stories, year_built, sqft, tenants[], contact, occupancy_risks[], ...}`; also accepts a PropertyId or a Matterport model id |
+| `get_tenants(building_id, floor=None, suite=None)` | current tenants with `risk_flags` |
+| `list_buildings()` | buildings that have a graph |
+| `look(node_id)` | `{image_path, attributes, room_label, equipment, neighbors[] (ids), neighbor_details[]}` |
+| `entrances(building_id)` | `[{entrance_id, node_id, side, latlon, label, primary, confirmed, evidence_path}]` |
+| `route(building_id, from_node, to_node, profile)` | `{path[], seconds, meters, uses_stairs, uses_elevator, reachable}` |
+| `best_entry(building_id, target, profile)` | `{entrance_id, staging_id, seconds, path[], runner_up, ranked[], front_door, carry}` |
+| `best_entry_under_belief(building_id, candidates, profile)` | `{entrance_id, visit_order[], expected_seconds, spread_seconds, value_of_information_seconds, ask_another_question, top_guess}` |
+| `backup_route(building_id, from_node, to_node, profile, avoid_path=None)` | `{path[], seconds, shared_edges[], is_different}` |
+| `replan(building_id, current_node, to_node, profile, blocked_edges)` | `{path[], seconds, compute_ms, reachable}` |
+| `directions(building_id, path)` | `[{text, meters, node_id, thumbnail_path, heading_deg, floor, kind}]` |
+| `exit_route(building_id, from_node, profile)` | `{path[], seconds, entrance_id, ranked[], nearest_stair_or_outside}` |
+| `hazards_along(building_id, path)` | `[{node_id, type, evidence_path}]` |
+| `find_equipment(building_id, type, near_node)` | `[{node_id, meters, seconds, evidence_path}]` |
+| `report_edge(building_id, a, b, status, note)` | records "blocked", "locked" or "clear" for the next incident |
+| `console_scan(building_id, target=None)` | the graph in the console's scan-graph format: `{modelId, nodes[], edges[], entries[], floors[], defaultDestination, aerial}` |
+| `console_route(building_id, target, profile, blocked_edges=None)` | the best door and route as the body for the console's `POST /api/incidents/<id>/route`: `{profile, entryId, destination, nodeIds[], reason}` |
+
+`profile` is `"foot"` or `"stretcher"`. A bad argument comes back as `{"error": "..."}`.
+Time constants are assumptions in `env/config.py` (`ROUTING`).
+
+Things an agent should read in the results:
+
+- `best_entry(...)["scope"]` says what the scan does not cover. For a scan that starts on
+  an upper floor, `outside_seconds` is the unscanned approach from the street and
+  `scanned_seconds` is the part we can show.
+- When a stretcher cannot reach the target, `reachable` is false and `carry` says where
+  to leave it and how long the carry is.
+- `confirmed: false` on an entrance, and `unconfirmed_*` from `hazards_along`, mean
+  nobody has seen that the door leads where we think it does.
+
+## For lane B (perception)
+
+- **Images.** `panos/<sweep id>.jpg` is an equirectangular panorama in world axes: the
+  center column looks along +x, and every panorama of a building shares those axes. For
+  undistorted crops use
+  `env.views.view_heading(model_id, sweep_id, heading_deg, hfov_deg=90, pitch_deg=0, size=768, resolution="high")`,
+  which samples the cube faces directly. The model id is `graph["matterport_model_id"]`.
+- **Node ids.** The graphs use the sweep id alone. The tools also accept lane B's
+  `"<model id>/<sweep id>"` form and answer with the graph's form. Doors, elevators and
+  staging spots are nodes too but have no image.
+- **Per-node facts** go in `buildings/<id>/attributes.json`, then rebuild.
+  `python3 -m env.import_attributes <id>` writes that file from
+  `cache/attributes/<id>/_all.json`. The format, if you write it directly:
+
+  ```json
+  {"<node id>": {"room_label": "Exam room", "label": "the nurses' station",
+                 "attributes": {"window": true, "floor_surface": "carpet",
+                                "signage": ["Suite 1425"], "hazards": ["oxygen cylinders"]},
+                 "equipment": [{"type": "aed", "evidence_path": "perception/evidence/x.jpg"}]}}
+  ```
+
+  `label` is a specific spot and appears in directions as "turn left at ...".
+  `room_label` appears as "into the ...". `attributes.hazards` feeds `hazards_along`,
+  `equipment` feeds `find_equipment`. Hand edits in `overrides.json` win over this file.
+- **Site output.** Staging spots are currently placed by eye. When `detect_site_features`
+  exists, give lane A staging spots as lat/lon and they go into `overrides.json` as
+  `add_nodes` with `kind: "staging"`. Aerial detection does not find doors, so entrances
+  come from the scan. Check the "Map placement" column above before trusting any lat/lon
+  in `graph.json`.
+- **What the scans are.** Mostly space offered for lease, so the scanned suite itself
+  usually has no tenant on record. Tenant facts are reliable for the other floors.
+
+## For lane D (console)
+
+The console draws its 3D route from a scan-graph file and accepts a route as a list of
+sweep ids. `env/console.py` produces both from lane A's graph.
+
+- **Graph.** `buildings/<id>/console_scan.json` is ready for every building above. For
+  3160 Geneva St, which the console already demos:
+  `cp buildings/5956257/console_scan.json app/data/los-angeles-scan.json`, then delete the
+  saved Los Angeles incident in `app/.local-state/` (its stored route names the old entry).
+- **Route.** `tools.console_route(building_id, target, profile)` returns the request body;
+  add `expectedRevision` and post it to `/api/incidents/<id>/route`. `reason` says which
+  door, how long, and what the next best door costs.
+- Doors are the console's `entries`; scan positions are its `nodes`; elevator cars are
+  folded into one `elevator` edge between the scan positions on either side.
+- The console's own planner measures distance and only drops stairs for "Step-free". It
+  does not know door widths, locked doors or elevator waits, so a route it recomputes
+  after a click is not lane A's. Call `console_route` again (with `blocked_edges`) for that.
+
+`env/HANDOFF_B.md` has what was checked and what the console would need to show a
+building other than Geneva St.
+
+## Numbers
+
+`python3 -m env.metrics` prints the routing rows for the results table and writes
+`buildings/routing_metrics.json`.

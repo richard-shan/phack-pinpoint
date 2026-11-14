@@ -1,0 +1,87 @@
+{
+ "name": "3250 Wilshire Blvd, Suite 301 (Xfernet), 3rd floor",
+ "floor_offset": 2,
+ "scope": "3rd floor only: Suite 301 (Xfernet offices and data hall), the vestibule outside its double doors, and about 50 m of the terrazzo corridor along the suite's south side. The elevator hall, the stairwells, the corridor west of the last sweep, the rooms behind the 'Protected Area' doors on the corridor's south side and the ramp beyond the data hall's west glass door are not scanned.",
+ "nodes": {
+  "door_618td7xh_0": {
+   "confirmed": true,
+   "primary": true,
+   "label": "the doorway from the elevator hall",
+   "note": "Fire doors held open between the elevator hall and the vestibule in front of Suite 301. Seen through it: an elevator door with a '3' floor plate and hall lantern on the left, a men's restroom and an electrical room door. Suite 301's double wood doors (Xfernet sign) are about 5 m ahead on the left. Whether that elevator is a passenger or a service car is not visible.",
+   "approach": {
+    "via": "elevator",
+    "floors": 2,
+    "walk_m": 4,
+    "note": "the elevator hall is not scanned; an elevator door marked 3 is visible about 4 m past this doorway"
+   }
+  },
+  "z8b69gr7ip4itb1arx90n8ymb": {
+   "label": "the Suite 301 (Xfernet) double doors",
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "note": "Vestibule outside Suite 301. Wall sign beside the doors: Xfernet, 301, with a card reader and intercom. Fire extinguisher cabinet recessed in the east wall opposite the doors. Women's restroom door at the north-east corner."
+  },
+  "p040basywgt3dp0433phkpuza": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "Fire alarm pull station and a '301' arrow sign on the east wall, left of the EXIT door."
+  },
+  "9kh8win2mfxreasxsiguqitud": {
+   "note": "Just inside the Suite 301 doors. The wood door on the south wall is signed 'Employees Only' and 'PRE-ACTION VALVE INSIDE' (sprinkler pre-action valve room)."
+  },
+  "hggrzssiu9p53m7wbi74ya8td": {
+   "equipment": [
+    "evacuation_chair"
+   ],
+   "note": "FERNO evacuation chair in the alcove on the south side, beside an automatic door signed 'PROTECTED AREA' (card reader; not part of Suite 301). The corridor continues west past this sweep toward a door with an EXIT sign; that stretch is not scanned."
+  }
+ },
+ "remove_nodes": [
+  "door_r3m0sd4x_0",
+  "door_7wgw1cwt_0",
+  "door_6xi7c3cw_0",
+  "door_6xi7c3cw_1",
+  "door_9e7yh3e7_0",
+  "door_uhz4a107_0"
+ ],
+ "add_nodes": [
+  {
+   "id": "exit_east",
+   "near": "t8ug2cp93umssn3x6w4up2dec",
+   "heading_deg": 357.5,
+   "distance_m": 5.3,
+   "edge_type": "door",
+   "width_m": 0.91,
+   "is_entrance": true,
+   "confidence": 0.5,
+   "label": "the EXIT door beside the 301 sign",
+   "note": "Inferred stair door: solid door at the east end of the corridor with a lit EXIT sign on the ceiling in front of it and a fire alarm pull station beside it. No stair sign is visible and the stairwell is not scanned; re-entry from the stair side may be locked.",
+   "approach": {
+    "via": "stairs",
+    "floors": 2,
+    "note": "inferred from the EXIT sign over this door; the stairwell is not scanned"
+   }
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "exit_east",
+   "b": "p040basywgt3dp0433phkpuza",
+   "type": "door",
+   "width_m": 0.91,
+   "confidence": 0.5,
+   "assumed": false,
+   "note": "same door, reached from the vestibule side"
+  }
+ ],
+ "edges": [
+  {
+   "a": "9kh8win2mfxreasxsiguqitud",
+   "b": "z8b69gr7ip4itb1arx90n8ymb",
+   "type": "door",
+   "note": "Suite 301 (Xfernet) main entry: double wood doors with panic bars on the inside; card reader and intercom on the vestibule side. Propped open in part of the scan."
+  }
+ ]
+}
