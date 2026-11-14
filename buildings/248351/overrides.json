@@ -1,0 +1,147 @@
+{
+ "name": "3800 Barham Blvd (Barham Plaza), Suite 200: ground floor and 2nd floor",
+ "floor_offset": 0,
+ "scope": "A two-level tenant suite at the southwest end of the building: its ground floor and 2nd floor, joined by an open internal stair. The building lobby, the two passenger elevators, Stair 1 and Stair 2, the outside exit stair and floors 3 to 6 are not scanned.",
+ "nodes": {
+  "door_dgxrhkeq_0": {
+   "confirmed": true,
+   "primary": true,
+   "label": "the suite's black double doors off the ground-floor lobby",
+   "note": "black double doors with panic bars on the suite side; the left leaf is signed EXIT TO LOBBY and the right leaf PLEASE USE OTHER DOOR. They open onto the building lobby, which the posted Ground Floor evacuation plan shows holding the two passenger elevators. The lobby side was not scanned, so what the doors look like from the lobby is unknown.",
+   "attributes": {
+    "door_width_m": 1.94,
+    "outward_xy": [
+     -0.0,
+     1.0
+    ],
+    "seen_from": "zwk2xnhmkw9bdd3pypwrw7asd"
+   }
+  },
+  "door_czbcxy3c_0": {
+   "confirmed": false,
+   "label": "the east studio's side door (unverified)",
+   "note": "closed white door with a lever and deadbolt in the wall of the east (driveway side) studio that backs onto the lobby; no sign, and nothing beyond it is scanned. Inferred to open at the driveway end of the lobby: the posted Ground Floor evacuation plan draws the suite's exit route up this side and out there, and wires hang from the ceiling where an exit sign may have been. Not verified.",
+   "attributes": {
+    "door_width_m": 0.91,
+    "outward_xy": [
+     -0.0,
+     1.0
+    ],
+    "seen_from": "wqa9sdrmbnzqtyns3uxgmbr0c"
+   },
+   "is_entrance": false,
+   "kind": "exterior_door"
+  },
+  "door_b59c4d41_0": {
+   "confirmed": false,
+   "is_entrance": true,
+   "label": "the suite's 2nd-floor door to the building corridor (unverified)",
+   "note": "closed white door with a closer and kick plate in the brick wall beside the top of the open stair; no sign on it and nothing beyond it is scanned. Inferred to open on the 2nd-floor common corridor to Stair 1 and the passenger elevators: the posted 2nd Floor evacuation plan draws the suite's exit route through this spot. Not verified, and it may be locked.",
+   "approach": {
+    "via": "elevator",
+    "floors": 1,
+    "walk_m": 20,
+    "note": "from the lobby elevators; corridor length estimated from the posted evacuation plan"
+   }
+  },
+  "door_wxtytqm0_0": {
+   "confirmed": true,
+   "is_entrance": true,
+   "label": "the 2nd-floor emergency exit door at the top of the outside exit stair",
+   "note": "grey-green steel door with a panic bar, signed EMERGENCY EXIT ONLY / DO NOT OPEN DOOR / ALARM WILL BE ACTIVATED (NYFA). The 2nd Floor evacuation plan beside it marks EXIT STAIR DOWN; the stair is outside, at the southwest end of the building, and is not scanned.",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "note": "outside exit stair at the southwest end of the building, not scanned",
+    "locked_entry": true
+   }
+  },
+  "ne4m54zyz2cdidx2s41ra6rua": {
+   "equipment": [
+    "extinguisher"
+   ],
+   "note": "fire extinguisher on the wall at the end of the reception desk, heading 228"
+  },
+  "t2u6t8eiud4xcp2c42x01btkc": {
+   "equipment": [
+    "fire_alarm_pull"
+   ],
+   "note": "pull station and the Ground Floor evacuation plan (Barham Plaza) on the wall left of the exit door"
+  },
+  "ydy9wxb1ek7321pswirca8n0c": {
+   "equipment": [
+    "fire_alarm_pull"
+   ],
+   "note": "pull station and the 2nd Floor evacuation plan (Barham Plaza) on the wall right of the emergency exit door"
+  },
+  "11qs98shms46qsy5z7e45tefb": {
+   "note": "telephone equipment room; the door beside the lobby doors is signed TEL. EQUIP"
+  },
+  "door_td16m8qw_0": {
+   "confirmed": false,
+   "label": "the north studio's side door (unverified)",
+   "note": "closed white door with a closer, kick plate, lever and deadbolt in the mirrored wall of the north (Barham Blvd side) studio; no sign, and nothing beyond it is scanned. The wall backs onto the lobby on the posted Ground Floor evacuation plan, so it may be a second door to the lobby, but that is a guess. 0.77 m wide.",
+   "is_entrance": false,
+   "kind": "exterior_door"
+  }
+ },
+ "add_nodes": [
+  {
+   "id": "door_exit_ground",
+   "near": "t2u6t8eiud4xcp2c42x01btkc",
+   "heading_deg": 270,
+   "distance_m": 1.03,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "is_entrance": true,
+   "confidence": 0.6,
+   "label": "the ground-floor exit door at the southwest end, at the foot of the outside exit stair",
+   "note": "grey-green steel door with a panic bar and closer at the end of the back corridor, between two windows; fire alarm bell above, pull station and the Ground Floor evacuation plan beside it. The plan shows it leading straight outside. Width is an estimate from the panorama.",
+   "source": "hand: door seen in the panorama; the wall plan records no opening there",
+   "approach": {
+    "locked_entry": true
+   }
+  }
+ ],
+ "edges": [
+  {
+   "a": "gnsc1e2mhh2x1nngyqwfcwhsd",
+   "b": "door_dgxrhkeq_0",
+   "confidence": 0.9,
+   "note": "main suite door; lock state unknown"
+  },
+  {
+   "a": "hc1sknukdi9q9gzf3cgruhghd",
+   "b": "door_td16m8qw_0",
+   "type": "door",
+   "confidence": 0.3,
+   "note": "deadbolt seen from inside, so assumed locked; where the door leads is not seen"
+  },
+  {
+   "a": "z45b6fchh3cqgm8xqqehywg3c",
+   "b": "door_czbcxy3c_0",
+   "type": "door",
+   "confidence": 0.4,
+   "note": "deadbolt seen from inside, so assumed locked; where the door leads is inferred from the evacuation plan, not seen"
+  },
+  {
+   "a": "55td7hz9f6274p8icqk8xw63d",
+   "b": "door_b59c4d41_0",
+   "confidence": 0.5,
+   "note": "where the door leads is inferred from the 2nd Floor evacuation plan, not seen; lock state unknown"
+  },
+  {
+   "a": "ydy9wxb1ek7321pswirca8n0c",
+   "b": "door_wxtytqm0_0",
+   "type": "door",
+   "confidence": 0.6,
+   "note": "sign: EMERGENCY EXIT ONLY, DO NOT OPEN DOOR, ALARM WILL BE ACTIVATED. Panic bar seen from inside: likely exit-only, so entry from the stair is assumed to need forcing"
+  },
+  {
+   "a": "t2u6t8eiud4xcp2c42x01btkc",
+   "b": "door_exit_ground",
+   "confidence": 0.6,
+   "note": "panic bar seen from inside: likely exit-only, so entry from outside is assumed to need forcing"
+  }
+ ]
+}

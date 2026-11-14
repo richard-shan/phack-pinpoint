@@ -1,0 +1,4 @@
+# lane A runs on the standard library plus these three
+requests>=2.31
+numpy>=1.26
+pillow>=10

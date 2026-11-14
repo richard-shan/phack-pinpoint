@@ -1,0 +1,737 @@
+{
+ "building_id": "toy",
+ "name": "Toy building",
+ "source": "hand-made",
+ "floor_offset": 0,
+ "nodes": [
+  {
+   "id": "door_front",
+   "floor": 0,
+   "xyz": [
+    0.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "label": "the front door",
+   "side": "west",
+   "primary": true
+  },
+  {
+   "id": "lobby",
+   "floor": 0,
+   "xyz": [
+    5.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": "Lobby",
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [
+    "aed",
+    "alarm_panel"
+   ],
+   "kind": "pano",
+   "label": "the lobby"
+  },
+  {
+   "id": "elev1",
+   "floor": 0,
+   "xyz": [
+    5.0,
+    15.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "elevator": true
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the lobby elevator"
+  },
+  {
+   "id": "c1",
+   "floor": 0,
+   "xyz": [
+    20.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano"
+  },
+  {
+   "id": "c2",
+   "floor": 0,
+   "xyz": [
+    35.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the side-door junction"
+  },
+  {
+   "id": "door_side",
+   "floor": 0,
+   "xyz": [
+    35.0,
+    20.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "label": "the north side door",
+   "side": "north"
+  },
+  {
+   "id": "c3",
+   "floor": 0,
+   "xyz": [
+    50.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the east corridor"
+  },
+  {
+   "id": "stair1",
+   "floor": 0,
+   "xyz": [
+    50.0,
+    15.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "stairs": true
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Stair B"
+  },
+  {
+   "id": "door_dock",
+   "floor": 0,
+   "xyz": [
+    55.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "label": "the loading dock door",
+   "side": "east"
+  },
+  {
+   "id": "elev2",
+   "floor": 1,
+   "xyz": [
+    5.0,
+    15.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "elevator": true
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the lobby elevator"
+  },
+  {
+   "id": "f2_west",
+   "floor": 1,
+   "xyz": [
+    5.0,
+    10.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the west corridor"
+  },
+  {
+   "id": "f2_mid",
+   "floor": 1,
+   "xyz": [
+    27.5,
+    10.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [
+    "extinguisher"
+   ],
+   "kind": "pano"
+  },
+  {
+   "id": "f2_east",
+   "floor": 1,
+   "xyz": [
+    50.0,
+    10.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the east corridor"
+  },
+  {
+   "id": "stair2",
+   "floor": 1,
+   "xyz": [
+    50.0,
+    15.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "stairs": true
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Stair B"
+  },
+  {
+   "id": "room_210",
+   "floor": 1,
+   "xyz": [
+    50.0,
+    5.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": "Suite 210",
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Suite 210"
+  },
+  {
+   "id": "room_204",
+   "floor": 1,
+   "xyz": [
+    5.0,
+    5.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": "Suite 204",
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Suite 204"
+  },
+  {
+   "id": "room_206",
+   "floor": 1,
+   "xyz": [
+    0.0,
+    10.0,
+    4.0
+   ],
+   "pano_path": null,
+   "room_label": "Suite 206",
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Suite 206"
+  },
+  {
+   "id": "street",
+   "floor": 0,
+   "xyz": [
+    -25.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "arrival",
+   "label": "the street"
+  },
+  {
+   "id": "stage_front",
+   "floor": 0,
+   "xyz": [
+    -6.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "staging",
+   "label": "the front curb"
+  },
+  {
+   "id": "stage_side",
+   "floor": 0,
+   "xyz": [
+    35.0,
+    26.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "staging",
+   "label": "the north lot"
+  },
+  {
+   "id": "stage_dock",
+   "floor": 0,
+   "xyz": [
+    61.0,
+    10.0,
+    0.0
+   ],
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "staging",
+   "label": "the loading dock apron"
+  }
+ ],
+ "edges": [
+  {
+   "a": "door_front",
+   "b": "lobby",
+   "meters": 5.0,
+   "type": "door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 1.8,
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "lobby",
+   "b": "elev1",
+   "meters": 5.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "lobby",
+   "b": "c1",
+   "meters": 15.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 10.71,
+    "stretcher": 15.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "c1",
+   "b": "c2",
+   "meters": 15.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 10.71,
+    "stretcher": 15.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "c2",
+   "b": "c3",
+   "meters": 15.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 10.71,
+    "stretcher": 15.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "c2",
+   "b": "door_side",
+   "meters": 10.0,
+   "type": "locked_door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 97.14,
+    "stretcher": 100.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "c3",
+   "b": "stair1",
+   "meters": 5.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "c3",
+   "b": "door_dock",
+   "meters": 5.0,
+   "type": "door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 2.4,
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "stair1",
+   "b": "stair2",
+   "meters": 8.0,
+   "type": "stairs",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "floors": 1,
+   "seconds": {
+    "foot": 25.0,
+    "stretcher": null
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": false
+   }
+  },
+  {
+   "a": "elev1",
+   "b": "elev2",
+   "meters": 4.0,
+   "type": "elevator",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "floors": 1,
+   "seconds": {
+    "foot": 35.0,
+    "stretcher": 45.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "elev2",
+   "b": "f2_west",
+   "meters": 5.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_west",
+   "b": "f2_mid",
+   "meters": 22.5,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 16.07,
+    "stretcher": 22.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_mid",
+   "b": "f2_east",
+   "meters": 22.5,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 16.07,
+    "stretcher": 22.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_east",
+   "b": "stair2",
+   "meters": 5.0,
+   "type": "open",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_east",
+   "b": "room_210",
+   "meters": 5.0,
+   "type": "door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_west",
+   "b": "room_204",
+   "meters": 5.0,
+   "type": "door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "f2_west",
+   "b": "room_206",
+   "meters": 5.0,
+   "type": "door",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "street",
+   "b": "stage_front",
+   "meters": 19.0,
+   "type": "exterior_vehicle",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 4.22,
+    "stretcher": 4.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "street",
+   "b": "stage_side",
+   "meters": 70.0,
+   "type": "exterior_vehicle",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 15.56,
+    "stretcher": 15.56
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "street",
+   "b": "stage_dock",
+   "meters": 100.0,
+   "type": "exterior_vehicle",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 22.22,
+    "stretcher": 22.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "stage_front",
+   "b": "door_front",
+   "meters": 6.0,
+   "type": "exterior_foot",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 6.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "stage_side",
+   "b": "door_side",
+   "meters": 6.0,
+   "type": "exterior_foot",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 6.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "a": "stage_dock",
+   "b": "door_dock",
+   "meters": 6.0,
+   "type": "exterior_foot",
+   "confidence": 1.0,
+   "evidence_path": null,
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 6.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  }
+ ]
+}

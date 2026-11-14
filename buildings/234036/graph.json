@@ -1,0 +1,8662 @@
+{
+ "building_id": "234036",
+ "matterport_model_id": "7uM5JKssTED",
+ "name": "1315 St Joseph Pkwy, 14th floor",
+ "address": "1315 St Joseph Pkwy, Houston, TX, 77002, US",
+ "generated_at": "2026-11-14T14:34:14",
+ "source": "matterport sweeps and wall plan",
+ "floor_offset": 13,
+ "grade_floor": 0,
+ "floors": [
+  {
+   "floor": 0,
+   "label": "Floor 1",
+   "has_walls": true
+  }
+ ],
+ "floorplans": {
+  "0": {
+   "path": "env/cache/matterport/7uM5JKssTED/floorplan_0_photogramy.jpg",
+   "pixels_per_meter": 100.0,
+   "origin_xy": [
+    -17.30099868774414,
+    -14.133999824523926
+   ],
+   "width": 3899,
+   "height": 4060
+  }
+ },
+ "georeference": {
+  "source": "processing",
+  "latitude": 29.748658155001756,
+  "longitude": -95.36693855780182,
+  "note": "scan placement is good to a few meters, not to a door"
+ },
+ "stats": {
+  "links": 654,
+  "dropped_wall_or_level": 2,
+  "dropped_spanner": 452,
+  "reconnected": 0,
+  "forced_links": 0,
+  "sweeps_without_floor": 0,
+  "auto_entrances": 0,
+  "other_exterior_doors": 0,
+  "nodes": 149,
+  "edges": 205,
+  "components": 1,
+  "largest_component": 149,
+  "entrances": 3,
+  "elevator_edges": 0,
+  "stairs_edges": 0,
+  "door_edges": 45
+ },
+ "nodes": [
+  {
+   "id": "atwsdwfh4sidfg4067xpnbq8a",
+   "floor": 0,
+   "xyz": [
+    -0.071,
+    14.531,
+    0.002
+   ],
+   "pano_xyz": [
+    -0.071,
+    14.531,
+    1.42
+   ],
+   "quat": [
+    -0.003850055392831564,
+    -0.0036837293300777674,
+    0.9991458654403687,
+    0.040977902710437775
+   ],
+   "pano_path": "buildings/234036/panos/atwsdwfh4sidfg4067xpnbq8a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74869303236431,
+    -95.36691681293306
+   ]
+  },
+  {
+   "id": "at0xcae1rprur5tg0rqy2d3dc",
+   "floor": 0,
+   "xyz": [
+    7.593,
+    -4.065,
+    -0.018
+   ],
+   "pano_xyz": [
+    7.593,
+    -4.065,
+    1.393
+   ],
+   "quat": [
+    -0.005938226357102394,
+    -0.008814919739961624,
+    0.9608920812606812,
+    -0.2767191231250763
+   ],
+   "pano_path": "buildings/234036/panos/at0xcae1rprur5tg0rqy2d3dc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74851339572425,
+    -95.36694221984042
+   ]
+  },
+  {
+   "id": "bidr0pifgmstmxxxtzdpi1w8d",
+   "floor": 0,
+   "xyz": [
+    -5.39,
+    -0.338,
+    0.013
+   ],
+   "pano_xyz": [
+    -5.39,
+    -0.338,
+    1.417
+   ],
+   "quat": [
+    -0.003419732442125678,
+    -0.009219213388860226,
+    0.73570716381073,
+    0.6772285103797913
+   ],
+   "pano_path": "buildings/234036/panos/bidr0pifgmstmxxxtzdpi1w8d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "c3ctq0c1byg9mgt7sigxpg6rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull"
+   ],
+   "kind": "pano",
+   "label": "the restroom alcove by Stair A",
+   "note": "MEN door at heading 2, WOMEN door at heading 300, fire alarm pull station at heading 75 beside the Stair A door",
+   "latlon": [
+    29.74860007745085,
+    -95.36704042635276
+   ]
+  },
+  {
+   "id": "hazt2anz9fryp7q7rfqqdhqsd",
+   "floor": 0,
+   "xyz": [
+    9.583,
+    10.269,
+    -0.009
+   ],
+   "pano_xyz": [
+    9.583,
+    10.269,
+    1.423
+   ],
+   "quat": [
+    -0.0053214430809021,
+    -0.0015001355204731226,
+    0.9744436740875244,
+    -0.2245640754699707
+   ],
+   "pano_path": "buildings/234036/panos/hazt2anz9fryp7q7rfqqdhqsd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire alarm pull station just right of the Stair B door (heading 257); drinking fountains on the same wall at heading 217",
+   "latlon": [
+    29.74861695982725,
+    -95.36685136827137
+   ]
+  },
+  {
+   "id": "kik7gmkwgpxq906y8z0m4pa5a",
+   "floor": 0,
+   "xyz": [
+    -15.263,
+    20.015,
+    0.02
+   ],
+   "pano_xyz": [
+    -15.263,
+    20.015,
+    1.431
+   ],
+   "quat": [
+    -0.002029518596827984,
+    -0.007240033708512783,
+    0.06372173130512238,
+    0.9979393482208252
+   ],
+   "pano_path": "buildings/234036/panos/kik7gmkwgpxq906y8z0m4pa5a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "q5n62dpd3mrc1exy2hr84132b",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748803166327978,
+    -95.36702601885088
+   ]
+  },
+  {
+   "id": "kaw42tabfc85qti2bhzirsdrd",
+   "floor": 0,
+   "xyz": [
+    9.466,
+    12.352,
+    -0.008
+   ],
+   "pano_xyz": [
+    9.466,
+    12.352,
+    1.419
+   ],
+   "quat": [
+    -6.0001981182722375e-05,
+    0.0009434093371964991,
+    -0.4257853627204895,
+    0.9048237204551697
+   ],
+   "pano_path": "buildings/234036/panos/kaw42tabfc85qti2bhzirsdrd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748633801440313,
+    -95.36684183125436
+   ]
+  },
+  {
+   "id": "mappcci3h2yu5umi1re76gfua",
+   "floor": 0,
+   "xyz": [
+    -3.2,
+    14.506,
+    0.003
+   ],
+   "pano_xyz": [
+    -3.2,
+    14.506,
+    1.427
+   ],
+   "quat": [
+    0.003075639484450221,
+    0.002251070225611329,
+    -0.5084536671638489,
+    0.8610809445381165
+   ],
+   "pano_path": "buildings/234036/panos/mappcci3h2yu5umi1re76gfua.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748706656706993,
+    -95.36694517644959
+   ]
+  },
+  {
+   "id": "madeqfsx5emk86a24d9qsydxc",
+   "floor": 0,
+   "xyz": [
+    -1.877,
+    21.818,
+    0.031
+   ],
+   "pano_xyz": [
+    -1.877,
+    21.818,
+    1.434
+   ],
+   "quat": [
+    -0.0008485441212542355,
+    0.005309560801833868,
+    0.14007019996643066,
+    0.9901269674301147
+   ],
+   "pano_path": "buildings/234036/panos/madeqfsx5emk86a24d9qsydxc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748758247500543,
+    -95.36689605331989
+   ]
+  },
+  {
+   "id": "q2e1i1eb96bex00q7k1gen15a",
+   "floor": 0,
+   "xyz": [
+    15.951,
+    21.781,
+    0.011
+   ],
+   "pano_xyz": [
+    15.951,
+    21.781,
+    1.419
+   ],
+   "quat": [
+    -0.007169090211391449,
+    -0.0007478012121282518,
+    0.6453387141227722,
+    0.7638626098632812
+   ],
+   "pano_path": "buildings/234036/panos/q2e1i1eb96bex00q7k1gen15a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748679141115918,
+    -95.36673536003647
+   ]
+  },
+  {
+   "id": "r2c6ys5ye183id9xm0pcwgk8a",
+   "floor": 0,
+   "xyz": [
+    18.907,
+    10.19,
+    0.007
+   ],
+   "pano_xyz": [
+    18.907,
+    10.19,
+    1.43
+   ],
+   "quat": [
+    -0.0009888912318274379,
+    -0.0028968900442123413,
+    0.4792593717575073,
+    0.8776679635047913
+   ],
+   "pano_path": "buildings/234036/panos/r2c6ys5ye183id9xm0pcwgk8a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748575256092966,
+    -95.36676762952423
+   ]
+  },
+  {
+   "id": "u2nbb26aztckkfya808yz1gab",
+   "floor": 0,
+   "xyz": [
+    -5.01,
+    -8.841,
+    -0.004
+   ],
+   "pano_xyz": [
+    -5.01,
+    -8.841,
+    1.408
+   ],
+   "quat": [
+    0.00891694612801075,
+    0.000472143612569198,
+    0.008399330079555511,
+    0.9999248385429382
+   ],
+   "pano_path": "buildings/234036/panos/u2nbb26aztckkfya808yz1gab.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74853169300546,
+    -95.3670802379699
+   ]
+  },
+  {
+   "id": "wahyhp7zazc523euqfx1373yc",
+   "floor": 0,
+   "xyz": [
+    -13.222,
+    18.415,
+    0.011
+   ],
+   "pano_xyz": [
+    -13.222,
+    18.415,
+    1.422
+   ],
+   "quat": [
+    -0.0010827567894011736,
+    -0.006135983392596245,
+    0.21686877310276031,
+    0.976180911064148
+   ],
+   "pano_path": "buildings/234036/panos/wahyhp7zazc523euqfx1373yc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "q5n62dpd3mrc1exy2hr84132b",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74878157298697,
+    -95.36701573724571
+   ]
+  },
+  {
+   "id": "xa42e1a2h6qe23gs1i9cnpfza",
+   "floor": 0,
+   "xyz": [
+    -5.823,
+    23.815,
+    0.041
+   ],
+   "pano_xyz": [
+    -5.823,
+    23.815,
+    1.444
+   ],
+   "quat": [
+    0.004608684219419956,
+    0.005500695202499628,
+    0.768911600112915,
+    0.6393150091171265
+   ],
+   "pano_path": "buildings/234036/panos/xa42e1a2h6qe23gs1i9cnpfza.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74879136730866,
+    -95.3669215069098
+   ]
+  },
+  {
+   "id": "zi7771aikmfk6fmnqck1s4ybb",
+   "floor": 0,
+   "xyz": [
+    -14.365,
+    6.883,
+    0.015
+   ],
+   "pano_xyz": [
+    -14.365,
+    6.883,
+    1.419
+   ],
+   "quat": [
+    0.0059960149228572845,
+    0.010978106409311295,
+    0.9997735619544983,
+    -0.017216186970472336
+   ],
+   "pano_path": "buildings/234036/panos/zi7771aikmfk6fmnqck1s4ybb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "19ab05tns5h6y4qm42esqqpea",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748696289017477,
+    -95.36708469621034
+   ]
+  },
+  {
+   "id": "026gueuqgx1wnwbet5606q5ta",
+   "floor": 0,
+   "xyz": [
+    2.691,
+    -10.213,
+    -0.002
+   ],
+   "pano_xyz": [
+    2.691,
+    -10.213,
+    1.415
+   ],
+   "quat": [
+    0.005243069492280483,
+    0.0072723012417554855,
+    0.9911983013153076,
+    0.13208161294460297
+   ],
+   "pano_path": "buildings/234036/panos/026gueuqgx1wnwbet5606q5ta.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748486952770218,
+    -95.36701772063695
+   ]
+  },
+  {
+   "id": "32eg8hzyqc2ya3fzde47i1wya",
+   "floor": 0,
+   "xyz": [
+    9.435,
+    20.958,
+    0.023
+   ],
+   "pano_xyz": [
+    9.435,
+    20.958,
+    1.442
+   ],
+   "quat": [
+    -0.005968655925244093,
+    0.0028884615749120712,
+    -0.711229145526886,
+    0.7029289603233337
+   ],
+   "pano_path": "buildings/234036/panos/32eg8hzyqc2ya3fzde47i1wya.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748701524002566,
+    -95.36679834623487
+   ]
+  },
+  {
+   "id": "3tqzx22088wpuig1qmmeu02za",
+   "floor": 0,
+   "xyz": [
+    6.767,
+    -5.694,
+    -0.015
+   ],
+   "pano_xyz": [
+    6.767,
+    -5.694,
+    1.399
+   ],
+   "quat": [
+    -0.00679872976616025,
+    0.004294979851692915,
+    0.0002997053961735219,
+    0.999967634677887
+   ],
+   "pano_path": "buildings/234036/panos/3tqzx22088wpuig1qmmeu02za.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748504295186347,
+    -95.36695795777833
+   ]
+  },
+  {
+   "id": "4i6zer44abzxwxmuwy170mmka",
+   "floor": 0,
+   "xyz": [
+    16.477,
+    4.146,
+    0.026
+   ],
+   "pano_xyz": [
+    16.477,
+    4.146,
+    1.422
+   ],
+   "quat": [
+    -0.008446204476058483,
+    0.006411559414118528,
+    0.9754593372344971,
+    0.2199242264032364
+   ],
+   "pano_path": "buildings/234036/panos/4i6zer44abzxwxmuwy170mmka.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "3m54yff1z7crxaywd8if9rb0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74853872907275,
+    -95.36682029402651
+   ]
+  },
+  {
+   "id": "626xt9h376s6pxdk5d4ghqf9d",
+   "floor": 0,
+   "xyz": [
+    6.372,
+    16.378,
+    0.003
+   ],
+   "pano_xyz": [
+    6.372,
+    16.378,
+    1.425
+   ],
+   "quat": [
+    0.004604523070156574,
+    -0.007976077497005463,
+    -0.18900811672210693,
+    0.9819323420524597
+   ],
+   "pano_path": "buildings/234036/panos/626xt9h376s6pxdk5d4ghqf9d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748679061448176,
+    -95.36684927804663
+   ]
+  },
+  {
+   "id": "7a2988e810705grrf38u674fc",
+   "floor": 0,
+   "xyz": [
+    -15.08,
+    23.564,
+    0.028
+   ],
+   "pano_xyz": [
+    -15.08,
+    23.564,
+    1.441
+   ],
+   "quat": [
+    -0.010588943026959896,
+    -0.002920655533671379,
+    -0.2923254370689392,
+    0.9562557935714722
+   ],
+   "pano_path": "buildings/234036/panos/7a2988e810705grrf38u674fc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "b4qtykzcazp4iumkamm7y7h2b",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74883020524432,
+    -95.36700631945904
+   ]
+  },
+  {
+   "id": "7icsdrfqbni0c6r7kb80f7r6d",
+   "floor": 0,
+   "xyz": [
+    15.588,
+    10.165,
+    0.001
+   ],
+   "pano_xyz": [
+    15.588,
+    10.165,
+    1.425
+   ],
+   "quat": [
+    -0.001370248501189053,
+    0.001790331327356398,
+    0.1512320339679718,
+    0.9884957075119019
+   ],
+   "pano_path": "buildings/234036/panos/7icsdrfqbni0c6r7kb80f7r6d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74858968332304,
+    -95.3667977075614
+   ]
+  },
+  {
+   "id": "au0kpek9wp53cq0rkt24xxi2b",
+   "floor": 0,
+   "xyz": [
+    -11.384,
+    13.672,
+    -0.005
+   ],
+   "pano_xyz": [
+    -11.384,
+    13.672,
+    1.405
+   ],
+   "quat": [
+    -0.009322533383965492,
+    0.000150858802953735,
+    -0.15477387607097626,
+    0.9879059195518494
+   ],
+   "pano_path": "buildings/234036/panos/au0kpek9wp53cq0rkt24xxi2b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748736215130705,
+    -95.36702327084672
+   ]
+  },
+  {
+   "id": "bbceccx3s635rmddkcpfq759c",
+   "floor": 0,
+   "xyz": [
+    -5.196,
+    18.323,
+    0.019
+   ],
+   "pano_xyz": [
+    -5.196,
+    18.323,
+    1.443
+   ],
+   "quat": [
+    -0.0010285014286637306,
+    0.005973649211227894,
+    0.9791366457939148,
+    -0.20311294496059418
+   ],
+   "pano_path": "buildings/234036/panos/bbceccx3s635rmddkcpfq759c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74874545710916,
+    -95.36694377767844
+   ]
+  },
+  {
+   "id": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "floor": 0,
+   "xyz": [
+    11.484,
+    -9.698,
+    0.002
+   ],
+   "pano_xyz": [
+    11.484,
+    -9.698,
+    1.42
+   ],
+   "quat": [
+    -0.008757335133850574,
+    -0.00028548817499540746,
+    -0.032711904495954514,
+    0.9994264245033264
+   ],
+   "pano_path": "buildings/234036/panos/ckwfxqnmus5hqgfxdr5kibbqa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74845218572927,
+    -95.36693575300657
+   ]
+  },
+  {
+   "id": "e32x1x86ihn9xhe5ikuk352uc",
+   "floor": 0,
+   "xyz": [
+    13.571,
+    15.292,
+    0.001
+   ],
+   "pano_xyz": [
+    13.571,
+    15.292,
+    1.429
+   ],
+   "quat": [
+    0.004722247365862131,
+    0.007666081190109253,
+    0.45734599232673645,
+    0.8892433047294617
+   ],
+   "pano_path": "buildings/234036/panos/e32x1x86ihn9xhe5ikuk352uc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "b2kez6wsw32fm2x3ui593u3hc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748638757757476,
+    -95.36678983639436
+   ]
+  },
+  {
+   "id": "fuda46a8uipb0eb3g784ghhxd",
+   "floor": 0,
+   "xyz": [
+    -9.509,
+    22.277,
+    0.009
+   ],
+   "pano_xyz": [
+    -9.509,
+    22.277,
+    1.432
+   ],
+   "quat": [
+    -0.0028924730140715837,
+    -0.0013844480272382498,
+    0.9323304891586304,
+    -0.3615930378437042
+   ],
+   "pano_path": "buildings/234036/panos/fuda46a8uipb0eb3g784ghhxd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tyz3uyd99x00wa88mxhmugrxa",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748795427224955,
+    -95.36696259105085
+   ]
+  },
+  {
+   "id": "fudnzszyuysb1e261nkmd2ebb",
+   "floor": 0,
+   "xyz": [
+    9.59,
+    14.09,
+    -0.001
+   ],
+   "pano_xyz": [
+    9.59,
+    14.09,
+    1.418
+   ],
+   "quat": [
+    0.011054916307330132,
+    0.0018807387677952647,
+    -0.7109088897705078,
+    0.7031948566436768
+   ],
+   "pano_path": "buildings/234036/panos/fudnzszyuysb1e261nkmd2ebb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74864690683056,
+    -95.36683187388529
+   ]
+  },
+  {
+   "id": "gkm9269xw5pe2bk0amn3sbihc",
+   "floor": 0,
+   "xyz": [
+    2.025,
+    16.517,
+    0.007
+   ],
+   "pano_xyz": [
+    2.025,
+    16.517,
+    1.428
+   ],
+   "quat": [
+    -0.0033132995013147593,
+    0.006998001132160425,
+    -0.6320531964302063,
+    0.7748863101005554
+   ],
+   "pano_path": "buildings/234036/panos/gkm9269xw5pe2bk0amn3sbihc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74869936379645,
+    -95.36688779888901
+   ]
+  },
+  {
+   "id": "g39d08rrqz8r0zu98n70tewsb",
+   "floor": 0,
+   "xyz": [
+    -13.162,
+    16.83,
+    0.007
+   ],
+   "pano_xyz": [
+    -13.162,
+    16.83,
+    1.415
+   ],
+   "quat": [
+    0.0001420245534973219,
+    -0.004447620362043381,
+    0.4263285994529724,
+    0.9045574069023132
+   ],
+   "pano_path": "buildings/234036/panos/g39d08rrqz8r0zu98n70tewsb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "f97s719x9ctqkce19r6s01b5a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74876886933308,
+    -95.36702325610835
+   ]
+  },
+  {
+   "id": "hum92h1mt4qqk63dxbupu1zbc",
+   "floor": 0,
+   "xyz": [
+    -1.787,
+    12.616,
+    -0.005
+   ],
+   "pano_xyz": [
+    -1.787,
+    12.616,
+    1.431
+   ],
+   "quat": [
+    -0.00596211850643158,
+    0.004236917477101088,
+    -0.43258506059646606,
+    0.9015634655952454
+   ],
+   "pano_path": "buildings/234036/panos/hum92h1mt4qqk63dxbupu1zbc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74868556915938,
+    -95.36694203675772
+   ]
+  },
+  {
+   "id": "kbew59tzi3uxcyn616mgemnyd",
+   "floor": 0,
+   "xyz": [
+    -5.192,
+    15.408,
+    0.008
+   ],
+   "pano_xyz": [
+    -5.192,
+    15.408,
+    1.432
+   ],
+   "quat": [
+    0.012418797239661217,
+    -0.0016989988507702947,
+    -0.5814208984375,
+    0.8135064244270325
+   ],
+   "pano_path": "buildings/234036/panos/kbew59tzi3uxcyn616mgemnyd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74872254443004,
+    -95.3669585654401
+   ]
+  },
+  {
+   "id": "k36ubn76h0t7u3a005s2c4cid",
+   "floor": 0,
+   "xyz": [
+    -8.971,
+    4.86,
+    0.015
+   ],
+   "pano_xyz": [
+    -8.971,
+    4.86,
+    1.42
+   ],
+   "quat": [
+    -0.008447853848338127,
+    0.0028590031433850527,
+    0.6994507908821106,
+    0.7146251797676086
+   ],
+   "pano_path": "buildings/234036/panos/k36ubn76h0t7u3a005s2c4cid.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74865662376696,
+    -95.36704630792302
+   ]
+  },
+  {
+   "id": "mu7c73uz202wt55p9bwnr0ftc",
+   "floor": 0,
+   "xyz": [
+    15.571,
+    18.253,
+    -0.004
+   ],
+   "pano_xyz": [
+    15.571,
+    18.253,
+    1.413
+   ],
+   "quat": [
+    0.0006340142572298646,
+    0.0028458202723413706,
+    0.16834373772144318,
+    0.9857240319252014
+   ],
+   "pano_path": "buildings/234036/panos/mu7c73uz202wt55p9bwnr0ftc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748653100581375,
+    -95.36675673042176
+   ]
+  },
+  {
+   "id": "q3i2nxdgduke3zg2ceqh6515d",
+   "floor": 0,
+   "xyz": [
+    -5.109,
+    12.247,
+    -0.005
+   ],
+   "pano_xyz": [
+    -5.109,
+    12.247,
+    1.443
+   ],
+   "quat": [
+    0.010463730432093143,
+    -0.003986341878771782,
+    -0.535703718662262,
+    0.8443317413330078
+   ],
+   "pano_path": "buildings/234036/panos/q3i2nxdgduke3zg2ceqh6515d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74869734531462,
+    -95.36697389129225
+   ]
+  },
+  {
+   "id": "tuupi4rm25z0hpbxqs7xnuedd",
+   "floor": 0,
+   "xyz": [
+    0.102,
+    -7.921,
+    -0.006
+   ],
+   "pano_xyz": [
+    0.102,
+    -7.921,
+    1.409
+   ],
+   "quat": [
+    0.012021617963910103,
+    -0.001596721587702632,
+    0.5840603113174438,
+    0.8116196990013123
+   ],
+   "pano_path": "buildings/234036/panos/tuupi4rm25z0hpbxqs7xnuedd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748516320419476,
+    -95.36702942834265
+   ]
+  },
+  {
+   "id": "ubb65ttrcnrnhmghnewyb2m5b",
+   "floor": 0,
+   "xyz": [
+    11.974,
+    0.364,
+    0.022
+   ],
+   "pano_xyz": [
+    11.974,
+    0.364,
+    1.444
+   ],
+   "quat": [
+    0.008214612491428852,
+    0.007846001535654068,
+    -0.45100295543670654,
+    0.8924501538276672
+   ],
+   "pano_path": "buildings/234036/panos/ubb65ttrcnrnhmghnewyb2m5b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "pksbu53py2kqgiahqc3d44p7d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748528958795323,
+    -95.36688016229347
+   ]
+  },
+  {
+   "id": "u3rqhz62xfr9ya51tbeb5xscd",
+   "floor": 0,
+   "xyz": [
+    19.197,
+    7.724,
+    0.01
+   ],
+   "pano_xyz": [
+    19.197,
+    7.724,
+    1.427
+   ],
+   "quat": [
+    -0.006661858409643173,
+    0.0002812707389239222,
+    0.9018502831459045,
+    -0.43199723958969116
+   ],
+   "pano_path": "buildings/234036/panos/u3rqhz62xfr9ya51tbeb5xscd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "3m54yff1z7crxaywd8if9rb0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74855467049692,
+    -95.36677755308281
+   ]
+  },
+  {
+   "id": "1kssqph4t7huq084ddy53yz1d",
+   "floor": 0,
+   "xyz": [
+    11.223,
+    20.728,
+    0.024
+   ],
+   "pano_xyz": [
+    11.223,
+    20.728,
+    1.435
+   ],
+   "quat": [
+    -0.012140204198658466,
+    -0.0026148546021431684,
+    -0.05154280737042427,
+    0.9985935688018799
+   ],
+   "pano_path": "buildings/234036/panos/1kssqph4t7huq084ddy53yz1d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "40zku7irh3zwswpnc4emt870d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748691832808646,
+    -95.36678338080881
+   ]
+  },
+  {
+   "id": "4bse6naceiug990m50a9zg1ba",
+   "floor": 0,
+   "xyz": [
+    12.061,
+    10.31,
+    -0.007
+   ],
+   "pano_xyz": [
+    12.061,
+    10.31,
+    1.432
+   ],
+   "quat": [
+    0.0009641193901188672,
+    0.010422725230455399,
+    0.1130409762263298,
+    0.9935351610183716
+   ],
+   "pano_path": "buildings/234036/panos/4bse6naceiug990m50a9zg1ba.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748606350547142,
+    -95.36682879810189
+   ]
+  },
+  {
+   "id": "6bwrusmb4knk23n14kucyf3ub",
+   "floor": 0,
+   "xyz": [
+    14.069,
+    4.209,
+    0.024
+   ],
+   "pano_xyz": [
+    14.069,
+    4.209,
+    1.422
+   ],
+   "quat": [
+    -0.002574579557403922,
+    0.005742351058870554,
+    0.9680728316307068,
+    0.25059014558792114
+   ],
+   "pano_path": "buildings/234036/panos/6bwrusmb4knk23n14kucyf3ub.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "3m54yff1z7crxaywd8if9rb0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748549844103202,
+    -95.36684170361596
+   ]
+  },
+  {
+   "id": "63mihyw2sw6g031k0y7m4bzpc",
+   "floor": 0,
+   "xyz": [
+    -3.091,
+    16.5,
+    0.011
+   ],
+   "pano_xyz": [
+    -3.091,
+    16.5,
+    1.431
+   ],
+   "quat": [
+    0.001544153317809105,
+    -0.005870834458619356,
+    0.6152044534683228,
+    0.7883442044258118
+   ],
+   "pano_path": "buildings/234036/panos/63mihyw2sw6g031k0y7m4bzpc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748721839186096,
+    -95.36693405259278
+   ]
+  },
+  {
+   "id": "8u6gk76q5ttpm7y08h9ruhsia",
+   "floor": 0,
+   "xyz": [
+    13.345,
+    20.494,
+    0.016
+   ],
+   "pano_xyz": [
+    13.345,
+    20.494,
+    1.434
+   ],
+   "quat": [
+    -0.007232894189655781,
+    -0.0060289353132247925,
+    -0.11147641390562057,
+    0.9937224388122559
+   ],
+   "pano_path": "buildings/234036/panos/8u6gk76q5ttpm7y08h9ruhsia.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "40zku7irh3zwswpnc4emt870d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74868058935134,
+    -95.36676542168338
+   ]
+  },
+  {
+   "id": "ec7iciz95b52msb3cw3fe122d",
+   "floor": 0,
+   "xyz": [
+    4.424,
+    12.663,
+    -0.013
+   ],
+   "pano_xyz": [
+    4.424,
+    12.663,
+    1.412
+   ],
+   "quat": [
+    -0.009901899844408035,
+    -0.004895700607448816,
+    -0.32633155584335327,
+    0.9451908469200134
+   ],
+   "pano_path": "buildings/234036/panos/ec7iciz95b52msb3cw3fe122d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "kuc0fpmsgqxff63egrxrycfud",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74865847365158,
+    -95.36688574913312
+   ]
+  },
+  {
+   "id": "f463u43pm1r63xzh1aus5523a",
+   "floor": 0,
+   "xyz": [
+    0.06,
+    10.16,
+    0.019
+   ],
+   "pano_xyz": [
+    0.06,
+    10.16,
+    1.434
+   ],
+   "quat": [
+    -0.0067603145726025105,
+    0.00859576091170311,
+    0.9946767687797546,
+    -0.10246236622333527
+   ],
+   "pano_path": "buildings/234036/panos/f463u43pm1r63xzh1aus5523a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748658295403704,
+    -95.36693785893159
+   ]
+  },
+  {
+   "id": "fm3w9q3gd6bumw1sggmbrp10d",
+   "floor": 0,
+   "xyz": [
+    -8.483,
+    -0.265,
+    0.015
+   ],
+   "pano_xyz": [
+    -8.483,
+    -0.265,
+    1.414
+   ],
+   "quat": [
+    -0.004917891230434179,
+    -0.0037730722688138485,
+    0.39884334802627563,
+    0.9169981479644775
+   ],
+   "pano_path": "buildings/234036/panos/fm3w9q3gd6bumw1sggmbrp10d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74861431578539,
+    -95.36706796662754
+   ]
+  },
+  {
+   "id": "f4qgpp6wdhc15x1nwthriw8rc",
+   "floor": 0,
+   "xyz": [
+    12.814,
+    -4.768,
+    -0.007
+   ],
+   "pano_xyz": [
+    12.814,
+    -4.768,
+    1.411
+   ],
+   "quat": [
+    -0.0037373602390289307,
+    -0.006243227049708366,
+    0.9999628663063049,
+    -0.004623153246939182
+   ],
+   "pano_path": "buildings/234036/panos/f4qgpp6wdhc15x1nwthriw8rc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74848489283385,
+    -95.36689868016492
+   ]
+  },
+  {
+   "id": "gmk8h2m65xnzpd9297h2ap8ab",
+   "floor": 0,
+   "xyz": [
+    -7.519,
+    18.438,
+    0.021
+   ],
+   "pano_xyz": [
+    -7.519,
+    18.438,
+    1.449
+   ],
+   "quat": [
+    -0.006074408069252968,
+    0.006962639279663563,
+    0.9931641817092896,
+    -0.11635972559452057
+   ],
+   "pano_path": "buildings/234036/panos/gmk8h2m65xnzpd9297h2ap8ab.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "n81qfe51azs8iexnbqwspye6c",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74875662484218,
+    -95.36696415583813
+   ]
+  },
+  {
+   "id": "im3pgkd7eakbbdpk7kpwr544b",
+   "floor": 0,
+   "xyz": [
+    4.612,
+    10.274,
+    -0.012
+   ],
+   "pano_xyz": [
+    4.612,
+    10.274,
+    1.441
+   ],
+   "quat": [
+    -0.00646504620090127,
+    0.010068888776004314,
+    0.990376353263855,
+    -0.13788236677646637
+   ],
+   "pano_path": "buildings/234036/panos/im3pgkd7eakbbdpk7kpwr544b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "note": "DATA ROOM door with a card reader at heading 305",
+   "latlon": [
+    29.748638931386246,
+    -95.36689620155867
+   ]
+  },
+  {
+   "id": "u4g8zr7bits3by70ig73bk7nd",
+   "floor": 0,
+   "xyz": [
+    -11.425,
+    10.138,
+    -0.017
+   ],
+   "pano_xyz": [
+    -11.425,
+    10.138,
+    1.43
+   ],
+   "quat": [
+    -0.0013234642101451755,
+    -0.00048533763037994504,
+    0.6988194584846497,
+    0.7152968049049377
+   ],
+   "pano_path": "buildings/234036/panos/u4g8zr7bits3by70ig73bk7nd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748708646248318,
+    -95.36704161251348
+   ]
+  },
+  {
+   "id": "xcrszt9m997f3kc0x0srz4qwb",
+   "floor": 0,
+   "xyz": [
+    -8.784,
+    -8.535,
+    -0.005
+   ],
+   "pano_xyz": [
+    -8.784,
+    -8.535,
+    1.425
+   ],
+   "quat": [
+    0.007047724444419146,
+    -0.0033122538588941097,
+    -0.13678811490535736,
+    0.9905697107315063
+   ],
+   "pano_path": "buildings/234036/panos/xcrszt9m997f3kc0x0srz4qwb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748550748146737,
+    -95.36711273874765
+   ]
+  },
+  {
+   "id": "x48r12dmaehw47tgwe0uefqdb",
+   "floor": 0,
+   "xyz": [
+    -14.675,
+    12.6,
+    -0.0
+   ],
+   "pano_xyz": [
+    -14.675,
+    12.6,
+    1.428
+   ],
+   "quat": [
+    0.0021769118029624224,
+    -0.0020444844849407673,
+    0.8676260709762573,
+    0.4972083270549774
+   ],
+   "pano_path": "buildings/234036/panos/x48r12dmaehw47tgwe0uefqdb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "bmpu8rc0bpgc1bruwia8kktzd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748742372245957,
+    -95.36705842067043
+   ]
+  },
+  {
+   "id": "ywa5gsssrnx67u3rfuf3fknyb",
+   "floor": 0,
+   "xyz": [
+    -0.705,
+    19.847,
+    0.022
+   ],
+   "pano_xyz": [
+    -0.705,
+    19.847,
+    1.436
+   ],
+   "quat": [
+    -0.0031496987212449312,
+    0.004004162736237049,
+    -0.5215305089950562,
+    0.8532174229621887
+   ],
+   "pano_path": "buildings/234036/panos/ywa5gsssrnx67u3rfuf3fknyb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748737584239244,
+    -95.36689550035858
+   ]
+  },
+  {
+   "id": "yc159hm7nu054suz591cb524c",
+   "floor": 0,
+   "xyz": [
+    17.863,
+    -1.749,
+    -0.01
+   ],
+   "pano_xyz": [
+    17.863,
+    -1.749,
+    1.423
+   ],
+   "quat": [
+    -0.0023765922524034977,
+    -0.0078435642644763,
+    0.18467693030834198,
+    0.9827651381492615
+   ],
+   "pano_path": "buildings/234036/panos/yc159hm7nu054suz591cb524c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "m8npxsuk79xy21dd09x9wtped",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74848623850173,
+    -95.36683776491996
+   ]
+  },
+  {
+   "id": "0wq8b3z2t3gcamyms28t2q5zd",
+   "floor": 0,
+   "xyz": [
+    5.263,
+    -5.738,
+    -0.018
+   ],
+   "pano_xyz": [
+    5.263,
+    -5.738,
+    1.399
+   ],
+   "quat": [
+    -0.000754164531826973,
+    0.000483762618387118,
+    0.9935567378997803,
+    -0.11333317309617996
+   ],
+   "pano_path": "buildings/234036/panos/0wq8b3z2t3gcamyms28t2q5zd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748510575442,
+    -95.36697175374397
+   ]
+  },
+  {
+   "id": "1m21wip3ze5byhrf4yhfpz25d",
+   "floor": 0,
+   "xyz": [
+    0.048,
+    -0.027,
+    -0.019
+   ],
+   "pano_xyz": [
+    0.048,
+    -0.027,
+    1.421
+   ],
+   "quat": [
+    0.010633130557835102,
+    -0.004587605129927397,
+    0.42871320247650146,
+    0.9033663868904114
+   ],
+   "pano_path": "buildings/234036/panos/1m21wip3ze5byhrf4yhfpz25d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the glass doors at the end of the elevator lobby",
+   "note": "sweep 1.5 m outside the glass double doors of the elevator lobby (heading 90)",
+   "latlon": [
+    29.748578339923036,
+    -95.36698977183087
+   ]
+  },
+  {
+   "id": "1cbn692b70cpefr7166iamf2c",
+   "floor": 0,
+   "xyz": [
+    17.532,
+    18.317,
+    -0.017
+   ],
+   "pano_xyz": [
+    17.532,
+    18.317,
+    1.4
+   ],
+   "quat": [
+    -0.005840817932039499,
+    -0.0004823163035325706,
+    0.6266056299209595,
+    0.7793144583702087
+   ],
+   "pano_path": "buildings/234036/panos/1cbn692b70cpefr7166iamf2c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "yxhkt9gfk9zcmduwmxx131a6a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74864487704415,
+    -95.36673870873818
+   ]
+  },
+  {
+   "id": "3w2apia7s265i6n06riab5zgd",
+   "floor": 0,
+   "xyz": [
+    -11.285,
+    12.526,
+    -0.008
+   ],
+   "pano_xyz": [
+    -11.285,
+    12.526,
+    1.413
+   ],
+   "quat": [
+    -0.006462182849645615,
+    0.002449274528771639,
+    -0.5621808767318726,
+    0.8269854784011841
+   ],
+   "pano_path": "buildings/234036/panos/3w2apia7s265i6n06riab5zgd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748726783913344,
+    -95.36702820528998
+   ]
+  },
+  {
+   "id": "343e4ncfp4c8ruug5g7mbweta",
+   "floor": 0,
+   "xyz": [
+    17.351,
+    21.847,
+    0.006
+   ],
+   "pano_xyz": [
+    17.351,
+    21.847,
+    1.42
+   ],
+   "quat": [
+    -0.0022652195766568184,
+    0.0069014569744467735,
+    0.17245547473430634,
+    0.9849905371665955
+   ],
+   "pano_path": "buildings/234036/panos/343e4ncfp4c8ruug5g7mbweta.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "ediidma5zg15dufx3n0qyq21a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748673451275113,
+    -95.36672239068821
+   ]
+  },
+  {
+   "id": "44fc71qeqxyx57m7w63ck9cda",
+   "floor": 0,
+   "xyz": [
+    -15.507,
+    3.62,
+    0.003
+   ],
+   "pano_xyz": [
+    -15.507,
+    3.62,
+    1.42
+   ],
+   "quat": [
+    0.001863286248408258,
+    0.009074774570763111,
+    0.9934426546096802,
+    -0.1139557808637619
+   ],
+   "pano_path": "buildings/234036/panos/44fc71qeqxyx57m7w63ck9cda.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748675704482235,
+    -95.367111595252
+   ]
+  },
+  {
+   "id": "5c5egg2ftnh3fkfk0bry95u2c",
+   "floor": 0,
+   "xyz": [
+    5.315,
+    20.253,
+    0.015
+   ],
+   "pano_xyz": [
+    5.315,
+    20.253,
+    1.433
+   ],
+   "quat": [
+    -0.002362533239647746,
+    -0.0015424657613039017,
+    0.9994013905525208,
+    0.03448104113340378
+   ],
+   "pano_path": "buildings/234036/panos/5c5egg2ftnh3fkfk0bry95u2c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748714149852507,
+    -95.36683911066739
+   ]
+  },
+  {
+   "id": "6m3za4p52gfuz38eeq9f0b3fa",
+   "floor": 0,
+   "xyz": [
+    1.339,
+    12.445,
+    -0.009
+   ],
+   "pano_xyz": [
+    1.339,
+    12.445,
+    1.423
+   ],
+   "quat": [
+    -0.0028421967290341854,
+    0.0011755768209695816,
+    0.9276700019836426,
+    -0.3733885884284973
+   ],
+   "pano_path": "buildings/234036/panos/6m3za4p52gfuz38eeq9f0b3fa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748670407023308,
+    -95.36691469705255
+   ]
+  },
+  {
+   "id": "9wxh5xquk9f8y5kc6r8i783ad",
+   "floor": 0,
+   "xyz": [
+    12.028,
+    4.111,
+    0.019
+   ],
+   "pano_xyz": [
+    12.028,
+    4.111,
+    1.435
+   ],
+   "quat": [
+    0.00338398152962327,
+    0.011122438125312328,
+    -0.3034052550792694,
+    0.9527906775474548
+   ],
+   "pano_path": "buildings/234036/panos/9wxh5xquk9f8y5kc6r8i783ad.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74855806194701,
+    -95.36686062011886
+   ]
+  },
+  {
+   "id": "a5pnr8xfxc6be068a3t55ipec",
+   "floor": 0,
+   "xyz": [
+    0.439,
+    -5.789,
+    -0.009
+   ],
+   "pano_xyz": [
+    0.439,
+    -5.789,
+    1.4
+   ],
+   "quat": [
+    0.00929350033402443,
+    -0.003314206376671791,
+    0.5953789949417114,
+    0.8033843636512756
+   ],
+   "pano_path": "buildings/234036/panos/a5pnr8xfxc6be068a3t55ipec.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748531520876934,
+    -95.36701554525027
+   ]
+  },
+  {
+   "id": "bns8y1n0ihhmypahn90ach9wb",
+   "floor": 0,
+   "xyz": [
+    -11.362,
+    18.31,
+    0.006
+   ],
+   "pano_xyz": [
+    -11.362,
+    18.31,
+    1.424
+   ],
+   "quat": [
+    -0.003827570704743266,
+    -0.0012222315417602658,
+    -0.37990498542785645,
+    0.9250167608261108
+   ],
+   "pano_path": "buildings/234036/panos/bns8y1n0ihhmypahn90ach9wb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748772512406124,
+    -95.3669994863802
+   ]
+  },
+  {
+   "id": "cnfz4d1p9h5xppstgganw4b6a",
+   "floor": 0,
+   "xyz": [
+    -13.199,
+    21.668,
+    0.018
+   ],
+   "pano_xyz": [
+    -13.199,
+    21.668,
+    1.432
+   ],
+   "quat": [
+    -0.003909124992787838,
+    -0.010029882192611694,
+    0.36952587962150574,
+    0.929158091545105
+   ],
+   "pano_path": "buildings/234036/panos/cnfz4d1p9h5xppstgganw4b6a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "b4qtykzcazp4iumkamm7y7h2b",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748806994079533,
+    -95.36699898698198
+   ]
+  },
+  {
+   "id": "cxcs60ckpm3g52d27r85mfz9c",
+   "floor": 0,
+   "xyz": [
+    -7.327,
+    15.627,
+    0.009
+   ],
+   "pano_xyz": [
+    -7.327,
+    15.627,
+    1.431
+   ],
+   "quat": [
+    0.008438250049948692,
+    -0.007147191558033228,
+    -0.4865688383579254,
+    0.8735722899436951
+   ],
+   "pano_path": "buildings/234036/panos/cxcs60ckpm3g52d27r85mfz9c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748733691788694,
+    -95.36697671818825
+   ]
+  },
+  {
+   "id": "dnnyukgt8y5t0ztenukn0471a",
+   "floor": 0,
+   "xyz": [
+    12.033,
+    -1.005,
+    0.025
+   ],
+   "pano_xyz": [
+    12.033,
+    -1.005,
+    1.434
+   ],
+   "quat": [
+    0.007435225881636143,
+    0.004814167972654104,
+    -0.5596462488174438,
+    0.8286842703819275
+   ],
+   "pano_path": "buildings/234036/panos/dnnyukgt8y5t0ztenukn0471a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "pksbu53py2kqgiahqc3d44p7d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748517987882938,
+    -95.36688659173942
+   ]
+  },
+  {
+   "id": "ext7qa5tezmbe42enzxuzmnsc",
+   "floor": 0,
+   "xyz": [
+    19.271,
+    2.6,
+    -0.007
+   ],
+   "pano_xyz": [
+    19.271,
+    2.6,
+    1.429
+   ],
+   "quat": [
+    0.007258674129843712,
+    0.012560686096549034,
+    0.3296143710613251,
+    0.9440041780471802
+   ],
+   "pano_path": "buildings/234036/panos/ext7qa5tezmbe42enzxuzmnsc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748514110895062,
+    -95.36680294275756
+   ]
+  },
+  {
+   "id": "i5dtness9epkguy6k4f0i3ctd",
+   "floor": 0,
+   "xyz": [
+    4.566,
+    -7.29,
+    -0.015
+   ],
+   "pano_xyz": [
+    4.566,
+    -7.29,
+    1.404
+   ],
+   "quat": [
+    0.0011703160125762224,
+    0.0042661866173148155,
+    -0.7650046944618225,
+    0.644009530544281
+   ],
+   "pano_path": "buildings/234036/panos/i5dtness9epkguy6k4f0i3ctd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74850150862752,
+    -95.36698593600042
+   ]
+  },
+  {
+   "id": "mdxzwcpx8r0k2y48u51m50iyb",
+   "floor": 0,
+   "xyz": [
+    15.707,
+    19.871,
+    0.0
+   ],
+   "pano_xyz": [
+    15.707,
+    19.871,
+    1.414
+   ],
+   "quat": [
+    0.0026567475870251656,
+    -0.006927367765456438,
+    0.9976125955581665,
+    0.0686596930027008
+   ],
+   "pano_path": "buildings/234036/panos/mdxzwcpx8r0k2y48u51m50iyb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748665197395855,
+    -95.36674727499678
+   ]
+  },
+  {
+   "id": "n50itd7kqebn4rm3b6sw8tqwb",
+   "floor": 0,
+   "xyz": [
+    0.061,
+    16.382,
+    0.008
+   ],
+   "pano_xyz": [
+    0.061,
+    16.382,
+    1.435
+   ],
+   "quat": [
+    -0.00893508829176426,
+    0.003055320819839835,
+    0.9987509250640869,
+    -0.04906584694981575
+   ],
+   "pano_path": "buildings/234036/panos/n50itd7kqebn4rm3b6sw8tqwb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748706982634843,
+    -95.36690620872784
+   ]
+  },
+  {
+   "id": "r54ee0tdge2hbxx4y2hunf0pa",
+   "floor": 0,
+   "xyz": [
+    11.53,
+    -2.439,
+    -0.003
+   ],
+   "pano_xyz": [
+    11.53,
+    -2.439,
+    1.432
+   ],
+   "quat": [
+    -0.006337953731417656,
+    -0.0016160703962668777,
+    0.9966829419136047,
+    -0.08111871778964996
+   ],
+   "pano_path": "buildings/234036/panos/r54ee0tdge2hbxx4y2hunf0pa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748508829699414,
+    -95.36689842326123
+   ]
+  },
+  {
+   "id": "unsmx29tbcwq7xn6xs7b432yb",
+   "floor": 0,
+   "xyz": [
+    18.78,
+    12.405,
+    -0.014
+   ],
+   "pano_xyz": [
+    18.78,
+    12.405,
+    1.423
+   ],
+   "quat": [
+    -0.005837720353156328,
+    0.0077608670108020306,
+    0.7525899410247803,
+    0.658417820930481
+   ],
+   "pano_path": "buildings/234036/panos/unsmx29tbcwq7xn6xs7b432yb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "a5f9age4zzxewres6iqux2emc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748593062969782,
+    -95.36675751146721
+   ]
+  },
+  {
+   "id": "yd22pbdc3ugkpcep7m4n06r2a",
+   "floor": 0,
+   "xyz": [
+    16.539,
+    8.179,
+    0.004
+   ],
+   "pano_xyz": [
+    16.539,
+    8.179,
+    1.412
+   ],
+   "quat": [
+    -0.006965359672904015,
+    -3.193171869497746e-05,
+    0.9945791959762573,
+    -0.10374855995178223
+   ],
+   "pano_path": "buildings/234036/panos/yd22pbdc3ugkpcep7m4n06r2a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "3m54yff1z7crxaywd8if9rb0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748569940003392,
+    -95.36679922522234
+   ]
+  },
+  {
+   "id": "35598x1akysqmrnwdc4c0960c",
+   "floor": 0,
+   "xyz": [
+    11.664,
+    17.069,
+    0.012
+   ],
+   "pano_xyz": [
+    11.664,
+    17.069,
+    1.416
+   ],
+   "quat": [
+    -0.004523209296166897,
+    -0.001812978065572679,
+    0.21482425928115845,
+    0.9766405820846558
+   ],
+   "pano_path": "buildings/234036/panos/35598x1akysqmrnwdc4c0960c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "4mpd3yxnm0wrnpak1ibnr29wc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748661156475382,
+    -95.36679800859748
+   ]
+  },
+  {
+   "id": "7xrem4n106isq4xtk5haf76wd",
+   "floor": 0,
+   "xyz": [
+    4.974,
+    -9.911,
+    -0.007
+   ],
+   "pano_xyz": [
+    4.974,
+    -9.911,
+    1.407
+   ],
+   "quat": [
+    0.0014832642627879977,
+    -0.0013762861490249634,
+    0.9991386532783508,
+    0.0414481945335865
+   ],
+   "pano_path": "buildings/234036/panos/7xrem4n106isq4xtk5haf76wd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74847921336326,
+    -95.366995582896
+   ]
+  },
+  {
+   "id": "8xxf02910sqti20turw2pggfc",
+   "floor": 0,
+   "xyz": [
+    4.58,
+    -5.8,
+    -0.019
+   ],
+   "pano_xyz": [
+    4.58,
+    -5.8,
+    1.395
+   ],
+   "quat": [
+    -0.003414133796468377,
+    -0.003898387076333165,
+    0.9972733855247498,
+    -0.07361508905887604
+   ],
+   "pano_path": "buildings/234036/panos/8xxf02910sqti20turw2pggfc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748513100101704,
+    -95.36697823248048
+   ]
+  },
+  {
+   "id": "a68rdyairnuy8d70geqkthdkd",
+   "floor": 0,
+   "xyz": [
+    -13.408,
+    0.298,
+    -0.006
+   ],
+   "pano_xyz": [
+    -13.408,
+    0.298,
+    1.432
+   ],
+   "quat": [
+    0.005861788056790829,
+    -0.007023288868367672,
+    -0.6913774609565735,
+    0.7224358916282654
+   ],
+   "pano_path": "buildings/234036/panos/a68rdyairnuy8d70geqkthdkd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748640363551903,
+    -95.3671095472256
+   ]
+  },
+  {
+   "id": "cpd9k77gbbsf2waw7h46ynucc",
+   "floor": 0,
+   "xyz": [
+    13.415,
+    12.209,
+    -0.004
+   ],
+   "pano_xyz": [
+    13.415,
+    12.209,
+    1.421
+   ],
+   "quat": [
+    0.010285609401762486,
+    -0.001157101127319038,
+    -0.49088937044143677,
+    0.8711604475975037
+   ],
+   "pano_path": "buildings/234036/panos/cpd9k77gbbsf2waw7h46ynucc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xwmb36qphpzp9se68715kxfhb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74861526612116,
+    -95.36680692237117
+   ]
+  },
+  {
+   "id": "d6aa9k14ddmzatz01zst2mf3c",
+   "floor": 0,
+   "xyz": [
+    -14.274,
+    -3.551,
+    -0.004
+   ],
+   "pano_xyz": [
+    -14.274,
+    -3.551,
+    1.414
+   ],
+   "quat": [
+    0.008172186091542244,
+    0.0077000949531793594,
+    0.7051258087158203,
+    0.7089933156967163
+   ],
+   "pano_path": "buildings/234036/panos/d6aa9k14ddmzatz01zst2mf3c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748614041203105,
+    -95.36713693561293
+   ]
+  },
+  {
+   "id": "epnsh24spnkxcyeckshepe9qa",
+   "floor": 0,
+   "xyz": [
+    -9.258,
+    6.05,
+    -0.012
+   ],
+   "pano_xyz": [
+    -9.258,
+    6.05,
+    1.409
+   ],
+   "quat": [
+    -0.008321404457092285,
+    0.005901561584323645,
+    0.6818835139274597,
+    0.7313897609710693
+   ],
+   "pano_path": "buildings/234036/panos/epnsh24spnkxcyeckshepe9qa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "note": "LAB door at heading 118; wall sign at heading 350 by the double doors: THIS DOOR TO REMAIN UNLOCKED WHEN THE BUILDING IS OCCUPIED",
+   "latlon": [
+    29.748667075568317,
+    -95.36704284625908
+   ]
+  },
+  {
+   "id": "ky2ei84c14ttnpmkkrkxbdfpb",
+   "floor": 0,
+   "xyz": [
+    -9.504,
+    17.195,
+    0.01
+   ],
+   "pano_xyz": [
+    -9.504,
+    17.195,
+    1.436
+   ],
+   "quat": [
+    -0.010880007408559322,
+    0.0054120696149766445,
+    0.9190502762794495,
+    -0.3939531147480011
+   ],
+   "pano_path": "buildings/234036/panos/ky2ei84c14ttnpmkkrkxbdfpb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "n81qfe51azs8iexnbqwspye6c",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748755593750868,
+    -95.36698838978954
+   ]
+  },
+  {
+   "id": "kyr8a4xbtcx2km0f5x29fnrda",
+   "floor": 0,
+   "xyz": [
+    15.822,
+    23.425,
+    0.017
+   ],
+   "pano_xyz": [
+    15.822,
+    23.425,
+    1.427
+   ],
+   "quat": [
+    -0.0022478580940514803,
+    0.005294479429721832,
+    0.8645733594894409,
+    0.5024735927581787
+   ],
+   "pano_path": "buildings/234036/panos/kyr8a4xbtcx2km0f5x29fnrda.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748692621938627,
+    -95.3667281637682
+   ]
+  },
+  {
+   "id": "m6nmy2gzns1ubkwszb3ugegnc",
+   "floor": 0,
+   "xyz": [
+    3.132,
+    14.362,
+    -0.009
+   ],
+   "pano_xyz": [
+    3.132,
+    14.362,
+    1.414
+   ],
+   "quat": [
+    -0.004177396185696125,
+    0.004160537384450436,
+    -0.5504927635192871,
+    0.8348191380500793
+   ],
+   "pano_path": "buildings/234036/panos/m6nmy2gzns1ubkwszb3ugegnc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "kuc0fpmsgqxff63egrxrycfud",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74867750995018,
+    -95.3668887682041
+   ]
+  },
+  {
+   "id": "py4934sqt0qk4dqxuakmtdp7c",
+   "floor": 0,
+   "xyz": [
+    19.209,
+    23.75,
+    0.006
+   ],
+   "pano_xyz": [
+    19.209,
+    23.75,
+    1.428
+   ],
+   "quat": [
+    0.00553551409393549,
+    0.006933276075869799,
+    0.24030610918998718,
+    0.9706566333770752
+   ],
+   "pano_path": "buildings/234036/panos/py4934sqt0qk4dqxuakmtdp7c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "ediidma5zg15dufx3n0qyq21a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748680157528756,
+    -95.36669594645572
+   ]
+  },
+  {
+   "id": "qyetwen21u24n1k6kqwpix57d",
+   "floor": 0,
+   "xyz": [
+    5.5,
+    22.848,
+    0.025
+   ],
+   "pano_xyz": [
+    5.5,
+    22.848,
+    1.431
+   ],
+   "quat": [
+    -0.00038280218723230064,
+    0.0010187918087467551,
+    -0.4189204275608063,
+    0.9080222845077515
+   ],
+   "pano_path": "buildings/234036/panos/qyetwen21u24n1k6kqwpix57d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74873371578183,
+    -95.36682424464904
+   ]
+  },
+  {
+   "id": "ry5wfeui65dahk2cupfbfmr9b",
+   "floor": 0,
+   "xyz": [
+    0.12,
+    -2.234,
+    -0.015
+   ],
+   "pano_xyz": [
+    0.12,
+    -2.234,
+    1.41
+   ],
+   "quat": [
+    0.005268049892038107,
+    0.006536699831485748,
+    0.9884281754493713,
+    -0.15145786106586456
+   ],
+   "pano_path": "buildings/234036/panos/ry5wfeui65dahk2cupfbfmr9b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748560751185376,
+    -95.36700034548596
+   ]
+  },
+  {
+   "id": "x6wr01604cgk64qmi5g2pzt3d",
+   "floor": 0,
+   "xyz": [
+    -9.09,
+    14.175,
+    -0.009
+   ],
+   "pano_xyz": [
+    -9.09,
+    14.175,
+    1.416
+   ],
+   "quat": [
+    0.007736022584140301,
+    -0.005969667341560125,
+    -0.22153843939304352,
+    0.9751026630401611
+   ],
+   "pano_path": "buildings/234036/panos/x6wr01604cgk64qmi5g2pzt3d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "wbpb7dkfuwnikd1kq2a9hz70a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748730007074798,
+    -95.36700001162635
+   ]
+  },
+  {
+   "id": "yynhz9d20cypf73bu3srrq04a",
+   "floor": 0,
+   "xyz": [
+    -10.752,
+    -2.853,
+    -0.013
+   ],
+   "pano_xyz": [
+    -10.752,
+    -2.853,
+    1.413
+   ],
+   "quat": [
+    0.007214745506644249,
+    0.0030077972915023565,
+    0.3745332658290863,
+    0.9271805286407471
+   ],
+   "pano_path": "buildings/234036/panos/yynhz9d20cypf73bu3srrq04a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748603913416456,
+    -95.36710160318675
+   ]
+  },
+  {
+   "id": "zpzw287k7wb5phwn1fda7sk2c",
+   "floor": 0,
+   "xyz": [
+    18.308,
+    18.291,
+    -0.016
+   ],
+   "pano_xyz": [
+    18.308,
+    18.291,
+    1.404
+   ],
+   "quat": [
+    -0.004390485119074583,
+    0.0020822284277528524,
+    0.5679730772972107,
+    0.823032796382904
+   ],
+   "pano_path": "buildings/234036/panos/zpzw287k7wb5phwn1fda7sk2c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "yxhkt9gfk9zcmduwmxx131a6a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748641252307426,
+    -95.36673183827384
+   ]
+  },
+  {
+   "id": "1pafh2x5fmaax09s14ukqzaca",
+   "floor": 0,
+   "xyz": [
+    -11.639,
+    23.401,
+    0.019
+   ],
+   "pano_xyz": [
+    -11.639,
+    23.401,
+    1.432
+   ],
+   "quat": [
+    -0.00986041221767664,
+    0.0007104178075678647,
+    -0.47750258445739746,
+    0.8785747289657593
+   ],
+   "pano_path": "buildings/234036/panos/1pafh2x5fmaax09s14ukqzaca.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748813689285303,
+    -95.36697609642928
+   ]
+  },
+  {
+   "id": "36tbkaz166u3ce27hexz9z68d",
+   "floor": 0,
+   "xyz": [
+    -4.876,
+    -4.474,
+    -0.011
+   ],
+   "pano_xyz": [
+    -4.876,
+    -4.474,
+    1.405
+   ],
+   "quat": [
+    0.003174753859639168,
+    -0.009442483074963093,
+    -0.699237585067749,
+    0.7148199677467346
+   ],
+   "pano_path": "buildings/234036/panos/36tbkaz166u3ce27hexz9z68d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748565279961614,
+    -95.36705682100637
+   ]
+  },
+  {
+   "id": "3em0txe6aburym17fcs6amgic",
+   "floor": 0,
+   "xyz": [
+    11.31,
+    12.169,
+    -0.006
+   ],
+   "pano_xyz": [
+    11.31,
+    12.169,
+    1.426
+   ],
+   "quat": [
+    0.003586850594729185,
+    0.0005691284313797951,
+    -0.5227470397949219,
+    0.8524801135063171
+   ],
+   "pano_path": "buildings/234036/panos/3em0txe6aburym17fcs6amgic.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xwmb36qphpzp9se68715kxfhb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748624236379076,
+    -95.366826121473
+   ]
+  },
+  {
+   "id": "8pc8wdb6snusqhhdaymy5mhmb",
+   "floor": 0,
+   "xyz": [
+    -8.591,
+    1.496,
+    0.031
+   ],
+   "pano_xyz": [
+    -8.591,
+    1.496,
+    1.42
+   ],
+   "quat": [
+    -0.0016174082411453128,
+    0.006007942836731672,
+    0.7473908066749573,
+    0.6643556356430054
+   ],
+   "pano_path": "buildings/234036/panos/8pc8wdb6snusqhhdaymy5mhmb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748628671950677,
+    -95.36705998591529
+   ]
+  },
+  {
+   "id": "96zt71cckx409d9r86738db2a",
+   "floor": 0,
+   "xyz": [
+    13.433,
+    18.434,
+    -0.005
+   ],
+   "pano_xyz": [
+    13.433,
+    18.434,
+    1.414
+   ],
+   "quat": [
+    -0.0018249783897772431,
+    -0.004824834875762463,
+    0.38553300499916077,
+    0.922679603099823
+   ],
+   "pano_path": "buildings/234036/panos/96zt71cckx409d9r86738db2a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "4mpd3yxnm0wrnpak1ibnr29wc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748663953175612,
+    -95.36677510345169
+   ]
+  },
+  {
+   "id": "azk5ezfs30e48wqa7fn82fuea",
+   "floor": 0,
+   "xyz": [
+    -13.136,
+    3.07,
+    -0.002
+   ],
+   "pano_xyz": [
+    -13.136,
+    3.07,
+    1.408
+   ],
+   "quat": [
+    0.007725634146481752,
+    0.007856931537389755,
+    0.7120302319526672,
+    0.7020623683929443
+   ],
+   "pano_path": "buildings/234036/panos/azk5ezfs30e48wqa7fn82fuea.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748660901269353,
+    -95.36709299606606
+   ]
+  },
+  {
+   "id": "cz51inmc807xybahu52h2s8fc",
+   "floor": 0,
+   "xyz": [
+    -15.144,
+    15.551,
+    0.008
+   ],
+   "pano_xyz": [
+    -15.144,
+    15.551,
+    1.42
+   ],
+   "quat": [
+    0.0006934087141416967,
+    -0.004719119518995285,
+    0.7005889415740967,
+    0.7135491371154785
+   ],
+   "pano_path": "buildings/234036/panos/cz51inmc807xybahu52h2s8fc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "f97s719x9ctqkce19r6s01b5a",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748767604620003,
+    -95.36704764606297
+   ]
+  },
+  {
+   "id": "kzn78gb58kanycg1igqbhs42b",
+   "floor": 0,
+   "xyz": [
+    6.189,
+    14.418,
+    -0.004
+   ],
+   "pano_xyz": [
+    6.189,
+    14.418,
+    1.405
+   ],
+   "quat": [
+    0.006096803583204746,
+    -6.680735532427207e-05,
+    -0.4952448606491089,
+    0.8687320947647095
+   ],
+   "pano_path": "buildings/234036/panos/kzn78gb58kanycg1igqbhs42b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "n2yqr30509t7i8whfdf2htwic",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748664477221382,
+    -95.36686089679098
+   ]
+  },
+  {
+   "id": "nfayra9araxhd5wxg01a1sxqb",
+   "floor": 0,
+   "xyz": [
+    12.007,
+    1.641,
+    0.02
+   ],
+   "pano_xyz": [
+    12.007,
+    1.641,
+    1.436
+   ],
+   "quat": [
+    -0.003438822226598859,
+    0.009716231375932693,
+    -0.7003976106643677,
+    0.7136785387992859
+   ],
+   "pano_path": "buildings/234036/panos/nfayra9araxhd5wxg01a1sxqb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "pksbu53py2kqgiahqc3d44p7d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [
+    "extinguisher"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire extinguisher in a wall cabinet at heading 0",
+   "latlon": [
+    29.74853880785205,
+    -95.36687337048511
+   ]
+  },
+  {
+   "id": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "floor": 0,
+   "xyz": [
+    15.482,
+    14.052,
+    -0.018
+   ],
+   "pano_xyz": [
+    15.482,
+    14.052,
+    1.408
+   ],
+   "quat": [
+    0.0005043440614826977,
+    0.010278896428644657,
+    0.5439148545265198,
+    0.8390772938728333
+   ],
+   "pano_path": "buildings/234036/panos/pf1ty3ad5xs7n9xukwz1zw7aa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.7486205075557,
+    -95.36677889724979
+   ]
+  },
+  {
+   "id": "sqzu8a8018bcghf0tmyyk5fpb",
+   "floor": 0,
+   "xyz": [
+    11.987,
+    2.841,
+    0.022
+   ],
+   "pano_xyz": [
+    11.987,
+    2.841,
+    1.432
+   ],
+   "quat": [
+    -0.008037322200834751,
+    0.006599379237741232,
+    -0.7353637218475342,
+    0.6775928735733032
+   ],
+   "pano_path": "buildings/234036/panos/sqzu8a8018bcghf0tmyyk5fpb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748548308193044,
+    -95.36686744852481
+   ]
+  },
+  {
+   "id": "tqi64wennx3ds211wdrq8mr5d",
+   "floor": 0,
+   "xyz": [
+    -7.452,
+    23.886,
+    0.033
+   ],
+   "pano_xyz": [
+    -7.452,
+    23.886,
+    1.431
+   ],
+   "quat": [
+    0.012132341042160988,
+    -0.00218405039049685,
+    -0.46646058559417725,
+    0.8844560980796814
+   ],
+   "pano_path": "buildings/234036/panos/tqi64wennx3ds211wdrq8mr5d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tyz3uyd99x00wa88mxhmugrxa",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748799074784575,
+    -95.36693584610681
+   ]
+  },
+  {
+   "id": "t7a77h2dwh7czmn80m7dd9yhd",
+   "floor": 0,
+   "xyz": [
+    -11.769,
+    21.635,
+    0.014
+   ],
+   "pano_xyz": [
+    -11.769,
+    21.635,
+    1.431
+   ],
+   "quat": [
+    -0.007910968735814095,
+    -0.008096524514257908,
+    -0.2643393874168396,
+    0.9643632769584656
+   ],
+   "pano_path": "buildings/234036/panos/t7a77h2dwh7czmn80m7dd9yhd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748800401268927,
+    -95.36698625033125
+   ]
+  },
+  {
+   "id": "wfm3gmg0gfqc46h4igzrcn06d",
+   "floor": 0,
+   "xyz": [
+    16.429,
+    1.592,
+    0.005
+   ],
+   "pano_xyz": [
+    16.429,
+    1.592,
+    1.426
+   ],
+   "quat": [
+    0.004891649354249239,
+    -0.0007645345758646727,
+    -0.7562018632888794,
+    0.654319703578949
+   ],
+   "pano_path": "buildings/234036/panos/wfm3gmg0gfqc46h4igzrcn06d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748518822993304,
+    -95.36683371521866
+   ]
+  },
+  {
+   "id": "w71enf8ddkhb0dk7k22sfznmb",
+   "floor": 0,
+   "xyz": [
+    -8.438,
+    -4.123,
+    -0.013
+   ],
+   "pano_xyz": [
+    -8.438,
+    -4.123,
+    1.412
+   ],
+   "quat": [
+    0.011010208167135715,
+    -0.0006702890386804938,
+    0.3667661249637604,
+    0.9302477836608887
+   ],
+   "pano_path": "buildings/234036/panos/w71enf8ddkhb0dk7k22sfznmb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748583746520204,
+    -95.36708717984305
+   ]
+  },
+  {
+   "id": "y76xh9h9kx3mny2wusbsq5i5b",
+   "floor": 0,
+   "xyz": [
+    -14.123,
+    9.968,
+    -0.007
+   ],
+   "pano_xyz": [
+    -14.123,
+    9.968,
+    1.429
+   ],
+   "quat": [
+    0.0019721996504813433,
+    0.0027642841450870037,
+    0.4551812708377838,
+    0.8903923034667969
+   ],
+   "pano_path": "buildings/234036/panos/y76xh9h9kx3mny2wusbsq5i5b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748719277863746,
+    -95.3670668240419
+   ]
+  },
+  {
+   "id": "07f4i058fywrh2e1qzt5q0mpd",
+   "floor": 0,
+   "xyz": [
+    5.643,
+    -0.249,
+    -0.008
+   ],
+   "pano_xyz": [
+    5.643,
+    -0.249,
+    1.417
+   ],
+   "quat": [
+    -0.006562685128301382,
+    -0.0009854896925389767,
+    0.834621250629425,
+    0.5507845282554626
+   ],
+   "pano_path": "buildings/234036/panos/07f4i058fywrh2e1qzt5q0mpd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "note": "door at heading 318 is marked EMPLOYEES ONLY / GENERAL OFFICE and has a card reader",
+   "latlon": [
+    29.74855195428064,
+    -95.36694041104857
+   ]
+  },
+  {
+   "id": "4fff8zp78feqqubcnnxeeb21b",
+   "floor": 0,
+   "xyz": [
+    -11.123,
+    0.216,
+    -0.006
+   ],
+   "pano_xyz": [
+    -11.123,
+    0.216,
+    1.43
+   ],
+   "quat": [
+    0.0022334789391607046,
+    0.005749628879129887,
+    0.9478426575660706,
+    0.3186790347099304
+   ],
+   "pano_path": "buildings/234036/panos/4fff8zp78feqqubcnnxeeb21b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74862963243636,
+    -95.367089344172
+   ]
+  },
+  {
+   "id": "77pehezx90tzb0xzghqi1t6gc",
+   "floor": 0,
+   "xyz": [
+    -10.452,
+    1.63,
+    -0.008
+   ],
+   "pano_xyz": [
+    -10.452,
+    1.63,
+    1.418
+   ],
+   "quat": [
+    -0.004885082598775625,
+    -0.0005563299055211246,
+    0.2746350169181824,
+    0.9615359902381897
+   ],
+   "pano_path": "buildings/234036/panos/77pehezx90tzb0xzghqi1t6gc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748637737993377,
+    -95.36707609831251
+   ]
+  },
+  {
+   "id": "bgwxh7y8qd7d923pap9shukzd",
+   "floor": 0,
+   "xyz": [
+    14.155,
+    -1.23,
+    0.013
+   ],
+   "pano_xyz": [
+    14.155,
+    -1.23,
+    1.421
+   ],
+   "quat": [
+    0.0010625628056004643,
+    0.005782022140920162,
+    0.30909961462020874,
+    0.9510114789009094
+   ],
+   "pano_path": "buildings/234036/panos/bgwxh7y8qd7d923pap9shukzd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "m8npxsuk79xy21dd09x9wtped",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74850679439926,
+    -95.36686858686538
+   ]
+  },
+  {
+   "id": "d091be7s3up71r03yqr6ytdid",
+   "floor": 0,
+   "xyz": [
+    5.705,
+    2.029,
+    -0.003
+   ],
+   "pano_xyz": [
+    5.705,
+    2.029,
+    1.408
+   ],
+   "quat": [
+    -0.008530273102223873,
+    0.004224772565066814,
+    0.7401585578918457,
+    0.6723650693893433
+   ],
+   "pano_path": "buildings/234036/panos/d091be7s3up71r03yqr6ytdid.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "h3xqwmf70zit9a8t16sa0kt9b",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the Electrical Room and Storage anteroom",
+   "note": "door plate ELECTRICAL ROOM at heading 13; wall sign outside reads ELECTRICAL ROOM AND STORAGE",
+   "latlon": [
+    29.74856955391316,
+    -95.36692826709628
+   ]
+  },
+  {
+   "id": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "floor": 0,
+   "xyz": [
+    0.793,
+    23.086,
+    0.034
+   ],
+   "pano_xyz": [
+    0.793,
+    23.086,
+    1.428
+   ],
+   "quat": [
+    0.0013248012401163578,
+    -0.00032516999635845423,
+    -0.04844265803694725,
+    0.9988250136375427
+   ],
+   "pano_path": "buildings/234036/panos/d8npf4eif5t2qz3kc3ffqf3hd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74875640894951,
+    -95.36686551072833
+   ]
+  },
+  {
+   "id": "e0a3uzdhe6nsbaih8qm1w824d",
+   "floor": 0,
+   "xyz": [
+    19.465,
+    18.2,
+    -0.013
+   ],
+   "pano_xyz": [
+    19.465,
+    18.2,
+    1.402
+   ],
+   "quat": [
+    -0.0029180608689785004,
+    0.0006574129220098257,
+    0.8437833786010742,
+    0.536675751209259
+   ],
+   "pano_path": "buildings/234036/panos/e0a3uzdhe6nsbaih8qm1w824d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "fac10mmacdecyd8fn9ph2gbhc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74863544640851,
+    -95.36672186018683
+   ]
+  },
+  {
+   "id": "e0bnks59iz8ik29htfsm3qffd",
+   "floor": 0,
+   "xyz": [
+    17.22,
+    19.839,
+    -0.001
+   ],
+   "pano_xyz": [
+    17.22,
+    19.839,
+    1.414
+   ],
+   "quat": [
+    0.0004891973221674562,
+    0.0027641048654913902,
+    -0.005279203411191702,
+    0.9999821186065674
+   ],
+   "pano_path": "buildings/234036/panos/e0bnks59iz8ik29htfsm3qffd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "4zgy5afdb9eadqxq8qmauzh0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748658261389554,
+    -95.36673378429651
+   ]
+  },
+  {
+   "id": "fgaxen1mfc0h710idppiur67d",
+   "floor": 0,
+   "xyz": [
+    -4.903,
+    21.795,
+    0.033
+   ],
+   "pano_xyz": [
+    -4.903,
+    21.795,
+    1.439
+   ],
+   "quat": [
+    0.010736076161265373,
+    0.001747757545672357,
+    0.353816419839859,
+    0.9352516531944275
+   ],
+   "pano_path": "buildings/234036/panos/fgaxen1mfc0h710idppiur67d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748771437898444,
+    -95.3669234771991
+   ]
+  },
+  {
+   "id": "k0f18mphfpysrrda6w4hf6ewd",
+   "floor": 0,
+   "xyz": [
+    -13.229,
+    -8.719,
+    0.013
+   ],
+   "pano_xyz": [
+    -13.229,
+    -8.719,
+    1.415
+   ],
+   "quat": [
+    0.0016392887337133288,
+    -0.01141381822526455,
+    -0.7972771525382996,
+    0.6035032272338867
+   ],
+   "pano_path": "buildings/234036/panos/k0f18mphfpysrrda6w4hf6ewd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748569024471415,
+    -95.36715378652147
+   ]
+  },
+  {
+   "id": "k87pu4i133s2sfi9kryt5dkuc",
+   "floor": 0,
+   "xyz": [
+    -11.308,
+    16.687,
+    0.002
+   ],
+   "pano_xyz": [
+    -11.308,
+    16.687,
+    1.412
+   ],
+   "quat": [
+    3.1669402233092114e-05,
+    -0.004659454803913832,
+    -0.2798798680305481,
+    0.9600237011909485
+   ],
+   "pano_path": "buildings/234036/panos/k87pu4i133s2sfi9kryt5dkuc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748759537521437,
+    -95.36700725263283
+   ]
+  },
+  {
+   "id": "nr1gxedfim25ybb6krp55cnra",
+   "floor": 0,
+   "xyz": [
+    0.161,
+    -10.114,
+    -0.003
+   ],
+   "pano_xyz": [
+    0.161,
+    -10.114,
+    1.416
+   ],
+   "quat": [
+    0.009794327430427074,
+    -0.003466586582362652,
+    0.5256945490837097,
+    0.8506099581718445
+   ],
+   "pano_path": "buildings/234036/panos/nr1gxedfim25ybb6krp55cnra.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.7484988936372,
+    -95.36704004810225
+   ]
+  },
+  {
+   "id": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "floor": 0,
+   "xyz": [
+    3.229,
+    16.423,
+    -0.001
+   ],
+   "pano_xyz": [
+    3.229,
+    16.423,
+    1.427
+   ],
+   "quat": [
+    0.0019052802817896008,
+    0.0038271984085440636,
+    -0.09823185205459595,
+    0.9951543807983398
+   ],
+   "pano_path": "buildings/234036/panos/qg2ws1qfg2ts77y1w4ppmzs1a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748693270339228,
+    -95.36687741191098
+   ]
+  },
+  {
+   "id": "q8gx4cmq09zg4gpa6gp9pbc4b",
+   "floor": 0,
+   "xyz": [
+    13.397,
+    23.626,
+    0.017
+   ],
+   "pano_xyz": [
+    13.397,
+    23.626,
+    1.453
+   ],
+   "quat": [
+    0.003929467871785164,
+    0.0030801785178482533,
+    0.17212219536304474,
+    0.9850629568099976
+   ],
+   "pano_path": "buildings/234036/panos/q8gx4cmq09zg4gpa6gp9pbc4b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "pcez6b4tqeep953kmm04hme9c",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748704903527532,
+    -95.36674902500654
+   ]
+  },
+  {
+   "id": "t0tfsp4gt8m6fkg72uq5346rd",
+   "floor": 0,
+   "xyz": [
+    -8.736,
+    20.586,
+    0.005
+   ],
+   "pano_xyz": [
+    -8.736,
+    20.586,
+    1.437
+   ],
+   "quat": [
+    0.008172981441020966,
+    -0.002851384226232767,
+    0.9293187260627747,
+    -0.3691771626472473
+   ],
+   "pano_path": "buildings/234036/panos/t0tfsp4gt8m6fkg72uq5346rd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74877874505853,
+    -95.3669642147872
+   ]
+  },
+  {
+   "id": "t8q6997ai6g49i59egn5hfzxc",
+   "floor": 0,
+   "xyz": [
+    -13.067,
+    13.757,
+    -0.001
+   ],
+   "pano_xyz": [
+    -13.067,
+    13.757,
+    1.411
+   ],
+   "quat": [
+    -0.0042938413098454475,
+    -0.0005464982241392136,
+    0.5469385385513306,
+    0.8371616005897522
+   ],
+   "pano_path": "buildings/234036/panos/t8q6997ai6g49i59egn5hfzxc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "bmpu8rc0bpgc1bruwia8kktzd",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74874433238644,
+    -95.36703802615008
+   ]
+  },
+  {
+   "id": "t8duqpa54zqrwax1wrgm2q9wc",
+   "floor": 0,
+   "xyz": [
+    17.047,
+    -9.679,
+    0.011
+   ],
+   "pano_xyz": [
+    17.047,
+    -9.679,
+    1.42
+   ],
+   "quat": [
+    -0.008465786464512348,
+    0.004722309298813343,
+    -0.06966795027256012,
+    0.9975231289863586
+   ],
+   "pano_path": "buildings/234036/panos/t8duqpa54zqrwax1wrgm2q9wc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74842781930994,
+    -95.366885455499
+   ]
+  },
+  {
+   "id": "30ca2ux4c515s56qgm1aggfda",
+   "floor": 0,
+   "xyz": [
+    17.861,
+    14.193,
+    -0.016
+   ],
+   "pano_xyz": [
+    17.861,
+    14.193,
+    1.402
+   ],
+   "quat": [
+    -0.005400567781180143,
+    0.0027437591925263405,
+    0.992763876914978,
+    -0.11993049085140228
+   ],
+   "pano_path": "buildings/234036/panos/30ca2ux4c515s56qgm1aggfda.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "a5f9age4zzxewres6iqux2emc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748611118857237,
+    -95.36675671193264
+   ]
+  },
+  {
+   "id": "6gitqk7pxqub5g539zy5yd8ic",
+   "floor": 0,
+   "xyz": [
+    9.519,
+    17.139,
+    0.01
+   ],
+   "pano_xyz": [
+    9.519,
+    17.139,
+    1.414
+   ],
+   "quat": [
+    0.004142333287745714,
+    -0.008331104181706905,
+    0.8828515410423279,
+    -0.46956002712249756
+   ],
+   "pano_path": "buildings/234036/panos/6gitqk7pxqub5g539zy5yd8ic.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74867116517317,
+    -95.36681700927895
+   ]
+  },
+  {
+   "id": "8r9im3py1m2quie333xkxh96a",
+   "floor": 0,
+   "xyz": [
+    4.583,
+    -4.142,
+    -0.023
+   ],
+   "pano_xyz": [
+    4.583,
+    -4.142,
+    1.392
+   ],
+   "quat": [
+    -0.003868627827614546,
+    -0.005047494079917669,
+    0.8556039929389954,
+    0.5175919532775879
+   ],
+   "pano_path": "buildings/234036/panos/8r9im3py1m2quie333xkxh96a.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74852605638994,
+    -95.3669697738832
+   ]
+  },
+  {
+   "id": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "floor": 0,
+   "xyz": [
+    11.291,
+    13.995,
+    0.001
+   ],
+   "pano_xyz": [
+    11.291,
+    13.995,
+    1.427
+   ],
+   "quat": [
+    0.0021644593216478825,
+    0.006880293600261211,
+    0.3041267991065979,
+    0.9526042342185974
+   ],
+   "pano_path": "buildings/234036/panos/9ruh8dnuzcprq1f5fyr4kcd4b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "b2kez6wsw32fm2x3ui593u3hc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748638662600214,
+    -95.3668170070332
+   ]
+  },
+  {
+   "id": "ah2pwc9hre2tpz9prf3d2am3d",
+   "floor": 0,
+   "xyz": [
+    9.362,
+    22.53,
+    0.028
+   ],
+   "pano_xyz": [
+    9.362,
+    22.53,
+    1.439
+   ],
+   "quat": [
+    -0.012403848581016064,
+    0.006068247836083174,
+    -0.6840161681175232,
+    0.7293362021446228
+   ],
+   "pano_path": "buildings/234036/panos/ah2pwc9hre2tpz9prf3d2am3d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748714188332382,
+    -95.3667910107721
+   ]
+  },
+  {
+   "id": "d9g8fn1iy3bbte3asw79u04pb",
+   "floor": 0,
+   "xyz": [
+    -12.622,
+    -5.273,
+    -0.001
+   ],
+   "pano_xyz": [
+    -12.622,
+    -5.273,
+    1.413
+   ],
+   "quat": [
+    0.0013747363118454814,
+    0.010842865332961082,
+    0.9879681468009949,
+    -0.15427102148532867
+   ],
+   "pano_path": "buildings/234036/panos/d9g8fn1iy3bbte3asw79u04pb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748593271234196,
+    -95.36713078478708
+   ]
+  },
+  {
+   "id": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "floor": 0,
+   "xyz": [
+    -11.27,
+    20.531,
+    0.011
+   ],
+   "pano_xyz": [
+    -11.27,
+    20.531,
+    1.43
+   ],
+   "quat": [
+    -0.010181771591305733,
+    -0.004687421955168247,
+    -0.6783136129379272,
+    0.7346870303153992
+   ],
+   "pano_path": "buildings/234036/panos/g9a4s8wtd4kqpxfgn20uzpi8d.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "tt6gm2a0463x9wmnx7rn6gugc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74878953303747,
+    -95.36698736155466
+   ]
+  },
+  {
+   "id": "h1siiayatpdrb6a2eip2w9ifb",
+   "floor": 0,
+   "xyz": [
+    11.954,
+    4.062,
+    0.019
+   ],
+   "pano_xyz": [
+    11.954,
+    4.062,
+    1.433
+   ],
+   "quat": [
+    -0.004728925414383411,
+    0.00714960228651762,
+    0.32351216673851013,
+    0.9461851716041565
+   ],
+   "pano_path": "buildings/234036/panos/h1siiayatpdrb6a2eip2w9ifb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "g1gkrkdygg4zs5xge8bxfuc1d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748558004764096,
+    -95.36686153708355
+   ]
+  },
+  {
+   "id": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "floor": 0,
+   "xyz": [
+    19.347,
+    4.326,
+    0.027
+   ],
+   "pano_xyz": [
+    19.347,
+    4.326,
+    1.428
+   ],
+   "quat": [
+    -0.005228147376328707,
+    0.0014402882661670446,
+    0.9995246529579163,
+    0.0303497314453125
+   ],
+   "pano_path": "buildings/234036/panos/q1t0iq925mq0a0tbgkyf6uxsc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "3m54yff1z7crxaywd8if9rb0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74852747295353,
+    -95.36679347957579
+   ]
+  },
+  {
+   "id": "qsu969pcz1z51atabifdib4qc",
+   "floor": 0,
+   "xyz": [
+    11.585,
+    22.319,
+    0.036
+   ],
+   "pano_xyz": [
+    11.585,
+    22.319,
+    1.451
+   ],
+   "quat": [
+    -0.000711365370079875,
+    0.00631554564461112,
+    0.2919143736362457,
+    0.9564233422279358
+   ],
+   "pano_path": "buildings/234036/panos/qsu969pcz1z51atabifdib4qc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "pcez6b4tqeep953kmm04hme9c",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748702761377146,
+    -95.36677202324587
+   ]
+  },
+  {
+   "id": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "floor": 0,
+   "xyz": [
+    7.073,
+    -9.665,
+    -0.005
+   ],
+   "pano_xyz": [
+    7.073,
+    -9.665,
+    1.416
+   ],
+   "quat": [
+    -0.0016137841157615185,
+    -0.0010317906271666288,
+    0.9997186064720154,
+    -0.023644542321562767
+   ],
+   "pano_path": "buildings/234036/panos/r9h8w02ts70dn5b0b0tz8wkfa.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748471883576606,
+    -95.36697539036774
+   ]
+  },
+  {
+   "id": "ss1ff02nsiqq0bmpi5qw9pztd",
+   "floor": 0,
+   "xyz": [
+    19.147,
+    20.038,
+    -0.007
+   ],
+   "pano_xyz": [
+    19.147,
+    20.038,
+    1.416
+   ],
+   "quat": [
+    -0.0009404749725945294,
+    0.002472155960276723,
+    -0.003185250097885728,
+    0.9999914169311523
+   ],
+   "pano_path": "buildings/234036/panos/ss1ff02nsiqq0bmpi5qw9pztd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "4zgy5afdb9eadqxq8qmauzh0d",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748651281644953,
+    -95.36671538290567
+   ]
+  },
+  {
+   "id": "tsa8297es17hczpq4u7pu89td",
+   "floor": 0,
+   "xyz": [
+    19.342,
+    16.678,
+    -0.013
+   ],
+   "pano_xyz": [
+    19.342,
+    16.678,
+    1.404
+   ],
+   "quat": [
+    -0.0026124021969735622,
+    0.00046318338718265295,
+    0.803848147392273,
+    0.594828724861145
+   ],
+   "pano_path": "buildings/234036/panos/tsa8297es17hczpq4u7pu89td.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "a5f9age4zzxewres6iqux2emc",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748624064900756,
+    -95.36673071010242
+   ]
+  },
+  {
+   "id": "t9uuddqq3sn5ew8kq68xdimsd",
+   "floor": 0,
+   "xyz": [
+    -8.599,
+    12.441,
+    -0.015
+   ],
+   "pano_xyz": [
+    -8.599,
+    12.441,
+    1.408
+   ],
+   "quat": [
+    -0.00048219854943454266,
+    0.0004719012067653239,
+    0.8767907619476318,
+    -0.4808717668056488
+   ],
+   "pano_path": "buildings/234036/panos/t9uuddqq3sn5ew8kq68xdimsd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "i3emtmx7sim7ifqtsc807qtxa",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74871422282148,
+    -95.36700439882127
+   ]
+  },
+  {
+   "id": "u9m6gquaa32e6x5gp6zskamab",
+   "floor": 0,
+   "xyz": [
+    1.972,
+    18.5,
+    0.015
+   ],
+   "pano_xyz": [
+    1.972,
+    18.5,
+    1.436
+   ],
+   "quat": [
+    -0.0016668374883010983,
+    -0.004728049039840698,
+    0.9275116920471191,
+    -0.3737606704235077
+   ],
+   "pano_path": "buildings/234036/panos/u9m6gquaa32e6x5gp6zskamab.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748715175349492,
+    -95.36687819286622
+   ]
+  },
+  {
+   "id": "xs0squ82sa51gdffpb2i1mcwc",
+   "floor": 0,
+   "xyz": [
+    7.598,
+    -2.209,
+    -0.006
+   ],
+   "pano_xyz": [
+    7.598,
+    -2.209,
+    1.414
+   ],
+   "quat": [
+    0.0057199629954993725,
+    -0.00871698185801506,
+    0.990209698677063,
+    -0.13919784128665924
+   ],
+   "pano_path": "buildings/234036/panos/xs0squ82sa51gdffpb2i1mcwc.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.7485279767082,
+    -95.36693273628853
+   ]
+  },
+  {
+   "id": "zhs595y954duri0cc1wuizbcb",
+   "floor": 0,
+   "xyz": [
+    -11.292,
+    5.951,
+    -0.003
+   ],
+   "pano_xyz": [
+    -11.292,
+    5.951,
+    1.399
+   ],
+   "quat": [
+    0.005859218072146177,
+    -6.054511231923243e-06,
+    -0.8125142455101013,
+    0.5829119086265564
+   ],
+   "pano_path": "buildings/234036/panos/zhs595y954duri0cc1wuizbcb.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "19ab05tns5h6y4qm42esqqpea",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748675326637468,
+    -95.36706170471734
+   ]
+  },
+  {
+   "id": "0srbx954cg9n7eekg1ximui1c",
+   "floor": 0,
+   "xyz": [
+    13.757,
+    0.655,
+    0.015
+   ],
+   "pano_xyz": [
+    13.757,
+    0.655,
+    1.423
+   ],
+   "quat": [
+    0.003043609205633402,
+    0.00651950528845191,
+    -0.7522188425064087,
+    0.6588741540908813
+   ],
+   "pano_path": "buildings/234036/panos/0srbx954cg9n7eekg1ximui1c.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "2qdmc5i9byxi79ry1pxdkqzea",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748523330504916,
+    -95.36686259252902
+   ]
+  },
+  {
+   "id": "0h5ew97xzeb1qft62x64e9tza",
+   "floor": 0,
+   "xyz": [
+    -8.463,
+    10.167,
+    -0.019
+   ],
+   "pano_xyz": [
+    -8.463,
+    10.167,
+    1.428
+   ],
+   "quat": [
+    0.0035660918802022934,
+    0.012144272215664387,
+    0.996153712272644,
+    0.08670403063297272
+   ],
+   "pano_path": "buildings/234036/panos/0h5ew97xzeb1qft62x64e9tza.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74869578543854,
+    -95.36701473566553
+   ]
+  },
+  {
+   "id": "1sn7fphnbk8kpbhim1gehp9bd",
+   "floor": 0,
+   "xyz": [
+    -5.213,
+    10.149,
+    -0.002
+   ],
+   "pano_xyz": [
+    -5.213,
+    10.149,
+    1.448
+   ],
+   "quat": [
+    -0.007364117074757814,
+    0.013093607500195503,
+    0.9792903661727905,
+    -0.2019025981426239
+   ],
+   "pano_path": "buildings/234036/panos/1sn7fphnbk8kpbhim1gehp9bd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74868138248065,
+    -95.36698549889795
+   ]
+  },
+  {
+   "id": "696if59i2py6eagd5s435t6nd",
+   "floor": 0,
+   "xyz": [
+    7.63,
+    12.477,
+    -0.01
+   ],
+   "pano_xyz": [
+    7.63,
+    12.477,
+    1.413
+   ],
+   "quat": [
+    0.0014356477186083794,
+    -0.005379434674978256,
+    -0.3781171143054962,
+    0.9257410168647766
+   ],
+   "pano_path": "buildings/234036/panos/696if59i2py6eagd5s435t6nd.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "n2yqr30509t7i8whfdf2htwic",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.74864287676232,
+    -95.36685776379778
+   ]
+  },
+  {
+   "id": "99bfsh9hwqyuz42k49n6q7f1b",
+   "floor": 0,
+   "xyz": [
+    17.204,
+    -4.917,
+    0.0
+   ],
+   "pano_xyz": [
+    17.204,
+    -4.917,
+    1.41
+   ],
+   "quat": [
+    -0.005642966832965612,
+    -0.004154369235038757,
+    0.984136164188385,
+    0.1772765964269638
+   ],
+   "pano_path": "buildings/234036/panos/99bfsh9hwqyuz42k49n6q7f1b.jpg",
+   "room_label": null,
+   "attributes": {
+    "room_id": "xy2x8mpaaqknp7q2c3nnbw1ma",
+    "room_class": null
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    29.748464378866466,
+    -95.36685982222154
+   ]
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "1m21wip3ze5byhrf4yhfpz25d"
+   },
+   "is_entrance": true,
+   "equipment": [
+    "fire_alarm_pull"
+   ],
+   "kind": "elevator",
+   "source": "hand",
+   "id": "elev_lobby",
+   "primary": true,
+   "label": "the passenger elevators",
+   "confidence": 0.8,
+   "note": "Six passenger elevator doors, three on each side of the core lobby, each jamb marked 14; call buttons between the doors. The lobby itself is not walked by the scan: it is seen through the glass double doors at one end; a wood door at the other end opens to the corridor. The glass doors have a card reader on the lobby side, a PUSH TO OPEN DOOR button on the suite side and the lettering THIS DOOR TO REMAIN UNLOCKED WHEN BUILDING IS OCCUPIED. Fire alarm pull station on the lobby wall just inside the glass doors. Whether the cars take a stretcher is not known from the scan.",
+   "approach": {
+    "via": "elevator",
+    "floors": 13
+   },
+   "xyz": [
+    0.048,
+    4.973,
+    -0.019
+   ],
+   "floor": 0,
+   "confirmed": true,
+   "latlon": [
+    29.748617513936654,
+    -95.36696434501766
+   ],
+   "evidence_path": "buildings/234036/evidence/elev_lobby.jpg"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "f463u43pm1r63xzh1aus5523a"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "door",
+   "source": "hand",
+   "id": "elev_lobby_wood_door",
+   "confidence": 0.7,
+   "label": "the wood door at the end of the elevator lobby",
+   "note": "Single wood door with a closer; wall sign ELEVATOR LOBBY on the corridor side. The same door is seen through the glass doors at the far end of the elevator lobby. Not known whether it locks from the lobby side.",
+   "xyz": [
+    0.102,
+    8.961,
+    0.019
+   ],
+   "floor": 0,
+   "confirmed": true,
+   "latlon": [
+    29.748648716032886,
+    -95.36694357727646
+   ],
+   "evidence_path": "buildings/234036/evidence/elev_lobby_wood_door.jpg"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "bidr0pifgmstmxxxtzdpi1w8d"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand",
+   "id": "stair_a",
+   "confidence": 0.6,
+   "label": "the Stair A door",
+   "note": "EXIT sign above, door plate STAIR A, wall sign STAIR A NO RE-ENTRY. Locked from the stair side is inferred from that sign, not seen.",
+   "approach": {
+    "via": "stairs",
+    "floors": 13,
+    "note": "Stair A; sign beside the door reads NO RE-ENTRY, so expect the door to be locked from the stair side",
+    "locked_entry": true
+   },
+   "xyz": [
+    -6.413,
+    0.759,
+    0.013
+   ],
+   "floor": 0,
+   "confirmed": true,
+   "latlon": [
+    29.748613188946926,
+    -95.36704407935707
+   ],
+   "evidence_path": "buildings/234036/evidence/stair_a.jpg"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "hazt2anz9fryp7q7rfqqdhqsd"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand",
+   "id": "stair_b",
+   "confidence": 0.6,
+   "label": "the Stair B door",
+   "note": "EXIT sign above, door plate STAIR B, wall sign STAIR B NO RE-ENTRY. Locked from the stair side is inferred from that sign, not seen.",
+   "approach": {
+    "via": "stairs",
+    "floors": 13,
+    "note": "Stair B; sign beside the door reads NO RE-ENTRY, so expect the door to be locked from the stair side",
+    "locked_entry": true
+   },
+   "xyz": [
+    10.13,
+    8.765,
+    -0.009
+   ],
+   "floor": 0,
+   "confirmed": true,
+   "latlon": [
+    29.748602761185627,
+    -95.36685408050054
+   ],
+   "evidence_path": "buildings/234036/evidence/stair_b.jpg"
+  }
+ ],
+ "edges": [
+  {
+   "meters": 0.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "9wxh5xquk9f8y5kc6r8i783ad",
+   "b": "h1siiayatpdrb6a2eip2w9ifb",
+   "seconds": {
+    "foot": 0.06,
+    "stretcher": 0.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 0.69,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "8xxf02910sqti20turw2pggfc",
+   "seconds": {
+    "foot": 0.49,
+    "stretcher": 0.69
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 0.78,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1cbn692b70cpefr7166iamf2c",
+   "b": "zpzw287k7wb5phwn1fda7sk2c",
+   "seconds": {
+    "foot": 0.56,
+    "stretcher": 0.78
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "au0kpek9wp53cq0rkt24xxi2b",
+   "seconds": {
+    "foot": 0.82,
+    "stretcher": 1.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.2,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.92,
+   "a": "nfayra9araxhd5wxg01a1sxqb",
+   "b": "sqzu8a8018bcghf0tmyyk5fpb",
+   "note": "door plate EMPLOYEES ONLY on the face toward the elevator side; wall sign on the other side: THIS DOOR TO REMAIN UNLOCKED WHEN THE BUILDING IS OCCUPIED",
+   "seconds": {
+    "foot": 3.86,
+    "stretcher": 9.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.21,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "seconds": {
+    "foot": 0.86,
+    "stretcher": 1.21
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.21,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "seconds": {
+    "foot": 0.86,
+    "stretcher": 1.21
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.84,
+   "a": "epnsh24spnkxcyeckshepe9qa",
+   "b": "k36ubn76h0t7u3a005s2c4cid",
+   "seconds": {
+    "foot": 3.87,
+    "stretcher": 9.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "h1siiayatpdrb6a2eip2w9ifb",
+   "b": "sqzu8a8018bcghf0tmyyk5fpb",
+   "seconds": {
+    "foot": 0.87,
+    "stretcher": 1.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "nfayra9araxhd5wxg01a1sxqb",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "seconds": {
+    "foot": 0.91,
+    "stretcher": 1.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "dnnyukgt8y5t0ztenukn0471a",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "seconds": {
+    "foot": 0.98,
+    "stretcher": 1.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.4,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "343e4ncfp4c8ruug5g7mbweta",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "seconds": {
+    "foot": 4.0,
+    "stretcher": 9.4
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "cnfz4d1p9h5xppstgganw4b6a",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "seconds": {
+    "foot": 4.02,
+    "stretcher": 9.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.49,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "seconds": {
+    "foot": 1.06,
+    "stretcher": 1.49
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.5,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "3tqzx22088wpuig1qmmeu02za",
+   "seconds": {
+    "foot": 4.07,
+    "stretcher": 9.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.51,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "e0bnks59iz8ik29htfsm3qffd",
+   "b": "mdxzwcpx8r0k2y48u51m50iyb",
+   "seconds": {
+    "foot": 4.08,
+    "stretcher": 9.51
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.52,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.48,
+   "a": "dnnyukgt8y5t0ztenukn0471a",
+   "b": "r54ee0tdge2hbxx4y2hunf0pa",
+   "seconds": {
+    "foot": 4.09,
+    "stretcher": 9.52
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.53,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.81,
+   "a": "e0a3uzdhe6nsbaih8qm1w824d",
+   "b": "tsa8297es17hczpq4u7pu89td",
+   "seconds": {
+    "foot": 4.09,
+    "stretcher": 9.53
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.57,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "ah2pwc9hre2tpz9prf3d2am3d",
+   "seconds": {
+    "foot": 1.12,
+    "stretcher": 1.57
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.62,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "seconds": {
+    "foot": 1.16,
+    "stretcher": 1.62
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.62,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "mdxzwcpx8r0k2y48u51m50iyb",
+   "b": "mu7c73uz202wt55p9bwnr0ftc",
+   "seconds": {
+    "foot": 1.16,
+    "stretcher": 1.62
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.63,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "tqi64wennx3ds211wdrq8mr5d",
+   "b": "xa42e1a2h6qe23gs1i9cnpfza",
+   "seconds": {
+    "foot": 4.16,
+    "stretcher": 9.63
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.65,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "kyr8a4xbtcx2km0f5x29fnrda",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "seconds": {
+    "foot": 1.18,
+    "stretcher": 1.65
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.66,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8r9im3py1m2quie333xkxh96a",
+   "b": "8xxf02910sqti20turw2pggfc",
+   "seconds": {
+    "foot": 1.19,
+    "stretcher": 1.66
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.69,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.87,
+   "a": "au0kpek9wp53cq0rkt24xxi2b",
+   "b": "t8q6997ai6g49i59egn5hfzxc",
+   "seconds": {
+    "foot": 4.21,
+    "stretcher": 9.69
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "seconds": {
+    "foot": 1.21,
+    "stretcher": 1.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.89,
+   "a": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "b": "fudnzszyuysb1e261nkmd2ebb",
+   "seconds": {
+    "foot": 4.21,
+    "stretcher": 9.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.73,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "8r9im3py1m2quie333xkxh96a",
+   "seconds": {
+    "foot": 1.24,
+    "stretcher": 1.73
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.74,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "fudnzszyuysb1e261nkmd2ebb",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "seconds": {
+    "foot": 1.24,
+    "stretcher": 1.74
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.76,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8pc8wdb6snusqhhdaymy5mhmb",
+   "b": "fm3w9q3gd6bumw1sggmbrp10d",
+   "seconds": {
+    "foot": 1.26,
+    "stretcher": 1.76
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.77,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1pafh2x5fmaax09s14ukqzaca",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "seconds": {
+    "foot": 1.26,
+    "stretcher": 1.77
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.8,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "1kssqph4t7huq084ddy53yz1d",
+   "b": "32eg8hzyqc2ya3fzde47i1wya",
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 9.8
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.81,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.88,
+   "a": "0srbx954cg9n7eekg1ximui1c",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 9.81
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.83,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "at0xcae1rprur5tg0rqy2d3dc",
+   "seconds": {
+    "foot": 1.31,
+    "stretcher": 1.83
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.85,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.87,
+   "a": "3em0txe6aburym17fcs6amgic",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "seconds": {
+    "foot": 4.32,
+    "stretcher": 9.85
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.86,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.88,
+   "a": "at0xcae1rprur5tg0rqy2d3dc",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "seconds": {
+    "foot": 4.33,
+    "stretcher": 9.86
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.86,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.85,
+   "a": "atwsdwfh4sidfg4067xpnbq8a",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "seconds": {
+    "foot": 4.33,
+    "stretcher": 9.86
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.86,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "seconds": {
+    "foot": 4.33,
+    "stretcher": 9.86
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.86,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "g39d08rrqz8r0zu98n70tewsb",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "seconds": {
+    "foot": 4.33,
+    "stretcher": 9.86
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.87,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "8pc8wdb6snusqhhdaymy5mhmb",
+   "seconds": {
+    "foot": 1.34,
+    "stretcher": 1.87
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.93,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "mdxzwcpx8r0k2y48u51m50iyb",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "seconds": {
+    "foot": 1.38,
+    "stretcher": 1.93
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "e0bnks59iz8ik29htfsm3qffd",
+   "b": "ss1ff02nsiqq0bmpi5qw9pztd",
+   "seconds": {
+    "foot": 1.39,
+    "stretcher": 1.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "1cbn692b70cpefr7166iamf2c",
+   "b": "mu7c73uz202wt55p9bwnr0ftc",
+   "seconds": {
+    "foot": 4.4,
+    "stretcher": 9.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.97,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.85,
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "kzn78gb58kanycg1igqbhs42b",
+   "seconds": {
+    "foot": 4.41,
+    "stretcher": 9.97
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.97,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "seconds": {
+    "foot": 1.41,
+    "stretcher": 1.97
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "seconds": {
+    "foot": 1.41,
+    "stretcher": 1.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "t8q6997ai6g49i59egn5hfzxc",
+   "b": "x48r12dmaehw47tgwe0uefqdb",
+   "seconds": {
+    "foot": 1.41,
+    "stretcher": 1.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.0,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "mappcci3h2yu5umi1re76gfua",
+   "seconds": {
+    "foot": 4.43,
+    "stretcher": 10.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.01,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "30ca2ux4c515s56qgm1aggfda",
+   "b": "unsmx29tbcwq7xn6xs7b432yb",
+   "seconds": {
+    "foot": 1.44,
+    "stretcher": 2.01
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.04,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.88,
+   "a": "6bwrusmb4knk23n14kucyf3ub",
+   "b": "9wxh5xquk9f8y5kc6r8i783ad",
+   "seconds": {
+    "foot": 4.46,
+    "stretcher": 10.04
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.04,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.9,
+   "a": "epnsh24spnkxcyeckshepe9qa",
+   "b": "zhs595y954duri0cc1wuizbcb",
+   "seconds": {
+    "foot": 4.46,
+    "stretcher": 10.04
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.06,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.88,
+   "a": "m6nmy2gzns1ubkwszb3ugegnc",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "seconds": {
+    "foot": 4.47,
+    "stretcher": 10.06
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "hazt2anz9fryp7q7rfqqdhqsd",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "seconds": {
+    "foot": 1.49,
+    "stretcher": 2.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.1,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1sn7fphnbk8kpbhim1gehp9bd",
+   "b": "q3i2nxdgduke3zg2ceqh6515d",
+   "seconds": {
+    "foot": 1.5,
+    "stretcher": 2.1
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.11,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3em0txe6aburym17fcs6amgic",
+   "b": "cpd9k77gbbsf2waw7h46ynucc",
+   "seconds": {
+    "foot": 1.51,
+    "stretcher": 2.11
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.11,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "7xrem4n106isq4xtk5haf76wd",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "seconds": {
+    "foot": 1.51,
+    "stretcher": 2.11
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.13,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1kssqph4t7huq084ddy53yz1d",
+   "b": "8u6gk76q5ttpm7y08h9ruhsia",
+   "seconds": {
+    "foot": 1.52,
+    "stretcher": 2.13
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.13,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "bgwxh7y8qd7d923pap9shukzd",
+   "b": "dnnyukgt8y5t0ztenukn0471a",
+   "seconds": {
+    "foot": 4.52,
+    "stretcher": 10.13
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.13,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ec7iciz95b52msb3cw3fe122d",
+   "b": "m6nmy2gzns1ubkwszb3ugegnc",
+   "seconds": {
+    "foot": 1.52,
+    "stretcher": 2.13
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.87,
+   "a": "35598x1akysqmrnwdc4c0960c",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "seconds": {
+    "foot": 4.54,
+    "stretcher": 10.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.86,
+   "a": "cxcs60ckpm3g52d27r85mfz9c",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "seconds": {
+    "foot": 4.54,
+    "stretcher": 10.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.16,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "seconds": {
+    "foot": 1.54,
+    "stretcher": 2.16
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.17,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.87,
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "t8q6997ai6g49i59egn5hfzxc",
+   "seconds": {
+    "foot": 4.55,
+    "stretcher": 10.17
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.19,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.9,
+   "a": "nr1gxedfim25ybb6krp55cnra",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "seconds": {
+    "foot": 4.56,
+    "stretcher": 10.19
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.21,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1m21wip3ze5byhrf4yhfpz25d",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "seconds": {
+    "foot": 1.58,
+    "stretcher": 2.21
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "seconds": {
+    "foot": 1.59,
+    "stretcher": 2.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "fgaxen1mfc0h710idppiur67d",
+   "b": "xa42e1a2h6qe23gs1i9cnpfza",
+   "seconds": {
+    "foot": 1.59,
+    "stretcher": 2.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.19,
+   "a": "r2c6ys5ye183id9xm0pcwgk8a",
+   "b": "unsmx29tbcwq7xn6xs7b432yb",
+   "seconds": {
+    "foot": 4.59,
+    "stretcher": 10.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.23,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "35598x1akysqmrnwdc4c0960c",
+   "b": "96zt71cckx409d9r86738db2a",
+   "seconds": {
+    "foot": 1.59,
+    "stretcher": 2.23
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.23,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.85,
+   "a": "ah2pwc9hre2tpz9prf3d2am3d",
+   "b": "qsu969pcz1z51atabifdib4qc",
+   "seconds": {
+    "foot": 4.59,
+    "stretcher": 10.23
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.23,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "q8gx4cmq09zg4gpa6gp9pbc4b",
+   "b": "qsu969pcz1z51atabifdib4qc",
+   "seconds": {
+    "foot": 1.59,
+    "stretcher": 2.23
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.9,
+   "a": "07f4i058fywrh2e1qzt5q0mpd",
+   "b": "d091be7s3up71r03yqr6ytdid",
+   "seconds": {
+    "foot": 4.63,
+    "stretcher": 10.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "cxcs60ckpm3g52d27r85mfz9c",
+   "b": "x6wr01604cgk64qmi5g2pzt3d",
+   "seconds": {
+    "foot": 1.63,
+    "stretcher": 2.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.29,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "seconds": {
+    "foot": 1.64,
+    "stretcher": 2.29
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.29,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "madeqfsx5emk86a24d9qsydxc",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 1.64,
+    "stretcher": 2.29
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.33,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "gmk8h2m65xnzpd9297h2ap8ab",
+   "seconds": {
+    "foot": 4.66,
+    "stretcher": 10.33
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.34,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gmk8h2m65xnzpd9297h2ap8ab",
+   "b": "ky2ei84c14ttnpmkkrkxbdfpb",
+   "seconds": {
+    "foot": 1.67,
+    "stretcher": 2.34
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.36,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "cz51inmc807xybahu52h2s8fc",
+   "b": "g39d08rrqz8r0zu98n70tewsb",
+   "seconds": {
+    "foot": 1.69,
+    "stretcher": 2.36
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.36,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "hum92h1mt4qqk63dxbupu1zbc",
+   "b": "mappcci3h2yu5umi1re76gfua",
+   "seconds": {
+    "foot": 1.69,
+    "stretcher": 2.36
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "seconds": {
+    "foot": 1.69,
+    "stretcher": 2.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.8,
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "u4g8zr7bits3by70ig73bk7nd",
+   "seconds": {
+    "foot": 4.71,
+    "stretcher": 10.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d6aa9k14ddmzatz01zst2mf3c",
+   "b": "d9g8fn1iy3bbte3asw79u04pb",
+   "seconds": {
+    "foot": 1.71,
+    "stretcher": 2.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.41,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "6bwrusmb4knk23n14kucyf3ub",
+   "seconds": {
+    "foot": 1.72,
+    "stretcher": 2.41
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.42,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "696if59i2py6eagd5s435t6nd",
+   "b": "kzn78gb58kanycg1igqbhs42b",
+   "seconds": {
+    "foot": 1.73,
+    "stretcher": 2.42
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "44fc71qeqxyx57m7w63ck9cda",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "seconds": {
+    "foot": 1.74,
+    "stretcher": 2.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "seconds": {
+    "foot": 1.74,
+    "stretcher": 2.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.48,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "hazt2anz9fryp7q7rfqqdhqsd",
+   "seconds": {
+    "foot": 1.77,
+    "stretcher": 2.48
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.52,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "6m3za4p52gfuz38eeq9f0b3fa",
+   "b": "atwsdwfh4sidfg4067xpnbq8a",
+   "seconds": {
+    "foot": 1.8,
+    "stretcher": 2.52
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.53,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "026gueuqgx1wnwbet5606q5ta",
+   "b": "nr1gxedfim25ybb6krp55cnra",
+   "seconds": {
+    "foot": 1.81,
+    "stretcher": 2.53
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.53,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "b": "t0tfsp4gt8m6fkg72uq5346rd",
+   "seconds": {
+    "foot": 1.81,
+    "stretcher": 2.53
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.59,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "kik7gmkwgpxq906y8z0m4pa5a",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "seconds": {
+    "foot": 1.85,
+    "stretcher": 2.59
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.6,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "seconds": {
+    "foot": 1.86,
+    "stretcher": 2.6
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.61,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "fuda46a8uipb0eb3g784ghhxd",
+   "b": "tqi64wennx3ds211wdrq8mr5d",
+   "seconds": {
+    "foot": 1.86,
+    "stretcher": 2.61
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.62,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "b": "e32x1x86ihn9xhe5ikuk352uc",
+   "seconds": {
+    "foot": 1.87,
+    "stretcher": 2.62
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.66,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "343e4ncfp4c8ruug5g7mbweta",
+   "b": "py4934sqt0qk4dqxuakmtdp7c",
+   "seconds": {
+    "foot": 1.9,
+    "stretcher": 2.66
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.67,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "7a2988e810705grrf38u674fc",
+   "b": "cnfz4d1p9h5xppstgganw4b6a",
+   "seconds": {
+    "foot": 1.91,
+    "stretcher": 2.67
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.69,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.85,
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "t9uuddqq3sn5ew8kq68xdimsd",
+   "seconds": {
+    "foot": 4.92,
+    "stretcher": 10.69
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "u3rqhz62xfr9ya51tbeb5xscd",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "seconds": {
+    "foot": 1.93,
+    "stretcher": 2.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "u4g8zr7bits3by70ig73bk7nd",
+   "b": "y76xh9h9kx3mny2wusbsq5i5b",
+   "seconds": {
+    "foot": 1.93,
+    "stretcher": 2.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.77,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "07f4i058fywrh2e1qzt5q0mpd",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "seconds": {
+    "foot": 1.98,
+    "stretcher": 2.77
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.78,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "bbceccx3s635rmddkcpfq759c",
+   "seconds": {
+    "foot": 1.99,
+    "stretcher": 2.78
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.79,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "seconds": {
+    "foot": 1.99,
+    "stretcher": 2.79
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.83,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0srbx954cg9n7eekg1ximui1c",
+   "b": "wfm3gmg0gfqc46h4igzrcn06d",
+   "seconds": {
+    "foot": 2.02,
+    "stretcher": 2.83
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.85,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "n50itd7kqebn4rm3b6sw8tqwb",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "seconds": {
+    "foot": 2.04,
+    "stretcher": 2.85
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.88,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "seconds": {
+    "foot": 2.06,
+    "stretcher": 2.88
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.89,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "30ca2ux4c515s56qgm1aggfda",
+   "b": "tsa8297es17hczpq4u7pu89td",
+   "seconds": {
+    "foot": 2.06,
+    "stretcher": 2.89
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.92,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "seconds": {
+    "foot": 2.09,
+    "stretcher": 2.92
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "u4g8zr7bits3by70ig73bk7nd",
+   "seconds": {
+    "foot": 2.11,
+    "stretcher": 2.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "seconds": {
+    "foot": 2.11,
+    "stretcher": 2.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.0,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "u9m6gquaa32e6x5gp6zskamab",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 2.14,
+    "stretcher": 3.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.02,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "au0kpek9wp53cq0rkt24xxi2b",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "seconds": {
+    "foot": 2.16,
+    "stretcher": 3.02
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.02,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ext7qa5tezmbe42enzxuzmnsc",
+   "b": "wfm3gmg0gfqc46h4igzrcn06d",
+   "seconds": {
+    "foot": 2.16,
+    "stretcher": 3.02
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.03,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "fgaxen1mfc0h710idppiur67d",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "seconds": {
+    "foot": 2.16,
+    "stretcher": 3.03
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.05,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "6gitqk7pxqub5g539zy5yd8ic",
+   "b": "fudnzszyuysb1e261nkmd2ebb",
+   "seconds": {
+    "foot": 2.18,
+    "stretcher": 3.05
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.05,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "seconds": {
+    "foot": 2.18,
+    "stretcher": 3.05
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.06,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "seconds": {
+    "foot": 2.19,
+    "stretcher": 3.06
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "seconds": {
+    "foot": 2.21,
+    "stretcher": 3.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.46,
+   "a": "bidr0pifgmstmxxxtzdpi1w8d",
+   "b": "fm3w9q3gd6bumw1sggmbrp10d",
+   "seconds": {
+    "foot": 5.21,
+    "stretcher": 11.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.14,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "seconds": {
+    "foot": 2.24,
+    "stretcher": 3.14
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "seconds": {
+    "foot": 2.25,
+    "stretcher": 3.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.16,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "kbew59tzi3uxcyn616mgemnyd",
+   "b": "q3i2nxdgduke3zg2ceqh6515d",
+   "seconds": {
+    "foot": 2.26,
+    "stretcher": 3.16
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.21,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "zhs595y954duri0cc1wuizbcb",
+   "b": "zi7771aikmfk6fmnqck1s4ybb",
+   "seconds": {
+    "foot": 2.29,
+    "stretcher": 3.21
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.24,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "seconds": {
+    "foot": 2.31,
+    "stretcher": 3.24
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.24,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "seconds": {
+    "foot": 2.31,
+    "stretcher": 3.24
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.25,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "1sn7fphnbk8kpbhim1gehp9bd",
+   "seconds": {
+    "foot": 2.32,
+    "stretcher": 3.25
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.32,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "7icsdrfqbni0c6r7kb80f7r6d",
+   "b": "r2c6ys5ye183id9xm0pcwgk8a",
+   "seconds": {
+    "foot": 2.37,
+    "stretcher": 3.32
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8pc8wdb6snusqhhdaymy5mhmb",
+   "b": "k36ubn76h0t7u3a005s2c4cid",
+   "seconds": {
+    "foot": 2.42,
+    "stretcher": 3.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.4,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "b": "u3rqhz62xfr9ya51tbeb5xscd",
+   "seconds": {
+    "foot": 2.43,
+    "stretcher": 3.4
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.48,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "fgaxen1mfc0h710idppiur67d",
+   "seconds": {
+    "foot": 2.49,
+    "stretcher": 3.48
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.49,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "seconds": {
+    "foot": 2.49,
+    "stretcher": 3.49
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.5,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "k0f18mphfpysrrda6w4hf6ewd",
+   "seconds": {
+    "foot": 2.5,
+    "stretcher": 3.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.53,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "7icsdrfqbni0c6r7kb80f7r6d",
+   "seconds": {
+    "foot": 2.52,
+    "stretcher": 3.53
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.55,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "n50itd7kqebn4rm3b6sw8tqwb",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 2.54,
+    "stretcher": 3.55
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.57,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "seconds": {
+    "foot": 2.55,
+    "stretcher": 3.57
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.57,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 2.55,
+    "stretcher": 3.57
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.58,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "seconds": {
+    "foot": 2.56,
+    "stretcher": 3.58
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.59,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d6aa9k14ddmzatz01zst2mf3c",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "seconds": {
+    "foot": 2.56,
+    "stretcher": 3.59
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.74,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bgwxh7y8qd7d923pap9shukzd",
+   "b": "yc159hm7nu054suz591cb524c",
+   "seconds": {
+    "foot": 2.67,
+    "stretcher": 3.74
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.77,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "seconds": {
+    "foot": 2.69,
+    "stretcher": 3.77
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.79,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "u2nbb26aztckkfya808yz1gab",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "seconds": {
+    "foot": 2.71,
+    "stretcher": 3.79
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.82,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "seconds": {
+    "foot": 2.73,
+    "stretcher": 3.82
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.86,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "fm3w9q3gd6bumw1sggmbrp10d",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "seconds": {
+    "foot": 2.76,
+    "stretcher": 3.86
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.88,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ah2pwc9hre2tpz9prf3d2am3d",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "seconds": {
+    "foot": 2.77,
+    "stretcher": 3.88
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.89,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.76,
+   "a": "7icsdrfqbni0c6r7kb80f7r6d",
+   "b": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "seconds": {
+    "foot": 5.78,
+    "stretcher": 11.89
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.93,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "44fc71qeqxyx57m7w63ck9cda",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "seconds": {
+    "foot": 2.81,
+    "stretcher": 3.93
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "d6aa9k14ddmzatz01zst2mf3c",
+   "seconds": {
+    "foot": 2.81,
+    "stretcher": 3.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "r54ee0tdge2hbxx4y2hunf0pa",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "seconds": {
+    "foot": 2.81,
+    "stretcher": 3.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "seconds": {
+    "foot": 2.84,
+    "stretcher": 3.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.02,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "626xt9h376s6pxdk5d4ghqf9d",
+   "seconds": {
+    "foot": 2.87,
+    "stretcher": 4.02
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.03,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "seconds": {
+    "foot": 2.88,
+    "stretcher": 4.03
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.11,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 2.94,
+    "stretcher": 4.11
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.12,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "seconds": {
+    "foot": 2.94,
+    "stretcher": 4.12
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.14,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "seconds": {
+    "foot": 2.96,
+    "stretcher": 4.14
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.18,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "5c5egg2ftnh3fkfk0bry95u2c",
+   "seconds": {
+    "foot": 2.99,
+    "stretcher": 4.18
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.19,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "epnsh24spnkxcyeckshepe9qa",
+   "seconds": {
+    "foot": 2.99,
+    "stretcher": 4.19
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.2,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "mu7c73uz202wt55p9bwnr0ftc",
+   "b": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "seconds": {
+    "foot": 3.0,
+    "stretcher": 4.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.34,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "seconds": {
+    "foot": 3.1,
+    "stretcher": 4.34
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.36,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "seconds": {
+    "foot": 3.11,
+    "stretcher": 4.36
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "seconds": {
+    "foot": 3.12,
+    "stretcher": 4.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "seconds": {
+    "foot": 3.14,
+    "stretcher": 4.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "seconds": {
+    "foot": 3.14,
+    "stretcher": 4.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.41,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "seconds": {
+    "foot": 3.15,
+    "stretcher": 4.41
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.42,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "w71enf8ddkhb0dk7k22sfznmb",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "seconds": {
+    "foot": 3.16,
+    "stretcher": 4.42
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.45,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "k0f18mphfpysrrda6w4hf6ewd",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "seconds": {
+    "foot": 3.18,
+    "stretcher": 4.45
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.46,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8r9im3py1m2quie333xkxh96a",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "seconds": {
+    "foot": 3.19,
+    "stretcher": 4.46
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.49,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "u3rqhz62xfr9ya51tbeb5xscd",
+   "seconds": {
+    "foot": 3.21,
+    "stretcher": 4.49
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.51,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "i5dtness9epkguy6k4f0i3ctd",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "seconds": {
+    "foot": 3.22,
+    "stretcher": 4.51
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.55,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f463u43pm1r63xzh1aus5523a",
+   "b": "im3pgkd7eakbbdpk7kpwr544b",
+   "seconds": {
+    "foot": 3.25,
+    "stretcher": 4.55
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.71,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "seconds": {
+    "foot": 3.36,
+    "stretcher": 4.71
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.74,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "seconds": {
+    "foot": 3.39,
+    "stretcher": 4.74
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.77,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "seconds": {
+    "foot": 3.41,
+    "stretcher": 4.77
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.77,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "seconds": {
+    "foot": 3.41,
+    "stretcher": 4.77
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.82,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "seconds": {
+    "foot": 3.44,
+    "stretcher": 4.82
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.91,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "d6aa9k14ddmzatz01zst2mf3c",
+   "seconds": {
+    "foot": 3.51,
+    "stretcher": 4.91
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.16,
+   "a": "026gueuqgx1wnwbet5606q5ta",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "seconds": {
+    "foot": 6.54,
+    "stretcher": 12.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.97,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "hazt2anz9fryp7q7rfqqdhqsd",
+   "b": "im3pgkd7eakbbdpk7kpwr544b",
+   "seconds": {
+    "foot": 3.55,
+    "stretcher": 4.97
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 0.84,
+   "a": "t0tfsp4gt8m6fkg72uq5346rd",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "seconds": {
+    "foot": 6.56,
+    "stretcher": 12.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.04,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "seconds": {
+    "foot": 3.6,
+    "stretcher": 5.04
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.11,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "seconds": {
+    "foot": 3.65,
+    "stretcher": 5.11
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.19,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "tuupi4rm25z0hpbxqs7xnuedd",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "seconds": {
+    "foot": 3.71,
+    "stretcher": 5.19
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.23,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "seconds": {
+    "foot": 3.74,
+    "stretcher": 5.23
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.27,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1sn7fphnbk8kpbhim1gehp9bd",
+   "b": "f463u43pm1r63xzh1aus5523a",
+   "seconds": {
+    "foot": 3.76,
+    "stretcher": 5.27
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.27,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "at0xcae1rprur5tg0rqy2d3dc",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "seconds": {
+    "foot": 3.76,
+    "stretcher": 5.27
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.34,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "seconds": {
+    "foot": 3.81,
+    "stretcher": 5.34
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.48,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "seconds": {
+    "foot": 3.91,
+    "stretcher": 5.48
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.51,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "626xt9h376s6pxdk5d4ghqf9d",
+   "seconds": {
+    "foot": 3.94,
+    "stretcher": 5.51
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.56,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "seconds": {
+    "foot": 3.97,
+    "stretcher": 5.56
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.64,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "seconds": {
+    "foot": 4.03,
+    "stretcher": 5.64
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.71,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "seconds": {
+    "foot": 4.08,
+    "stretcher": 5.71
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.01,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "xcrszt9m997f3kc0x0srz4qwb",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "seconds": {
+    "foot": 4.29,
+    "stretcher": 6.01
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.05,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "seconds": {
+    "foot": 4.32,
+    "stretcher": 6.05
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.18,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.16,
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "nr1gxedfim25ybb6krp55cnra",
+   "seconds": {
+    "foot": 7.41,
+    "stretcher": 14.18
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.19,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "seconds": {
+    "foot": 4.42,
+    "stretcher": 6.19
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.2,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.46,
+   "doors": 2,
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "9wxh5xquk9f8y5kc6r8i783ad",
+   "seconds": {
+    "foot": 7.43,
+    "stretcher": 14.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.48,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f4qgpp6wdhc15x1nwthriw8rc",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "seconds": {
+    "foot": 4.63,
+    "stretcher": 6.48
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.68,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "gkm9269xw5pe2bk0amn3sbihc",
+   "seconds": {
+    "foot": 4.77,
+    "stretcher": 6.68
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 7.46,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "seconds": {
+    "foot": 5.33,
+    "stretcher": 7.46
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 7.48,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ry5wfeui65dahk2cupfbfmr9b",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "seconds": {
+    "foot": 5.34,
+    "stretcher": 7.48
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 7.55,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f4qgpp6wdhc15x1nwthriw8rc",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "seconds": {
+    "foot": 5.39,
+    "stretcher": 7.55
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 8.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ry5wfeui65dahk2cupfbfmr9b",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "seconds": {
+    "foot": 5.98,
+    "stretcher": 8.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.8,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_lobby_wood_door",
+   "b": "elev_lobby",
+   "type": "open",
+   "note": "inside the elevator lobby: seen through the glass doors, not walked by the scan",
+   "meters": 3.99,
+   "seconds": {
+    "foot": 2.85,
+    "stretcher": 3.99
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.8,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "1m21wip3ze5byhrf4yhfpz25d",
+   "b": "elev_lobby",
+   "type": "door",
+   "meters": 5.0,
+   "note": "glass double doors between the elevator lobby and the reception side: card reader on the lobby side, PUSH TO OPEN DOOR button on the suite side, lettering THIS DOOR TO REMAIN UNLOCKED WHEN BUILDING IS OCCUPIED; may be locked after hours",
+   "seconds": {
+    "foot": 6.57,
+    "stretcher": 13.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.7,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "f463u43pm1r63xzh1aus5523a",
+   "b": "elev_lobby_wood_door",
+   "type": "door",
+   "meters": 1.2,
+   "width_m": 0.92,
+   "seconds": {
+    "foot": 3.86,
+    "stretcher": 9.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.6,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "bidr0pifgmstmxxxtzdpi1w8d",
+   "b": "stair_a",
+   "type": "door",
+   "meters": 1.5,
+   "width_m": 0.93,
+   "seconds": {
+    "foot": 4.07,
+    "stretcher": 9.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.6,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "hazt2anz9fryp7q7rfqqdhqsd",
+   "b": "stair_b",
+   "type": "door",
+   "meters": 1.6,
+   "width_m": 0.87,
+   "seconds": {
+    "foot": 4.14,
+    "stretcher": 9.6
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  }
+ ],
+ "scope": "14th floor only: the whole floor around the central core. The elevator cars, both stairwells, the street-level lobby and every other floor are not scanned."
+}

@@ -1,0 +1,270 @@
+{
+ "name": "7900 Fannin St (medical office building), ground-floor lobby",
+ "floor_offset": 0,
+ "scope": "Ground-floor lobby only: the north-south main lobby from the north motor-court entrance to the south plaza doors, the elevator lobby in the middle, and about 10 m of the east-west cross corridor. Floors 2 to 4, the two wing corridors past the ends of the cross corridor, the stairwells, the service elevator and all tenant suites are not scanned. Routes end at the ground-floor passenger elevators. No stair door is visible in the scanned area; EXIT signs can be seen at the far ends of both wing corridors.",
+ "nodes": {
+  "6tm9tky8ehef6yfhg8ymq2s5b": {
+   "equipment": [
+    "fire_alarm_pull"
+   ]
+  },
+  "i3d7aunib0nbrnnaifmribxzb": {
+   "equipment": [
+    "fire_alarm_pull"
+   ]
+  },
+  "gbqgw9g56m1ksrcfpim7dxawa": {
+   "label": "the restrooms in the east arm of the cross corridor"
+  },
+  "3ymmrb20g30hctysc1fq4ztpc": {
+   "label": "the Suite 1200 door (Colon & Rectal Surgery, Gynecologic Oncology)",
+   "attributes": {
+    "room_id": "613htqkzf66zz7hf7n8kzszed",
+    "room_class": null,
+    "sign": "wall sign beside the door, west end of the cross corridor: COLON & RECTAL SURGERY / GYNECOLOGIC ONCOLOGY / 1200"
+   }
+  }
+ },
+ "add_nodes": [
+  {
+   "id": "door_south_plaza",
+   "near": "6tm9tky8ehef6yfhg8ymq2s5b",
+   "heading_deg": 182,
+   "distance_m": 2.35,
+   "edge_type": "door",
+   "is_entrance": true,
+   "primary": true,
+   "confidence": 0.9,
+   "label": "the south plaza doors (street side)",
+   "latlon": [
+    29.6913073,
+    -95.4034496
+   ],
+   "attributes": {
+    "door": "two pairs of glass double doors side by side in one frame, push bars, a floor mat inside each pair; the node is at the mullion between the pairs",
+    "signs": [
+     "THESE DOORS TO REMAIN UNLOCKED DURING BUSINESS HOURS",
+     "PUSH TO OPEN DOOR (button on the centre mullion)",
+     "7900 FANNIN Surveillance Cameras in Use"
+    ],
+    "fire_alarm_pull": "on the mullion just west of the doors",
+    "hours": "M-F 6:00am-6:00pm, Sat 6:00am-1:00pm, closed Sunday (lettering on the north entrance glass)",
+    "primary_reason": "street-facing side on the aerial: these doors open onto the sculpture plaza at the point where the two streets meet. The vehicle drop-off is at the north entrance instead.",
+    "distance_note": "distance estimated from the door sill in the panorama, not measured"
+   },
+   "source": "hand: seen from the lobby sweep in front of them; the scan has no wall plan"
+  },
+  {
+   "id": "door_north_revolving",
+   "near": "i3d7aunib0nbrnnaifmribxzb",
+   "heading_deg": 24.5,
+   "distance_m": 3.05,
+   "edge_type": "door",
+   "is_entrance": true,
+   "confidence": 0.9,
+   "width_m": 0.5,
+   "label": "the revolving door at the north drop-off entrance",
+   "latlon": [
+    29.6916363,
+    -95.4034509
+   ],
+   "attributes": {
+    "door": "revolving door, sign on the drum: PLEASE USE REVOLVING DOOR",
+    "stretcher": "a stretcher cannot go through a revolving door. width_m 0.5 is not a measurement: it is set below the stretcher minimum so the stretcher profile uses the swing doors on either side",
+    "hours": "M-F 6:00am-6:00pm, Sat 6:00am-1:00pm, closed Sunday (lettering on the north entrance glass)",
+    "distance_note": "distance estimated from the two vestibule sweeps, not measured"
+   },
+   "source": "hand: seen from the vestibule sweep; the scan has no wall plan"
+  },
+  {
+   "id": "door_north_swing_east",
+   "near": "i3d7aunib0nbrnnaifmribxzb",
+   "heading_deg": 329,
+   "distance_m": 3.33,
+   "edge_type": "door",
+   "is_entrance": true,
+   "confidence": 0.9,
+   "label": "the accessible swing door left of the revolving door (north drop-off entrance)",
+   "latlon": [
+    29.6916363,
+    -95.4034198
+   ],
+   "attributes": {
+    "door": "single glass swing door, east of the revolving door (on the left when walking in from the drop-off), push-plate power operator",
+    "signs": [
+     "FOR ACCESSIBLE USE ONLY",
+     "THESE DOORS TO REMAIN UNLOCKED DURING BUSINESS HOURS",
+     "7900 FANNIN Surveillance Cameras in Use"
+    ],
+    "fire_alarm_pull": "on the east wall of the vestibule, just inside this door",
+    "hours": "M-F 6:00am-6:00pm, Sat 6:00am-1:00pm, closed Sunday (lettering on the north entrance glass)",
+    "distance_note": "distance estimated from the door sill in the panorama, not measured"
+   },
+   "source": "hand: seen from the vestibule sweep; the scan has no wall plan"
+  },
+  {
+   "id": "door_north_swing_west",
+   "near": "e7xf1kc4sqb4ngy3d86ify0qd",
+   "heading_deg": 27,
+   "distance_m": 3.0,
+   "edge_type": "door",
+   "is_entrance": true,
+   "confidence": 0.9,
+   "label": "the accessible swing door right of the revolving door (north drop-off entrance)",
+   "latlon": [
+    29.6916363,
+    -95.4034819
+   ],
+   "attributes": {
+    "door": "single glass swing door, west of the revolving door (on the right when walking in from the drop-off), push-plate power operator",
+    "signs": [
+     "FOR ACCESSIBLE USE ONLY",
+     "THESE DOORS TO REMAIN UNLOCKED DURING BUSINESS HOURS",
+     "Building Hours M-F 6:00am to 6:00pm, Sat. 6:00am to 1:00pm, Closed Sunday"
+    ],
+    "hours": "M-F 6:00am-6:00pm, Sat 6:00am-1:00pm, closed Sunday (lettering on the north entrance glass)",
+    "distance_note": "distance estimated from the door sill in the panorama, not measured"
+   },
+   "source": "hand: seen from the vestibule sweep; the scan has no wall plan"
+  },
+  {
+   "id": "elev_lobby",
+   "near": "ugmz8k0i4x0800rw5h2zsti5b",
+   "heading_deg": 111,
+   "distance_m": 1.8,
+   "kind": "elevator",
+   "confidence": 0.9,
+   "label": "the passenger elevators",
+   "attributes": {
+    "elevator": true,
+    "cars": "four cars, two on each side of the elevator lobby in the middle of the main lobby; the node is at the call buttons between the two west-side cars",
+    "signs": [
+     "FLOOR 1",
+     "IN CASE OF FIRE USE STAIRS (call station)"
+    ],
+    "key_switch_panel": "a panel with three key switches is on the east side between the two cars, under the Floor 1 directory. Likely the fire service recall switch; its label could not be read.",
+    "floor1_directory": {
+     "1000": "Laboratory",
+     "1370": "Building Management",
+     "1400": "Aesthetic & Laser Center",
+     "1500": "The Breast Center / Woman's Imaging Center / DEXA Bone Densitometry Center",
+     "1800": "Texas Ear, Nose & Throat Specialists / Hearing Specialists of Texas",
+     "1900": "Texas Facial Plastic Surgery"
+    },
+    "service_elevator": "a sign at the security desk says ALL VENDORS PLEASE USE SERVICE ELEVATOR; the service elevator is not in the scan"
+   },
+   "source": "hand: four stainless elevator doors and two call stations seen from the elevator lobby sweeps"
+  },
+  {
+   "id": "fire_alarm_panel",
+   "near": "nrc4p9486g06kftrmqg6wue5a",
+   "heading_deg": 254,
+   "distance_m": 1.65,
+   "kind": "landmark",
+   "confidence": 0.9,
+   "equipment": [
+    "alarm_panel"
+   ],
+   "label": "the fire alarm panel",
+   "attributes": {
+    "panel": "Notifier annunciator with keypad and display, on the east wall of the main lobby between the security desk and the elevators, beside the Janitor J106 door"
+   },
+   "source": "hand: read in the panorama"
+  },
+  {
+   "id": "security_desk",
+   "near": "ihtu6tz9w72hwg267u7atx1wd",
+   "heading_deg": 78,
+   "distance_m": 2.1,
+   "kind": "landmark",
+   "confidence": 0.8,
+   "label": "the security desk",
+   "attributes": {
+    "desk": "stone-clad desk in the middle of the main lobby between the south seating area and the elevators, staffed by a uniformed guard with camera monitors in the scan. No sign names it.",
+    "signs": [
+     "ALL VENDORS PLEASE USE SERVICE ELEVATOR"
+    ]
+   },
+   "source": "hand: seen in the panorama; that it is a security desk is inferred from the uniform and monitors"
+  },
+  {
+   "id": "directory_board",
+   "near": "2sk80bsyap2zwkiskmr0aqfzb",
+   "heading_deg": 127,
+   "distance_m": 2.45,
+   "kind": "landmark",
+   "confidence": 0.9,
+   "label": "the tenant directory screen",
+   "attributes": {
+    "directory": "wall screen headed DIRECTORY / 7900 FANNIN listing tenants and suites, on the wall just north-west of the elevators, at the start of the west arm of the cross corridor. The listing is too small to read in the scan.",
+    "wayfinding": "overhead sign beside it points west along the cross corridor to: ATM & Parking Kiosk, Aesthetic & Laser Center & Massage, Walgreens Pharmacy, Vasso Grill Cafe"
+   },
+   "source": "hand: read in the panorama"
+  },
+  {
+   "id": "stage_north_dropoff",
+   "kind": "staging",
+   "floor": 0,
+   "confirmed": false,
+   "label": "the covered drop-off in the north motor court",
+   "latlon": [
+    29.6917542,
+    -95.4034509
+   ],
+   "xyz": [
+    47.1,
+    1.05,
+    0.0
+   ],
+   "attributes": {
+    "access": "driveway into the circular motor court from the north parking lot",
+    "position_note": "under the canopy where it meets the circular drive, about 13 m north of the doors. The court is in shadow on the aerial, so the stopping point is an estimate. xyz is set by hand from that distance because the scan georeference is about 23 m off."
+   },
+   "source": "hand: read off the aerial tile at the building's true position. The scan georeference puts this lobby about 23 m north-west of where the aerial shows it, so this is not derived from the scan."
+  },
+  {
+   "id": "stage_fannin_curb",
+   "kind": "staging",
+   "floor": 0,
+   "confirmed": false,
+   "label": "the Fannin St curb beside the south plaza",
+   "latlon": [
+    29.6910782,
+    -95.4030941
+   ],
+   "xyz": [
+    -28.2,
+    -33.4,
+    0.0
+   ],
+   "attributes": {
+    "position_note": "street curb south-east of the sculpture plaza; a paved spur leads from the sidewalk into the plaza and up to the south doors. Read as Fannin St because the light rail runs along the other street (Greenbriar Dr); the tile itself has no street names. xyz is set by hand because the scan georeference is about 23 m off."
+   },
+   "source": "hand: read off the aerial tile at the building's true position. The scan georeference puts this lobby about 23 m north-west of where the aerial shows it, so this is not derived from the scan."
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "stage_north_dropoff",
+   "b": "door_north_revolving",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_north_dropoff",
+   "b": "door_north_swing_east",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_north_dropoff",
+   "b": "door_north_swing_west",
+   "type": "exterior_foot"
+  },
+  {
+   "a": "stage_fannin_curb",
+   "b": "door_south_plaza",
+   "type": "exterior_foot",
+   "meters": 46.0,
+   "note": "walking length along the sidewalk spur and the plaza paving, measured on the aerial; the straight line is 42 m"
+  }
+ ]
+}
