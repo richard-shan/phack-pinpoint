@@ -67,6 +67,28 @@ Not connected yet:
   or stairs is within sight;
 - a real phone channel. The caller types in the console's caller view.
 
+## Demo walkthrough
+
+1. `python3 -m live.serve` in one terminal, `.venv/bin/python -m live.run --watch` in
+   another. Open `http://localhost:4175/live.html` (use `localhost`: the Matterport
+   viewer key is tied to that name).
+2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
+   caller said and attach `demo/6550930_gbqgw9_h095.jpg` (taken near the restrooms) or
+   `demo/6550930_3ymmrb_h020.jpg` (at the Suite 1200 door).
+3. The watcher terminal prints that it is running the agent. In the console, the
+   incident fills in: **Destination** and **Entry & route**, the route drawn on the
+   floor of the 3D scan from the door the agent chose, and under **Photo match
+   evidence** the caller's photo beside the matched view with the matched points joined.
+4. If the match is ambiguous the agent's question appears in **Caller conversation**.
+   Press **Open caller view** and answer it there; the agent updates its belief and
+   continues. Without an answer it gives up waiting after 90 seconds and says so.
+5. Switch to **Aerial approach** to see the staging spot and the door on the Vexcel
+   image. Open **Agent packet** for the full packet with its sources.
+6. Press **Approve packet locally** or **Reject**. The watcher terminal shows the agent
+   finishing with that decision.
+
+The first photo in a session takes longer because the matcher's two models load.
+
 ## Options for `live.run`
 
 | Option | Effect |
