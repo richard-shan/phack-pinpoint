@@ -13,6 +13,8 @@ import json
 from functools import lru_cache
 from .config import FIXTURES, DEMO_BUILDING
 from .trace import traced
+from .errors import (PropertyNotFound, MatterportUnavailable,
+                     EmptyCandidates)
 
 _B = FIXTURES / "building_bayou"
 
@@ -30,7 +32,12 @@ def _load(name):
 # ---------- Person A (records + env) ----------
 @traced("records")
 def get_property(address):
-    """address -> normalized CoStar record. STUB: single demo building."""
+    """address -> normalized CoStar record. STUB: single demo building.
+
+    Raises PropertyNotFound if the address does not resolve. In stub mode this
+    fires when the address is missing or carries the sentinel 'UNKNOWN'."""
+    if not address or "UNKNOWN" in str(address).upper():
+        raise PropertyNotFound(f"address not in CoStar: {address!r}")
     p = _load("property.json")
     return {"building_id": p["building_id"], "use_type": p["use_type"], "stories": p["stories"],
             "year_built": p["year_built"], "sqft": p["sqft"], "scan_date": p["scan_date"],
@@ -72,6 +79,20 @@ def match_photo(building_id, image_path, k=10):
         nearby nodes on the same floor with mild score decay). Lets the eval harness drive the
         pipeline across many ground-truth nodes without a real matcher.
       * otherwise return the fixed ambiguous set from match.json (demo behavior)."""
+    # Failure injection paths used by the graceful-failure tests.
+    if building_id == "no_twin" or str(image_path).startswith("no_twin://"):
+        raise MatterportUnavailable(
+            f"no Matterport twin for building {building_id!r}")
+    if image_path is None or image_path == "":
+        raise EmptyCandidates("caller photo path missing")
+    from pathlib import Path as _P
+    _p = _P(str(image_path))
+    # fixture relative paths may resolve relative to FIXTURES; we treat anything
+    # that is explicitly absent or empty-on-disk as "unreadable".
+    if _p.is_absolute() and (not _p.exists() or _p.stat().st_size == 0):
+        raise EmptyCandidates(f"caller photo unreadable: {image_path}")
+    if "no_match" in str(image_path):
+        raise EmptyCandidates("no candidates matched the caller photo")
     marker = "synth/node_"
     if image_path and marker in image_path:
         truth = image_path.split(marker, 1)[1].rsplit(".", 1)[0]
@@ -145,7 +166,10 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
         base["aerial_tile_path"] = real["tile_path"]
         base["aerial_features"] = real["features"]
         base["source"] = "vexcel+fixture"
-    except vexcel.VexcelUnavailable:
+    except vexcel.VexcelUnavailable as _vexc:
+        from . import trace as _tr
+        _tr.log("site", "vexcel_fallback",
+                result_summary=str(_vexc)[:120], phase="fallback")
         base["source"] = "fixture_only"
     return base
 
