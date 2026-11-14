@@ -1,0 +1,12 @@
+# Perception lane (Person B). Install: uv venv --python 3.12 && uv pip install -r perception/requirements.txt
+torch
+torchvision
+transformers
+kornia
+numpy
+pillow
+opencv-python-headless
+requests
+shapely
+anthropic
+pydantic
