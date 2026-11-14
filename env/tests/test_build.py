@@ -42,6 +42,16 @@ class Geometry(unittest.TestCase):
         self.assertIsNone(bg.classify_link(low, across_atrium, {}))
         self.assertIsNone(bg.classify_link(low, straight_down, {}))
 
+    def test_link_across_a_void_is_measured(self):
+        import numpy as np
+        alpha = np.ones((100, 100), dtype=bool)          # 10 px per meter: a 10 m square of floor
+        alpha[30:70, 40:60] = False                       # with a 2 m wide void down the middle
+        mask = {"alpha": alpha, "ppm": 10.0, "ox": 0.0, "oy": 0.0, "h": 100}
+        across = bg.off_floor_run_m(mask, (1.0, 5.0, 0), (9.0, 5.0, 0))
+        self.assertAlmostEqual(across, 2.0, delta=0.6)   # the 2 px reach on each side shortens it
+        self.assertGreater(across, bg.VOID_MAX_M)
+        self.assertEqual(bg.off_floor_run_m(mask, (1.0, 1.0, 0), (9.0, 1.0, 0)), 0.0)   # around it
+
     def test_spanner_drops_the_long_shortcut_only(self):
         e = lambda a, b, m: {"a": a, "b": b, "meters": m}
         kept = bg.spanner(["a", "b", "c", "d"], [e("a", "b", 2), e("b", "c", 2), e("a", "c", 3.9),

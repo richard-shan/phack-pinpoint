@@ -3,7 +3,7 @@
  "matterport_model_id": "7uM5JKssTED",
  "name": "1315 St Joseph Pkwy, 14th floor",
  "address": "1315 St Joseph Pkwy, Houston, TX, 77002, US",
- "generated_at": "2026-11-14T14:34:14",
+ "generated_at": "2026-11-14T14:47:16",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 13,
  "grade_floor": 0,
@@ -33,6 +33,7 @@
   "note": "scan placement is good to a few meters, not to a door"
  },
  "stats": {
+  "floors_with_floor_mask": 1,
   "links": 654,
   "dropped_wall_or_level": 2,
   "dropped_spanner": 452,

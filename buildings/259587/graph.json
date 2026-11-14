@@ -3,7 +3,7 @@
  "matterport_model_id": "rDU2DaDBbyz",
  "name": "911 Broxton Ave (Broxton Plaza)",
  "address": "911 Broxton Ave, Los Angeles, CA, 90024, US",
- "generated_at": "2026-11-14T14:34:12",
+ "generated_at": "2026-11-14T14:47:12",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 2,
@@ -93,6 +93,7 @@
   "note": "scan placement is good to a few meters, not to a door"
  },
  "stats": {
+  "floors_with_floor_mask": 5,
   "links": 765,
   "dropped_wall_or_level": 48,
   "dropped_spanner": 463,

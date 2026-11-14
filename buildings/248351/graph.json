@@ -3,7 +3,7 @@
  "matterport_model_id": "cqDGKrH5ZTu",
  "name": "3800 Barham Blvd (Barham Plaza), Suite 200: ground floor and 2nd floor",
  "address": "3800 Barham Blvd, 200, Los Angeles, CA, 90068, US",
- "generated_at": "2026-11-14T14:34:13",
+ "generated_at": "2026-11-14T14:47:14",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -48,16 +48,18 @@
   "note": "scan placement is good to a few meters, not to a door"
  },
  "stats": {
+  "floors_with_floor_mask": 2,
   "links": 364,
   "dropped_wall_or_level": 14,
-  "dropped_spanner": 216,
+  "dropped_over_void": 9,
+  "dropped_spanner": 208,
   "reconnected": 0,
   "forced_links": 0,
   "sweeps_without_floor": 0,
   "auto_entrances": 3,
   "other_exterior_doors": 2,
   "nodes": 91,
-  "edges": 140,
+  "edges": 139,
   "components": 1,
   "largest_component": 91,
   "entrances": 4,
@@ -5260,23 +5262,6 @@
    "seconds": {
     "foot": 4.25,
     "stretcher": 5.95
-   },
-   "passable": {
-    "foot": true,
-    "stretcher": true
-   }
-  },
-  {
-   "meters": 5.98,
-   "confidence": 0.9,
-   "evidence_path": null,
-   "type": "open",
-   "wall_checked": true,
-   "a": "e2sshfx4y2905ix6ftx4a04bc",
-   "b": "s1xrrgpufimg65qmqr9k1wkia",
-   "seconds": {
-    "foot": 4.27,
-    "stretcher": 5.98
    },
    "passable": {
     "foot": true,

@@ -3,7 +3,7 @@
  "matterport_model_id": "mZ4TqsMaSk8",
  "name": "12814 Willow Centre Dr",
  "address": "12814 Willow Centre Dr, Houston, TX, 77066, US",
- "generated_at": "2026-11-14T14:34:12",
+ "generated_at": "2026-11-14T14:47:08",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 0,
  "grade_floor": 0,
@@ -48,6 +48,7 @@
   "note": "scan placement is good to a few meters, not to a door"
  },
  "stats": {
+  "floors_with_floor_mask": 2,
   "links": 461,
   "dropped_wall_or_level": 31,
   "dropped_spanner": 261,

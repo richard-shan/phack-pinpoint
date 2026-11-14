@@ -3,7 +3,7 @@
  "matterport_model_id": "MFhskYSBMMe",
  "name": "3250 Wilshire Blvd, Suite 301 (Xfernet), 3rd floor",
  "address": "3250 Wilshire, Los Angeles, CA, 90005, US",
- "generated_at": "2026-11-14T14:34:16",
+ "generated_at": "2026-11-14T14:47:19",
  "source": "matterport sweeps and wall plan",
  "floor_offset": 2,
  "grade_floor": 0,
@@ -33,8 +33,10 @@
   "note": "scan placement is good to a few meters, not to a door"
  },
  "stats": {
+  "floors_with_floor_mask": 1,
   "links": 473,
   "dropped_wall_or_level": 24,
+  "dropped_over_void": 1,
   "dropped_spanner": 286,
   "reconnected": 1,
   "forced_links": 0,
@@ -42,7 +44,7 @@
   "auto_entrances": 7,
   "other_exterior_doors": 0,
   "nodes": 126,
-  "edges": 167,
+  "edges": 166,
   "components": 1,
   "largest_component": 126,
   "entrances": 2,
@@ -7107,23 +7109,6 @@
    "seconds": {
     "foot": 6.1,
     "stretcher": 8.54
-   },
-   "passable": {
-    "foot": true,
-    "stretcher": true
-   }
-  },
-  {
-   "meters": 8.8,
-   "confidence": 0.9,
-   "evidence_path": null,
-   "type": "open",
-   "wall_checked": true,
-   "a": "3wx6sm5qf3b4nu7s6teeqk0hc",
-   "b": "mdwntufqpdsu1qi1u0b7q7bua",
-   "seconds": {
-    "foot": 6.29,
-    "stretcher": 8.8
    },
    "passable": {
     "foot": true,

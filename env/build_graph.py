@@ -11,6 +11,9 @@ What the scan gives and what we do with it:
         carries the doorway width; crossing solid wall or a window drops the link.
         (Only scans with wall data can be tested; the others get a length cap instead.)
       - links that climb are kept as `stairs` only when rise and run look like a stair.
+      - level links must stay over scanned floor. The scan's top-down floor image is
+        transparent where there is no floor (an atrium, the open well of a stair), and a
+        link that crosses more than VOID_MAX_M of that is a view across a void.
   * What survives is thinned to a spanner: a link is kept only if the links already kept
     do not connect its ends within SPANNER_T times its length. Long shortcuts across a
     room go; the short hops between adjacent captures stay.
@@ -40,6 +43,7 @@ STAIR_MAX_RISE_M = 2.6
 SPANNER_T = 1.25
 MAX_LINK_NO_WALLS_M = 7.0    # without wall data, longer level links are not trusted
 DOOR_TOL_M = 0.20            # slack on a doorway's extent along its wall
+VOID_MAX_M = 1.2             # a level link may cross at most this much unscanned floor
 OUTSIDE_RAY_M = 40.0
 PASSABLE_OPENINGS = ("doorway", "opening")
 
@@ -75,6 +79,56 @@ def wall_crossings(p, q, walls) -> list[tuple[dict, dict | None]]:
                         if abs(along - o["center_m"]) <= o["width"] / 2 + DOOR_TOL_M), None)
         out.append((w, through))
     return out
+
+
+# ------------------------------------------------------------------ floor mask
+def floor_mask(model_id: str, seq: int, sweeps: dict) -> dict | None:
+    """Where floor `seq` has scanned floor: the alpha channel of the scan's top-down image.
+
+    Returns {"alpha": 2-D array, "ppm", "ox", "oy", "h"} or None when the scan has no such
+    image, or when the image does not line up with the sweeps (fewer than 80% of the
+    floor's sweeps stand on scanned floor), in which case the check is skipped.
+    """
+    import numpy as np
+    from PIL import Image
+    try:
+        fp = mp.get_floorplan(model_id, seq, flags=("photogramy", "alpha"), fmt="png")
+    except mp.MatterportError:
+        fp = None
+    if not fp or not fp.get("resolution") or fp["origin"][0] is None:
+        return None
+    img = Image.open(fp["path"])
+    if "A" not in img.getbands():
+        return None
+    mask = {"alpha": np.asarray(img.getchannel("A")) > 16, "ppm": float(fp["resolution"]),
+            "ox": float(fp["origin"][0]), "oy": float(fp["origin"][1]), "h": img.height}
+    here = [s["floor_xyz"] for s in sweeps.values() if s["floor_seq"] == seq]
+    on = sum(_on_floor(mask, p[0], p[1]) for p in here)
+    return mask if here and on / len(here) >= 0.8 else None
+
+
+def _on_floor(mask: dict, x: float, y: float, reach_px: int = 2) -> bool:
+    col = int(round((x - mask["ox"]) * mask["ppm"]))
+    row = int(round(mask["h"] - (y - mask["oy"]) * mask["ppm"]))
+    a = mask["alpha"]
+    if not (0 <= row < a.shape[0] and 0 <= col < a.shape[1]):
+        return False
+    return bool(a[max(0, row - reach_px):row + reach_px + 1, max(0, col - reach_px):col + reach_px + 1].any())
+
+
+def off_floor_run_m(mask: dict, p, q, step_m: float = 0.05) -> float:
+    """Longest unbroken stretch of the segment p-q, in meters, that is not over scanned floor."""
+    length = math.dist(p[:2], q[:2])
+    n = max(1, int(length / step_m))
+    worst = run = 0
+    for i in range(n + 1):
+        t = i / n
+        if _on_floor(mask, p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t):
+            run = 0
+        else:
+            run += 1
+            worst = max(worst, run)
+    return worst * length / n
 
 
 # ------------------------------------------------------------------ edges
@@ -380,6 +434,8 @@ def build(model_id: str, building_id: str | None = None, *, geo: bool = True,
     candidates, dropped = [], []
     stats = defaultdict(int)
     seen = set()
+    masks = {f["sequence"]: floor_mask(model_id, f["sequence"], sweeps) for f in meta["floors"]}
+    stats["floors_with_floor_mask"] = sum(m is not None for m in masks.values())
     for a in sweeps.values():
         for b_id in a["neighbors"]:
             k = (a["id"], b_id) if a["id"] < b_id else (b_id, a["id"])
@@ -394,6 +450,11 @@ def build(model_id: str, building_id: str | None = None, *, geo: bool = True,
                 dropped.append({"a": k[0], "b": k[1], "type": "open",
                                 "meters": round(math.dist(a["floor_xyz"], b["floor_xyz"]), 2),
                                 "evidence_path": None})
+                continue
+            mask = masks.get(a["floor_seq"]) if a["floor_seq"] == b["floor_seq"] else None
+            if mask is not None and e["type"] in ("open", "door") and \
+                    off_floor_run_m(mask, a["floor_xyz"], b["floor_xyz"]) > VOID_MAX_M:
+                stats["dropped_over_void"] += 1      # not offered back by `reconnect` either
                 continue
             candidates.append(dict(e, a=k[0], b=k[1]))
     kept = spanner(list(sweeps), candidates)
