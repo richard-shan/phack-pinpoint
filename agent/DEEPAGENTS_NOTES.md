@@ -63,3 +63,18 @@ Decision types: `approve` (run unchanged), `edit` (modify args), `reject` (skip 
 Records/Locator/Site parallelism lives in `orchestrator.py` (ThreadPoolExecutor + as_completed).
 `deep_agent.py` holds the real `create_deep_agent(...)` wiring for the agentic demo path.
 Both call the SAME tool layer; swap is one line in run_incident.py.
+
+---
+
+## Install note (2026-11-14, this session)
+
+- deepagents requires **Python >=3.11**. The sandbox this fork ran in is Python 3.10, so the
+  live install was blocked here, not by the egress proxy. On a 3.11+ machine the pinned
+  `agent/requirements.txt` set installs cleanly.
+- `api.txt` does NOT contain an Anthropic key (only Matterport + Vexcel keys). Set
+  `ANTHROPIC_API_KEY` in env, or add a line `anthropic_api_key: sk-ant-...` to `api.txt`
+  before running with `--real-llm`. `deep_agent._load_api_key_from_file` accepts either
+  `anthropic_api_key:` or `ANTHROPIC_API_KEY=` and falls back to any bare `sk-ant-*` token.
+- `TodoListMiddleware` import path varies by deepagents version. `build_agent()` probes both
+  `deepagents.middleware.TodoListMiddleware` and `deepagents.TodoListMiddleware` and no-ops
+  the middleware list if neither is found. Confirm the real path on the installed version.
