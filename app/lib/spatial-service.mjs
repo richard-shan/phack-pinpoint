@@ -4,10 +4,18 @@ import { planRoute, routeDirections, PRINCETON_ID } from '../src/live-route-mode
 export { PRINCETON_ID };
 export const princetonProperty={id:PRINCETON_ID,name:'Rabinowitz Hall · Princeton',address:'Princeton University, Princeton, NJ 08544',city:'Princeton',state:'NJ',postalCode:'08544',useType:'University',stories:3,source:{file:'Matterport public scan',recordUrl:'/api/spatial/model'},models:[{id:'P3S6VUTP3qB',name:'Princeton · Rabinowitz Hall',url:'https://my.matterport.com/show?m=P3S6VUTP3qB',joinStatus:'verified',images:[]}],unknowns:['Demo caller destination is selected, not automatically localized.','Exterior entrance anchors and approach are illustrative and need on-site alignment.','Route graph is a demo interpretation of the scan, not a validated accessible or emergency route.','Elevator locations and current availability must be confirmed before adding a connection.']};
 export function spatialService(root,store){
-  const model=(propertyId=PRINCETON_ID)=>{
-    const filename=propertyId===PRINCETON_ID?'princeton-scan.json':propertyId==='5956257'?'los-angeles-scan.json':null;
-    if(!filename)throw new Error('No spatial model is mapped for this property.');
-    return readFile(resolve(root,'data',filename),'utf8').then(JSON.parse);
+  // A graph exported from the team's building graphs (data/<propertyId>-scan.json) wins
+  // over the two hand-annotated demo graphs.
+  const model=async(propertyId=PRINCETON_ID)=>{
+    const names=[];
+    if(/^[A-Za-z0-9-]{1,64}$/.test(String(propertyId)))names.push(`${propertyId}-scan.json`);
+    if(propertyId===PRINCETON_ID)names.push('princeton-scan.json');
+    if(propertyId==='5956257')names.push('los-angeles-scan.json');
+    for(const name of names){
+      try{return JSON.parse(await readFile(resolve(root,'data',name),'utf8'));}
+      catch(e){if(e.code!=='ENOENT')throw e;}
+    }
+    throw new Error('No spatial model is mapped for this property.');
   };
   return {
     async config(propertyId=PRINCETON_ID){
@@ -22,7 +30,10 @@ export function spatialService(root,store){
       if(Object.keys(body).some(k=>!keys.includes(k)))throw new Error('Unknown route update field.');
       const i=await store.get(id);
       const g=await model(i.propertyId);
-      const route=planRoute(g,{...(i.spatialRoute ? {profile:i.spatialRoute.profile,entryId:i.spatialRoute.entryId,destination:i.spatialRoute.destination,blockedEdges:i.spatialRoute.blockedEdges,connectors:i.spatialRoute.connectors}:{}),...body});
+      // Carry the saved route's choices forward only if they still exist in this graph
+      // (the graph file may have been replaced since the route was saved).
+      const saved=i.spatialRoute, fits=saved&&g.entries.some(e=>e.id===saved.entryId)&&g.nodes.some(n=>n.id===saved.destination)&&(saved.blockedEdges||[]).every(id=>g.edges.some(e=>e.id===id)||/^connector-/.test(id));
+      const route=planRoute(g,{...(fits ? {profile:saved.profile,entryId:saved.entryId,destination:saved.destination,blockedEdges:saved.blockedEdges,connectors:saved.connectors}:{}),...body});
       return store.setRoute(id,body.expectedRevision,route,routeDirections(g,route),g.nodes.find(n=>n.id===route.destination).label);
     },
   };

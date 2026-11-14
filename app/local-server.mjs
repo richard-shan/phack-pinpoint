@@ -1,6 +1,6 @@
 import { vexcelService, aerialBounds } from './lib/vexcel-service.mjs';
 import { createServer } from 'node:http';
-import { readFile, realpath } from 'node:fs/promises';
+import { readFile, readdir, realpath } from 'node:fs/promises';
 import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createLocalStore, ServiceError } from './lib/local-store.mjs';
@@ -29,6 +29,9 @@ export function createLocalServer({ root = here, stateDirectory = resolve(root, 
       const catalog = JSON.parse(await readFile(resolve(root, 'data/catalog.json'), 'utf8'));
       if (!Array.isArray(catalog.properties)) error(503, 'CATALOG_UNAVAILABLE', 'The local catalog is not valid.');
       if (!catalog.properties.some(p => p.id === princetonProperty.id)) catalog.properties.unshift(princetonProperty);
+      // Buildings with an exported scan graph get the 3D route view.
+      const scans = new Set((await readdir(resolve(root, 'data')).catch(() => [])).filter(f => f.endsWith('-scan.json')).map(f => f.slice(0, -'-scan.json'.length)));
+      for (const p of catalog.properties) if (scans.has(String(p.id))) p.spatial = true;
       return catalog;
     } catch (e) { if (e instanceof ServiceError) throw e; error(503, 'CATALOG_UNAVAILABLE', 'The real-data catalog is not ready. Build it before creating incidents.'); }
   };
@@ -72,8 +75,11 @@ export function createLocalServer({ root = here, stateDirectory = resolve(root, 
           res.writeHead(200,{...securityHeaders,'Content-Type':'image/jpeg','Content-Length':image.length});
           return res.end(image);
         }
-        if (method === 'GET' && pathname === '/api/spatial/config') return send(200,await spatial.config(new URL(req.url,`http://${req.headers.host}`).searchParams.get('propertyId')||undefined));
-        if (method === 'GET' && pathname === '/api/spatial/model') return send(200,await spatial.model(new URL(req.url,`http://${req.headers.host}`).searchParams.get('propertyId')||undefined));
+        if (method === 'GET' && (pathname === '/api/spatial/config' || pathname === '/api/spatial/model')) {
+          const propertyId = new URL(req.url,`http://${req.headers.host}`).searchParams.get('propertyId')||undefined;
+          try { return send(200, pathname.endsWith('/config') ? await spatial.config(propertyId) : await spatial.model(propertyId)); }
+          catch (e) { if (e instanceof ServiceError) throw e; if (/No spatial model/.test(e.message)) error(404, 'NO_SPATIAL_MODEL', e.message); throw e; }
+        }
         const spatialUpdate = /^\/api\/incidents\/(inc-[a-f0-9-]{36})\/route$/.exec(pathname);
         if (spatialUpdate && method === 'POST') {
           const body=await jsonBody(req);
