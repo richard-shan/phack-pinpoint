@@ -1,0 +1,55 @@
+{
+  "building_id": "bayou-medical-plaza",
+  "_source": "STUB toy graph (plan 4A build-order item 1) — replaced by Person A graph.json. Caller target = suite210_interior. Dock door is the correct best door; foot crew uses east stair, stretcher must use center elevator (stairs impassable).",
+  "nodes": [
+    {"id": "lobby",             "floor": 1, "xyz": [0, 0, 0],   "pano_path": "fixtures/building_bayou/pano/lobby.jpg",       "room_label": "Main Lobby",        "attributes": {"room_type": "lobby",     "has_window": true,  "floor_surface": "tile",   "near_elevator": false, "signage_text": "LOBBY"},        "is_entrance": true,  "equipment": ["alarm_panel"]},
+    {"id": "f1_reception",      "floor": 1, "xyz": [6, 0, 0],   "pano_path": "fixtures/building_bayou/pano/f1_reception.jpg","room_label": "Floor 1 Reception", "attributes": {"room_type": "reception", "has_window": true,  "floor_surface": "tile",   "near_elevator": false, "signage_text": "RECEPTION"},    "is_entrance": false, "equipment": ["extinguisher"]},
+    {"id": "f1_corr_w",         "floor": 1, "xyz": [11, 0, 0],  "pano_path": "fixtures/building_bayou/pano/f1_corr_w.jpg",   "room_label": "F1 West Corridor",  "attributes": {"room_type": "corridor",  "has_window": false, "floor_surface": "carpet", "near_elevator": true,  "signage_text": ""},             "is_entrance": false, "equipment": []},
+    {"id": "f1_elevator",       "floor": 1, "xyz": [13, 1, 0],  "pano_path": "fixtures/building_bayou/pano/f1_elevator.jpg", "room_label": "F1 Elevator Lobby", "attributes": {"room_type": "elevator",  "has_window": false, "floor_surface": "tile",   "near_elevator": true,  "signage_text": "ELEV"},         "is_entrance": false, "equipment": []},
+    {"id": "f1_corr_e",         "floor": 1, "xyz": [21, 0, 0],  "pano_path": "fixtures/building_bayou/pano/f1_corr_e.jpg",   "room_label": "F1 East Corridor",  "attributes": {"room_type": "corridor",  "has_window": false, "floor_surface": "carpet", "near_elevator": false, "signage_text": ""},             "is_entrance": false, "equipment": ["extinguisher"]},
+    {"id": "f1_stair",          "floor": 1, "xyz": [23, 1, 0],  "pano_path": "fixtures/building_bayou/pano/f1_stair.jpg",    "room_label": "F1 East Stair",     "attributes": {"room_type": "stairwell", "has_window": false, "floor_surface": "concrete","near_elevator": false, "signage_text": "STAIR B"},      "is_entrance": false, "equipment": ["exit_sign"]},
+    {"id": "f1_dock",           "floor": 1, "xyz": [23, -2, 0], "pano_path": "fixtures/building_bayou/pano/f1_dock.jpg",     "room_label": "F1 Loading Dock",   "attributes": {"room_type": "dock",      "has_window": false, "floor_surface": "concrete","near_elevator": false, "signage_text": "LOADING"},      "is_entrance": true,  "equipment": ["exit_sign"]},
+
+    {"id": "f2_elevator",       "floor": 2, "xyz": [13, 1, 4],  "pano_path": "fixtures/building_bayou/pano/f2_elevator.jpg", "room_label": "F2 Elevator Lobby", "attributes": {"room_type": "elevator",  "has_window": false, "floor_surface": "tile",   "near_elevator": true,  "signage_text": "ELEV"},         "is_entrance": false, "equipment": []},
+    {"id": "f2_corr_w",         "floor": 2, "xyz": [11, 0, 4],  "pano_path": "fixtures/building_bayou/pano/f2_corr_w.jpg",   "room_label": "F2 West Corridor",  "attributes": {"room_type": "corridor",  "has_window": false, "floor_surface": "carpet", "near_elevator": true,  "signage_text": ""},             "is_entrance": false, "equipment": []},
+    {"id": "f2_reception",      "floor": 2, "xyz": [15, 0, 4],  "pano_path": "fixtures/building_bayou/pano/f2_reception.jpg","room_label": "F2 Reception",      "attributes": {"room_type": "reception", "has_window": true,  "floor_surface": "carpet", "near_elevator": false, "signage_text": "SUITES 205-210"},"is_entrance": false, "equipment": ["aed", "extinguisher"]},
+    {"id": "f2_corr_e",         "floor": 2, "xyz": [21, 0, 4],  "pano_path": "fixtures/building_bayou/pano/f2_corr_e.jpg",   "room_label": "F2 East Corridor",  "attributes": {"room_type": "corridor",  "has_window": false, "floor_surface": "carpet", "near_elevator": false, "signage_text": "210 DIALYSIS →"},"is_entrance": false, "equipment": []},
+    {"id": "f2_stair",          "floor": 2, "xyz": [23, 1, 4],  "pano_path": "fixtures/building_bayou/pano/f2_stair.jpg",    "room_label": "F2 East Stair",     "attributes": {"room_type": "stairwell", "has_window": false, "floor_surface": "concrete","near_elevator": false, "signage_text": "STAIR B"},      "is_entrance": false, "equipment": ["exit_sign"]},
+    {"id": "suite210_door",     "floor": 2, "xyz": [22, -1, 4], "pano_path": "fixtures/building_bayou/pano/suite210_door.jpg","room_label": "Suite 210 Entry", "attributes": {"room_type": "clinic_entry","has_window": false,"floor_surface": "tile",  "near_elevator": false, "signage_text": "HOUSTON DIALYSIS 210"},"is_entrance": false, "equipment": []},
+    {"id": "suite210_interior", "floor": 2, "xyz": [24, -1, 4], "pano_path": "fixtures/building_bayou/pano/suite210_interior.jpg","room_label": "Suite 210 Treatment Floor","attributes": {"room_type": "clinic","has_window": true,"floor_surface": "tile","near_elevator": false,"signage_text": "DIALYSIS BAY 3"},"is_entrance": false, "equipment": ["aed"]},
+    {"id": "f2_waiting",        "floor": 2, "xyz": [22, 3, 4],  "pano_path": "fixtures/building_bayou/pano/f2_waiting.jpg",  "room_label": "F2 Waiting Room",   "attributes": {"room_type": "waiting",   "has_window": true,  "floor_surface": "carpet", "near_elevator": false, "signage_text": ""},             "is_entrance": false, "equipment": []},
+
+    {"id": "ext_main",    "floor": 0, "xyz": [-5, 0, 0],  "pano_path": null, "room_label": "Front Entrance (street address side)", "attributes": {"side": "west"}, "is_entrance": true, "equipment": []},
+    {"id": "ext_dock",    "floor": 0, "xyz": [27, -2, 0], "pano_path": null, "room_label": "Loading Dock Door (east)",            "attributes": {"side": "east"}, "is_entrance": true, "equipment": []},
+    {"id": "ext_side",    "floor": 0, "xyz": [11, -8, 0], "pano_path": null, "room_label": "Side Door (south)",                   "attributes": {"side": "south"},"is_entrance": true, "equipment": []},
+    {"id": "staging_lot", "floor": 0, "xyz": [30, -6, 0], "pano_path": null, "room_label": "Ambulance Staging — East Lot",       "attributes": {"staging": true},"is_entrance": false,"equipment": []}
+  ],
+  "edges": [
+    {"a": "lobby",        "b": "f1_reception", "meters": 6,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f1_reception", "b": "f1_corr_w",    "meters": 5,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f1_corr_w",    "b": "f1_elevator",  "meters": 2,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f1_corr_w",    "b": "f1_corr_e",    "meters": 10, "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f1_corr_e",    "b": "f1_stair",     "meters": 2,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f1_corr_e",    "b": "f1_dock",      "meters": 3,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.95, "evidence_path": null},
+    {"a": "f1_stair",     "b": "f1_dock",      "meters": 2,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.95, "evidence_path": null},
+
+    {"a": "f1_elevator",  "b": "f2_elevator",  "meters": 4,  "type": "elevator", "passable": {"foot": true, "stretcher": true}, "confidence": 0.9,  "evidence_path": null},
+    {"a": "f1_stair",     "b": "f2_stair",     "meters": 4,  "type": "stairs",   "passable": {"foot": true, "stretcher": false},"confidence": 0.95, "evidence_path": null},
+
+    {"a": "f2_elevator",  "b": "f2_corr_w",    "meters": 2,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f2_corr_w",    "b": "f2_reception", "meters": 5,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f2_reception", "b": "f2_corr_e",    "meters": 8,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f2_corr_e",    "b": "f2_stair",     "meters": 2,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f2_corr_e",    "b": "suite210_door","meters": 3,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "f2_stair",     "b": "suite210_door","meters": 3,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.9,  "evidence_path": null},
+    {"a": "suite210_door","b": "suite210_interior","meters": 3,"type": "door",   "passable": {"foot": true, "stretcher": true}, "confidence": 0.8,  "evidence_path": "fixtures/building_bayou/pano/suite210_door.jpg"},
+    {"a": "f2_corr_e",    "b": "f2_waiting",   "meters": 3,  "type": "open",     "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+
+    {"a": "ext_main",    "b": "lobby",     "meters": 2,  "type": "door",             "passable": {"foot": true, "stretcher": true}, "confidence": 0.99, "evidence_path": null},
+    {"a": "ext_dock",    "b": "f1_dock",   "meters": 2,  "type": "door",             "passable": {"foot": true, "stretcher": true}, "confidence": 0.9,  "evidence_path": null},
+    {"a": "ext_side",    "b": "f1_corr_w", "meters": 2,  "type": "locked_door",      "passable": {"foot": true, "stretcher": true}, "confidence": 0.7,  "evidence_path": null},
+    {"a": "staging_lot", "b": "ext_main",  "meters": 60, "type": "exterior_vehicle", "passable": {"foot": true, "stretcher": true}, "confidence": 0.95, "evidence_path": null},
+    {"a": "staging_lot", "b": "ext_dock",  "meters": 32, "type": "exterior_vehicle", "passable": {"foot": true, "stretcher": true}, "confidence": 0.95, "evidence_path": null},
+    {"a": "staging_lot", "b": "ext_side",  "meters": 48, "type": "exterior_vehicle", "passable": {"foot": true, "stretcher": true}, "confidence": 0.95, "evidence_path": null}
+  ]
+}

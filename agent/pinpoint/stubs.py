@@ -1,0 +1,159 @@
+"""STUB tool layer — every contract tool (plan 5 + 4A) as a function returning FIXED, valid,
+realistic data INSTANTLY. Fixtures live in pinpoint/fixtures/building_bayou/*.json so they are
+easy to eyeball and swap.
+
+Ownership of the real versions (plan 6):
+  Person A: get_property, look, entrances, ALL routing tools (see routing.py)
+  Person B: match_photo, detect_site_features, node attributes, find_equipment, hazards_along
+  Person C (REAL already): best_question, update_belief (localization.py); Verifier's check_claim
+  Person D: ask_caller, send_packet, notify_contact (channel + approval UI)
+"""
+import json
+from .config import FIXTURES, DEMO_BUILDING
+from .trace import traced
+
+_B = FIXTURES / "building_bayou"
+
+
+def _load(name):
+    return json.loads((_B / name).read_text())
+
+
+# ---------- Person A (records + env) ----------
+@traced("records")
+def get_property(address):
+    """address -> normalized CoStar record. STUB: single demo building."""
+    p = _load("property.json")
+    return {"building_id": p["building_id"], "use_type": p["use_type"], "stories": p["stories"],
+            "year_built": p["year_built"], "sqft": p["sqft"], "scan_date": p["scan_date"],
+            "tenants": p["tenants"], "contact": p["contact"], "address": p["address"],
+            "evidence_path": "fixtures/building_bayou/property.json"}
+
+
+@traced("records")
+def get_tenants(building_id):
+    return _load("property.json")["tenants"]
+
+
+@traced("locator")
+def look(node_id):
+    """node_id -> image + attributes + neighbors. STUB from graph fixture."""
+    g = _load("graph.json")
+    node = next((n for n in g["nodes"] if n["id"] == node_id), None)
+    if not node:
+        return {"error": f"unknown node {node_id}"}
+    neighbors = [e["b"] if e["a"] == node_id else e["a"]
+                 for e in g["edges"] if node_id in (e["a"], e["b"])]
+    return {"image_path": node.get("pano_path"), "attributes": node.get("attributes", {}),
+            "room_label": node.get("room_label"), "neighbors": neighbors,
+            "equipment": node.get("equipment", [])}
+
+
+@traced("site")
+def entrances(building_id):
+    s = _load("site.json")
+    return s["entrances"]
+
+
+# ---------- Person B (perception) ----------
+@traced("locator")
+def match_photo(building_id, image_path, k=10):
+    """photo -> ranked candidate positions with evidence overlay. STUB: fixed ambiguous set."""
+    cands = _load("match.json")["candidates"]
+    return cands[:k]
+
+
+@traced("site")
+def detect_site_features(building_id):
+    s = _load("site.json")
+    return {"entrances": s["entrances"], "staging": s["staging"],
+            "obstructions": s["obstructions"], "tile_path": s["tile_path"]}
+
+
+@traced("router")
+def find_equipment(building_id, type, near_node):
+    """Nearest equipment of a type. STUB: scans graph node equipment + approx hops."""
+    g = _load("graph.json")
+    hits = []
+    for n in g["nodes"]:
+        if type in n.get("equipment", []):
+            hits.append({"node_id": n["id"], "room_label": n["room_label"],
+                         "meters": None, "evidence_path": n.get("pano_path")})
+    return hits
+
+
+@traced("router")
+def hazards_along(building_id, path):
+    """Hazards on a route. STUB: flag locked doors + narrow/low-confidence doors on the path."""
+    g = _load("graph.json")
+    pset = set(path or [])
+    out = []
+    for e in g["edges"]:
+        if e["a"] in pset and e["b"] in pset:
+            if e["type"] == "locked_door":
+                out.append({"node_id": e["b"], "type": "locked_door",
+                            "evidence_path": e.get("evidence_path")})
+            elif e["type"] == "door" and e.get("confidence", 1) < 0.85:
+                out.append({"node_id": e["b"], "type": "uncertain_door",
+                            "evidence_path": e.get("evidence_path")})
+    return out
+
+
+# ---------- Person D (channel + gates) ----------
+@traced("commander")
+def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
+    """Send the caller a question, return their reply. STUB: in mock mode the 'caller' answers
+    truthfully from the ground-truth node's attributes so the belief loop converges in the demo."""
+    if _mock_truth_attrs is not None:
+        # The orchestrator passes the attribute being asked; answer from ground truth.
+        attr = (text or "").strip()
+        val = _mock_truth_attrs.get(attr)
+        return {"reply": _phrase_answer(attr, val), "raw": val, "images": images or []}
+    return {"reply": "(stub) caller did not respond", "raw": None, "images": images or []}
+
+
+def _phrase_answer(attr, val):
+    if val is None:
+        return "I'm not sure"
+    if attr == "has_window":
+        return "yes there's a window" if val else "no window"
+    if attr == "near_elevator":
+        return "yes I can see the elevator" if val else "no elevator in sight"
+    if attr == "floor":
+        return f"floor {val}"
+    return str(val)
+
+
+def send_packet(incident_id):
+    """APPROVAL GATE (plan 5). The orchestrator / deepagents interrupt_on handles the actual pause;
+    this only runs AFTER a human approves. STUB: marks the packet sent."""
+    return {"status": "sent", "incident_id": incident_id, "channel": "sms+link"}
+
+
+def notify_contact(incident_id, contact):
+    """APPROVAL GATE. STUB."""
+    return {"status": "notified", "incident_id": incident_id, "contact": contact}
+
+
+# ---------- Person C (verifier) ----------
+def check_claim(claim_text, sources):
+    """Verifier primitive: does this packet sentence have a backing source among the incident files?
+    STUB heuristic — real version asks the LLM to map sentence -> file+field. Here: a claim is
+    'supported' if its tagged source key exists in the provided sources dict and is non-empty."""
+    src_key = None
+    # claims are tagged like '... [src:brief.use_type]'
+    if "[src:" in claim_text:
+        src_key = claim_text.split("[src:", 1)[1].rstrip("]").strip()
+    supported = bool(src_key) and _resolve(sources, src_key) not in (None, "", [], {})
+    return {"claim": claim_text, "source_key": src_key, "supported": supported,
+            "confidence": 0.9 if supported else 0.0}
+
+
+def _resolve(sources, dotted):
+    cur = sources
+    for part in dotted.split("."):
+        if isinstance(cur, dict) and part in cur:
+            cur = cur[part]
+        else:
+            return None
+    return cur

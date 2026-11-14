@@ -1,0 +1,8 @@
+{
+  "_source": "STUB caller intake — in live mode this is written by Person D's console (address typed by dispatcher) + Photon inbound photo. Address is a GIVEN (from the 911 call), not derived.",
+  "incident_id": null,
+  "address": "1200 Smith St, Houston, TX 77002",
+  "building_id": "bayou-medical-plaza",
+  "caller_photo_path": "fixtures/building_bayou/pano/suite210_interior.jpg",
+  "caller_text": "my dad collapsed, we're at the dialysis place upstairs, there's a window next to us"
+}
