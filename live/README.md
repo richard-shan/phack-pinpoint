@@ -29,7 +29,7 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; `demo/route_*.jpg` are two examples. |
 | `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door. |
 
-Nothing in `agent/`, `perception/` or `env/` was changed to make this work. `app/` has
+Nothing in `agent/` or `perception/` was changed to make this work. `app/` has
 three small changes so the 3D route view opens for any building that has a scan graph
 in `app/data/<PropertyId>-scan.json`, not only the two it was built around.
 
@@ -40,6 +40,15 @@ Any building with a graph under `buildings/` works: 6550930 (7900 Fannin St, Hou
 7900 Fannin St is the one to demo: a medical office building with 17 health care
 tenants on record, four doors, and a best door that is not the street-address door.
 
+## When the agent asks the caller a question
+
+The agent asks only when the answer could change what the crew does: the likely
+positions are in different rooms, or knowing which one is right would change the door
+or save more than 15 seconds. If the top candidates are a few meters apart in one
+room, it does not ask, and the packet says why. The questions come from lane B's
+attributes for the candidate positions (room type, floor surface, window, furniture,
+stairs or elevator in view) plus what the graph knows (floor, an outside door nearby).
+
 ## What is real and what is not
 
 Real, from sponsor data:
@@ -47,6 +56,9 @@ Real, from sponsor data:
 - the positions, doors, elevators and routes (Matterport scan, marked by hand where the
   scan cannot tell: see `env/MARKING.md`);
 - the photo match (lane B's matcher against views cut from the scan);
+- what is in view at each position, and what the aerial image shows around the building
+  (lane B's vision passes, committed under `perception/data/`; not hand-checked, and
+  the packet says so where it uses them);
 - the aerial image (Vexcel).
 
 Not real, and labelled in the packet where it applies:
@@ -63,15 +75,11 @@ Not connected yet:
 - the agent's LLM path (`agent/pinpoint/deep_agent.py`). `live/` drives the agent's
   deterministic orchestrator; the LLM path uses the same tools but has not been run on
   real data;
-- lane B's per-position attributes (`perception/attributes.py`) and aerial reading
-  (`perception/site.py`). Both need an Anthropic API key. The agent's questions use what
-  the graph knows instead: floor, room name, and whether an elevator, an outside door
-  or stairs is within sight;
 - a real phone channel. The caller types in the console's caller view.
 
 ## Demo walkthrough
 
-1. `python3 -m live.serve` in one terminal, `.venv/bin/python -m live.run --watch` in
+1. `.venv/bin/python -m live.serve` in one terminal, `.venv/bin/python -m live.run --watch` in
    another. Open `http://localhost:4175/live.html` (use `localhost`: the Matterport
    viewer key is tied to that name).
 2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
@@ -107,8 +115,9 @@ The first photo in a session takes longer because the matcher's two models load.
 These photos are rendered from the scan on a scanned position, so the match is easier
 than it would be for a real phone photo; treat 14 of 14 as an upper bound. With a
 dark, blurred, zoomed photo (`demo/6550930_3ymmrb_h200_hard.jpg`) the matcher was 53%
-sure, the agent asked two questions, and it ended on the right position at 78%.
-Lane B reports about 2.5 s per photo on a laptop with a GPU.
+sure, the agent asked three questions (furniture, kind of room, elevator doors in
+view), and it ended on the right position at 81%. At 3160 Geneva St, 8 of 8 rendered
+photos were located exactly. Lane B reports about 2.5 s per photo on a laptop with a GPU.
 
 ## Options for `live.run`
 
@@ -118,10 +127,13 @@ Lane B reports about 2.5 s per photo on a laptop with a GPU.
 | `--console [URL]` | show it in the console and wait there for approval |
 | `--watch` | run on incidents started in the console that have a caller photo |
 | `--truth NODE` | where the photo was taken: a simulated caller answers, and the output says whether the match was right |
-| `--position NODE` | skip photo matching and use this position |
+| `--position NODE` | the caller's position is known: no matching and no questions |
+| `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
 
-Each run writes `agent/incidents/<id>/` with the agent's files: `brief.json`,
-`candidates.json`, `location.json`, `site.json`, `route.json`, `audit.json`, `packet.md`
-and `trace.jsonl` (every tool call with its time).
+Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
+`brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,
+`audit.json`, `packet.md`, `route.jpg` (the route on the floor plan), `summary.json`
+and `trace.jsonl` (every tool call with its time). A run that could not produce a full
+packet prints the reason and exits with status 2.

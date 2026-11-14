@@ -85,8 +85,15 @@ class Console:
         return self._call("POST", "/incidents", body)
 
     def update(self, incident_id: str, **fields) -> dict:
-        """fields: location, route, notes, unconfirmed (list), packetMarkdown."""
-        return self._write(incident_id, "PATCH", "", fields)
+        """fields: location, route, notes, unconfirmed (list), packetMarkdown, and
+        updatedBy ("agent") so the console's activity list says who made the change."""
+        try:
+            return self._write(incident_id, "PATCH", "", fields)
+        except ConsoleError as e:
+            if e.code != "UNKNOWN_FIELD" or "updatedBy" not in fields:
+                raise
+            fields.pop("updatedBy")            # a console from before that field existed
+            return self._write(incident_id, "PATCH", "", fields)
 
     def message(self, incident_id: str, role: str, text: str) -> dict:
         return self._write(incident_id, "POST", "/messages", {"role": role, "text": text[:4000]})

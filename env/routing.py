@@ -775,7 +775,8 @@ def hazards_along(g: Graph, path: list[str]) -> list[dict]:
         node = g.nodes[n]
         for hz in (node.get("attributes") or {}).get("hazards") or []:
             item = {"type": hz} if isinstance(hz, str) else dict(hz)
-            out.append({"node_id": n, "type": item.get("type"),
+            out.append({"node_id": n, "type": item.get("type"), "note": item.get("note"),
+                        "seen_in_scan": True,              # something in view here, not a property of the route
                         "evidence_path": item.get("evidence_path") or node.get("pano_path")})
     for a, b in zip(path, path[1:]):
         e = g.edge(a, b)

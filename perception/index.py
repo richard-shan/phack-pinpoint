@@ -12,6 +12,7 @@ import csv
 import json
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor
 
 import cv2
 import numpy as np
@@ -28,6 +29,7 @@ CUTS = (
     (75.0, tuple(range(0, 360, 45)), (0, -25)),
 )
 SIZE = 448
+RENDER_THREADS = min(16, os.cpu_count() or 4)
 
 
 def index_dir(building_id):
@@ -54,7 +56,9 @@ def models_for(building_id):
     return seen
 
 
-def build(building_id, model_ids=None, mp=None):
+def build(building_id, model_ids=None, mp=None, save_crops=True, quiet=False):
+    """save_crops=False skips writing the view images (bulk indexing); match_photo then
+    re-renders the views it needs from the panoramas."""
     mp = mp or Matterport()
     model_ids = model_ids or models_for(building_id)
     if not model_ids:
@@ -68,14 +72,15 @@ def build(building_id, model_ids=None, mp=None):
         except Exception as e:                       # not shared with our key, or not a scan
             skipped.append({"model_id": mid, "why": str(e)[:120]})
             continue
-        for loc in sorted(model["locations"], key=lambda l: l["id"]):
+        def render(loc, mid=mid, model=model):
+            """All views of one position. Runs in a thread: OpenCV releases the GIL."""
             ref = "%s/%s" % (mid, loc["id"])
             paths = mp.pano(ref)
             if not paths:
-                skipped.append({"node_id": ref, "why": "no panorama"})
-                continue
+                return ref, None, None
             faces = load_faces(paths)
             p = loc["position"]
+            imgs, rows = [], []
             for fov, yaws, pitches in CUTS:
                 for pitch in pitches:
                     for yaw in yaws:
@@ -83,13 +88,24 @@ def build(building_id, model_ids=None, mp=None):
                         # 75 degree views keep their original names: cached attributes point at them.
                         tag = "" if fov == 75.0 else "_f%02d" % fov
                         rel = os.path.join("crops", "%s_%s_y%03d_p%+03d%s.jpg" % (mid, loc["id"], yaw, pitch, tag))
-                        cv2.imwrite(os.path.join(out, rel), img, [cv2.IMWRITE_JPEG_QUALITY, 88])
-                        images.append(img)
-                        meta.append({"node_id": ref, "model_id": mid, "model_name": model["name"],
+                        if save_crops:
+                            cv2.imwrite(os.path.join(out, rel), img, [cv2.IMWRITE_JPEG_QUALITY, 88])
+                        imgs.append(img)
+                        rows.append({"node_id": ref, "model_id": mid, "model_name": model["name"],
                                      "fov": fov, "yaw": yaw, "pitch": pitch,
                                      "crop_path": os.path.join(out, rel),
                                      "xyz": [p["x"], p["y"], p["z"]], "neighbors": loc["neighbors"]})
-        print("  %s %-28s %d sweeps" % (mid, model["name"][:28], len(model["locations"])), flush=True)
+            return ref, imgs, rows
+
+        with ThreadPoolExecutor(RENDER_THREADS) as pool:
+            for ref, imgs, rows in pool.map(render, sorted(model["locations"], key=lambda l: l["id"])):
+                if imgs is None:
+                    skipped.append({"node_id": ref, "why": "no panorama"})
+                    continue
+                images += imgs
+                meta += rows
+        if not quiet:
+            print("  %s %-28s %d sweeps" % (mid, model["name"][:28], len(model["locations"])), flush=True)
     emb = embed(images)
     np.save(os.path.join(out, "emb.npy"), emb.astype(np.float16))     # half the disk, same ranking
     for stale in ("head.npz", "train_views.npz"):                     # belonged to the old descriptor

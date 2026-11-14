@@ -19,50 +19,65 @@ HackPrinceton F26, CoStar track. Plan: `pinpoint_plan.md`.
 
 ## Run an incident end to end
 
-Needs Python 3.10+ with `requests`, `numpy` and `Pillow` (`pip install -r env/requirements.txt`),
-Node.js 20+, and `api.txt` at the repo root.
+Needs Node.js 20+, [`uv`](https://docs.astral.sh/uv/), and `api.txt` at the repo root
+(it is in the repo). One Python environment runs everything:
 
 ```sh
-python3 -m live.setup                 # once: console catalog, scan graphs, Matterport viewer
-python3 -m live.serve                 # terminal 1: the console at http://localhost:4175/live.html
+uv venv --python 3.12 .venv
+uv pip install --python .venv/bin/python -r env/requirements.txt
+.venv/bin/python -m live.setup        # once: console catalog, scan graphs, Matterport viewer
+.venv/bin/python -m live.serve        # terminal 1: the console at http://localhost:4175/live.html
 ```
 
-Then, in a second terminal, either run one incident from a photo:
+That is enough to run an incident where the caller's position is already known. In a
+second terminal:
 
 ```sh
-.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_ugmz8k_h300.jpg --console
+.venv/bin/python -m live.run --building 6550930 --position 3ymmrb --console --auto-approve
+```
+
+The console then shows the route drawn in the 3D scan, the route on the floor plan, and
+the packet. Drop `--auto-approve` to make the agent wait for **Approve** or **Reject**
+in the console.
+
+To locate the caller from a photo, add lane B's packages and build a photo index for
+the building (a few minutes per building on a laptop CPU):
+
+```sh
+uv pip install --python .venv/bin/python --index-url https://download.pytorch.org/whl/cpu torch torchvision
+uv pip install --python .venv/bin/python -r perception/requirements.txt huggingface_hub safetensors
+.venv/bin/python -m live.index 6550930
+```
+
+Then run one incident from a photo:
+
+```sh
+.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9_h095.jpg --console
 ```
 
 or leave the agent watching the console and start incidents there (pick a building,
-"Start incident", attach a caller photo):
+**Start incident**, attach a caller photo):
 
 ```sh
 .venv/bin/python -m live.run --watch
 ```
 
-The console then shows the question to the caller in the conversation, the route drawn
-in the 3D scan, and the packet. Approve or reject it there; the agent waits for that.
+If photo matching is not installed or the building has no index, the run says so in
+the terminal and the packet is marked DEGRADED with the reason; it does not pretend to
+have located the caller.
 
-Photo matching needs lane B's packages and a photo index for the building. `live.setup`
-prints the three install commands, then:
+If port 4175 is taken: `.venv/bin/python -m live.serve --port 4180`, and pass
+`--console http://localhost:4180` to `live.run`. Open the console as `localhost`, not
+`127.0.0.1`: the Matterport viewer key is tied to that name.
 
-```sh
-.venv/bin/python -m live.index 6550930        # a few minutes per building on a laptop CPU
-```
-
-Without them, everything else still runs if you say where the caller is:
-
-```sh
-python3 -m live.run --building 6550930 --position 9nydrb --console --auto-approve
-```
-
-`live/README.md` has the details, the buildings, and what is and is not real.
+`live/README.md` has the details, the buildings, a demo walkthrough, and what is and is
+not real.
 
 ## Tests
 
 ```sh
-python3 -m unittest discover -s env/tests -t .     # lane A: graphs, routing, console export
-python3 -m unittest live.tests.test_live           # all lanes together, with the console
-(cd app && npm test)                               # lane D
-for t in agent/tests/test_*.py; do python3 $t; done   # lane C
+.venv/bin/python -m unittest discover -s env/tests -t .     # lane A: graphs, routing, console export
+.venv/bin/python -m unittest live.tests.test_live           # all lanes together, with the console
+(cd app && npm test)                                        # lane D
+for t in agent/tests/test_*.py; do .venv/bin/python $t; done   # lane C
 ```

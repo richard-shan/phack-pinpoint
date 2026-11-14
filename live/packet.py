@@ -92,6 +92,8 @@ class LivePacketWriter(PacketWriter):
             L += ["## Status detail"]
             tag = f" [src:{self.failure_cite_tag}]" if self.failure_cite_tag else ""
             L += [f"- {self.failure_sentence}{tag}"]
+            if tools.SESSION.get("match_error"):
+                L += [f"- Why: {tools.SESSION['match_error']}"]
             for k, v in sorted(self.attempted_fields.items()):
                 L += [f"- Attempted {k}: `{v if v not in (None, '') else '(missing)'}` [src:intake.{k}]"]
             L += [""]
@@ -123,8 +125,10 @@ class LivePacketWriter(PacketWriter):
                           "[src:location.question_log]"]
             elif lo.get("skip_reason"):
                 L += [f"- No question asked: {lo['skip_reason']} [src:location.skip_reason]"]
-            if tools.SESSION.get("simulate_match"):
-                L += ["- The position was given to this run, not matched from the photo."]
+            if tools.SESSION.get("given_position"):
+                L += ["- The position was given by the dispatcher, not matched from a photo."]
+            elif tools.SESSION.get("simulate_match"):
+                L += ["- The match was simulated for this run: no photo was matched."]
             elif lo.get("evidence_path"):
                 L += [f"- Photo match evidence: `{lo['evidence_path']}` [src:location.evidence_path]"]
         elif lo is None and not self.failure_sentence:
@@ -170,7 +174,10 @@ class LivePacketWriter(PacketWriter):
             tag = " [src:route.foot.entrance_id]" if foot.get("path") else ""
             L += [f"- {self._label(door).capitalize()}{tag}"]
             saved, front_id = rt.get("seconds_saved_vs_front"), self._front_id()
-            if front_id and front_id != door and saved and saved > 0:
+            via = ((g.nodes.get(door, {}) if g else {}).get("approach") or {}).get("via")
+            if via:
+                pass                                   # a way onto the scanned floor, not a street door
+            elif front_id and front_id != door and saved and saved > 0:
                 L += [f"- This is not the street-address door. The front door ({self._label(front_id)}) would "
                       f"take about {round(saved)} s longer. [src:route.seconds_saved_vs_front]"]
             elif front_id and front_id == door:
@@ -203,7 +210,11 @@ class LivePacketWriter(PacketWriter):
                 L += [f"{i}. {step['text']} [src:route.foot.path]"]
             total = f"- About {_secs(foot.get('seconds'))}"
             if foot.get("outside_seconds") is not None:
-                total += f" ({_secs(foot.get('outside_seconds'))} outside, {_secs(foot.get('inside_seconds'))} inside)"
+                leg = (foot.get("approach") or {}).get("via")
+                first = (f"{_secs(foot.get('outside_seconds'))} to reach the scanned floor by {leg}, an estimate "
+                         "for the part of the building that is not scanned" if leg
+                         else f"{_secs(foot.get('outside_seconds'))} outside")
+                total += f" ({first}; {_secs(foot.get('inside_seconds'))} inside the scan)"
             L += [total + f", {round(foot.get('meters') or 0)} m [src:route.foot.seconds]"]
             if self._route_image:
                 L += [f"- Route on the floor plan: `{self._route_image[1]}`"]
@@ -241,15 +252,29 @@ class LivePacketWriter(PacketWriter):
             L += [PENDING]
         else:
             hz = rt.get("hazards") or []
+            lines, seen = {}, {}
             for h in hz:
-                text = HAZARD_TEXT.get(h["type"], h["type"].replace("_", " "))
-                L += [f"- {text}: {self._label(h['node_id'])} [src:route.hazards]"]
+                if h.get("seen_in_scan"):              # lane B saw this in view here; not hand-checked
+                    what = (h.get("note") or (h.get("type") or "").replace("_", " ")).strip().rstrip(".")
+                    seen.setdefault(what[:1].lower() + what[1:], self._place(h["node_id"]))
+                else:
+                    text = f"{HAZARD_TEXT.get(h['type'], h['type'].replace('_', ' '))}: {self._label(h['node_id'])}"
+                    lines[text] = lines.get(text, 0) + 1
+            for text, n in lines.items():
+                L += [f"- {text}" + (f" ({n} places)" if n > 1 else "") + " [src:route.hazards]"]
+            for what, where in list(seen.items())[:4]:
+                L += [f"- Seen in the scan along the way ({where}): {what} [src:route.hazards]"]
+            if len(seen) > 4:
+                L += [f"- {len(seen) - 4} more things were flagged in view along the way; see route.json. "
+                      "[src:route.hazards]"]
             if not hz:
                 L += ["- Nothing flagged on this route."]
             eq = rt.get("equipment") or []
             for e in eq[:3]:
                 dist = f", {round(e['meters'])} m from the caller" if e.get("meters") is not None else ""
-                L += [f"- AED: {e.get('room_label')}{dist} [src:route.equipment]"]
+                note = f": {e['note'].rstrip('.')}" if e.get("note") else ""
+                L += [f"- AED seen in the scan (read by a vision model, not checked): {e.get('room_label')}{dist}{note} "
+                      "[src:route.equipment]"]
             if not eq:
                 L += ["- No AED is marked in this building's graph."]
         L += [""]
@@ -261,9 +286,14 @@ class LivePacketWriter(PacketWriter):
             if b.get("use_subtype"):
                 use += f" ({str(b['use_subtype']).replace('_', ' ').lower()})"
             sqft = f"{round(b['sqft']):,} sq ft" if b.get("sqft") else "area not on record"
-            L += [f"- {b.get('name') or b.get('address')}: {use}, {b.get('stories') or '?'} stories, "
+            n_st = b.get("stories")
+            stories = "stories not on record" if not n_st else f"{n_st} stor{'y' if n_st == 1 else 'ies'}"
+            L += [f"- {b.get('name') or b.get('address')}: {use}, {stories}, "
                   f"built {b.get('year_built') or 'year not on record'}, {sqft} [src:brief.use_type]"]
             floor_no = tools._floor_number(g, lo["node_id"]) if (g and located) else None
+            if n_st and floor_no and floor_no > n_st:
+                L += [f"- CoStar lists {stories}, but the scan places the caller on floor {floor_no}. "
+                      "One of the two records is wrong. [src:brief.stories]"]
             here = [t for t in b.get("tenants") or [] if floor_no is not None and t.get("floor") == floor_no]
             if here:
                 names = "; ".join(t["name"] + (f" (suite {t['suite']})" if t.get("suite") else "")
@@ -313,11 +343,15 @@ class LivePacketWriter(PacketWriter):
             out.append("Exact position: below the confidence threshold.")
         if any(q["source"].startswith("simulated") for q in tools.SESSION.get("asked") or []):
             out.append("Caller answers in this run were simulated from a known position.")
-        if tools.SESSION.get("simulate_match"):
-            out.append("Caller position was supplied to this run, not matched from the photo.")
+        if tools.SESSION.get("given_position"):
+            out.append("Caller position was given by the dispatcher, not matched from a photo.")
+        elif tools.SESSION.get("simulate_match"):
+            out.append("The photo match was simulated for this run.")
         if ((self.site or {}).get("aerial_features") or {}).get("vehicle_access"):
             out.append("Vehicle access and obstructions were read from the aerial image by a vision model; "
                        "nobody has checked them.")
+        if any(h.get("seen_in_scan") for h in (self.route or {}).get("hazards") or []):
+            out.append("Things \"seen in the scan\" were read from the panoramas by a vision model; nobody has checked them.")
         if self.route is not None:
             out.append("Travel times use assumed walking speeds and door delays; nobody has timed these routes.")
             out.append("Door states (locked, open, blocked) are as scanned, not current.")
@@ -377,7 +411,8 @@ class LivePacketWriter(PacketWriter):
         else:
             fields["notes"] = "The Pinpoint agent is working on this incident."
         fields["unconfirmed"] = [u[:1000] for u in self.unconfirmed()][:50] or ["Nothing listed yet."]
-        fields["packetMarkdown"] = self.render()[:102400]
+        body = "\n".join(ln for ln in self.render().splitlines() if not ln.startswith("**Status:**"))
+        fields["packetMarkdown"] = body[:102400]      # the console shows its own review status
         return fields
 
     def _activity(self) -> str:
@@ -412,5 +447,5 @@ class LivePacketWriter(PacketWriter):
         fields = self._summary_fields()
         digest = hashlib.sha1(repr(sorted(fields.items())).encode()).hexdigest()
         if digest != self._pushed:
-            console.update(cid, **fields)
+            console.update(cid, updatedBy="agent", **fields)
             self._pushed = digest
