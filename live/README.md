@@ -40,6 +40,15 @@ Any building with a graph under `buildings/` works: 6550930 (7900 Fannin St, Hou
 7900 Fannin St is the one to demo: a medical office building with 17 health care
 tenants on record, four doors, and a best door that is not the street-address door.
 
+## What the Verifier does and does not check
+
+Every factual packet line carries a `[src:...]` tag, and the agent's Verifier confirms
+that the tag points at data that exists in the incident's files (`audit.json`). A line
+with no source is moved to "Not confirmed". This catches a claim with nothing behind
+it. It does not check that the sentence says what the data says: a sweep of 31 runs
+found wording that was wrong or misleading while every line audited as supported.
+Those were fixed by hand; the check itself is still only as strong as described here.
+
 ## When the agent asks the caller a question
 
 The agent asks only when the answer could change what the crew does: the likely

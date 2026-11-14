@@ -165,7 +165,8 @@ def _panel(g: Graph, seq: int, path: list[str], target: str, door: str | None, s
         ang = math.atan2(north[1], north[0])
         d.polygon([tip, (tip[0] + 18 * math.cos(ang + 2.6), tip[1] + 18 * math.sin(ang + 2.6)),
                    (tip[0] + 18 * math.cos(ang - 2.6), tip[1] + 18 * math.sin(ang - 2.6))], fill=WHITE)
-        d.text((cx - 9 - 20 * north[0], cy - 13 - 20 * north[1]), "N", fill=(255, 210, 90), font=font)
+        px, py = -north[1], north[0]                       # beside the shaft, not on it
+        d.text((cx - 9 + 22 * px - 8 * north[0], cy - 14 + 22 * py - 8 * north[1]), "N", fill=(255, 210, 90), font=font)
     name = next((g.nodes[n].get("floor_name") for n in nodes if g.nodes[n].get("floor_name")), f"Floor {seq + 1}")
     d.rounded_rectangle((16, canvas.height - 62, 16 + d.textlength(name, font=font) + 28, canvas.height - 16), 8, fill=INK)
     d.text((30, canvas.height - 54), name, fill=WHITE, font=font)
