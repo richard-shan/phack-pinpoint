@@ -91,6 +91,25 @@ def _read_photo(image_path, work_dir, max_side=1600):
     return img
 
 
+_faces = {}
+
+
+def _view_image(row):
+    """The index view for a row: its saved image, or re-rendered from the panorama
+    when the index was built without saving views (perception.bulk)."""
+    img = cv2.imread(row["crop_path"]) if os.path.exists(row["crop_path"]) else None
+    if img is None:
+        from .crops import load_faces, view
+        from .matterport import Matterport
+        n = row["node_id"]
+        if n not in _faces:
+            if len(_faces) > 64:
+                _faces.clear()
+            _faces[n] = load_faces(Matterport().pano(n))
+        img = view(_faces[n], row["yaw"], row["pitch"], row.get("fov", 75.0), 448)
+    return img
+
+
 POSITIONS = 12      # positions sent to point matching
 VIEWS_EACH = 2      # best views of each (so 24 pairs, about 2.5 s on the laptop)
 
@@ -133,7 +152,8 @@ def match_photo(building_id, image_path, k=10):
     order = sorted(pooled, key=lambda n: pooled[n][0], reverse=True)
     short = order[:POSITIONS]
     pair_rows = [int(i) for n in short for i in pooled[n][1][:VIEWS_EACH]]
-    pts = _rerank.match_points(img, [cv2.imread(rows[i]["crop_path"]) for i in pair_rows])
+    views = {i: _view_image(rows[i]) for i in pair_rows}
+    pts = _rerank.match_points(img, [views[i] for i in pair_rows])
     cands = []
     for j, n in enumerate(short):
         ms = pts[j * VIEWS_EACH:(j + 1) * VIEWS_EACH]
@@ -161,7 +181,10 @@ def match_photo(building_id, image_path, k=10):
     for j, c in enumerate(ranked[:k]):
         r = rows[c["row"]]
         path = os.path.join(ev_dir, "%02d.jpg" % (j + 1))
-        _rerank.overlay(img, cv2.imread(r["crop_path"]), c["pts"]["pts_query"], c["pts"]["pts_cand"], path,
+        if not os.path.exists(r["crop_path"]):        # keep the matched view as evidence
+            os.makedirs(os.path.dirname(r["crop_path"]), exist_ok=True)
+            cv2.imwrite(r["crop_path"], views[c["row"]])
+        _rerank.overlay(img, views[c["row"]], c["pts"]["pts_query"], c["pts"]["pts_cand"], path,
                         "#%d  %s  %d matched points" % (j + 1, r["model_name"], c["inliers"]))
         score = p_top if j == 0 else float(rest[j - 1])
         out.append({
