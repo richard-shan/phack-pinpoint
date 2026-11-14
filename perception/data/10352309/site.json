@@ -1,0 +1,303 @@
+{
+ "building_id": "10352309",
+ "address": "12814 Willow Centre Dr, Houston, TX",
+ "latlon": [
+  29.9630863,
+  -95.5353281
+ ],
+ "location_source": "costar:commercial-property/10352309",
+ "tile_path": "cache/vexcel/10352309/ortho.jpg",
+ "tile_size": [
+  1727,
+  1659
+ ],
+ "tile_bounds_lonlat": [
+  -95.5359048,
+  29.9626037,
+  -95.5347472,
+  29.9635668
+ ],
+ "meters_per_pixel": 0.0646,
+ "tile_capture": {
+  "collection": "us-tx-cypress-2026",
+  "layer": "urban",
+  "captured": [
+   "2025-12-31T16:19:21",
+   "2026-01-29T20:29:30"
+  ],
+  "note": "newest collection at this point; the tile is the best available of urban,urban-r,wide-area,urban-g"
+ },
+ "evidence_path": "cache/vexcel/10352309/overlay.jpg",
+ "oblique_paths": {
+  "oblique-north": "cache/vexcel/10352309/oblique-north.jpg",
+  "oblique-south": "cache/vexcel/10352309/oblique-south.jpg",
+  "oblique-east": "cache/vexcel/10352309/oblique-east.jpg",
+  "oblique-west": "cache/vexcel/10352309/oblique-west.jpg"
+ },
+ "footprint_wkt": "POLYGON ((-95.5354378 29.9631462, -95.5354097 29.9631459, -95.5354095 29.9631565, -95.5353478 29.9631559, -95.5353477 29.9631626, -95.5353099 29.9631626, -95.5353099 29.9631568, -95.5352365 29.9631568, -95.5352365 29.9631476, -95.5352224 29.9631474, -95.5352224 29.9631111, -95.5352344 29.9631111, -95.5352346 29.9630894, -95.5352278 29.9630894, -95.5352278 29.9630774, -95.5352138 29.9630774, -95.5352143 29.9630397, -95.5352273 29.9630398, -95.5352277 29.9630079, -95.5354137 29.9630095, -95.5354134 29.9630404, -95.5354312 29.9630405, -95.5354308 29.9630773, -95.5354185 29.9630772, -95.5354181 29.9631092, -95.5354382 29.9631094, -95.5354378 29.9631462))",
+ "ground_elevation_m": 37.7952,
+ "entrances": [
+  {
+   "kind": "main",
+   "covered": true,
+   "description": "South facade arched recessed entries (seen in north-looking side view) facing south lawn; walkway from west lot along building",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.5,
+   "side": "west",
+   "pixel": [
+    732.8,
+    945.7
+   ],
+   "latlon": [
+    29.9630178,
+    -95.5354136
+   ],
+   "entrance_id": "E1",
+   "evidence_path": "cache/vexcel/10352309/crops/E1.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": true,
+   "description": "South facade arched recessed entry near center, seen in north-looking side view",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.5,
+   "side": "south",
+   "pixel": [
+    915.3,
+    961.8
+   ],
+   "latlon": [
+    29.9630084,
+    -95.5352913
+   ],
+   "entrance_id": "E2",
+   "evidence_path": "cache/vexcel/10352309/crops/E2.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "West side walkway running along building from west parking lot near accessible spaces at x~35,y~38",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.8,
+   "side": "west",
+   "pixel": [
+    696.3,
+    763.0
+   ],
+   "latlon": [
+    29.9631239,
+    -95.535438
+   ],
+   "entrance_id": "E3",
+   "evidence_path": "cache/vexcel/10352309/crops/E3.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "East side walkway along building connecting to east parking lot; arched entries visible on east face in west-looking view",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.9,
+   "side": "north",
+   "pixel": [
+    1027.6,
+    843.0
+   ],
+   "latlon": [
+    29.9630774,
+    -95.535216
+   ],
+   "entrance_id": "E4",
+   "evidence_path": "cache/vexcel/10352309/crops/E4.jpg"
+  }
+ ],
+ "staging": [
+  {
+   "staging_id": "S1",
+   "kind": "parking_aisle",
+   "vehicle": "either",
+   "description": "West parking lot drive aisle near accessible spaces, short walk to west walkway",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5",
+    "vexcel_detect:parking lot@0.84"
+   ],
+   "pixel": [
+    552.6,
+    696.8
+   ],
+   "latlon": [
+    29.9631623,
+    -95.5355344
+   ],
+   "nearest_entrance": "E3",
+   "meters_to_entrance": 10.2,
+   "evidence_path": "cache/vexcel/10352309/crops/S1.jpg"
+  },
+  {
+   "staging_id": "S2",
+   "kind": "parking_aisle",
+   "vehicle": "either",
+   "description": "East parking lot aisle near accessible space, close to east/south side of building",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5",
+    "vexcel_detect:parking lot@0.88"
+   ],
+   "pixel": [
+    1174.4,
+    995.4
+   ],
+   "latlon": [
+    29.9629889,
+    -95.5351176
+   ],
+   "nearest_entrance": "E4",
+   "meters_to_entrance": 13.7,
+   "evidence_path": "cache/vexcel/10352309/crops/S2.jpg"
+  },
+  {
+   "staging_id": "S3",
+   "kind": "street",
+   "vehicle": "engine",
+   "description": "Curving access road south of building; fence and trees between road and building",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    949.9,
+    1377.0
+   ],
+   "latlon": [
+    29.9627674,
+    -95.5352681
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 26.9,
+   "evidence_path": "cache/vexcel/10352309/crops/S3.jpg"
+  }
+ ],
+ "obstructions": [
+  {
+   "type": "trees",
+   "description": "Dense tree canopy south of building between road and south facade",
+   "confidence": 0.8,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    863.5,
+    1128.1
+   ],
+   "latlon": [
+    29.9629119,
+    -95.535326
+   ],
+   "obstruction_id": "O1",
+   "evidence_path": "cache/vexcel/10352309/crops/O1.jpg"
+  },
+  {
+   "type": "fence_or_gate",
+   "description": "Black fence along south edge separating property from access road",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    949.9,
+    1277.4
+   ],
+   "latlon": [
+    29.9628252,
+    -95.5352681
+   ],
+   "obstruction_id": "O2",
+   "evidence_path": "cache/vexcel/10352309/crops/O2.jpg"
+  },
+  {
+   "type": "trees",
+   "description": "Large trees and landscaping at south end of west lot",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    621.7,
+    862.7
+   ],
+   "latlon": [
+    29.963066,
+    -95.5354881
+   ],
+   "obstruction_id": "O3",
+   "evidence_path": "cache/vexcel/10352309/crops/O3.jpg"
+  },
+  {
+   "type": "narrow_drive",
+   "description": "Narrow pedestrian walkways between buildings; stretcher only",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1036.2,
+    663.6
+   ],
+   "latlon": [
+    29.9631816,
+    -95.5352102
+   ],
+   "obstruction_id": "O4",
+   "evidence_path": "cache/vexcel/10352309/crops/O4.jpg"
+  }
+ ],
+ "vehicle_access": "Approach via west parking lot (from road at left) or east parking lot (from south road). Vehicles cannot reach the facade directly; stretcher via walkways along west or east sides to south-facing entries.",
+ "summary": "Two-story residential-style building with entries on south face and walkways on east/west sides. Stage in west or east lot aisles near accessible spaces; avoid south road due to fence and dense trees.",
+ "vision_model": "claude-opus-5-5",
+ "notes": [
+  "Entrances are inferred from overhead signs (canopies, walkways, recesses), snapped to the building outline. Confirm against the interior scan before relying on one.",
+  "Pixel coordinates are [x, y] in the image at tile_path, origin top-left, north up.",
+  "The yellow outline is the ground footprint. Roofs of taller buildings appear shifted a few metres from it because the overhead image is not perfectly vertical."
+ ],
+ "disaster": {
+  "covered": true,
+  "events": [
+   {
+    "event": "us-tx-harvey-hurricane-2017",
+    "event_name": "Hurricane Harvey (2017)",
+    "collection": "t-quantum-houston",
+    "captured": [
+     "2017-08-31T13:41:36",
+     "2017-09-01T15:36:14"
+    ],
+    "source": "vexcel:graysky/t-quantum-houston",
+    "before_path": "cache/vexcel/10352309/ortho.jpg",
+    "before_after_path": "cache/vexcel/10352309/disaster_t-quantum-houston_before_after.jpg",
+    "after_path": "cache/vexcel/10352309/disaster_t-quantum-houston.jpg",
+    "water_visible": false,
+    "damage_visible": false,
+    "approach_affected": "none",
+    "obstructions": [],
+    "summary": "The 2017-09-01 image is dark and somewhat misregistered relative to the recent capture, but it shows no clear flood water, debris, blocked roads, or structural damage around the outlined building. The curving access road, parking areas and drives look dry and passable, and the roofs look intact. Darker areas are shadow and image tone, not water. The approach to the building appears unaffected.",
+    "evidence_path": "cache/vexcel/10352309/disaster_t-quantum-houston_overlay.jpg",
+    "image_size": [
+     864,
+     830
+    ]
+   }
+  ],
+  "note": "Coverage means a post-event flight imaged this ground. It does not mean the building was damaged; see each event's findings."
+ }
+}

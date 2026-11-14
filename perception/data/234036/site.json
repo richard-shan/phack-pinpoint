@@ -1,0 +1,284 @@
+{
+ "building_id": "234036",
+ "address": "1315 St Joseph Pky, Houston, TX",
+ "latlon": [
+  29.7485811,
+  -95.3669641
+ ],
+ "location_source": "costar:commercial-property/234036",
+ "tile_path": "cache/vexcel/234036/ortho.jpg",
+ "tile_size": [
+  2690,
+  2574
+ ],
+ "tile_bounds_lonlat": [
+  -95.3679476,
+  29.7479378,
+  -95.3661444,
+  29.7494352
+ ],
+ "meters_per_pixel": 0.0648,
+ "tile_capture": {
+  "collection": "us-tx-houston-2026",
+  "layer": "urban",
+  "captured": [
+   "2025-12-19T16:38:26",
+   "2026-01-02T18:43:55"
+  ],
+  "note": "newest collection at this point; the tile is the best available of urban,urban-r,wide-area,urban-g"
+ },
+ "evidence_path": "cache/vexcel/234036/overlay.jpg",
+ "oblique_paths": {
+  "oblique-north": "cache/vexcel/234036/oblique-north.jpg",
+  "oblique-south": "cache/vexcel/234036/oblique-south.jpg",
+  "oblique-east": "cache/vexcel/234036/oblique-east.jpg",
+  "oblique-west": "cache/vexcel/234036/oblique-west.jpg"
+ },
+ "footprint_wkt": "POLYGON ((-95.367262 29.749031, -95.367217 29.749004, -95.367221 29.749, -95.367014 29.748877, -95.366934 29.748977, -95.366662 29.748811, -95.366657 29.748788, -95.366695 29.74874, -95.36661 29.748688, -95.366621 29.748673, -95.366621 29.74866, -95.366654 29.748583, -95.366846 29.748342, -95.3669 29.748375, -95.366912 29.74836, -95.367013 29.748421, -95.367019 29.748414, -95.367339 29.748608, -95.367335 29.748613, -95.367453 29.748684, -95.367459 29.748691, -95.367476 29.748695, -95.367482 29.748756, -95.367262 29.749031), (-95.366643 29.748659, -95.366663 29.74867, -95.366689 29.748639, -95.366685 29.748659, -95.366725 29.748609, -95.366686 29.74862, -95.36669 29.748631, -95.366652 29.748642, -95.366643 29.748659))",
+ "ground_elevation_m": 14.020800000000001,
+ "entrances": [
+  {
+   "kind": "main",
+   "covered": true,
+   "description": "Ground-floor lobby on the southwest facade of the tower, facing the main street. Side views show a glazed recess with a small canopy, planters, and a plaza walkway leading to it from the sidewalk.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 4.8,
+   "side": "southwest",
+   "pixel": [
+    1498.8,
+    1816.1
+   ],
+   "latlon": [
+    29.7483787,
+    -95.3669429
+   ],
+   "entrance_id": "E1",
+   "evidence_path": "cache/vexcel/234036/crops/E1.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": true,
+   "description": "Near the south corner where the skybridge meets the tower. Side views show a glazed entry and a walkway that may connect to the skybridge level.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 2.1,
+   "side": "southeast",
+   "pixel": [
+    1664.2,
+    1849.0
+   ],
+   "latlon": [
+    29.7483596,
+    -95.366832
+   ],
+   "entrance_id": "E2",
+   "evidence_path": "cache/vexcel/234036/crops/E2.jpg"
+  },
+  {
+   "kind": "secondary",
+   "covered": false,
+   "description": "West corner of the parking garage at the street intersection, near a small canopy or kiosk at about (27,51). A probable pedestrian or garage entry.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 0.8,
+   "side": "southwest",
+   "pixel": [
+    747.5,
+    1298.0
+   ],
+   "latlon": [
+    29.7486801,
+    -95.3674465
+   ],
+   "entrance_id": "E3",
+   "evidence_path": "cache/vexcel/234036/crops/E3.jpg"
+  },
+  {
+   "kind": "service",
+   "covered": true,
+   "description": "Northeast side of the garage beside the low roofed structure (likely utility or service housing) next to a blue truck. Probable service access reached from the northeast side street.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "snapped_m": 4.4,
+   "side": "northeast",
+   "pixel": [
+    1807.2,
+    995.2
+   ],
+   "latlon": [
+    29.7488562,
+    -95.3667361
+   ],
+   "entrance_id": "E4",
+   "evidence_path": "cache/vexcel/234036/crops/E4.jpg"
+  }
+ ],
+ "staging": [
+  {
+   "staging_id": "S1",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Curb lane of the main southwest street in front of the tower lobby plaza.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1398.8,
+    1776.1
+   ],
+   "latlon": [
+    29.748402,
+    -95.3670099
+   ],
+   "nearest_entrance": "E1",
+   "meters_to_entrance": 7.0,
+   "evidence_path": "cache/vexcel/234036/crops/S1.jpg"
+  },
+  {
+   "staging_id": "S2",
+   "kind": "street",
+   "vehicle": "ambulance",
+   "description": "Cross street near the south corner, just beside the skybridge.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1721.6,
+    1930.5
+   ],
+   "latlon": [
+    29.7483121,
+    -95.3667936
+   ],
+   "nearest_entrance": "E2",
+   "meters_to_entrance": 6.5,
+   "evidence_path": "cache/vexcel/234036/crops/S2.jpg"
+  },
+  {
+   "staging_id": "S3",
+   "kind": "street",
+   "vehicle": "either",
+   "description": "Northeast side street beside the service area of the building.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1963.7,
+    1338.5
+   ],
+   "latlon": [
+    29.7486566,
+    -95.3666313
+   ],
+   "warning": "point falls on the building roof",
+   "nearest_entrance": "E4",
+   "meters_to_entrance": 24.4,
+   "evidence_path": "cache/vexcel/234036/crops/S3.jpg"
+  }
+ ],
+ "obstructions": [
+  {
+   "type": "other",
+   "description": "Elevated skybridge crossing the street at the south corner. Possible height restriction for an engine.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1587.1,
+    1853.3
+   ],
+   "latlon": [
+    29.7483571,
+    -95.3668837
+   ],
+   "obstruction_id": "O1",
+   "evidence_path": "cache/vexcel/234036/crops/O1.jpg"
+  },
+  {
+   "type": "trees",
+   "description": "Planters and trees along the sidewalk plaza between the curb and the facade.",
+   "confidence": 0.6,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    1210.5,
+    1647.4
+   ],
+   "latlon": [
+    29.7484769,
+    -95.3671362
+   ],
+   "obstruction_id": "O2",
+   "evidence_path": "cache/vexcel/234036/crops/O2.jpg"
+  },
+  {
+   "type": "median_or_curb",
+   "description": "Divided multilane main street with curbs and a median, which limits turning access.",
+   "confidence": 0.35,
+   "sources": [
+    "claude_vision:claude-opus-5-5"
+   ],
+   "pixel": [
+    753.2,
+    1544.4
+   ],
+   "latlon": [
+    29.7485368,
+    -95.3674427
+   ],
+   "obstruction_id": "O3",
+   "evidence_path": "cache/vexcel/234036/crops/O3.jpg"
+  }
+ ],
+ "vehicle_access": "The building has street frontage on a busy multilane street to the southwest, a cross street with an overhead skybridge to the southeast, and a street to the northeast. It has no internal lot, so vehicles stage at the curb. The garage occupies the northwest half of the building.",
+ "summary": "High-rise tower with an attached parking garage. The most likely main lobby is on the southwest facade near the south corner, accessed from the street-side plaza. The skybridge at the south corner and the sidewalk planters are the main hazards on the approach.",
+ "vision_model": "claude-opus-5-5",
+ "notes": [
+  "Entrances are inferred from overhead signs (canopies, walkways, recesses), snapped to the building outline. Confirm against the interior scan before relying on one.",
+  "Pixel coordinates are [x, y] in the image at tile_path, origin top-left, north up.",
+  "The yellow outline is the ground footprint. Roofs of taller buildings appear shifted a few metres from it because the overhead image is not perfectly vertical."
+ ],
+ "disaster": {
+  "covered": true,
+  "events": [
+   {
+    "event": "us-tx-harvey-hurricane-2017",
+    "event_name": "Hurricane Harvey (2017)",
+    "collection": "t-quantum-houston",
+    "captured": [
+     "2017-08-31T13:41:36",
+     "2017-09-01T15:36:14"
+    ],
+    "source": "vexcel:graysky/t-quantum-houston",
+    "before_path": "cache/vexcel/234036/ortho.jpg",
+    "before_after_path": "cache/vexcel/234036/disaster_t-quantum-houston_before_after.jpg",
+    "after_path": "cache/vexcel/234036/disaster_t-quantum-houston.jpg",
+    "water_visible": false,
+    "damage_visible": false,
+    "approach_affected": "none",
+    "obstructions": [],
+    "summary": "The 2017-09-01 post-Harvey image shows no visible flood water, debris, blocked roads or structural damage around the outlined building. Surrounding streets appear dry and passable, with normal traffic and parked cars in the adjacent lots. Differences from the recent capture, such as the former parking lot and low building now replaced by new construction and vegetation, and the different viewing angle and shadows, are ordinary changes between captures and not storm effects.",
+    "evidence_path": "cache/vexcel/234036/disaster_t-quantum-houston_overlay.jpg",
+    "image_size": [
+     1345,
+     1288
+    ]
+   }
+  ],
+  "note": "Coverage means a post-event flight imaged this ground. It does not mean the building was damaged; see each event's findings."
+ }
+}
