@@ -1,0 +1,18 @@
+# Runtime state, credentials, and generated sponsor assets
+.local-state/
+.env
+.env.*
+!.env.example
+data/
+assets/real/
+vendor/
+node_modules/
+
+# Local verification and authoring artifacts
+output/
+qa/
+.impeccable/
+.playwright-cli/
+.DS_Store
+__pycache__/
+*.pyc

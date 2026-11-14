@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Pinpoint dispatcher console. Local prototype with synthetic incident data."
+    />
+    <title>Pinpoint · Dispatch console</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinpoint · Dispatch console" />
+    <meta property="og:description" content="Review caller location, compare access routes, and prepare a responder packet. Local demonstration with synthetic data." />
+    <meta property="og:image" content="/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pinpoint — Building context, caller evidence, and responder packets." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/assets/mark.svg" />
+    <link rel="preload" href="/assets/fonts/public-sans.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/live-system.css" />
+  </head>
+  <body class="demo-app">
+    <a class="skip-link" href="#main">Skip to incident</a>
+    <div id="app"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <dialog id="detail-dialog" aria-labelledby="dialog-title"></dialog>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
