@@ -1,0 +1,3135 @@
+{
+ "modelId": "7uM5JKssTED",
+ "propertyId": "234036",
+ "name": "1315 St Joseph Pkwy, 14th floor",
+ "faceRoute": true,
+ "supportsOverview": false,
+ "georeference": {
+  "lat": 29.7485811,
+  "long": -95.3669641
+ },
+ "floors": [
+  {
+   "id": "0",
+   "sequence": 0,
+   "label": "Floor 14"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "atwsdwfh4sidfg4067xpnbq8a",
+   "index": 0,
+   "floor": 0,
+   "position": {
+    "x": -0.071,
+    "y": 0.002,
+    "z": -14.531
+   },
+   "label": "Scan 0 \u00b7 Floor 14"
+  },
+  {
+   "id": "at0xcae1rprur5tg0rqy2d3dc",
+   "index": 1,
+   "floor": 0,
+   "position": {
+    "x": 7.593,
+    "y": -0.018,
+    "z": 4.065
+   },
+   "label": "Scan 1 \u00b7 Floor 14"
+  },
+  {
+   "id": "bidr0pifgmstmxxxtzdpi1w8d",
+   "index": 2,
+   "floor": 0,
+   "position": {
+    "x": -5.39,
+    "y": 0.013,
+    "z": 0.338
+   },
+   "label": "Scan 2 \u00b7 Floor 14 \u00b7 the restroom alcove by Stair A"
+  },
+  {
+   "id": "hazt2anz9fryp7q7rfqqdhqsd",
+   "index": 3,
+   "floor": 0,
+   "position": {
+    "x": 9.583,
+    "y": -0.009,
+    "z": -10.269
+   },
+   "label": "Scan 3 \u00b7 Floor 14"
+  },
+  {
+   "id": "kik7gmkwgpxq906y8z0m4pa5a",
+   "index": 4,
+   "floor": 0,
+   "position": {
+    "x": -15.263,
+    "y": 0.02,
+    "z": -20.015
+   },
+   "label": "Scan 4 \u00b7 Floor 14"
+  },
+  {
+   "id": "kaw42tabfc85qti2bhzirsdrd",
+   "index": 5,
+   "floor": 0,
+   "position": {
+    "x": 9.466,
+    "y": -0.008,
+    "z": -12.352
+   },
+   "label": "Scan 5 \u00b7 Floor 14"
+  },
+  {
+   "id": "mappcci3h2yu5umi1re76gfua",
+   "index": 6,
+   "floor": 0,
+   "position": {
+    "x": -3.2,
+    "y": 0.003,
+    "z": -14.506
+   },
+   "label": "Scan 6 \u00b7 Floor 14"
+  },
+  {
+   "id": "madeqfsx5emk86a24d9qsydxc",
+   "index": 7,
+   "floor": 0,
+   "position": {
+    "x": -1.877,
+    "y": 0.031,
+    "z": -21.818
+   },
+   "label": "Scan 7 \u00b7 Floor 14"
+  },
+  {
+   "id": "q2e1i1eb96bex00q7k1gen15a",
+   "index": 8,
+   "floor": 0,
+   "position": {
+    "x": 15.951,
+    "y": 0.011,
+    "z": -21.781
+   },
+   "label": "Scan 8 \u00b7 Floor 14"
+  },
+  {
+   "id": "r2c6ys5ye183id9xm0pcwgk8a",
+   "index": 9,
+   "floor": 0,
+   "position": {
+    "x": 18.907,
+    "y": 0.007,
+    "z": -10.19
+   },
+   "label": "Scan 9 \u00b7 Floor 14"
+  },
+  {
+   "id": "u2nbb26aztckkfya808yz1gab",
+   "index": 10,
+   "floor": 0,
+   "position": {
+    "x": -5.01,
+    "y": -0.004,
+    "z": 8.841
+   },
+   "label": "Scan 10 \u00b7 Floor 14"
+  },
+  {
+   "id": "wahyhp7zazc523euqfx1373yc",
+   "index": 11,
+   "floor": 0,
+   "position": {
+    "x": -13.222,
+    "y": 0.011,
+    "z": -18.415
+   },
+   "label": "Scan 11 \u00b7 Floor 14"
+  },
+  {
+   "id": "xa42e1a2h6qe23gs1i9cnpfza",
+   "index": 12,
+   "floor": 0,
+   "position": {
+    "x": -5.823,
+    "y": 0.041,
+    "z": -23.815
+   },
+   "label": "Scan 12 \u00b7 Floor 14"
+  },
+  {
+   "id": "zi7771aikmfk6fmnqck1s4ybb",
+   "index": 13,
+   "floor": 0,
+   "position": {
+    "x": -14.365,
+    "y": 0.015,
+    "z": -6.883
+   },
+   "label": "Scan 13 \u00b7 Floor 14"
+  },
+  {
+   "id": "026gueuqgx1wnwbet5606q5ta",
+   "index": 14,
+   "floor": 0,
+   "position": {
+    "x": 2.691,
+    "y": -0.002,
+    "z": 10.213
+   },
+   "label": "Scan 14 \u00b7 Floor 14"
+  },
+  {
+   "id": "32eg8hzyqc2ya3fzde47i1wya",
+   "index": 15,
+   "floor": 0,
+   "position": {
+    "x": 9.435,
+    "y": 0.023,
+    "z": -20.958
+   },
+   "label": "Scan 15 \u00b7 Floor 14"
+  },
+  {
+   "id": "3tqzx22088wpuig1qmmeu02za",
+   "index": 16,
+   "floor": 0,
+   "position": {
+    "x": 6.767,
+    "y": -0.015,
+    "z": 5.694
+   },
+   "label": "Scan 16 \u00b7 Floor 14"
+  },
+  {
+   "id": "4i6zer44abzxwxmuwy170mmka",
+   "index": 17,
+   "floor": 0,
+   "position": {
+    "x": 16.477,
+    "y": 0.026,
+    "z": -4.146
+   },
+   "label": "Scan 17 \u00b7 Floor 14"
+  },
+  {
+   "id": "626xt9h376s6pxdk5d4ghqf9d",
+   "index": 18,
+   "floor": 0,
+   "position": {
+    "x": 6.372,
+    "y": 0.003,
+    "z": -16.378
+   },
+   "label": "Scan 18 \u00b7 Floor 14"
+  },
+  {
+   "id": "7a2988e810705grrf38u674fc",
+   "index": 19,
+   "floor": 0,
+   "position": {
+    "x": -15.08,
+    "y": 0.028,
+    "z": -23.564
+   },
+   "label": "Scan 19 \u00b7 Floor 14"
+  },
+  {
+   "id": "7icsdrfqbni0c6r7kb80f7r6d",
+   "index": 20,
+   "floor": 0,
+   "position": {
+    "x": 15.588,
+    "y": 0.001,
+    "z": -10.165
+   },
+   "label": "Scan 20 \u00b7 Floor 14"
+  },
+  {
+   "id": "au0kpek9wp53cq0rkt24xxi2b",
+   "index": 21,
+   "floor": 0,
+   "position": {
+    "x": -11.384,
+    "y": -0.005,
+    "z": -13.672
+   },
+   "label": "Scan 21 \u00b7 Floor 14"
+  },
+  {
+   "id": "bbceccx3s635rmddkcpfq759c",
+   "index": 22,
+   "floor": 0,
+   "position": {
+    "x": -5.196,
+    "y": 0.019,
+    "z": -18.323
+   },
+   "label": "Scan 22 \u00b7 Floor 14"
+  },
+  {
+   "id": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "index": 23,
+   "floor": 0,
+   "position": {
+    "x": 11.484,
+    "y": 0.002,
+    "z": 9.698
+   },
+   "label": "Scan 23 \u00b7 Floor 14"
+  },
+  {
+   "id": "e32x1x86ihn9xhe5ikuk352uc",
+   "index": 24,
+   "floor": 0,
+   "position": {
+    "x": 13.571,
+    "y": 0.001,
+    "z": -15.292
+   },
+   "label": "Scan 24 \u00b7 Floor 14"
+  },
+  {
+   "id": "fuda46a8uipb0eb3g784ghhxd",
+   "index": 25,
+   "floor": 0,
+   "position": {
+    "x": -9.509,
+    "y": 0.009,
+    "z": -22.277
+   },
+   "label": "Scan 25 \u00b7 Floor 14"
+  },
+  {
+   "id": "fudnzszyuysb1e261nkmd2ebb",
+   "index": 26,
+   "floor": 0,
+   "position": {
+    "x": 9.59,
+    "y": -0.001,
+    "z": -14.09
+   },
+   "label": "Scan 26 \u00b7 Floor 14"
+  },
+  {
+   "id": "gkm9269xw5pe2bk0amn3sbihc",
+   "index": 27,
+   "floor": 0,
+   "position": {
+    "x": 2.025,
+    "y": 0.007,
+    "z": -16.517
+   },
+   "label": "Scan 27 \u00b7 Floor 14"
+  },
+  {
+   "id": "g39d08rrqz8r0zu98n70tewsb",
+   "index": 28,
+   "floor": 0,
+   "position": {
+    "x": -13.162,
+    "y": 0.007,
+    "z": -16.83
+   },
+   "label": "Scan 28 \u00b7 Floor 14"
+  },
+  {
+   "id": "hum92h1mt4qqk63dxbupu1zbc",
+   "index": 29,
+   "floor": 0,
+   "position": {
+    "x": -1.787,
+    "y": -0.005,
+    "z": -12.616
+   },
+   "label": "Scan 29 \u00b7 Floor 14"
+  },
+  {
+   "id": "kbew59tzi3uxcyn616mgemnyd",
+   "index": 30,
+   "floor": 0,
+   "position": {
+    "x": -5.192,
+    "y": 0.008,
+    "z": -15.408
+   },
+   "label": "Scan 30 \u00b7 Floor 14"
+  },
+  {
+   "id": "k36ubn76h0t7u3a005s2c4cid",
+   "index": 31,
+   "floor": 0,
+   "position": {
+    "x": -8.971,
+    "y": 0.015,
+    "z": -4.86
+   },
+   "label": "Scan 31 \u00b7 Floor 14"
+  },
+  {
+   "id": "mu7c73uz202wt55p9bwnr0ftc",
+   "index": 32,
+   "floor": 0,
+   "position": {
+    "x": 15.571,
+    "y": -0.004,
+    "z": -18.253
+   },
+   "label": "Scan 32 \u00b7 Floor 14"
+  },
+  {
+   "id": "q3i2nxdgduke3zg2ceqh6515d",
+   "index": 33,
+   "floor": 0,
+   "position": {
+    "x": -5.109,
+    "y": -0.005,
+    "z": -12.247
+   },
+   "label": "Scan 33 \u00b7 Floor 14"
+  },
+  {
+   "id": "tuupi4rm25z0hpbxqs7xnuedd",
+   "index": 34,
+   "floor": 0,
+   "position": {
+    "x": 0.102,
+    "y": -0.006,
+    "z": 7.921
+   },
+   "label": "Scan 34 \u00b7 Floor 14"
+  },
+  {
+   "id": "ubb65ttrcnrnhmghnewyb2m5b",
+   "index": 35,
+   "floor": 0,
+   "position": {
+    "x": 11.974,
+    "y": 0.022,
+    "z": -0.364
+   },
+   "label": "Scan 35 \u00b7 Floor 14"
+  },
+  {
+   "id": "u3rqhz62xfr9ya51tbeb5xscd",
+   "index": 36,
+   "floor": 0,
+   "position": {
+    "x": 19.197,
+    "y": 0.01,
+    "z": -7.724
+   },
+   "label": "Scan 36 \u00b7 Floor 14"
+  },
+  {
+   "id": "1kssqph4t7huq084ddy53yz1d",
+   "index": 37,
+   "floor": 0,
+   "position": {
+    "x": 11.223,
+    "y": 0.024,
+    "z": -20.728
+   },
+   "label": "Scan 37 \u00b7 Floor 14"
+  },
+  {
+   "id": "4bse6naceiug990m50a9zg1ba",
+   "index": 38,
+   "floor": 0,
+   "position": {
+    "x": 12.061,
+    "y": -0.007,
+    "z": -10.31
+   },
+   "label": "Scan 38 \u00b7 Floor 14"
+  },
+  {
+   "id": "6bwrusmb4knk23n14kucyf3ub",
+   "index": 39,
+   "floor": 0,
+   "position": {
+    "x": 14.069,
+    "y": 0.024,
+    "z": -4.209
+   },
+   "label": "Scan 39 \u00b7 Floor 14"
+  },
+  {
+   "id": "63mihyw2sw6g031k0y7m4bzpc",
+   "index": 40,
+   "floor": 0,
+   "position": {
+    "x": -3.091,
+    "y": 0.011,
+    "z": -16.5
+   },
+   "label": "Scan 40 \u00b7 Floor 14"
+  },
+  {
+   "id": "8u6gk76q5ttpm7y08h9ruhsia",
+   "index": 41,
+   "floor": 0,
+   "position": {
+    "x": 13.345,
+    "y": 0.016,
+    "z": -20.494
+   },
+   "label": "Scan 41 \u00b7 Floor 14"
+  },
+  {
+   "id": "ec7iciz95b52msb3cw3fe122d",
+   "index": 42,
+   "floor": 0,
+   "position": {
+    "x": 4.424,
+    "y": -0.013,
+    "z": -12.663
+   },
+   "label": "Scan 42 \u00b7 Floor 14"
+  },
+  {
+   "id": "f463u43pm1r63xzh1aus5523a",
+   "index": 43,
+   "floor": 0,
+   "position": {
+    "x": 0.06,
+    "y": 0.019,
+    "z": -10.16
+   },
+   "label": "Scan 43 \u00b7 Floor 14"
+  },
+  {
+   "id": "fm3w9q3gd6bumw1sggmbrp10d",
+   "index": 44,
+   "floor": 0,
+   "position": {
+    "x": -8.483,
+    "y": 0.015,
+    "z": 0.265
+   },
+   "label": "Scan 44 \u00b7 Floor 14"
+  },
+  {
+   "id": "f4qgpp6wdhc15x1nwthriw8rc",
+   "index": 45,
+   "floor": 0,
+   "position": {
+    "x": 12.814,
+    "y": -0.007,
+    "z": 4.768
+   },
+   "label": "Scan 45 \u00b7 Floor 14"
+  },
+  {
+   "id": "gmk8h2m65xnzpd9297h2ap8ab",
+   "index": 46,
+   "floor": 0,
+   "position": {
+    "x": -7.519,
+    "y": 0.021,
+    "z": -18.438
+   },
+   "label": "Scan 46 \u00b7 Floor 14"
+  },
+  {
+   "id": "im3pgkd7eakbbdpk7kpwr544b",
+   "index": 47,
+   "floor": 0,
+   "position": {
+    "x": 4.612,
+    "y": -0.012,
+    "z": -10.274
+   },
+   "label": "Scan 47 \u00b7 Floor 14"
+  },
+  {
+   "id": "u4g8zr7bits3by70ig73bk7nd",
+   "index": 48,
+   "floor": 0,
+   "position": {
+    "x": -11.425,
+    "y": -0.017,
+    "z": -10.138
+   },
+   "label": "Scan 48 \u00b7 Floor 14"
+  },
+  {
+   "id": "xcrszt9m997f3kc0x0srz4qwb",
+   "index": 49,
+   "floor": 0,
+   "position": {
+    "x": -8.784,
+    "y": -0.005,
+    "z": 8.535
+   },
+   "label": "Scan 49 \u00b7 Floor 14"
+  },
+  {
+   "id": "x48r12dmaehw47tgwe0uefqdb",
+   "index": 50,
+   "floor": 0,
+   "position": {
+    "x": -14.675,
+    "y": -0.0,
+    "z": -12.6
+   },
+   "label": "Scan 50 \u00b7 Floor 14"
+  },
+  {
+   "id": "ywa5gsssrnx67u3rfuf3fknyb",
+   "index": 51,
+   "floor": 0,
+   "position": {
+    "x": -0.705,
+    "y": 0.022,
+    "z": -19.847
+   },
+   "label": "Scan 51 \u00b7 Floor 14"
+  },
+  {
+   "id": "yc159hm7nu054suz591cb524c",
+   "index": 52,
+   "floor": 0,
+   "position": {
+    "x": 17.863,
+    "y": -0.01,
+    "z": 1.749
+   },
+   "label": "Scan 52 \u00b7 Floor 14"
+  },
+  {
+   "id": "0wq8b3z2t3gcamyms28t2q5zd",
+   "index": 53,
+   "floor": 0,
+   "position": {
+    "x": 5.263,
+    "y": -0.018,
+    "z": 5.738
+   },
+   "label": "Scan 53 \u00b7 Floor 14"
+  },
+  {
+   "id": "1m21wip3ze5byhrf4yhfpz25d",
+   "index": 54,
+   "floor": 0,
+   "position": {
+    "x": 0.048,
+    "y": -0.019,
+    "z": 0.027
+   },
+   "label": "Scan 54 \u00b7 Floor 14 \u00b7 the glass doors at the end of the elevator lobby"
+  },
+  {
+   "id": "1cbn692b70cpefr7166iamf2c",
+   "index": 55,
+   "floor": 0,
+   "position": {
+    "x": 17.532,
+    "y": -0.017,
+    "z": -18.317
+   },
+   "label": "Scan 55 \u00b7 Floor 14"
+  },
+  {
+   "id": "3w2apia7s265i6n06riab5zgd",
+   "index": 56,
+   "floor": 0,
+   "position": {
+    "x": -11.285,
+    "y": -0.008,
+    "z": -12.526
+   },
+   "label": "Scan 56 \u00b7 Floor 14"
+  },
+  {
+   "id": "343e4ncfp4c8ruug5g7mbweta",
+   "index": 57,
+   "floor": 0,
+   "position": {
+    "x": 17.351,
+    "y": 0.006,
+    "z": -21.847
+   },
+   "label": "Scan 57 \u00b7 Floor 14"
+  },
+  {
+   "id": "44fc71qeqxyx57m7w63ck9cda",
+   "index": 58,
+   "floor": 0,
+   "position": {
+    "x": -15.507,
+    "y": 0.003,
+    "z": -3.62
+   },
+   "label": "Scan 58 \u00b7 Floor 14"
+  },
+  {
+   "id": "5c5egg2ftnh3fkfk0bry95u2c",
+   "index": 59,
+   "floor": 0,
+   "position": {
+    "x": 5.315,
+    "y": 0.015,
+    "z": -20.253
+   },
+   "label": "Scan 59 \u00b7 Floor 14"
+  },
+  {
+   "id": "6m3za4p52gfuz38eeq9f0b3fa",
+   "index": 60,
+   "floor": 0,
+   "position": {
+    "x": 1.339,
+    "y": -0.009,
+    "z": -12.445
+   },
+   "label": "Scan 60 \u00b7 Floor 14"
+  },
+  {
+   "id": "9wxh5xquk9f8y5kc6r8i783ad",
+   "index": 61,
+   "floor": 0,
+   "position": {
+    "x": 12.028,
+    "y": 0.019,
+    "z": -4.111
+   },
+   "label": "Scan 61 \u00b7 Floor 14"
+  },
+  {
+   "id": "a5pnr8xfxc6be068a3t55ipec",
+   "index": 62,
+   "floor": 0,
+   "position": {
+    "x": 0.439,
+    "y": -0.009,
+    "z": 5.789
+   },
+   "label": "Scan 62 \u00b7 Floor 14"
+  },
+  {
+   "id": "bns8y1n0ihhmypahn90ach9wb",
+   "index": 63,
+   "floor": 0,
+   "position": {
+    "x": -11.362,
+    "y": 0.006,
+    "z": -18.31
+   },
+   "label": "Scan 63 \u00b7 Floor 14"
+  },
+  {
+   "id": "cnfz4d1p9h5xppstgganw4b6a",
+   "index": 64,
+   "floor": 0,
+   "position": {
+    "x": -13.199,
+    "y": 0.018,
+    "z": -21.668
+   },
+   "label": "Scan 64 \u00b7 Floor 14"
+  },
+  {
+   "id": "cxcs60ckpm3g52d27r85mfz9c",
+   "index": 65,
+   "floor": 0,
+   "position": {
+    "x": -7.327,
+    "y": 0.009,
+    "z": -15.627
+   },
+   "label": "Scan 65 \u00b7 Floor 14"
+  },
+  {
+   "id": "dnnyukgt8y5t0ztenukn0471a",
+   "index": 66,
+   "floor": 0,
+   "position": {
+    "x": 12.033,
+    "y": 0.025,
+    "z": 1.005
+   },
+   "label": "Scan 66 \u00b7 Floor 14"
+  },
+  {
+   "id": "ext7qa5tezmbe42enzxuzmnsc",
+   "index": 67,
+   "floor": 0,
+   "position": {
+    "x": 19.271,
+    "y": -0.007,
+    "z": -2.6
+   },
+   "label": "Scan 67 \u00b7 Floor 14"
+  },
+  {
+   "id": "i5dtness9epkguy6k4f0i3ctd",
+   "index": 68,
+   "floor": 0,
+   "position": {
+    "x": 4.566,
+    "y": -0.015,
+    "z": 7.29
+   },
+   "label": "Scan 68 \u00b7 Floor 14"
+  },
+  {
+   "id": "mdxzwcpx8r0k2y48u51m50iyb",
+   "index": 69,
+   "floor": 0,
+   "position": {
+    "x": 15.707,
+    "y": 0.0,
+    "z": -19.871
+   },
+   "label": "Scan 69 \u00b7 Floor 14"
+  },
+  {
+   "id": "n50itd7kqebn4rm3b6sw8tqwb",
+   "index": 70,
+   "floor": 0,
+   "position": {
+    "x": 0.061,
+    "y": 0.008,
+    "z": -16.382
+   },
+   "label": "Scan 70 \u00b7 Floor 14"
+  },
+  {
+   "id": "r54ee0tdge2hbxx4y2hunf0pa",
+   "index": 71,
+   "floor": 0,
+   "position": {
+    "x": 11.53,
+    "y": -0.003,
+    "z": 2.439
+   },
+   "label": "Scan 71 \u00b7 Floor 14"
+  },
+  {
+   "id": "unsmx29tbcwq7xn6xs7b432yb",
+   "index": 72,
+   "floor": 0,
+   "position": {
+    "x": 18.78,
+    "y": -0.014,
+    "z": -12.405
+   },
+   "label": "Scan 72 \u00b7 Floor 14"
+  },
+  {
+   "id": "yd22pbdc3ugkpcep7m4n06r2a",
+   "index": 73,
+   "floor": 0,
+   "position": {
+    "x": 16.539,
+    "y": 0.004,
+    "z": -8.179
+   },
+   "label": "Scan 73 \u00b7 Floor 14"
+  },
+  {
+   "id": "35598x1akysqmrnwdc4c0960c",
+   "index": 74,
+   "floor": 0,
+   "position": {
+    "x": 11.664,
+    "y": 0.012,
+    "z": -17.069
+   },
+   "label": "Scan 74 \u00b7 Floor 14"
+  },
+  {
+   "id": "7xrem4n106isq4xtk5haf76wd",
+   "index": 75,
+   "floor": 0,
+   "position": {
+    "x": 4.974,
+    "y": -0.007,
+    "z": 9.911
+   },
+   "label": "Scan 75 \u00b7 Floor 14"
+  },
+  {
+   "id": "8xxf02910sqti20turw2pggfc",
+   "index": 76,
+   "floor": 0,
+   "position": {
+    "x": 4.58,
+    "y": -0.019,
+    "z": 5.8
+   },
+   "label": "Scan 76 \u00b7 Floor 14"
+  },
+  {
+   "id": "a68rdyairnuy8d70geqkthdkd",
+   "index": 77,
+   "floor": 0,
+   "position": {
+    "x": -13.408,
+    "y": -0.006,
+    "z": -0.298
+   },
+   "label": "Scan 77 \u00b7 Floor 14"
+  },
+  {
+   "id": "cpd9k77gbbsf2waw7h46ynucc",
+   "index": 78,
+   "floor": 0,
+   "position": {
+    "x": 13.415,
+    "y": -0.004,
+    "z": -12.209
+   },
+   "label": "Scan 78 \u00b7 Floor 14"
+  },
+  {
+   "id": "d6aa9k14ddmzatz01zst2mf3c",
+   "index": 79,
+   "floor": 0,
+   "position": {
+    "x": -14.274,
+    "y": -0.004,
+    "z": 3.551
+   },
+   "label": "Scan 79 \u00b7 Floor 14"
+  },
+  {
+   "id": "epnsh24spnkxcyeckshepe9qa",
+   "index": 80,
+   "floor": 0,
+   "position": {
+    "x": -9.258,
+    "y": -0.012,
+    "z": -6.05
+   },
+   "label": "Scan 80 \u00b7 Floor 14"
+  },
+  {
+   "id": "ky2ei84c14ttnpmkkrkxbdfpb",
+   "index": 81,
+   "floor": 0,
+   "position": {
+    "x": -9.504,
+    "y": 0.01,
+    "z": -17.195
+   },
+   "label": "Scan 81 \u00b7 Floor 14"
+  },
+  {
+   "id": "kyr8a4xbtcx2km0f5x29fnrda",
+   "index": 82,
+   "floor": 0,
+   "position": {
+    "x": 15.822,
+    "y": 0.017,
+    "z": -23.425
+   },
+   "label": "Scan 82 \u00b7 Floor 14"
+  },
+  {
+   "id": "m6nmy2gzns1ubkwszb3ugegnc",
+   "index": 83,
+   "floor": 0,
+   "position": {
+    "x": 3.132,
+    "y": -0.009,
+    "z": -14.362
+   },
+   "label": "Scan 83 \u00b7 Floor 14"
+  },
+  {
+   "id": "py4934sqt0qk4dqxuakmtdp7c",
+   "index": 84,
+   "floor": 0,
+   "position": {
+    "x": 19.209,
+    "y": 0.006,
+    "z": -23.75
+   },
+   "label": "Scan 84 \u00b7 Floor 14"
+  },
+  {
+   "id": "qyetwen21u24n1k6kqwpix57d",
+   "index": 85,
+   "floor": 0,
+   "position": {
+    "x": 5.5,
+    "y": 0.025,
+    "z": -22.848
+   },
+   "label": "Scan 85 \u00b7 Floor 14"
+  },
+  {
+   "id": "ry5wfeui65dahk2cupfbfmr9b",
+   "index": 86,
+   "floor": 0,
+   "position": {
+    "x": 0.12,
+    "y": -0.015,
+    "z": 2.234
+   },
+   "label": "Scan 86 \u00b7 Floor 14"
+  },
+  {
+   "id": "x6wr01604cgk64qmi5g2pzt3d",
+   "index": 87,
+   "floor": 0,
+   "position": {
+    "x": -9.09,
+    "y": -0.009,
+    "z": -14.175
+   },
+   "label": "Scan 87 \u00b7 Floor 14"
+  },
+  {
+   "id": "yynhz9d20cypf73bu3srrq04a",
+   "index": 88,
+   "floor": 0,
+   "position": {
+    "x": -10.752,
+    "y": -0.013,
+    "z": 2.853
+   },
+   "label": "Scan 88 \u00b7 Floor 14"
+  },
+  {
+   "id": "zpzw287k7wb5phwn1fda7sk2c",
+   "index": 89,
+   "floor": 0,
+   "position": {
+    "x": 18.308,
+    "y": -0.016,
+    "z": -18.291
+   },
+   "label": "Scan 89 \u00b7 Floor 14"
+  },
+  {
+   "id": "1pafh2x5fmaax09s14ukqzaca",
+   "index": 90,
+   "floor": 0,
+   "position": {
+    "x": -11.639,
+    "y": 0.019,
+    "z": -23.401
+   },
+   "label": "Scan 90 \u00b7 Floor 14"
+  },
+  {
+   "id": "36tbkaz166u3ce27hexz9z68d",
+   "index": 91,
+   "floor": 0,
+   "position": {
+    "x": -4.876,
+    "y": -0.011,
+    "z": 4.474
+   },
+   "label": "Scan 91 \u00b7 Floor 14"
+  },
+  {
+   "id": "3em0txe6aburym17fcs6amgic",
+   "index": 92,
+   "floor": 0,
+   "position": {
+    "x": 11.31,
+    "y": -0.006,
+    "z": -12.169
+   },
+   "label": "Scan 92 \u00b7 Floor 14"
+  },
+  {
+   "id": "8pc8wdb6snusqhhdaymy5mhmb",
+   "index": 93,
+   "floor": 0,
+   "position": {
+    "x": -8.591,
+    "y": 0.031,
+    "z": -1.496
+   },
+   "label": "Scan 93 \u00b7 Floor 14"
+  },
+  {
+   "id": "96zt71cckx409d9r86738db2a",
+   "index": 94,
+   "floor": 0,
+   "position": {
+    "x": 13.433,
+    "y": -0.005,
+    "z": -18.434
+   },
+   "label": "Scan 94 \u00b7 Floor 14"
+  },
+  {
+   "id": "azk5ezfs30e48wqa7fn82fuea",
+   "index": 95,
+   "floor": 0,
+   "position": {
+    "x": -13.136,
+    "y": -0.002,
+    "z": -3.07
+   },
+   "label": "Scan 95 \u00b7 Floor 14"
+  },
+  {
+   "id": "cz51inmc807xybahu52h2s8fc",
+   "index": 96,
+   "floor": 0,
+   "position": {
+    "x": -15.144,
+    "y": 0.008,
+    "z": -15.551
+   },
+   "label": "Scan 96 \u00b7 Floor 14"
+  },
+  {
+   "id": "kzn78gb58kanycg1igqbhs42b",
+   "index": 97,
+   "floor": 0,
+   "position": {
+    "x": 6.189,
+    "y": -0.004,
+    "z": -14.418
+   },
+   "label": "Scan 97 \u00b7 Floor 14"
+  },
+  {
+   "id": "nfayra9araxhd5wxg01a1sxqb",
+   "index": 98,
+   "floor": 0,
+   "position": {
+    "x": 12.007,
+    "y": 0.02,
+    "z": -1.641
+   },
+   "label": "Scan 98 \u00b7 Floor 14"
+  },
+  {
+   "id": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "index": 99,
+   "floor": 0,
+   "position": {
+    "x": 15.482,
+    "y": -0.018,
+    "z": -14.052
+   },
+   "label": "Scan 99 \u00b7 Floor 14"
+  },
+  {
+   "id": "sqzu8a8018bcghf0tmyyk5fpb",
+   "index": 100,
+   "floor": 0,
+   "position": {
+    "x": 11.987,
+    "y": 0.022,
+    "z": -2.841
+   },
+   "label": "Scan 100 \u00b7 Floor 14"
+  },
+  {
+   "id": "tqi64wennx3ds211wdrq8mr5d",
+   "index": 101,
+   "floor": 0,
+   "position": {
+    "x": -7.452,
+    "y": 0.033,
+    "z": -23.886
+   },
+   "label": "Scan 101 \u00b7 Floor 14"
+  },
+  {
+   "id": "t7a77h2dwh7czmn80m7dd9yhd",
+   "index": 102,
+   "floor": 0,
+   "position": {
+    "x": -11.769,
+    "y": 0.014,
+    "z": -21.635
+   },
+   "label": "Scan 102 \u00b7 Floor 14"
+  },
+  {
+   "id": "wfm3gmg0gfqc46h4igzrcn06d",
+   "index": 103,
+   "floor": 0,
+   "position": {
+    "x": 16.429,
+    "y": 0.005,
+    "z": -1.592
+   },
+   "label": "Scan 103 \u00b7 Floor 14"
+  },
+  {
+   "id": "w71enf8ddkhb0dk7k22sfznmb",
+   "index": 104,
+   "floor": 0,
+   "position": {
+    "x": -8.438,
+    "y": -0.013,
+    "z": 4.123
+   },
+   "label": "Scan 104 \u00b7 Floor 14"
+  },
+  {
+   "id": "y76xh9h9kx3mny2wusbsq5i5b",
+   "index": 105,
+   "floor": 0,
+   "position": {
+    "x": -14.123,
+    "y": -0.007,
+    "z": -9.968
+   },
+   "label": "Scan 105 \u00b7 Floor 14"
+  },
+  {
+   "id": "07f4i058fywrh2e1qzt5q0mpd",
+   "index": 106,
+   "floor": 0,
+   "position": {
+    "x": 5.643,
+    "y": -0.008,
+    "z": 0.249
+   },
+   "label": "Scan 106 \u00b7 Floor 14"
+  },
+  {
+   "id": "4fff8zp78feqqubcnnxeeb21b",
+   "index": 107,
+   "floor": 0,
+   "position": {
+    "x": -11.123,
+    "y": -0.006,
+    "z": -0.216
+   },
+   "label": "Scan 107 \u00b7 Floor 14"
+  },
+  {
+   "id": "77pehezx90tzb0xzghqi1t6gc",
+   "index": 108,
+   "floor": 0,
+   "position": {
+    "x": -10.452,
+    "y": -0.008,
+    "z": -1.63
+   },
+   "label": "Scan 108 \u00b7 Floor 14"
+  },
+  {
+   "id": "bgwxh7y8qd7d923pap9shukzd",
+   "index": 109,
+   "floor": 0,
+   "position": {
+    "x": 14.155,
+    "y": 0.013,
+    "z": 1.23
+   },
+   "label": "Scan 109 \u00b7 Floor 14"
+  },
+  {
+   "id": "d091be7s3up71r03yqr6ytdid",
+   "index": 110,
+   "floor": 0,
+   "position": {
+    "x": 5.705,
+    "y": -0.003,
+    "z": -2.029
+   },
+   "label": "Scan 110 \u00b7 Floor 14 \u00b7 the Electrical Room and Storage anteroom"
+  },
+  {
+   "id": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "index": 111,
+   "floor": 0,
+   "position": {
+    "x": 0.793,
+    "y": 0.034,
+    "z": -23.086
+   },
+   "label": "Scan 111 \u00b7 Floor 14"
+  },
+  {
+   "id": "e0a3uzdhe6nsbaih8qm1w824d",
+   "index": 112,
+   "floor": 0,
+   "position": {
+    "x": 19.465,
+    "y": -0.013,
+    "z": -18.2
+   },
+   "label": "Scan 112 \u00b7 Floor 14"
+  },
+  {
+   "id": "e0bnks59iz8ik29htfsm3qffd",
+   "index": 113,
+   "floor": 0,
+   "position": {
+    "x": 17.22,
+    "y": -0.001,
+    "z": -19.839
+   },
+   "label": "Scan 113 \u00b7 Floor 14"
+  },
+  {
+   "id": "fgaxen1mfc0h710idppiur67d",
+   "index": 114,
+   "floor": 0,
+   "position": {
+    "x": -4.903,
+    "y": 0.033,
+    "z": -21.795
+   },
+   "label": "Scan 114 \u00b7 Floor 14"
+  },
+  {
+   "id": "k0f18mphfpysrrda6w4hf6ewd",
+   "index": 115,
+   "floor": 0,
+   "position": {
+    "x": -13.229,
+    "y": 0.013,
+    "z": 8.719
+   },
+   "label": "Scan 115 \u00b7 Floor 14"
+  },
+  {
+   "id": "k87pu4i133s2sfi9kryt5dkuc",
+   "index": 116,
+   "floor": 0,
+   "position": {
+    "x": -11.308,
+    "y": 0.002,
+    "z": -16.687
+   },
+   "label": "Scan 116 \u00b7 Floor 14"
+  },
+  {
+   "id": "nr1gxedfim25ybb6krp55cnra",
+   "index": 117,
+   "floor": 0,
+   "position": {
+    "x": 0.161,
+    "y": -0.003,
+    "z": 10.114
+   },
+   "label": "Scan 117 \u00b7 Floor 14"
+  },
+  {
+   "id": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "index": 118,
+   "floor": 0,
+   "position": {
+    "x": 3.229,
+    "y": -0.001,
+    "z": -16.423
+   },
+   "label": "Scan 118 \u00b7 Floor 14"
+  },
+  {
+   "id": "q8gx4cmq09zg4gpa6gp9pbc4b",
+   "index": 119,
+   "floor": 0,
+   "position": {
+    "x": 13.397,
+    "y": 0.017,
+    "z": -23.626
+   },
+   "label": "Scan 119 \u00b7 Floor 14"
+  },
+  {
+   "id": "t0tfsp4gt8m6fkg72uq5346rd",
+   "index": 120,
+   "floor": 0,
+   "position": {
+    "x": -8.736,
+    "y": 0.005,
+    "z": -20.586
+   },
+   "label": "Scan 120 \u00b7 Floor 14"
+  },
+  {
+   "id": "t8q6997ai6g49i59egn5hfzxc",
+   "index": 121,
+   "floor": 0,
+   "position": {
+    "x": -13.067,
+    "y": -0.001,
+    "z": -13.757
+   },
+   "label": "Scan 121 \u00b7 Floor 14"
+  },
+  {
+   "id": "t8duqpa54zqrwax1wrgm2q9wc",
+   "index": 122,
+   "floor": 0,
+   "position": {
+    "x": 17.047,
+    "y": 0.011,
+    "z": 9.679
+   },
+   "label": "Scan 122 \u00b7 Floor 14"
+  },
+  {
+   "id": "30ca2ux4c515s56qgm1aggfda",
+   "index": 123,
+   "floor": 0,
+   "position": {
+    "x": 17.861,
+    "y": -0.016,
+    "z": -14.193
+   },
+   "label": "Scan 123 \u00b7 Floor 14"
+  },
+  {
+   "id": "6gitqk7pxqub5g539zy5yd8ic",
+   "index": 124,
+   "floor": 0,
+   "position": {
+    "x": 9.519,
+    "y": 0.01,
+    "z": -17.139
+   },
+   "label": "Scan 124 \u00b7 Floor 14"
+  },
+  {
+   "id": "8r9im3py1m2quie333xkxh96a",
+   "index": 125,
+   "floor": 0,
+   "position": {
+    "x": 4.583,
+    "y": -0.023,
+    "z": 4.142
+   },
+   "label": "Scan 125 \u00b7 Floor 14"
+  },
+  {
+   "id": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "index": 126,
+   "floor": 0,
+   "position": {
+    "x": 11.291,
+    "y": 0.001,
+    "z": -13.995
+   },
+   "label": "Scan 126 \u00b7 Floor 14"
+  },
+  {
+   "id": "ah2pwc9hre2tpz9prf3d2am3d",
+   "index": 127,
+   "floor": 0,
+   "position": {
+    "x": 9.362,
+    "y": 0.028,
+    "z": -22.53
+   },
+   "label": "Scan 127 \u00b7 Floor 14"
+  },
+  {
+   "id": "d9g8fn1iy3bbte3asw79u04pb",
+   "index": 128,
+   "floor": 0,
+   "position": {
+    "x": -12.622,
+    "y": -0.001,
+    "z": 5.273
+   },
+   "label": "Scan 128 \u00b7 Floor 14"
+  },
+  {
+   "id": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "index": 129,
+   "floor": 0,
+   "position": {
+    "x": -11.27,
+    "y": 0.011,
+    "z": -20.531
+   },
+   "label": "Scan 129 \u00b7 Floor 14"
+  },
+  {
+   "id": "h1siiayatpdrb6a2eip2w9ifb",
+   "index": 130,
+   "floor": 0,
+   "position": {
+    "x": 11.954,
+    "y": 0.019,
+    "z": -4.062
+   },
+   "label": "Scan 130 \u00b7 Floor 14"
+  },
+  {
+   "id": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "index": 131,
+   "floor": 0,
+   "position": {
+    "x": 19.347,
+    "y": 0.027,
+    "z": -4.326
+   },
+   "label": "Scan 131 \u00b7 Floor 14"
+  },
+  {
+   "id": "qsu969pcz1z51atabifdib4qc",
+   "index": 132,
+   "floor": 0,
+   "position": {
+    "x": 11.585,
+    "y": 0.036,
+    "z": -22.319
+   },
+   "label": "Scan 132 \u00b7 Floor 14"
+  },
+  {
+   "id": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "index": 133,
+   "floor": 0,
+   "position": {
+    "x": 7.073,
+    "y": -0.005,
+    "z": 9.665
+   },
+   "label": "Scan 133 \u00b7 Floor 14"
+  },
+  {
+   "id": "ss1ff02nsiqq0bmpi5qw9pztd",
+   "index": 134,
+   "floor": 0,
+   "position": {
+    "x": 19.147,
+    "y": -0.007,
+    "z": -20.038
+   },
+   "label": "Scan 134 \u00b7 Floor 14"
+  },
+  {
+   "id": "tsa8297es17hczpq4u7pu89td",
+   "index": 135,
+   "floor": 0,
+   "position": {
+    "x": 19.342,
+    "y": -0.013,
+    "z": -16.678
+   },
+   "label": "Scan 135 \u00b7 Floor 14"
+  },
+  {
+   "id": "t9uuddqq3sn5ew8kq68xdimsd",
+   "index": 136,
+   "floor": 0,
+   "position": {
+    "x": -8.599,
+    "y": -0.015,
+    "z": -12.441
+   },
+   "label": "Scan 136 \u00b7 Floor 14"
+  },
+  {
+   "id": "u9m6gquaa32e6x5gp6zskamab",
+   "index": 137,
+   "floor": 0,
+   "position": {
+    "x": 1.972,
+    "y": 0.015,
+    "z": -18.5
+   },
+   "label": "Scan 137 \u00b7 Floor 14"
+  },
+  {
+   "id": "xs0squ82sa51gdffpb2i1mcwc",
+   "index": 138,
+   "floor": 0,
+   "position": {
+    "x": 7.598,
+    "y": -0.006,
+    "z": 2.209
+   },
+   "label": "Scan 138 \u00b7 Floor 14"
+  },
+  {
+   "id": "zhs595y954duri0cc1wuizbcb",
+   "index": 139,
+   "floor": 0,
+   "position": {
+    "x": -11.292,
+    "y": -0.003,
+    "z": -5.951
+   },
+   "label": "Scan 139 \u00b7 Floor 14"
+  },
+  {
+   "id": "0srbx954cg9n7eekg1ximui1c",
+   "index": 140,
+   "floor": 0,
+   "position": {
+    "x": 13.757,
+    "y": 0.015,
+    "z": -0.655
+   },
+   "label": "Scan 140 \u00b7 Floor 14"
+  },
+  {
+   "id": "0h5ew97xzeb1qft62x64e9tza",
+   "index": 141,
+   "floor": 0,
+   "position": {
+    "x": -8.463,
+    "y": -0.019,
+    "z": -10.167
+   },
+   "label": "Scan 141 \u00b7 Floor 14"
+  },
+  {
+   "id": "1sn7fphnbk8kpbhim1gehp9bd",
+   "index": 142,
+   "floor": 0,
+   "position": {
+    "x": -5.213,
+    "y": -0.002,
+    "z": -10.149
+   },
+   "label": "Scan 142 \u00b7 Floor 14"
+  },
+  {
+   "id": "696if59i2py6eagd5s435t6nd",
+   "index": 143,
+   "floor": 0,
+   "position": {
+    "x": 7.63,
+    "y": -0.01,
+    "z": -12.477
+   },
+   "label": "Scan 143 \u00b7 Floor 14"
+  },
+  {
+   "id": "99bfsh9hwqyuz42k49n6q7f1b",
+   "index": 144,
+   "floor": 0,
+   "position": {
+    "x": 17.204,
+    "y": 0.0,
+    "z": 4.917
+   },
+   "label": "Scan 144 \u00b7 Floor 14"
+  }
+ ],
+ "edges": [
+  {
+   "id": "61-130",
+   "a": "9wxh5xquk9f8y5kc6r8i783ad",
+   "b": "h1siiayatpdrb6a2eip2w9ifb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "53-76",
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "8xxf02910sqti20turw2pggfc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "55-89",
+   "a": "1cbn692b70cpefr7166iamf2c",
+   "b": "zpzw287k7wb5phwn1fda7sk2c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-56",
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "au0kpek9wp53cq0rkt24xxi2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "98-100",
+   "a": "nfayra9araxhd5wxg01a1sxqb",
+   "b": "sqzu8a8018bcghf0tmyyk5fpb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "102-129",
+   "a": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-118",
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "31-80",
+   "a": "epnsh24spnkxcyeckshepe9qa",
+   "b": "k36ubn76h0t7u3a005s2c4cid",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "100-130",
+   "a": "h1siiayatpdrb6a2eip2w9ifb",
+   "b": "sqzu8a8018bcghf0tmyyk5fpb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-98",
+   "a": "nfayra9araxhd5wxg01a1sxqb",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-66",
+   "a": "dnnyukgt8y5t0ztenukn0471a",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-57",
+   "a": "343e4ncfp4c8ruug5g7mbweta",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "64-102",
+   "a": "cnfz4d1p9h5xppstgganw4b6a",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "68-76",
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-53",
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "3tqzx22088wpuig1qmmeu02za",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "69-113",
+   "a": "e0bnks59iz8ik29htfsm3qffd",
+   "b": "mdxzwcpx8r0k2y48u51m50iyb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "66-71",
+   "a": "dnnyukgt8y5t0ztenukn0471a",
+   "b": "r54ee0tdge2hbxx4y2hunf0pa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "112-135",
+   "a": "e0a3uzdhe6nsbaih8qm1w824d",
+   "b": "tsa8297es17hczpq4u7pu89td",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "15-127",
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "ah2pwc9hre2tpz9prf3d2am3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "63-116",
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-69",
+   "a": "mdxzwcpx8r0k2y48u51m50iyb",
+   "b": "mu7c73uz202wt55p9bwnr0ftc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-101",
+   "a": "tqi64wennx3ds211wdrq8mr5d",
+   "b": "xa42e1a2h6qe23gs1i9cnpfza",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "8-82",
+   "a": "kyr8a4xbtcx2km0f5x29fnrda",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "76-125",
+   "a": "8r9im3py1m2quie333xkxh96a",
+   "b": "8xxf02910sqti20turw2pggfc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-121",
+   "a": "au0kpek9wp53cq0rkt24xxi2b",
+   "b": "t8q6997ai6g49i59egn5hfzxc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "53-68",
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-126",
+   "a": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "b": "fudnzszyuysb1e261nkmd2ebb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "53-125",
+   "a": "0wq8b3z2t3gcamyms28t2q5zd",
+   "b": "8r9im3py1m2quie333xkxh96a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-26",
+   "a": "fudnzszyuysb1e261nkmd2ebb",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-93",
+   "a": "8pc8wdb6snusqhhdaymy5mhmb",
+   "b": "fm3w9q3gd6bumw1sggmbrp10d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "90-102",
+   "a": "1pafh2x5fmaax09s14ukqzaca",
+   "b": "t7a77h2dwh7czmn80m7dd9yhd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-37",
+   "a": "1kssqph4t7huq084ddy53yz1d",
+   "b": "32eg8hzyqc2ya3fzde47i1wya",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "35-140",
+   "a": "0srbx954cg9n7eekg1ximui1c",
+   "b": "ubb65ttrcnrnhmghnewyb2m5b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "1-16",
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "at0xcae1rprur5tg0rqy2d3dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-92",
+   "a": "3em0txe6aburym17fcs6amgic",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "1-138",
+   "a": "at0xcae1rprur5tg0rqy2d3dc",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "0-70",
+   "a": "atwsdwfh4sidfg4067xpnbq8a",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "11-63",
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "28-116",
+   "a": "g39d08rrqz8r0zu98n70tewsb",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "93-108",
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "8pc8wdb6snusqhhdaymy5mhmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-69",
+   "a": "mdxzwcpx8r0k2y48u51m50iyb",
+   "b": "q2e1i1eb96bex00q7k1gen15a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "113-134",
+   "a": "e0bnks59iz8ik29htfsm3qffd",
+   "b": "ss1ff02nsiqq0bmpi5qw9pztd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-55",
+   "a": "1cbn692b70cpefr7166iamf2c",
+   "b": "mu7c73uz202wt55p9bwnr0ftc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "18-97",
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "kzn78gb58kanycg1igqbhs42b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "27-70",
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-137",
+   "a": "gkm9269xw5pe2bk0amn3sbihc",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-121",
+   "a": "t8q6997ai6g49i59egn5hfzxc",
+   "b": "x48r12dmaehw47tgwe0uefqdb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-40",
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "mappcci3h2yu5umi1re76gfua",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "72-123",
+   "a": "30ca2ux4c515s56qgm1aggfda",
+   "b": "unsmx29tbcwq7xn6xs7b432yb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-61",
+   "a": "6bwrusmb4knk23n14kucyf3ub",
+   "b": "9wxh5xquk9f8y5kc6r8i783ad",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "80-139",
+   "a": "epnsh24spnkxcyeckshepe9qa",
+   "b": "zhs595y954duri0cc1wuizbcb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "83-118",
+   "a": "m6nmy2gzns1ubkwszb3ugegnc",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "3-5",
+   "a": "hazt2anz9fryp7q7rfqqdhqsd",
+   "b": "kaw42tabfc85qti2bhzirsdrd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "33-142",
+   "a": "1sn7fphnbk8kpbhim1gehp9bd",
+   "b": "q3i2nxdgduke3zg2ceqh6515d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "78-92",
+   "a": "3em0txe6aburym17fcs6amgic",
+   "b": "cpd9k77gbbsf2waw7h46ynucc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "75-133",
+   "a": "7xrem4n106isq4xtk5haf76wd",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-41",
+   "a": "1kssqph4t7huq084ddy53yz1d",
+   "b": "8u6gk76q5ttpm7y08h9ruhsia",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "66-109",
+   "a": "bgwxh7y8qd7d923pap9shukzd",
+   "b": "dnnyukgt8y5t0ztenukn0471a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "42-83",
+   "a": "ec7iciz95b52msb3cw3fe122d",
+   "b": "m6nmy2gzns1ubkwszb3ugegnc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "74-124",
+   "a": "35598x1akysqmrnwdc4c0960c",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "30-65",
+   "a": "cxcs60ckpm3g52d27r85mfz9c",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "34-62",
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "56-121",
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "t8q6997ai6g49i59egn5hfzxc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "34-117",
+   "a": "nr1gxedfim25ybb6krp55cnra",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "54-86",
+   "a": "1m21wip3ze5byhrf4yhfpz25d",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "63-129",
+   "a": "bns8y1n0ihhmypahn90ach9wb",
+   "b": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-114",
+   "a": "fgaxen1mfc0h710idppiur67d",
+   "b": "xa42e1a2h6qe23gs1i9cnpfza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-72",
+   "a": "r2c6ys5ye183id9xm0pcwgk8a",
+   "b": "unsmx29tbcwq7xn6xs7b432yb",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "74-94",
+   "a": "35598x1akysqmrnwdc4c0960c",
+   "b": "96zt71cckx409d9r86738db2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "127-132",
+   "a": "ah2pwc9hre2tpz9prf3d2am3d",
+   "b": "qsu969pcz1z51atabifdib4qc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "119-132",
+   "a": "q8gx4cmq09zg4gpa6gp9pbc4b",
+   "b": "qsu969pcz1z51atabifdib4qc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "106-110",
+   "a": "07f4i058fywrh2e1qzt5q0mpd",
+   "b": "d091be7s3up71r03yqr6ytdid",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "65-87",
+   "a": "cxcs60ckpm3g52d27r85mfz9c",
+   "b": "x6wr01604cgk64qmi5g2pzt3d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "77-107",
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-51",
+   "a": "madeqfsx5emk86a24d9qsydxc",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-46",
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "gmk8h2m65xnzpd9297h2ap8ab",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "46-81",
+   "a": "gmk8h2m65xnzpd9297h2ap8ab",
+   "b": "ky2ei84c14ttnpmkkrkxbdfpb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-96",
+   "a": "cz51inmc807xybahu52h2s8fc",
+   "b": "g39d08rrqz8r0zu98n70tewsb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-29",
+   "a": "hum92h1mt4qqk63dxbupu1zbc",
+   "b": "mappcci3h2yu5umi1re76gfua",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "30-40",
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "48-56",
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "u4g8zr7bits3by70ig73bk7nd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "79-128",
+   "a": "d6aa9k14ddmzatz01zst2mf3c",
+   "b": "d9g8fn1iy3bbte3asw79u04pb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-39",
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "6bwrusmb4knk23n14kucyf3ub",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "97-143",
+   "a": "696if59i2py6eagd5s435t6nd",
+   "b": "kzn78gb58kanycg1igqbhs42b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "58-95",
+   "a": "44fc71qeqxyx57m7w63ck9cda",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "118-137",
+   "a": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-38",
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "hazt2anz9fryp7q7rfqqdhqsd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-60",
+   "a": "6m3za4p52gfuz38eeq9f0b3fa",
+   "b": "atwsdwfh4sidfg4067xpnbq8a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-117",
+   "a": "026gueuqgx1wnwbet5606q5ta",
+   "b": "nr1gxedfim25ybb6krp55cnra",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "120-129",
+   "a": "g9a4s8wtd4kqpxfgn20uzpi8d",
+   "b": "t0tfsp4gt8m6fkg72uq5346rd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-11",
+   "a": "kik7gmkwgpxq906y8z0m4pa5a",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-85",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-101",
+   "a": "fuda46a8uipb0eb3g784ghhxd",
+   "b": "tqi64wennx3ds211wdrq8mr5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-126",
+   "a": "9ruh8dnuzcprq1f5fyr4kcd4b",
+   "b": "e32x1x86ihn9xhe5ikuk352uc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "57-84",
+   "a": "343e4ncfp4c8ruug5g7mbweta",
+   "b": "py4934sqt0qk4dqxuakmtdp7c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "19-64",
+   "a": "7a2988e810705grrf38u674fc",
+   "b": "cnfz4d1p9h5xppstgganw4b6a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "56-136",
+   "a": "3w2apia7s265i6n06riab5zgd",
+   "b": "t9uuddqq3sn5ew8kq68xdimsd",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "36-73",
+   "a": "u3rqhz62xfr9ya51tbeb5xscd",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "48-105",
+   "a": "u4g8zr7bits3by70ig73bk7nd",
+   "b": "y76xh9h9kx3mny2wusbsq5i5b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "106-138",
+   "a": "07f4i058fywrh2e1qzt5q0mpd",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-40",
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "bbceccx3s635rmddkcpfq759c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "77-95",
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "103-140",
+   "a": "0srbx954cg9n7eekg1ximui1c",
+   "b": "wfm3gmg0gfqc46h4igzrcn06d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "70-137",
+   "a": "n50itd7kqebn4rm3b6sw8tqwb",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-131",
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "123-135",
+   "a": "30ca2ux4c515s56qgm1aggfda",
+   "b": "tsa8297es17hczpq4u7pu89td",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-30",
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "kbew59tzi3uxcyn616mgemnyd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "48-141",
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "u4g8zr7bits3by70ig73bk7nd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-111",
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-137",
+   "a": "u9m6gquaa32e6x5gp6zskamab",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-116",
+   "a": "au0kpek9wp53cq0rkt24xxi2b",
+   "b": "k87pu4i133s2sfi9kryt5dkuc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "67-103",
+   "a": "ext7qa5tezmbe42enzxuzmnsc",
+   "b": "wfm3gmg0gfqc46h4igzrcn06d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-114",
+   "a": "fgaxen1mfc0h710idppiur67d",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "26-124",
+   "a": "6gitqk7pxqub5g539zy5yd8ic",
+   "b": "fudnzszyuysb1e261nkmd2ebb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "95-108",
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-128",
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "88-107",
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-44",
+   "a": "bidr0pifgmstmxxxtzdpi1w8d",
+   "b": "fm3w9q3gd6bumw1sggmbrp10d",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "18-118",
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-70",
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "n50itd7kqebn4rm3b6sw8tqwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "30-33",
+   "a": "kbew59tzi3uxcyn616mgemnyd",
+   "b": "q3i2nxdgduke3zg2ceqh6515d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-139",
+   "a": "zhs595y954duri0cc1wuizbcb",
+   "b": "zi7771aikmfk6fmnqck1s4ybb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-124",
+   "a": "626xt9h376s6pxdk5d4ghqf9d",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "77-108",
+   "a": "77pehezx90tzb0xzghqi1t6gc",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "141-142",
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "1sn7fphnbk8kpbhim1gehp9bd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-20",
+   "a": "7icsdrfqbni0c6r7kb80f7r6d",
+   "b": "r2c6ys5ye183id9xm0pcwgk8a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "31-93",
+   "a": "8pc8wdb6snusqhhdaymy5mhmb",
+   "b": "k36ubn76h0t7u3a005s2c4cid",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "36-131",
+   "a": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "b": "u3rqhz62xfr9ya51tbeb5xscd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-114",
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "fgaxen1mfc0h710idppiur67d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "95-107",
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "azk5ezfs30e48wqa7fn82fuea",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "115-128",
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "k0f18mphfpysrrda6w4hf6ewd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-38",
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "7icsdrfqbni0c6r7kb80f7r6d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-70",
+   "a": "n50itd7kqebn4rm3b6sw8tqwb",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-86",
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-111",
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "91-104",
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "79-88",
+   "a": "d6aa9k14ddmzatz01zst2mf3c",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "52-109",
+   "a": "bgwxh7y8qd7d923pap9shukzd",
+   "b": "yc159hm7nu054suz591cb524c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-137",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "u9m6gquaa32e6x5gp6zskamab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-49",
+   "a": "u2nbb26aztckkfya808yz1gab",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-124",
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-104",
+   "a": "fm3w9q3gd6bumw1sggmbrp10d",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "85-127",
+   "a": "ah2pwc9hre2tpz9prf3d2am3d",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-99",
+   "a": "7icsdrfqbni0c6r7kb80f7r6d",
+   "b": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "58-77",
+   "a": "44fc71qeqxyx57m7w63ck9cda",
+   "b": "a68rdyairnuy8d70geqkthdkd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "77-79",
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "d6aa9k14ddmzatz01zst2mf3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "71-138",
+   "a": "r54ee0tdge2hbxx4y2hunf0pa",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-133",
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-59",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "626xt9h376s6pxdk5d4ghqf9d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-73",
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "40-51",
+   "a": "63mihyw2sw6g031k0y7m4bzpc",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "77-88",
+   "a": "a68rdyairnuy8d70geqkthdkd",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-76",
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-59",
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "5c5egg2ftnh3fkfk0bry95u2c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "80-141",
+   "a": "0h5ew97xzeb1qft62x64e9tza",
+   "b": "epnsh24spnkxcyeckshepe9qa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-99",
+   "a": "mu7c73uz202wt55p9bwnr0ftc",
+   "b": "pf1ty3ad5xs7n9xukwz1zw7aa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "104-128",
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "w71enf8ddkhb0dk7k22sfznmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-118",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "qg2ws1qfg2ts77y1w4ppmzs1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-91",
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "45-144",
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-68",
+   "a": "a5pnr8xfxc6be068a3t55ipec",
+   "b": "i5dtness9epkguy6k4f0i3ctd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-133",
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-104",
+   "a": "w71enf8ddkhb0dk7k22sfznmb",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-115",
+   "a": "k0f18mphfpysrrda6w4hf6ewd",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-125",
+   "a": "8r9im3py1m2quie333xkxh96a",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-36",
+   "a": "4i6zer44abzxwxmuwy170mmka",
+   "b": "u3rqhz62xfr9ya51tbeb5xscd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-68",
+   "a": "i5dtness9epkguy6k4f0i3ctd",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "43-47",
+   "a": "f463u43pm1r63xzh1aus5523a",
+   "b": "im3pgkd7eakbbdpk7kpwr544b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "85-111",
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "qyetwen21u24n1k6kqwpix57d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "22-51",
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "ywa5gsssrnx67u3rfuf3fknyb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "122-144",
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "73-131",
+   "a": "q1t0iq925mq0a0tbgkyf6uxsc",
+   "b": "yd22pbdc3ugkpcep7m4n06r2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-22",
+   "a": "bbceccx3s635rmddkcpfq759c",
+   "b": "madeqfsx5emk86a24d9qsydxc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "79-107",
+   "a": "4fff8zp78feqqubcnnxeeb21b",
+   "b": "d6aa9k14ddmzatz01zst2mf3c",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-62",
+   "a": "026gueuqgx1wnwbet5606q5ta",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "3-47",
+   "a": "hazt2anz9fryp7q7rfqqdhqsd",
+   "b": "im3pgkd7eakbbdpk7kpwr544b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-120",
+   "a": "t0tfsp4gt8m6fkg72uq5346rd",
+   "b": "wahyhp7zazc523euqfx1373yc",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "49-128",
+   "a": "d9g8fn1iy3bbte3asw79u04pb",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-45",
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-34",
+   "a": "tuupi4rm25z0hpbxqs7xnuedd",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-124",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "6gitqk7pxqub5g539zy5yd8ic",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "43-142",
+   "a": "1sn7fphnbk8kpbhim1gehp9bd",
+   "b": "f463u43pm1r63xzh1aus5523a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-45",
+   "a": "at0xcae1rprur5tg0rqy2d3dc",
+   "b": "f4qgpp6wdhc15x1nwthriw8rc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "59-111",
+   "a": "5c5egg2ftnh3fkfk0bry95u2c",
+   "b": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "62-91",
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "a5pnr8xfxc6be068a3t55ipec",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-18",
+   "a": "32eg8hzyqc2ya3fzde47i1wya",
+   "b": "626xt9h376s6pxdk5d4ghqf9d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-122",
+   "a": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-91",
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "xcrszt9m997f3kc0x0srz4qwb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "76-86",
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "ry5wfeui65dahk2cupfbfmr9b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "49-88",
+   "a": "xcrszt9m997f3kc0x0srz4qwb",
+   "b": "yynhz9d20cypf73bu3srrq04a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-91",
+   "a": "36tbkaz166u3ce27hexz9z68d",
+   "b": "tuupi4rm25z0hpbxqs7xnuedd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "76-117",
+   "a": "8xxf02910sqti20turw2pggfc",
+   "b": "nr1gxedfim25ybb6krp55cnra",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "16-23",
+   "a": "3tqzx22088wpuig1qmmeu02za",
+   "b": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-61",
+   "a": "4bse6naceiug990m50a9zg1ba",
+   "b": "9wxh5xquk9f8y5kc6r8i783ad",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "45-122",
+   "a": "f4qgpp6wdhc15x1nwthriw8rc",
+   "b": "t8duqpa54zqrwax1wrgm2q9wc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-111",
+   "a": "d8npf4eif5t2qz3kc3ffqf3hd",
+   "b": "gkm9269xw5pe2bk0amn3sbihc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-144",
+   "a": "99bfsh9hwqyuz42k49n6q7f1b",
+   "b": "ckwfxqnmus5hqgfxdr5kibbqa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "86-138",
+   "a": "ry5wfeui65dahk2cupfbfmr9b",
+   "b": "xs0squ82sa51gdffpb2i1mcwc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "45-133",
+   "a": "f4qgpp6wdhc15x1nwthriw8rc",
+   "b": "r9h8w02ts70dn5b0b0tz8wkfa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-86",
+   "a": "ry5wfeui65dahk2cupfbfmr9b",
+   "b": "u2nbb26aztckkfya808yz1gab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "43-54",
+   "a": "1m21wip3ze5byhrf4yhfpz25d",
+   "b": "f463u43pm1r63xzh1aus5523a",
+   "kind": "walk",
+   "source": "lane-a:via elev_lobby, elev_lobby_wood_door",
+   "points": [
+    {
+     "x": 0.048,
+     "y": -0.019,
+     "z": 0.027
+    },
+    {
+     "x": 0.048,
+     "y": -0.019,
+     "z": -4.973
+    },
+    {
+     "x": 0.102,
+     "y": 0.019,
+     "z": -8.961
+    },
+    {
+     "x": 0.06,
+     "y": 0.019,
+     "z": -10.16
+    }
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "elev_lobby",
+   "label": "Passenger elevators",
+   "nodeId": "1m21wip3ze5byhrf4yhfpz25d",
+   "position": {
+    "x": 0.048,
+    "y": -0.019,
+    "z": -4.973
+   },
+   "lat": 29.748617513936654,
+   "lng": -95.36696434501766,
+   "approach": [
+    {
+     "lat": 29.748617513936654,
+     "lng": -95.36696434501766
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by elevator through parts of the building that are not scanned.",
+   "primary": true,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_b",
+   "label": "Stair B door",
+   "nodeId": "hazt2anz9fryp7q7rfqqdhqsd",
+   "position": {
+    "x": 10.13,
+    "y": -0.009,
+    "z": -8.765
+   },
+   "lat": 29.748602761185627,
+   "lng": -95.36685408050054,
+   "approach": [
+    {
+     "lat": 29.748602761185627,
+     "lng": -95.36685408050054
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Expect this door to be locked from outside. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_a",
+   "label": "Stair A door",
+   "nodeId": "bidr0pifgmstmxxxtzdpi1w8d",
+   "position": {
+    "x": -6.413,
+    "y": 0.013,
+    "z": -0.759
+   },
+   "lat": 29.748613188946926,
+   "lng": -95.36704407935707,
+   "approach": [
+    {
+     "lat": 29.748613188946926,
+     "lng": -95.36704407935707
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Expect this door to be locked from outside. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  }
+ ],
+ "defaultDestination": "py4934sqt0qk4dqxuakmtdp7c",
+ "scope": "14th floor only: the whole floor around the central core. The elevator cars, both stairwells, the street-level lobby and every other floor are not scanned.",
+ "provenance": {
+  "source": "lane A graph (env/build_graph.py), exported by env/console.py",
+  "generated": "2026-11-14T16:59:24",
+  "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
+  "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
+  "aerial": "Vexcel. Staging spots are placed by eye."
+ },
+ "aerial": {
+  "bounds": {
+   "west": -95.36768836834959,
+   "south": 29.747952282177504,
+   "east": -95.36623983165042,
+   "north": 29.749209917822494
+  },
+  "url": "/api/aerial/234036.jpg"
+ }
+}

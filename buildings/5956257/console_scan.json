@@ -1,0 +1,517 @@
+{
+ "modelId": "JUz7H4u8m5C",
+ "propertyId": "5956257",
+ "name": "3160 Geneva St, ground-floor north wing",
+ "faceRoute": true,
+ "supportsOverview": false,
+ "georeference": {
+  "lat": 34.06722,
+  "long": -118.286416
+ },
+ "floors": [
+  {
+   "id": "0",
+   "sequence": 0,
+   "label": "Floor 1"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "gaqsy1ue23q6wdtfn556ukpsc",
+   "index": 0,
+   "floor": 0,
+   "position": {
+    "x": 30.107,
+    "y": -0.043,
+    "z": 3.869
+   },
+   "label": "Scan 0 \u00b7 Floor 1"
+  },
+  {
+   "id": "q2xi7at60kstre4mbbr78b7ud",
+   "index": 1,
+   "floor": 0,
+   "position": {
+    "x": -11.927,
+    "y": -0.001,
+    "z": 3.917
+   },
+   "label": "Scan 1 \u00b7 Floor 1"
+  },
+  {
+   "id": "9iawksbepc7bzynppc9itdyub",
+   "index": 2,
+   "floor": 0,
+   "position": {
+    "x": 18.644,
+    "y": -0.01,
+    "z": 3.548
+   },
+   "label": "Scan 2 \u00b7 Floor 1"
+  },
+  {
+   "id": "ck6dq38tcy1sif08xw77zw5zb",
+   "index": 3,
+   "floor": 0,
+   "position": {
+    "x": 3.268,
+    "y": 0.016,
+    "z": 3.71
+   },
+   "label": "Scan 3 \u00b7 Floor 1"
+  },
+  {
+   "id": "ykptrept21xegzr9ury27htyc",
+   "index": 4,
+   "floor": 0,
+   "position": {
+    "x": -39.745,
+    "y": 0.004,
+    "z": 3.549
+   },
+   "label": "Scan 4 \u00b7 Floor 1"
+  },
+  {
+   "id": "63b40d59c43xypb9u25r1099b",
+   "index": 5,
+   "floor": 0,
+   "position": {
+    "x": 38.682,
+    "y": -0.065,
+    "z": 3.439
+   },
+   "label": "Scan 5 \u00b7 Floor 1"
+  },
+  {
+   "id": "449i7x1nsxs2y3umf6382sktd",
+   "index": 6,
+   "floor": 0,
+   "position": {
+    "x": -29.847,
+    "y": -0.001,
+    "z": 3.492
+   },
+   "label": "Scan 6 \u00b7 Floor 1"
+  },
+  {
+   "id": "5wiqtyf50tbw691rn4sgknd2a",
+   "index": 7,
+   "floor": 0,
+   "position": {
+    "x": 10.652,
+    "y": -0.018,
+    "z": 4.07
+   },
+   "label": "Scan 7 \u00b7 Floor 1"
+  },
+  {
+   "id": "bnakhxgz9id3iew1p7hebm1kb",
+   "index": 8,
+   "floor": 0,
+   "position": {
+    "x": -16.165,
+    "y": -0.007,
+    "z": 3.811
+   },
+   "label": "Scan 8 \u00b7 Floor 1"
+  },
+  {
+   "id": "2xysc7mgqcr9piq8exzqw4ezd",
+   "index": 9,
+   "floor": 0,
+   "position": {
+    "x": -0.641,
+    "y": 0.013,
+    "z": 5.442
+   },
+   "label": "Scan 9 \u00b7 Floor 1"
+  },
+  {
+   "id": "7di5m1gu0nxffwnwfc5hg38fc",
+   "index": 10,
+   "floor": 0,
+   "position": {
+    "x": 14.808,
+    "y": -0.013,
+    "z": 3.78
+   },
+   "label": "Scan 10 \u00b7 Floor 1"
+  },
+  {
+   "id": "9xm0g0bgdtz5a54u8rxhcx74a",
+   "index": 11,
+   "floor": 0,
+   "position": {
+    "x": -4.503,
+    "y": 0.008,
+    "z": 4.109
+   },
+   "label": "Scan 11 \u00b7 Floor 1"
+  },
+  {
+   "id": "he29ntkd8qa3r5fb23n8i5nic",
+   "index": 12,
+   "floor": 0,
+   "position": {
+    "x": -27.356,
+    "y": -0.003,
+    "z": 3.355
+   },
+   "label": "Scan 12 \u00b7 Floor 1"
+  },
+  {
+   "id": "kyu8h87ug8dgb04sb0qri6wab",
+   "index": 13,
+   "floor": 0,
+   "position": {
+    "x": 6.882,
+    "y": 0.017,
+    "z": 3.765
+   },
+   "label": "Scan 13 \u00b7 Floor 1"
+  },
+  {
+   "id": "py9ani9xkdbd2qitum2mi1eta",
+   "index": 14,
+   "floor": 0,
+   "position": {
+    "x": -13.59,
+    "y": -0.003,
+    "z": 4.212
+   },
+   "label": "Scan 14 \u00b7 Floor 1"
+  },
+  {
+   "id": "5pbgr82wu6kmbhf85s02d5c6d",
+   "index": 15,
+   "floor": 0,
+   "position": {
+    "x": -0.028,
+    "y": 0.011,
+    "z": -0.04
+   },
+   "label": "Scan 15 \u00b7 Floor 1"
+  },
+  {
+   "id": "7664k6rzrs2s1yn8bhtk093hb",
+   "index": 16,
+   "floor": 0,
+   "position": {
+    "x": -35.819,
+    "y": 0.006,
+    "z": 3.302
+   },
+   "label": "Scan 16 \u00b7 Floor 1"
+  },
+  {
+   "id": "7exi461z3d89rgw87rdu7n6md",
+   "index": 17,
+   "floor": 0,
+   "position": {
+    "x": -19.388,
+    "y": -0.006,
+    "z": 3.756
+   },
+   "label": "Scan 17 \u00b7 Floor 1"
+  },
+  {
+   "id": "qzcixu92k3cub4tk44skis1dc",
+   "index": 18,
+   "floor": 0,
+   "position": {
+    "x": 0.12,
+    "y": 0.017,
+    "z": 10.272
+   },
+   "label": "Scan 18 \u00b7 Floor 1"
+  },
+  {
+   "id": "yq3freey9feiqs758kcxrg8ac",
+   "index": 19,
+   "floor": 0,
+   "position": {
+    "x": 22.702,
+    "y": -0.021,
+    "z": 3.918
+   },
+   "label": "Scan 19 \u00b7 Floor 1"
+  },
+  {
+   "id": "175r4y5mr9zqc7bf82zutnd0c",
+   "index": 20,
+   "floor": 0,
+   "position": {
+    "x": 33.923,
+    "y": -0.055,
+    "z": 3.713
+   },
+   "label": "Scan 20 \u00b7 Floor 1"
+  },
+  {
+   "id": "3rytc41sw706pbc79d49bidgd",
+   "index": 21,
+   "floor": 0,
+   "position": {
+    "x": -8.254,
+    "y": 0.003,
+    "z": 3.953
+   },
+   "label": "Scan 21 \u00b7 Floor 1"
+  },
+  {
+   "id": "gscr9mtrecihy79k87fy7mqra",
+   "index": 22,
+   "floor": 0,
+   "position": {
+    "x": 26.696,
+    "y": -0.032,
+    "z": 4.171
+   },
+   "label": "Scan 22 \u00b7 Floor 1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "1-14",
+   "a": "py9ani9xkdbd2qitum2mi1eta",
+   "b": "q2xi7at60kstre4mbbr78b7ud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-12",
+   "a": "449i7x1nsxs2y3umf6382sktd",
+   "b": "he29ntkd8qa3r5fb23n8i5nic",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-14",
+   "a": "bnakhxgz9id3iew1p7hebm1kb",
+   "b": "py9ani9xkdbd2qitum2mi1eta",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-17",
+   "a": "7exi461z3d89rgw87rdu7n6md",
+   "b": "bnakhxgz9id3iew1p7hebm1kb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-22",
+   "a": "gaqsy1ue23q6wdtfn556ukpsc",
+   "b": "gscr9mtrecihy79k87fy7mqra",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-13",
+   "a": "ck6dq38tcy1sif08xw77zw5zb",
+   "b": "kyu8h87ug8dgb04sb0qri6wab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-21",
+   "a": "3rytc41sw706pbc79d49bidgd",
+   "b": "q2xi7at60kstre4mbbr78b7ud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-21",
+   "a": "3rytc41sw706pbc79d49bidgd",
+   "b": "9xm0g0bgdtz5a54u8rxhcx74a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-13",
+   "a": "5wiqtyf50tbw691rn4sgknd2a",
+   "b": "kyu8h87ug8dgb04sb0qri6wab",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-20",
+   "a": "175r4y5mr9zqc7bf82zutnd0c",
+   "b": "gaqsy1ue23q6wdtfn556ukpsc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-10",
+   "a": "7di5m1gu0nxffwnwfc5hg38fc",
+   "b": "9iawksbepc7bzynppc9itdyub",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-16",
+   "a": "7664k6rzrs2s1yn8bhtk093hb",
+   "b": "ykptrept21xegzr9ury27htyc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "19-22",
+   "a": "gscr9mtrecihy79k87fy7mqra",
+   "b": "yq3freey9feiqs758kcxrg8ac",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-19",
+   "a": "9iawksbepc7bzynppc9itdyub",
+   "b": "yq3freey9feiqs758kcxrg8ac",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-11",
+   "a": "2xysc7mgqcr9piq8exzqw4ezd",
+   "b": "9xm0g0bgdtz5a54u8rxhcx74a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-10",
+   "a": "5wiqtyf50tbw691rn4sgknd2a",
+   "b": "7di5m1gu0nxffwnwfc5hg38fc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-9",
+   "a": "2xysc7mgqcr9piq8exzqw4ezd",
+   "b": "ck6dq38tcy1sif08xw77zw5zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-20",
+   "a": "175r4y5mr9zqc7bf82zutnd0c",
+   "b": "63b40d59c43xypb9u25r1099b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-18",
+   "a": "2xysc7mgqcr9piq8exzqw4ezd",
+   "b": "qzcixu92k3cub4tk44skis1dc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-15",
+   "a": "5pbgr82wu6kmbhf85s02d5c6d",
+   "b": "ck6dq38tcy1sif08xw77zw5zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-15",
+   "a": "2xysc7mgqcr9piq8exzqw4ezd",
+   "b": "5pbgr82wu6kmbhf85s02d5c6d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-16",
+   "a": "449i7x1nsxs2y3umf6382sktd",
+   "b": "7664k6rzrs2s1yn8bhtk093hb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-15",
+   "a": "5pbgr82wu6kmbhf85s02d5c6d",
+   "b": "9xm0g0bgdtz5a54u8rxhcx74a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-17",
+   "a": "7exi461z3d89rgw87rdu7n6md",
+   "b": "he29ntkd8qa3r5fb23n8i5nic",
+   "kind": "walk",
+   "source": "lane-a:open"
+  }
+ ],
+ "entries": [
+  {
+   "id": "door_north_main",
+   "label": "Glass double doors on the Geneva St side",
+   "nodeId": "qzcixu92k3cub4tk44skis1dc",
+   "position": {
+    "x": -0.158,
+    "y": 0.017,
+    "z": 12.253
+   },
+   "lat": 34.0674983,
+   "lng": -118.2864108,
+   "approach": [
+    {
+     "lat": 34.0677005,
+     "lng": -118.2864032
+    },
+    {
+     "lat": 34.0674983,
+     "lng": -118.2864108
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position read off the aerial by hand.",
+   "primary": true,
+   "confirmed": true,
+   "stagingId": "stage_geneva_curb",
+   "stagingLabel": "the Geneva St curb in front of the main doors"
+  },
+  {
+   "id": "door_east_exit",
+   "label": "East end exit doors",
+   "nodeId": "ykptrept21xegzr9ury27htyc",
+   "position": {
+    "x": -42.245,
+    "y": 0.004,
+    "z": 3.549
+   },
+   "lat": 34.0674503,
+   "lng": -118.2859655,
+   "approach": [
+    {
+     "lat": 34.0674352,
+     "lng": -118.2857932
+    },
+    {
+     "lat": 34.0674503,
+     "lng": -118.2859655
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position read off the aerial by hand. Expect this door to be locked from outside.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": "stage_east_curb",
+   "stagingLabel": "the curb on the side street at the east end"
+  }
+ ],
+ "defaultDestination": "gaqsy1ue23q6wdtfn556ukpsc",
+ "scope": "Ground floor of the north wing only: one east-west line of scan positions about 80 m long with the entrance lobby in the middle. The floor is stripped to bare concrete (no partitions, ceilings or finishes), so there are no rooms to name. The rest of the building, the upper floors, the stairwells and the 4th Street side are not scanned. Three single glass doors on the north wall open onto the planted strip along Geneva St and are not marked, because their positions could only be estimated from across the floor.",
+ "provenance": {
+  "source": "lane A graph (env/build_graph.py), exported by env/console.py",
+  "generated": "2026-11-14T16:59:23",
+  "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
+  "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
+  "aerial": "Vexcel. Staging spots are placed by eye."
+ },
+ "aerial": {
+  "bounds": {
+   "west": -118.2871750925667,
+   "south": 34.066591182177504,
+   "east": -118.2856569074333,
+   "north": 34.067848817822494
+  },
+  "url": "/api/aerial/5956257.jpg"
+ }
+}

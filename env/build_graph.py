@@ -747,6 +747,11 @@ def main(argv=None) -> None:
             from .render import render_building
             for p in render_building(graph["building_id"]):
                 print(f"  drew {p.relative_to(config.ROOT)}")
+        try:                                   # the same graph in the form lane D's console reads
+            from .console import write_scan
+            print(f"  wrote {write_scan(graph['building_id']).relative_to(config.ROOT)}")
+        except ValueError as exc:
+            print(f"  no console export: {exc}")
 
 
 if __name__ == "__main__":

@@ -1,13 +1,13 @@
-# Handoff from lane A to lane B (perception)
+# Handoff from lane A to lanes B, C and D
 
-Written Saturday 2:40 PM by lane A. Read `env/README.md` for the tool table and file
+Written Saturday 2:40 PM by lane A; the lane D section was added Saturday 5:45 PM. Read `env/README.md` for the tool table and file
 layout; this note says what is ready, what is not, and what lane A needs back.
 
 ## Good to go
 
-- **Every tool in `env/tools.py`.** 44 tests pass with no network
+- **Every tool in `env/tools.py`.** 52 tests pass with no network
   (`python3 -m unittest discover -s env/tests -t .`).
-- **Routing in all six buildings.** 693 scanned positions, every one reachable on foot.
+- **Routing in all seven buildings.** 716 scanned positions, every one reachable on foot.
   Each marked door and elevator has an evidence crop under `buildings/<id>/evidence/`.
 - **`get_property` and `get_tenants`** for all 3,339 CoStar properties.
 - **Images for matching.** `python3 -m env.views panos <id>` renders one panorama per
@@ -23,6 +23,7 @@ layout; this note says what is ready, what is not, and what lane A needs back.
 | 234036 | 1315 St Joseph Pkwy, Houston | 145, floor 14 | good to go | good to go | roughly right, within about 10 m |
 | 248192 | 3250 Wilshire Blvd, LA | 124, floor 3 | good to go | good to go | not usable: plots over the street |
 | 248351 | 3800 Barham Blvd, LA | 85, 2 floors | good to go | good to go, one door unverified | not usable: 20 to 30 m off |
+| 5956257 | 3160 Geneva St, LA | 23, ground floor of one wing | good to go, but the floor is bare concrete and looks alike end to end | good to go | doors and staging only (placed by hand); scanned positions are about 25 m off |
 
 Start with **10352309** and **259587**: whole-building scans, wall plans on every floor,
 correct map placement. **6550930** is the strongest story (17 health care tenants, and
@@ -30,13 +31,13 @@ the best door is not the street-side door) but its scan has no wall plan and no 
 
 ## Not good to go: use with care
 
-1. **Map placement is reliable at two of six buildings.** The scan's own georeference
-   puts Willow Centre and Broxton on the right roofs. Fannin, Barham and Wilshire are
-   off by 20 m or more. Do not use `latlon` on scanned positions in those three to crop
+1. **Map placement is reliable at two of seven buildings.** The scan's own georeference
+   puts Willow Centre and Broxton on the right roofs. Fannin, Barham, Wilshire and Geneva
+   St are off by 20 m or more. Do not use `latlon` on scanned positions in those four to crop
    aerial imagery or to draw a caller on a map. `buildings/<id>/aerial.jpg` shows where
    each scan lands.
 2. **Staging spots are placed by eye** from the aerial tile and marked
-   `confirmed: false`. They exist only at Willow Centre, Broxton and Fannin. Your site
+   `confirmed: false`. They exist only at Willow Centre, Broxton, Fannin and Geneva St. Your site
    analysis should replace them.
 3. **Richard's earlier lane-B code is not in this repo.** It is on his machine at
    `old/phack-falco/perception/`: a cached Vexcel client (`vexcel.py`), an aerial site
@@ -106,6 +107,53 @@ side by side with `env/routing.py`, with the same time constants on both sides:
 - **Two sets of time constants exist**: `agent/pinpoint/config.py` and `env/config.py`
   (`ROUTING`). They differ (locked door 30 s there, 90 s here). Pick one.
 - `tools.load_graph(building_id)` returns the `{nodes, adj, edges}` shape your code reads.
+
+## For lane D: the console (checked Saturday 5:45 PM)
+
+Lane A read pull request 1 (`codex/lane-d-dispatch-console`, commit 476342d), ran its 35
+tests (all pass) and ran its route planner (`app/src/live-route-model.js`) against lane
+A's graphs.
+
+- **Nothing collides.** The pull request touches only `app/`; it merges with `lane-a`
+  without conflicts.
+- **The console does not call lane A yet.** Its two 3D demos route over chains of scan
+  positions written by hand in `app/scripts/setup-*.mjs`, and its planner picks the
+  shortest distance from an entry the dispatcher chooses.
+- **Same ids, same coordinates.** For 3160 Geneva St the console's 23 scan positions are
+  the same 23 sweep ids as lane A's graph, and the positions agree to 1 mm. Both use the
+  CoStar PropertyId and the profile names `foot` and `stretcher`.
+- **Lane A's graph in the console's format** is `buildings/<id>/console_scan.json`, for
+  all seven buildings. `tools.console_route(...)` gives a route as the console's request
+  body. The console's planner accepted all 1,360 lane A routes: every scanned position
+  in the seven buildings for both profiles, less the 72 a stretcher cannot reach.
+- **Geneva St needs no change in `app/`:** copy `buildings/5956257/console_scan.json` to
+  `app/data/los-angeles-scan.json` and delete the saved Los Angeles incident under
+  `app/.local-state/`. The demo caller (scan 10) stays where it is.
+- **What the scan shows at Geneva St that the hand-drawn version misses.** The console's
+  entry is scan 0 with an approach from the south. Scan 0 is the lobby position beside
+  the elevator, which is taped off; there is no door there, and the aerial approach from
+  the south runs through the building. The doors are on the Geneva St (north) side next
+  to scan 2, and at the east end. Signs on the Geneva St doors send visitors and
+  deliveries to 4th Street. Evidence crops are in `buildings/5956257/evidence/`.
+- **Any other building needs two small changes in `app/`,** which are lane D's to make:
+  `model()` in `app/lib/spatial-service.mjs` maps only two property ids to a file, and
+  `app/src/live.js` opens the 3D view only for those two ids. Reading
+  `data/<propertyId>-scan.json` when it exists would cover every lane A building.
+- **Princeton (Rabinowitz Hall).** The scan is visible to the hackathon API key and lane
+  A's builder turns it into one connected graph (66 positions on 2 levels, stairs found
+  from the scan). It is not saved, because the two places where the scan starts still
+  need marking as entries. Say the word and lane A will do it. It has no CoStar record.
+- **Aerial view.** `entries[].approach` runs from the staging spot to the door. It is
+  placed by hand at Willow Centre, Broxton, Fannin and Geneva St. At Barham, Wilshire and
+  St Joseph it comes from the scan's georeference and is off; `calibration` says so.
+- **Not done:** the console still recomputes with its own planner when the dispatcher
+  changes profile or blocks a segment. Lane A's answer for that is
+  `tools.console_route(..., blocked_edges=[[a, b]])`, which nothing calls yet.
+
+**The lanes are on different buildings.** Perception's example is 240517 (17270 Red Oak
+Dr), the agent's fixture is a made-up building, the console demos 5956257 and Princeton
+and opens on 350372 (6550 Mapleridge St). Lane A has graphs for seven, including 5956257
+but not 240517 or 350372. The team needs to pick the demo building.
 
 ## What lane A needs back
 

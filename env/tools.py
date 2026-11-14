@@ -238,6 +238,26 @@ def find_equipment(building_id: str, type: str, near_node: str) -> list[dict]:
 
 
 @_tool
+def console_scan(building_id: str, target: str | None = None) -> dict:
+    """The graph in the form lane D's console reads (`app/data/<name>-scan.json`):
+    -> {modelId, nodes[], edges[], entries[], floors[], defaultDestination, aerial}"""
+    from . import console
+    g = _g(building_id)
+    return console.scan_graph(str(building_id), _n(g, target) if target else None)
+
+
+@_tool
+def console_route(building_id: str, target: str, profile: str = "foot",
+                  blocked_edges: list | None = None) -> dict:
+    """The best door and route as the body for the console's POST /api/incidents/<id>/route:
+    -> {profile, entryId, destination, nodeIds[], updatedBy, reason}. Add `expectedRevision`."""
+    from . import console
+    g = _g(building_id)
+    return console.route_update(str(building_id), _n(g, target), profile,
+                                [_ns(g, pair) for pair in blocked_edges or []])
+
+
+@_tool
 def report_edge(building_id: str, a: str, b: str, status: str = "blocked", note: str | None = None) -> dict:
     """Record what a crew found on the edge a-b so the next incident starts with it.
 

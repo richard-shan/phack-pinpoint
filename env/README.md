@@ -1,11 +1,12 @@
 # env: building graphs, CoStar lookup and routing (lane A)
 
 Everything the other lanes call lives in `env/tools.py`. Run commands from the repo root.
-Lane B: read `env/HANDOFF_B.md` first. It says what is ready and what is not.
+Lanes B, C and D: read `env/HANDOFF_B.md` first. It says what is ready and what is not,
+and has a section for each lane.
 
 ```
 pip install -r env/requirements.txt
-python3 -m unittest discover -s env/tests -t .     # 44 tests, no network
+python3 -m unittest discover -s env/tests -t .     # 52 tests, no network
 python3 -m env.tools                                # worked example on the toy building
 ```
 
@@ -25,6 +26,7 @@ with known answers.
 | 234036 | 1315 St Joseph Pkwy, Houston | floor 14 | roughly right, within about 10 m (the tower leans in the aerial, so hard to judge) |
 | 248351 | 3800 Barham Blvd, LA | ground and 2nd floor of one suite | 20 to 30 m off; do not draw it on a map |
 | 248192 | 3250 Wilshire Blvd, LA | Suite 301 and its corridor, floor 3 | looks off: plots over the street beside the tower |
+| 5956257 | 3160 Geneva St, LA | ground floor of the north wing (stripped to concrete) | scan is about 25 m off; doors and staging are placed by hand |
 
 Per building, under `buildings/<id>/`:
 
@@ -35,6 +37,7 @@ Per building, under `buildings/<id>/`:
 - `panos/<sweep id>.jpg`: one panorama per scanned position. Not in git: run
   `python3 -m env.views panos <id>` (about 2 s each).
 - `graph_floor<n>.jpg`, `aerial.jpg`: the graph over the floor plan, and over the aerial tile.
+- `console_scan.json`: the same graph in the form lane D's console reads. Rewritten on every rebuild.
 
 Rebuild after changing `overrides.json` or `attributes.json`:
 
@@ -61,6 +64,8 @@ python3 -m env.build_graph --building <id> --render      # or --all
 | `hazards_along(building_id, path)` | `[{node_id, type, evidence_path}]` |
 | `find_equipment(building_id, type, near_node)` | `[{node_id, meters, seconds, evidence_path}]` |
 | `report_edge(building_id, a, b, status, note)` | records "blocked", "locked" or "clear" for the next incident |
+| `console_scan(building_id, target=None)` | the graph in the console's scan-graph format: `{modelId, nodes[], edges[], entries[], floors[], defaultDestination, aerial}` |
+| `console_route(building_id, target, profile, blocked_edges=None)` | the best door and route as the body for the console's `POST /api/incidents/<id>/route`: `{profile, entryId, destination, nodeIds[], reason}` |
 
 `profile` is `"foot"` or `"stretcher"`. A bad argument comes back as `{"error": "..."}`.
 Time constants are assumptions in `env/config.py` (`ROUTING`).
@@ -106,6 +111,27 @@ Things an agent should read in the results:
   in `graph.json`.
 - **What the scans are.** Mostly space offered for lease, so the scanned suite itself
   usually has no tenant on record. Tenant facts are reliable for the other floors.
+
+## For lane D (console)
+
+The console draws its 3D route from a scan-graph file and accepts a route as a list of
+sweep ids. `env/console.py` produces both from lane A's graph.
+
+- **Graph.** `buildings/<id>/console_scan.json` is ready for every building above. For
+  3160 Geneva St, which the console already demos:
+  `cp buildings/5956257/console_scan.json app/data/los-angeles-scan.json`, then delete the
+  saved Los Angeles incident in `app/.local-state/` (its stored route names the old entry).
+- **Route.** `tools.console_route(building_id, target, profile)` returns the request body;
+  add `expectedRevision` and post it to `/api/incidents/<id>/route`. `reason` says which
+  door, how long, and what the next best door costs.
+- Doors are the console's `entries`; scan positions are its `nodes`; elevator cars are
+  folded into one `elevator` edge between the scan positions on either side.
+- The console's own planner measures distance and only drops stairs for "Step-free". It
+  does not know door widths, locked doors or elevator waits, so a route it recomputes
+  after a click is not lane A's. Call `console_route` again (with `blocked_edges`) for that.
+
+`env/HANDOFF_B.md` has what was checked and what the console would need to show a
+building other than Geneva St.
 
 ## Numbers
 
