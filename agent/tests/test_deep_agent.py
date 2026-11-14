@@ -152,6 +152,16 @@ class TestLiveBuild(unittest.TestCase):
         agent = deep_agent.build_agent()
         self.assertIsNotNone(agent)
 
+    def test_build_agent_stream_available(self):
+        """The real agent must expose .stream() with stream_mode kwarg so run_real_agent
+        can iterate updates + messages chunks for D's console."""
+        os.environ.setdefault("ANTHROPIC_API_KEY", "sk-ant-test-build-only")
+        agent = deep_agent.build_agent()
+        self.assertTrue(hasattr(agent, "stream"))
+        import inspect
+        sig = inspect.signature(agent.stream)
+        self.assertIn("stream_mode", sig.parameters)
+
 
 if __name__ == "__main__":
     unittest.main()
