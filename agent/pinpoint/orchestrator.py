@@ -42,20 +42,25 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
 
     # ---- Records / Locator / Site IN PARALLEL ----
     trace.log("commander", "task:parallel", args=["records", "locator", "site"], phase="delegate")
+    brief = location = site = None
     with cf.ThreadPoolExecutor(max_workers=3) as ex:
-        f_records = ex.submit(_records, idir, intake)
-        f_locator = ex.submit(_locator, idir, intake, mock_llm)
-        f_site = ex.submit(_site, idir, building_id)
-
-        # stream each section the instant its subagent returns
-        brief = f_records.result()
-        packet.set_brief(brief); packet.flush()
-
-        location = f_locator.result()
-        packet.set_location(location); packet.flush()
-
-        site = f_site.result()
-        packet.set_site(site); packet.flush()
+        futures = {
+            ex.submit(_records, idir, intake): "records",
+            ex.submit(_locator, idir, intake, mock_llm): "locator",
+            ex.submit(_site, idir, building_id): "site",
+        }
+        # flush each packet section as its future finishes (not in submit order)
+        for fut in cf.as_completed(futures):
+            kind = futures[fut]
+            if kind == "records":
+                brief = fut.result()
+                packet.set_brief(brief); packet.flush()
+            elif kind == "locator":
+                location = fut.result()
+                packet.set_location(location); packet.flush()
+            else:
+                site = fut.result()
+                packet.set_site(site); packet.flush()
 
     # ---- Router (needs all three) ----
     route_bundle = _router(idir, building_id, location, site)
@@ -110,32 +115,8 @@ def _locator(idir, intake, mock_llm):
     asked = 0
     asked_attrs = []
     log = []
-    skip_reason = None
 
-    def _would_question_change_route(cands_now):
-        """If every candidate above belief 0.1 routes to the same best entrance AND lives in
-        the same room_id, asking the caller cannot change the dispatched route. Returns
-        (skip: bool, reason: str|None, under_belief_snapshot: dict|None)."""
-        above = [c for c in cands_now if c.get("belief", 0.0) > 0.1]
-        if len(above) < 2:
-            return True, "only one candidate above belief 0.1", None
-        g = json.loads((stubs._B / "graph.json").read_text())
-        nodes_by_id = {n["id"]: n for n in g["nodes"]}
-        rooms = set()
-        for c in above:
-            n = nodes_by_id.get(c["node_id"], {})
-            rooms.add(n.get("room_label") or c["node_id"])
-        if len(rooms) > 1:
-            return False, None, None
-        ub = routing.best_entry_under_belief(building_id, cands_now, "foot")
-        per = ub.get("per_candidate_best_door", {})
-        above_ids = {c["node_id"] for c in above}
-        best_doors = {per[nid] for nid in above_ids if nid in per}
-        if len(best_doors) == 1:
-            return True, f"all top candidates share room={next(iter(rooms))} and best_entry={next(iter(best_doors))}", ub
-        return False, None, None
-
-    skip, skip_reason, _ub = _would_question_change_route(cands)
+    skip, skip_reason = _should_skip_questions(building_id, cands)
     if skip:
         trace.log("commander", "question_skipped",
                   result_summary=skip_reason, phase="optimization")
@@ -242,16 +223,28 @@ def _approval_gate(incident_id, packet, auto_approve, approve_fn):
 
 
 # --------------------------- helpers ---------------------------
+def _should_skip_questions(building_id, cands_now):
+    """Skip asking when it cannot change the dispatched door: one candidate dominates, or every
+    top candidate shares a room AND best_entry_under_belief says the same door."""
+    above = [c for c in cands_now if c.get("belief", 0.0) > 0.1]
+    if len(above) < 2:
+        return True, "only one candidate above belief 0.1"
+    nodes = routing.load_graph(building_id)["nodes"]
+    rooms = {(nodes.get(c["node_id"]) or {}).get("room_label") or c["node_id"] for c in above}
+    if len(rooms) > 1:
+        return False, None
+    ub = routing.best_entry_under_belief(building_id, above, "foot")
+    if ub.get("question_worth_asking"):
+        return False, None
+    return True, (f"all top candidates share room={next(iter(rooms))} "
+                  f"and best_entry={ub.get('entrance_id')}")
+
+
 def _ground_truth_attrs(building_id, intake=None):
     """For mock caller answers. If the intake carries a ground_truth_node_id (synth eval), use
     that; otherwise fall back to the fixture's ground_truth_node (demo behavior)."""
-    gt = None
-    if intake:
-        gt = intake.get("ground_truth_node_id")
-    if not gt:
-        gt = json.loads((stubs._B / "match.json").read_text())["ground_truth_node"]
-    g = json.loads((stubs._B / "graph.json").read_text())
-    node = next((n for n in g["nodes"] if n["id"] == gt), None)
+    gt = (intake or {}).get("ground_truth_node_id") or stubs._load("match.json")["ground_truth_node"]
+    node = routing.load_graph(building_id)["nodes"].get(gt)
     return node.get("attributes", {}) if node else {}
 
 

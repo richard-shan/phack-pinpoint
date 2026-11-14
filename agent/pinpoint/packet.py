@@ -105,7 +105,7 @@ class PacketWriter:
         L += ["## Nearby equipment"]
         if self.route and self.route.get("equipment"):
             for e in self.route["equipment"]:
-                L += [f"- {('AED' if True else '')} at {e['room_label']} (`{e['node_id']}`) [src:route.equipment]"]
+                L += [f"- AED at {e['room_label']} (`{e['node_id']}`) [src:route.equipment]"]
         else:
             L += ["- none found" if self.route is not None else PENDING]
         L += [""]

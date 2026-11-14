@@ -18,7 +18,8 @@ caller photo + a street address into a one-page responder packet, then STOP for 
 
 Rules:
 - You do NOT do graph math or image matching yourself. Delegate to subagents; read their JSON.
-- Delegate Records, Locator and Site FIRST and let them run together. Router needs all three.
+- Delegate Records, Locator, then Site before Router (Router needs all three). Sync subagents run
+  one at a time — do not wait on parallelism here; the stub orchestrator handles that path.
 - The Locator keeps a belief over candidate rooms. Ask the caller a question ONLY when it changes
   the answer — if best_entry_under_belief says all candidates share the same best door, do not ask.
 - Every line in the packet must cite a source file+field. Send the draft to the Verifier.
@@ -85,7 +86,10 @@ def build_agent(checkpointer=None):
         tools=[stubs.ask_caller, stubs.send_packet, stubs.notify_contact],
         subagents=build_subagents(),
         middleware=[TodoListMiddleware()],
-        interrupt_on={"send_packet": True, "notify_contact": True},  # approval gates
+        interrupt_on={
+            "send_packet": {"allowed_decisions": ["approve", "reject"]},
+            "notify_contact": {"allowed_decisions": ["approve", "reject"]},
+        },
         checkpointer=checkpointer,
     )
 

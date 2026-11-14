@@ -53,20 +53,13 @@ if result.get("__interrupt__"):
 Decision types: `approve` (run unchanged), `edit` (modify args), `reject` (skip + feedback),
 `respond` (synthetic tool result, for ask-user tools). Decisions must match `action_requests` order.
 
-## PARALLEL subagents — NOT CONFIRMED (the one gap that matters for latency)
-- Dict-based subagents are **synchronous by default**: the supervisor BLOCKS until each returns.
-- Docs mention "async subagents" for "parallel workstreams" on a *separate* page
-  (https://docs.langchain.com/oss/python/deepagents/async-subagents.md) but the mechanism /
-  field to toggle it was not confirmed in this pass. **Confirm before relying on it.**
+## PARALLEL subagents — confirmed: needs Agent Server, not a dict flag
+- Dict-based subagents are **synchronous**: the supervisor BLOCKS until each returns.
+- True async is `AsyncSubAgent` + Agent Protocol / Agent Server (`start_async_task`, etc.) —
+  see https://docs.langchain.com/oss/python/deepagents/async-subagents.md. Not a field on
+  ordinary subagent dicts. Overkill for the local hackathon path.
 
 ### Consequence for Part C
-Our critical-path design needs Records/Locator/Site to run at once. Since parallel-subagent
-wiring is unconfirmed AND the real agent needs an API key + install, the runnable spine today is
-`orchestrator.py` — a thin deterministic orchestrator that:
-  - runs Records/Locator/Site concurrently (threads),
-  - streams packet.md section-by-section,
-  - enforces the two approval-gate interrupts,
-  - writes the exact incident filesystem + trace.jsonl.
-`deep_agent.py` holds the real `create_deep_agent(...)` wiring (verified fields above), ready to
-swap in once deepagents is installed, an API key is set, and async-subagents is confirmed. Both
-call the SAME tool layer, so swapping is a one-line change in run_incident.py.
+Records/Locator/Site parallelism lives in `orchestrator.py` (ThreadPoolExecutor + as_completed).
+`deep_agent.py` holds the real `create_deep_agent(...)` wiring for the agentic demo path.
+Both call the SAME tool layer; swap is one line in run_incident.py.

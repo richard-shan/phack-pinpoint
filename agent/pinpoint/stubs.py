@@ -8,15 +8,23 @@ Ownership of the real versions (plan 6):
   Person C (REAL already): best_question, update_belief (localization.py); Verifier's check_claim
   Person D: ask_caller, send_packet, notify_contact (channel + approval UI)
 """
+import copy
 import json
+from functools import lru_cache
 from .config import FIXTURES, DEMO_BUILDING
 from .trace import traced
 
 _B = FIXTURES / "building_bayou"
 
 
-def _load(name):
+@lru_cache(maxsize=32)
+def _load_cached(name):
     return json.loads((_B / name).read_text())
+
+
+def _load(name):
+    # deepcopy so callers can mutate (e.g. belief fields) without poisoning the cache
+    return copy.deepcopy(_load_cached(name))
 
 
 # ---------- Person A (records + env) ----------
