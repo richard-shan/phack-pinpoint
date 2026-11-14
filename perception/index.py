@@ -4,8 +4,8 @@
 
 A building is every Matterport scan CoStar lists for the property. Node ids are
 "<model_id>/<sweep_id>". Output goes to cache/index/<building_id>/:
-    emb.npy      one row per view
-    meta.json    node_id, yaw, pitch, crop_path, xyz for each row
+    emb.npy      one row per view (52 views per position)
+    meta.json    node_id, fov, yaw, pitch, crop_path, xyz for each row
     crops/       the views themselves, for thumbnails and evidence
 """
 import csv
@@ -17,12 +17,16 @@ import cv2
 import numpy as np
 
 from .crops import load_faces, view
-from .embed import MODEL_NAME, RES, embed, weights_name
+from .embed import DESCRIPTOR, MODEL_NAME, RES, embed, weights_name
 from .matterport import REPO, Matterport, load_dotenv
 
-YAWS = tuple(range(0, 360, 45))     # 8 headings
-PITCHES = (0, -25)                  # level, and tilted down the way a phone is held
-FOV = 75.0
+# Two cuts per position. 60 degree views every 30 degrees at three tilts match a
+# zoomed or tilted phone photo; 75 degree views every 45 degrees match a phone's
+# wide main camera. Using both was the best all-round in perception.bench.
+CUTS = (
+    (60.0, tuple(range(0, 360, 30)), (-25, 0, 25)),
+    (75.0, tuple(range(0, 360, 45)), (0, -25)),
+)
 SIZE = 448
 
 
@@ -65,20 +69,27 @@ def build(building_id, model_ids=None, mp=None):
                 continue
             faces = load_faces(paths)
             p = loc["position"]
-            for pitch in PITCHES:
-                for yaw in YAWS:
-                    img = view(faces, yaw, pitch, FOV, SIZE)
-                    rel = os.path.join("crops", "%s_%s_y%03d_p%+03d.jpg" % (mid, loc["id"], yaw, pitch))
-                    cv2.imwrite(os.path.join(out, rel), img, [cv2.IMWRITE_JPEG_QUALITY, 88])
-                    images.append(img)
-                    meta.append({"node_id": ref, "model_id": mid, "model_name": model["name"],
-                                 "yaw": yaw, "pitch": pitch, "crop_path": os.path.join(out, rel),
-                                 "xyz": [p["x"], p["y"], p["z"]], "neighbors": loc["neighbors"]})
+            for fov, yaws, pitches in CUTS:
+                for pitch in pitches:
+                    for yaw in yaws:
+                        img = view(faces, yaw, pitch, fov, SIZE)
+                        # 75 degree views keep their original names: cached attributes point at them.
+                        tag = "" if fov == 75.0 else "_f%02d" % fov
+                        rel = os.path.join("crops", "%s_%s_y%03d_p%+03d%s.jpg" % (mid, loc["id"], yaw, pitch, tag))
+                        cv2.imwrite(os.path.join(out, rel), img, [cv2.IMWRITE_JPEG_QUALITY, 88])
+                        images.append(img)
+                        meta.append({"node_id": ref, "model_id": mid, "model_name": model["name"],
+                                     "fov": fov, "yaw": yaw, "pitch": pitch,
+                                     "crop_path": os.path.join(out, rel),
+                                     "xyz": [p["x"], p["y"], p["z"]], "neighbors": loc["neighbors"]})
         print("  %s %-28s %d sweeps" % (mid, model["name"][:28], len(model["locations"])), flush=True)
     emb = embed(images)
-    np.save(os.path.join(out, "emb.npy"), emb)
-    json.dump({"building_id": str(building_id), "model": MODEL_NAME, "weights": weights_name(), "input_res": RES, "fov": FOV, "yaws": YAWS,
-               "pitches": PITCHES, "rows": meta, "skipped": skipped},
+    np.save(os.path.join(out, "emb.npy"), emb.astype(np.float16))     # half the disk, same ranking
+    for stale in ("head.npz", "train_views.npz"):                     # belonged to the old descriptor
+        if os.path.exists(os.path.join(out, stale)):
+            os.remove(os.path.join(out, stale))
+    json.dump({"building_id": str(building_id), "descriptor": DESCRIPTOR, "weights": weights_name(),
+               "input_res": RES, "cuts": CUTS, "rows": meta, "skipped": skipped},
               open(os.path.join(out, "meta.json"), "w"))
     return {"building_id": str(building_id), "views": len(meta),
             "nodes": len({m["node_id"] for m in meta}), "skipped": skipped}
@@ -89,7 +100,12 @@ def load(building_id):
     if not os.path.exists(os.path.join(d, "emb.npy")):
         raise FileNotFoundError("no index for building %s; run: python -m perception.index %s"
                                 % (building_id, building_id))
-    return np.load(os.path.join(d, "emb.npy")), json.load(open(os.path.join(d, "meta.json")))
+    meta = json.load(open(os.path.join(d, "meta.json")))
+    if meta.get("descriptor", "dinov2") != DESCRIPTOR:
+        raise RuntimeError("index for building %s was built with descriptor %r but %r is active; "
+                           "rebuild it: python -m perception.index %s"
+                           % (building_id, meta.get("descriptor", "dinov2"), DESCRIPTOR, building_id))
+    return np.load(os.path.join(d, "emb.npy")).astype(np.float32), meta
 
 
 if __name__ == "__main__":

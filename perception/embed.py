@@ -1,50 +1,81 @@
-"""Image embeddings from a self-supervised vision model (DINOv2), on the laptop GPU."""
+"""Image descriptors for retrieval: MegaLoc by default, frozen DINOv2 as the alternative."""
 import os
 
+import cv2
 import numpy as np
 import torch
 from PIL import Image
 
 # Model and input size can be overridden for experiments. An index must be built
 # and queried with the same settings; perception.index records them.
-MODEL_NAME = os.environ.get("PINPOINT_EMBED_MODEL", "facebook/dinov2-base")
-RES = int(os.environ.get("PINPOINT_EMBED_RES", "224"))      # multiple of 14
-# Weights fine-tuned on scans of other buildings (perception.finetune). Used when
-# present; set PINPOINT_EMBED_STOCK=1 to ignore them. An index must be built and
-# queried with the same weights.
-FINETUNED = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                         "cache", "models", "dinov2_ft.pt")
+# Which descriptor turns an image into a vector:
+#   megaloc  DINOv2-base with a learned aggregation head trained for place recognition,
+#            including indoor scans (8,448-d, 322 px input).
+#   dinov2   frozen DINOv2: class token joined with mean patch token (1,536-d).
+# An index must be built and queried with the same descriptor; perception.index
+# records it. Override with PINPOINT_DESCRIPTOR.
+DESCRIPTOR = os.environ.get("PINPOINT_DESCRIPTOR", "megaloc")
+MODEL_NAME = os.environ.get("PINPOINT_EMBED_MODEL", "facebook/dinov2-base")   # dinov2 only
+RES = int(os.environ.get("PINPOINT_EMBED_RES", "322" if DESCRIPTOR == "megaloc" else "224"))  # multiple of 14
 _state = {}
 
 
+def _device():
+    return "mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu")
+
+
 def _load():
-    if not _state:
+    if _state:
+        return _state
+    dev = _device()
+    if DESCRIPTOR == "megaloc":
+        from huggingface_hub import hf_hub_download
+        from safetensors.torch import load_file
+        from .vendor.megaloc_model import MegaLoc
+        model = MegaLoc()
+        model.load_state_dict(load_file(hf_hub_download(repo_id="gberton/MegaLoc", filename="model.safetensors")))
+        _state.update(model=model.to(dev).eval(), dev=dev, weights="megaloc")
+    else:
         from transformers import AutoImageProcessor, AutoModel
-        dev = "mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu")
         if RES == 224:
-            _state["proc"] = AutoImageProcessor.from_pretrained(MODEL_NAME)     # resize 256, centre crop 224
-        else:                                                               # whole image at RES x RES
-            _state["proc"] = AutoImageProcessor.from_pretrained(
+            proc = AutoImageProcessor.from_pretrained(MODEL_NAME)        # resize 256, centre crop 224
+        else:                                                           # whole image at RES x RES
+            proc = AutoImageProcessor.from_pretrained(
                 MODEL_NAME, size={"shortest_edge": RES}, crop_size={"height": RES, "width": RES})
-        model = AutoModel.from_pretrained(MODEL_NAME)
-        _state["weights"] = "stock"
-        if os.path.exists(FINETUNED) and not os.environ.get("PINPOINT_EMBED_STOCK"):
-            model.load_state_dict(torch.load(FINETUNED, map_location="cpu"))
-            _state["weights"] = "finetuned"
-        _state["model"] = model.to(dev).eval()
-        _state["dev"] = dev
+        _state.update(proc=proc, model=AutoModel.from_pretrained(MODEL_NAME).to(dev).eval(),
+                      dev=dev, weights="stock")
     return _state
 
 
 def weights_name():
-    """"stock" or "finetuned": which weights embed() is using."""
+    """Which descriptor weights embed() is using."""
     return _load()["weights"]
+
+
+_MEAN = np.array([0.485, 0.456, 0.406], np.float32)
+_STD = np.array([0.229, 0.224, 0.225], np.float32)
+
+
+def _embed_megaloc(s, images, batch):
+    out = []
+    for i in range(0, len(images), batch):
+        chunk = []
+        for im in images[i:i + batch]:
+            rgb = np.asarray(im.convert("RGB")) if isinstance(im, Image.Image) else im[:, :, ::-1]
+            rgb = cv2.resize(np.ascontiguousarray(rgb), (RES, RES), interpolation=cv2.INTER_AREA)
+            chunk.append(((rgb.astype(np.float32) / 255 - _MEAN) / _STD).transpose(2, 0, 1))
+        with torch.no_grad():
+            d = s["model"](torch.from_numpy(np.stack(chunk)).to(s["dev"]))
+        out.append(d.float().cpu().numpy())
+    return np.concatenate(out).astype(np.float32)
 
 
 def embed(images, batch=32):
     """BGR arrays (as from cv2) or PIL images -> unit-length vectors, one row each.
     The vector is the class token joined with the mean of the patch tokens."""
     s = _load()
+    if DESCRIPTOR == "megaloc":
+        return _embed_megaloc(s, images, batch)
     pil = [im if isinstance(im, Image.Image) else Image.fromarray(im[:, :, ::-1]) for im in images]
     out = []
     for i in range(0, len(pil), batch):

@@ -12,7 +12,6 @@ import numpy as np
 
 from . import rerank as _rerank
 from .embed import embed
-from .head import encoder
 from .index import index_dir, load
 
 SHORTLIST = 40      # views re-ranked by point matching (about 0.1 s each)
@@ -92,42 +91,84 @@ def _read_photo(image_path, work_dir, max_side=1600):
     return img
 
 
-def match_photo(building_id, image_path, k=10, rerank=True):
+POSITIONS = 12      # positions sent to point matching
+VIEWS_EACH = 2      # best views of each (so 24 pairs, about 2.5 s on the laptop)
+
+
+def match_photo(building_id, image_path, k=10):
     """Contract: -> [{node_id, score, evidence_path}], best first.
 
-    score is 0..1 and rises with the number of matched points; `confirmed` is true
-    when there are enough of them that this is the same place and not a look-alike.
-    If nothing is confirmed, treat the list as "similar-looking places" and ask the
-    caller a question. Extra keys: inliers, embedding_score, model_name, yaw, pitch,
-    crop_path. evidence_path is the photo beside the matched view with lines joining
-    matched points."""
+    How it works: MegaLoc turns the photo into a vector; every scanned position is
+    scored by its three most similar views; the best dozen positions are checked by
+    point matching (LoFTR); positions are ordered by similarity plus a bonus for
+    matched points; and a calibrator fitted on photos taken between scanned spots
+    turns the evidence about the top position into a probability.
+
+    score      0..1. For the top position it is the calibrated probability that it
+               is right (the caller is at or next to it). The rest share what is
+               left, so the list can be used directly as a belief.
+    confirmed  true only for the top position, and only when its probability is at
+               least 0.9. If nothing is confirmed, ask the caller a question or
+               show the top thumbnails.
+    Extra keys: inliers, similarity, model_name, fov, yaw, pitch, crop_path.
+    evidence_path is the photo beside the matched view with lines joining matched
+    points."""
+    from . import calibrate
     emb, meta = load(building_id)
     rows = meta["rows"]
-    encode = encoder(building_id)          # trained per-building layer, if there is one
-    emb = encode(emb)
     tag = hashlib.sha1(open(image_path, "rb").read()).hexdigest()[:10]
     ev_dir = os.path.join(index_dir(building_id), "evidence", tag)
     os.makedirs(ev_dir, exist_ok=True)
     img = _read_photo(image_path, ev_dir)
-    q = encode(embed([img]))[0]
-    if rerank:
-        cands = rank_reranked(emb, rows, q, img, k)
-    else:
-        cands = [dict(c, inliers=None, embedding_score=c["score"]) for c in rank(emb, rows, q, k)]
+    sims = emb @ embed([img])[0]
+
+    by_node = {}
+    for i, r in enumerate(rows):
+        by_node.setdefault(r["node_id"], []).append(i)
+    pooled = {}
+    for n, idx in by_node.items():
+        idx = np.array(idx)
+        best = idx[np.argsort(-sims[idx])]
+        pooled[n] = (float(sims[best[:3]].mean()), best)
+    order = sorted(pooled, key=lambda n: pooled[n][0], reverse=True)
+    short = order[:POSITIONS]
+    pair_rows = [int(i) for n in short for i in pooled[n][1][:VIEWS_EACH]]
+    pts = _rerank.match_points(img, [cv2.imread(rows[i]["crop_path"]) for i in pair_rows])
+    cands = []
+    for j, n in enumerate(short):
+        ms = pts[j * VIEWS_EACH:(j + 1) * VIEWS_EACH]
+        b = int(np.argmax([m["inliers"] for m in ms]))
+        cands.append({"node": n, "sim_top3": pooled[n][0], "inliers": ms[b]["inliers"],
+                      "matches": ms[b]["matches"], "row": pair_rows[j * VIEWS_EACH + b], "pts": ms[b]})
+
+    model = calibrate.load_saved()
+    ranked = calibrate.rank(cands, model["alpha"] if model else calibrate.ALPHA)
+    graph = {n: {"model": rows[pooled[n][1][0]]["model_id"],
+                 "neighbors": ["%s/%s" % (rows[pooled[n][1][0]]["model_id"], x)
+                               for x in rows[pooled[n][1][0]]["neighbors"]]} for n in pooled}
+    if model:
+        p_top = calibrate.probability(model, calibrate.features(ranked, graph))
+        confirm_at = model["confirm_at"]
+    else:                                   # no calibrator fitted yet: the old fixed rule
+        p_top = 1 - float(np.exp(-ranked[0]["inliers"] / 80.0))
+        confirm_at = 1 - float(np.exp(-CONFIRMED / 80.0))
+    alpha = model["alpha"] if model else calibrate.ALPHA
+    key = lambda c: c["sim_top3"] + alpha * np.log1p(c["inliers"])
+    rest = np.array([np.exp((key(c) - key(ranked[0])) / 0.05) for c in ranked[1:]])
+    rest = (1 - p_top) * rest / rest.sum() if len(rest) and rest.sum() > 0 else rest
+
     out = []
-    for j, c in enumerate(cands):
+    for j, c in enumerate(ranked[:k]):
         r = rows[c["row"]]
         path = os.path.join(ev_dir, "%02d.jpg" % (j + 1))
-        if rerank:
-            label = "#%d  %s  %d matched points" % (j + 1, r["model_name"], c["inliers"])
-            _rerank.overlay(img, cv2.imread(r["crop_path"]), c["pts_query"], c["pts_cand"], path, label)
-        else:
-            _evidence(img, r["crop_path"], path, "#%d  %s  %.2f" % (j + 1, r["model_name"], c["score"]))
+        _rerank.overlay(img, cv2.imread(r["crop_path"]), c["pts"]["pts_query"], c["pts"]["pts_cand"], path,
+                        "#%d  %s  %d matched points" % (j + 1, r["model_name"], c["inliers"]))
+        score = p_top if j == 0 else float(rest[j - 1])
         out.append({
-            "node_id": c["node_id"], "score": c["score"], "evidence_path": path,
-            "inliers": c["inliers"], "confirmed": bool(rerank and c["inliers"] >= CONFIRMED),
-            "embedding_score": round(c["embedding_score"], 4),
-            "model_name": r["model_name"], "yaw": r["yaw"], "pitch": r["pitch"],
+            "node_id": c["node"], "score": round(score, 4), "evidence_path": path,
+            "confirmed": bool(j == 0 and p_top >= confirm_at),
+            "inliers": c["inliers"], "similarity": round(c["sim_top3"], 4),
+            "model_name": r["model_name"], "fov": r.get("fov"), "yaw": r["yaw"], "pitch": r["pitch"],
             "crop_path": r["crop_path"],
         })
     return out

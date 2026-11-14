@@ -31,7 +31,7 @@ def _gray(img):
 
 def match_points(query, candidates, batch=8):
     """query and candidates are BGR arrays. Returns one dict per candidate:
-    {"inliers": n, "pts_query": Nx2, "pts_cand": Nx2} with points as fractions
+    {"inliers": n, "matches": m, "pts_query": Nx2, "pts_cand": Nx2} with points as fractions
     (0..1) of each image's width and height."""
     s = _load()
     q = _gray(query)
@@ -47,6 +47,7 @@ def match_points(query, candidates, batch=8):
         for j in range(len(chunk)):
             keep = (idx == j) & (conf >= MIN_CONF)
             p0, p1 = k0[keep], k1[keep]
+            raw = int(len(p0))                       # matches before the geometry check
             if len(p0) >= 8:
                 try:
                     _, mask = cv2.findFundamentalMat(p0, p1, cv2.USAC_MAGSAC, 2.0, 0.999, 2000)
@@ -56,7 +57,8 @@ def match_points(query, candidates, batch=8):
                 p0, p1 = p0[good], p1[good]
             else:
                 p0, p1 = p0[:0], p1[:0]
-            out.append({"inliers": int(len(p0)), "pts_query": p0 / SIZE, "pts_cand": p1 / SIZE})
+            out.append({"inliers": int(len(p0)), "matches": raw,
+                        "pts_query": p0 / SIZE, "pts_cand": p1 / SIZE})
     return out
 
 

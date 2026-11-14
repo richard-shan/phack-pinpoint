@@ -109,7 +109,7 @@ def run(building_id, model=None, workers=6, refresh=False):
     _, meta = load(building_id)
     views = {}
     for r in meta["rows"]:
-        if r["pitch"] == 0 and r["yaw"] in VIEW_NAMES:
+        if r["pitch"] == 0 and r["yaw"] in VIEW_NAMES and r.get("fov", 75.0) == 75.0:
             views.setdefault(r["node_id"], {})[r["yaw"]] = r["crop_path"]
     out_dir = attributes_dir(building_id)
     os.makedirs(out_dir, exist_ok=True)
