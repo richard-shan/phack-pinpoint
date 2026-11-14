@@ -1,10 +1,4 @@
-"""trace.jsonl writer — logs every tool call with timing. Plan 4: 'that folder is the trace
-for the demo and the input for the eval script'. Doubles as the latency profiler.
-
-One JSON object per line:
-  {"t": 1731600000.12, "dt_ms": 4.1, "actor": "locator", "tool": "match_photo",
-   "args": {...}, "result_summary": "...", "phase": "subagent"}
-"""
+# Append-only trace.jsonl for demo + eval timing.
 import json
 import time
 import functools
@@ -15,10 +9,9 @@ _ACTIVE = {"path": None, "t0": None}
 
 
 def start(incident_dir: Path):
-    """Begin a trace for one incident. Records wall-clock zero (photo arrival)."""
     _ACTIVE["path"] = Path(incident_dir) / "trace.jsonl"
     _ACTIVE["t0"] = time.time()
-    _ACTIVE["path"].write_text("")  # truncate
+    _ACTIVE["path"].write_text("")
     log("system", "intake_received", phase="start")
 
 
@@ -45,7 +38,6 @@ def elapsed_ms() -> float:
 
 @contextmanager
 def span(actor: str, tool: str, args=None, phase="tool"):
-    """Time a block and log it. Returns a dict you can set 'summary' on."""
     box = {"summary": None}
     t = time.time()
     try:
@@ -56,7 +48,7 @@ def span(actor: str, tool: str, args=None, phase="tool"):
 
 
 def traced(actor: str):
-    """Decorator: time a tool fn and log a compact result summary."""
+    # Time a tool and log it.
     def deco(fn):
         @functools.wraps(fn)
         def wrap(*a, **k):
@@ -79,8 +71,7 @@ def _trim(obj, limit=240):
 
 def _summarize(out):
     if isinstance(out, dict):
-        keys = list(out.keys())
-        return f"dict keys={keys}"
+        return f"dict keys={list(out.keys())}"
     if isinstance(out, list):
         return f"list len={len(out)}"
     return _trim(out)
