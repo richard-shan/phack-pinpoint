@@ -240,9 +240,10 @@ class PhotonTests(unittest.TestCase):
         def upload(*args):
             self.console.update(cid, notes='Changed during upload')
             return {'id': pid('att', 99)}
-        with patch.object(self.api, 'upload_document', side_effect=upload):
+        with patch.object(self.api, 'upload_document', side_effect=upload) as uploaded:
             self.bridge.relay()
-        self.assertEqual(len(self.api.sent), before)
+        uploaded.assert_not_called()                     # no document ever goes to the caller
+        self.assertTrue(all(b['content']['type'] == 'text' for _, b in self.api.sent[before:]))
 
     def test_photon_rejected_and_autoapproved_never_delivered(self):
         cid = self.photon_intake()
@@ -297,9 +298,13 @@ class PhotonTests(unittest.TestCase):
         count = len(self.api.sent)
         self.bridge.relay()
         bot.send_packet.assert_not_called()
-        self.assertEqual(len(self.api.sent), count)
+        # Only a short closure text goes out, once; the packet stays with dispatch.
+        (closure,) = [b for _, b in self.api.sent[count:]]
+        self.assertEqual(closure['content']['type'], 'text')
+        self.assertIn('Responders have your exact location', closure['content']['text'])
         self.bridge.relay()
         bot.send_packet.assert_not_called()
+        self.assertEqual(len(self.api.sent), count + 1)
 
     def test_photon_receipt_tracks_delivery(self):
         self.bridge.process(incoming(1, text('/start')), 1)

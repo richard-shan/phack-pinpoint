@@ -13,7 +13,7 @@ import uuid
 
 from .console_api import Console, ConsoleError
 from env.graph import list_buildings
-from .delivery import packet_text
+from .delivery import approved_packet, packet_text
 
 STATE = Path(__file__).resolve().parent.parent / 'cache' / 'telegram.json'
 MAX_DOWNLOAD = 20 * 1024 * 1024
@@ -23,6 +23,30 @@ WELCOME = (
     "I’ll look for a match in the buildings I know and prepare the location and route for dispatcher review. "
     "You can add details after your photo."
 )
+
+
+CONFIRMED = ("Responders have your exact location and the best way in, and they are on the way.\n\n"
+             "Stay where you are if it’s safe. Keep this thread open; text us if anything changes.")
+
+
+def received_with_location(address):
+    """First reply when the photo carried the caller's location (the demo's stand-in for a
+    carrier ping): calm, specific, and asks only for what helps the crew."""
+    where = f' near {address}' if address else ''
+    return (f"We have your message and your location{where}. Help is on the way.\n\n"
+            "If it’s safe, stay where you are. A dispatcher is looking at your location and "
+            "the best way in right now.\n\n"
+            "If you can, reply with anything we should know: injuries, how many people are with you, "
+            "or anything blocking the way. We’re staying with you.")
+
+
+def _locate_from_tag(path, buildings):
+    try:
+        from .geotag import locate_photo
+        return locate_photo(path, buildings)
+    except Exception as exc:                      # a broken tag reader must never block intake
+        print(f'Location tag could not be read: {type(exc).__name__}', flush=True)
+        return None
 
 
 class TelegramError(RuntimeError):
@@ -93,8 +117,9 @@ class Telegram:
 
 
 class Bridge:
-    def __init__(self, telegram, console, state_path=STATE, allowed_chats=(), detector=None):
+    def __init__(self, telegram, console, state_path=STATE, allowed_chats=(), detector=None, locator=None):
         self.telegram, self.console = telegram, console
+        self.locator = locator if locator is not None else _locate_from_tag
         self.path = Path(state_path)
         self.allowed = {str(c) for c in allowed_chats}
         self.buildings = set(list_buildings()) - {'toy'}
@@ -123,6 +148,13 @@ class Bridge:
         if hasattr(self.telegram, 'send_once'):
             return self.telegram.send_once(chat, text, key)
         return self.telegram.send(chat, text)
+
+    def channel(self, chat, result):
+        """What the console shows about where the message came from."""
+        info = {'platform': 'telegram', 'handle': str(chat)}
+        if result.get('location'):
+            info['location'] = result['location']
+        return info
 
     @staticmethod
     def active(session):
@@ -192,9 +224,18 @@ class Bridge:
                 building = session.pop('building', None)
                 if building:
                     pending['result'] = {'status': 'matched', 'building_id': building, 'reason': 'selected'}
+                else:
+                    # The caller's location travels in the photo (demo stand-in for a carrier
+                    # ping): resolve the building now, with no manual choice and no GPU wait.
+                    located = self.locator(pending['path'], self.buildings)
+                    if located and located['building_id'] in self.buildings:
+                        pending['result'] = {'status': 'matched', 'building_id': located['building_id'],
+                                             'reason': 'caller_location', 'location': located}
                 session['photos'][key] = {'pending': pending, 'replies': []}
                 session['active'] = key
                 self.save()
+            if (session['photos'][key].get('pending') or {}).get('result', {}).get('reason') == 'caller_location':
+                return              # finish_jobs sends the first-responder reply once the incident exists
             send('Got your photo.\n\nI’m checking it against the buildings I know. This may take a minute.\n\n'
                  'You can send more details while I look. If I can’t find a reliable match, I’ll tell you.')
         elif command.startswith('/'):
@@ -237,9 +278,22 @@ class Bridge:
                     if building not in self.buildings:
                         raise ValueError('Detector returned an unsupported building')
                     if not record.get('incident'):
-                        inc = self.console.create(building, pending['caption'], pending['path'])
+                        inc = self.console.create(building, pending['caption'], pending['path'],
+                                                  channel=self.channel(chat, result))
                         record.update(incident=inc['id'], sent=[m['id'] for m in inc.get('messages', [])])
                         self.save()
+                    if result.get('reason') == 'caller_location':
+                        text = received_with_location(result['location'].get('address'))
+                        self.send(chat, text, f'identification:{key}')
+                        try:            # the dispatcher sees exactly what the caller was told
+                            self.console.message(record['incident'], 'auto', text)
+                        except ConsoleError:
+                            print('Could not record the automatic reply in the console.', flush=True)
+                        Path(pending['path']).unlink(missing_ok=True)
+                        record.pop('pending')
+                        self.save()
+                        self.flush_replies(record)
+                        continue
                     self.flush_replies(record)
                     text = 'I’ve found a likely location from your photo. It’s ready for dispatcher review.'
                 elif result['status'] == 'unknown':
@@ -270,6 +324,15 @@ class Bridge:
                             self.send(chat, prefix + message['text'], f'dispatcher:{message["id"]}')
                             sent.append(message['id'])
                             self.save()
+                    if not record.get('confirmed_sent') and approved_packet(self.console, inc):
+                        # Closure for the caller. The packet itself stays with dispatch.
+                        self.send(chat, CONFIRMED, f'confirmed:{record["incident"]}')
+                        record['confirmed_sent'] = True
+                        self.save()
+                        try:
+                            self.console.message(record['incident'], 'auto', CONFIRMED)
+                        except ConsoleError:
+                            pass
                 except (ConsoleError, OSError, TelegramError):
                     print('Could not relay an incident message; will retry.', flush=True)
 

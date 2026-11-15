@@ -188,9 +188,9 @@ class PhotonTransport:
 
 class PhotonBridge(Bridge):
     def __init__(self, api, console, state_path=STATE, allowed_handles=(), agent_handle='', detector=None,
-                 packet_bot=None):
+                 packet_bot=None, locator=None):
         transport = PhotonTransport(api, packet_bot)
-        super().__init__(transport, console, state_path, detector=detector)
+        super().__init__(transport, console, state_path, detector=detector, locator=locator)
         transport.bridge = self
         self.api = api
         self.allowed_handles = set(allowed_handles)
@@ -200,6 +200,13 @@ class PhotonBridge(Bridge):
         self.state.update(projectId=api.project)
         for key, default in [('cursor', 0), ('routes', {}), ('outbound', {}), ('processed', [])]:
             self.state.setdefault(key, default)
+
+    def channel(self, chat, result):
+        route = self.state['routes'].get(str(chat), {})
+        info = {'platform': route.get('platform', 'imessage'), 'handle': route.get('callerHandle', '')}
+        if result.get('location'):
+            info['location'] = result['location']
+        return info
 
     def process(self, event, seq):
         if not isinstance(seq, int) or seq < 1:
