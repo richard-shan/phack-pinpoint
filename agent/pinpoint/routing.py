@@ -145,10 +145,32 @@ def best_entry(building_id, target, profile):
 
 
 def best_entry_under_belief(building_id, candidates, profile):
-    # Best door under location uncertainty; question_worth_asking if doors disagree.
-    """Pick the responder-staging entrance that minimizes expected graph distance under weighted candidate rooms. Returns best_entry_id, expected meters, and alternatives."""
+    """Pick the responder-staging entrance that minimizes expected graph distance under weighted candidate rooms. Accepts candidates as list of {node_id, belief} dicts; tolerates 'node', 'id', 'room_id' as aliases and defaults a missing belief to uniform. Returns best_entry_id, expected meters, and alternatives."""
     g = load_graph(building_id)
     from .localization import normalize_belief
+    # Normalize candidate shapes: the LLM may not match our exact schema.
+    _norm = []
+    for c in (candidates or []):
+        if isinstance(c, str):
+            _norm.append({"node_id": c, "belief": 1.0})
+            continue
+        if not isinstance(c, dict):
+            continue
+        nid = c.get("node_id") or c.get("node") or c.get("id") or c.get("room_id")
+        if not nid or nid not in g["nodes"]:
+            continue
+        belief = c.get("belief", c.get("score", 1.0))
+        try:
+            belief = float(belief)
+        except (TypeError, ValueError):
+            belief = 1.0
+        _norm.append({"node_id": nid, "belief": belief})
+    if not _norm:
+        return {"entrance_id": None, "expected_seconds": None, "spread_seconds": 0.0,
+                "all_candidates_same_door": False, "question_worth_asking": True,
+                "per_candidate_best_door": {},
+                "error": "no valid candidates (need at least node_id matching a graph node)"}
+    candidates = _norm
     normalize_belief(candidates)
     entrances = [nid for nid, n in g["nodes"].items() if n.get("is_entrance")]
     exp = {e: 0.0 for e in entrances}
