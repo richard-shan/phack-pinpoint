@@ -138,8 +138,8 @@ def photo_payload(path: str) -> dict:
     raw = p.read_bytes()
     kind = {".jpg": "jpeg", ".jpeg": "jpeg", ".png": "png", ".webp": "webp"}.get(p.suffix.lower())
     if kind is None or len(raw) > MAX_PHOTO:
-        from PIL import Image                      # re-encode: other formats, or too large
-        img = Image.open(io.BytesIO(raw)).convert("RGB")
+        from PIL import Image, ImageOps            # re-encode: other formats, or too large
+        img = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")     # phones store rotation in EXIF
         img.thumbnail((1600, 1600))
         for quality in (88, 75, 60):
             buf = io.BytesIO()
