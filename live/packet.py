@@ -152,6 +152,8 @@ class LivePacketWriter(PacketWriter):
                 L += ["- The match was simulated for this run: no photo was matched."]
             elif lo.get("evidence_path"):
                 L += [f"- Photo match evidence: `{lo['evidence_path']}` [src:location.evidence_path]"]
+            for line, key in lo.get("model_lines") or []:      # a run with a model in charge (live.run --llm)
+                L += [f"- {line} [src:{key}]"]
         elif lo is None and not self.failure_sentence:
             L += [PENDING]
         else:
@@ -339,7 +341,10 @@ class LivePacketWriter(PacketWriter):
 
         # ---- building brief
         L += ["## Building brief (CoStar)"]
-        if b:
+        if b and b.get("not_in_costar"):
+            L += [f"- {b.get('name')}: not in the CoStar kit, so there is no record of its use, tenants, "
+                  "occupancy risks or contact. [src:brief.note]"]
+        elif b:
             use = b.get("use_type") or "use not on record"
             if b.get("use_subtype") and str(b["use_subtype"]).lower() != "unknown":
                 use += f" ({str(b['use_subtype']).replace('_', ' ').lower()})"
@@ -416,7 +421,8 @@ class LivePacketWriter(PacketWriter):
         if self.brief is not None:
             if not self.brief.get("scan_date"):
                 out.append("The scan has no date on record.")
-            out.append("Tenant list is CoStar's record, not current occupancy.")
+            out.append("Who occupies the building: no CoStar record exists for it." if self.brief.get("not_in_costar")
+                       else "Tenant list is CoStar's record, not current occupancy.")
         return out
 
     # ------------------------------------------------------------ console copy
@@ -438,8 +444,28 @@ class LivePacketWriter(PacketWriter):
             if tools.SESSION.get("console") and tools.SESSION.get("console_incident"):
                 where = tools.publish(out, "route.jpg")
             self._route_image = (target, where)
+            self._write_route3d(foot)
         except Exception as exc:                 # a picture is a convenience, never a reason to fail
             trace.log("router", "route_image_failed", result_summary=str(exc)[:200], phase="render")
+
+    def _write_route3d(self, foot):
+        """route3d.json: the same route for the console's 3D model page."""
+        import json
+        from . import model3d
+        lo, b = self.location or {}, str(self.intake["building_id"])
+        st = (self.route or {}).get("stretcher") or {}
+        lines = [f"On foot: about {_secs(foot.get('seconds'))}, {round(foot.get('meters') or 0)} m."]
+        if st.get("entrance_id") and st.get("seconds"):
+            lines.append(f"Stretcher: about {_secs(st['seconds'])}"
+                         + ("." if st["entrance_id"] == foot.get("entrance_id") else f", through {self._label(st['entrance_id'])}."))
+        elif st:
+            lines.append("A stretcher cannot reach this position.")
+        data = model3d.route_json(b, foot.get("path") or [], title="Route to the caller: " + str(self.intake.get("address") or b),
+                                  lines=lines, caller=f"{self._place(lo['node_id'])} (confidence {lo.get('confidence', 0) * 100:.0f}%)")
+        out = self.path.parent / "route3d.json"
+        out.write_text(json.dumps(data))
+        if tools.SESSION.get("console") and tools.SESSION.get("console_incident"):
+            tools.publish(out, "route3d.json")
 
     def flush(self):
         self._draw_route()
@@ -463,7 +489,8 @@ class LivePacketWriter(PacketWriter):
             fields["route"] = (f"On foot, about {_secs(foot.get('seconds'))}: {steps}")[:10000]
         if self.audit:
             a = self.audit
-            fields["notes"] = (f"Drafted by the Pinpoint agent in {trace.elapsed_ms() / 1000:.1f} s. "
+            who = tools.SESSION.get("drafted_by") or "the Pinpoint agent"
+            fields["notes"] = (f"Drafted by {who} in {trace.elapsed_ms() / 1000:.1f} s. "
                                f"{a.get('supported')} of {a.get('checked')} packet lines trace to a source. "
                                + self._activity())[:10000]
         else:
@@ -476,16 +503,22 @@ class LivePacketWriter(PacketWriter):
     def _activity(self) -> str:
         """The agent's steps and how long each took, from its trace."""
         import json
-        steps = []
+        steps = []                                # [what, total ms, times in a row]
         try:
             for line in (self.path.parent / "trace.jsonl").read_text().splitlines():
                 r = json.loads(line)
                 if r.get("dt_ms") is not None and r.get("actor") not in ("console", "system"):
-                    took = f"{r['dt_ms'] / 1000:.1f} s" if r["dt_ms"] >= 100 else f"{round(r['dt_ms'])} ms"
-                    steps.append(f"{r['actor']}: {r['tool'].replace('_', ' ')} ({took})")
+                    what = f"{r['actor']}: {r['tool'].replace('_', ' ')}"
+                    if steps and steps[-1][0] == what:         # a model may call one tool many times in a row
+                        steps[-1][1] += r["dt_ms"]
+                        steps[-1][2] += 1
+                    else:
+                        steps.append([what, r["dt_ms"], 1])
         except (OSError, ValueError):
             return ""
-        return "Agent steps: " + "; ".join(steps) + "." if steps else ""
+        took = lambda ms: f"{ms / 1000:.1f} s" if ms >= 100 else f"{round(ms)} ms"
+        return ("Agent steps: " + "; ".join(f"{w}{f' x{n}' if n > 1 else ''} ({took(ms)})" for w, ms, n in steps) + "."
+                if steps else "")
 
     def _push(self):
         console, cid = tools.SESSION.get("console"), tools.SESSION.get("console_incident")

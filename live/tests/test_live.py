@@ -19,7 +19,7 @@ from live.console_api import Console
 
 from env import console as console_export
 from env import tools as A
-from pinpoint import orchestrator, stubs
+from pinpoint import learning, orchestrator, stubs
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 BUILDING = "6550930"                       # 7900 Fannin St: lobby scan, four doors, 17 health care tenants
@@ -47,17 +47,121 @@ class _Base(unittest.TestCase):
         orchestrator.INCIDENTS = Path(self.tmp.name) / "incidents"
         orchestrator.INCIDENTS.mkdir()
         tools.ASSETS = Path(self.tmp.name) / "assets"
+        self.old_state, run.STATE = run.STATE, Path(self.tmp.name) / "state"     # the watcher's record of handled incidents
 
     def tearDown(self):
         tools.uninstall()
         tools._simulated_candidates = self.old_sim
         orchestrator.INCIDENTS, tools.ASSETS = self.old_incidents, self.old_assets
+        run.STATE = self.old_state
         self.tmp.cleanup()
 
     def files(self, res):
         d = Path(res["dir"])
         return {p.stem: (json.loads(p.read_text()) if p.suffix == ".json" else p.read_text())
                 for p in d.iterdir() if p.suffix in (".json", ".md")}
+
+
+class _ScriptedModel:
+    """Stands in for the model on the agent's LLM path, so that path is tested without an
+    API key: it calls the tools the agent's wrappers call, writes its reports where the
+    agent writes them (before each approval gate and at the end), and asks to send."""
+
+    def __init__(self, node=None, door="door_made_up", belief=0.5, asks_to_send=True, question=None):
+        self.node, self.door, self.belief = node, door, belief
+        self.asks_to_send, self.question = asks_to_send, question
+        self.decisions, self.mistake = [], None
+
+    def _report(self, idir, node):
+        (idir / "location.json").write_text(json.dumps(
+            {"node_id": node, "room_id": "r", "room_label": "somewhere", "belief": self.belief,
+             "candidates": [], "questions_asked": 0, "evidence_path": ""}))
+        (idir / "route.json").write_text(json.dumps({"best_entry_id": self.door, "path_nodes": []}))
+        (idir / "packet.md").write_text("# the model's own packet\n")
+
+    def __call__(self, intake, idir, auto_approve=True, approve_fn=None):
+        from pinpoint import trace
+        idir = Path(idir)
+        idir.mkdir(parents=True, exist_ok=True)
+        trace.start(idir)
+        cands = stubs.match_photo(intake["incident_id"], intake["caller_photo_path"], 10)   # wrong id in the slot
+        stubs.detect_site_features(intake["building_id"])
+        self.mistake = stubs.look("not-a-position")
+        if self.question:
+            stubs.ask_caller(intake["incident_id"], self.question)
+        node = self.node or cands[0]["node_id"]
+        if self.asks_to_send:
+            for action in ("send_packet", "notify_contact"):
+                self._report(idir, node)
+                self.decisions.append(approve_fn(intake["incident_id"], [action]))
+        self._report(idir, node)
+        return {"interrupts": len(self.decisions), "cost_usd": 0.0}
+
+
+class ModelInCharge(_Base):
+    """`live.run --llm` with a scripted model: what the model may decide, and what it may not."""
+
+    def setUp(self):
+        super().setUp()
+        from pinpoint import budget, deep_agent
+        self.deep_agent = deep_agent
+        self.saved = (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent,
+                      budget.check_budget, run.INCIDENTS)
+        deep_agent._ensure_api_key = lambda: "placeholder"
+        deep_agent.build_agent = lambda *a, **k: None
+        budget.check_budget = lambda: (5.0, False)
+        run.INCIDENTS = orchestrator.INCIDENTS
+
+    def tearDown(self):
+        from pinpoint import budget
+        (self.deep_agent.run_real_agent, self.deep_agent._ensure_api_key, self.deep_agent.build_agent,
+         budget.check_budget, run.INCIDENTS) = self.saved
+        super().tearDown()
+
+    def run_with(self, model, **kw):
+        self.deep_agent.run_real_agent = model
+        res = run.run_llm_incident(BUILDING, None, "collapsed by the surgery office", position=TARGET, **kw)
+        return res, self.files(res)
+
+    def test_packet_is_written_from_the_tools_not_by_the_model(self):
+        best = A.best_entry(BUILDING, TARGET, "foot")
+        model = _ScriptedModel(door=best["entrance_id"])
+        res, f = self.run_with(model)
+        self.assertEqual(model.decisions, ["approve", "reject"])       # the packet; contacting the building
+        self.assertIn("error", model.mistake)                          # a bad argument comes back as a result
+        self.assertEqual((res["decision"], res["position"], res["door"]), ("approve", TARGET, best["entrance_id"]))
+        self.assertEqual(f["audit"]["status"], "OK")
+        self.assertEqual(f["audit"]["unsupported"], [])
+        self.assertIn("## Enter here", f["packet"])
+        self.assertIn("Position chosen by the agent's model", f["packet"])
+        self.assertIn("The model's report names the same door.", f["packet"])
+        self.assertNotIn("the model's own packet", f["packet"])
+        kept = Path(res["dir"]) / "llm"
+        self.assertIn("the model's own packet", (kept / "packet.md").read_text())
+        self.assertEqual(json.loads((kept / "location.json").read_text())["node_id"], TARGET)
+        self.assertEqual(f["route"]["foot"]["entrance_id"], best["entrance_id"])
+
+    def test_a_position_the_match_did_not_return_is_not_used(self):
+        res, f = self.run_with(_ScriptedModel(node=SOUTH))
+        self.assertEqual((res["position"], res["model_position"]), (TARGET, SOUTH))
+        self.assertIn("which the photo match did not return", f["packet"])
+        self.assertIn("names a different door (door_made_up)", f["packet"])
+        self.assertEqual(f["audit"]["unsupported"], [])
+
+    def test_a_model_that_never_asks_to_send_still_gets_a_packet(self):
+        model = _ScriptedModel(asks_to_send=False)
+        res, f = self.run_with(model)
+        self.assertEqual(model.decisions, [])
+        self.assertTrue(res["model_never_asked_to_send"])
+        self.assertEqual(res["decision"], "approve")
+        self.assertIn("## Enter here", f["packet"])
+
+    def test_the_models_own_question_goes_out_as_written(self):
+        res, f = self.run_with(_ScriptedModel(question="Which shop is nearest to you?"))
+        asked = tools.SESSION["asked"][0]
+        self.assertEqual(asked["question"], "Which shop is nearest to you?")
+        self.assertTrue(asked["source"].startswith("not asked"))        # no caller is connected in this run
+        self.assertIn("the model did not put a question to the caller", f["packet"])
 
 
 class WithoutConsole(_Base):
@@ -127,6 +231,27 @@ class WithoutConsole(_Base):
         self.assertIsNot(stubs.match_photo, before)
         tools.uninstall()
         self.assertIs(stubs.match_photo, before)
+
+    def test_llm_agent_constructs_with_the_real_tools(self):
+        """The agent's deepagents path accepts the real tools (every one needs a description).
+        Construction only: no model is called, so the key here is a placeholder."""
+        import importlib.util
+        import os
+        if importlib.util.find_spec("deepagents") is None:
+            self.skipTest("deepagents is not installed in this Python")
+        from pinpoint import deep_agent
+        tools.install()
+        tools.reset(building_id=BUILDING)
+        old = os.environ.get("ANTHROPIC_API_KEY")
+        os.environ["ANTHROPIC_API_KEY"] = old or "placeholder-not-a-real-key"
+        try:
+            agent = deep_agent.build_agent()
+        finally:
+            if old is None:
+                del os.environ["ANTHROPIC_API_KEY"]
+        self.assertTrue(hasattr(agent, "stream"))
+        self.assertEqual({sa["name"] for sa in deep_agent.build_subagents()},
+                         {"records", "locator", "site", "router", "verifier"})
 
     def test_reply_parsing(self):
         p = tools._parse_reply
@@ -239,8 +364,6 @@ class WithConsole(_Base):
         self.assertIs(first["raw"], False)
 
     def test_watcher_runs_new_incidents_once_and_leaves_handled_ones_alone(self):
-        state = run.STATE
-        run.STATE = Path(self.tmp.name) / "state"
         try:
             done = run.run_incident(BUILDING, None, position=TARGET, console=self.console, auto_approve=True)
             rev = self.console.get(done["console_incident"])["revision"]
@@ -255,7 +378,72 @@ class WithConsole(_Base):
             run.watch(self.console, once=True, auto_approve=True, position=TARGET)
             self.assertEqual(self.console.get(fresh)["revision"], rev2)                     # not run twice
         finally:
-            run.STATE = state
+            pass
+
+    def test_a_run_tells_the_watcher_it_has_the_incident(self):
+        photo = Path(self.tmp.name) / "caller.jpg"
+        from PIL import Image
+        Image.new("RGB", (64, 48), "gray").save(photo)
+        res = run.run_incident(BUILDING, str(photo), position=TARGET, console=self.console, leave_for_review=True)
+        rev = self.console.get(res["console_incident"])["revision"]
+        run.watch(self.console, once=True, auto_approve=True, position=TARGET)      # must leave it alone
+        self.assertEqual(self.console.get(res["console_incident"])["revision"], rev)
+
+    def test_leave_for_review_drafts_and_does_not_wait(self):
+        res = run.run_incident(BUILDING, None, "example", position=TARGET, console=self.console,
+                               leave_for_review=True)
+        inc = self.console.get(res["console_incident"])
+        self.assertEqual(inc["status"], "review")                # still open for a dispatcher
+        self.assertIn("## Enter here", inc["packetMarkdown"])
+        self.assertEqual(res["console_decision"]["decision"], "left for review")
+        self.assertNotIn("APPROVED", (Path(res["dir"]) / "packet.md").read_text().split("\n")[2])
+
+    def test_model_run_waits_for_the_dispatcher_in_the_console(self):
+        from pinpoint import budget, deep_agent
+        saved = (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
+                 run.INCIDENTS)
+        model = _ScriptedModel()
+        deep_agent.run_real_agent, deep_agent._ensure_api_key = model, (lambda: "placeholder")
+        deep_agent.build_agent, budget.check_budget = (lambda *a, **k: None), (lambda: (5.0, False))
+        run.INCIDENTS = orchestrator.INCIDENTS
+        try:
+            box = {}
+            t = threading.Thread(target=lambda: box.update(run.run_llm_incident(
+                BUILDING, None, position=TARGET, console=self.console, ask="simulate", approve_timeout_s=30)))
+            t.start()
+            end, cid = time.time() + 20, None
+            while time.time() < end and cid is None:
+                rows = self.console.incidents()
+                if rows and "trace to a source" in (self.console.get(rows[0]["id"]).get("notes") or ""):
+                    cid = rows[0]["id"]
+                time.sleep(0.2)
+            self.assertIsNotNone(cid, "the packet never reached the console")
+            self.assertTrue(t.is_alive(), "the run did not wait at the approval gate")
+            inc = self.console.get(cid)
+            self.assertIn("with a model in charge", inc["notes"])
+            self.assertIn("Position chosen by the agent's model", inc["packetMarkdown"])
+            self.assertEqual(inc["spatialRoute"]["destination"], TARGET)
+            self.console.decide(cid, "approved")
+            t.join(timeout=20)
+            self.assertEqual((box["decision"], model.decisions), ("approve", ["approve", "reject"]))
+            self.assertEqual(self.console.get(cid)["status"], "approved")
+        finally:
+            (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
+             run.INCIDENTS) = saved
+
+    def test_corrected_room_is_recorded_after_rejection(self):
+        old_buildings = learning.BUILDINGS
+        learning.BUILDINGS = Path(self.tmp.name) / "buildings"
+        try:
+            t, box, cid = self._run_in_thread()
+            self.console.decide(cid, "rejected", "wrong room", corrected_room_id="Suite 1200")
+            t.join(timeout=20)
+            self.assertFalse(t.is_alive())
+            self.assertEqual(box["decision"], "reject")
+            self.assertEqual(box["console_decision"]["corrected_room_id"], "Suite 1200")
+            self.assertEqual(learning.read_corrections(BUILDING)[0]["corrected"], "Suite 1200")
+        finally:
+            learning.BUILDINGS = old_buildings
 
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()

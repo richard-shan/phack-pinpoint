@@ -52,7 +52,7 @@ uv pip install --python .venv/bin/python -r perception/requirements.txt huggingf
 Then run one incident from a photo:
 
 ```sh
-.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9_h095.jpg --console
+.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9.jpg --console
 ```
 
 or leave the agent watching the console and start incidents there (pick a building,
@@ -65,6 +65,19 @@ or leave the agent watching the console and start incidents there (pick a buildi
 If photo matching is not installed or the building has no index, the run says so in
 the terminal and the packet is marked DEGRADED with the reason; it does not pretend to
 have located the caller.
+
+By default the agent's deterministic orchestrator runs the steps. To put a model in
+charge of the tool calls instead (lane C's deepagents path, Claude Haiku, about two
+minutes and 0.20 USD per incident), install `agent/requirements.txt` and add `--llm`:
+
+```sh
+uv pip install --python .venv/bin/python -r agent/requirements.txt
+ANTHROPIC_API_KEY=... .venv/bin/python -m live.run --building 6550930 --photo demo/6550930_3ymmrb.jpg --console --llm
+```
+
+The packet is still written from the tools' results and checked line by line; the
+model chooses the position and when to send. See "With a model in charge" in
+`live/README.md`.
 
 If port 4175 is taken: `.venv/bin/python -m live.serve --port 4180`, and pass
 `--console http://localhost:4180` to `live.run`. Open the console as `localhost`, not

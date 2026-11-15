@@ -17,3 +17,8 @@ agent/buildings/
 
 # Vexcel cached aerial tiles (regenerated per building; can be large)
 agent/pinpoint/fixtures/*/vexcel_tile.*
+
+# Secrets / budget state
+.env.local
+.pinpoint_cost.json
+agent/.pinpoint_cost.json

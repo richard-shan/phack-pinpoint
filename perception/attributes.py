@@ -80,6 +80,20 @@ def attributes_dir(building_id):
     return os.path.join(REPO, "cache", "attributes", str(building_id))
 
 
+def _ensure_views(rows, node_id, paths):
+    """Bulk indexes do not save view images; render the four this pass needs."""
+    missing = [y for y, p in paths.items() if not os.path.exists(p)]
+    if not missing:
+        return
+    import cv2
+    from .match import _view_image
+    for y in missing:
+        row = next(r for r in rows if r["node_id"] == node_id and r["yaw"] == y and r["pitch"] == 0
+                   and r.get("fov", 75.0) == 75.0)
+        os.makedirs(os.path.dirname(paths[y]), exist_ok=True)
+        cv2.imwrite(paths[y], _view_image(row), [cv2.IMWRITE_JPEG_QUALITY, 88])
+
+
 def describe_node(client, model, node_id, views):
     """views: {yaw: crop_path} for yaws 0, 90, 180, 270."""
     content = []
@@ -119,6 +133,7 @@ def run(building_id, model=None, workers=6, refresh=False):
         if os.path.exists(path) and not refresh:
             return json.load(open(path)), True
         try:
+            _ensure_views(meta["rows"], node_id, views[node_id])
             a = describe_node(client, model, node_id, views[node_id])
         except (anthropic.APIError, RuntimeError) as e:
             return {"node_id": node_id, "error": str(e)[:200]}, False

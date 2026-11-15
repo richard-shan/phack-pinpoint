@@ -104,10 +104,12 @@ class Console:
     def route(self, incident_id: str, body: dict) -> dict:
         return self._write(incident_id, "POST", "/route", body)
 
-    def decide(self, incident_id: str, decision: str, reason: str = "") -> dict:
+    def decide(self, incident_id: str, decision: str, reason: str = "", corrected_room_id: str = "") -> dict:
         body = {"decision": decision}
         if reason:
             body["reason"] = reason
+        if corrected_room_id:
+            body["correctedRoomId"] = corrected_room_id
         return self._write(incident_id, "POST", "/decision", body)
 
     # ------------------------------------------------------------ waiting on people
@@ -130,7 +132,7 @@ class Console:
             d = inc.get("decision")
             if d and inc.get("status") in ("approved", "rejected"):
                 return {"decision": d["kind"], "reason": d.get("reason") or "", "revision": d.get("revision"),
-                        "packet_id": inc.get("packetId")}
+                        "packet_id": inc.get("packetId"), "corrected_room_id": d.get("correctedRoomId") or ""}
             time.sleep(poll_s)
         return {"decision": "timeout", "reason": "", "revision": None}
 
@@ -141,8 +143,8 @@ def photo_payload(path: str) -> dict:
     raw = p.read_bytes()
     kind = {".jpg": "jpeg", ".jpeg": "jpeg", ".png": "png", ".webp": "webp"}.get(p.suffix.lower())
     if kind is None or len(raw) > MAX_PHOTO:
-        from PIL import Image                      # re-encode: other formats, or too large
-        img = Image.open(io.BytesIO(raw)).convert("RGB")
+        from PIL import Image, ImageOps            # re-encode: other formats, or too large
+        img = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")     # phones store rotation in EXIF
         img.thumbnail((1600, 1600))
         for quality in (88, 75, 60):
             buf = io.BytesIO()

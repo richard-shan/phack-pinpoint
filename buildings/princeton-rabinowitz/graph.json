@@ -1,0 +1,4866 @@
+{
+ "building_id": "princeton-rabinowitz",
+ "matterport_model_id": "P3S6VUTP3qB",
+ "name": "Princeton - Rabinowitz Hall",
+ "address": "Princeton, Princeton, NJ, 08544, US",
+ "generated_at": "2026-11-14T20:38:41",
+ "source": "matterport sweeps and wall plan",
+ "floor_offset": -1,
+ "grade_floor": 0,
+ "floors": [
+  {
+   "floor": 0,
+   "label": "Floor 1",
+   "has_walls": true
+  },
+  {
+   "floor": 1,
+   "label": "Floor 2",
+   "has_walls": true
+  },
+  {
+   "floor": 2,
+   "label": "Floor 3",
+   "has_walls": true
+  }
+ ],
+ "floorplans": {
+  "0": {
+   "path": "env/cache/matterport/P3S6VUTP3qB/floorplan_0_photogramy.jpg",
+   "pixels_per_meter": 100.0,
+   "origin_xy": [
+    -13.8125,
+    -16.621999740600586
+   ],
+   "width": 3019,
+   "height": 2531
+  },
+  "1": {
+   "path": "env/cache/matterport/P3S6VUTP3qB/floorplan_1_photogramy.jpg",
+   "pixels_per_meter": 100.0,
+   "origin_xy": [
+    -13.8125,
+    -16.621999740600586
+   ],
+   "width": 3019,
+   "height": 2531
+  },
+  "2": {
+   "path": "env/cache/matterport/P3S6VUTP3qB/floorplan_2_photogramy.jpg",
+   "pixels_per_meter": 100.0,
+   "origin_xy": [
+    -13.8125,
+    -16.621999740600586
+   ],
+   "width": 3019,
+   "height": 2531
+  }
+ },
+ "georeference": {
+  "source": "processing",
+  "latitude": 40.34908933610458,
+  "longitude": -74.65546592669608,
+  "note": "scan placement is good to a few meters, not to a door"
+ },
+ "stats": {
+  "floors_with_floor_mask": 2,
+  "links": 806,
+  "dropped_over_void": 196,
+  "dropped_wall_or_level": 234,
+  "dropped_spanner": 261,
+  "reconnected": 0,
+  "forced_links": 0,
+  "sweeps_without_floor": 0,
+  "auto_entrances": 0,
+  "other_exterior_doors": 4,
+  "nodes": 80,
+  "edges": 115,
+  "components": 1,
+  "largest_component": 80,
+  "entrances": 11,
+  "elevator_edges": 1,
+  "stairs_edges": 2,
+  "door_edges": 8
+ },
+ "nodes": [
+  {
+   "id": "da9quipa0a6ny84ky8e6s3ptb",
+   "floor": 1,
+   "xyz": [
+    -8.603,
+    -3.837,
+    -0.002
+   ],
+   "pano_xyz": [
+    -8.603,
+    -3.837,
+    1.367
+   ],
+   "quat": [
+    -0.002449440537020564,
+    -0.011555460281670094,
+    -0.041580986231565475,
+    0.9990653395652771
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/da9quipa0a6ny84ky8e6s3ptb.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the opening from the arcade into the atrium",
+   "latlon": [
+    40.349086850579816,
+    -74.65554637503617
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "g28dnxza8f193q5nzhdaxf2hd",
+   "floor": 1,
+   "xyz": [
+    -4.627,
+    -0.348,
+    -0.007
+   ],
+   "pano_xyz": [
+    -4.627,
+    -0.348,
+    1.364
+   ],
+   "quat": [
+    0.008227403275668621,
+    -0.0018448694609105587,
+    0.9954187870025635,
+    -0.09523846209049225
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/g28dnxza8f193q5nzhdaxf2hd.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349129340484126,
+    -74.65551840268658
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "gaxq605gdd559tf073aubympc",
+   "floor": 1,
+   "xyz": [
+    2.641,
+    -13.456,
+    -0.014
+   ],
+   "pano_xyz": [
+    2.641,
+    -13.456,
+    1.372
+   ],
+   "quat": [
+    0.008078244514763355,
+    -0.008706051856279373,
+    -0.3293047547340393,
+    0.9441490173339844
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/gaxq605gdd559tf073aubympc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349044672901954,
+    -74.655380727071
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "haipxtu4fuppeii5f8iik4btc",
+   "floor": 2,
+   "xyz": [
+    -8.12,
+    -13.286,
+    3.949
+   ],
+   "pano_xyz": [
+    -8.12,
+    -13.286,
+    5.336
+   ],
+   "quat": [
+    0.0012915293918922544,
+    -0.0041180625557899475,
+    -0.6008233428001404,
+    0.7993702292442322
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/haipxtu4fuppeii5f8iik4btc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the level 200 elevator lobby",
+   "note": "elevator PE1 at heading 281. Glass door of Room 200, signed Economics Lounge, at heading 150. Past the corner the corridor runs on south at heading 215 and is not scanned: on this level that is where the scan stops, and how to reach it from outside is not seen. Wall sign at heading 225: ahead Department of Economics and International Economics Section; left Center for Health and Wellbeing 218B, 219, Griswold Center 241-244, Industrial Relations Section, Restrooms",
+   "latlon": [
+    40.34903994295455,
+    -74.6554991282617
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "ht0bbyeyc69qwxm7did6ycbuc",
+   "floor": 1,
+   "xyz": [
+    11.368,
+    3.943,
+    -0.006
+   ],
+   "pano_xyz": [
+    11.368,
+    3.943,
+    1.365
+   ],
+   "quat": [
+    0.005855250637978315,
+    -0.001289820997044444,
+    0.23276935517787933,
+    0.9725134968757629
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/ht0bbyeyc69qwxm7did6ycbuc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire alarm pull station on the pier right of the north stair door, heading 72",
+   "latlon": [
+    40.34921924055403,
+    -74.6553625924735
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "panr3bktyzufic6e6xb4mtuub",
+   "floor": 1,
+   "xyz": [
+    12.102,
+    -12.275,
+    -0.011
+   ],
+   "pano_xyz": [
+    12.102,
+    -12.275,
+    1.367
+   ],
+   "quat": [
+    0.008044766262173653,
+    -0.003927295561879873,
+    0.7417907118797302,
+    0.6705718040466309
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/panr3bktyzufic6e6xb4mtuub.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire alarm pull station on the pier left of the south stair door, heading 297",
+   "latlon": [
+    40.349086559490196,
+    -74.65528253841806
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "akkrtige2btw2mmn2ghr2z9za",
+   "floor": 2,
+   "xyz": [
+    -8.233,
+    -4.244,
+    3.958
+   ],
+   "pano_xyz": [
+    -8.233,
+    -4.244,
+    5.339
+   ],
+   "quat": [
+    0.005437973886728287,
+    -0.006400953978300095,
+    -0.16543437540531158,
+    0.9861850142478943
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/akkrtige2btw2mmn2ghr2z9za.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349114966500245,
+    -74.65554052227962
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "duhb1en75fgewsniip8byupza",
+   "floor": 1,
+   "xyz": [
+    -0.504,
+    -6.102,
+    -0.017
+   ],
+   "pano_xyz": [
+    -0.504,
+    -6.102,
+    1.36
+   ],
+   "quat": [
+    -0.0028365538455545902,
+    -0.0018567399820312858,
+    -0.7811864614486694,
+    0.62428879737854
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/duhb1en75fgewsniip8byupza.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34909527773257,
+    -74.65544777184024
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "mk5198wdpzeqzp73ese8h4pbb",
+   "floor": 2,
+   "xyz": [
+    2.779,
+    -6.25,
+    3.971
+   ],
+   "pano_xyz": [
+    2.779,
+    -6.25,
+    5.337
+   ],
+   "quat": [
+    -0.007612243294715881,
+    -0.003890128806233406,
+    -0.6417725086212158,
+    0.7668474316596985
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/mk5198wdpzeqzp73ese8h4pbb.jpg",
+   "room_label": "Room 217",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Room 217, southwest corner",
+   "latlon": [
+    40.349135625502875,
+    -74.65541122264477
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "qu4unpew77rnmdcas4c9npyzc",
+   "floor": 1,
+   "xyz": [
+    -4.832,
+    2.342,
+    -0.01
+   ],
+   "pano_xyz": [
+    -4.832,
+    2.342,
+    1.374
+   ],
+   "quat": [
+    0.005203349981456995,
+    -0.006143621634691954,
+    0.6012312173843384,
+    0.799034595489502
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/qu4unpew77rnmdcas4c9npyzc.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34915103657748,
+    -74.65553259112198
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "ubrr49s35m2uxuy9y5rwh74sb",
+   "floor": 2,
+   "xyz": [
+    13.889,
+    -7.947,
+    4.106
+   ],
+   "pano_xyz": [
+    13.889,
+    -7.947,
+    5.47
+   ],
+   "quat": [
+    0.00043597424519248307,
+    -0.0076164971105754375,
+    0.57962965965271,
+    0.8148443102836609
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/ubrr49s35m2uxuy9y5rwh74sb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 218A",
+   "note": "door sign 218A at heading 322",
+   "latlon": [
+    40.34916012287951,
+    -74.65528222390209
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "1k478kza39tbfu1uhbttg5ybb",
+   "floor": 1,
+   "xyz": [
+    0.011,
+    0.013,
+    -0.027
+   ],
+   "pano_xyz": [
+    0.011,
+    0.013,
+    1.352
+   ],
+   "quat": [
+    -0.000555075122974813,
+    -0.0018015624955296516,
+    -0.26474300026893616,
+    0.9643172025680542
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/1k478kza39tbfu1uhbttg5ybb.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "note": "lettering PEREL ATRIUM and a bronze plaque with the same name on the pier at heading 117",
+   "latlon": [
+    40.349147894265904,
+    -74.65546930033864
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "umf4kucuf8hn4ipb9az044yxc",
+   "floor": 1,
+   "xyz": [
+    13.615,
+    -4.111,
+    -0.025
+   ],
+   "pano_xyz": [
+    13.615,
+    -4.111,
+    1.377
+   ],
+   "quat": [
+    0.007179319392889738,
+    0.0020517343655228615,
+    0.9999297857284546,
+    0.009206796064972878
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/umf4kucuf8hn4ipb9az044yxc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 119",
+   "note": "door sign 119 at heading 30; card reader on the door",
+   "latlon": [
+    40.34915959563193,
+    -74.65530225625659
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "8c32s7nkt2849ty7f2xzdunda",
+   "floor": 2,
+   "xyz": [
+    13.773,
+    0.1,
+    4.101
+   ],
+   "pano_xyz": [
+    13.773,
+    0.1,
+    5.477
+   ],
+   "quat": [
+    -0.0029620924033224583,
+    -0.005976980552077293,
+    -0.706875741481781,
+    0.7073063850402832
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/8c32s7nkt2849ty7f2xzdunda.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 219",
+   "note": "door sign 219 at heading 60",
+   "latlon": [
+    40.349226739158865,
+    -74.65531923142646
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "8cnnit59dnzb02y2nekixp6hc",
+   "floor": 2,
+   "xyz": [
+    8.841,
+    -9.963,
+    3.97
+   ],
+   "pano_xyz": [
+    8.841,
+    -9.963,
+    5.345
+   ],
+   "quat": [
+    0.009452017024159431,
+    -0.0020001425873488188,
+    0.8359493613243103,
+    0.5487217307090759
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/8cnnit59dnzb02y2nekixp6hc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34912520012414,
+    -74.65532845825079
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "floor": 2,
+   "xyz": [
+    8.033,
+    -6.094,
+    3.959
+   ],
+   "pano_xyz": [
+    8.033,
+    -6.094,
+    5.349
+   ],
+   "quat": [
+    0.007438375148922205,
+    0.008168461732566357,
+    0.9393194317817688,
+    -0.34286582469940186
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/bd3dzdmm4w3twrznh1ydgfq8b.jpg",
+   "room_label": "Room 217",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Room 217, by its south door",
+   "latlon": [
+    40.349154617404594,
+    -74.65535447532588
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "floor": 1,
+   "xyz": [
+    -4.536,
+    5.413,
+    -0.009
+   ],
+   "pano_xyz": [
+    -4.536,
+    5.413,
+    1.365
+   ],
+   "quat": [
+    0.004479753319174051,
+    -0.0025330944918096066,
+    0.9967079758644104,
+    0.08091249316930771
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/ed5xxn70mz1xe5q15ts4fqcpa.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349177633497646,
+    -74.65554299445978
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "m50u46kpe0src2rqk6xmmri5d",
+   "floor": 1,
+   "xyz": [
+    -10.881,
+    -11.218,
+    -0.003
+   ],
+   "pano_xyz": [
+    -10.881,
+    -11.218,
+    1.376
+   ],
+   "quat": [
+    -0.0018233914161100984,
+    -0.008956549689173698,
+    -0.20092086493968964,
+    0.9795648455619812
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/m50u46kpe0src2rqk6xmmri5d.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34901763443164,
+    -74.65553849799564
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "r5cp1eut86x1rc9yepd4ysxwd",
+   "floor": 1,
+   "xyz": [
+    -6.584,
+    -9.536,
+    0.01
+   ],
+   "pano_xyz": [
+    -6.584,
+    -9.536,
+    1.375
+   ],
+   "quat": [
+    -0.003596557304263115,
+    -0.014707322232425213,
+    -0.5116158723831177,
+    0.8590809106826782
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/r5cp1eut86x1rc9yepd4ysxwd.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34904629255282,
+    -74.6554989907801
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "w5kacr4ci0d92c5wkzrfs4erd",
+   "floor": 1,
+   "xyz": [
+    -8.04,
+    -13.05,
+    -0.002
+   ],
+   "pano_xyz": [
+    -8.04,
+    -13.05,
+    1.379
+   ],
+   "quat": [
+    -0.0019093719311058521,
+    -0.012206320650875568,
+    -0.3353249728679657,
+    0.9420214891433716
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/w5kacr4ci0d92c5wkzrfs4erd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the level 100 elevator lobby",
+   "note": "elevator PE1 at heading 281; building directory on the wall left of it at heading 262: Level 300, Level 200, Level 100 (Department of Economics Main Office 112-116) and Campus Level A",
+   "latlon": [
+    40.34901199423028,
+    -74.6554993018278
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "wd46bmmxqkzpyw35raqsdx2db",
+   "floor": 2,
+   "xyz": [
+    8.245,
+    -1.005,
+    3.974
+   ],
+   "pano_xyz": [
+    8.245,
+    -1.005,
+    5.353
+   ],
+   "quat": [
+    0.0064308964647352695,
+    0.009336876682937145,
+    0.9563135504722595,
+    -0.2921231687068939
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/wd46bmmxqkzpyw35raqsdx2db.jpg",
+   "room_label": "Room 217",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Room 217, by its north door",
+   "latlon": [
+    40.34919785081596,
+    -74.65537475953583
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "xdym22pw82n1ius7pazhttd1a",
+   "floor": 2,
+   "xyz": [
+    9.669,
+    2.562,
+    3.936
+   ],
+   "pano_xyz": [
+    9.669,
+    2.562,
+    5.335
+   ],
+   "quat": [
+    0.0006975459982641041,
+    -0.0034453715197741985,
+    0.4909554421901703,
+    0.8711775541305542
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/xdym22pw82n1ius7pazhttd1a.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34923210050823,
+    -74.65537503366019
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "0nunhdpcx0wq1xc8umazai0fd",
+   "floor": 2,
+   "xyz": [
+    13.848,
+    -4.008,
+    4.094
+   ],
+   "pano_xyz": [
+    13.848,
+    -4.008,
+    5.467
+   ],
+   "quat": [
+    0.0037036738358438015,
+    -0.002706075320020318,
+    0.25927889347076416,
+    0.965791642665863
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/0nunhdpcx0wq1xc8umazai0fd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 218B",
+   "note": "door sign 218B at heading 35",
+   "latlon": [
+    40.349192711923244,
+    -74.65530016650766
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "3ny35zcnrdiw2ham0z1sptyqd",
+   "floor": 2,
+   "xyz": [
+    -7.591,
+    -7.449,
+    3.967
+   ],
+   "pano_xyz": [
+    -7.591,
+    -7.449,
+    5.34
+   ],
+   "quat": [
+    0.001868111197836697,
+    -0.004136512987315655,
+    -0.4978278875350952,
+    0.867263913154602
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/3ny35zcnrdiw2ham0z1sptyqd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349090504477964,
+    -74.65551926900856
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "3xprhtpgyi8tqttrrqhmghw6b",
+   "floor": 2,
+   "xyz": [
+    6.27,
+    -9.067,
+    3.962
+   ],
+   "pano_xyz": [
+    6.27,
+    -9.067,
+    5.353
+   ],
+   "quat": [
+    -0.004503654781728983,
+    -0.006450076121836901,
+    -0.5027031302452087,
+    0.8644233345985413
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/3xprhtpgyi8tqttrrqhmghw6b.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the atrium stair",
+   "note": "top of the stair from level 100, which goes down west at heading 180; door sign 217, Economics Department Meeting Room, at heading 50",
+   "latlon": [
+    40.34912390206562,
+    -74.65536054552891
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "7dsusre8f794uicd3gsb1q5yd",
+   "floor": 2,
+   "xyz": [
+    -7.613,
+    2.161,
+    3.977
+   ],
+   "pano_xyz": [
+    -7.613,
+    2.161,
+    5.339
+   ],
+   "quat": [
+    0.0036546539049595594,
+    0.0032900904770940542,
+    0.9907498359680176,
+    0.1356116235256195
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/7dsusre8f794uicd3gsb1q5yd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349170576277864,
+    -74.65556219089812
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "85ekq5i5e02pxxe0se65sr5sc",
+   "floor": 2,
+   "xyz": [
+    8.923,
+    -7.813,
+    3.959
+   ],
+   "pano_xyz": [
+    8.923,
+    -7.813,
+    5.343
+   ],
+   "quat": [
+    0.010487179271876812,
+    0.0073561170138418674,
+    0.9894673228263855,
+    0.14418871700763702
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/85ekq5i5e02pxxe0se65sr5sc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34914330729244,
+    -74.6553371106202
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "9xmtamt4c9trdkf242ttr6dwb",
+   "floor": 2,
+   "xyz": [
+    11.911,
+    -12.445,
+    4.093
+   ],
+   "pano_xyz": [
+    11.911,
+    -12.445,
+    5.485
+   ],
+   "quat": [
+    -0.00036859902320429683,
+    -0.002204480115324259,
+    0.6029792428016663,
+    0.7977537512779236
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/9xmtamt4c9trdkf242ttr6dwb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire alarm pull station on the pier left of the south stair door, heading 292",
+   "latlon": [
+    40.34911585136817,
+    -74.65528387164935
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "floor": 1,
+   "xyz": [
+    -4.555,
+    -7.358,
+    -0.0
+   ],
+   "pano_xyz": [
+    -4.555,
+    -7.358,
+    1.373
+   ],
+   "quat": [
+    -0.00465474184602499,
+    -0.0021840196568518877,
+    -0.672543466091156,
+    0.7400398254394531
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/a6ce5xzf6mf48hy21cmu3q3ma.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34907123085474,
+    -74.65548648168716
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "gprsw6xcqigh6reqseh3rmcrc",
+   "floor": 1,
+   "xyz": [
+    -5.371,
+    -9.993,
+    0.008
+   ],
+   "pano_xyz": [
+    -5.371,
+    -9.993,
+    1.38
+   ],
+   "quat": [
+    0.0049246749840676785,
+    -0.008292953483760357,
+    -0.7392692565917969,
+    0.6733409762382507
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/gprsw6xcqigh6reqseh3rmcrc.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349046575355224,
+    -74.6554836997884
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "2yy18y2trz8tgisf5r9s1tfpc",
+   "floor": 1,
+   "xyz": [
+    13.284,
+    0.878,
+    -0.004
+   ],
+   "pano_xyz": [
+    13.284,
+    0.878,
+    1.374
+   ],
+   "quat": [
+    0.011125536635518074,
+    0.005174870137125254,
+    0.9947670102119446,
+    -0.10143012553453445
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/2yy18y2trz8tgisf5r9s1tfpc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 120",
+   "note": "door sign 120 at heading 30; card reader on the door",
+   "latlon": [
+    40.34920020373855,
+    -74.65532803276776
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "2eum01wmtxcin1q8grtnmc0ra",
+   "floor": 2,
+   "xyz": [
+    2.812,
+    -1.404,
+    3.969
+   ],
+   "pano_xyz": [
+    2.812,
+    -1.404,
+    5.331
+   ],
+   "quat": [
+    -0.0026500446256250143,
+    0.0023470751475542784,
+    -0.3889816701412201,
+    0.9212387204170227
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/2eum01wmtxcin1q8grtnmc0ra.jpg",
+   "room_label": "Room 217",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "Room 217, northwest corner",
+   "latlon": [
+    40.34917609847847,
+    -74.65543238458517
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "36aa2eubht8idy9kr2k8aubac",
+   "floor": 1,
+   "xyz": [
+    -3.433,
+    -9.924,
+    0.001
+   ],
+   "pano_xyz": [
+    -3.433,
+    -9.924,
+    1.39
+   ],
+   "quat": [
+    -0.0035931807942688465,
+    -0.0019481559284031391,
+    -0.041967906057834625,
+    0.9991105794906616
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/36aa2eubht8idy9kr2k8aubac.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the atrium stair",
+   "note": "foot of the stair up to level 200, which rises east at heading 0; the open stair down to Campus Level A starts beside it at heading 300",
+   "latlon": [
+    40.34905365653335,
+    -74.6554628187726
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "floor": 1,
+   "xyz": [
+    -10.834,
+    -13.572,
+    -0.003
+   ],
+   "pano_xyz": [
+    -10.834,
+    -13.572,
+    1.376
+   ],
+   "quat": [
+    0.008683566004037857,
+    -0.008175032213330269,
+    0.7347301840782166,
+    0.6782546639442444
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/5yqp8itw3r5s4iw3kuf4nqdsc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the southwest corner of level 100",
+   "latlon": [
+    40.34899818018555,
+    -74.65552752923433
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "az0h181td1h01x8x9gxhnp47a",
+   "floor": 1,
+   "xyz": [
+    1.66,
+    -3.001,
+    -0.031
+   ],
+   "pano_xyz": [
+    1.66,
+    -3.001,
+    1.337
+   ],
+   "quat": [
+    0.010990620590746403,
+    0.001048332080245018,
+    0.917351245880127,
+    -0.3979256749153137
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/az0h181td1h01x8x9gxhnp47a.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34912833281419,
+    -74.65543788616793
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "eqpgxz0sb38saf4rcuxng6uud",
+   "floor": 2,
+   "xyz": [
+    -8.118,
+    5.255,
+    3.988
+   ],
+   "pano_xyz": [
+    -8.118,
+    5.255,
+    5.338
+   ],
+   "quat": [
+    0.001899802591651678,
+    -0.006529135163873434,
+    -0.5702479481697083,
+    0.8214444518089294
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/eqpgxz0sb38saf4rcuxng6uud.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the northwest corner of level 200",
+   "note": "north glass door of Room 200 (Economics Lounge) at heading 207. Past the corner the corridor runs on north at heading 150 and is not scanned: on this level that is where the scan stops, and how to reach it from outside is not seen. Flush blank double panel at heading 90, no call buttons: not an elevator. Wall sign at heading 135 carries a numeral 2",
+   "latlon": [
+    40.34919473000482,
+    -74.65558145344541
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "floor": 2,
+   "xyz": [
+    6.893,
+    5.231,
+    3.95
+   ],
+   "pano_xyz": [
+    6.893,
+    5.231,
+    5.331
+   ],
+   "quat": [
+    0.0055406163446605206,
+    -2.7081807274953462e-05,
+    0.6673393249511719,
+    0.7447332143783569
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/f7ryu7kyugtp7bx4dm3qa1dec.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34924504918064,
+    -74.65541723668343
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "qf5w019hhy47ybsiu9fyu43kd",
+   "floor": 1,
+   "xyz": [
+    -4.623,
+    -3.725,
+    -0.012
+   ],
+   "pano_xyz": [
+    -4.623,
+    -3.725,
+    1.361
+   ],
+   "quat": [
+    -0.00947427935898304,
+    -0.00807608850300312,
+    -0.6927366852760315,
+    0.7210831046104431
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/qf5w019hhy47ybsiu9fyu43kd.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34910117889557,
+    -74.65550336051746
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "floor": 2,
+   "xyz": [
+    -3.798,
+    -12.642,
+    3.968
+   ],
+   "pano_xyz": [
+    -3.798,
+    -12.642,
+    5.338
+   ],
+   "quat": [
+    0.007054809480905533,
+    -0.0018027162877842784,
+    0.9440317153930664,
+    0.3297743797302246
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/rfuwtwdh07qm2ct0m04b3sb2a.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34906008300895,
+    -74.65545473763693
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "ufgr14zs7pbz0pig3kp07r7hd",
+   "floor": 1,
+   "xyz": [
+    -10.777,
+    4.993,
+    -0.011
+   ],
+   "pano_xyz": [
+    -10.777,
+    4.993,
+    1.369
+   ],
+   "quat": [
+    0.0026343041099607944,
+    -0.010950337164103985,
+    -0.6821622252464294,
+    0.7311140894889832
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/ufgr14zs7pbz0pig3kp07r7hd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the northwest corner of level 100",
+   "note": "wall sign at heading 58: ahead (north) Bendheim Center for Finance 103-108, Meeting Rooms 101-102, Department of Economics 110; right (east) Center for Health and Wellbeing 118, 119, 122-125, Department of Economics 112-116, Princeton Institute for International and Regional Studies, Research Program in Development Economics 120, 126-132, Meeting Room 144, Restrooms. Bench alcoves at headings 180 and 225",
+   "latlon": [
+    40.349152994187996,
+    -74.65560935981759
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "xq7dhrun14q0789iwk5epwtkb",
+   "floor": 1,
+   "xyz": [
+    -3.798,
+    -13.337,
+    0.002
+   ],
+   "pano_xyz": [
+    -3.798,
+    -13.337,
+    1.378
+   ],
+   "quat": [
+    0.013573414646089077,
+    0.000297129328828305,
+    0.8986155986785889,
+    0.43852683901786804
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/xq7dhrun14q0789iwk5epwtkb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349023991874326,
+    -74.65545165090082
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "floor": 1,
+   "xyz": [
+    -8.05,
+    5.172,
+    -0.01
+   ],
+   "pano_xyz": [
+    -8.05,
+    5.172,
+    1.363
+   ],
+   "quat": [
+    0.002733348635956645,
+    0.008238667622208595,
+    0.9909143447875977,
+    0.13421455025672913
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/yfn0c6232s1yxzgxqmqw7n6zb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "note": "flush blank double panel in the wall at heading 90, no call buttons: not an elevator",
+   "latlon": [
+    40.34916372362788,
+    -74.65558034146405
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "0f2a2fyf5iibscursb5gkyu9a",
+   "floor": 1,
+   "xyz": [
+    -11.033,
+    0.08,
+    0.017
+   ],
+   "pano_xyz": [
+    -11.033,
+    0.08,
+    1.376
+   ],
+   "quat": [
+    -0.0070940908044576645,
+    -0.006382495164871216,
+    -0.7829567790031433,
+    0.6220030188560486
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/0f2a2fyf5iibscursb5gkyu9a.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": "the north end of the stone arcade",
+   "note": "fire alarm pull station on the pier at heading 34. The arch at heading 180 is fixed glass with a guard rail, not a door. Wrought-iron gates to the northwest corner at heading 90, open in the scan",
+   "latlon": [
+    40.34911140681592,
+    -74.65559033816486
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "2qe44cteny5g297zquh4gpgcd",
+   "floor": 1,
+   "xyz": [
+    14.063,
+    -13.62,
+    -0.006
+   ],
+   "pano_xyz": [
+    14.063,
+    -13.62,
+    1.346
+   ],
+   "quat": [
+    0.005585590843111277,
+    -0.005094405263662338,
+    0.14788027107715607,
+    0.9889764189720154
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/2qe44cteny5g297zquh4gpgcd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the southeast corner of level 100, by the drinking fountains",
+   "note": "two drinking fountains in the alcove at heading 290",
+   "latlon": [
+    40.349082028859655,
+    -74.65525512589534
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "floor": 2,
+   "xyz": [
+    11.857,
+    5.449,
+    4.108
+   ],
+   "pano_xyz": [
+    11.857,
+    5.449,
+    5.485
+   ],
+   "quat": [
+    0.0016605406999588013,
+    -0.003959404770284891,
+    -0.3048553168773651,
+    0.9523890018463135
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/4z3dsh3hzihrqcr8fsxqdkf6c.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": null,
+   "note": "fire alarm pull station on the pier right of the north stair door, heading 57",
+   "latlon": [
+    40.349264874910084,
+    -74.65536393511513
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "9f45hxprghib9bgxnzkd87f6b",
+   "floor": 2,
+   "xyz": [
+    -7.588,
+    -10.408,
+    3.959
+   ],
+   "pano_xyz": [
+    -7.588,
+    -10.408,
+    5.331
+   ],
+   "quat": [
+    0.003763490356504917,
+    -0.004605491179972887,
+    -0.4492093324661255,
+    0.8934068083763123
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/9f45hxprghib9bgxnzkd87f6b.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349065799344736,
+    -74.6555060942771
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "floor": 2,
+   "xyz": [
+    1.391,
+    -9.125,
+    1.986
+   ],
+   "pano_xyz": [
+    1.391,
+    -9.125,
+    3.356
+   ],
+   "quat": [
+    -0.004309263080358505,
+    -0.002429406391456723,
+    -0.0027903621084988117,
+    0.9999838471412659
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/b8ckm0ge7yzdxbq0f5tkeswyd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the half landing of the atrium stair",
+   "latlon": [
+    40.34909180756726,
+    -74.65541362831206
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "n0ppizy9u8xcadypd2bawceyc",
+   "floor": 1,
+   "xyz": [
+    -10.946,
+    -4.142,
+    0.003
+   ],
+   "pano_xyz": [
+    -10.946,
+    -4.142,
+    1.374
+   ],
+   "quat": [
+    -0.0019199716625735164,
+    -0.011251450516283512,
+    -0.06586076319217682,
+    0.9977635145187378
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/n0ppizy9u8xcadypd2bawceyc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the stone arcade at the donor plaque",
+   "note": "bronze plaque on the stone pier at heading 180 (In grateful recognition of the generous support provided to the Department of Chemistry by ...); the two glass doors from the west entrance hall are at headings 133 and 227",
+   "latlon": [
+    40.34907641693631,
+    -74.65557063561529
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "floor": 1,
+   "xyz": [
+    -10.915,
+    -8.062,
+    0.001
+   ],
+   "pano_xyz": [
+    -10.915,
+    -8.062,
+    1.375
+   ],
+   "quat": [
+    0.0062988135032355785,
+    -0.010655435733497143,
+    0.4131845533847809,
+    0.9105631709098816
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/pr6uqwurqfw4xg6ghnx2q1zmb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "kind": "pano",
+   "label": "the south end of the stone arcade",
+   "note": "fire alarm pull station on the pier at heading 325, under a framed notice. The arch at heading 180 is fixed glass with a guard rail, not a door. Wrought-iron gates to the southwest corner at heading 270, open in the scan",
+   "latlon": [
+    40.34904384544646,
+    -74.65555288660151
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "p8q154uncpnbn9zz3pf0utc1d",
+   "floor": 2,
+   "xyz": [
+    6.675,
+    2.573,
+    3.943
+   ],
+   "pano_xyz": [
+    6.675,
+    2.573,
+    5.335
+   ],
+   "quat": [
+    -0.0032453809399157763,
+    -0.0018226850079372525,
+    -0.8564479351043701,
+    0.5162204504013062
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/p8q154uncpnbn9zz3pf0utc1d.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the bridge to the north door of Room 217",
+   "note": "door sign 217 at heading 313",
+   "latlon": [
+    40.34922211150149,
+    -74.65540781492109
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "y8rya39xwbarmpmfakn2qaimc",
+   "floor": 2,
+   "xyz": [
+    -4.128,
+    3.908,
+    3.971
+   ],
+   "pano_xyz": [
+    -4.128,
+    3.908,
+    5.347
+   ],
+   "quat": [
+    -0.0016704814042896032,
+    -0.005272398237138987,
+    -0.34564870595932007,
+    0.9383476972579956
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/y8rya39xwbarmpmfakn2qaimc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349196882409515,
+    -74.65553184965005
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "1gmnh1czf97m0y4s6119pfs1d",
+   "floor": 1,
+   "xyz": [
+    4.86,
+    -3.366,
+    -0.039
+   ],
+   "pano_xyz": [
+    4.86,
+    -3.366,
+    1.347
+   ],
+   "quat": [
+    -0.007720062974840403,
+    -0.009194841608405113,
+    -0.48302632570266724,
+    0.8755235075950623
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/1gmnh1czf97m0y4s6119pfs1d.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349136061933955,
+    -74.65540128055946
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "28b2c48p1q2tgni83r5qkdc2b",
+   "floor": 1,
+   "xyz": [
+    4.729,
+    -0.336,
+    -0.033
+   ],
+   "pano_xyz": [
+    4.729,
+    -0.336,
+    1.353
+   ],
+   "quat": [
+    0.00021268939599394798,
+    -0.004991932772099972,
+    0.5383815169334412,
+    0.8426864147186279
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/28b2c48p1q2tgni83r5qkdc2b.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34916091012422,
+    -74.65541616999731
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "684rbi72ft03adydwabgicmpb",
+   "floor": 1,
+   "xyz": [
+    13.225,
+    -9.13,
+    -0.008
+   ],
+   "pano_xyz": [
+    13.225,
+    -9.13,
+    1.369
+   ],
+   "quat": [
+    0.002188165672123432,
+    -0.0032515553757548332,
+    -0.5084028840065002,
+    0.8611103892326355
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/684rbi72ft03adydwabgicmpb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the corridor outside Room 118",
+   "note": "door sign 118 at heading 24; card reader on the door",
+   "latlon": [
+    40.34911658746593,
+    -74.6552842289905
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "b1q6mcf0edqwd7xwzk6497maa",
+   "floor": 2,
+   "xyz": [
+    1.609,
+    -13.335,
+    3.981
+   ],
+   "pano_xyz": [
+    1.609,
+    -13.335,
+    5.342
+   ],
+   "quat": [
+    0.004806071519851685,
+    0.00029050378361716866,
+    0.4855321943759918,
+    0.8742055296897888
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/b1q6mcf0edqwd7xwzk6497maa.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34907270996206,
+    -74.65539254701224
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "c9t63yrk0m9rmufcmnebs24zb",
+   "floor": 2,
+   "xyz": [
+    14.034,
+    4.776,
+    4.108
+   ],
+   "pano_xyz": [
+    14.034,
+    4.776,
+    5.479
+   ],
+   "quat": [
+    0.004999915603548288,
+    0.0010479086777195334,
+    0.5584567785263062,
+    0.8295179009437561
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/c9t63yrk0m9rmufcmnebs24zb.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the northeast corner of level 200, by the drinking fountains",
+   "note": "two drinking fountains at heading 95. The corridor runs on east at heading 25, past a men's restroom, to a window about 12 m away and is not scanned; grey cross-corridor fire doors stand open against its walls at headings 65 and 330. On this level that is where the scan stops, and how to reach it from outside is not seen",
+   "latlon": [
+    40.349266636257035,
+    -74.65533714566276
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "e9e4rxumug0x0dz4xyhgenakd",
+   "floor": 1,
+   "xyz": [
+    4.524,
+    -6.186,
+    -0.009
+   ],
+   "pano_xyz": [
+    4.524,
+    -6.186,
+    1.366
+   ],
+   "quat": [
+    -0.00020090481848455966,
+    -0.0052646161057055,
+    -0.38869813084602356,
+    0.9213501214981079
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/e9e4rxumug0x0dz4xyhgenakd.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349111657793934,
+    -74.65539242936566
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "h13rg3tuxedbm5zzknqadu73b",
+   "floor": 1,
+   "xyz": [
+    1.613,
+    5.268,
+    -0.004
+   ],
+   "pano_xyz": [
+    1.613,
+    5.268,
+    1.369
+   ],
+   "quat": [
+    0.002357012592256069,
+    -0.00697028124704957,
+    -0.2952350080013275,
+    0.9553963541984558
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/h13rg3tuxedbm5zzknqadu73b.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the Department of Economics main office",
+   "note": "glass front lettered DEPARTMENT OF ECONOMICS MAIN OFFICE at heading 90, with an EXIT sign above its glass door; the directory gives it rooms 112-116",
+   "latlon": [
+    40.34919727678726,
+    -74.65547512549581
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "ih6tueuzaxnyw3f47m5ygeccd",
+   "floor": 2,
+   "xyz": [
+    1.61,
+    5.313,
+    3.964
+   ],
+   "pano_xyz": [
+    1.61,
+    5.313,
+    5.342
+   ],
+   "quat": [
+    -0.0003475943813100457,
+    -0.007365351542830467,
+    -0.3075137436389923,
+    0.9515150785446167
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/ih6tueuzaxnyw3f47m5ygeccd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the Julis-Rabinowitz Center suite doors",
+   "note": "wood suite doors at heading 100 with a Julis-Rabinowitz Center for Public Policy & Finance banner; EXIT sign above",
+   "latlon": [
+    40.34922795737656,
+    -74.65547535814873
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "s959dys4uwha3mmrpkf6c5ddc",
+   "floor": 2,
+   "xyz": [
+    13.975,
+    -13.433,
+    4.125
+   ],
+   "pano_xyz": [
+    13.975,
+    -13.433,
+    5.483
+   ],
+   "quat": [
+    -0.0021793264895677567,
+    -0.0011748968390747905,
+    0.5232399106025696,
+    0.8521818518638611
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/s959dys4uwha3mmrpkf6c5ddc.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the southeast corner of level 200, by the drinking fountains",
+   "note": "two drinking fountains at heading 290. The corridor runs on east at heading 15 for about 15 m to glass doors and is not scanned; grey cross-corridor fire doors stand open against its walls. On this level that is where the scan stops, and how to reach it from outside is not seen",
+   "latlon": [
+    40.34911485015165,
+    -74.6552569186313
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "thaxyfyip9r71h69gkck885aa",
+   "floor": 1,
+   "xyz": [
+    6.751,
+    -13.176,
+    -0.019
+   ],
+   "pano_xyz": [
+    6.751,
+    -13.176,
+    1.364
+   ],
+   "quat": [
+    0.005789249669760466,
+    0.00602342514321208,
+    0.9988355040550232,
+    -0.04751652479171753
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/thaxyfyip9r71h69gkck885aa.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34906087919708,
+    -74.65533703744097
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "t9wqkieqytkbx8egqum168w6b",
+   "floor": 2,
+   "xyz": [
+    7.111,
+    -13.357,
+    3.979
+   ],
+   "pano_xyz": [
+    7.111,
+    -13.357,
+    5.345
+   ],
+   "quat": [
+    -0.0020561928395181894,
+    -0.0026714785490185022,
+    -0.7438603639602661,
+    0.6683266162872314
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/t9wqkieqytkbx8egqum168w6b.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34909113459627,
+    -74.65533229788932
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "y9da08g1g5b77bdscnw7n3fya",
+   "floor": 1,
+   "xyz": [
+    -0.705,
+    -3.555,
+    -0.023
+   ],
+   "pano_xyz": [
+    -0.705,
+    -3.555,
+    1.344
+   ],
+   "quat": [
+    -0.0034195941407233477,
+    -0.0025087560061365366,
+    -0.8335269689559937,
+    0.5524625778198242
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/y9da08g1g5b77bdscnw7n3fya.jpg",
+   "room_label": "the Perel Atrium",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34911577296802,
+    -74.65546128140294
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "6hxpxut4nuzsug4625z1dk7bd",
+   "floor": 2,
+   "xyz": [
+    -7.627,
+    -0.902,
+    3.967
+   ],
+   "pano_xyz": [
+    -7.627,
+    -0.902,
+    5.338
+   ],
+   "quat": [
+    0.004243763163685799,
+    -0.003612048225477338,
+    0.3884012997150421,
+    0.921473503112793
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/6hxpxut4nuzsug4625z1dk7bd.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "h26t7ky77ew74yb0pg8qqf5rd",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.349144931772265,
+    -74.65554874008986
+   ],
+   "floor_name": "Floor 2"
+  },
+  {
+   "id": "81tg3n7bd96pyfp31pzd7mada",
+   "floor": 1,
+   "xyz": [
+    14.047,
+    5.204,
+    -0.001
+   ],
+   "pano_xyz": [
+    14.047,
+    5.204,
+    1.363
+   ],
+   "quat": [
+    0.009601003490388393,
+    0.004970773588865995,
+    0.9836827516555786,
+    0.17958703637123108
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/81tg3n7bd96pyfp31pzd7mada.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": "the northeast corner of level 100, by the drinking fountains",
+   "note": "two drinking fountains in the alcove at heading 95",
+   "latlon": [
+    40.349238853257724,
+    -74.65533890434686
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "id": "8h1u5sb6x8sabzcssd91exwna",
+   "floor": 1,
+   "xyz": [
+    6.468,
+    4.929,
+    -0.006
+   ],
+   "pano_xyz": [
+    6.468,
+    4.929,
+    1.37
+   ],
+   "quat": [
+    0.005119943991303444,
+    -0.00220294576138258,
+    0.22233417630195618,
+    0.9749546051025391
+   ],
+   "pano_path": "buildings/princeton-rabinowitz/panos/8h1u5sb6x8sabzcssd91exwna.jpg",
+   "room_label": "Hallway",
+   "attributes": {
+    "room_id": "cdz3fkt38kae7tapstpt0eaeb",
+    "room_class": "Hallway"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "pano",
+   "label": null,
+   "latlon": [
+    40.34921087025445,
+    -74.65542054175405
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "n0ppizy9u8xcadypd2bawceyc"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: glass door seen in the panoramas; the wall plan records no opening there",
+   "id": "door_west_main",
+   "primary": true,
+   "confidence": 0.9,
+   "label": "the south glass door from the west entrance hall",
+   "note": "Single glass door in a black frame set in a stone arch on the west side of the arcade: long pull bar, powered operator on the header, and a steel post with a wheelchair push button beside it; a red EXIT sign hangs over the arcade at this door. Through the glass: a stone entrance hall with a beamed ceiling, wall lanterns, a directory board and walk-off mats, and at its far end an arched doorway with glazed doors and daylight, about 13 m from the arcade (two sight lines: sweep 0f2a2 at heading 198 and sweep pr6uq at heading 164). The hall and that outside door are not scanned. Marked as the main entrance because of the hall, the directory and the powered door; picking this door over the north one, 3 m away into the same hall, is a judgment. Not seen: whether it locks after hours, and whether there are steps outside. Width is an estimate from the panorama.",
+   "approach": {
+    "note": "the way from the street is not in the scan: across the paved forecourt (read off the aerial) and through the west entrance hall (seen through the glass). The link from the staging spot carries the distance"
+   },
+   "xyz": [
+    -12.515,
+    -5.824,
+    0.003
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34905709187675,
+    -74.65558031857486
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/door_west_main.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "n0ppizy9u8xcadypd2bawceyc"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: glass door seen in the panoramas; the wall plan records no opening there",
+   "id": "door_west_north",
+   "confidence": 0.9,
+   "label": "the north glass door from the west entrance hall",
+   "note": "Single glass door in a black frame set in a stone arch on the west side of the arcade, with a long pull bar and a closer; a red EXIT sign hangs over the arcade at this door. It opens from the same stone entrance hall as the south glass door (walk-off mats and a notice board are seen through it). The hall and its outside door are not scanned. No push-button post is seen at this door. Width is an estimate from the panorama.",
+   "approach": {
+    "note": "the way from the street is not in the scan: across the paved forecourt (read off the aerial) and through the west entrance hall (seen through the glass). The link from the staging spot carries the distance"
+   },
+   "xyz": [
+    -12.515,
+    -2.46,
+    0.003
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34908512047081,
+    -74.65559525929798
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/door_west_north.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "ufgr14zs7pbz0pig3kp07r7hd"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "id": "corridor_nw",
+   "confidence": 0.4,
+   "label": "the corridor from the north wing (rooms 101 to 110)",
+   "note": "Where the scan starts, not a door. From the northwest corner the corridor runs on north between wood panelling and service doors for about 22 m to a room with a window; an EXIT sign hangs about 15 m along. The wall sign at the corner points this way for Bendheim Center for Finance 103-108, Meeting Rooms 101-102 and Department of Economics 110. Which outside door this corridor comes from is not seen.",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 55,
+    "note": "not scanned, and 55 m is a guess, not a measurement. The aerial shows a path from the west street to the corner where the north wing meets the west front, about 27 m from the forecourt curb, and the corridor from there to here would be 25 m or more. No outside door on that side is seen in the scan"
+   },
+   "xyz": [
+    -10.951,
+    7.487,
+    -0.011
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.349173185078676,
+    -74.65562233886678
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/corridor_nw.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "5yqp8itw3r5s4iw3kuf4nqdsc"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "id": "corridor_sw",
+   "confidence": 0.4,
+   "label": "the corridor from the south wing",
+   "note": "Where the scan starts, not a door. From the southwest corner the corridor runs on south about 19 m to a wood door with a glass side panel under two EXIT signs. What is past that door is not seen.",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 65,
+    "note": "not scanned, and 65 m is a guess, not a measurement. On the aerial the far end of this corridor falls where the south wing meets the west front, about 38 m along the front from the forecourt curb; add the 19 m of corridor seen from here and the door at its end. No outside door on that side is seen in the scan"
+   },
+   "xyz": [
+    -10.952,
+    -15.819,
+    -0.003
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34897905896721,
+    -74.65551883958727
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/corridor_sw.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "81tg3n7bd96pyfp31pzd7mada"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "id": "corridor_ne",
+   "confidence": 0.4,
+   "label": "the corridor from the northeast wing",
+   "note": "Where the scan starts, not a door. From the northeast corner the corridor runs on east past a restroom door (woman and wheelchair symbols) about 12 m to a seating area under a window, with an EXIT sign on the ceiling. Grey cross-corridor fire doors stand open against both walls at its mouth; expect them to swing shut on a fire alarm. Where the corridor goes after the window is not seen.",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 80,
+    "note": "not scanned, and 80 m is a guess, not a measurement. On the aerial the building runs on about 60 m east of here; no outside door or street on that side has been identified"
+   },
+   "xyz": [
+    15.641,
+    5.343,
+    -0.001
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34924540679582,
+    -74.65532209499345
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/corridor_ne.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "2qe44cteny5g297zquh4gpgcd"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "id": "corridor_se",
+   "confidence": 0.4,
+   "label": "the corridor from the southeast wing",
+   "note": "Where the scan starts, not a door. From the southeast corner the corridor runs on east for 28 m or more, past a restroom door (man and wheelchair symbols), a wall directory and further EXIT signs. Grey cross-corridor fire doors stand open against both walls at its mouth; expect them to swing shut on a fire alarm. Where it reaches an outside door is not seen.",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 80,
+    "note": "not scanned, and 80 m is a guess, not a measurement. On the aerial the building runs on about 60 m east of here; no outside door or street on that side has been identified"
+   },
+   "xyz": [
+    15.663,
+    -13.62,
+    -0.006
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34908744455357,
+    -74.65523763363417
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/corridor_se.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "ht0bbyeyc69qwxm7did6ycbuc"
+   },
+   "is_entrance": true,
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "kind": "entrance",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "id": "stair_north_f1",
+   "confidence": 0.7,
+   "label": "the north stair door on level 100",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside two fixed glass panels; a small EXIT plate and a fire alarm pull station are on the pier to its right. Through the glass the stair is seen going both up and down. On the stair wall a steel cabinet is lettered 2.5\" FIRE DEPARTMENT VALVE & FIRE EXTINGUISHER, next to a floor sign reading 1. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the north stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   },
+   "xyz": [
+    12.278,
+    7.115,
+    -0.006
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34924874966515,
+    -74.65536673166264
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/stair_north_f1.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "panr3bktyzufic6e6xb4mtuub"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "id": "stair_south_f1",
+   "confidence": 0.7,
+   "label": "the south stair door on level 100",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside a fixed glass panel; a fire alarm pull station is on the pier to its left, next to the drinking fountains. Through the glass the stair is seen going up, with a floor sign reading LEVEL 1 and a steel wall cabinet whose lettering begins SPRINKLER CONTROL ASSEMBLY 2.5\" FIRE (the rest is not legible). The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the south stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   },
+   "xyz": [
+    12.259,
+    -15.271,
+    -0.011
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34906212845805,
+    -74.65526751580157
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/stair_south_f1.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "seen_from": "xq7dhrun14q0789iwk5epwtkb"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: stair seen in the panoramas, not walked by the scan",
+   "id": "stair_atrium_from_a",
+   "confidence": 0.6,
+   "label": "the top of the open atrium stair from Campus Level A",
+   "note": "Top of the open stair that goes down from the atrium floor to Campus Level A, alongside the foot of the stair up to level 200; glass railings on both sides. Only its top steps are seen. Campus Level A is seen from the railings but is not scanned.",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the open atrium stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   },
+   "xyz": [
+    -3.589,
+    -10.946,
+    0.002
+   ],
+   "floor": 1,
+   "confirmed": true,
+   "latlon": [
+    40.34904462091945,
+    -74.65545998521661
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/stair_atrium_from_a.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "4z3dsh3hzihrqcr8fsxqdkf6c"
+   },
+   "is_entrance": true,
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "kind": "entrance",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "id": "stair_north_f2",
+   "confidence": 0.7,
+   "label": "the north stair door on level 200",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside two fixed glass panels; an EXIT plate and a fire alarm pull station are on the pier to its right. Through the glass the stair is seen going down and up. On the stair wall a steel cabinet is lettered 2.5\" FIRE DEPARTMENT VALVE & FIRE EXTINGUISHER, next to a floor sign reading 2. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "approach": {
+    "via": "stairs",
+    "floors": 2,
+    "walk_m": 80,
+    "note": "the north stair, two levels up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   },
+   "xyz": [
+    12.329,
+    7.495,
+    4.108
+   ],
+   "floor": 2,
+   "confirmed": true,
+   "latlon": [
+    40.34928351971317,
+    -74.65536786186868
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/stair_north_f2.jpg",
+   "floor_name": "Floor 2"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "door_width_m": 0.9,
+    "seen_from": "9xmtamt4c9trdkf242ttr6dwb"
+   },
+   "is_entrance": true,
+   "equipment": [],
+   "kind": "entrance",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "id": "stair_south_f2",
+   "confidence": 0.7,
+   "label": "the south stair door on level 200",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside a fixed glass panel; an EXIT plate and a fire alarm pull station are on the pier to its left, next to the drinking fountains. Through the glass the stair is seen going up and down, with a floor sign reading LEVEL 2 and a steel wall cabinet whose lettering is not legible. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "approach": {
+    "via": "stairs",
+    "floors": 2,
+    "walk_m": 80,
+    "note": "the south stair, two levels up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   },
+   "xyz": [
+    12.214,
+    -15.329,
+    4.093
+   ],
+   "floor": 2,
+   "confirmed": true,
+   "latlon": [
+    40.34909284768337,
+    -74.6552677503025
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/stair_south_f2.jpg",
+   "floor_name": "Floor 2"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {},
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "staging",
+   "source": "hand: curb read off the aerial tile",
+   "id": "stage_west_curb",
+   "floor": 1,
+   "label": "the curb on the street west of the building, at the paved forecourt",
+   "latlon": [
+    40.3489804,
+    -74.6559047
+   ],
+   "confirmed": false,
+   "note": "East curb of the street that runs along the west front, where the paved forecourt meets it. The forecourt leads to the middle of the west front, in line with the entrance hall seen from the arcade. The street is taken to be Washington Road from general knowledge of the campus; no street sign is read in the scan or on the aerial.",
+   "xyz": [
+    -41.191,
+    -3.376,
+    0.0
+   ],
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "elevator": true,
+    "seen_from": "w5kacr4ci0d92c5wkzrfs4erd"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "elevator",
+   "source": "hand: elevator doors and call buttons seen on both levels",
+   "id": "elev_pe1_f1",
+   "floor": 1,
+   "xyz": [
+    -7.59,
+    -15.4,
+    -0.002
+   ],
+   "label": "elevator PE1",
+   "note": "level 100 stop of elevator PE1: jamb plate 1, up and down call buttons right of the door, card reader on the wall left of it. Seen from w5kac at heading 281. The car is not seen: whether it takes a stretcher is not known",
+   "latlon": [
+    40.34899393738952,
+    -74.65548394499164
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/elev_pe1_f1.jpg",
+   "floor_name": "Floor 1"
+  },
+  {
+   "pano_path": null,
+   "room_label": null,
+   "attributes": {
+    "elevator": true,
+    "seen_from": "haipxtu4fuppeii5f8iik4btc"
+   },
+   "is_entrance": false,
+   "equipment": [],
+   "kind": "elevator",
+   "source": "hand: elevator doors and call buttons seen on both levels",
+   "id": "elev_pe1_f2",
+   "floor": 2,
+   "xyz": [
+    -7.67,
+    -15.636,
+    3.949
+   ],
+   "label": "elevator PE1",
+   "note": "level 200 stop of elevator PE1: jamb plate 2, up and down call buttons right of the door. Seen from haipx at heading 281. The car is not seen: whether it takes a stretcher is not known",
+   "latlon": [
+    40.34902188610632,
+    -74.65548377143561
+   ],
+   "evidence_path": "buildings/princeton-rabinowitz/evidence/elev_pe1_f2.jpg",
+   "floor_name": "Floor 2"
+  }
+ ],
+ "edges": [
+  {
+   "meters": 1.3,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gprsw6xcqigh6reqseh3rmcrc",
+   "b": "r5cp1eut86x1rc9yepd4ysxwd",
+   "seconds": {
+    "foot": 0.93,
+    "stretcher": 1.3
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "gprsw6xcqigh6reqseh3rmcrc",
+   "seconds": {
+    "foot": 1.39,
+    "stretcher": 1.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 1.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.3,
+   "a": "85ekq5i5e02pxxe0se65sr5sc",
+   "b": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "note": "south door of Room 217, open in the scan",
+   "seconds": {
+    "foot": 4.39,
+    "stretcher": 9.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "85ekq5i5e02pxxe0se65sr5sc",
+   "b": "8cnnit59dnzb02y2nekixp6hc",
+   "seconds": {
+    "foot": 1.54,
+    "stretcher": 2.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "c9t63yrk0m9rmufcmnebs24zb",
+   "seconds": {
+    "foot": 1.63,
+    "stretcher": 2.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.29,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "9xmtamt4c9trdkf242ttr6dwb",
+   "b": "s959dys4uwha3mmrpkf6c5ddc",
+   "seconds": {
+    "foot": 1.64,
+    "stretcher": 2.29
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.35,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "b": "m50u46kpe0src2rqk6xmmri5d",
+   "seconds": {
+    "foot": 1.68,
+    "stretcher": 2.35
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.36,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "n0ppizy9u8xcadypd2bawceyc",
+   "seconds": {
+    "foot": 1.69,
+    "stretcher": 2.36
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.38,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "panr3bktyzufic6e6xb4mtuub",
+   "seconds": {
+    "foot": 1.7,
+    "stretcher": 2.38
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 1.74,
+    "stretcher": 2.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.56,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 1.83,
+    "stretcher": 2.56
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.67,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "p8q154uncpnbn9zz3pf0utc1d",
+   "seconds": {
+    "foot": 1.91,
+    "stretcher": 2.67
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "seconds": {
+    "foot": 1.93,
+    "stretcher": 2.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.72,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "8cnnit59dnzb02y2nekixp6hc",
+   "seconds": {
+    "foot": 1.94,
+    "stretcher": 2.72
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.73,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ufgr14zs7pbz0pig3kp07r7hd",
+   "b": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "seconds": {
+    "foot": 1.95,
+    "stretcher": 2.73
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.76,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "gprsw6xcqigh6reqseh3rmcrc",
+   "seconds": {
+    "foot": 1.97,
+    "stretcher": 2.76
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.8,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "seconds": {
+    "foot": 2.0,
+    "stretcher": 2.8
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.84,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "seconds": {
+    "foot": 2.03,
+    "stretcher": 2.84
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.84,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "b": "w5kacr4ci0d92c5wkzrfs4erd",
+   "seconds": {
+    "foot": 2.03,
+    "stretcher": 2.84
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.93,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "85ekq5i5e02pxxe0se65sr5sc",
+   "seconds": {
+    "foot": 2.09,
+    "stretcher": 2.93
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.93,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "9f45hxprghib9bgxnzkd87f6b",
+   "b": "haipxtu4fuppeii5f8iik4btc",
+   "seconds": {
+    "foot": 2.09,
+    "stretcher": 2.93
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3ny35zcnrdiw2ham0z1sptyqd",
+   "b": "9f45hxprghib9bgxnzkd87f6b",
+   "seconds": {
+    "foot": 2.11,
+    "stretcher": 2.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.96,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "81tg3n7bd96pyfp31pzd7mada",
+   "b": "ht0bbyeyc69qwxm7did6ycbuc",
+   "seconds": {
+    "foot": 2.11,
+    "stretcher": 2.96
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "r5cp1eut86x1rc9yepd4ysxwd",
+   "seconds": {
+    "foot": 2.13,
+    "stretcher": 2.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 2.99,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "p8q154uncpnbn9zz3pf0utc1d",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "seconds": {
+    "foot": 2.14,
+    "stretcher": 2.99
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.03,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "28b2c48p1q2tgni83r5qkdc2b",
+   "seconds": {
+    "foot": 2.16,
+    "stretcher": 3.03
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.06,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "6hxpxut4nuzsug4625z1dk7bd",
+   "b": "7dsusre8f794uicd3gsb1q5yd",
+   "seconds": {
+    "foot": 2.19,
+    "stretcher": 3.06
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "seconds": {
+    "foot": 2.21,
+    "stretcher": 3.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.13,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "7dsusre8f794uicd3gsb1q5yd",
+   "b": "eqpgxz0sb38saf4rcuxng6uud",
+   "seconds": {
+    "foot": 2.24,
+    "stretcher": 3.13
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.16,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "width_m": 1.75,
+   "doors": 2,
+   "a": "m50u46kpe0src2rqk6xmmri5d",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "note": "stone archway at the south end of the arcade with wrought-iron gates, folded back open in the scan; if the gates are shut this way is closed. The builder typed it a door from the wall plan; set to open like the matching archway at the north end, since there is no leaf to open",
+   "seconds": {
+    "foot": 2.26,
+    "stretcher": 3.16
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "seconds": {
+    "foot": 2.3,
+    "stretcher": 3.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.27,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3ny35zcnrdiw2ham0z1sptyqd",
+   "b": "akkrtige2btw2mmn2ghr2z9za",
+   "seconds": {
+    "foot": 2.34,
+    "stretcher": 3.27
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.38,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "seconds": {
+    "foot": 2.41,
+    "stretcher": 3.38
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.4,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "6hxpxut4nuzsug4625z1dk7bd",
+   "b": "akkrtige2btw2mmn2ghr2z9za",
+   "seconds": {
+    "foot": 2.43,
+    "stretcher": 3.4
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "seconds": {
+    "foot": 2.45,
+    "stretcher": 3.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.44,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "seconds": {
+    "foot": 2.46,
+    "stretcher": 3.44
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.52,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "seconds": {
+    "foot": 2.51,
+    "stretcher": 3.52
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.63,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "seconds": {
+    "foot": 2.59,
+    "stretcher": 3.63
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.63,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "seconds": {
+    "foot": 2.59,
+    "stretcher": 3.63
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.64,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 2.6,
+    "stretcher": 3.64
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.7,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gprsw6xcqigh6reqseh3rmcrc",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "seconds": {
+    "foot": 2.64,
+    "stretcher": 3.7
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.78,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "duhb1en75fgewsniip8byupza",
+   "seconds": {
+    "foot": 2.7,
+    "stretcher": 3.78
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.81,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8cnnit59dnzb02y2nekixp6hc",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "seconds": {
+    "foot": 2.72,
+    "stretcher": 3.81
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.85,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "seconds": {
+    "foot": 2.75,
+    "stretcher": 3.85
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.92,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "n0ppizy9u8xcadypd2bawceyc",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "seconds": {
+    "foot": 2.8,
+    "stretcher": 3.92
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.92,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "qf5w019hhy47ybsiu9fyu43kd",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 2.8,
+    "stretcher": 3.92
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.94,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0nunhdpcx0wq1xc8umazai0fd",
+   "b": "ubrr49s35m2uxuy9y5rwh74sb",
+   "seconds": {
+    "foot": 2.81,
+    "stretcher": 3.94
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 3.98,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "seconds": {
+    "foot": 2.84,
+    "stretcher": 3.98
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.06,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "28b2c48p1q2tgni83r5qkdc2b",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "seconds": {
+    "foot": 2.9,
+    "stretcher": 4.06
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.11,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0nunhdpcx0wq1xc8umazai0fd",
+   "b": "8c32s7nkt2849ty7f2xzdunda",
+   "seconds": {
+    "foot": 2.94,
+    "stretcher": 4.11
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.12,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gaxq605gdd559tf073aubympc",
+   "b": "thaxyfyip9r71h69gkck885aa",
+   "seconds": {
+    "foot": 2.94,
+    "stretcher": 4.12
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.21,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "eqpgxz0sb38saf4rcuxng6uud",
+   "b": "y8rya39xwbarmpmfakn2qaimc",
+   "seconds": {
+    "foot": 3.01,
+    "stretcher": 4.21
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.22,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "n0ppizy9u8xcadypd2bawceyc",
+   "seconds": {
+    "foot": 3.01,
+    "stretcher": 4.22
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.24,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "duhb1en75fgewsniip8byupza",
+   "seconds": {
+    "foot": 3.03,
+    "stretcher": 4.24
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.25,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "w5kacr4ci0d92c5wkzrfs4erd",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "seconds": {
+    "foot": 3.04,
+    "stretcher": 4.25
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "seconds": {
+    "foot": 3.06,
+    "stretcher": 4.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "seconds": {
+    "foot": 3.12,
+    "stretcher": 4.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "haipxtu4fuppeii5f8iik4btc",
+   "b": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "seconds": {
+    "foot": 3.12,
+    "stretcher": 4.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.39,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2yy18y2trz8tgisf5r9s1tfpc",
+   "b": "81tg3n7bd96pyfp31pzd7mada",
+   "seconds": {
+    "foot": 3.14,
+    "stretcher": 4.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.57,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "684rbi72ft03adydwabgicmpb",
+   "seconds": {
+    "foot": 3.26,
+    "stretcher": 4.57
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.61,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "da9quipa0a6ny84ky8e6s3ptb",
+   "seconds": {
+    "foot": 3.29,
+    "stretcher": 4.61
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.65,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "g28dnxza8f193q5nzhdaxf2hd",
+   "seconds": {
+    "foot": 3.32,
+    "stretcher": 4.65
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.68,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8c32s7nkt2849ty7f2xzdunda",
+   "b": "c9t63yrk0m9rmufcmnebs24zb",
+   "seconds": {
+    "foot": 3.34,
+    "stretcher": 4.68
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.73,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "28b2c48p1q2tgni83r5qkdc2b",
+   "seconds": {
+    "foot": 3.38,
+    "stretcher": 4.73
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.76,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "seconds": {
+    "foot": 3.4,
+    "stretcher": 4.76
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.81,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "duhb1en75fgewsniip8byupza",
+   "seconds": {
+    "foot": 3.44,
+    "stretcher": 4.81
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.82,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "seconds": {
+    "foot": 3.44,
+    "stretcher": 4.82
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.85,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "mk5198wdpzeqzp73ese8h4pbb",
+   "seconds": {
+    "foot": 3.46,
+    "stretcher": 4.85
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.87,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8h1u5sb6x8sabzcssd91exwna",
+   "b": "h13rg3tuxedbm5zzknqadu73b",
+   "seconds": {
+    "foot": 3.48,
+    "stretcher": 4.87
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.89,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "9xmtamt4c9trdkf242ttr6dwb",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "seconds": {
+    "foot": 3.49,
+    "stretcher": 4.89
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.92,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "ufgr14zs7pbz0pig3kp07r7hd",
+   "note": "stone archway at the north end of the arcade with wrought-iron gates, standing open in the scan; if the gates are shut this way is closed",
+   "seconds": {
+    "foot": 3.51,
+    "stretcher": 4.92
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 4.97,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "seconds": {
+    "foot": 3.55,
+    "stretcher": 4.97
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.0,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2yy18y2trz8tgisf5r9s1tfpc",
+   "b": "umf4kucuf8hn4ipb9az044yxc",
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.0,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "8h1u5sb6x8sabzcssd91exwna",
+   "b": "ht0bbyeyc69qwxm7did6ycbuc",
+   "seconds": {
+    "foot": 3.57,
+    "stretcher": 5.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.03,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "seconds": {
+    "foot": 3.59,
+    "stretcher": 5.03
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.07,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 3.62,
+    "stretcher": 5.07
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.09,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "seconds": {
+    "foot": 3.64,
+    "stretcher": 5.09
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.26,
+   "confidence": 0.8,
+   "evidence_path": null,
+   "type": "stairs",
+   "rise_m": 1.98,
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "seconds": {
+    "foot": 14.14,
+    "stretcher": null
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": false
+   }
+  },
+  {
+   "meters": 5.26,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "b": "mk5198wdpzeqzp73ese8h4pbb",
+   "seconds": {
+    "foot": 3.76,
+    "stretcher": 5.26
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.28,
+   "confidence": 0.8,
+   "evidence_path": null,
+   "type": "stairs",
+   "rise_m": 1.98,
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "seconds": {
+    "foot": 14.14,
+    "stretcher": null
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": false
+   }
+  },
+  {
+   "meters": 5.28,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "ih6tueuzaxnyw3f47m5ygeccd",
+   "seconds": {
+    "foot": 3.77,
+    "stretcher": 5.28
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.29,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "g28dnxza8f193q5nzhdaxf2hd",
+   "seconds": {
+    "foot": 3.78,
+    "stretcher": 5.29
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "seconds": {
+    "foot": 3.84,
+    "stretcher": 5.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.37,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "da9quipa0a6ny84ky8e6s3ptb",
+   "seconds": {
+    "foot": 3.84,
+    "stretcher": 5.37
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.41,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "seconds": {
+    "foot": 3.86,
+    "stretcher": 5.41
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.43,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "panr3bktyzufic6e6xb4mtuub",
+   "b": "thaxyfyip9r71h69gkck885aa",
+   "seconds": {
+    "foot": 3.88,
+    "stretcher": 5.43
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.45,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "seconds": {
+    "foot": 3.89,
+    "stretcher": 5.45
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.45,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "b1q6mcf0edqwd7xwzk6497maa",
+   "b": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "seconds": {
+    "foot": 3.89,
+    "stretcher": 5.45
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.49,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "s959dys4uwha3mmrpkf6c5ddc",
+   "b": "ubrr49s35m2uxuy9y5rwh74sb",
+   "seconds": {
+    "foot": 3.92,
+    "stretcher": 5.49
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.5,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "b1q6mcf0edqwd7xwzk6497maa",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "seconds": {
+    "foot": 3.93,
+    "stretcher": 5.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.91,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ih6tueuzaxnyw3f47m5ygeccd",
+   "b": "y8rya39xwbarmpmfakn2qaimc",
+   "seconds": {
+    "foot": 4.22,
+    "stretcher": 5.91
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 5.95,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "seconds": {
+    "foot": 4.25,
+    "stretcher": 5.95
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.15,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "h13rg3tuxedbm5zzknqadu73b",
+   "seconds": {
+    "foot": 4.39,
+    "stretcher": 6.15
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 6.44,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "gaxq605gdd559tf073aubympc",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "seconds": {
+    "foot": 4.6,
+    "stretcher": 6.44
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 7.02,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "seconds": {
+    "foot": 5.01,
+    "stretcher": 7.02
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 7.58,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "mk5198wdpzeqzp73ese8h4pbb",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "seconds": {
+    "foot": 5.41,
+    "stretcher": 7.58
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 9.52,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "open",
+   "wall_checked": true,
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "umf4kucuf8hn4ipb9az044yxc",
+   "seconds": {
+    "foot": 6.8,
+    "stretcher": 9.52
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "meters": 11.19,
+   "confidence": 0.9,
+   "evidence_path": null,
+   "type": "door",
+   "wall_checked": true,
+   "width_m": 1.68,
+   "a": "mk5198wdpzeqzp73ese8h4pbb",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "note": "north door of Room 217; the link runs the length of the room between the tables",
+   "seconds": {
+    "foot": 10.99,
+    "stretcher": 19.19
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.5,
+   "evidence_path": null,
+   "assumed": true,
+   "a": "stage_west_curb",
+   "b": "door_west_main",
+   "type": "exterior_foot",
+   "meters": 35,
+   "note": "about 22 m across the paved forecourt (measured on the aerial) and about 13 m through the west entrance hall (sight lines from the arcade). Neither is scanned; the outside door of the hall is passed on the way and any steps there are not seen",
+   "seconds": {
+    "foot": 25.0,
+    "stretcher": 35.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.5,
+   "evidence_path": null,
+   "assumed": true,
+   "a": "stage_west_curb",
+   "b": "door_west_north",
+   "type": "exterior_foot",
+   "meters": 35,
+   "note": "about 22 m across the paved forecourt (measured on the aerial) and about 13 m through the west entrance hall (sight lines from the arcade). Neither is scanned; the outside door of the hall is passed on the way and any steps there are not seen",
+   "seconds": {
+    "foot": 25.0,
+    "stretcher": 35.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.8,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "stair_atrium_from_a",
+   "b": "36aa2eubht8idy9kr2k8aubac",
+   "type": "open",
+   "meters": 1.2,
+   "note": "the stair top is beside the foot of the stair up to level 200; seen from 36aa2 at heading 300",
+   "seconds": {
+    "foot": 0.86,
+    "stretcher": 1.2
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "n0ppizy9u8xcadypd2bawceyc",
+   "b": "door_west_main",
+   "type": "door",
+   "meters": 2.3,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 4.64,
+    "stretcher": 10.3
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "n0ppizy9u8xcadypd2bawceyc",
+   "b": "door_west_north",
+   "type": "door",
+   "meters": 2.3,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 4.64,
+    "stretcher": 10.3
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.4,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "ufgr14zs7pbz0pig3kp07r7hd",
+   "b": "corridor_nw",
+   "type": "open",
+   "meters": 2.5,
+   "seconds": {
+    "foot": 1.79,
+    "stretcher": 2.5
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.4,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "b": "corridor_sw",
+   "type": "open",
+   "meters": 2.25,
+   "seconds": {
+    "foot": 1.61,
+    "stretcher": 2.25
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.4,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "81tg3n7bd96pyfp31pzd7mada",
+   "b": "corridor_ne",
+   "type": "open",
+   "meters": 1.6,
+   "seconds": {
+    "foot": 1.14,
+    "stretcher": 1.6
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.4,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "corridor_se",
+   "type": "open",
+   "meters": 1.6,
+   "seconds": {
+    "foot": 1.14,
+    "stretcher": 1.6
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.7,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "ht0bbyeyc69qwxm7did6ycbuc",
+   "b": "stair_north_f1",
+   "type": "door",
+   "meters": 3.3,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 5.36,
+    "stretcher": 11.3
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.7,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "panr3bktyzufic6e6xb4mtuub",
+   "b": "stair_south_f1",
+   "type": "door",
+   "meters": 3.0,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 5.14,
+    "stretcher": 11.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.6,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "xq7dhrun14q0789iwk5epwtkb",
+   "b": "stair_atrium_from_a",
+   "type": "open",
+   "meters": 2.4,
+   "seconds": {
+    "foot": 1.71,
+    "stretcher": 2.4
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.7,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "stair_north_f2",
+   "type": "door",
+   "meters": 2.1,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 4.5,
+    "stretcher": 10.1
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.7,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "9xmtamt4c9trdkf242ttr6dwb",
+   "b": "stair_south_f2",
+   "type": "door",
+   "meters": 2.9,
+   "width_m": 0.9,
+   "seconds": {
+    "foot": 5.07,
+    "stretcher": 10.9
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "w5kacr4ci0d92c5wkzrfs4erd",
+   "b": "elev_pe1_f1",
+   "type": "open",
+   "meters": 2.39,
+   "seconds": {
+    "foot": 1.71,
+    "stretcher": 2.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "haipxtu4fuppeii5f8iik4btc",
+   "b": "elev_pe1_f2",
+   "type": "open",
+   "meters": 2.39,
+   "seconds": {
+    "foot": 1.71,
+    "stretcher": 2.39
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  },
+  {
+   "confidence": 0.9,
+   "evidence_path": null,
+   "assumed": false,
+   "a": "elev_pe1_f1",
+   "b": "elev_pe1_f2",
+   "type": "elevator",
+   "floors": 1,
+   "meters": 3.95,
+   "seconds": {
+    "foot": 35.0,
+    "stretcher": 45.0
+   },
+   "passable": {
+    "foot": true,
+    "stretcher": true
+   }
+  }
+ ],
+ "scope": "Levels 100 and 200 around the central atrium only (the scan calls them Floor 2 and Floor 3): the stone arcade inside the west entrance, the atrium floor, the ring corridors on both levels, the open atrium stair between them and Room 217. Not scanned: the west entrance hall and its outside door, Campus Level A below the atrium (seen from the railings; the scan's Floor 1), Level 300 above, the two enclosed stairwells, the elevator car, the office suites, and the wings that the corridors run on into at all four corners of both levels. Floor numbers are from signs: the jambs of elevator PE1 read 1 and 2, the directory beside it lists Level 300, Level 200, Level 100 and Campus Level A, and room signs read 118 to 120 on the lower level and 200 and 217 to 219 on the upper."
+}

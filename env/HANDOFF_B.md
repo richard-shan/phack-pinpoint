@@ -155,10 +155,11 @@ A's graphs.
   `model()` in `app/lib/spatial-service.mjs` maps only two property ids to a file, and
   `app/src/live.js` opens the 3D view only for those two ids. Reading
   `data/<propertyId>-scan.json` when it exists would cover every lane A building.
-- **Princeton (Rabinowitz Hall).** The scan is visible to the hackathon API key and lane
-  A's builder turns it into one connected graph (66 positions on 2 levels, stairs found
-  from the scan). It is not saved, because the two places where the scan starts still
-  need marking as entries. Say the word and lane A will do it. It has no CoStar record.
+- **Princeton (Rabinowitz Hall).** Done Saturday evening: `buildings/princeton-rabinowitz/`
+  has 66 positions on Levels 100 and 200, eleven marked ways in (the west glass doors,
+  four corridors where the scan starts, four stair doors, the open stair from Campus
+  Level A), and elevator PE1 on both levels. It has no CoStar record; the packet says so.
+  It is the one building where the team can take real photos.
 - **Aerial view.** `entries[].approach` runs from the staging spot to the door. It is
   placed by hand at Willow Centre, Broxton, Fannin and Geneva St. At Barham, Wilshire and
   St Joseph it comes from the scan's georeference and is off; `calibration` says so.
