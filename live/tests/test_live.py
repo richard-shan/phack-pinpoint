@@ -47,11 +47,13 @@ class _Base(unittest.TestCase):
         orchestrator.INCIDENTS = Path(self.tmp.name) / "incidents"
         orchestrator.INCIDENTS.mkdir()
         tools.ASSETS = Path(self.tmp.name) / "assets"
+        self.old_state, run.STATE = run.STATE, Path(self.tmp.name) / "state"     # the watcher's record of handled incidents
 
     def tearDown(self):
         tools.uninstall()
         tools._simulated_candidates = self.old_sim
         orchestrator.INCIDENTS, tools.ASSETS = self.old_incidents, self.old_assets
+        run.STATE = self.old_state
         self.tmp.cleanup()
 
     def files(self, res):
@@ -260,8 +262,6 @@ class WithConsole(_Base):
         self.assertIs(first["raw"], False)
 
     def test_watcher_runs_new_incidents_once_and_leaves_handled_ones_alone(self):
-        state = run.STATE
-        run.STATE = Path(self.tmp.name) / "state"
         try:
             done = run.run_incident(BUILDING, None, position=TARGET, console=self.console, auto_approve=True)
             rev = self.console.get(done["console_incident"])["revision"]
@@ -276,7 +276,16 @@ class WithConsole(_Base):
             run.watch(self.console, once=True, auto_approve=True, position=TARGET)
             self.assertEqual(self.console.get(fresh)["revision"], rev2)                     # not run twice
         finally:
-            run.STATE = state
+            pass
+
+    def test_a_run_tells_the_watcher_it_has_the_incident(self):
+        photo = Path(self.tmp.name) / "caller.jpg"
+        from PIL import Image
+        Image.new("RGB", (64, 48), "gray").save(photo)
+        res = run.run_incident(BUILDING, str(photo), position=TARGET, console=self.console, leave_for_review=True)
+        rev = self.console.get(res["console_incident"])["revision"]
+        run.watch(self.console, once=True, auto_approve=True, position=TARGET)      # must leave it alone
+        self.assertEqual(self.console.get(res["console_incident"])["revision"], rev)
 
     def test_leave_for_review_drafts_and_does_not_wait(self):
         res = run.run_incident(BUILDING, None, "example", position=TARGET, console=self.console,

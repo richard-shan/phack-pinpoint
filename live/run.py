@@ -101,7 +101,9 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         raise SystemExit(f"the console is not answering at {console.base}: start it with `python3 -m live.serve`")
     if console is not None and console_incident is None:
         said = text or ("Caller sent a photo." if photo else "Position given by the dispatcher; no photo.")
-        console_incident = console.create(building_id, said, photo)["id"]
+        made = console.create(building_id, said, photo)
+        console_incident = made["id"]
+        _mark(_seen(), console_incident, _photo_key(made))     # a watcher must not run this one too
     if ask is None:
         ask = "console" if (console is not None and not truth and not auto_approve) else "simulate"
 
@@ -191,6 +193,11 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
 
 
 # ------------------------------------------------------------------ watch mode
+def _photo_key(incident: dict) -> str:
+    photo = incident.get("photo") or {}
+    return photo.get("name", "") + str(len(photo.get("dataUrl", "")))
+
+
 def _seen() -> dict:
     try:
         return json.loads((STATE / "seen.json").read_text())
@@ -208,10 +215,10 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
     """Run the agent on each console incident that has a caller photo and a building lane
     A has a graph for. An incident is run once per photo."""
     have = set(list_buildings())
-    seen = _seen()
     print(f"watching {console.base} for incidents with a caller photo; buildings with a graph: "
           f"{', '.join(sorted(have - {'toy'}))}", flush=True)
     while True:
+        seen = _seen()                       # other runs on this machine record what they are handling
         try:
             rows = console.incidents()
         except (ConsoleError, OSError) as exc:
@@ -221,7 +228,7 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
             if row.get("propertyId") not in have or not row.get("photo"):
                 continue
             inc = console.get(row["id"])
-            photo_key = (inc.get("photo") or {}).get("name", "") + str(len((inc.get("photo") or {}).get("dataUrl", "")))
+            photo_key = _photo_key(inc)
             if seen.get(inc["id"]) == photo_key:
                 continue
             first_sight = inc["id"] not in seen
