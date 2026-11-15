@@ -32,19 +32,17 @@ So Pinpoint is built for the dispatcher, and the output is the map the first-arr
 
 ![A real phone photo texted from Rabinowitz Hall, matched to a scan view with 455 points](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/match-real.jpg)
 
-**The route.** The agent picks the door and routes to the caller. The console draws the route on the floor of the Matterport scan, and **Follow route** walks it facing the way the crew walks.
+**The route.** The agent picks the door and routes to the caller. The incident opens on the building's 3D model with the route drawn through it, floor by floor (the image at the top of this page). The **Interior** toggle draws the route on the floor of the Matterport scan, and **Follow route** walks it facing the way the crew walks.
 
-![The route from the chosen door to the caller, drawn in the Matterport scan](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/hero.jpg)
+![The console's Interior view at Rabinowitz Hall: the route from the south glass door up the main stair to the caller on floor 2](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/console-route.jpg)
 
-The **Exterior** tab shows the staging spot and the door on the Vexcel aerial image.
+The **Exterior** toggle shows the staging spot and the door on the Vexcel aerial image.
 
 ![Aerial approach: staging spot to the entry](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/aerial-approach.jpg)
 
-**The whole building.** One button opens the building as a 3D model the dispatcher can turn, with the route drawn through it floor by floor (the image at the top of this page).
+**The packet.** Every incident also gets a one-picture floor plan (staging, door, path, caller, with the caller's photo) and a packet where each line carries its source. In this incident at 7900 Fannin St, the best door is not the street-address door, and the stretcher has to use the swing door beside the revolving door.
 
-**The packet.** Every incident also gets a one-picture floor plan (staging, door, path, caller, with the caller's photo) and a packet where each line carries its source. In the packet below, for 7900 Fannin St, the best door is not the street-address door, and the stretcher has to skip the revolving door.
-
-![Floor-plan route at 12814 Willow Centre Dr: stairs only, so a stretcher cannot reach the caller](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/route-willow.jpg)
+![Floor-plan route at 7900 Fannin St: from the north drop-off, through the revolving door, to the caller by the restrooms](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/route-fannin.jpg)
 
 ![The packet, with a source on every line](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/packet.png)
 
@@ -182,11 +180,11 @@ Otherwise the answer is "unknown". Random noise, a blank frame and an unrelated 
 **Dispatcher console** ([`app/`](https://github.com/richard-shan/phack-pinpoint/tree/main/app)). The console is a Node server with no dependencies, plus one page laid out like a CAD screen:
 
 - a call queue with incident numbers and priorities;
-- the route registered in the Matterport viewer through its SDK, with **3D overview**, **Go to entry** and **Follow route**;
-- the aerial approach;
+- an incident view that opens on the building's 3D model with the route, with **3D full screen** for a larger view ([`app/live-3d.html`](https://github.com/richard-shan/phack-pinpoint/blob/main/app/live-3d.html));
+- **Interior**: the route registered in the Matterport viewer through its SDK, with **3D overview**, **Go to entry** and **Follow route**;
+- **Exterior**: the aerial approach;
 - foot and stretcher toggles, an elevator toggle, and blocking a segment (each one saves a new route revision for review);
-- the review panel with the packet, the photo-match evidence and the CoStar record;
-- a whole-building 3D model page ([`app/live-3d.html`](https://github.com/richard-shan/phack-pinpoint/blob/main/app/live-3d.html)).
+- the review panel with the packet, the photo-match evidence and the CoStar record.
 
 ![The dollhouse view of 12814 Willow Centre Dr, with the route drawn in](https://raw.githubusercontent.com/richard-shan/phack-pinpoint/main/devpost-images/scan-overview.jpg)
 
