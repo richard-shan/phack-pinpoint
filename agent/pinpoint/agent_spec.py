@@ -100,34 +100,34 @@ PERMISSIONS_AVAILABLE = _FP is not None
 FilesystemPermission = _FP  # may be None
 
 
-def _perm(path: str, mode: str):
-    """Construct a FilesystemPermission with best-effort kwarg shape.
+def _perms(specs: list[tuple[str, str]]):
+    """Build a permissions list from (path, mode) pairs.
 
-    The constructor signature varies across deepagents versions. We try the
-    documented kwargs first, then positional, then one-arg string shapes. If
-    nothing works, we return the raw dict so the framework at least sees intent.
+    Real deepagents signature (verified against installed source):
+        FilesystemPermission(operations=list["read"|"write"],
+                             paths=list[str starting with "/"],
+                             mode=Literal["allow","deny","interrupt"] = "allow")
+
+    We group paths by whether they are read-only or read-write so each
+    subagent gets at most two FilesystemPermission objects (one per op set).
+    All our rules are allow-rules; deny defaults are left to the framework.
     """
     if not PERMISSIONS_AVAILABLE:
         return None
-    for attempt in (
-        lambda: _FP(path=path, mode=mode),
-        lambda: _FP(path, mode),
-        lambda: _FP(pattern=path, mode=mode),
-        lambda: _FP(path=path, access=mode),
-        lambda: _FP(glob=path, mode=mode),
-    ):
-        try:
-            return attempt()
-        except TypeError:
-            continue
-    return {"path": path, "mode": mode}
-
-
-def _perms(specs: list[tuple[str, str]]):
-    """Build a permissions list for a subagent, or None if unavailable."""
-    if not PERMISSIONS_AVAILABLE:
-        return None
-    return [_perm(p, m) for p, m in specs]
+    read_paths = []
+    readwrite_paths = []
+    for path, mode in specs:
+        p = path if path.startswith("/") else "/" + path
+        if mode == "read":
+            read_paths.append(p)
+        elif mode == "readwrite":
+            readwrite_paths.append(p)
+    out = []
+    if read_paths:
+        out.append(_FP(operations=["read"], paths=read_paths, mode="allow"))
+    if readwrite_paths:
+        out.append(_FP(operations=["read", "write"], paths=readwrite_paths, mode="allow"))
+    return out or None
 
 
 _SUBAGENT_PERMS = {

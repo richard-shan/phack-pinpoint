@@ -30,6 +30,7 @@ def _entropy(weights):
 
 def best_question(candidates, exclude=None):
     # Attribute with highest expected info gain. Only attrs present on every candidate.
+    """Choose the caller question whose answer is expected to shrink the belief entropy the most across the current candidate set. Returns the attribute, a phrasing hint, and the expected information gain."""
     normalize_belief(candidates)
     prior_h = _entropy([c["belief"] for c in candidates])
 
@@ -70,6 +71,7 @@ def best_question(candidates, exclude=None):
 
 def update_belief(candidates, attribute, answer):
     # Soft Bayes update — mismatches damp, never zero (callers mis-answer under stress).
+    """Soft-update candidate beliefs given the caller's answer. Matching candidates boosted by answer-reliability; non-matching dampened; nothing zeroed. Returns the re-sorted candidates."""
     normalize_belief(candidates)
     r = ANSWER_RELIABILITY
     ans = _key(answer)

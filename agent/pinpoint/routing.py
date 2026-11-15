@@ -109,6 +109,7 @@ def _uses(graph, seq, etype):
 
 
 def route(building_id, from_node, to_node, profile, blocked_edges=None):
+    """Compute the shortest path from from_node to to_node on the building graph under a stretcher or foot profile. Returns path_nodes, meters, and seconds."""
     g = load_graph(building_id)
     blocked = set(blocked_edges or [])
     dist, prev = _dijkstra(g, from_node, profile, blocked)
@@ -145,6 +146,7 @@ def best_entry(building_id, target, profile):
 
 def best_entry_under_belief(building_id, candidates, profile):
     # Best door under location uncertainty; question_worth_asking if doors disagree.
+    """Pick the responder-staging entrance that minimizes expected graph distance under weighted candidate rooms. Returns best_entry_id, expected meters, and alternatives."""
     g = load_graph(building_id)
     from .localization import normalize_belief
     normalize_belief(candidates)
@@ -169,6 +171,7 @@ def best_entry_under_belief(building_id, candidates, profile):
 
 def backup_route(building_id, from_node, to_node, profile, avoid_path):
     # Alternate path: 3x cost on edges from the first route.
+    """Compute an alternative path from from_node to to_node that avoids the given nodes. Returns the alternative or None if no path exists."""
     g = load_graph(building_id)
     avoid = set()
     ap = avoid_path or []

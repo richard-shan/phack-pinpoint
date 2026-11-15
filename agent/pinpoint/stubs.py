@@ -22,6 +22,7 @@ def _load(name):
 @traced("records")
 def get_property(address):
     # CoStar brief for address. Raises PropertyNotFound on UNKNOWN/empty.
+    """Look up a commercial property in CoStar by street address. Returns a dict with building_id, use_type, stories, year_built, sqft, tenants list, and a primary contact dict."""
     if not address or "UNKNOWN" in str(address).upper():
         raise PropertyNotFound(f"address not in CoStar: {address!r}")
     p = _load("property.json")
@@ -39,6 +40,7 @@ def get_tenants(building_id):
 @traced("locator")
 def look(node_id):
     # Pano + attributes + neighbors for a node.
+    """Fetch a specific node's pano image_path, attributes, and neighbors from the Matterport twin."""
     g = _load("graph.json")
     node = next((n for n in g["nodes"] if n["id"] == node_id), None)
     if not node:
@@ -59,6 +61,7 @@ def entrances(building_id):
 @traced("locator")
 def match_photo(building_id, image_path, k=10):
     # Ranked room candidates. synth/node_<id>.jpg → synthetic set; else match.json.
+    """Match a caller's photo to candidate positions in the building's Matterport twin. Returns up to k ranked candidates, each with node_id, score, evidence_path, and attributes."""
     if building_id == "no_twin" or str(image_path).startswith("no_twin://"):
         raise MatterportUnavailable(
             f"no Matterport twin for building {building_id!r}")
@@ -114,6 +117,7 @@ def _synth_candidates(truth_node_id, k=10):
 @traced("site")
 def detect_site_features(building_id, address=None, lat=None, lon=None):
     # Entrances/staging; prefers live Vexcel tile, else fixture.
+    """Identify entrances, staging areas, and obstructions around a building from the Vexcel aerial tile. Falls back to fixture data when Vexcel is unavailable."""
     from . import vexcel  # local so tests can patch
     s = _load("site.json")
     base = {"entrances": s["entrances"], "staging": s["staging"],
@@ -157,6 +161,7 @@ def find_equipment(building_id, type, near_node):
 @traced("router")
 def hazards_along(building_id, path):
     # Locked / low-confidence doors on the path.
+    """Scan a graph path for hazards such as locked doors, obstructions, or stairs on a stretcher profile. Returns a list of hazard records."""
     g = _load("graph.json")
     pset = set(path or [])
     out = []
@@ -174,6 +179,7 @@ def hazards_along(building_id, path):
 @traced("commander")
 def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     # Ask the caller; mock mode answers from ground-truth attrs.
+    """Ask the caller a text question and optionally show them images. Use sparingly, only when the answer changes what to do next."""
     if _mock_truth_attrs is not None:
         attr = (text or "").strip()
         val = _mock_truth_attrs.get(attr)
@@ -195,11 +201,13 @@ def _phrase_answer(attr, val):
 
 def send_packet(incident_id):
     # Mark packet sent (gate already approved upstream).
+    """Mark the responder packet as sent. Gated by dispatcher approval via the framework interrupt."""
     return {"status": "sent", "incident_id": incident_id, "channel": "sms+link"}
 
 
 def notify_contact(incident_id, contact):
     # Write notify.json; returns no_contact_available if brief has no usable contact.
+    """Notify a point-of-contact at the building. Gated by dispatcher approval. Skips cleanly when no contact is available."""
     import json as _json
     from .config import INCIDENTS
     if not contact:
