@@ -26,7 +26,7 @@ export function spatialService(root,store){
     },model,
     async update(id,body){
       if(!body||typeof body!=='object'||Array.isArray(body))throw new Error('A route update object is required.');
-      const keys=['expectedRevision','profile','entryId','destination','blockedEdges','nodeIds','connectors','updatedBy','reason'];
+      const keys=['expectedRevision','profile','entryId','destination','blockedEdges','nodeIds','connectors','updatedBy','reason','entranceComparison'];
       if(Object.keys(body).some(k=>!keys.includes(k)))throw new Error('Unknown route update field.');
       const i=await store.get(id);
       const g=await model(i.propertyId);
@@ -34,6 +34,11 @@ export function spatialService(root,store){
       // (the graph file may have been replaced since the route was saved).
       const saved=i.spatialRoute, fits=saved&&g.entries.some(e=>e.id===saved.entryId)&&g.nodes.some(n=>n.id===saved.destination)&&(saved.blockedEdges||[]).every(id=>g.edges.some(e=>e.id===id)||/^connector-/.test(id));
       const route=planRoute(g,{...(fits ? {profile:saved.profile,entryId:saved.entryId,destination:saved.destination,blockedEdges:saved.blockedEdges,connectors:saved.connectors}:{}),...body});
+      const c=body.entranceComparison;
+      if(c!==undefined){
+        if(body.updatedBy!=='agent'||route.status!=='ready'||!c||typeof c!=='object'||Array.isArray(c)||Object.keys(c).some(k=>!['frontEntryId','frontSeconds','chosenSeconds'].includes(k))||!g.entries.some(e=>e.id===c.frontEntryId)||![c.frontSeconds,c.chosenSeconds].every(n=>typeof n==='number'&&Number.isFinite(n)&&n>=0))throw new Error('Invalid entrance comparison.');
+        route.entranceComparison={frontEntryId:c.frontEntryId,frontSeconds:c.frontSeconds,chosenSeconds:c.chosenSeconds};
+      }
       return store.setRoute(id,body.expectedRevision,route,routeDirections(g,route),g.nodes.find(n=>n.id===route.destination).label);
     },
   };

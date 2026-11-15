@@ -18,6 +18,7 @@ to the caller, and takes the dispatcher's approval.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import time
@@ -117,7 +118,8 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
                  console_incident: str | None = None, truth: str | None = None, position: str | None = None,
                  simulate_match: str | None = None, ask: str | None = None, auto_approve: bool = False,
                  approve_timeout_s: float | None = None, ask_timeout_s: float = 90.0,
-                 address: str | None = None, leave_for_review: bool = False) -> dict:
+                 address: str | None = None, leave_for_review: bool = False,
+                 drafted_by: str | None = None) -> dict:
     """-> the agent's summary, plus `console_incident` and `console_decision` when a console
     is attached, and `problem` when the packet is not a full one (no match, no record).
 
@@ -152,7 +154,7 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     tools.reset(building_id=building_id, truth_node=truth or position or simulate_match,
                 given_position=position, simulate_match=simulate_match,
                 console=console, console_incident=console_incident, ask=ask, ask_timeout_s=ask_timeout_s,
-                console_scan=bool(console and console.has_scan(building_id)))
+                console_scan=bool(console and console.has_scan(building_id)), drafted_by=drafted_by)
 
     approve, decision_box = _gate(console, console_incident, auto_approve, leave_for_review, approve_timeout_s)
 
@@ -394,13 +396,13 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
     out: dict = {}
     try:
         out = deep_agent.run_real_agent(kick, idir, approve_fn=at_gate)
-    except (deep_agent.DeepAgentsNotConfigured, budget.BudgetExceeded) as exc:
-        raise SystemExit(f"the agent's LLM path cannot run here: {exc}")
     except Exception as exc:                     # an API failure part way: keep what the tools returned
         out = {"model_error": f"{type(exc).__name__}: {exc}"[:300]}
         print(f"  the model's run stopped early: {out['model_error']}", file=sys.stderr, flush=True)
     finally:
         tools.SESSION["llm"] = False
+    if out.get("model_error") and "decision" not in built:
+        raise RuntimeError("The model stopped before the approval gate: " + out["model_error"])
     _set_aside(idir)                             # the run ends by writing the model's reports again
     if "packet" not in built and "problem" not in built:
         build()                                  # the model stopped without asking to send
@@ -435,9 +437,47 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
 
 
 # ------------------------------------------------------------------ watch mode
+def run_with_fallback(building_id: str, photo: str | None, text: str = "", *,
+                      console: Console | None = None, console_incident: str | None = None, **kw) -> dict:
+    """Prefer the model, falling back on the same undecided console incident if it fails."""
+    if console is not None and console_incident is None:
+        made = console.create(str(building_id), text or ("Caller sent a photo." if photo else
+                              "Position given by the dispatcher; no photo."), photo)
+        console_incident = made["id"]
+        _mark(_seen(), console_incident, _photo_key(made))
+    try:
+        result = run_llm_incident(building_id, photo, text, console=console,
+                                  console_incident=console_incident, **kw)
+        if not result.get("problem"):
+            return result
+        failure = "The model could not produce a packet."
+    except (Exception, SystemExit) as exc:
+        failure = f"{type(exc).__name__}: {exc}"
+    print(f"  Model unavailable; switching to the deterministic agent: {failure[:300]}",
+          file=sys.stderr, flush=True)
+    if console is not None:
+        # Never replace an approved or rejected packet after a model or console failure.
+        current = console.get(console_incident)
+        if current.get("status") != "review" or current.get("decision"):
+            return {"console_incident": console_incident, "problem": "Model stopped after a dispatcher decision; review the existing packet.", "path": "llm"}
+        try:
+            console._call("PATCH", f"/incidents/{console_incident}", {
+                "expectedRevision": current["revision"], "updatedBy": "agent", "packetMarkdown": "",
+                "notes": "The model-driven agent could not finish. The deterministic agent is preparing a new draft for dispatcher review."})
+        except ConsoleError as exc:
+            if exc.status == 409:
+                return {"console_incident": console_incident, "problem": "Incident changed during fallback; review it before retrying.", "path": "llm"}
+            raise
+    result = run_incident(building_id, photo, text, console=console,
+                          console_incident=console_incident,
+                          drafted_by="the deterministic fallback after the model could not finish", **kw)
+    result["path"] = "deterministic_fallback"
+    return result
+
+
 def _photo_key(incident: dict) -> str:
     photo = incident.get("photo") or {}
-    return photo.get("name", "") + str(len(photo.get("dataUrl", "")))
+    return hashlib.sha256((photo.get("dataUrl") or "").encode()).hexdigest()
 
 
 def _seen() -> dict:
@@ -453,10 +493,10 @@ def _mark(seen: dict, key: str, value) -> None:
     (STATE / "seen.json").write_text(json.dumps(seen, indent=1))
 
 
-def watch(console: Console, poll_s: float = 1.5, once: bool = False, llm: bool = False, **kw) -> None:
+def watch(console: Console, poll_s: float = 1.5, once: bool = False, llm: bool = True, **kw) -> None:
     """Run the agent on each console incident that has a caller photo and a building lane
     A has a graph for. An incident is run once per photo. `llm` puts a model in charge."""
-    run = run_llm_incident if llm else run_incident
+    run = run_with_fallback if llm else run_incident
     have = set(list_buildings())
     print(f"watching {console.base} for incidents with a caller photo; buildings with a graph: "
           f"{', '.join(sorted(have - {'toy'}))}", flush=True)
@@ -473,6 +513,11 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, llm: bool =
             inc = console.get(row["id"])
             photo_key = _photo_key(inc)
             if seen.get(inc["id"]) == photo_key:
+                continue
+            # Upgrade old name-and-length markers without replaying old incidents.
+            photo_data = inc.get("photo") or {}
+            if seen.get(inc["id"]) == photo_data.get("name", "") + str(len(photo_data.get("dataUrl", ""))):
+                _mark(seen, inc["id"], photo_key)
                 continue
             first_sight = inc["id"] not in seen
             _mark(seen, inc["id"], photo_key)
@@ -513,8 +558,10 @@ def main(argv=None) -> None:
     ap.add_argument("--ask", choices=("console", "simulate", "none"), help="who answers the agent's questions")
     ap.add_argument("--ask-timeout", type=float, default=90.0, help="seconds to wait for the caller's reply")
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
-    ap.add_argument("--llm", action="store_true", help="put a model in charge of the tool calls (the agent's "
-                    "deepagents path; needs ANTHROPIC_API_KEY) instead of its deterministic orchestrator")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--llm", dest="llm", action="store_true", help="prefer DeepAgents with deterministic fallback (the default)")
+    mode.add_argument("--deterministic", dest="llm", action="store_false", help="skip the model and use the deterministic orchestrator")
+    ap.set_defaults(llm=True)
     a = ap.parse_args(argv)
 
     console = Console(a.console or "http://localhost:4175") if (a.console or a.watch) else None
@@ -523,11 +570,9 @@ def main(argv=None) -> None:
         return
     if not a.building or not (a.photo or a.position or a.simulate_match):
         ap.error("give --building and --photo (or --position), or --watch")
-    if a.llm:
-        if a.simulate_match:
-            ap.error("--simulate-match is for the deterministic path")
-        res = run_llm_incident(a.building, a.photo, a.text, console=console, truth=a.truth, position=a.position,
-                               ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
+    if a.llm and not a.simulate_match:
+        res = run_with_fallback(a.building, a.photo, a.text, console=console, truth=a.truth, position=a.position,
+                                ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
     else:
         res = run_incident(a.building, a.photo, a.text, console=console, truth=a.truth, position=a.position,
                            simulate_match=a.simulate_match, ask=a.ask, auto_approve=a.auto_approve,

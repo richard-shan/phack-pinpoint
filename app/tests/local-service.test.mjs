@@ -30,6 +30,20 @@ async function fixture(t, options={}) {
 }
 const create = f => f.api('/api/incidents','POST',{ propertyId:'23553', callerText:'I am beside the reception desk.' });
 
+test('photo inference creates an incident with the original caller text and rejects invalid or uncertain photos', async t => {
+  const f=await fixture(t,{inferBuilding:async()=>({building_id:'23553'})});
+  const photo={name:'caller.jpg',dataUrl:'data:image/jpeg;base64,/9j/2Q=='};
+  const result=await f.api('/api/demo-photo','POST',{photo,callerText:'I am by the stairs'});
+  assert.equal(result.status,201);
+  assert.equal(result.body.callerText,'I am by the stairs');
+  assert.equal(result.body.messages[0].text,'I am by the stairs');
+  assert(result.body.events.some(e=>e.text.includes('dispatcher confirmation required')));
+  assert.equal((await f.api('/api/demo-photo','POST',{photo:{...photo,dataUrl:'data:image/jpeg;base64,YWJjZA=='}})).status,400);
+  const uncertain=await fixture(t,{inferBuilding:async()=>({building_id:null})});
+  assert.equal((await uncertain.api('/api/demo-photo','POST',{photo})).status,422);
+  assert.equal((await uncertain.api('/api/incidents')).body.incidents.length,0);
+});
+
 test('local intake persists across restarts with explicit unknowns and no synthesized route', async t => {
   const f = await fixture(t); const result = await create(f);
   assert.equal(result.status,201); const incident = result.body;

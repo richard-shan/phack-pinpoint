@@ -12,6 +12,7 @@ import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from live import run, tools
@@ -165,6 +166,11 @@ class ModelInCharge(_Base):
 
 
 class WithoutConsole(_Base):
+    def test_photo_key_changes_for_different_images_with_same_name_and_size(self):
+        one = {"photo": {"name": "photo.jpg", "dataUrl": "first"}}
+        two = {"photo": {"name": "photo.jpg", "dataUrl": "other"}}
+        self.assertNotEqual(run._photo_key(one), run._photo_key(two))
+
     def test_incident_runs_on_real_records_and_routing(self):
         res = run.run_incident(BUILDING, None, "caller text", position=TARGET, auto_approve=True)
         f = self.files(res)
@@ -307,6 +313,9 @@ class WithConsole(_Base):
         best = A.best_entry(BUILDING, TARGET, "foot")
         self.assertEqual((sr["status"], sr["updatedBy"], sr["entryId"]), ("ready", "agent", best["entrance_id"]))
         self.assertEqual(sr["destination"], TARGET)
+        self.assertEqual(sr["entranceComparison"]["frontEntryId"], best["front_door"]["entrance_id"])
+        self.assertEqual(sr["entranceComparison"]["chosenSeconds"], best["seconds"])
+        self.assertEqual(sr["entranceComparison"]["frontSeconds"], best["front_door"]["seconds"])
         roles = [m["role"] for m in inc["messages"]]
         self.assertIn("dispatcher", roles)                       # the agent's question
         self.assertTrue(any("simulated caller" in m["text"] for m in inc["messages"]))
@@ -371,11 +380,11 @@ class WithConsole(_Base):
             from PIL import Image
             Image.new("RGB", (64, 48), "gray").save(photo)
             fresh = self.console.create(BUILDING, "help", str(photo))["id"]
-            run.watch(self.console, once=True, auto_approve=True, position=TARGET)
+            run.watch(self.console, once=True, llm=False, auto_approve=True, position=TARGET)
             self.assertEqual(self.console.get(done["console_incident"])["revision"], rev)   # untouched
             self.assertEqual(self.console.get(fresh)["status"], "approved")
             rev2 = self.console.get(fresh)["revision"]
-            run.watch(self.console, once=True, auto_approve=True, position=TARGET)
+            run.watch(self.console, once=True, llm=False, auto_approve=True, position=TARGET)
             self.assertEqual(self.console.get(fresh)["revision"], rev2)                     # not run twice
         finally:
             pass
@@ -386,7 +395,7 @@ class WithConsole(_Base):
         Image.new("RGB", (64, 48), "gray").save(photo)
         res = run.run_incident(BUILDING, str(photo), position=TARGET, console=self.console, leave_for_review=True)
         rev = self.console.get(res["console_incident"])["revision"]
-        run.watch(self.console, once=True, auto_approve=True, position=TARGET)      # must leave it alone
+        run.watch(self.console, once=True, llm=False, auto_approve=True, position=TARGET)      # must leave it alone
         self.assertEqual(self.console.get(res["console_incident"])["revision"], rev)
 
     def test_leave_for_review_drafts_and_does_not_wait(self):
@@ -397,6 +406,37 @@ class WithConsole(_Base):
         self.assertIn("## Enter here", inc["packetMarkdown"])
         self.assertEqual(res["console_decision"]["decision"], "left for review")
         self.assertNotIn("APPROVED", (Path(res["dir"]) / "packet.md").read_text().split("\n")[2])
+
+    def test_model_failure_falls_back_on_same_incident(self):
+        with patch.object(run, "run_llm_incident", side_effect=RuntimeError("model offline")):
+            result = run.run_with_fallback(BUILDING, None, "help", console=self.console,
+                                           position=TARGET, auto_approve=True)
+        incidents = self.console.incidents()
+        self.assertEqual(len(incidents), 1)
+        self.assertEqual(result["path"], "deterministic_fallback")
+        self.assertEqual(result["console_incident"], incidents[0]["id"])
+        self.assertEqual(self.console.get(incidents[0]["id"])["status"], "approved")
+
+    def test_watcher_prefers_model_by_default(self):
+        from PIL import Image
+        photo = Path(self.tmp.name) / "caller.jpg"
+        Image.new("RGB", (64, 48), "gray").save(photo)
+        cid = self.console.create(BUILDING, "help", str(photo))["id"]
+        with patch.object(run, "run_llm_incident", return_value={"path": "llm"}) as model:
+            run.watch(self.console, once=True)
+        self.assertEqual(model.call_count, 1)
+        self.assertEqual(model.call_args.kwargs["console_incident"], cid)
+
+    def test_model_failure_after_approval_does_not_replace_packet(self):
+        original = run.run_incident(BUILDING, None, position=TARGET, console=self.console, auto_approve=True)
+        cid = original["console_incident"]
+        before = self.console.get(cid)
+        with patch.object(run, "run_llm_incident", side_effect=RuntimeError("model offline")), \
+             patch.object(run, "run_incident") as fallback:
+            result = run.run_with_fallback(BUILDING, None, console=self.console, console_incident=cid, position=TARGET)
+        fallback.assert_not_called()
+        self.assertEqual(self.console.get(cid)["revision"], before["revision"])
+        self.assertIn("dispatcher decision", result["problem"])
 
     def test_model_run_waits_for_the_dispatcher_in_the_console(self):
         from pinpoint import budget, deep_agent

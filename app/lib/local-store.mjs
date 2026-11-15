@@ -23,7 +23,7 @@ function unknowns(value) {
   if (!Array.isArray(value) || value.length > 50) fail(400, 'INVALID_FIELD', 'Unconfirmed items must be an array of at most 50 strings.');
   return value.map(v => text(v, 'Unconfirmed item', 1000, true));
 }
-function photo(value) {
+export function validatePhoto(value) {
   if (value == null) return null;
   object(value, ['dataUrl', 'name']);
   const name = text(value.name, 'Photo name', 160, true);
@@ -83,10 +83,11 @@ export function createLocalStore({ directory, getCatalog }) {
     async get(id) { await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.'); return clone(await read(id)); },
     async packet(id) { await pending; if (!id.startsWith('pkt-')) fail(404, 'NOT_FOUND', 'Packet not found.'); return clone(await read(id)); },
     create(body) { return run(async () => {
-      object(body, ['propertyId', 'callerText', 'photo']);
+      object(body, ['propertyId', 'callerText', 'photo', 'demoMatch']);
+      if (body.demoMatch !== undefined && typeof body.demoMatch !== 'boolean') fail(400, 'INVALID_FIELD', 'demoMatch must be a boolean.');
       const propertyId = text(body.propertyId, 'Property ID', 100, true);
       const callerText = text(body.callerText ?? '', 'Caller text', 4000);
-      const image = photo(body.photo);
+      const image = validatePhoto(body.photo);
       if (!callerText && !image) fail(400, 'EMPTY_INTAKE', 'Add a caller message or photo.');
       const catalog = await getCatalog();
       const property = catalog.properties.find(p => String(p.id) === propertyId);
@@ -96,7 +97,7 @@ export function createLocalStore({ directory, getCatalog }) {
         id: `inc-${randomUUID()}`, propertyId, revision: 1, status: 'review', createdAt: timestamp, updatedAt: timestamp,
         callerText, photo: image, notes: '', unconfirmed: [...new Set(property.unknowns?.length ? property.unknowns : ['Caller room and floor are not confirmed.', 'Entrance, staging, and route have not been verified.', 'Equipment and hazards have not been verified.'])].slice(0,50),
         location: '', route: '', packetMarkdown: '', messages: callerText ? [{ id: randomUUID(), role: 'caller', text: callerText, at: timestamp }] : [],
-        events: [{ type: 'intake', text: 'Local intake received. No external message was sent.', at: timestamp }, { type: 'record', text: `Loaded CoStar property record ${propertyId}. Location and route await confirmation.`, at: timestamp }],
+        events: [{ type: 'intake', text: 'Local intake received. No external message was sent.', at: timestamp }, { type: 'record', text: body.demoMatch ? `Demo photo suggested property ${propertyId}; dispatcher confirmation required.` : `Loaded CoStar property record ${propertyId}. Location and route await confirmation.`, at: timestamp }],
         decision: null, packetId: null,
       };
       await atomic(incident.id, incident); return clone(incident);
@@ -107,7 +108,7 @@ export function createLocalStore({ directory, getCatalog }) {
       if (!Object.keys(body).some(key => key !== 'expectedRevision' && key !== 'updatedBy')) fail(400, 'EMPTY_UPDATE', 'No changes were supplied.');
       const incident = await current(id, body.expectedRevision);
       for (const [key, max] of [['notes', 10000], ['location', 1000], ['route', 10000], ['packetMarkdown', 102400]]) if (own(body,key)) incident[key] = text(body[key], key, max);
-      if (own(body, 'photo')) incident.photo = photo(body.photo);
+      if (own(body, 'photo')) incident.photo = validatePhoto(body.photo);
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
       revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated locally. A new packet approval is required.' : body.updatedBy === 'agent' ? 'Agent updated the packet. Dispatcher approval is required.' : 'Dispatcher edited the packet. A new approval is required.' });
       await atomic(id, incident); return clone(incident);

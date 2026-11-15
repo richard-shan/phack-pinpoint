@@ -108,8 +108,7 @@ Not connected yet:
 
 ## With a model in charge (`--llm`)
 
-By default the agent's deterministic orchestrator runs the steps. `live.run --llm` runs
-lane C's deepagents path instead (`agent/pinpoint/deep_agent.py`): a Commander model and
+By default `live.run` tries lane C's deepagents path (`agent/pinpoint/deep_agent.py`): a Commander model and
 five subagents decide which tools to call, on the same real tools. It needs
 `ANTHROPIC_API_KEY` in the environment and the packages in `agent/requirements.txt`.
 Lane C defaults every role to Claude Haiku and stops at a cumulative spend of 5 USD
@@ -136,7 +135,11 @@ What the model decides, and what it does not:
 - A wrong argument from the model (an address where a building id belongs, a made-up
   position) comes back to it as an error it can read, not a crash.
 
-`live.run --watch --llm` puts the model in charge of incidents started in the console.
+`live.run --watch` tries the model for photo incidents started in the console. If it cannot
+finish before a dispatcher decision, the deterministic orchestrator drafts the same incident
+for review. `--deterministic` skips the model; `--llm` explicitly selects the default.
+A dispatcher decision is never replaced by fallback. The Princeton shortcut itself remains
+a graph-only example unless a caller photo starts an agent incident.
 
 What has been run, on 7900 Fannin St on 14 November with a real key (Claude Haiku, lane
 C's default): one incident from a rendered caller photo through the console took 139 s,
@@ -254,10 +257,31 @@ Other measurements:
 | `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
-| `--llm` | put a model in charge of the tool calls (lane C's deepagents path; needs `ANTHROPIC_API_KEY`). The packet is still written from tool results: see "With a model in charge" |
+| `--llm` | explicitly prefer DeepAgents with deterministic fallback (the default; requires dependencies and `ANTHROPIC_API_KEY` for the model) |
+| `--deterministic` | skip DeepAgents and use the deterministic orchestrator |
 
 Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
 `brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,
 `audit.json`, `packet.md`, `route.jpg` (the route on the floor plan), `summary.json`
 and `trace.jsonl` (every tool call with its time). A run that could not produce a full
 packet prints the reason and exits with status 2.
+
+## Photo-only building suggestion (demo)
+
+With the console and watcher running (`.venv/bin/python -m live.serve` and
+`.venv/bin/python -m live.run --watch`), the home page can accept a photo without
+selecting a building. It compares the photo with indexes for 6550930 and 5956257,
+then creates an incident for the stronger match if the point-match heuristic is
+sufficiently distinct. Otherwise it asks for a demo photo or manual selection.
+Build both local indexes first: `.venv/bin/python -m live.index 6550930 5956257`.
+This is an uncalibrated, closed-set demonstration, not proof of building identity;
+the supplied photos come from the indexed scans and the dispatcher must verify it.
+The local demo does not contact emergency services.
+
+A production design could request phone coordinates and their accuracy and timestamp
+with user permission, use the uncertainty area to shortlist building footprints,
+and then compare photo evidence across those candidates. Missing, stale or imprecise
+location and conflicting image evidence must remain visible to the dispatcher and
+must not prevent intake. Photos do not reliably carry GPS metadata; browser image
+resizing may remove it. Emergency service location information requires an actual
+integration with the relevant emergency communications provider.

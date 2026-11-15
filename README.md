@@ -16,6 +16,13 @@ HackPrinceton F26, CoStar track. Plan: `pinpoint_plan.md`.
 | `agent/` | C | The agent: plans the incident, asks the caller questions, verifies every line, waits for approval |
 | `app/` | D | The dispatcher console: caller conversation, 3D route in the scan, packet review and approval |
 | `live/` | all | Runs one incident through all four on real data |
+| `spectrum/` | intake | Receives iMessages and connects the photo and conversation to the console |
+
+For the iMessage demo, see [Spectrum setup](spectrum/README.md). The bridge, local
+console, and agent watcher can be started together with `.venv/bin/python -m
+live.spectrum_demo` after setup. A valid, clearly matched demo photo opens an incident;
+the watcher then processes it and sends dispatcher questions back through iMessage.
+The photo matcher supports a limited set of buildings and requires dispatcher review.
 
 ## Run an incident end to end
 
@@ -66,16 +73,17 @@ If photo matching is not installed or the building has no index, the run says so
 the terminal and the packet is marked DEGRADED with the reason; it does not pretend to
 have located the caller.
 
-By default the agent's deterministic orchestrator runs the steps. To put a model in
-charge of the tool calls instead (lane C's deepagents path, Claude Haiku, about two
-minutes and 0.20 USD per incident), install `agent/requirements.txt` and add `--llm`:
+By default the agent tries the DeepAgents model path, then falls back to the
+deterministic orchestrator if the model cannot finish before review. To use the model
+(Claude Haiku; previously about two minutes and 0.20 USD per incident), install
+`agent/requirements.txt` and supply an API key:
 
 ```sh
 uv pip install --python .venv/bin/python -r agent/requirements.txt
 ANTHROPIC_API_KEY=... .venv/bin/python -m live.run --building 6550930 --photo demo/6550930_3ymmrb.jpg --console --llm
 ```
 
-The packet is still written from the tools' results and checked line by line; the
+Use `--deterministic` to skip the model. The packet is still written from the tools' results and checked line by line; the
 model chooses the position and when to send. See "With a model in charge" in
 `live/README.md`.
 

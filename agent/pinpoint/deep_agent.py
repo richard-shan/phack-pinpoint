@@ -107,6 +107,7 @@ def _ensure_api_key() -> str:
 def _probe_todo_middleware():
     """Return TodoListMiddleware class or None if not importable."""
     for mod_name, attr in (
+        ("langchain.agents.middleware", "TodoListMiddleware"),
         ("deepagents.middleware", "TodoListMiddleware"),
         ("deepagents", "TodoListMiddleware"),
     ):
@@ -123,8 +124,7 @@ def build_agent(checkpointer=None, create_agent_fn=None):
     When TodoListMiddleware is not available, swap the Commander's system prompt to a
     variant that does not instruct `write_todos`. The model would otherwise call a tool
     that does not exist and crash on first real run. Graceful degradation is better here
-    than a hard raise: the fallback orchestrator remains default, and real-llm mode
-    still works without live todos.
+    than a hard raise: the real-llm mode still works without live todos.
     """
     if create_agent_fn is None:
         try:

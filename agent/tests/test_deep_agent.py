@@ -49,23 +49,23 @@ class TestSubagentStructure(unittest.TestCase):
 
     def test_records_has_get_property_only(self):
         rec = next(s for s in self.subs if s["name"] == "records")
-        self.assertEqual([t.__name__ for t in rec["tools"]], ["get_property"])
+        self.assertEqual([(getattr(t, "name", None) or t.__name__) for t in rec["tools"]], ["get_property"])
 
     def test_locator_has_five_tools(self):
         loc = next(s for s in self.subs if s["name"] == "locator")
         self.assertEqual(
-            {t.__name__ for t in loc["tools"]},
+            {(getattr(t, "name", None) or t.__name__) for t in loc["tools"]},
             {"match_photo", "look", "best_question", "update_belief", "ask_caller"},
         )
 
     def test_site_has_detect_site_features_only(self):
         s = next(x for x in self.subs if x["name"] == "site")
-        self.assertEqual([t.__name__ for t in s["tools"]], ["detect_site_features"])
+        self.assertEqual([(getattr(t, "name", None) or t.__name__) for t in s["tools"]], ["detect_site_features"])
 
     def test_router_has_four_tools(self):
         r = next(s for s in self.subs if s["name"] == "router")
         self.assertEqual(
-            {t.__name__ for t in r["tools"]},
+            {(getattr(t, "name", None) or t.__name__) for t in r["tools"]},
             {"best_entry_under_belief", "route", "hazards_along", "backup_route"},
         )
 
@@ -160,9 +160,14 @@ class TestBuildAgentWiring(unittest.TestCase):
         """Inject a fake langgraph.checkpoint.memory module so build_agent can import
         MemorySaver without the real package installed."""
         import types
-        for name in ("langgraph", "langgraph.checkpoint", "langgraph.checkpoint.memory"):
-            sys.modules.setdefault(name, types.ModuleType(name))
-        sys.modules["langgraph.checkpoint.memory"].MemorySaver = type("MemorySaver", (), {})
+        if "langgraph.checkpoint.memory" in sys.modules:
+            patcher = mock.patch.object(sys.modules["langgraph.checkpoint.memory"], "MemorySaver", type("MemorySaver", (), {}))
+        else:
+            fake = types.ModuleType("langgraph.checkpoint.memory")
+            fake.MemorySaver = type("MemorySaver", (), {})
+            patcher = mock.patch.dict(sys.modules, {"langgraph": types.ModuleType("langgraph"), "langgraph.checkpoint": types.ModuleType("langgraph.checkpoint"), "langgraph.checkpoint.memory": fake})
+        patcher.start()
+        self.addCleanup(patcher.stop)
 
     def _capturing_fn(self):
         calls = {}
@@ -241,8 +246,7 @@ class TestRunRealAgentGraceful(unittest.TestCase):
     def test_raises_when_key_and_deepagents_missing(self):
         saved = os.environ.pop("ANTHROPIC_API_KEY", None)
         try:
-            # api.txt in this repo has no anthropic key, so _ensure_api_key raises first.
-            with self.assertRaises(DeepAgentsNotConfigured):
+            with mock.patch.object(deep_agent, "_ensure_api_key", side_effect=DeepAgentsNotConfigured("missing key")), self.assertRaises(DeepAgentsNotConfigured):
                 deep_agent.run_real_agent(
                     {"address": "1 Main St", "caller_photo_path": "x", "caller_text": ""},
                     Path("/tmp/_pp_incident_x"),

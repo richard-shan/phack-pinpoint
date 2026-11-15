@@ -294,6 +294,10 @@ def route_update(building_id: str, target: str, profile: str = "foot",
         reason += f" The front door would take {round(front['seconds_saved'])} s longer."
     body = {"profile": profile, "entryId": entry["id"], "destination": target, "nodeIds": node_ids,
             "updatedBy": "agent", "reason": reason[:500]}
+    if front and any(e["id"] == front["entrance_id"] for e in scan["entries"]):
+        body["entranceComparison"] = {"frontEntryId": front["entrance_id"],
+                                      "frontSeconds": front["seconds"],
+                                      "chosenSeconds": best["seconds"]}
     ids = []
     for a, b in blocked:
         if a in sweeps and b in sweeps and g.edge(a, b):

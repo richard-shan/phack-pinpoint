@@ -1,9 +1,12 @@
 import { vexcelService, aerialBounds } from './lib/vexcel-service.mjs';
 import { createServer } from 'node:http';
-import { readFile, readdir, realpath } from 'node:fs/promises';
+import { readFile, readdir, realpath, mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createLocalStore, ServiceError } from './lib/local-store.mjs';
+import { createLocalStore, ServiceError, validatePhoto } from './lib/local-store.mjs';
 import { spatialService, princetonProperty, viewerCSP } from './lib/spatial-service.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -21,7 +24,7 @@ async function jsonBody(req) {
   for await (const chunk of req) { size += chunk.length; if (size > MAX_BODY) error(413, 'BODY_TOO_LARGE', 'The request is too large.'); chunks.push(chunk); }
   try { return JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { error(400, 'INVALID_JSON', 'The request body is not valid JSON.'); }
 }
-export function createLocalServer({ root = here, stateDirectory = resolve(root, '.local-state'), aerialFetch = fetch } = {}) {
+export function createLocalServer({ root = here, stateDirectory = resolve(root, '.local-state'), aerialFetch = fetch, inferBuilding } = {}) {
   root = resolve(root);
   const canonicalRoot = realpath(root);
   const getCatalog = async () => {
@@ -90,6 +93,29 @@ export function createLocalServer({ root = here, stateDirectory = resolve(root, 
         if (method === 'GET' && pathname === '/api/catalog') return send(200, await getCatalog());
         if (pathname === '/api/incidents' && method === 'GET') return send(200, { incidents: await store.list() });
         if (pathname === '/api/incidents' && method === 'POST') return send(201, await store.create(await jsonBody(req)));
+        if (method === 'POST' && pathname === '/api/demo-photo') {
+          const body = await jsonBody(req);
+          if (!body || typeof body !== 'object' || Array.isArray(body) || Object.keys(body).some(k => !['photo','callerText'].includes(k))) error(400, 'INVALID_BODY', 'Provide a photo and optional caller text.');
+          if (body.callerText !== undefined && (typeof body.callerText !== 'string' || body.callerText.length > 4000)) error(400, 'INVALID_BODY', 'Caller text must be at most 4000 characters.');
+          const image = validatePhoto(body.photo);
+          if (!image) error(400, 'INVALID_PHOTO', 'Provide a photo.');
+          const folder = await mkdtemp(resolve(tmpdir(), 'pinpoint-demo-'));
+          try {
+            const file = resolve(folder, 'caller-image');
+            await writeFile(file, Buffer.from(image.dataUrl.split(',')[1], 'base64'), { mode: 0o600 });
+            const python = resolve(here, '../.venv/bin/python');
+            let result;
+            try {
+              if (inferBuilding) result = await inferBuilding(file);
+              else {
+                const output = await promisify(execFile)(python, ['-m', 'live.infer_building', file], { cwd: resolve(here, '..'), timeout: 180000, maxBuffer: 1024 * 1024 });
+                result = JSON.parse(output.stdout.trim().split('\n').at(-1));
+              }
+            } catch { error(503, 'DEMO_MATCH_UNAVAILABLE', 'Photo matching is unavailable. Check that both demo indexes and the Python environment are installed.'); }
+            if (!result.building_id) return send(422, { error: { code:'DEMO_MATCH_UNCERTAIN', message:'The photo did not clearly match a supported demo building. Try a demo photo or select a building manually.' } });
+            return send(201, await store.create({propertyId: result.building_id, photo: image, callerText: body.callerText || '', demoMatch: true}));
+          } finally { await rm(folder, {recursive: true, force: true}); }
+        }
         const incident = /^\/api\/incidents\/(inc-[a-f0-9-]{36})(?:\/(messages|decision))?$/.exec(pathname);
         if (incident) {
           if (method === 'GET' && !incident[2]) return send(200, await store.get(incident[1]));
