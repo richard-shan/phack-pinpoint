@@ -1,6 +1,6 @@
 import { mkdir, readFile, rename, writeFile, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
-import { randomUUID } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 
 export class ServiceError extends Error {
   constructor(status, code, message) { super(message); this.status = status; this.code = code; }
@@ -102,7 +102,7 @@ export function createLocalStore({ directory, getCatalog }) {
       let files;
       try { files = await readdir(directory); } catch (error) { if (error.code === 'ENOENT') return []; throw error; }
       const incidents = await Promise.all(files.filter(name => /^inc-[a-f0-9-]{36}\.json$/.test(name)).map(name => read(name.slice(0, -5))));
-      return incidents.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)).map(({ photo: image, ...incident }) => ({ ...incident, photo: image ? { name: image.name } : null }));
+      return incidents.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)).map(({ photo: image, ...incident }) => ({ ...incident, photo: image ? { name: image.name, version: createHash('sha256').update(image.dataUrl).digest('hex') } : null }));
     },
     async get(id) { await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.'); return clone(await read(id)); },
     async photo(id) {

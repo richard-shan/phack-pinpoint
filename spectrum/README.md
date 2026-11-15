@@ -7,6 +7,9 @@ the image and suggests one of the two supported demo buildings. The console save
 review incident; the separate `live.run --watch` process picks up its photo and runs
 DeepAgents with deterministic fallback. Dispatcher questions and messages are sent
 back to that conversation while the bridge is running.
+An open dispatcher console switches to the incident when the photo arrives; if the
+dispatcher is editing, a link appears instead. The route appears after the agent
+calculates it, and may take several minutes.
 
 The default photo matcher knows only the indexed Fannin and Los Angeles demo scans.
 Uncertain matches do not create an incident; the bridge asks for another supported

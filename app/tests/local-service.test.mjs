@@ -44,6 +44,18 @@ test('photo inference creates an incident with the original caller text and reje
   assert.equal((await uncertain.api('/api/incidents')).body.incidents.length,0);
 });
 
+test('incident list exposes a photo version that changes for replacement images', async t => {
+  const f=await fixture(t);
+  const photo={name:'photo.jpg',dataUrl:'data:image/jpeg;base64,/9j/2Q=='};
+  const {body:incident}=await f.api('/api/incidents','POST',{propertyId:'23553',photo});
+  const first=(await f.api('/api/incidents')).body.incidents[0].photo;
+  assert.equal(first.name,photo.name); assert.ok(first.version); assert.equal(first.dataUrl,undefined);
+  const replacement={...photo,dataUrl:'data:image/jpeg;base64,/9j/AP/Z'};
+  assert.equal((await f.api(`/api/incidents/${incident.id}`,'PATCH',{expectedRevision:1,photo:replacement})).status,200);
+  const next=(await f.api('/api/incidents')).body.incidents[0].photo;
+  assert.notEqual(next.version,first.version);
+});
+
 test('local intake persists across restarts with explicit unknowns and no synthesized route', async t => {
   const f = await fixture(t); const result = await create(f);
   assert.equal(result.status,201); const incident = result.body;

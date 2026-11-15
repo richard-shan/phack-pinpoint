@@ -474,6 +474,19 @@ class WithConsole(_Base):
             (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
              run.INCIDENTS) = saved
 
+    def test_model_can_leave_packet_for_review_without_blocking_watcher(self):
+        from pinpoint import budget, deep_agent
+        model = _ScriptedModel()
+        with patch.object(deep_agent, 'run_real_agent', model), \
+             patch.object(deep_agent, '_ensure_api_key', return_value='placeholder'), \
+             patch.object(deep_agent, 'build_agent', return_value=None), \
+             patch.object(budget, 'check_budget', return_value=(5.0, False)), \
+             patch.object(run, 'INCIDENTS', orchestrator.INCIDENTS):
+            result = run.run_llm_incident(BUILDING, None, position=TARGET, console=self.console,
+                                          ask='simulate', leave_for_review=True)
+        self.assertEqual(result['console_decision']['decision'], 'left for review')
+        self.assertEqual(self.console.get(result['console_incident'])['status'], 'review')
+
     def test_corrected_room_is_recorded_after_rejection(self):
         old_buildings = learning.BUILDINGS
         learning.BUILDINGS = Path(self.tmp.name) / "buildings"

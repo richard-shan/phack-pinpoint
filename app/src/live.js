@@ -1,5 +1,6 @@
 import {LA_DEMO_ID, aerialShell, mountAerial} from './live-aerial.js';
 import {SpatialView} from './live-spatial.js';
+import {createIncomingTracker} from './live-incoming.js';
 import {PRINCETON_ID} from './live-route-model.js';
 import {escapeHTML as e, known, safeImage, safeLink, renderMarkdown, packetText, sourceLabel} from './live-utils.js';
 const main = document.querySelector('#main'), dialog = document.querySelector('#dialog');
@@ -207,7 +208,7 @@ async function navigate() {
     if(hash.startsWith('incident/')||hash.startsWith('caller/')||hash.startsWith('preview/')) {
       const caller=hash.startsWith('caller/'), id=hash.split('/')[1];
       let loaded=await api('/incidents/'+encodeURIComponent(id));if(version!==routeVersion)return;
-      if(hash.startsWith('incident/')&&loaded.propertyId===LA_DEMO_ID&&!loaded.spatialRoute){loaded=await api(`/incidents/${loaded.id}/route`,'POST',{expectedRevision:loaded.revision,profile:'foot',reason:'Initial illustrative Los Angeles lobby route.'});if(version!==routeVersion)return;}
+      if(hash.startsWith('incident/')&&loaded.propertyId===LA_DEMO_ID&&!loaded.spatialRoute&&!loaded.photo){loaded=await api(`/incidents/${loaded.id}/route`,'POST',{expectedRevision:loaded.revision,profile:'foot',reason:'Initial illustrative Los Angeles lobby route.'});if(version!==routeVersion)return;}
       incident=loaded;property=catalog.properties.find(p=>p.id===incident.propertyId);
       if(!property)throw new Error('This incident’s source property is missing from the local catalog.');
       if(hash.startsWith('preview/')){renderPacket(incident,property,false);return;}caller?renderCaller():renderCase();startPoll();return;
@@ -229,6 +230,24 @@ function startPoll() {
     if(!incident||busy||(dialog.open&&!preservesComposer)||snapshot||(!preservesComposer&&(document.activeElement?.matches('textarea,input')||document.querySelector('#message')?.value.trim())))return;
     const id=incident.id,version=routeVersion;try{const next=await api('/incidents/'+encodeURIComponent(id));if(version===routeVersion&&!snapshot&&/^#(?:incident|caller)\//.test(location.hash)&&incident?.id===id&&next.updatedAt!==incident.updatedAt){incident=next;location.hash.startsWith('#caller/')?renderCaller():renderCase();}}catch{ /* Explicit refresh surfaces network failures without interrupting a draft. */ }
   },1500);
+}
+function startIncomingMonitor() {
+  const track=createIncomingTracker(), banner=document.querySelector('#incoming-incident');
+  async function poll(){
+    try{
+      const arrivals=track((await api('/incidents')).incidents);
+      const newest=arrivals.find(item=>item.id!==incident?.id);
+      if(newest && !/^#(?:caller|packet|preview)\//.test(location.hash)){
+        const title=catalog.properties.find(p=>p.id===newest.propertyId)?.name || 'New photo incident';
+        const editing=busy||dialog.open||Boolean(document.querySelector('#message')?.value.trim())||document.activeElement?.matches('input,textarea,select');
+        if(!editing){banner.hidden=true;location.hash=`incident/${newest.id}`;}
+        else{banner.innerHTML=`New caller photo · ${e(title)} <a href="#incident/${e(newest.id)}">Open incident</a>`;banner.hidden=false;}
+      }
+    }catch{/* Continue monitoring after a transient console error. */}
+    setTimeout(poll,1500);
+  }
+  window.addEventListener('hashchange',()=>{if(banner.querySelector('a')?.hash===location.hash)banner.hidden=true;});
+  void poll();
 }
 function newIncident() {
   openDialog('Start incident',`<p class="muted">${e(selected.name)} · ${e(selected.address)}</p><form id="new-form"><div class="field"><label for="intake-text">Caller’s account</label><textarea id="intake-text" name="callerText" maxlength="4000" placeholder="Record what the caller reports. Do not infer their location from the building record."></textarea></div><div class="field"><label for="intake-photo">Caller photo (optional)</label><input id="intake-photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp"><span class="hint">PNG, JPEG, WebP. Larger phone photos are shrunk to fit 2 MB. Provide text or a photo to start.</span></div><div class="actions"><button class="primary" type="submit">Create local incident</button></div></form>`);
@@ -317,4 +336,4 @@ window.addEventListener('hashchange',navigate);
 const clock=document.querySelector('#cad-clock');
 if(clock){const tick=()=>{clock.textContent=new Date().toLocaleTimeString([], {hour12:false});};tick();setInterval(tick,1000);}
 window.addEventListener('beforeunload',()=>window.speechSynthesis?.cancel());
-try {catalog=await api('/catalog');selected=catalog.properties.find(p=>p.id===LA_DEMO_ID)||catalog.properties[0];await navigate();}catch(error){main.innerHTML=`<div class="error-screen"><h1>Connection lost.</h1><p>${e(error.message)}</p><button data-action="refresh">Retry</button></div>`;}
+try {catalog=await api('/catalog');selected=catalog.properties.find(p=>p.id===LA_DEMO_ID)||catalog.properties[0];await navigate();startIncomingMonitor();}catch(error){main.innerHTML=`<div class="error-screen"><h1>Connection lost.</h1><p>${e(error.message)}</p><button data-action="refresh">Retry</button></div>`;}

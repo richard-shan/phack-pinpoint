@@ -137,6 +137,7 @@ export class SpatialView {
         if(!this.initialApproachShown){this.initialApproachShown=true;this.showTab(true);}
       }
       this.el.querySelector('.aerial-route').innerHTML=`${pts.length>1?`<polyline points="${pts.map(p=>p.join(',')).join(' ')}" class="aerial-line ${princeton?'aerial-reveal':''} ${next?.profile==='stretcher'?'step-free':''}"/><circle cx="${pts[0][0]}" cy="${pts[0][1]}" r="10" class="aerial-start"/><text x="${pts[0][0]+20}" y="${pts[0][1]+8}">Stage</text>`:''}<circle cx="${pts.at(-1)[0]}" cy="${pts.at(-1)[1]}" r="12" class="aerial-entry"/><text x="${pts.at(-1)[0]+20}" y="${pts.at(-1)[1]+8}">Entry</text>`;
+      if(next?.status!=='ready')this.el.querySelector('.aerial-route').innerHTML='';
     }
     this.sizeMapLabels();
     const phases=next?.status==='ready'?[{label:entry.label,sub:'Entry',id:entry.nodeId},...next.segments.filter(s=>['stairs','elevator'].includes(s.kind)).filter((s,i,a)=>i===0||s.kind!==a[i-1].kind).map(s=>({label:s.kind==='stairs'?'Main stair':'Elevator',sub:(s.toFloor>s.floor?'Up':'Down'),id:this.graph.edges.find(edge=>edge.id===s.id)?.b||next.destination})),{label:String(this.graph.nodes.find(n=>n.id===next.destination).label).replace(/^Scan \d+ · /,''),sub:'Caller',id:next.destination}]:[];
