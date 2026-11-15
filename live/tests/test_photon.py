@@ -66,7 +66,7 @@ class PhotonTests(unittest.TestCase):
     def tearDown(self):
         telegram_tests.BridgeTests.tearDown(self)
 
-    def test_imessage_photo_reply_and_packet_with_telegram_override(self):
+    def test_imessage_photo_reply_without_packet_delivery(self):
         from unittest.mock import Mock
         bot = Mock()
         self.bridge.telegram.packet_bot = bot
@@ -88,11 +88,8 @@ class PhotonTests(unittest.TestCase):
         self.assertEqual(self.console.get(cid)['messages'][-1]['text'], 'Second floor')
         self.console.decide(cid, 'approved')
         self.bridge.relay()
-        packet = self.api.sent[-1][1]
-        self.assertEqual(packet['content']['type'], 'attachment')
-        self.assertNotIn('telegram', packet)
-        self.assertEqual(packet['spaceId'], pid('spc', 1))
-        self.assertEqual(packet['senderId'], pid('usr', 2))
+        self.assertFalse(any(body['content']['type'] == 'attachment' for _, body in self.api.sent))
+        self.assertEqual(self.api.uploads, [])
         bot.send_packet.assert_not_called()
         count = len(self.api.sent)
         self.bridge.process(event(2, {'type': 'attachment', 'attachmentId': pid('att', 1)}), 4)
@@ -219,16 +216,8 @@ class PhotonTests(unittest.TestCase):
         approved = self.console.decide(cid, 'approved')
         self.bridge.relay()
         packet_calls = [body for key, body in self.api.sent if body['content']['type'] == 'attachment']
-        self.assertEqual(len(packet_calls), 1)
-        self.assertEqual(len(self.api.uploads), 1)
-        from pypdf import PdfReader
-        pdf = self.api.uploads[0][0]
-        document_text = '\n'.join(page.extract_text() for page in PdfReader(io.BytesIO(pdf)).pages)
-        self.assertEqual(document_text.count('Evidence'), 1200)
-        self.assertIn(approved['packetId'], document_text)
-        self.assertEqual(packet_calls[0]['telegram'], {'sendAs': 'file'})
-        self.assertLess(len(packet_calls[0]['content']['metadata']['caption']['text']), 100)
-        self.assertTrue(all(body['senderId'] == pid('usr', 2) for body in packet_calls))
+        self.assertEqual(packet_calls, [])
+        self.assertEqual(self.api.uploads, [])
         count = len(self.api.sent)
         self.bridge.relay()
         restarted = PhotonBridge(self.api, self.console, self.path)
@@ -243,16 +232,6 @@ class PhotonTests(unittest.TestCase):
         self.console.update(cid, route='Changed route requires new approval')
         self.bridge.relay()
         self.assertEqual(len(self.api.sent), count)
-
-    def test_document_retry_reuses_upload_and_message_key(self):
-        cid = self.photon_intake()
-        self.console.decide(cid, 'approved')
-        with patch.object(self.api, 'call', side_effect=PhotonError('offline')) as request:
-            self.bridge.relay()
-        first_key = request.call_args.kwargs['key']
-        self.bridge.relay()
-        self.assertEqual(len(self.api.uploads), 1)
-        self.assertEqual(self.api.sent[-1][0], first_key)
 
     def test_edit_during_upload_prevents_document_send(self):
         cid = self.photon_intake()
@@ -307,7 +286,7 @@ class PhotonTests(unittest.TestCase):
         record = self.bridge.active(self.bridge.state['chats'][pid('spc', 1)])
         self.assertEqual(self.console.get(record['incident'])['callerText'], 'Live caption near corridor')
 
-    def test_existing_telegram_bot_delivers_to_verified_caller(self):
+    def test_existing_telegram_bot_does_not_deliver_packet(self):
         from unittest.mock import Mock
         bot = Mock()
         bot.send_packet.return_value = {'status': 'accepted', 'messageId': 77}
@@ -317,11 +296,10 @@ class PhotonTests(unittest.TestCase):
         self.console.decide(cid, 'approved')
         count = len(self.api.sent)
         self.bridge.relay()
-        bot.send_packet.assert_called_once()
-        self.assertEqual(bot.send_packet.call_args.args[0], '42')
+        bot.send_packet.assert_not_called()
         self.assertEqual(len(self.api.sent), count)
         self.bridge.relay()
-        bot.send_packet.assert_called_once()
+        bot.send_packet.assert_not_called()
 
     def test_photon_receipt_tracks_delivery(self):
         self.bridge.process(incoming(1, text('/start')), 1)

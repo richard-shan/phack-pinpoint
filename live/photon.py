@@ -134,9 +134,6 @@ class PhotonTransport:
     def send_once(self, chat, text, key):
         bridge = self.bridge
         route = bridge.state['routes'][str(chat)]
-        if text == WELCOME and self.packet_bot is not None and route['platform'] == 'telegram':
-            text += ('\n\nApproved packets arrive from our packet bot. Start it once before your demo: '
-                     f'https://t.me/{self.packet_bot.username}')
         identity = hashlib.sha256(f'{chat}:{key}'.encode()).hexdigest()
         receipts = bridge.state['outbound']
         if identity in receipts:
