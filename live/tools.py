@@ -55,6 +55,45 @@ QUESTIONS = {
 }
 
 
+def _tool(actor: str):
+    """Trace a tool, and make it safe for a model to call. The deterministic orchestrator
+    relies on tools raising (it catches PropertyNotFound and friends); a model-driven run
+    needs the failure back as a result it can read and correct, or one bad argument ends
+    the whole incident."""
+    import functools
+
+    def deco(fn):
+        traced = trace.traced(actor)(fn)
+
+        @functools.wraps(fn)
+        def wrap(*args, **kwargs):
+            if not SESSION.get("llm"):
+                return traced(*args, **kwargs)
+            try:
+                return traced(*args, **kwargs)
+            except Exception as exc:                       # includes the agent's own failure types
+                trace.log(actor, f"{fn.__name__}:error", result_summary=f"{type(exc).__name__}: {exc}"[:200])
+                return {"error": f"{type(exc).__name__}: {exc}"[:400],
+                        "building_id": SESSION.get("building_id"),
+                        "hint": "Check the arguments. building_id is the CoStar PropertyId for this incident; "
+                                "node ids come from match_photo or look."}
+        return wrap
+    return deco
+
+
+def _bid(building_id) -> str:
+    """The building this run is about. A model sometimes passes something else in that
+    slot (an incident id, an address); every run is about one building, so use it."""
+    known = SESSION.get("building_id")
+    try:
+        _graph(building_id)
+        return str(building_id)
+    except Exception:
+        if known:
+            return str(known)
+        raise
+
+
 def reset(**values) -> dict:
     """Start a run. Keys: building_id, truth_node, given_position (the caller's position
     is known: no matching), simulate_match (pretend the matcher returned an uncertain match
@@ -165,7 +204,7 @@ def _floor_number(g: Graph, node_id) -> int | None:
 
 
 # ------------------------------------------------------------------ records (lane A)
-@trace.traced("records")
+@_tool("records")
 def get_property(address):
     """CoStar record for an address (or PropertyId): use type, stories, year built, area, tenants with risk flags, contact. Raises PropertyNotFound when the address is not in the kit."""
     rec = A.get_property(address) if address else {}
@@ -193,21 +232,23 @@ def no_costar_record(building_id) -> dict | None:
             "note": "This building is not in the CoStar kit: no use, tenant, risk or contact record exists for it."}
 
 
-@trace.traced("records")
+@_tool("records")
 def get_tenants(building_id):
     """Current tenants of a building from CoStar, each with suite, floor and risk flags."""
+    building_id = _bid(building_id)
     return A.get_tenants(str(building_id))
 
 
-@trace.traced("locator")
+@_tool("locator")
 def look(node_id):
     """What is at one scanned position: its panorama, room, attributes, equipment and neighbouring positions."""
     return A.look(node_id, SESSION.get("building_id"))
 
 
-@trace.traced("site")
+@_tool("site")
 def entrances(building_id):
     """Every marked way into the scanned area: door id, label, lat/lon, whether it is the street-address door, and its evidence image."""
+    building_id = _bid(building_id)
     return A.entrances(str(building_id))
 
 
@@ -281,10 +322,11 @@ def _publish(path, rank):
         return str(path)
 
 
-@trace.traced("locator")
+@_tool("locator")
 def match_photo(building_id, image_path, k=10):
     """photo -> ranked positions [{node_id, score, evidence_path, attributes}] with node ids
     as the graph spells them. Positions in a scan the graph does not cover are dropped."""
+    building_id = _bid(building_id)
     building_id = str(building_id)
     try:
         cands = _match(building_id, image_path, k)
@@ -305,10 +347,11 @@ def match_photo(building_id, image_path, k=10):
     return out
 
 
-@trace.traced("site")
+@_tool("site")
 def detect_site_features(building_id, address=None, lat=None, lon=None):
     """Entrances and staging spots as the graph has them (marked by hand from the scan
     and the aerial tile). Lane B's aerial reading is attached when it has been run."""
+    building_id = _bid(building_id)
     building_id = str(building_id)
     g = _graph(building_id)
     staging = [{"staging_id": n["id"], "node_id": n["id"], "label": n.get("label") or n["id"],
@@ -326,9 +369,10 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
     return out
 
 
-@trace.traced("router")
+@_tool("router")
 def find_equipment(building_id, type, near_node):
     """Nearest equipment of one type (aed, fire_extinguisher, fire_alarm_pull_station, ...) to a position, by walking time through the graph."""
+    building_id = _bid(building_id)
     hits = A.find_equipment(str(building_id), type, near_node)
     if isinstance(hits, dict):
         return []
@@ -337,9 +381,10 @@ def find_equipment(building_id, type, near_node):
             for h in hits]
 
 
-@trace.traced("router")
+@_tool("router")
 def hazards_along(building_id, path):
     """Hazards on a route: things lane B saw in view at positions on the path, locked doors, and links the scan could not confirm."""
+    building_id = _bid(building_id)
     hz = A.hazards_along(str(building_id), path or [])
     return hz if isinstance(hz, list) else []
 
@@ -416,15 +461,17 @@ def send_packet(incident_id):
 
 
 # ------------------------------------------------------------------ routing (lane A)
+@_tool("router")
 def load_graph(building_id):
     """The building graph as {nodes, adj, edges}."""
-    return A.load_graph(str(building_id))
+    return A.load_graph(_bid(building_id))
 
 
+@_tool("router")
 def route(building_id, from_node, to_node, profile, blocked_edges=None):
     """`ext_main` is the agent's name for the front door: it becomes the entrance marked
     as the street-address door, and the time includes getting to that door from outside."""
-    building_id = str(building_id)
+    building_id = _bid(building_id)
     g = _graph(building_id)
     if from_node == "ext_main" and "ext_main" not in g.nodes:
         front = (A.best_entry(building_id, to_node, profile) or {}).get("front_door")
@@ -437,34 +484,40 @@ def route(building_id, from_node, to_node, profile, blocked_edges=None):
     return A.route(building_id, from_node, to_node, profile, blocked_edges)
 
 
+@_tool("router")
 def best_entry(building_id, target, profile):
     """The door with the lowest outside-plus-inside time to a position, for profile "foot" or "stretcher", with the route, the runner-up door and the front-door comparison."""
-    return A.best_entry(str(building_id), target, profile)
+    return A.best_entry(_bid(building_id), target, profile)
 
 
+@_tool("router")
 def best_entry_under_belief(building_id, candidates, profile):
     """Best door when the caller's position is uncertain: candidates carry a belief; returns the door, the expected time, and whether another question to the caller is worth asking."""
-    return A.best_entry_under_belief(str(building_id), candidates, profile)
+    return A.best_entry_under_belief(_bid(building_id), candidates, profile)
 
 
+@_tool("router")
 def backup_route(building_id, from_node, to_node, profile, avoid_path=None):
     """A second route between two nodes that avoids the first route's links where it can."""
-    return A.backup_route(str(building_id), from_node, to_node, profile, avoid_path)
+    return A.backup_route(_bid(building_id), from_node, to_node, profile, avoid_path)
 
 
+@_tool("router")
 def replan(building_id, current_node, to_node, profile, blocked_edges):
     """A new route from where the crew is now, avoiding links reported blocked."""
-    return A.replan(str(building_id), current_node, to_node, profile, blocked_edges)
+    return A.replan(_bid(building_id), current_node, to_node, profile, blocked_edges)
 
 
+@_tool("router")
 def exit_route(building_id, from_node, profile):
     """Fastest way out from a position, and the nearest stair or outside door."""
-    return A.exit_route(str(building_id), from_node, profile)
+    return A.exit_route(_bid(building_id), from_node, profile)
 
 
+@_tool("router")
 def directions(building_id, path):
     """Turn-by-turn steps for a route, with meters and what is in view at each turn."""
-    d = A.directions(str(building_id), path or [])
+    d = A.directions(_bid(building_id), path or [])
     return d if isinstance(d, list) else []
 
 

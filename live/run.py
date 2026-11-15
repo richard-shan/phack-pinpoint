@@ -173,10 +173,14 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
     truth, position = _node(building_id, truth), _node(building_id, position)
     tools.install()
     tools.reset(building_id=building_id, truth_node=truth or position, given_position=position,
-                console=console, console_incident=None, ask="simulate" if (truth or position) else "none")
+                console=console, console_incident=None, ask="simulate" if (truth or position) else "none",
+                llm=True)
     from pinpoint import deep_agent
     address = ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
-    intake = {"address": address, "building_id": building_id, "caller_photo_path": photo or "(position given)",
+    # The agent's kickoff message carries only the address, the photo and what the caller said.
+    # Its tools need the building id, so it rides along with the address.
+    intake = {"address": f"{address} (CoStar building_id {building_id})", "building_id": building_id,
+              "caller_photo_path": photo or "(none: the dispatcher gave the position; call match_photo anyway)",
               "caller_text": text, "incident_id": time.strftime("inc-%Y%m%d-%H%M%S-llm")}
     idir = INCIDENTS / intake["incident_id"]
     try:
