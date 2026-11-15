@@ -26,3 +26,8 @@ html, body.model3d { margin: 0; height: 100%; background: #14181f; color: #f3f5f
 .m3-hint { color: #9aa4b6; font-size: 12.5px; }
 #m3-status { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); margin: 0; padding: 8px 14px; background: rgba(13,16,22,.9); border-radius: 8px; font-size: 14px; }
 #m3-status[hidden] { display: none; }
+
+/* Embedded in the console's route panel: no page header, fill the frame. */
+body.model3d.embed .m3-bar { position: absolute; top: 10px; right: 10px; z-index: 5; padding: 0; background: transparent; border: 0; }
+body.model3d.embed .m3-brand, body.model3d.embed #m3-title, body.model3d.embed #m3-back { display: none; }
+body.model3d.embed .m3-stage { height: 100%; }

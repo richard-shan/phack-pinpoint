@@ -110,3 +110,9 @@
 .building-record ul { margin: 0; padding-left: var(--space-5); }
 .building-record li + li { margin-top: var(--space-2); }
 @media (max-width: 600px) { .building-record > div { grid-template-columns: 1fr; gap: var(--space-1); } }
+
+/* 3D model view in the route panel: drawn over the walk-through, which keeps loading underneath. */
+.spatial-model { position: absolute; inset: 0; z-index: 2; background: #14181f; }
+.spatial-model iframe { width: 100%; height: 100%; border: 0; display: block; }
+.spatial-model-wait { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; margin: 0; max-width: none; color: #c9d1da; font-size: var(--text-sm); }
+.spatial-viewport[data-view=model] { height: 600px; }

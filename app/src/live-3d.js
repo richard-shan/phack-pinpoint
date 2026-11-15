@@ -4,6 +4,7 @@
 import * as THREE from '/assets/real/vendor/three.module.min.js';
 
 const incidentId = location.hash.slice(1).replace(/[^\w-]/g, '');
+if (new URLSearchParams(location.search).has('embed')) document.body.classList.add('embed');   // inside the console
 const $ = id => document.getElementById(id);
 const status = text => { $('m3-status').hidden = !text; $('m3-status').textContent = text || ''; };
 const getJSON = async url => { const r = await fetch(url); if (!r.ok) throw new Error(`${url} (${r.status})`); return r.json(); };
@@ -130,6 +131,7 @@ async function main() {
   });
   canvas.addEventListener('wheel', ev => { ev.preventDefault(); view.distance = Math.min(Math.max(view.distance * Math.exp(ev.deltaY * 0.0012), 3), home.distance * 4); draw(); }, { passive: false });
   window.addEventListener('resize', draw);
+  new ResizeObserver(draw).observe(canvas);   // embedded: redraw when the frame is first sized or shown again
   $('m3-reset').addEventListener('click', () => { Object.assign(view, home, { target: home.target.clone() }); draw(); });
   $('m3-top').addEventListener('click', () => { view.elevation = Math.PI / 2; view.azimuth = 0; draw(); });
 

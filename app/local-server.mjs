@@ -123,7 +123,8 @@ export function createLocalServer({ root = here, stateDirectory = resolve(root, 
         if (!mime[extname(filename)]) error(404, 'NOT_FOUND', 'File not found.');
         contents = await readFile(filename);
       } catch (e) { if (e instanceof ServiceError) throw e; error(404, 'NOT_FOUND', 'File not found.'); }
-      res.writeHead(200, { ...securityHeaders, ...(isViewer ? {'Content-Security-Policy':viewerCSP,'Cache-Control':extname(filename)==='.html'?'no-store':'public, max-age=3600'} : {}), 'Content-Type':mime[extname(filename)], 'Content-Length':contents.length });
+      const framable = pathname === '/live-3d.html' ? { 'Content-Security-Policy': securityHeaders['Content-Security-Policy'].replace("frame-ancestors 'none'", "frame-ancestors 'self'") } : {};   // embedded in the incident page
+      res.writeHead(200, { ...securityHeaders, ...framable, ...(isViewer ? {'Content-Security-Policy':viewerCSP,'Cache-Control':extname(filename)==='.html'?'no-store':'public, max-age=3600'} : {}), 'Content-Type':mime[extname(filename)], 'Content-Length':contents.length });
       res.end(method === 'HEAD' ? undefined : contents);
     } catch (e) {
       const status = e instanceof ServiceError ? e.status : 500;
