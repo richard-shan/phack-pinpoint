@@ -25,7 +25,8 @@ if str(ROOT / "agent") not in sys.path:
 
 from env import tools as A                                  # noqa: E402
 from env.graph import Graph                                 # noqa: E402
-from pinpoint import orchestrator, routing, stubs, trace    # noqa: E402
+from pinpoint import failures, orchestrator, routing, stubs, trace    # noqa: E402
+from pinpoint.util import write_json                        # noqa: E402
 from pinpoint.errors import EmptyCandidates, MatterportUnavailable, PropertyNotFound  # noqa: E402
 
 # One incident at a time: what the tools need to know about the run in progress.
@@ -328,10 +329,14 @@ def match_photo(building_id, image_path, k=10):
     as the graph spells them. Positions in a scan the graph does not cover are dropped."""
     building_id = _bid(building_id)
     building_id = str(building_id)
+    key = (building_id, str(image_path))
+    if SESSION.get("llm") and SESSION.get("matched") == key and SESSION.get("candidates"):
+        return SESSION["candidates"][:k]           # a model may ask twice; the match takes half a minute
     try:
         cands = _match(building_id, image_path, k)
     except (MatterportUnavailable, EmptyCandidates) as exc:
-        SESSION["match_error"] = str(exc)          # the packet and the terminal say why
+        if not (SESSION.get("llm") and SESSION.get("candidates")):
+            SESSION["match_error"] = str(exc)      # the packet and the terminal say why
         raise
     g = _graph(building_id)
     out = []
@@ -343,7 +348,7 @@ def match_photo(building_id, image_path, k=10):
                         evidence_path=_publish(c.get("evidence_path"), len(out))))
     if not out:
         raise EmptyCandidates("no matched position is inside the scan this building's graph covers")
-    SESSION["candidates"] = out
+    SESSION["candidates"], SESSION["matched"] = out, key
     return out
 
 
@@ -415,10 +420,14 @@ def _parse_reply(attr, text, values):
 
 
 def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
-    """Ask the caller about one attribute and return {"reply", "raw"}. `text` is the
-    attribute name the agent's question picker chose; the wording comes from QUESTIONS."""
+    """Ask the caller a question and return {"reply", "raw"}. The agent's question picker
+    passes an attribute name and the wording comes from QUESTIONS. A model on the LLM path
+    writes the question itself: that is asked as written, and only a real caller can
+    answer it."""
     attr = (text or "").strip()
-    question = QUESTIONS.get(attr, f"Can you tell me about: {attr}?")
+    known = attr in QUESTIONS or any(attr in c["attributes"] for c in SESSION.get("candidates") or [])
+    own_words = not known and (" " in attr or attr.endswith("?"))
+    question = attr if own_words else QUESTIONS.get(attr, f"Can you tell me about: {attr}?")
     values = sorted({str(c["attributes"].get(attr)) for c in SESSION.get("candidates") or []})
     typed = [c["attributes"].get(attr) for c in SESSION.get("candidates") or [] if attr in c["attributes"]]
     if typed and not all(isinstance(v, bool) for v in typed) and "(" not in question:
@@ -436,10 +445,12 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     elif mode == "console" and console and cid:
         got = console.wait_for_caller(cid, timeout_s=SESSION.get("ask_timeout_s", 90.0))
         if got:
-            reply, raw, source = got, _parse_reply(attr, got, typed), "caller, typed in the console"
+            reply, raw, source = got, (got if own_words else _parse_reply(attr, got, typed)), "caller, typed in the console"
         else:
             SESSION["caller_silent"] = True          # do not keep the crew waiting on more questions
             source = f"no reply within {round(SESSION.get('ask_timeout_s', 90.0))} s"
+    elif mode == "simulate" and own_words:
+        source = "not asked: no caller is connected, and a simulated caller answers only the fixed questions"
     elif mode == "simulate" and SESSION.get("truth_node"):
         raw = question_attributes(SESSION["building_id"], SESSION["truth_node"]).get(attr)
         if raw is not None:
@@ -458,6 +469,13 @@ def send_packet(incident_id):
     """Runs only after a dispatcher approves. Nothing is delivered outside this machine."""
     where = "console (approved locally)" if SESSION.get("console") else "local file"
     return {"status": "sent", "incident_id": incident_id, "channel": where}
+
+
+def notify_contact(incident_id, contact=None):
+    """Contact the building's point of contact. This run never contacts anyone: it says so
+    instead of recording a notification that did not happen."""
+    return {"status": "not_sent", "incident_id": incident_id,
+            "reason": "nothing leaves this machine: no call, text or email is made to the building contact"}
 
 
 # ------------------------------------------------------------------ routing (lane A)
@@ -533,38 +551,44 @@ def records(idir, intake):
     brief["tenants"] = [{k: t.get(k) for k in ("name", "suite", "floor", "floor_name", "industry", "risk_flags")}
                         for t in rec.get("tenants") or [] if t.get("name")]
     brief["located_tenant"] = None
-    orchestrator._write(Path(idir) / "brief.json", brief)
+    write_json(Path(idir) / "brief.json", brief)
     return brief
 
 
 # ------------------------------------------------------------------ install
 _STUBS = ("get_property", "get_tenants", "look", "entrances", "match_photo", "detect_site_features",
-          "find_equipment", "hazards_along", "ask_caller", "send_packet")
+          "find_equipment", "hazards_along", "ask_caller", "send_packet", "notify_contact")
 _ROUTING = ("load_graph", "route", "best_entry", "best_entry_under_belief", "backup_route", "replan",
             "exit_route", "directions")
 _original: dict = {}
 
 
 def install() -> None:
-    """Point the agent at the real tools. Safe to call twice."""
+    """Point the agent at the real tools. Safe to call twice.
+
+    The agent's steps (`pinpoint/pipeline.py`) and its LLM-facing wrappers
+    (`pinpoint/tool_wrappers.py`) look their tools up on `stubs` and `routing` at call
+    time, so replacing the names there covers both paths. The Records step and the packet
+    writer are looked up on the modules that use them."""
     from .packet import LivePacketWriter
     me = sys.modules[__name__]
     if not _original:
         _original.update({("stubs", n): getattr(stubs, n) for n in _STUBS})
         _original.update({("routing", n): getattr(routing, n) for n in _ROUTING})
-        _original[("orchestrator", "_records")] = orchestrator._records
+        _original[("orchestrator", "run_records")] = orchestrator.run_records
         _original[("orchestrator", "PacketWriter")] = orchestrator.PacketWriter
+        _original[("failures", "PacketWriter")] = failures.PacketWriter
     for n in _STUBS:
         setattr(stubs, n, getattr(me, n))
     for n in _ROUTING:
         setattr(routing, n, getattr(me, n))
-    orchestrator._records = records
-    orchestrator.PacketWriter = LivePacketWriter
+    orchestrator.run_records = records
+    orchestrator.PacketWriter = failures.PacketWriter = LivePacketWriter
 
 
 def uninstall() -> None:
     """Put the agent's stub tools back (the agent's own tests expect them)."""
-    mods = {"stubs": stubs, "routing": routing, "orchestrator": orchestrator}
+    mods = {"stubs": stubs, "routing": routing, "orchestrator": orchestrator, "failures": failures}
     for (mod, name), fn in _original.items():
         setattr(mods[mod], name, fn)
     _original.clear()
