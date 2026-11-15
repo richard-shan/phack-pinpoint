@@ -167,6 +167,7 @@ def _floor_number(g: Graph, node_id) -> int | None:
 # ------------------------------------------------------------------ records (lane A)
 @trace.traced("records")
 def get_property(address):
+    """CoStar record for an address (or PropertyId): use type, stories, year built, area, tenants with risk flags, contact. Raises PropertyNotFound when the address is not in the kit."""
     rec = A.get_property(address) if address else {}
     if (not rec.get("building_id")) and SESSION.get("building_id"):
         rec = A.get_property(str(SESSION["building_id"]))
@@ -177,16 +178,19 @@ def get_property(address):
 
 @trace.traced("records")
 def get_tenants(building_id):
+    """Current tenants of a building from CoStar, each with suite, floor and risk flags."""
     return A.get_tenants(str(building_id))
 
 
 @trace.traced("locator")
 def look(node_id):
+    """What is at one scanned position: its panorama, room, attributes, equipment and neighbouring positions."""
     return A.look(node_id, SESSION.get("building_id"))
 
 
 @trace.traced("site")
 def entrances(building_id):
+    """Every marked way into the scanned area: door id, label, lat/lon, whether it is the street-address door, and its evidence image."""
     return A.entrances(str(building_id))
 
 
@@ -307,6 +311,7 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
 
 @trace.traced("router")
 def find_equipment(building_id, type, near_node):
+    """Nearest equipment of one type (aed, fire_extinguisher, fire_alarm_pull_station, ...) to a position, by walking time through the graph."""
     hits = A.find_equipment(str(building_id), type, near_node)
     if isinstance(hits, dict):
         return []
@@ -317,6 +322,7 @@ def find_equipment(building_id, type, near_node):
 
 @trace.traced("router")
 def hazards_along(building_id, path):
+    """Hazards on a route: things lane B saw in view at positions on the path, locked doors, and links the scan could not confirm."""
     hz = A.hazards_along(str(building_id), path or [])
     return hz if isinstance(hz, list) else []
 
@@ -394,6 +400,7 @@ def send_packet(incident_id):
 
 # ------------------------------------------------------------------ routing (lane A)
 def load_graph(building_id):
+    """The building graph as {nodes, adj, edges}."""
     return A.load_graph(str(building_id))
 
 
@@ -414,26 +421,32 @@ def route(building_id, from_node, to_node, profile, blocked_edges=None):
 
 
 def best_entry(building_id, target, profile):
+    """The door with the lowest outside-plus-inside time to a position, for profile "foot" or "stretcher", with the route, the runner-up door and the front-door comparison."""
     return A.best_entry(str(building_id), target, profile)
 
 
 def best_entry_under_belief(building_id, candidates, profile):
+    """Best door when the caller's position is uncertain: candidates carry a belief; returns the door, the expected time, and whether another question to the caller is worth asking."""
     return A.best_entry_under_belief(str(building_id), candidates, profile)
 
 
 def backup_route(building_id, from_node, to_node, profile, avoid_path=None):
+    """A second route between two nodes that avoids the first route's links where it can."""
     return A.backup_route(str(building_id), from_node, to_node, profile, avoid_path)
 
 
 def replan(building_id, current_node, to_node, profile, blocked_edges):
+    """A new route from where the crew is now, avoiding links reported blocked."""
     return A.replan(str(building_id), current_node, to_node, profile, blocked_edges)
 
 
 def exit_route(building_id, from_node, profile):
+    """Fastest way out from a position, and the nearest stair or outside door."""
     return A.exit_route(str(building_id), from_node, profile)
 
 
 def directions(building_id, path):
+    """Turn-by-turn steps for a route, with meters and what is in view at each turn."""
     d = A.directions(str(building_id), path or [])
     return d if isinstance(d, list) else []
 

@@ -128,6 +128,27 @@ class WithoutConsole(_Base):
         tools.uninstall()
         self.assertIs(stubs.match_photo, before)
 
+    def test_llm_agent_constructs_with_the_real_tools(self):
+        """The agent's deepagents path accepts the real tools (every one needs a description).
+        Construction only: no model is called, so the key here is a placeholder."""
+        import importlib.util
+        import os
+        if importlib.util.find_spec("deepagents") is None:
+            self.skipTest("deepagents is not installed in this Python")
+        from pinpoint import deep_agent
+        tools.install()
+        tools.reset(building_id=BUILDING)
+        old = os.environ.get("ANTHROPIC_API_KEY")
+        os.environ["ANTHROPIC_API_KEY"] = old or "placeholder-not-a-real-key"
+        try:
+            agent = deep_agent.build_agent()
+        finally:
+            if old is None:
+                del os.environ["ANTHROPIC_API_KEY"]
+        self.assertTrue(hasattr(agent, "stream"))
+        self.assertEqual({sa["name"] for sa in deep_agent.build_subagents()},
+                         {"records", "locator", "site", "router", "verifier"})
+
     def test_reply_parsing(self):
         p = tools._parse_reply
         self.assertIs(p("near_elevator", "yeah I can see them", [True, False]), True)

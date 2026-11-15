@@ -81,9 +81,14 @@ Not real, and labelled in the packet where it applies:
   building contact is never notified.
 
 Not connected yet:
-- the agent's LLM path (`agent/pinpoint/deep_agent.py`). `live/` drives the agent's
-  deterministic orchestrator; the LLM path uses the same tools but has not been run on
-  real data;
+- **The agent's LLM path has not made a run.** `live.run --llm` starts it
+  (`agent/pinpoint/deep_agent.py`: a deepagents Commander with five subagents) on the
+  real tools, and a test confirms the agent constructs with them. An actual run needs an
+  Anthropic API key (`ANTHROPIC_API_KEY`, or an `anthropic_api_key:` line in `api.txt`),
+  which the machine this was built on does not have. Everything measured above used the
+  agent's deterministic orchestrator. With its own stub tools the LLM path does not
+  construct at all on deepagents 0.7.38, because `agent/pinpoint/routing.py:route` has
+  no docstring and deepagents requires one on every tool.
 - a real phone channel. The caller types in the console's caller view.
 
 ## Demo walkthrough
@@ -173,6 +178,7 @@ Other measurements:
 | `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
+| `--llm` | run the agent's LLM path instead of its deterministic orchestrator (needs an Anthropic API key; approval is asked in the terminal) |
 
 Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
 `brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,
