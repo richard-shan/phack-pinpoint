@@ -31,6 +31,8 @@ def edge_seconds(edge: dict, profile: str, cfg: dict = ROUTING) -> float | None:
             return None
         return per_floor * _floors(edge, cfg)
     if kind == "elevator":
+        if cfg.get("avoid_elevators"):
+            return None
         return (cfg["elevator_wait_s"] + cfg["elevator_s_per_floor"] * _floors(edge, cfg)
                 + cfg["elevator_load_s"][profile])
     if kind == "exterior_vehicle":
@@ -59,7 +61,8 @@ def approach_seconds(node: dict, profile: str, cfg: dict = ROUTING) -> float | N
     walk = float(ap.get("walk_m") or 0.0) / cfg["walk_mps"][profile]
     if ap.get("locked_entry"):
         walk += cfg["locked_delay_s"][profile]
-    if ap.get("via") == "stairs":
+    if ap.get("via") == "stairs" or (ap.get("via") == "elevator" and cfg.get("avoid_elevators")):
+        # An upper-floor scan reached by the building elevator is reached by its stairs instead.
         per_floor = cfg["stairs_s_per_floor"][profile]
         return None if per_floor is None else walk + per_floor * floors
     if ap.get("via") == "elevator":

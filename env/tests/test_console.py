@@ -111,6 +111,9 @@ class ConsoleExport(unittest.TestCase):
 
     @unittest.skipUnless(PLANNER.exists() and shutil.which("node"), "lane D's console is not in this checkout")
     def test_console_planner_accepts_the_routes(self):
+        # The console planner never takes elevators, so check it against the same rule.
+        config.ROUTING["avoid_elevators"] = True
+        self.addCleanup(config.ROUTING.__setitem__, "avoid_elevators", False)
         scan = console.scan_graph("toy")
         bodies = [b for p in config.PROFILES for n in scan["nodes"]
                   if (b := console.route_update("toy", n["id"], p, scan=scan)).get("reachable") is not False]

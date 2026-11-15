@@ -39,6 +39,30 @@ function photo(value) {
   return { name, dataUrl: `data:${match[1]};base64,${bytes.toString('base64')}` };
 }
 
+const PLATFORMS = { imessage: 'iMessage', telegram: 'Telegram', sms: 'SMS' };
+function finite(value, label, min, max) {
+  if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) fail(400, 'INVALID_FIELD', `${label} is out of range.`);
+  return value;
+}
+// Where a messaged-in incident came from. location is the demo's stand-in for a carrier ping.
+function channel(value) {
+  if (value == null) return null;
+  object(value, ['platform', 'handle', 'location']);
+  if (!Object.hasOwn(PLATFORMS, value.platform)) fail(400, 'INVALID_FIELD', 'Channel platform must be imessage, telegram, or sms.');
+  const out = { platform: value.platform, handle: text(value.handle ?? '', 'Channel handle', 200) };
+  if (value.location != null) {
+    object(value.location, ['building_id', 'latitude', 'longitude', 'address', 'distanceM', 'source']);
+    out.location = {
+      latitude: finite(value.location.latitude, 'Latitude', -90, 90),
+      longitude: finite(value.location.longitude, 'Longitude', -180, 180),
+      address: text(value.location.address ?? '', 'Location address', 300),
+      distanceM: value.location.distanceM == null ? null : finite(value.location.distanceM, 'Distance', 0, 100000),
+      source: text(value.location.source ?? 'simulated-device', 'Location source', 60),
+    };
+  }
+  return out;
+}
+
 export function createLocalStore({ directory, getCatalog }) {
   let pending = Promise.resolve();
   const run = task => { const result = pending.then(task); pending = result.catch(() => {}); return result; };
@@ -81,9 +105,17 @@ export function createLocalStore({ directory, getCatalog }) {
       return incidents.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)).map(({ photo: image, ...incident }) => ({ ...incident, photo: image ? { name: image.name } : null }));
     },
     async get(id) { await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.'); return clone(await read(id)); },
+    async photo(id) {
+      await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.');
+      const image = (await read(id)).photo;
+      if (!image) fail(404, 'NOT_FOUND', 'This incident has no photo.');
+      const [, type, data] = /^data:(image\/[a-z]+);base64,(.*)$/.exec(image.dataUrl);
+      return { type, bytes: Buffer.from(data, 'base64') };
+    },
     async packet(id) { await pending; if (!id.startsWith('pkt-')) fail(404, 'NOT_FOUND', 'Packet not found.'); return clone(await read(id)); },
     create(body) { return run(async () => {
-      object(body, ['propertyId', 'callerText', 'photo']);
+      object(body, ['propertyId', 'callerText', 'photo', 'channel']);
+      const via = channel(body.channel);
       const propertyId = text(body.propertyId, 'Property ID', 100, true);
       const callerText = text(body.callerText ?? '', 'Caller text', 4000);
       const image = photo(body.photo);
@@ -99,6 +131,13 @@ export function createLocalStore({ directory, getCatalog }) {
         events: [{ type: 'intake', text: 'Local intake received. No external message was sent.', at: timestamp }, { type: 'record', text: `Loaded CoStar property record ${propertyId}. Location and route await confirmation.`, at: timestamp }],
         decision: null, packetId: null,
       };
+      if (via) {
+        incident.channel = via;
+        const who = via.handle ? ` from ${via.handle}` : '';
+        incident.events = [{ type: 'intake', text: `Photo received via ${PLATFORMS[via.platform]}${who}.`, at: timestamp },
+          ...(via.location ? [{ type: 'location', text: `Caller location from the device: ${via.location.address || `${via.location.latitude}, ${via.location.longitude}`} (simulated for the demo). Building chosen automatically.`, at: timestamp }] : []),
+          incident.events[1]];
+      }
       await atomic(incident.id, incident); return clone(incident);
     }); },
     update(id, body) { return run(async () => {
@@ -123,11 +162,11 @@ export function createLocalStore({ directory, getCatalog }) {
     }); },
     message(id, body) { return run(async () => {
       object(body, ['expectedRevision', 'role', 'text']);
-      if (!['caller', 'dispatcher'].includes(body.role)) fail(400, 'INVALID_ROLE', 'Message role must be caller or dispatcher.');
+      if (!['caller', 'dispatcher', 'auto'].includes(body.role)) fail(400, 'INVALID_ROLE', 'Message role must be caller, dispatcher, or auto.');
       const messageText = text(body.text, 'Message', 4000, true);
       const incident = await current(id, body.expectedRevision);
       if (incident.messages.length >= 200) fail(400, 'MESSAGE_LIMIT', 'This local incident has reached its 200-message limit.');
-      revise(incident, { type: 'message', text: `${body.role === 'caller' ? 'Caller' : 'Dispatcher'} message saved locally. Packet needs review.` });
+      revise(incident, { type: 'message', text: body.role === 'auto' ? 'Automatic reply sent to the caller.' : `${body.role === 'caller' ? 'Caller' : 'Dispatcher'} message saved locally. Packet needs review.` });
       incident.messages.push({ id: randomUUID(), role: body.role, text: messageText, at: incident.updatedAt });
       await atomic(id, incident); return clone(incident);
     }); },

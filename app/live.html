@@ -20,13 +20,14 @@
     <link rel="stylesheet" href="/src/live.css">
     <link rel="stylesheet" href="/src/live-spatial.css">
     <link rel="stylesheet" href="/src/live-system.css">
+    <link rel="stylesheet" href="/src/live-inbox.css">
   </head>
   <body class="live-app">
     <a class="skip" href="#main">Skip to workspace</a>
     <header class="topbar">
       <a class="brand" href="/live.html"><img src="/assets/mark.svg" alt="" width="28" height="28">Pinpoint</a>
       <nav aria-label="Main navigation">
-        <a href="/live.html" data-nav="dispatch" aria-current="page">Dispatch</a>
+        <a href="/live.html" data-nav="dispatch" aria-current="page">Messages</a>
         <a href="/live.html#los-angeles" data-nav="los-angeles">Los Angeles demo</a>
         <a href="/live.html#princeton" data-nav="princeton">Princeton 3D</a>
       </nav>
@@ -34,7 +35,7 @@
     <div id="feedback" role="status" aria-live="polite"></div>
     <main id="main" tabindex="-1">
       <div class="loading-state" role="status">
-        <p>Loading building records…</p>
+        <p>Loading messages…</p>
         <div class="skeleton-grid" aria-hidden="true"><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton"></div></div>
       </div>
     </main>

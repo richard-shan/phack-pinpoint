@@ -26,14 +26,14 @@ export function spatialService(root,store){
     },model,
     async update(id,body){
       if(!body||typeof body!=='object'||Array.isArray(body))throw new Error('A route update object is required.');
-      const keys=['expectedRevision','profile','entryId','destination','blockedEdges','nodeIds','connectors','updatedBy','reason'];
+      const keys=['expectedRevision','profile','entryId','destination','blockedEdges','nodeIds','connectors','updatedBy','reason','avoidElevators'];
       if(Object.keys(body).some(k=>!keys.includes(k)))throw new Error('Unknown route update field.');
       const i=await store.get(id);
       const g=await model(i.propertyId);
       // Carry the saved route's choices forward only if they still exist in this graph
       // (the graph file may have been replaced since the route was saved).
       const saved=i.spatialRoute, fits=saved&&g.entries.some(e=>e.id===saved.entryId)&&g.nodes.some(n=>n.id===saved.destination)&&(saved.blockedEdges||[]).every(id=>g.edges.some(e=>e.id===id)||/^connector-/.test(id));
-      const route=planRoute(g,{...(fits ? {profile:saved.profile,entryId:saved.entryId,destination:saved.destination,blockedEdges:saved.blockedEdges,connectors:saved.connectors}:{}),...body});
+      const route=planRoute(g,{...(fits ? {profile:saved.profile,entryId:saved.entryId,destination:saved.destination,blockedEdges:saved.blockedEdges,connectors:saved.connectors,avoidElevators:saved.avoidElevators??true}:{}),...body});
       return store.setRoute(id,body.expectedRevision,route,routeDirections(g,route),g.nodes.find(n=>n.id===route.destination).label);
     },
   };

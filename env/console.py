@@ -293,7 +293,8 @@ def route_update(building_id: str, target: str, profile: str = "foot",
     if front and not front.get("is_best"):
         reason += f" The front door would take {round(front['seconds_saved'])} s longer."
     body = {"profile": profile, "entryId": entry["id"], "destination": target, "nodeIds": node_ids,
-            "updatedBy": "agent", "reason": reason[:500]}
+            "updatedBy": "agent", "reason": reason[:500],
+            "avoidElevators": bool(routing.ROUTING["avoid_elevators"])}
     ids = []
     for a, b in blocked:
         if a in sweeps and b in sweeps and g.edge(a, b):

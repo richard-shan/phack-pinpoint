@@ -81,11 +81,21 @@ class Console:
             return False
 
     # ------------------------------------------------------------ writes
-    def create(self, property_id: str, caller_text: str = "", photo_path: str | None = None) -> dict:
+    def create(self, property_id: str, caller_text: str = "", photo_path: str | None = None,
+               channel: dict | None = None) -> dict:
+        """channel: {"platform", "handle", "location"} for incidents that arrived by message."""
         body = {"propertyId": str(property_id), "callerText": caller_text or ""}
         if photo_path:
             body["photo"] = photo_payload(photo_path)
-        return self._call("POST", "/incidents", body)
+        if channel:
+            body["channel"] = channel
+        try:
+            return self._call("POST", "/incidents", body)
+        except ConsoleError as e:
+            if e.code != "UNKNOWN_FIELD" or "channel" not in body:
+                raise
+            body.pop("channel")                # a console from before that field existed
+            return self._call("POST", "/incidents", body)
 
     def update(self, incident_id: str, **fields) -> dict:
         """fields: location, route, notes, unconfirmed (list), packetMarkdown, and

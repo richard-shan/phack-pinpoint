@@ -90,6 +90,12 @@ export function createLocalServer({ root = here, stateDirectory = resolve(root, 
         if (method === 'GET' && pathname === '/api/catalog') return send(200, await getCatalog());
         if (pathname === '/api/incidents' && method === 'GET') return send(200, { incidents: await store.list() });
         if (pathname === '/api/incidents' && method === 'POST') return send(201, await store.create(await jsonBody(req)));
+        const incidentPhoto = /^\/api\/incidents\/(inc-[a-f0-9-]{36})\/photo$/.exec(pathname);
+        if (incidentPhoto && method === 'GET') {
+          const image = await store.photo(incidentPhoto[1]);
+          res.writeHead(200, { ...securityHeaders, 'Content-Type': image.type, 'Content-Length': image.bytes.length });
+          return res.end(image.bytes);
+        }
         const incident = /^\/api\/incidents\/(inc-[a-f0-9-]{36})(?:\/(messages|decision))?$/.exec(pathname);
         if (incident) {
           if (method === 'GET' && !incident[2]) return send(200, await store.get(incident[1]));

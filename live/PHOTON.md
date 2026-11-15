@@ -185,3 +185,31 @@ no dispatch incident was created. This verifies live photo transport, not a
 successful location match or live approved-PDF delivery. The existing API key
 could list assignments but returned HTTP 403 when creating one; dashboard
 enrollment worked without changing the key.
+
+## Demo: location travels with the photo (simulated carrier ping)
+
+A real 911 call carries the phone's network location; a texted photo does not, and
+iMessage/Telegram strip or rewrite EXIF. For the demo, the location is hidden in the
+pixels (`perception/geomark.py`), which survives the apps' resize and JPEG re-encode.
+**This is simulated location for a demo, and the console labels it so.**
+
+Before the demo, tag each photo with the place it was taken:
+
+```sh
+.venv/bin/python -m live.geotag buildings                          # what a location can resolve to
+.venv/bin/python -m live.geotag tag IMG_0412.jpg --building princeton-rabinowitz
+.venv/bin/python -m live.geotag tag IMG_0413.jpg --address "7900 Fannin"
+.venv/bin/python -m live.geotag read demo-tagged/IMG_0412.jpg      # check one
+```
+
+AirDrop `demo-tagged/*.jpg` to the phone and text them as normal photos. When a tagged
+photo arrives, the bridge picks the nearest building with a graph (within 400 m), creates
+the incident at once (no building choice, no photo-matching wait), and replies with a
+short first-responder message ("We have your message and your location near ... Help
+is on the way."). That reply is also saved in the console thread as an automatic reply.
+The agent watcher then builds the location, route, 3D view and packet as before.
+Untagged photos still go through photo matching.
+
+The console's home page (`/live.html`) is now the incoming-message inbox: one thread per
+photo with the picture, every message after it, and the caller's location. Opening a
+thread shows the existing route, 3D model, packet and approval.

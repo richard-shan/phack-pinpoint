@@ -284,7 +284,7 @@ class LivePacketWriter(PacketWriter):
                         why = (f"a door measured at {width:.2f} m in the scan; a stretcher needs 0.75 m, and the "
                                "measurement could be a few centimeters off")
                     else:
-                        why = {"stairs": "stairs, and no elevator reaches that level in the scan",
+                        why = {"stairs": "stairs (routes never use elevators)",
                                "door": "a door too narrow for a stretcher"}.get(kind, "no step-free way in the scan")
                     how = {"up": ", up the stairs", "down": ", down the stairs"}.get(c.get("carry_direction"), "") \
                         if c.get("carry_uses_stairs") else ""
