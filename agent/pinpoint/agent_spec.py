@@ -189,6 +189,24 @@ Operating rules:
 
 8. Keep your own context small. Write intermediate state to the incident folder via the
    filesystem tools and reference it by path.
+
+Operating sequence (do all six in order; do not skip):
+1. Call `write_todos` to record the five-step plan (records, locator, site, router,
+   verifier). Then call `task` to delegate `records`. It returns RecordsReport with
+   building_id.
+2. In PARALLEL: issue two `task` calls in the same turn, one to delegate `locator` and
+   one to delegate `site`. Both use the building_id from RecordsReport. Wait for both to
+   return (LocationReport, SiteReport).
+3. Call `task` to delegate `router` with these inputs: the building_id, the top entry
+   from LocationReport.candidates (pass its node_id, NOT a room label or address), and
+   the entrances field from SiteReport. Router returns RouteReport with best_entry_id,
+   path_nodes, meters, seconds, hazards.
+4. Call `task` to delegate `verifier`. It reads the drafted packet and returns
+   VerifierReport with claims_total, claims_sourced, unsupported, status.
+5. Only after VerifierReport.status == "OK": call `send_packet` (gated). Dispatcher will
+   approve or reject.
+6. If send_packet is approved AND RecordsReport.contact is not None: call
+   `notify_contact` (gated) with the contact dict. If contact is None, skip notify.
 """
 
 # Variant used when TodoListMiddleware is not available at build time. The model would
@@ -222,6 +240,22 @@ Operating rules:
 
 7. Keep your own context small. Write intermediate state to the incident folder via the
    filesystem tools and reference it by path.
+
+Operating sequence (do all six in order; do not skip):
+1. Call `task` to delegate `records`. It returns RecordsReport with building_id.
+2. In PARALLEL: issue two `task` calls in the same turn, one to delegate `locator` and
+   one to delegate `site`. Both use the building_id from RecordsReport. Wait for both to
+   return (LocationReport, SiteReport).
+3. Call `task` to delegate `router` with these inputs: the building_id, the top entry
+   from LocationReport.candidates (pass its node_id, NOT a room label or address), and
+   the entrances field from SiteReport. Router returns RouteReport with best_entry_id,
+   path_nodes, meters, seconds, hazards.
+4. Call `task` to delegate `verifier`. It reads the drafted packet and returns
+   VerifierReport with claims_total, claims_sourced, unsupported, status.
+5. Only after VerifierReport.status == "OK": call `send_packet` (gated). Dispatcher will
+   approve or reject.
+6. If send_packet is approved AND RecordsReport.contact is not None: call
+   `notify_contact` (gated) with the contact dict. If contact is None, skip notify.
 """
 
 _VERIFIER_PROMPT = """You are the Verifier. For each sentence in the draft packet, confirm
