@@ -141,14 +141,18 @@ export function createLocalStore({ directory, getCatalog }) {
       await atomic(incident.id, incident); return clone(incident);
     }); },
     update(id, body) { return run(async () => {
-      object(body, ['expectedRevision', 'notes', 'unconfirmed', 'location', 'route', 'packetMarkdown', 'photo', 'updatedBy']);
+      object(body, ['expectedRevision', 'notes', 'unconfirmed', 'location', 'route', 'packetMarkdown', 'photo', 'updatedBy', 'court']);
       if (own(body, 'updatedBy') && !['agent', 'dispatcher'].includes(body.updatedBy)) fail(400, 'INVALID_FIELD', 'updatedBy must be agent or dispatcher.');
       if (!Object.keys(body).some(key => key !== 'expectedRevision' && key !== 'updatedBy')) fail(400, 'EMPTY_UPDATE', 'No changes were supplied.');
       const incident = await current(id, body.expectedRevision);
       for (const [key, max] of [['notes', 10000], ['location', 1000], ['route', 10000], ['packetMarkdown', 102400]]) if (own(body,key)) incident[key] = text(body[key], key, max);
       if (own(body, 'photo')) incident.photo = photo(body.photo);
+      if (own(body, 'court')) {              // the evidence court's ruling, shown as received
+        if (!body.court || typeof body.court !== 'object' || Array.isArray(body.court) || JSON.stringify(body.court).length > 60000) fail(400, 'INVALID_FIELD', 'court must be an object under 60 KB.');
+        incident.court = clone(body.court);
+      }
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
-      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
+      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : own(body, 'court') ? 'Evidence court ruled.' : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
       await atomic(id, incident); return clone(incident);
     }); },
     setRoute(id, revision, spatialRoute, route, location) { return run(async () => {
