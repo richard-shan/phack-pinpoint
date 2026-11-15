@@ -154,9 +154,14 @@ export class SpatialView {
   async moveTo(id){
     if(!this.ready)throw new Error('Wait for the 3D scan to finish loading.');
     this.showTab(false);
-    const path=this.route?.nodeIds||[],index=path.indexOf(id),next=path[index+1]||path[index-1];
-    const a=this.graph.nodes.find(n=>n.id===id)?.position,b=this.graph.nodes.find(n=>n.id===next)?.position;
-    const rotation=this.graph.faceRoute&&a&&b?{x:-18,y:Math.atan2(b.x-a.x,-(b.z-a.z))*180/Math.PI}:undefined;
+    // Face the way the crew is walking: toward the next position on the route, or, at the
+    // last one, the same way they arrived. The viewer looks along -z at yaw 0 and turns
+    // toward -x as yaw grows, so the heading of a step (dx, dz) is atan2(-dx, -dz).
+    const path=this.route?.nodeIds||[],index=path.indexOf(id);
+    const at=nodeId=>this.graph.nodes.find(n=>n.id===nodeId)?.position;
+    const [a,b]=index>=0&&path[index+1]?[at(id),at(path[index+1])]:index>0?[at(path[index-1]),at(id)]:[undefined,undefined];
+    const level=a&&b&&Math.hypot(b.x-a.x,b.z-a.z)>0.3;      // a stair or elevator step has no heading
+    const rotation=this.graph.faceRoute&&level?{x:-12,y:Math.atan2(-(b.x-a.x),-(b.z-a.z))*180/Math.PI}:undefined;
     await this.sdk.Sweep.moveTo(id,{...(rotation?{rotation}:{}),transition:this.sdk.Camera.TransitionType.FLY,transitionTime:650});
   }
   async perform(action,button){
