@@ -5,6 +5,7 @@ import os
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
@@ -13,9 +14,12 @@ from pinpoint import deep_agent
 from pinpoint.deep_agent import (
     DeepAgentsNotConfigured,
     COMMANDER_SYSTEM_PROMPT,
+    COMMANDER_SYSTEM_PROMPT_NO_TODOS,
     _load_api_key_from_file,
     build_subagents,
 )
+from pinpoint import agent_spec
+from pinpoint.agent_spec import PYDANTIC_AVAILABLE, PERMISSIONS_AVAILABLE
 
 try:
     import deepagents  # noqa: F401
@@ -87,6 +91,108 @@ class TestCommanderSystemPrompt(unittest.TestCase):
         self.assertIn("parallel", p)
         self.assertIn("verifier", p)
         self.assertIn("send_packet", p)
+
+    def test_no_todos_variant_drops_write_todos(self):
+        """The no-todos variant is used when TodoListMiddleware can't be imported.
+        It must not instruct the model to call write_todos."""
+        p = COMMANDER_SYSTEM_PROMPT_NO_TODOS.lower()
+        self.assertNotIn("write_todos", p)
+        # Still carries the same operational guarantees.
+        self.assertIn("parallel", p)
+        self.assertIn("verifier", p)
+        self.assertIn("send_packet", p)
+
+
+class TestSubagentResponseFormat(unittest.TestCase):
+
+    @unittest.skipUnless(PYDANTIC_AVAILABLE,
+                         "pydantic not installed (transitive dep of deepagents)")
+    def test_every_subagent_has_response_format(self):
+        for sub in build_subagents():
+            with self.subTest(name=sub["name"]):
+                self.assertIn("response_format", sub,
+                              f"{sub['name']} subagent missing response_format")
+                from pydantic import BaseModel
+                self.assertTrue(
+                    isinstance(sub["response_format"], type)
+                    and issubclass(sub["response_format"], BaseModel),
+                    f"{sub['name']}.response_format must be a BaseModel subclass",
+                )
+
+    @unittest.skipIf(PYDANTIC_AVAILABLE,
+                     "pydantic is available; response_format should be attached")
+    def test_response_format_omitted_when_pydantic_missing(self):
+        """Graceful degradation: when pydantic is absent we skip the field rather
+        than crashing on missing models."""
+        for sub in build_subagents():
+            with self.subTest(name=sub["name"]):
+                self.assertNotIn("response_format", sub)
+
+
+class TestSubagentPermissions(unittest.TestCase):
+
+    @unittest.skipUnless(PERMISSIONS_AVAILABLE,
+                         "deepagents.FilesystemPermission not importable in this env")
+    def test_every_subagent_has_permissions(self):
+        for sub in build_subagents():
+            with self.subTest(name=sub["name"]):
+                self.assertIn("permissions", sub,
+                              f"{sub['name']} subagent missing permissions")
+                self.assertTrue(sub["permissions"], "permissions list must not be empty")
+
+    @unittest.skipIf(PERMISSIONS_AVAILABLE,
+                     "FilesystemPermission is available; permissions should be attached")
+    def test_permissions_omitted_when_fp_missing(self):
+        for sub in build_subagents():
+            with self.subTest(name=sub["name"]):
+                self.assertNotIn("permissions", sub)
+
+
+class TestBuildAgentWiring(unittest.TestCase):
+    """build_agent() wires create_deep_agent with memory=['AGENTS.md'] and the right
+    system prompt based on TodoListMiddleware availability. We inject a fake
+    create_agent_fn to capture kwargs without needing deepagents installed."""
+
+    def _install_fake_langgraph(self):
+        """Inject a fake langgraph.checkpoint.memory module so build_agent can import
+        MemorySaver without the real package installed."""
+        import types
+        for name in ("langgraph", "langgraph.checkpoint", "langgraph.checkpoint.memory"):
+            sys.modules.setdefault(name, types.ModuleType(name))
+        sys.modules["langgraph.checkpoint.memory"].MemorySaver = type("MemorySaver", (), {})
+
+    def _capturing_fn(self):
+        calls = {}
+        def fake(**kwargs):
+            calls.update(kwargs)
+            return mock.MagicMock(name="deep_agent_instance")
+        return calls, fake
+
+    @mock.patch.object(deep_agent, "_probe_todo_middleware")
+    def test_passes_memory_agents_md(self, probe):
+        probe.return_value = type("FakeTLM", (), {})
+        self._install_fake_langgraph()
+        calls, fake = self._capturing_fn()
+        deep_agent.build_agent(create_agent_fn=fake)
+        self.assertEqual(calls.get("memory"), ["AGENTS.md"])
+
+    @mock.patch.object(deep_agent, "_probe_todo_middleware")
+    def test_swaps_to_no_todos_prompt_when_middleware_missing(self, probe):
+        probe.return_value = None
+        self._install_fake_langgraph()
+        calls, fake = self._capturing_fn()
+        deep_agent.build_agent(create_agent_fn=fake)
+        self.assertEqual(calls.get("system_prompt"), COMMANDER_SYSTEM_PROMPT_NO_TODOS)
+        self.assertEqual(calls.get("middleware"), [])
+
+    @mock.patch.object(deep_agent, "_probe_todo_middleware")
+    def test_keeps_todos_prompt_when_middleware_present(self, probe):
+        probe.return_value = type("FakeTLM", (), {})
+        self._install_fake_langgraph()
+        calls, fake = self._capturing_fn()
+        deep_agent.build_agent(create_agent_fn=fake)
+        self.assertEqual(calls.get("system_prompt"), COMMANDER_SYSTEM_PROMPT)
+        self.assertEqual(len(calls.get("middleware", [])), 1)
 
 
 class TestApiKeyLoading(unittest.TestCase):

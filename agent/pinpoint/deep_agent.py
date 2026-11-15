@@ -1,6 +1,7 @@
 # LLM path (--real-llm). Spec in agent_spec.py. Needs Python 3.11+ + ANTHROPIC_API_KEY.
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
@@ -10,6 +11,7 @@ from typing import Optional
 from . import stubs, trace, streaming
 from .agent_spec import (
     COMMANDER_SYSTEM_PROMPT,
+    COMMANDER_SYSTEM_PROMPT_NO_TODOS,
     COMMANDER_MODEL,
     INTERRUPT_ON,
     build_subagents,
@@ -19,12 +21,15 @@ from .config import AGENT_DIR, INCIDENTS
 __all__ = [
     "DeepAgentsNotConfigured",
     "COMMANDER_SYSTEM_PROMPT",
+    "COMMANDER_SYSTEM_PROMPT_NO_TODOS",
     "build_subagents",
     "build_agent",
     "run_real_agent",
     "run_incident",
     "_load_api_key_from_file",
 ]
+
+_LOG = logging.getLogger("pinpoint.deep_agent")
 
 
 class DeepAgentsNotConfigured(RuntimeError):
@@ -56,39 +61,63 @@ def _ensure_api_key() -> str:
     return key
 
 
-def build_agent(checkpointer=None):
-    try:
-        from deepagents import create_deep_agent
-    except ImportError as e:
-        raise DeepAgentsNotConfigured(f"deepagents not installed (needs Python 3.11+): {e}")
-    try:
-        from langgraph.checkpoint.memory import MemorySaver
-    except ImportError as e:
-        raise DeepAgentsNotConfigured(f"langgraph not installed: {e}")
-
-    TodoListMiddleware = None
+def _probe_todo_middleware():
+    """Return TodoListMiddleware class or None if not importable."""
     for mod_name, attr in (
         ("deepagents.middleware", "TodoListMiddleware"),
         ("deepagents", "TodoListMiddleware"),
     ):
         try:
-            TodoListMiddleware = getattr(__import__(mod_name, fromlist=[attr]), attr)
-            break
-        except ImportError:
+            return getattr(__import__(mod_name, fromlist=[attr]), attr)
+        except (ImportError, AttributeError):
             continue
+    return None
 
-    middleware = [TodoListMiddleware()] if TodoListMiddleware else []
+
+def build_agent(checkpointer=None, create_agent_fn=None):
+    """Build the real deepagents agent.
+
+    When TodoListMiddleware is not available, swap the Commander's system prompt to a
+    variant that does not instruct `write_todos`. The model would otherwise call a tool
+    that does not exist and crash on first real run. Graceful degradation is better here
+    than a hard raise: the fallback orchestrator remains default, and real-llm mode
+    still works without live todos.
+    """
+    if create_agent_fn is None:
+        try:
+            from deepagents import create_deep_agent as create_agent_fn
+        except ImportError as e:
+            raise DeepAgentsNotConfigured(f"deepagents not installed (needs Python 3.11+): {e}")
+    try:
+        from langgraph.checkpoint.memory import MemorySaver
+    except ImportError as e:
+        raise DeepAgentsNotConfigured(f"langgraph not installed: {e}")
+
+    TodoListMiddleware = _probe_todo_middleware()
+
+    if TodoListMiddleware is not None:
+        middleware = [TodoListMiddleware()]
+        system_prompt = COMMANDER_SYSTEM_PROMPT
+    else:
+        _LOG.warning(
+            "TodoListMiddleware not found; falling back to COMMANDER_SYSTEM_PROMPT_NO_TODOS "
+            "so the model does not call a missing write_todos tool."
+        )
+        middleware = []
+        system_prompt = COMMANDER_SYSTEM_PROMPT_NO_TODOS
+
     if checkpointer is None:
         checkpointer = MemorySaver()
 
-    return create_deep_agent(
+    return create_agent_fn(
         model=COMMANDER_MODEL,
-        system_prompt=COMMANDER_SYSTEM_PROMPT,
+        system_prompt=system_prompt,
         tools=[stubs.send_packet, stubs.notify_contact],
         subagents=build_subagents(),
         middleware=middleware,
         interrupt_on=INTERRUPT_ON,
         checkpointer=checkpointer,
+        memory=["AGENTS.md"],
     )
 
 
