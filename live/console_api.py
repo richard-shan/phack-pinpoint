@@ -66,6 +66,9 @@ class Console:
     def get(self, incident_id: str) -> dict:
         return self._call("GET", f"/incidents/{incident_id}")
 
+    def packet(self, packet_id: str) -> dict:
+        return self._call("GET", f"/packets/{packet_id}")
+
     def incidents(self) -> list[dict]:
         return self._call("GET", "/incidents").get("incidents", [])
 
