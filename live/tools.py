@@ -172,8 +172,25 @@ def get_property(address):
     if (not rec.get("building_id")) and SESSION.get("building_id"):
         rec = A.get_property(str(SESSION["building_id"]))
     if not rec.get("building_id"):
+        rec = no_costar_record(SESSION.get("building_id"))
+    if not rec:
         raise PropertyNotFound(f"address not in CoStar: {address!r}")
     return rec
+
+
+def no_costar_record(building_id) -> dict | None:
+    """A stand-in record for a building that has a scan and a graph but is not in the
+    CoStar kit (Rabinowitz Hall at Princeton). It says so, and claims nothing else."""
+    try:
+        g = _graph(building_id)
+    except (FileNotFoundError, TypeError):
+        return None
+    name = g.data.get("name") or str(building_id)
+    return {"building_id": str(building_id), "name": name, "address": g.data.get("address") or name,
+            "use_type": None, "use_subtype": None, "stories": None, "year_built": None, "sqft": None,
+            "tenants": [], "occupancy_risks": [], "contact": None, "scan_date": None, "elevators": None,
+            "not_in_costar": True, "evidence_path": f"buildings/{building_id}/graph.json",
+            "note": "This building is not in the CoStar kit: no use, tenant, risk or contact record exists for it."}
 
 
 @trace.traced("records")
@@ -458,7 +475,7 @@ def records(idir, intake):
     rec = stubs.get_property(intake["address"])
     keep = ("building_id", "name", "address", "city", "state", "use_type", "use_subtype", "stories",
             "year_built", "sqft", "construction", "sprinklers", "elevators", "tenancy", "scan_date",
-            "contact", "occupancy_risks", "not_known", "note", "evidence_path")
+            "contact", "occupancy_risks", "not_known", "note", "evidence_path", "not_in_costar")
     brief = {k: rec.get(k) for k in keep}
     brief["tenants"] = [{k: t.get(k) for k in ("name", "suite", "floor", "floor_name", "industry", "risk_flags")}
                         for t in rec.get("tenants") or [] if t.get("name")]

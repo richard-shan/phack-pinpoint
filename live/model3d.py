@@ -61,6 +61,51 @@ def _parse_obj(text: str):
     return np.array(verts, dtype=np.float64), np.array(faces, dtype=np.int64)
 
 
+def _wall_mesh(g: Graph, model_id: str):
+    """A model built from the scan's wall plan, for scans whose mesh Matterport does not
+    serve: each wall drawn as a panel from the floor up, with gaps at doorways. Returns
+    (positions in viewer axes, triangle indices) or None when the scan has no wall plan."""
+    walls = mp.get_walls(model_id)
+    heights = {}
+    for n in g.nodes:
+        if g.kind(n) == "pano" and g.xyz(n):
+            heights.setdefault(g.nodes[n].get("floor") or 0, []).append(g.xyz(n)[2])
+    levels = {seq: float(np.median(zs)) for seq, zs in heights.items()}
+    order = sorted(levels.values())
+    pos, idx = [], []
+
+    def panel(a, b, z0, z1):
+        base = len(pos)
+        for x, y, z in ((a[0], a[1], z0), (b[0], b[1], z0), (b[0], b[1], z1), (a[0], a[1], z1)):
+            pos.append((x, z, -y))
+        idx.extend((base, base + 1, base + 2, base, base + 2, base + 3,          # seen from one side
+                    base, base + 2, base + 1, base, base + 3, base + 2))         # and from the other
+
+    for seq, segs in walls.items():
+        if seq not in levels:
+            continue
+        z0 = levels[seq]
+        above = [z for z in order if z > z0 + 1.0]
+        z1 = z0 + min(2.5, (above[0] - z0 - 0.4) if above else 2.5)
+        for w in segs:
+            if w.get("type") != "wall" or w["length"] < 0.05:
+                continue
+            (ax, ay), (bx, by), length = w["a"], w["b"], w["length"]
+            at = lambda d: (ax + (bx - ax) * d / length, ay + (by - ay) * d / length)
+            gaps = sorted((max(0.0, o["center_m"] - o["width"] / 2), min(length, o["center_m"] + o["width"] / 2))
+                          for o in w.get("openings") or [] if o.get("type") in ("doorway", "opening") and o.get("width"))
+            cursor = 0.0
+            for g0, g1 in gaps:
+                if g0 - cursor > 0.05:
+                    panel(at(cursor), at(g0), z0, z1)
+                cursor = max(cursor, g1)
+            if length - cursor > 0.05:
+                panel(at(cursor), at(length), z0, z1)
+    if not pos:
+        return None
+    return np.array(pos, dtype=np.float64), np.array(idx, dtype=np.int64).reshape(-1, 3)
+
+
 def fetch_three() -> Path:
     """three.js, served from the console's own origin (its pages may not load scripts from elsewhere)."""
     out = VENDOR / "three.module.min.js"
@@ -83,18 +128,29 @@ def build(building_id: str, refresh: bool = False) -> dict:
     out = MODELS / str(building_id)
     out.mkdir(parents=True, exist_ok=True)
     mesh_path = out / "mesh.json"
+    source = "Matterport 50k mesh (geometry only) with the scan's floor images laid on each floor"
     if refresh or not mesh_path.exists():
-        r = requests.get(_mesh_url(model_id), timeout=300)
-        r.raise_for_status()
-        verts, faces = _parse_obj(r.content.decode("utf-8", "replace"))
-        if not len(verts) or not len(faces):
-            raise RuntimeError(f"the mesh for scan {model_id} is empty")
-        pos = np.stack([verts[:, 0], verts[:, 2], -verts[:, 1]], axis=1)          # y up
+        try:
+            r = requests.get(_mesh_url(model_id), timeout=300)
+            r.raise_for_status()
+            verts, faces = _parse_obj(r.content.decode("utf-8", "replace"))
+            if not len(verts) or not len(faces):
+                raise RuntimeError(f"the mesh for scan {model_id} is empty")
+            pos = np.stack([verts[:, 0], verts[:, 2], -verts[:, 1]], axis=1)      # y up
+        except RuntimeError:                               # no mesh served for this scan
+            built = _wall_mesh(g, model_id)
+            if built is None:
+                raise
+            pos, faces = built
+            source = "walls drawn from the scan's wall plan (Matterport serves no mesh for this scan)"
         mesh_path.write_text(json.dumps({
             "positions": [round(float(v), 3) for v in pos.reshape(-1)],
             "indices": [int(i) for i in faces.reshape(-1)],
             "bounds": {"min": [round(float(v), 2) for v in pos.min(0)], "max": [round(float(v), 2) for v in pos.max(0)]},
+            "source": source,
         }, separators=(",", ":")))
+    else:
+        source = json.loads(mesh_path.read_text()).get("source", source)
     floors = []
     for seq_s, fp in sorted((g.data.get("floorplans") or {}).items(), key=lambda kv: int(kv[0])):
         seq = int(seq_s)
@@ -121,8 +177,7 @@ def build(building_id: str, refresh: bool = False) -> dict:
             entry["plan_error"] = str(exc)[:160]
         floors.append(entry)
     meta = {"buildingId": str(building_id), "name": g.data.get("name") or str(building_id), "modelId": model_id,
-            "mesh": f"/assets/real/models/{building_id}/mesh.json", "floors": floors,
-            "source": "Matterport 50k mesh (geometry only) with the scan's floor images laid on each floor"}
+            "mesh": f"/assets/real/models/{building_id}/mesh.json", "floors": floors, "source": source}
     (out / "model.json").write_text(json.dumps(meta, indent=1))
     return {"building_id": str(building_id), "floors": len(floors), "mesh_kb": mesh_path.stat().st_size // 1024,
             "floor_images": sum("plan" in f for f in floors)}

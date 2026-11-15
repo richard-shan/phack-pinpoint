@@ -59,11 +59,11 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     simulate_match  stand in for the matcher with an uncertain match around this position
     truth           where the photo was really taken, for a simulated caller's answers"""
     building_id = str(building_id)
-    prop = A.get_property(building_id)
-    if not prop.get("building_id"):
-        raise SystemExit(f"no CoStar record for {building_id}")
     if building_id not in list_buildings():
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
+    prop = A.get_property(building_id)
+    if not prop.get("building_id"):                      # a scanned building that is not in the CoStar kit
+        prop = tools.no_costar_record(building_id)
     address = address or ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
     address = " ".join(w.capitalize() if w.isalpha() and w.islower() and len(w) > 2 else w for w in address.split(" "))
     truth, position = _node(building_id, truth), _node(building_id, position)
