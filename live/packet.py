@@ -476,10 +476,9 @@ class LivePacketWriter(PacketWriter):
         foot = (rt or {}).get("foot") or {}
         fields = {}
         if lo and lo.get("node_id"):
-            fields["location"] = (f"{self._place(lo['node_id'])} (scan position {_short(lo['node_id'])}). "
-                                  f"Confidence {lo['confidence'] * 100:.0f}%"
-                                  + (f" after {lo['questions_asked']} question(s) to the caller."
-                                     if lo.get("questions_asked") else "."))[:1000]
+            answered = sum(1 for q in tools.SESSION.get("asked") or [] if str(q.get("source", "")).startswith("caller"))
+            fields["location"] = (f"{self._place(lo['node_id'])}. Confidence {lo['confidence'] * 100:.0f}%"
+                                  + (f" after {answered} caller answer(s)." if answered else "."))[:1000]
         if rt and rt.get("foot_directions"):
             steps = " ".join(f"{i}. {s['text']}" for i, s in enumerate(rt["foot_directions"], 1))
             fields["route"] = (f"On foot, about {_secs(foot.get('seconds'))}: {steps}")[:10000]

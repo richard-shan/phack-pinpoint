@@ -493,6 +493,12 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, llm: bool =
                           console_incident=inc["id"], **kw)
                 print("  " + json.dumps({k: res.get(k) for k in ("incident_id", "decision", "seconds_to_draft",
                                                                  "console_decision", "problem")}), flush=True)
+                if kw.get("leave_for_review") and not res.get("problem"):
+                    from .court_bridge import hold_court      # unsure match: the subagents argue it out
+                    try:
+                        hold_court(console, inc["id"], inc["propertyId"], log=lambda s: print(s, flush=True))
+                    except Exception as exc:
+                        print(f"  evidence court failed: {type(exc).__name__}: {exc}", flush=True)
             except SystemExit as exc:
                 print(f"  skipped: {exc}", flush=True)
             except Exception as exc:                        # keep watching whatever one incident does

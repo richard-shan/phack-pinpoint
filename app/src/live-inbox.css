@@ -81,6 +81,27 @@
 @keyframes newcall { 0%, 100% { background: var(--surface); } 50% { background: #ffe1e4; } }
 .inbox-row.new-call { animation: newcall 1s ease-in-out 4; }
 
+/* Evidence court: the judge's ruling and each scout's case. */
+.court { border: 1px solid var(--border); border-left: 4px solid var(--navy); border-radius: var(--radius); padding: var(--space-4) var(--space-5); margin-bottom: var(--space-5); background: var(--surface); }
+.court-head { display: flex; justify-content: space-between; align-items: baseline; }
+.court-head h3 { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.court-conf { font-family: var(--mono); font-weight: 700; font-size: var(--text-lg); color: var(--navy); }
+.court-ruling { margin-top: var(--space-1); font-weight: 600; }
+.court-detail { margin-top: var(--space-2); font-size: var(--text-sm); }
+.court-detail span { display: inline-block; margin-right: var(--space-2); padding: 0 6px; border-radius: 3px; background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.court-cases { margin-top: var(--space-3); }
+.court-cases summary { cursor: pointer; font-size: var(--text-xs); color: var(--muted); }
+.court-cases ol { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: grid; gap: var(--space-3); }
+.court-case { border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-3); }
+.court-case.won { border-color: var(--navy); box-shadow: inset 3px 0 var(--navy); }
+.court-case-head { display: flex; align-items: center; gap: var(--space-2); }
+.court-case-head strong { font-size: var(--text-sm); }
+.court-won { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #fff; background: var(--navy); border-radius: 3px; padding: 0 5px; }
+.court-strength { margin-left: auto; width: 80px; height: 6px; border-radius: 3px; background: var(--subtle); overflow: hidden; }
+.court-strength span { display: block; height: 100%; background: var(--navy); }
+.court-case p { font-size: var(--text-sm); margin-top: var(--space-1); }
+.court-weak { color: var(--muted); }
+
 .building-record { margin: var(--space-4) 0; }
 .building-record > div { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(0, 2fr); gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
 .building-record dt { color: var(--muted); font-size: var(--text-sm); }

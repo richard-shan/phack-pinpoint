@@ -24,3 +24,4 @@ agent/pinpoint/fixtures/*/vexcel_tile.*
 agent/.pinpoint_cost.json
 demo-tagged/
 .venv
+.venv-agents

@@ -353,3 +353,35 @@ unknown (31 inliers with little image coverage). An unrelated lobby image, rando
 also returned unknown. Searches took about 24–36 seconds on this laptop, excluding
 subsequent within-building processing. This small demo check does not measure the
 false-accept rate on real out-of-catalog phone photos.
+
+## Evidence court (LangChain deepagents)
+
+The caller is not asked questions (`live.run --watch --ask none --leave-for-review`). When
+the photo match is unsure (below 85%) and its top candidates are in different places, the
+watcher convenes an evidence court (`live/court.py`, a `create_deep_agent` graph):
+
+1. **Evidence, in parallel.** For each candidate spot (up to three), Claude Haiku 5.5 compares
+   the caller's photo with that spot's scanned views and lists matching and conflicting details.
+2. **Scouts.** One deepagents subagent per candidate argues that the caller is there, from
+   that evidence and the spot's panorama facts, and must name its own weaknesses.
+3. **Judge.** The deep agent's lead (Claude Opus 5.5) sends every scout out in one turn,
+   weighs the cases, and rules with a typed verdict (`response_format`): winner, confidence,
+   the one decisive detail, and a two-sentence ruling.
+
+If the court agrees with the photo match, nothing visible changes: the ruling is kept on the
+record and noted in the activity log. Only when it **overrules** the match does it reroute the
+incident and show an **Evidence court** panel explaining why. A first route from the photo
+match is up before the court sits.
+Measured on a Rabinowitz Hall photo: 5 s of evidence, 20 s of deliberation; it read the "1"
+on a floor directory sign to separate two identical-looking hallways on floors 1 and 2.
+
+The court runs as a separate process in its own environment so the GPU pipeline is untouched:
+
+```sh
+uv venv --python 3.12 .venv-agents
+uv pip install --python .venv-agents/bin/python "deepagents>=0.7,<0.8" langchain-anthropic anthropic
+```
+
+It needs `ANTHROPIC_API_KEY` in `.env`. Without the environment, or if the court abstains or
+times out (`PINPOINT_COURT_TIMEOUT_S`, default 240), the photo match stands. `PINPOINT_COURT=0`
+turns it off; `PINPOINT_COURT_JUDGE` / `_SCOUT` / `_EVIDENCE` change the models.
