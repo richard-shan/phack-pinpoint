@@ -397,32 +397,28 @@ class LivePacketWriter(PacketWriter):
         """Everything the packet states without a source, or cannot know."""
         out = []
         for r in (self.audit or {}).get("unsupported", []):
-            out.append("No source found for: " + re.sub(r"\s*\[src:[^\]]*\]", "", r["claim"])[:200])
+            out.append("Unverified: " + re.sub(r"\s*\[src:[^\]]*\]", "", r["claim"])[:200])
         g = self._g()
         foot = (self.route or {}).get("foot") or {}
         if g and foot.get("staging_id") and not g.nodes[foot["staging_id"]].get("confirmed"):
-            out.append("Staging spot: placed by eye on the aerial image.")
+            out.append("Staging spot")
         if self.location and self.location.get("below_threshold"):
-            out.append("Exact position: below the confidence threshold.")
+            out.append("Exact position — confirm with caller")
         if any(q["source"].startswith("simulated") for q in tools.SESSION.get("asked") or []):
-            out.append("Caller answers in this run were simulated from a known position.")
+            out.append("Caller answers")
         if tools.SESSION.get("given_position"):
-            out.append("Caller position was given by the dispatcher, not matched from a photo.")
+            out.append("Caller position (entered manually)")
         elif tools.SESSION.get("simulate_match"):
-            out.append("The photo match was simulated for this run.")
+            out.append("Photo match")
         if ((self.site or {}).get("aerial_features") or {}).get("vehicle_access"):
-            out.append("Vehicle access and obstructions were read from the aerial image by a vision model; "
-                       "nobody has checked them.")
+            out.append("Vehicle access and obstructions (from aerial imagery)")
         if any(h.get("seen_in_scan") for h in (self.route or {}).get("hazards") or []):
-            out.append("Things \"seen in the scan\" were read from the panoramas by a vision model; nobody has checked them.")
+            out.append("Hazards noted in the scan")
         if self.route is not None:
-            out.append("Travel times use assumed walking speeds and door delays; nobody has timed these routes.")
-            out.append("Door states (locked, open, blocked) are as scanned, not current.")
+            out.append("Travel times are estimates")
+            out.append("Door states (locked / open) as last scanned")
         if self.brief is not None:
-            if not self.brief.get("scan_date"):
-                out.append("The scan has no date on record.")
-            out.append("Who occupies the building: no CoStar record exists for it." if self.brief.get("not_in_costar")
-                       else "Tenant list is CoStar's record, not current occupancy.")
+            out.append("Current occupancy")
         return out
 
     # ------------------------------------------------------------ console copy

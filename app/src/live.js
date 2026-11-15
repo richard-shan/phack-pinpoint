@@ -7,7 +7,9 @@ let spatialView, aerialView;
 let catalog, recent = [], selected, incident, property, snapshot, chosenImage = 0, routeVersion = 0, busy = false, toastTimer, polling;
 const imageList = p => (p.models || []).filter(m => m.joinStatus === 'verified').flatMap(m => (m.images || []).map(i => ({...i,model:m})));
 const isSpatial = p => !!p && (p.id === PRINCETON_ID || p.id === LA_DEMO_ID || p.spatial === true);
-const statusText = s => ({review:'Awaiting review',approved:'Approved locally',rejected:'Changes requested'}[s] || s);
+const statusText = s => ({review:'Pending review',approved:'Confirmed',rejected:'Returned'}[s] || s);
+const incNo = i => 'INC-'+i.id.slice(4,10).toUpperCase();
+const place = label => String(label||'').replace(/^Scan \d+ · /,'');
 const time = value => value ? new Date(value).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
 const pretty = value => value == null ? 'Not provided' : Number(value).toLocaleString();
 function toast(text) { clearTimeout(toastTimer); document.querySelector('#feedback').textContent = text; toastTimer = setTimeout(() => document.querySelector('#feedback').textContent = '', 7000); }
@@ -44,36 +46,38 @@ async function action(fn, trigger = document.activeElement) {
 }
 function openDialog(title,body) {dialog.innerHTML=`<div class="dialog-head"><h2 id="dialog-title">${e(title)}</h2><button type="button" data-action="close">Close</button></div>${body}<p class="form-error" role="alert"></p>`;dialog.showModal();}
 function facts(p) {return `<dl class="facts"><div><dt>Use</dt><dd>${e(known(p.useType))}</dd></div><div><dt>Stories</dt><dd>${e(known(p.stories))}</dd></div><div><dt>Year built</dt><dd>${e(known(p.yearBuilt))}</dd></div><div><dt>Area · sq ft</dt><dd>${pretty(p.sqft)}</dd></div></dl>`;}
-function sourceLink(p) {return `<button class="small" data-action="source" data-property="${e(p.id)}">${p.id===PRINCETON_ID?'Inspect scan sources':'Inspect CoStar record'}</button>`;}
+function sourceLink(p) {return `<button class="small" data-action="source" data-property="${e(p.id)}">View record</button>`;}
 const PLATFORM={imessage:'iMessage',telegram:'Telegram',sms:'SMS'};
 let inboxOpen=null, inboxSig='';
 const propertyOf=i=>catalog.properties.find(p=>p.id===i.propertyId);
 const photoURL=i=>`/api/incidents/${encodeURIComponent(i.id)}/photo`;
 const callerName=i=>i.channel?.handle||'Caller';
 const ago=value=>{const s=Math.max(0,(Date.now()-new Date(value))/1000);return s<60?'just now':s<3600?`${Math.floor(s/60)} min ago`:time(value);};
-function lastLine(i){const m=(i.messages||[]).at(-1);return m?`${m.role==='caller'?'':'You: '}${m.text}`:(i.photo?'Photo':'No messages');}
+function lastLine(i){const m=(i.messages||[]).at(-1);return m?`${m.role==='caller'?'':'Sent: '}${m.text}`:(i.photo?'Photo':'No messages');}
+const elapsed=value=>{const s=Math.max(0,Math.floor((Date.now()-new Date(value))/1000));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),r=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(r).padStart(2,'0');};
 function locationCard(i,p=propertyOf(i)){
   const loc=i.channel?.location;
   if(!loc)return '';
-  return `<section class="location-card" aria-label="Caller location"><div class="location-pin" aria-hidden="true"></div><div><h3>Caller location</h3><p class="location-address">${e(loc.address||p?.address||'Address not available')}</p><p class="muted">${e(p?.name||'')}${p?.name?' · ':''}${loc.latitude.toFixed(5)}, ${loc.longitude.toFixed(5)}${loc.distanceM!=null?` · building ${Math.round(loc.distanceM)} m away`:''}</p><p class="location-source">From the caller’s device · simulated for this demo · building chosen automatically</p></div></section>`;
+  return `<section class="location-card" aria-label="Caller location"><div class="location-pin" aria-hidden="true"></div><div><h3>Caller location</h3><p class="location-address">${e(loc.address||p?.address||'Unknown address')}</p><p class="muted">${loc.latitude.toFixed(5)}, ${loc.longitude.toFixed(5)}${loc.distanceM!=null?` · ±${Math.max(10,Math.round(loc.distanceM))} m`:''} · Device location</p></div></section>`;
 }
 function threadHTML(i){
   const photo=i.photo?`<div class="bubble-row caller"><figure class="bubble photo-bubble"><img src="${e(photoURL(i))}" alt="Photo the caller sent"><figcaption><time>${e(time(i.createdAt))}</time></figcaption></figure></div>`:'';
   // The caption arrives as the first caller message at the same moment as the photo.
-  return photo+(i.messages||[]).map(m=>`<div class="bubble-row ${m.role==='caller'?'caller':'responder'}"><div class="bubble ${e(m.role)}">${m.role==='auto'?'<small class="bubble-label">Automatic reply</small>':m.role==='dispatcher'?'<small class="bubble-label">Dispatcher</small>':''}<p>${e(m.text)}</p><time>${e(time(m.at))}</time></div></div>`).join('');
+  return photo+(i.messages||[]).map(m=>`<div class="bubble-row ${m.role==='caller'?'caller':'responder'}"><div class="bubble ${e(m.role)}">${m.role==='auto'?'<small class="bubble-label">Auto-reply</small>':m.role==='dispatcher'?'<small class="bubble-label">Dispatcher</small>':''}<p>${e(m.text)}</p><time>${e(time(m.at))}</time></div></div>`).join('');
 }
 function home() {
   incident=property=snapshot=null;
-  main.innerHTML=`<div class="intro"><div><h1>Incoming messages</h1><p>When someone texts Pinpoint a photo, it shows up here with their location. Each thread opens with the location, route and packet ready for review.</p></div></div><div class="inbox-layout"><section class="inbox-list" aria-labelledby="inbox-heading"><h2 id="inbox-heading" class="visually-hidden">Conversations</h2><div id="inbox-rows" role="list"></div></section><section class="inbox-thread" id="inbox-thread" aria-label="Selected conversation"></section></div>`;
+  main.innerHTML=`<div class="queue-head"><h1>Call queue</h1><span class="queue-count" id="queue-count"></span></div><div class="inbox-layout"><section class="inbox-list" aria-labelledby="inbox-heading"><h2 id="inbox-heading" class="visually-hidden">Calls</h2><div id="inbox-rows" role="list"></div></section><section class="inbox-thread" id="inbox-thread" aria-label="Selected call"></section></div>`;
   renderInbox(true);
-  polling=setInterval(async()=>{try{const list=(await api('/incidents')).incidents;if(!location.hash.slice(1)&&!incident){recent=list;renderInbox();}}catch{/* next tick retries */}},2000);
+  polling=setInterval(async()=>{try{const list=(await api('/incidents')).incidents;if(!location.hash.slice(1)&&!incident){recent=list;renderInbox();document.querySelectorAll('[data-elapsed]').forEach(el=>el.textContent=elapsed(el.dataset.elapsed));}}catch{/* next tick retries */}},1000);
 }
 function renderInbox(force=false){
   const rows=document.querySelector('#inbox-rows');if(!rows)return;
   const sig=recent.map(i=>i.id+i.updatedAt).join();if(!force&&sig===inboxSig)return;inboxSig=sig;
   const threads=[...recent].sort((a,b)=>b.createdAt.localeCompare(a.createdAt));
   if(!threads.some(i=>i.id===inboxOpen))inboxOpen=threads[0]?.id||null;
-  rows.innerHTML=threads.length?threads.map(i=>{const p=propertyOf(i);return `<button class="inbox-row" role="listitem" data-action="thread" data-id="${e(i.id)}" aria-pressed="${i.id===inboxOpen}">${i.photo?`<img src="${e(photoURL(i))}" alt="" loading="lazy">`:'<span class="inbox-noimg" aria-hidden="true"></span>'}<span class="inbox-text"><span class="inbox-top"><strong>${e(callerName(i))}</strong><time>${e(ago(i.createdAt))}</time></span><span class="inbox-where">${i.channel?`<span class="platform">${e(PLATFORM[i.channel.platform]||i.channel.platform)}</span>`:'<span class="platform muted-platform">Console</span>'}${e(i.channel?.location?.address||p?.address||i.propertyId)}</span><span class="inbox-last">${e(lastLine(i))}</span></span><span class="inbox-status status-${e(i.status)}">${e(statusText(i.status))}</span></button>`;}).join(''):'<div class="empty-state inbox-empty"><h3>No messages yet</h3><p>Text a photo to your Pinpoint iMessage line. It will appear here within a few seconds, with the caller’s location.</p></div>';
+  const count=document.querySelector('#queue-count');if(count)count.textContent=`${threads.filter(i=>i.status==='review').length} pending · ${threads.length} total`;
+  rows.innerHTML=threads.length?threads.map(i=>{const p=propertyOf(i);return `<button class="inbox-row" role="listitem" data-action="thread" data-id="${e(i.id)}" aria-pressed="${i.id===inboxOpen}">${i.photo?`<img src="${e(photoURL(i))}" alt="" loading="lazy">`:'<span class="inbox-noimg" aria-hidden="true"></span>'}<span class="inbox-text"><span class="inbox-top"><strong>${e(incNo(i))}</strong><time data-elapsed="${e(i.createdAt)}">${e(elapsed(i.createdAt))}</time></span><span class="inbox-where">${e(i.channel?.location?.address||p?.address||i.propertyId)}</span><span class="inbox-caller">${i.channel?`<span class="platform">${e(PLATFORM[i.channel.platform]||i.channel.platform)}</span>`:''}${e(callerName(i))}</span><span class="inbox-last">${e(lastLine(i))}</span></span><span class="inbox-status status-${e(i.status)}">${e(statusText(i.status))}</span></button>`;}).join(''):'<div class="empty-state inbox-empty"><h3>No active calls</h3></div>';
   renderThread();
 }
 function renderThread(){
@@ -81,7 +85,7 @@ function renderThread(){
   const i=recent.find(x=>x.id===inboxOpen);
   if(!i){pane.innerHTML='';return;}
   const p=propertyOf(i),scroll=pane.querySelector('.thread-log')?.scrollTop;
-  pane.innerHTML=`<header class="thread-head"><div><h2>${e(callerName(i))}</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · `:''}started ${e(time(i.createdAt))}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))}</span></header>${locationCard(i,p)||`<section class="location-card"><div><h3>Building</h3><p class="location-address">${e(p?.name||i.propertyId)}</p><p class="muted">${e(p?.address||'')}</p></div></section>`}<div class="thread-log">${threadHTML(i)}</div><div class="actions thread-actions"><a class="button primary" href="#incident/${e(i.id)}">Open location, route &amp; packet</a></div>`;
+  pane.innerHTML=`<header class="thread-head"><div><h2>${e(incNo(i))}</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))} · `:''}${e(time(i.createdAt))}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))}</span></header>${locationCard(i,p)||`<section class="location-card"><div><h3>Location</h3><p class="location-address">${e(p?.address||i.propertyId)}</p></div></section>`}<div class="thread-log">${threadHTML(i)}</div><div class="actions thread-actions"><a class="button primary" href="#incident/${e(i.id)}">Open incident</a></div>`;
   const log=pane.querySelector('.thread-log');log.scrollTop=scroll??log.scrollHeight;
 }
 function renderList() {
@@ -98,7 +102,7 @@ function messageHTML(i) {
   if(i.channel) return threadHTML(i);
   return (i.messages || []).length ? i.messages.map(m=>`<article class="message ${m.role==='caller'?'':'dispatcher'}"><small><strong>${m.role==='dispatcher'?'Dispatcher':m.role==='auto'?'Automatic reply':'Caller'}</strong><time>${e(time(m.at))}</time></small><p>${e(m.text)}</p></article>`).join('') : '<p class="empty-state">No messages yet.</p>';
 }
-function composer(role, via) {return `<form id="message-form" class="composer" data-role="${role}"><label for="message">${role==='caller'?'Reply to dispatcher':via?`Text the caller on ${e(PLATFORM[via.platform]||'their phone')}`:'Message caller'}</label><textarea id="message" name="message" required maxlength="4000" placeholder="${role==='caller'?'Describe what you can see…':'Ask a focused question…'}"></textarea><button class="primary" type="submit">${role==='caller'?'Send reply locally':via?'Send to caller':'Send message locally'}</button></form>`;}
+function composer(role, via) {return `<form id="message-form" class="composer" data-role="${role}"><label for="message">${role==='caller'?'Reply':'Message caller'}</label><textarea id="message" name="message" required maxlength="4000" placeholder="${role==='caller'?'':'Type a message…'}"></textarea><button class="primary" type="submit">${role==='caller'?'Send':'Send'}</button></form>`;}
 function renderCase() {
   aerialView?.dispose();aerialView=null;
   if(isSpatial(property)){renderSpatialCase();return;}
@@ -112,7 +116,7 @@ function renderSpatialCase() {
   const existing=spatialView?.incidentId===i.id && spatialView.el?.isConnected;
   if(!existing){
     spatialView?.dispose();
-    main.innerHTML=`<div class="destination"><div><h1>${e(p.name)}</h1><p>${e(p.address)}</p></div><span class="status" id="princeton-status"></span></div><div class="case-toolbar"><a href="#">All messages</a><p class="muted">${i.channel?'Arrived by '+e(PLATFORM[i.channel.platform]||'message')+' · ':''}${p.spatial?'Real scan · Routes from the building graph · Local review':'Real scan · Demo routing · Local review'}</p><div class="actions"><span id="model3d-slot"></span><button class="small" data-action="scroll-review">Review packet</button><button class="small" data-action="scroll-chat">Caller conversation</button></div></div><div id="location-slot"></div><div class="workspace"><div><div id="spatial-slot"></div><section id="review" class="review-section"></section><details class="trace"><summary>Building & source details</summary><p>${e(p.name)} · Model ${e(p.models?.[0]?.id||'')}. ${p.spatial?'Route geometry comes from the building graph built from this scan; doors and elevators were marked by hand.':'Route geometry is an illustrative interpretation of the captured scan.'}</p><p>Matterport floor coordinates · Vexcel aerial imagery. Exterior anchors and current access require verification.</p>${sourceLink(p)}</details></div><aside class="chat-column" id="conversation" tabindex="-1"><h2>Caller conversation</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))} · replies go to their phone`:'Local messages · Live route revisions'}</p><div id="chat-log" class="chat-log"></div>${composer('dispatcher',i.channel)}${i.channel?'':`<a class="button" href="#caller/${e(i.id)}">Open caller view</a><button class="button" data-action="copy-caller">Copy caller link</button>`}<details class="trace"><summary>Agent & route activity</summary><ol id="princeton-events"></ol></details></aside></div>`;
+    main.innerHTML=`<div class="destination"><div><p class="inc-no">${e(incNo(i))} · ${e(time(i.createdAt))}</p><h1>${e(i.channel?.location?.address||p.address)}</h1><p>${e(p.name)}</p></div><span class="status" id="princeton-status"></span></div><div class="case-toolbar"><a href="#">← Call queue</a><div class="actions"><span id="model3d-slot"></span><button class="small" data-action="scroll-review">Review</button><button class="small" data-action="scroll-chat">Caller</button></div></div><div id="location-slot"></div><div class="workspace"><div><div id="spatial-slot"></div><section id="review" class="review-section"></section><details class="trace"><summary>Building record</summary><p>${e(p.name)} · ${e(p.address)}</p>${sourceLink(p)}</details></div><aside class="chat-column" id="conversation" tabindex="-1"><h2>Caller</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))}`:'No messaging channel'}</p><div id="chat-log" class="chat-log"></div>${composer('dispatcher',i.channel)}<details class="trace"><summary>Activity log</summary><ol id="princeton-events"></ol></details></aside></div>`;
     spatialView=new SpatialView({property:p,onUpdate:async data=>{
       const id=incident.id,revision=incident.revision;
       const next=await api(`/incidents/${id}/route`,'POST',{expectedRevision:revision,...data});
@@ -122,7 +126,7 @@ function renderSpatialCase() {
     spatialView.mount(document.querySelector('#spatial-slot'),i);
   } else spatialView.update(i);
   document.querySelector('#princeton-status').className=`status status-${i.status}`;
-  document.querySelector('#princeton-status').textContent=`${statusText(i.status)} · Revision ${i.revision}`;
+  document.querySelector('#princeton-status').textContent=statusText(i.status);
   document.querySelector('#location-slot').innerHTML=locationCard(i,p);
   const chat=document.querySelector('#chat-log'),scroll=chat.scrollTop;
   chat.innerHTML=messageHTML(i);chat.scrollTop=scroll;
@@ -131,21 +135,20 @@ function renderSpatialCase() {
   const routeImage = /\/assets\/real\/live\/[\w.-]+\/route\.jpg/.exec(i.packetMarkdown||'');
   const matchImage = /\/assets\/real\/live\/[\w.-]+\/match\.jpg/.exec(i.packetMarkdown||'');
   // The 3D model page loads the route the agent writes, so it is ready once the agent has run.
-  document.querySelector('#model3d-slot').innerHTML=routeImage?`<a class="button small primary" href="/live-3d.html#${e(i.id)}" target="_blank" rel="noopener">Open 3D model with route</a>`:i.channel?'<button class="small" disabled title="The agent is working out the location and route">3D model · preparing…</button>':'';
+  document.querySelector('#model3d-slot').innerHTML=routeImage?`<a class="button small primary" href="/live-3d.html#${e(i.id)}" target="_blank" rel="noopener">3D model</a>`:i.channel?'<button class="small" disabled>3D model · loading…</button>':'';
   document.querySelector('#review').innerHTML=`
-    <div class="section-heading"><div><h2>Dispatcher review</h2><p class="muted">Check the location and route, then make a decision.</p></div><strong class="status-${e(i.status)}">${e(statusText(i.status))}</strong></div>
-    <div class="route-summary"><div><h3>Caller location</h3><p>${e(i.location||'Location not available yet.')}</p></div><div><h3>Entrance & route</h3><p>${e(i.route||'Route not available yet.')}</p></div></div>
-    ${i.unconfirmed?.length?`<div class="unconfirmed"><h3>Check before responding</h3><ul>${i.unconfirmed.map(v=>`<li>${e(v)}</li>`).join('')}</ul></div>`:''}
+    <div class="section-heading"><h2>Review</h2><strong class="status-${e(i.status)}">${e(statusText(i.status))}</strong></div>
+    <div class="route-summary"><div><h3>Caller location</h3><p>${e(place(i.location)||'Locating…')}</p></div><div><h3>Entry & route</h3><p>${e(i.route||'Planning route…')}</p></div></div>
+    ${i.unconfirmed?.length?`<div class="unconfirmed"><h3>Verify</h3><ul>${i.unconfirmed.map(v=>`<li>${e(v)}</li>`).join('')}</ul></div>`:''}
     ${i.decision?.kind==='rejected'?`<p class="form-error">${e(i.decision.reason)}</p>`:''}
-    <div class="actions review-actions">${i.status==='review'?'<button class="primary" data-action="approve">Approve packet</button><button data-action="reject">Reject</button>':''}${i.packetId?`<a class="button" href="#packet/${e(i.packetId)}">Open approved packet</a>`:''}<button data-action="edit">Edit notes</button></div>
-    <p class="hint">Approval is local and does not contact emergency services.</p>
-    <details class="review-details"><summary>Packet and supporting evidence</summary>
-      <div class="actions"><button data-action="preview">Preview packet</button>${routeImage?`<a class="button" href="/live-3d.html#${e(i.id)}" target="_blank" rel="noopener">Open 3D route</a>`:''}</div>
-      ${i.packetMarkdown?`<details><summary>Agent packet</summary><div class="markdown">${renderMarkdown(i.packetMarkdown)}</div></details>`:''}
-      ${i.photo?.dataUrl?`<details><summary>Caller photo</summary><img class="attachment-preview" src="${e(safeImage(i.photo.dataUrl))}" alt="Photo submitted for this incident"></details>`:''}
-      ${routeImage?`<details><summary>Route on floor plan</summary><a href="${e(safeImage(routeImage[0]))}" target="_blank"><img class="match-evidence" src="${e(safeImage(routeImage[0]))}" alt="Floor plan with the route to the caller"></a></details>`:''}
-      ${matchImage?`<details><summary>Photo match evidence</summary><img class="match-evidence" src="${e(safeImage(matchImage[0]))}" alt="Caller photo beside the matched scan view"></details>`:''}
-      ${i.notes?`<details><summary>Agent activity</summary><p>${e(i.notes)}</p></details>`:''}
+    <div class="actions review-actions">${i.status==='review'?'<button class="primary" data-action="approve">Confirm &amp; send</button><button data-action="reject">Return</button>':''}${i.packetId?`<a class="button" href="#packet/${e(i.packetId)}">View packet</a>`:''}<button data-action="edit">Edit</button></div>
+    <details class="review-details"><summary>Packet &amp; evidence</summary>
+      <div class="actions"><button data-action="preview">Preview packet</button></div>
+      ${i.packetMarkdown?`<details><summary>Packet</summary><div class="markdown">${renderMarkdown(i.packetMarkdown)}</div></details>`:''}
+      ${i.photo?.dataUrl?`<details><summary>Caller photo</summary><img class="attachment-preview" src="${e(safeImage(i.photo.dataUrl))}" alt="Caller photo"></details>`:''}
+      ${routeImage?`<details><summary>Floor plan</summary><a href="${e(safeImage(routeImage[0]))}" target="_blank"><img class="match-evidence" src="${e(safeImage(routeImage[0]))}" alt="Floor plan with the route to the caller"></a></details>`:''}
+      ${matchImage?`<details><summary>Photo match</summary><img class="match-evidence" src="${e(safeImage(matchImage[0]))}" alt="Caller photo beside the matched view"></details>`:''}
+      ${i.notes?`<details><summary>Notes</summary><p>${e(i.notes)}</p></details>`:''}
     </details>`;
   document.querySelectorAll('#review details').forEach((d,n)=>{d.open=!!openReviewDetails[n];});
 }
@@ -153,11 +156,11 @@ function renderCaller() {
   main.innerHTML=`<div class="caller-shell"><div class="destination"><div><h1>Caller conversation</h1><p>${e(property.name)} · ${e(property.address)}</p></div></div><p class="source-note">Local demonstration channel. Messages reach this computer’s dispatcher console only.</p><div class="chat-log" id="chat-log">${messageHTML(incident)}</div>${composer('caller')}<div class="field"><label for="caller-photo">Attach a photo</label><input id="caller-photo" type="file" accept="image/png,image/jpeg,image/webp"><p class="hint">PNG, JPEG, or WebP. Larger phone photos are shrunk to fit 2 MB.</p>${incident.photo?.dataUrl ? `<img class="attachment-preview" src="${e(safeImage(incident.photo.dataUrl))}" alt="Current caller attachment">`:''}</div><p class="muted">Messages are saved locally and refresh automatically. Revision ${incident.revision}.</p><div class="actions"><a href="#incident/${e(incident.id)}">Open dispatcher console</a><button data-action="refresh">Refresh conversation</button></div></div>`;
 }
 function packetBody(i,p) {
-  const img=imageList(p)[0];
-  return `<div class="destination"><div><h1>Responder review packet</h1><p>${e(p.name)}<br>${e(p.address)}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))} · r${i.revision}</span></div><div class="packet-body"><p class="source-note">Local demonstration. No emergency service or external delivery connected. Building records do not confirm current conditions.</p><div class="packet-grid"><section><h2>Caller location</h2><p>${e(i.location || 'Not confirmed.')}</p></section><section><h2>Entrance, staging & route</h2><p>${e(i.route || 'Not confirmed. No route supplied.')}</p><p class="hint">${i.spatialRoute ? 'Computed demo route · scan coordinates · revision '+i.spatialRoute.revision : 'Dispatcher-entered directions, if present; not a computed route.'}</p></section></div><section><h2>Building brief</h2>${facts(p)}<p class="muted">${e(sourceLabel(p))} · ${e(p.subtype || p.useType)} · Tenant and equipment not confirmed.</p></section>${i.photo||img?`<div class="packet-grid"><section><h2>Caller evidence</h2>${i.photo?.dataUrl?`<img class="photo" src="${e(safeImage(i.photo.dataUrl))}" alt="Caller attachment">`:'<p>No caller photo.</p>'}</section><section><h2>Source reference</h2>${img?`<img class="photo" src="${e(safeImage(img.url))}" alt="Matterport source reference"><p class="photo-caption">${e(img.model.name)} · address-checked reference, not a caller match.</p>`:'<p>No cached reference.</p>'}</section></div>`:''}<section><h2>Dispatcher notes</h2><p>${e(i.notes || 'None recorded.')}</p></section><section class="unconfirmed"><h2>Not confirmed</h2><ul>${(i.unconfirmed||[]).map(x=>`<li>${e(x)}</li>`).join('')}</ul></section>${i.packetMarkdown?`<section><h2>Imported packet</h2><p class="muted">Imported text requires source verification. Its claims are not independently checked by this console.</p><div class="markdown">${renderMarkdown(i.packetMarkdown)}</div></section>`:''}<section><h2>Source & revision</h2><p class="muted">${e(p.source?.file || 'commercial-property.jsonl')} · record ${e(p.id)}<br>Incident ${e(i.id)} · revision ${i.revision}${i.decision?.at?` · decision ${e(new Date(i.decision.at).toLocaleString())}`:''}<br>Scan date, current access, equipment availability, and caller match confidence are not established.</p></section></div>`;
+  const loc=i.channel?.location;
+  return `<div class="destination"><div><p class="inc-no">${e(incNo(i))} · ${e(new Date(i.createdAt).toLocaleString())}</p><h1>${e(loc?.address||p.address)}</h1><p>${e(p.name)}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))}</span></div><div class="packet-body"><div class="packet-grid"><section><h2>Caller location</h2><p>${e(place(i.location)||'Unknown')}</p>${loc?`<p class="muted">${loc.latitude.toFixed(5)}, ${loc.longitude.toFixed(5)} · Device location</p>`:''}</section><section><h2>Entry &amp; route</h2><p>${e(i.route||'No route')}</p></section></div><section><h2>Building</h2>${facts(p)}</section>${i.photo?.dataUrl?`<section><h2>Caller photo</h2><img class="photo" src="${e(safeImage(i.photo.dataUrl))}" alt="Caller photo"></section>`:''}${i.notes?`<section><h2>Notes</h2><p>${e(i.notes)}</p></section>`:''}${(i.unconfirmed||[]).length?`<section class="unconfirmed"><h2>Verify</h2><ul>${i.unconfirmed.map(x=>`<li>${e(x)}</li>`).join('')}</ul></section>`:''}${i.packetMarkdown?`<section><h2>Full packet</h2><div class="markdown">${renderMarkdown(i.packetMarkdown)}</div></section>`:''}<section><p class="muted">${e(incNo(i))} · revision ${i.revision}${i.decision?.at?` · confirmed ${e(new Date(i.decision.at).toLocaleString())}`:''}</p></section></div>`;
 }
 function renderPacket(i,p,immutable) {
-  main.innerHTML=`<div class="packet-shell"><div class="actions no-print"><a class="button" href="#incident/${e(i.id)}">Back to incident</a><button data-action="print">Print / PDF</button></div><details class="packet-tools no-print"><summary>Export & audio options</summary><div class="actions"><button data-action="markdown">Export Markdown</button><button data-action="html">Export portable HTML</button>${immutable?'<button data-action="copy-packet">Copy local link</button>':''}<button data-action="speak">Read brief aloud</button><button data-action="stop-speech">Stop voice</button></div></details><p class="hint no-print">${immutable?'This approved revision is immutable and works across browsers on this computer while the server runs.':'Draft preview. Approval is required before a permanent local packet link is created.'} HTML export includes the images and can be opened offline.</p><p class="voice-status no-print" id="voice-status"></p>${packetBody(i,p)}</div>`;
+  main.innerHTML=`<div class="packet-shell"><div class="actions no-print"><a class="button" href="#incident/${e(i.id)}">← Incident</a><button data-action="print">Print</button><button data-action="markdown">Export</button><button data-action="speak">Read aloud</button><button data-action="stop-speech">Stop</button></div><p class="voice-status no-print" id="voice-status"></p>${packetBody(i,p)}</div>`;
 }
 async function navigate() {
   aerialView?.dispose();aerialView=null;
@@ -194,13 +197,13 @@ async function navigate() {
       if(hash.startsWith('preview/')){renderPacket(incident,property,false);return;}caller?renderCaller():renderCase();startPoll();return;
     }
     recent=(await api('/incidents')).incidents;if(version!==routeVersion)return;home();
-  }catch(error){if(version!==routeVersion)return;main.innerHTML=`<div class="error-screen"><h1>Couldn’t open this workspace.</h1><p>${e(error.message)}</p><a class="button primary" href="/live.html">Back to messages</a></div>`;} finally {
+  }catch(error){if(version!==routeVersion)return;main.innerHTML=`<div class="error-screen"><h1>Couldn’t open this incident.</h1><p>${e(error.message)}</p><a class="button primary" href="/live.html">Call queue</a></div>`;} finally {
     if(version===routeVersion){
       main.removeAttribute('aria-busy');
-      const title=hash.startsWith('caller/')?'Caller conversation':hash.startsWith('packet/')||hash.startsWith('preview/')?'Responder packet':incident?property?.name:'Incoming messages';
-      document.title=`${title || 'Dispatch workspace'} · Pinpoint`;
+      const title=hash.startsWith('caller/')?'Caller':hash.startsWith('packet/')||hash.startsWith('preview/')?'Responder packet':incident?incNo(incident):'Call queue';
+      document.title=`${title || 'Call queue'} · Pinpoint CAD`;
       document.querySelectorAll('.topbar nav a').forEach(a=>a.removeAttribute('aria-current'));
-      document.querySelector(property?.id===LA_DEMO_ID&&incident?'.topbar a[data-nav=los-angeles]':property?.id===PRINCETON_ID&&incident?'.topbar a[data-nav=princeton]':'.topbar a[data-nav=dispatch]')?.setAttribute('aria-current','page');
+      document.querySelector('.topbar a[data-nav=dispatch]')?.setAttribute('aria-current','page');
     }
   }
 }
@@ -232,9 +235,9 @@ async function readPhoto(file) {
   const dataUrl=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('Could not read this photo.'));reader.readAsDataURL(file);});return {name:file.name,dataUrl};
 }
 function edit() {
-  openDialog('Edit dispatcher review',`<p class="muted">Changes create a new revision and invalidate approval. Keep uncertainty explicit.</p><form id="edit-form" data-revision="${incident.revision}"><div class="form-grid"><div class="field"><label for="location">Caller location</label><textarea id="location" name="location" maxlength="1000" ${[PRINCETON_ID,LA_DEMO_ID].includes(property.id)?'readonly':''}>${e(incident.location)}</textarea></div><div class="field"><label for="route">Entrance, staging & route</label><textarea id="route" name="route" maxlength="10000" ${[PRINCETON_ID,LA_DEMO_ID].includes(property.id)?'readonly':''}>${e(incident.route)}</textarea></div><div class="field full"><label for="notes">Dispatcher notes</label><textarea id="notes" name="notes" maxlength="10000">${e(incident.notes)}</textarea></div><div class="field full"><label for="unknowns">Unconfirmed items · one per line</label><textarea id="unknowns" name="unconfirmed" maxlength="10000">${e((incident.unconfirmed||[]).join('\n'))}</textarea></div></div><div class="actions"><button class="primary" type="submit">Save new revision</button></div></form>`);
+  openDialog('Edit incident',`<form id="edit-form" data-revision="${incident.revision}"><div class="form-grid"><div class="field"><label for="location">Caller location</label><textarea id="location" name="location" maxlength="1000" ${[PRINCETON_ID,LA_DEMO_ID].includes(property.id)?'readonly':''}>${e(incident.location)}</textarea></div><div class="field"><label for="route">Entry & route</label><textarea id="route" name="route" maxlength="10000" ${[PRINCETON_ID,LA_DEMO_ID].includes(property.id)?'readonly':''}>${e(incident.route)}</textarea></div><div class="field full"><label for="notes">Notes</label><textarea id="notes" name="notes" maxlength="10000">${e(incident.notes)}</textarea></div><div class="field full"><label for="unknowns">Verify · one per line</label><textarea id="unknowns" name="unconfirmed" maxlength="10000">${e((incident.unconfirmed||[]).join('\n'))}</textarea></div></div><div class="actions"><button class="primary" type="submit">Save</button></div></form>`);
 }
-async function update(data,expectedRevision=incident.revision) {incident=await writeAPI('/incidents/'+incident.id,'PATCH',{expectedRevision,...data});dialog.close();renderCase();toast('Saved. This revision needs dispatcher approval.');}
+async function update(data,expectedRevision=incident.revision) {incident=await writeAPI('/incidents/'+incident.id,'PATCH',{expectedRevision,...data});dialog.close();renderCase();toast('Saved.');}
 function download(name,content,type) {const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);}
 async function portable() {
   let body=packetBody(incident,property);const holder=document.createElement('div');holder.innerHTML=body;
@@ -244,7 +247,7 @@ async function portable() {
 }
 async function copyLink(kind) {
   const url=new URL('/live.html',location.href);url.hash=kind==='caller'?`caller/${incident.id}`:`packet/${incident.packetId||snapshot?.id}`;
-  try{await navigator.clipboard.writeText(url.href);toast('Local link copied. It works on this computer while the server runs.');}catch{openDialog('Local link',`<label for="copy-link">Copy this link</label><input id="copy-link" readonly value="${e(url.href)}"><p class="hint">Open in another browser on this computer. It is not a public link.</p>`);dialog.querySelector('input').select();}
+  try{await navigator.clipboard.writeText(url.href);toast('Link copied.');}catch{openDialog('Local link',`<label for="copy-link">Copy this link</label><input id="copy-link" readonly value="${e(url.href)}"><p class="hint">Open in another browser on this computer. It is not a public link.</p>`);dialog.querySelector('input').select();}
 }
 main.addEventListener('input',ev=>{if(ev.target.id==='search')renderList();});
 main.addEventListener('change',ev=>{if(ev.target.id==='city')renderList();if(ev.target.id==='caller-photo')action(async()=>{const photo=await readPhoto(ev.target.files[0]);if(photo){incident=await writeAPI('/incidents/'+incident.id,'PATCH',{expectedRevision:incident.revision,photo});renderCaller();toast('Photo attached locally. No matching was performed.');}});});
@@ -268,16 +271,16 @@ document.addEventListener('click',ev=>{
   if(name==='stop-speech'){window.speechSynthesis?.cancel();return;}
   if(name==='speak'){
     const voice=window.speechSynthesis?.getVoices().find(v=>v.localService&&v.lang.startsWith('en'));
-    if(!voice){toast('No offline English voice is available in this browser. Use the packet text instead.');return;}
-    speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(`${property.name}. ${property.address}. Caller location: ${incident.location||'not confirmed'}. Access: ${incident.route||'not confirmed'}. ${incident.notes||''}. This is a local demonstration packet.`);utterance.voice=voice;speechSynthesis.speak(utterance);toast('Reading the brief using an offline system voice.');return;
+    if(!voice){toast('No voice available in this browser.');return;}
+    speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(`${property.name}. ${property.address}. Caller location: ${place(incident.location)||'unknown'}. Route: ${incident.route||'none'}. ${incident.notes||''}`);utterance.voice=voice;speechSynthesis.speak(utterance);toast('Reading aloud.');return;
   }
-  if(name==='reject'){openDialog('Request changes',`<form id="reject-form" data-revision="${incident.revision}"><div class="field"><label for="reason">Reason for rejection</label><textarea id="reason" name="reason" required maxlength="2000"></textarea></div><div class="field"><label for="correctedRoomId">Corrected room or scan position (optional)</label><input id="correctedRoomId" name="correctedRoomId" maxlength="500"></div><div class="actions"><button class="primary" type="submit">Reject this revision</button></div></form>`);return;}
+  if(name==='reject'){openDialog('Return incident',`<form id="reject-form" data-revision="${incident.revision}"><div class="field"><label for="reason">Reason</label><textarea id="reason" name="reason" required maxlength="2000"></textarea></div><div class="field"><label for="correctedRoomId">Correct location (optional)</label><input id="correctedRoomId" name="correctedRoomId" maxlength="500"></div><div class="actions"><button class="primary" type="submit">Return</button></div></form>`);return;}
   if(name==='import'){openDialog('Import team packet',`<p class="muted">Import packet.md as reviewable text. HTML stays inert. This does not validate its claims or connect the agent.</p><form id="import-form" data-revision="${incident.revision}"><div class="field"><label for="packet-file">Markdown or text file · up to 100 KB</label><input id="packet-file" type="file" accept=".md,.txt,text/plain,text/markdown" required></div><div class="actions"><button class="primary">Import for review</button></div></form>`);return;}
   action(async()=>{
-    if(name==='source'&&b.dataset.property===PRINCETON_ID){const record=await api('/spatial/model');openDialog('Princeton scan sources',`<p>Rabinowitz Hall · Matterport scan P3S6VUTP3qB</p><pre class="record">${e(JSON.stringify(record.provenance,null,2))}</pre>`);return;}
-    if(name==='source'){const p=catalog.properties.find(v=>v.id===b.dataset.property);const url=safeLink(p.source?.recordUrl||`/data/records/${p.id}.json`);const response=await fetch(url);if(!response.ok)throw new Error('Source record could not be loaded.');const record=await response.json();openDialog('CoStar source record',`<p class="muted">Record ${e(p.id)}. Values are from the supplied dataset; they do not verify present conditions.</p><pre class="record">${e(JSON.stringify(record,null,2))}</pre><a class="record-link" href="${e(url)}" target="_blank">Open original local JSON</a>`);}
+    if(name==='source'&&b.dataset.property===PRINCETON_ID){const record=await api('/spatial/model');openDialog('Building record',`<p>Rabinowitz Hall · Princeton University</p><pre class="record">${e(JSON.stringify(record.provenance,null,2))}</pre>`);return;}
+    if(name==='source'){const p=catalog.properties.find(v=>v.id===b.dataset.property);const url=safeLink(p.source?.recordUrl||`/data/records/${p.id}.json`);const response=await fetch(url);if(!response.ok)throw new Error('Source record could not be loaded.');const record=await response.json();openDialog('Building record',`<p class="muted">CoStar ${e(p.id)}</p><pre class="record">${e(JSON.stringify(record,null,2))}</pre>`);}
     if(name==='refresh'){if(!catalog){location.reload();return;}const draft=document.querySelector('#message')?.value||'';await navigate();const input=document.querySelector('#message');if(input)input.value=draft;}
-    if(name==='approve'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:incident.revision,decision:'approved'});renderCase();toast('Approved snapshot saved. A connected messaging bridge can now send it to the caller.');}
+    if(name==='approve'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:incident.revision,decision:'approved'});renderCase();toast('Confirmed. Packet sent.');}
     if(name==='copy-packet')await copyLink('packet');
     if(name==='copy-caller')await copyLink('caller');
     if(name==='html')await portable();
@@ -287,11 +290,14 @@ document.addEventListener('submit',ev=>{
   const form=ev.target;ev.preventDefault();action(async()=>{
     if(form.id==='new-form'){const photo=await readPhoto(form.querySelector('input[type=file]').files[0]);const callerText=form.elements.callerText.value.trim();if(!callerText&&!photo)throw new Error('Enter the caller’s account or attach a photo.');const item=await writeAPI('/incidents','POST',{propertyId:selected.id,callerText,photo});dialog.close();location.hash='incident/'+item.id;}
     if(form.id==='edit-form'){await update({location:form.elements.location.value,route:form.elements.route.value,notes:form.elements.notes.value,unconfirmed:form.elements.unconfirmed.value.split('\n').map(x=>x.trim()).filter(Boolean)},Number(form.dataset.revision));}
-    if(form.id==='message-form'){const text=form.elements.message.value.trim();if(!text)return;incident=await writeAPI('/incidents/'+incident.id+'/messages','POST',{expectedRevision:incident.revision,role:form.dataset.role,text});form.dataset.role==='caller'?renderCaller():renderCase();document.querySelector('#message')?.focus({preventScroll:true});const log=document.querySelector('#chat-log');if(log)log.scrollTop=log.scrollHeight;toast('Message saved to the local conversation.');}
-    if(form.id==='reject-form'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:Number(form.dataset.revision),decision:'rejected',reason:form.elements.reason.value.trim(),correctedRoomId:form.elements.correctedRoomId.value.trim()});dialog.close();renderCase();toast('Changes requested. Edit the packet to reopen review.');}
+    if(form.id==='message-form'){const text=form.elements.message.value.trim();if(!text)return;incident=await writeAPI('/incidents/'+incident.id+'/messages','POST',{expectedRevision:incident.revision,role:form.dataset.role,text});form.dataset.role==='caller'?renderCaller():renderCase();document.querySelector('#message')?.focus({preventScroll:true});const log=document.querySelector('#chat-log');if(log)log.scrollTop=log.scrollHeight;toast('Sent.');}
+    if(form.id==='reject-form'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:Number(form.dataset.revision),decision:'rejected',reason:form.elements.reason.value.trim(),correctedRoomId:form.elements.correctedRoomId.value.trim()});dialog.close();renderCase();toast('Returned for changes.');}
     if(form.id==='import-form'){const file=form.querySelector('input').files[0];if(file.size>100*1024)throw new Error('Choose a packet smaller than 100 KB.');await update({packetMarkdown:await file.text()},Number(form.dataset.revision));}
   }, ev.submitter);
 });
 window.addEventListener('hashchange',navigate);
+// CAD clock (24-hour, seconds).
+const clock=document.querySelector('#cad-clock');
+if(clock){const tick=()=>{clock.textContent=new Date().toLocaleTimeString([], {hour12:false});};tick();setInterval(tick,1000);}
 window.addEventListener('beforeunload',()=>window.speechSynthesis?.cancel());
-try {catalog=await api('/catalog');selected=catalog.properties.find(p=>p.id===LA_DEMO_ID)||catalog.properties[0];await navigate();}catch(error){main.innerHTML=`<div class="error-screen"><h1>Start the real-data service.</h1><p>${e(error.message)}</p><p>From the app folder, run <code>npm run dev:real</code> and open its local URL.</p><button data-action="refresh">Try again</button></div>`;}
+try {catalog=await api('/catalog');selected=catalog.properties.find(p=>p.id===LA_DEMO_ID)||catalog.properties[0];await navigate();}catch(error){main.innerHTML=`<div class="error-screen"><h1>Connection lost.</h1><p>${e(error.message)}</p><button data-action="refresh">Retry</button></div>`;}

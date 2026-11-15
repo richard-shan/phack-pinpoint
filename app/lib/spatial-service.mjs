@@ -2,10 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { planRoute, routeDirections, PRINCETON_ID } from '../src/live-route-model.js';
 export { PRINCETON_ID };
-export const princetonProperty={id:PRINCETON_ID,name:'Rabinowitz Hall · Princeton',address:'Princeton University, Princeton, NJ 08544',city:'Princeton',state:'NJ',postalCode:'08544',useType:'University',stories:3,source:{file:'Matterport public scan',recordUrl:'/api/spatial/model'},models:[{id:'P3S6VUTP3qB',name:'Princeton · Rabinowitz Hall',url:'https://my.matterport.com/show?m=P3S6VUTP3qB',joinStatus:'verified',images:[]}],unknowns:['Demo caller destination is selected, not automatically localized.','Exterior entrance anchors and approach are illustrative and need on-site alignment.','Route graph is a demo interpretation of the scan, not a validated accessible or emergency route.','Elevator locations and current availability must be confirmed before adding a connection.']};
+export const princetonProperty={id:PRINCETON_ID,name:'Rabinowitz Hall · Princeton',address:'Princeton University, Princeton, NJ 08544',city:'Princeton',state:'NJ',postalCode:'08544',useType:'University',stories:3,source:{file:'Matterport public scan',recordUrl:'/api/spatial/model'},models:[{id:'P3S6VUTP3qB',name:'Princeton · Rabinowitz Hall',url:'https://my.matterport.com/show?m=P3S6VUTP3qB',joinStatus:'verified',images:[]}],unknowns:['Exact room and floor','Entry and route','Hazards on scene']};
 export function spatialService(root,store){
   // A graph exported from the team's building graphs (data/<propertyId>-scan.json) wins
-  // over the two hand-annotated demo graphs.
+  // over the two hand-annotated graphs.
   const model=async(propertyId=PRINCETON_ID)=>{
     const names=[];
     if(/^[A-Za-z0-9-]{1,64}$/.test(String(propertyId)))names.push(`${propertyId}-scan.json`);

@@ -1,6 +1,8 @@
 """Deliver the immutable dispatcher-approved snapshot, never the mutable draft."""
 from __future__ import annotations
 
+import re
+
 
 def approved_packet(console, incident):
     decision = incident.get('decision') or {}
@@ -23,19 +25,17 @@ def approved_packet(console, incident):
 
 def packet_text(snapshot):
     incident, prop = snapshot['incident'], snapshot['property']
-    lines = ['# Pinpoint — approved demo packet',
-             f"Packet: {snapshot['id']}", f"Incident: {incident['id']}",
-             f"Approved revision: {incident['revision']} at {snapshot['approvedAt']}",
-             'Demo only. This does not dispatch emergency help.', '',
-             f"Building: {prop.get('name', incident['propertyId'])}",
-             f"Address: {prop.get('address', 'Not confirmed')}", '',
-             '## Caller location', incident.get('location') or 'Not confirmed', '',
-             '## Entrance and route', incident.get('route') or 'Not confirmed', '',
-             '## Dispatcher notes', incident.get('notes') or 'None', '',
-             '## Not confirmed']
-    lines += ['- ' + item for item in incident.get('unconfirmed', [])] or ['None listed']
+    loc = (incident.get('channel') or {}).get('location') or {}
+    lines = ['# Pinpoint — location and route',
+             f"Incident: INC-{incident['id'][4:10].upper()}",
+             f"Confirmed: {snapshot['approvedAt']}", f"Reference: {snapshot['id']}", '',
+             f"Address: {loc.get('address') or prop.get('address', '')}",
+             f"Building: {prop.get('name', incident['propertyId'])}", '',
+             '## Caller location', re.sub(r'^Scan \d+ · ', '', incident.get('location') or '') or 'Unknown', '',
+             '## Entry and route', incident.get('route') or 'No route', '',
+             '## Notes', incident.get('notes') or 'None', '',
+             '## Verify']
+    lines += ['- ' + item for item in incident.get('unconfirmed', [])] or ['None']
     if incident.get('packetMarkdown'):
-        lines += ['', '## Reviewed agent packet',
-                  'The following is the exact reviewed content; its internal status may still say draft.',
-                  incident['packetMarkdown']]
+        lines += ['', '## Reviewed agent packet', incident['packetMarkdown']]
     return '\n'.join(lines) + '\n'

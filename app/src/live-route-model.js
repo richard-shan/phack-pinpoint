@@ -36,7 +36,7 @@ export function planRoute(graph, request = {}) {
     if(costs.has(destination)){path=[destination];while(path[0]!==entry.nodeId)path.unshift(previous.get(path[0]));}
   }
   const result={modelId:graph.modelId,profile,entryId,destination,blockedEdges,connectors,entry,updatedBy:request.updatedBy==='agent'?'agent':'dispatcher',reason:typeof request.reason==='string'?request.reason.slice(0,500):'',avoidElevators,status:path?'ready':'unavailable',nodeIds:path||[],segments:[],meters:0};
-  if(!path){result.message=profile==='stretcher'?(avoidElevators?'No step-free route without elevators reaches this destination. Allow elevators, carry from the nearest point on the entry level, or switch to on foot (stairs).':'No step-free connection is mapped to this destination. Confirm and map an elevator connection, or choose a destination on the entry level.'):'No connected route remains. Change the entrance or reopen a blocked segment.';return result;}
+  if(!path){result.message=profile==='stretcher'?(avoidElevators?'No stretcher route without elevators. Allow elevators, or carry from the entry level.':'No stretcher route to this location.'):'No route. Change the entry or clear a blocked segment.';return result;}
   result.segments.push({id:'entry',kind:'entry',floor:nodes.get(path[0]).floor,points:[entry.position,nodes.get(path[0]).position]});
   for(let i=1;i<path.length;i++){
     const a=nodes.get(path[i-1]),b=nodes.get(path[i]);const edge=adjacent.get(a.id).find(e=>e.to===b.id).e;
@@ -50,5 +50,6 @@ export function planRoute(graph, request = {}) {
 export function routeDirections(graph,route){
   if(route.status!=='ready')return route.message;
   const destination=graph.nodes.find(n=>n.id===route.destination);
-  return [`Begin at ${route.entry.label}. Follow the aerial approach to the entrance anchor.`, 'Continue to the scan boundary and follow the route drawn on the floor.', ...route.segments.filter(s=>s.kind==='stairs'||s.kind==='elevator').filter((s,i,a)=>i===0||s.kind!==a[i-1].kind).map(s=>`${s.kind==='stairs'?'Take the stairs':'Take the dispatcher-mapped elevator'} from scan level ${s.floor+1} to ${s.toFloor+1}.`),`Continue to ${destination.label}.`, 'Demo route. Entrance alignment, current access and accessibility require verification.'].join('\n');
+  const name=label=>String(label||'').replace(/^Scan \d+ · /,'');
+  return [`Enter at ${route.entry.label}.`, ...route.segments.filter(s=>s.kind==='stairs'||s.kind==='elevator').filter((s,i,a)=>i===0||s.kind!==a[i-1].kind).map(s=>`${s.kind==='stairs'?'Take the stairs':'Take the elevator'} ${s.toFloor>s.floor?'up':'down'}.`),`Proceed to ${name(destination.label)}.`].join('\n');
 }

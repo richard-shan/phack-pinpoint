@@ -301,7 +301,7 @@ class WithConsole(_Base):
         self.assertIn(f"/assets/real/live/{inc['id']}/route.jpg", inc["packetMarkdown"])
         self.assertNotIn("**Status:**", inc["packetMarkdown"])   # the console shows its own status
         texts = [e["text"] for e in inc["events"]]
-        self.assertTrue(any(t.startswith("Agent updated the packet") for t in texts))
+        self.assertTrue(any(t.startswith("Packet updated") for t in texts))
         self.assertFalse(any(t.startswith("Dispatcher edited") for t in texts))
         sr = inc["spatialRoute"]
         best = A.best_entry(BUILDING, TARGET, "foot")

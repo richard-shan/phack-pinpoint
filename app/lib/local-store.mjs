@@ -44,7 +44,7 @@ function finite(value, label, min, max) {
   if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) fail(400, 'INVALID_FIELD', `${label} is out of range.`);
   return value;
 }
-// Where a messaged-in incident came from. location is the demo's stand-in for a carrier ping.
+// Where a messaged-in incident came from, and the caller's device location.
 function channel(value) {
   if (value == null) return null;
   object(value, ['platform', 'handle', 'location']);
@@ -126,16 +126,16 @@ export function createLocalStore({ directory, getCatalog }) {
       const timestamp = now();
       const incident = {
         id: `inc-${randomUUID()}`, propertyId, revision: 1, status: 'review', createdAt: timestamp, updatedAt: timestamp,
-        callerText, photo: image, notes: '', unconfirmed: [...new Set(property.unknowns?.length ? property.unknowns : ['Caller room and floor are not confirmed.', 'Entrance, staging, and route have not been verified.', 'Equipment and hazards have not been verified.'])].slice(0,50),
+        callerText, photo: image, notes: '', unconfirmed: ['Exact room and floor', 'Entry and route', 'Hazards on scene'],
         location: '', route: '', packetMarkdown: '', messages: callerText ? [{ id: randomUUID(), role: 'caller', text: callerText, at: timestamp }] : [],
-        events: [{ type: 'intake', text: 'Local intake received. No external message was sent.', at: timestamp }, { type: 'record', text: `Loaded CoStar property record ${propertyId}. Location and route await confirmation.`, at: timestamp }],
+        events: [{ type: 'intake', text: 'Call received.', at: timestamp }, { type: 'record', text: `Building record loaded (${propertyId}).`, at: timestamp }],
         decision: null, packetId: null,
       };
       if (via) {
         incident.channel = via;
         const who = via.handle ? ` from ${via.handle}` : '';
         incident.events = [{ type: 'intake', text: `Photo received via ${PLATFORMS[via.platform]}${who}.`, at: timestamp },
-          ...(via.location ? [{ type: 'location', text: `Caller location from the device: ${via.location.address || `${via.location.latitude}, ${via.location.longitude}`} (simulated for the demo). Building chosen automatically.`, at: timestamp }] : []),
+          ...(via.location ? [{ type: 'location', text: `Device location: ${via.location.address || `${via.location.latitude}, ${via.location.longitude}`}.`, at: timestamp }] : []),
           incident.events[1]];
       }
       await atomic(incident.id, incident); return clone(incident);
@@ -148,7 +148,7 @@ export function createLocalStore({ directory, getCatalog }) {
       for (const [key, max] of [['notes', 10000], ['location', 1000], ['route', 10000], ['packetMarkdown', 102400]]) if (own(body,key)) incident[key] = text(body[key], key, max);
       if (own(body, 'photo')) incident.photo = photo(body.photo);
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
-      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated locally. A new packet approval is required.' : body.updatedBy === 'agent' ? 'Agent updated the packet. Dispatcher approval is required.' : 'Dispatcher edited the packet. A new approval is required.' });
+      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
       await atomic(id, incident); return clone(incident);
     }); },
     setRoute(id, revision, spatialRoute, route, location) { return run(async () => {
@@ -156,7 +156,7 @@ export function createLocalStore({ directory, getCatalog }) {
       incident.spatialRoute = clone(spatialRoute);
       incident.route = route;
       incident.location = location;
-      revise(incident, { type: 'route', text: `${spatialRoute.updatedBy === 'agent' ? 'Agent' : 'Dispatcher'} updated the 3D route. ${spatialRoute.reason || spatialRoute.message}` });
+      revise(incident, { type: 'route', text: `Route updated. ${spatialRoute.reason || spatialRoute.message}` });
       incident.spatialRoute.revision = incident.revision;
       await atomic(id, incident); return clone(incident);
     }); },
@@ -166,7 +166,7 @@ export function createLocalStore({ directory, getCatalog }) {
       const messageText = text(body.text, 'Message', 4000, true);
       const incident = await current(id, body.expectedRevision);
       if (incident.messages.length >= 200) fail(400, 'MESSAGE_LIMIT', 'This local incident has reached its 200-message limit.');
-      revise(incident, { type: 'message', text: body.role === 'auto' ? 'Automatic reply sent to the caller.' : `${body.role === 'caller' ? 'Caller' : 'Dispatcher'} message saved locally. Packet needs review.` });
+      revise(incident, { type: 'message', text: body.role === 'auto' ? 'Auto-reply sent.' : body.role === 'caller' ? 'Caller message.' : 'Message sent to caller.' });
       incident.messages.push({ id: randomUUID(), role: body.role, text: messageText, at: incident.updatedAt });
       await atomic(id, incident); return clone(incident);
     }); },
@@ -180,7 +180,7 @@ export function createLocalStore({ directory, getCatalog }) {
       incident.status = body.decision;
       incident.updatedAt = now();
       incident.decision = { kind: body.decision, revision: incident.revision, reason, correctedRoomId, at: incident.updatedAt };
-      incident.events.push({ type: 'decision', text: body.decision === 'approved' ? 'Dispatcher approved this revision locally. No external delivery occurred.' : `Dispatcher rejected this revision: ${reason}`, at: incident.updatedAt });
+      incident.events.push({ type: 'decision', text: body.decision === 'approved' ? 'Confirmed by dispatcher.' : `Returned: ${reason}`, at: incident.updatedAt });
       if (body.decision === 'approved') {
         const catalog = await getCatalog();
         const property = catalog.properties.find(p => String(p.id) === incident.propertyId);

@@ -58,3 +58,21 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .bubble-row.responder .bubble.auto { background: #2f5a75; }
 }
+
+/* Computer-aided dispatch chrome: dark bar, clock, incident numbers, elapsed timers. */
+.live-app .topbar { background: #11181e; border-bottom: 3px solid var(--red); height: 56px; }
+.live-app .topbar .brand, .live-app .topbar nav a { color: #f1f4f6; }
+.live-app .topbar nav a[aria-current=page] { color: #fff; box-shadow: inset 0 -3px var(--red); }
+.brand-cad { font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #ff9aa5; border: 1px solid #5b2b31; border-radius: 3px; padding: 1px 5px; margin-left: 2px; }
+.cad-status { margin-left: auto; display: flex; align-items: center; gap: var(--space-4); color: #cfd6db; font-variant-numeric: tabular-nums; }
+.cad-status time { font-family: var(--mono); font-size: var(--text-sm); color: #fff; }
+.cad-online { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.cad-online::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3ccf7a; margin-right: 6px; box-shadow: 0 0 6px #3ccf7a; }
+.queue-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-4); }
+.queue-head h1 { font-size: var(--text-xl); text-transform: uppercase; letter-spacing: .06em; }
+.queue-count { font-size: var(--text-xs); color: var(--muted); font-variant-numeric: tabular-nums; }
+.inbox-top strong { font-family: var(--mono); letter-spacing: .02em; }
+.inbox-top time { font-family: var(--mono); color: var(--red-ink); font-weight: 600; }
+.inbox-caller { font-size: var(--text-xs); color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inc-no { font-family: var(--mono); font-size: var(--text-xs); letter-spacing: .04em; opacity: .85; margin-bottom: 2px; }
+.thread-head h2 { font-family: var(--mono); }

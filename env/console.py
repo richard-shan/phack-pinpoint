@@ -160,7 +160,8 @@ def scan_graph(building_id: str, target: str | None = None) -> dict:
         seq = d.get("floor") or 0
         where = g.label(n) or g.room(n)
         nodes.append({"id": n, "index": i, "floor": seq, "position": _sdk(d["xyz"]),
-                      "label": " · ".join(x for x in (f"Scan {i}", floor_label(seq), where) if x)})
+                      "label": " · ".join(x for x in (where, floor_label(seq)) if x) if where
+                               else f"{floor_label(seq)} · position {i}"})
 
     edges = []
     for (a, b), e in g.edges.items():
