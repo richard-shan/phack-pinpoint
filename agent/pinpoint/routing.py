@@ -5,13 +5,33 @@ import math
 from functools import lru_cache
 from .config import (FIXTURES, WALK_SPEED, VEHICLE_SPEED, DOOR_DELAY, LOCKED_DOOR_DELAY,
                      STAIR_SECONDS_PER_FLIGHT, ELEVATOR_WAIT, ELEVATOR_SECONDS_PER_FLOOR)
+from .errors import MatterportUnavailable
 
 IMPASSABLE = float("inf")
+
+# Semantic building_id -> on-disk fixture folder.
+_FIXTURE_ALIASES = {
+    "bayou-medical-plaza": "building_bayou",
+}
+
+
+def _resolve_fixture_dir(building_id):
+    # Try <id>/, then alias, then building_<id>/, else raise.
+    candidates = [
+        FIXTURES / building_id,
+        FIXTURES / _FIXTURE_ALIASES.get(building_id, building_id),
+        FIXTURES / f"building_{building_id}",
+    ]
+    for c in candidates:
+        if (c / "graph.json").exists():
+            return c
+    raise MatterportUnavailable(f"no graph for building {building_id}")
 
 
 @lru_cache(maxsize=8)
 def load_graph(building_id):
-    data = json.loads((FIXTURES / "building_bayou" / "graph.json").read_text())
+    fdir = _resolve_fixture_dir(building_id)
+    data = json.loads((fdir / "graph.json").read_text())
     nodes = {n["id"]: n for n in data["nodes"]}
     adj = {nid: [] for nid in nodes}
     for e in data["edges"]:
