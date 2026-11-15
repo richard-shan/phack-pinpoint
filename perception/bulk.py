@@ -69,7 +69,11 @@ def _pacer(start, ceiling, every_s=900):
     threading.Thread(target=run, daemon=True).start()
 
 
-def download(buildings, connections=None, until=None, faces=(0, 1, 2, 3, 4, 5)):
+OVERRIDES = os.path.join(REPO, "bulk_overrides.json")
+
+
+def download(buildings, connections=None, until=None, faces=(0, 1, 2, 3, 4, 5), resolution="2k",
+             per_room=None):
     """until: stop starting new scans at this UTC time ("HH:MM"). faces: which cube
     faces to fetch; (1, 2, 3, 4) saves a third of the image requests."""
     connections = connections or int(os.environ.get("PINPOINT_BULK_CONNECTIONS", "2"))
@@ -89,7 +93,7 @@ def download(buildings, connections=None, until=None, faces=(0, 1, 2, 3, 4, 5)):
             return
         for attempt in range(4):
             try:
-                n = mp.fetch_all(m, faces=faces)      # one API call: positions, rooms, panoramas, meshes
+                n = mp.fetch_all(m, resolution=resolution, faces=faces, per_room=per_room)
                 _mark(m, "done")
                 _mark(m, "assets")
                 count[0] += 1
@@ -292,7 +296,12 @@ if __name__ == "__main__":
     args = sys.argv[3:]
     opt = lambda k: args[args.index(k) + 1] if k in args else None
     if sys.argv[1] == "download":
-        download(B, until=opt("--until"), faces=(1, 2, 3, 4) if "--side-faces" in args else tuple(range(6)))
+        # bulk_overrides.json can change settings for a list without restarting the
+        # script that will launch it: {"all_apartments.json": {"resolution": "high", "per_room": 2}}
+        ov = json.load(open(OVERRIDES)).get(os.path.basename(sys.argv[2]), {}) if os.path.exists(OVERRIDES) else {}
+        download(B, until=opt("--until"),
+                 faces=tuple(ov.get("faces") or ((1, 2, 3, 4) if "--side-faces" in args else range(6))),
+                 resolution=ov.get("resolution", "2k"), per_room=ov.get("per_room"))
     elif sys.argv[1] == "assets":
         assets(B, until=opt("--until"))
     elif sys.argv[1] == "index":

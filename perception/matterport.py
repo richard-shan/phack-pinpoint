@@ -171,13 +171,23 @@ class Matterport:
         "<model_id>/<sweep_id>". Downloads all of a model's sweeps it is asked for
         lazily, one sweep at a time."""
         model_id, sweep_id = pano_ref.split("/", 1)
+        # A bulk download may have stored a scan at lower resolution, with only some
+        # faces, or with only some positions (faces.json says which). Use that copy,
+        # and never fetch positions it left out on purpose.
+        for res in dict.fromkeys((resolution, "2k", "high")):
+            d = os.path.join(self.cache_dir, model_id, "pano", res, sweep_id)
+            paths = [os.path.join(d, "%d.jpg" % i) for i in range(6)]
+            if all(os.path.exists(p) for p in paths):
+                return paths
+            partial = os.path.join(self.cache_dir, model_id, "pano", res, "faces.json")
+            if os.path.exists(partial):
+                spec = json.load(open(partial))
+                if spec.get("positions") is not None and sweep_id not in spec["positions"]:
+                    return None
+                if all(os.path.exists(paths[i]) for i in spec["faces"]):
+                    return [p if os.path.exists(p) else None for p in paths]
         d = os.path.join(self.cache_dir, model_id, "pano", resolution, sweep_id)
         paths = [os.path.join(d, "%d.jpg" % i) for i in range(6)]
-        if all(os.path.exists(p) for p in paths):
-            return paths
-        partial = os.path.join(self.cache_dir, model_id, "pano", resolution, "faces.json")
-        if os.path.exists(partial) and all(os.path.exists(paths[i]) for i in json.load(open(partial))["faces"]):
-            return [p if os.path.exists(p) else None for p in paths]
         locs = self.query(SKYBOX_QUERY % (model_id, resolution))["model"]["locations"]
         loc = next((l for l in locs if l["id"] == sweep_id), None)
         if not loc or not loc["panos"] or not loc["panos"][0].get("skybox"):
@@ -228,7 +238,10 @@ class Matterport:
       assets { meshes { format resolution status filename url }
                floorplans { format status filename url } } } }"""
 
-    def fetch_all(self, model_id, resolution="2k", faces=(0, 1, 2, 3, 4, 5)):
+    def fetch_all(self, model_id, resolution="2k", faces=(0, 1, 2, 3, 4, 5), per_room=None):
+        """per_room: keep at most this many positions per Matterport room (the one
+        nearest the room's middle, then the ones furthest from those). Positions with
+        no room id are all kept."""
         """Everything for one scan with ONE API call (the API is the rate-limited part):
         positions, rooms, panoramas and meshes/floor plans. Writes the same cache files
         as sweeps(), rooms(), prefetch_panos() and assets(). Returns the position count."""
@@ -244,8 +257,27 @@ class Matterport:
                   open(os.path.join(base, "sweeps.json"), "w"), indent=1)
         json.dump({l["id"]: (l.get("room") or {}).get("id") for l in locs},
                   open(os.path.join(base, "rooms.json"), "w"), indent=1)
+        keep = None
+        if per_room:
+            import math
+            rooms = {}
+            for l in locs:
+                rid = (l.get("room") or {}).get("id")
+                rooms.setdefault(rid or ("solo", l["id"]), []).append(l)
+            keep = set()
+            for members in rooms.values():
+                pts = {l["id"]: (l["position"]["x"], l["position"]["y"]) for l in members}
+                cx = sum(p[0] for p in pts.values()) / len(pts)
+                cy = sum(p[1] for p in pts.values()) / len(pts)
+                chosen = [min(pts, key=lambda i: math.dist(pts[i], (cx, cy)))]
+                while len(chosen) < min(per_room, len(pts)):
+                    chosen.append(max((i for i in pts if i not in chosen),
+                                      key=lambda i: min(math.dist(pts[i], pts[c]) for c in chosen)))
+                keep.update(chosen)
         jobs, n = [], 0
         for l in locs:
+            if keep is not None and l["id"] not in keep:
+                continue
             urls = ((l.get("panos") or [{}])[0].get("skybox") or {}).get("children") or []
             if len(urls) != 6:
                 continue
@@ -280,8 +312,10 @@ class Matterport:
 
         with ThreadPoolExecutor(int(os.environ.get("PINPOINT_CDN_THREADS", "16"))) as pool:
             list(pool.map(get, jobs))
-        if tuple(faces) != (0, 1, 2, 3, 4, 5):
-            json.dump({"faces": list(faces)}, open(os.path.join(base, "pano", resolution, "faces.json"), "w"))
+        if tuple(faces) != (0, 1, 2, 3, 4, 5) or keep is not None:
+            os.makedirs(os.path.join(base, "pano", resolution), exist_ok=True)
+            json.dump({"faces": list(faces), "positions": sorted(keep) if keep is not None else None},
+                      open(os.path.join(base, "pano", resolution, "faces.json"), "w"))
         for f in saved:
             f["bytes"] = os.path.getsize(os.path.join(adir, f["file"]))
         json.dump(saved, open(os.path.join(adir, "assets.json"), "w"), indent=1)
