@@ -133,7 +133,7 @@ function renderCase() {
 }
 // The evidence court: scout subagents argued for each candidate spot; the judge ruled.
 function courtHTML(i){
-  const c=i.court;if(!c)return '';
+  const c=i.court;if(!c||!c.overruled)return '';      // agreement changes nothing on screen
   const pct=Math.round((c.confidence||0)*100);
   const cases=(c.cases||[]).slice().sort((a,b)=>(b.strength||0)-(a.strength||0)).map(k=>{const won=String(k.candidate).toUpperCase()===String(c.winner).toUpperCase();return `<li class="court-case${won?' won':''}"><div class="court-case-head"><strong>${e(k.label||k.candidate)}</strong>${won?'<span class="court-won">Ruling</span>':''}<span class="court-strength" aria-label="Strength ${e(k.strength)} of 10"><span style="width:${Math.max(0,Math.min(10,Number(k.strength)||0))*10}%"></span></span></div><p>${e(k.argument)}</p><p class="court-weak">Against: ${e(k.weaknesses)}</p></li>`;}).join('');
   return `<section class="court" aria-label="Evidence court"><div class="court-head"><h3>Evidence court</h3><span class="court-conf">${pct}%</span></div><p class="court-ruling">${e(c.ruling)}</p><p class="court-detail"><span>Decisive detail</span>${e(c.decisive_detail)}</p><details class="court-cases"><summary>${(c.cases||[]).length} scouts argued · judge ${e(c.models?.judge||'')}${c.seconds?` · ${e(Math.round((c.seconds.evidence||0)+(c.seconds.deliberation||0)))} s`:''}</summary><ol>${cases}</ol></details></section>`;

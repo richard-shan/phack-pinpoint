@@ -368,8 +368,10 @@ watcher convenes an evidence court (`live/court.py`, a `create_deep_agent` graph
    weighs the cases, and rules with a typed verdict (`response_format`): winner, confidence,
    the one decisive detail, and a two-sentence ruling.
 
-The ruling reroutes the incident if it names a different spot and appears on the incident
-page as **Evidence court**. A first route from the photo match is up before the court sits.
+If the court agrees with the photo match, nothing visible changes: the ruling is kept on the
+record and noted in the activity log. Only when it **overrules** the match does it reroute the
+incident and show an **Evidence court** panel explaining why. A first route from the photo
+match is up before the court sits.
 Measured on a Rabinowitz Hall photo: 5 s of evidence, 20 s of deliberation; it read the "1"
 on a floor directory sign to separate two identical-looking hallways on floors 1 and 2.
 

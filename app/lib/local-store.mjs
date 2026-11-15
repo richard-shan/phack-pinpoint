@@ -152,7 +152,7 @@ export function createLocalStore({ directory, getCatalog }) {
         incident.court = clone(body.court);
       }
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
-      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : own(body, 'court') ? 'Evidence court ruled.' : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
+      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : own(body, 'court') ? (body.court.overruled ? 'Evidence court overruled the photo match.' : 'Evidence court agreed with the photo match.') : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
       await atomic(id, incident); return clone(incident);
     }); },
     setRoute(id, revision, spatialRoute, route, location) { return run(async () => {

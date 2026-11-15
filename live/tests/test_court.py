@@ -55,7 +55,21 @@ class Court(unittest.TestCase):
         self.assertIn("evidence court", route["reason"])
         (update,) = console.updates
         self.assertEqual(update["court"]["winner"], "B")
+        self.assertTrue(update["court"]["overruled"])
         self.assertEqual(update["location"], "Hallway, Floor 1 · Evidence court 75%")
+
+    def test_agreement_changes_nothing_visible(self):
+        console = FakeConsole()
+        console.inc["spatialRoute"]["destination"] = "n-b"          # the court picks the same spot
+        done = SimpleNamespace(stdout=json.dumps(VERDICT), stderr="")
+        with patch.object(court_bridge, "_python", return_value="/bin/true"), \
+             patch.object(court_bridge, "build_case", return_value=({"candidates": [{"node_id": "n-b"}, {}]}, "/tmp/pinpoint-court-test")), \
+             patch("pathlib.Path.write_text"), patch("subprocess.run", return_value=done):
+            court_bridge.hold_court(console, "inc-x", "b", log=lambda s: None)
+        self.assertEqual(console.routes, [])                         # no reroute
+        (update,) = console.updates
+        self.assertEqual(set(update), {"updatedBy", "court"})         # location untouched
+        self.assertFalse(update["court"]["overruled"])
 
     def test_abstention_changes_nothing(self):
         console = FakeConsole()

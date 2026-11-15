@@ -124,15 +124,24 @@ def hold_court(console, cid, building_id, log=print):
         return None
     from env import console as console_export
     inc = console.get(cid)
-    if (inc.get("spatialRoute") or {}).get("destination") != verdict["node_id"] and console.has_scan(str(building_id)):
+    current = (inc.get("spatialRoute") or {}).get("destination") or case["candidates"][0]["node_id"]
+    overruled = verdict["node_id"] != current
+    record = {k: verdict[k] for k in ("winner", "label", "confidence", "decisive_detail", "ruling", "cases",
+                                      "models", "seconds", "scouts")}
+    record["overruled"] = overruled
+    if not overruled:
+        # The court agrees with the photo match: nothing changes for the dispatcher. The
+        # ruling is kept on the record (and in the activity log) only.
+        console.update(cid, updatedBy="agent", court=record)
+        log(f"  evidence court agreed: {verdict['label']} ({round(verdict['confidence'] * 100)}%)")
+        return verdict
+    if console.has_scan(str(building_id)):
         body = console_export.route_update(str(building_id), verdict["node_id"], "foot")
         if body.get("reachable") is not False:
             body["reason"] = f"Rerouted by the evidence court: {verdict['decisive_detail']}"[:500]
             console.route(cid, body)
-    record = {k: verdict[k] for k in ("winner", "label", "confidence", "decisive_detail", "ruling", "cases",
-                                      "models", "seconds", "scouts")}
     console.update(cid, updatedBy="agent", court=record,
                    location=f"{verdict['label']} · Evidence court {round(verdict['confidence'] * 100)}%")
-    log(f"  evidence court ruled: {verdict['label']} ({round(verdict['confidence'] * 100)}%), "
-        f"{verdict['seconds']}")
+    log(f"  evidence court overruled the photo match: {verdict['label']} "
+        f"({round(verdict['confidence'] * 100)}%), {verdict['seconds']}")
     return verdict
