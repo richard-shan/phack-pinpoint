@@ -26,7 +26,7 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `serve.py` | Starts the console with the keys from `api.txt` (in memory only). |
 | `index.py` | Builds lane B's photo index for the scan a lane A graph covers. |
 | `demo_photo.py` | Renders a stand-in caller photo from a scanned position (`--hard` for a dark, blurred, zoomed one). |
-| `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; `demo/route_*.jpg` are two examples. |
+| `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; [`devpost-images/route-willow.jpg`](../devpost-images/route-willow.jpg) and [`route-broxton.jpg`](../devpost-images/route-broxton.jpg) are examples. |
 | `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door; `--held-out` is the fairer test. |
 | `model3d.py` | Prepares each scan's 3D model for the console's 3D route page (`app/live-3d.html`). |
 | `examples.py` | Fills the console with ten ready-made incidents to click through, six of them in buildings with more than one level. |
