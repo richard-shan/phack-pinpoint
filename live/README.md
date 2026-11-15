@@ -27,7 +27,8 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `index.py` | Builds lane B's photo index for the scan a lane A graph covers. |
 | `demo_photo.py` | Renders a stand-in caller photo from a scanned position (`--hard` for a dark, blurred, zoomed one). |
 | `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; `demo/route_*.jpg` are two examples. |
-| `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door. |
+| `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door; `--held-out` is the fairer test. |
+| `model3d.py` | Prepares each scan's 3D model for the console's 3D route page (`app/live-3d.html`). |
 
 Nothing in `agent/` or `perception/` was changed to make this work. `app/` has
 three small changes so the 3D route view opens for any building that has a scan graph
@@ -98,8 +99,9 @@ Not connected yet:
    viewer key is tied to that name).
 2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
    caller said and attach `demo/6550930_gbqgw9.jpg` (the lobby seen from near the restrooms) or
-   `demo/6550930_3ymmrb.jpg` (at the Suite 1200 door). For a photo the matcher is
-   unsure about, so that the agent asks questions, use `demo/6550930_3ymmrb_hard.jpg` (dim, soft and zoomed in).
+   `demo/6550930_3ymmrb.jpg` (at the Suite 1200 door). The other files in `demo/` are
+   photos at 7900 Fannin St, 12814 Willow Centre Dr (`10352309`) and 3160 Geneva St
+   (`5956257`); the first six characters after the building id are the position.
 3. The watcher terminal prints that it is running the agent. In the console, the
    incident fills in: **Destination** and **Entry & route**, the route drawn on the
    floor of the 3D scan from the door the agent chose, **Route on the floor plan** (one
@@ -107,9 +109,14 @@ Not connected yet:
    caller's photo beside the matched view with the matched points joined.
 4. If the match is ambiguous the agent's question appears in **Caller conversation**.
    Press **Open caller view** and answer it there; the agent updates its belief and
-   continues. Without an answer it gives up waiting after 90 seconds and says so.
+   continues. Without an answer it gives up waiting after 90 seconds and says so. The
+   demo photos are all matched with high confidence, so to see the questions run an
+   incident with an uncertain match instead:
+   `.venv/bin/python -m live.run --building 10352309 --simulate-match e62ehd --console`
 5. Switch to **Aerial approach** to see the staging spot and the door on the Vexcel
-   image. Open **Agent packet** for the full packet with its sources.
+   image. Press **Open 3D model with route** for the whole building as a model you can
+   turn, with the route drawn through the walls. Open **Agent packet** for the full
+   packet with its sources.
 6. Press **Approve packet locally** or **Reject**. The watcher terminal shows the agent
    finishing with that decision.
 
@@ -158,9 +165,11 @@ the team can take real photos is Rabinowitz Hall at Princeton.
 Other measurements:
 - Time per incident, photo to draft packet: 32 to 45 s on this CPU, nearly all of it
   photo matching. Lane B reports about 2.5 s per photo on a laptop with a GPU.
-- With a dim, soft, zoomed-in photo (`demo/6550930_3ymmrb_hard.jpg`) an earlier version
-  of that photo was matched at 53%; the agent asked three questions (furniture, kind of
-  room, elevator doors in view) and ended on the right position at 81%.
+- A much darker and blurrier photo of the Suite 1200 door (close to a blank frame) was
+  matched at 53%; the agent asked three questions (furniture, kind of room, elevator
+  doors in view) and ended on the right position at 81%. The current
+  `demo/6550930_3ymmrb_hard.jpg` is dim and soft but shows the suite sign, and is
+  matched outright.
 - A sweep of 31 incidents with the position given, across all seven buildings, had no
   crash, no audit failure, and the same door as `best_entry` in every packet.
 - No packet in any run had a line without a source. That check is weaker than it sounds:
