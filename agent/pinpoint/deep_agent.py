@@ -10,6 +10,8 @@ from typing import Optional
 
 from . import stubs, trace, streaming, budget
 from . import tool_wrappers as tw
+from . import packet as packet_mod
+from . import util
 from .agent_spec import (
     COMMANDER_SYSTEM_PROMPT,
     COMMANDER_SYSTEM_PROMPT_NO_TODOS,
@@ -212,11 +214,17 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
     while pending:
         interrupt_count += 1
         req = _interrupt_requests(pending)
-        actions = [r.get("action") or r.get("tool") for r in req if isinstance(r, dict)]
+        actions = []
+        for r in req:
+            if isinstance(r, dict):
+                a = r.get("action") or r.get("tool") or r.get("action_name")
+                if a:
+                    actions.append(str(a))
+        tag = ",".join(actions) if actions else "unknown"
         trace.log(
             "commander",
-            f"interrupt:{','.join(str(a) for a in actions) or 'unknown'}",
-            args={"n_requests": len(req)},
+            f"interrupt:{tag}",
+            args={"n_requests": len(req), "actions": actions},
             phase="interrupt",
         )
         n = max(len(req), 1)
@@ -258,6 +266,15 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
         _LOG.warning("budget: record_usage failed (%s)", type(e).__name__)
         state_after = None
 
+    # Persist the final packet and intermediate artifacts so the eval + D console
+    # can read them from disk just like the fallback produces.
+    try:
+        _persist_artifacts(agent, config, intake, incident_dir)
+    except Exception as e:  # best-effort; never crash the run
+        _LOG.warning("artifact persist failed: %s", type(e).__name__)
+        trace.log("commander", "artifact_write_failed:all", args={"error": str(e)[:200]},
+                  phase="post")
+
     trace.log("commander", "real_agent:done",
               args={
                   "interrupts": interrupt_count,
@@ -283,6 +300,293 @@ def run_incident(intake: dict):  # pragma: no cover
     idir = INCIDENTS / (intake.get("incident_id") or f"inc-{int(time.time())}")
     return run_real_agent(intake, idir, auto_approve=False)
 
+
+
+
+# ------------------------------------------------------------------
+# Artifact persistence (real-llm end-of-run)
+# ------------------------------------------------------------------
+
+def _extract_report(messages, model_name):
+    """Scan messages for a tool result whose content looks like model_name's schema.
+
+    Returns the first matching dict (parsed from JSON) or None. Tolerates several
+    carriers: structured response_format on ai messages, tool-message content strings,
+    plain dicts in message.additional_kwargs. Shape match is heuristic: we require that
+    the required fields of each model are present as keys.
+    """
+    required_by_model = {
+        "RecordsReport":  {"building_id", "address"},
+        "LocationReport": {"node_id", "room_id", "belief"},
+        "SiteReport":     {"entrances"},
+        "RouteReport":    {"best_entry_id", "path_nodes"},
+        "VerifierReport": {"status", "claims_total"},
+    }
+    needed = required_by_model.get(model_name, set())
+
+    def _candidates(m):
+        # try multiple carriers
+        content = getattr(m, "content", None) or (m.get("content") if isinstance(m, dict) else None)
+        if isinstance(content, str) and content.strip().startswith("{"):
+            try:
+                import json as _j
+                yield _j.loads(content)
+            except Exception:
+                pass
+        if isinstance(content, dict):
+            yield content
+        if isinstance(content, list):
+            for part in content:
+                if isinstance(part, dict):
+                    yield part
+                    inner = part.get("input") or part.get("output") or part.get("content")
+                    if isinstance(inner, dict):
+                        yield inner
+                    if isinstance(inner, str) and inner.strip().startswith("{"):
+                        try:
+                            import json as _j
+                            yield _j.loads(inner)
+                        except Exception:
+                            pass
+        ak = getattr(m, "additional_kwargs", None) or (m.get("additional_kwargs") if isinstance(m, dict) else None)
+        if isinstance(ak, dict):
+            yield ak
+            if isinstance(ak.get("tool_input"), dict):
+                yield ak["tool_input"]
+
+    for m in messages or []:
+        for c in _candidates(m):
+            if isinstance(c, dict) and needed.issubset(set(c.keys())):
+                return c
+    return None
+
+
+def _extract_plan(messages):
+    """Pull write_todos content or a first substantive assistant plan from the stream."""
+    import json as _j
+    for m in messages or []:
+        content = getattr(m, "content", None) or (m.get("content") if isinstance(m, dict) else None)
+        tool_calls = getattr(m, "tool_calls", None) or (m.get("tool_calls") if isinstance(m, dict) else None)
+        if tool_calls:
+            for tc in tool_calls:
+                name = tc.get("name") if isinstance(tc, dict) else None
+                args = tc.get("args") if isinstance(tc, dict) else None
+                if name == "write_todos" and isinstance(args, dict):
+                    todos = args.get("todos") or []
+                    if todos:
+                        lines = ["# Plan", ""]
+                        for t in todos:
+                            label = t.get("content") or t.get("task") or str(t)
+                            status = t.get("status", "pending")
+                            mark = {"completed": "[x]", "in_progress": "[~]"}.get(status, "[ ]")
+                            lines.append(f"- {mark} {label}")
+                        return "\n".join(lines) + "\n"
+    # fallback: first assistant text that looks like a plan (numbered or bulleted)
+    for m in messages or []:
+        content = getattr(m, "content", None) or (m.get("content") if isinstance(m, dict) else None)
+        if isinstance(content, str) and len(content) > 60:
+            low = content.lower()
+            if "step" in low or "first" in low or "plan" in low or "\n1." in content:
+                return "# Plan (from Commander)\n\n" + content.strip() + "\n"
+    return "# Plan (not captured)\n\nThe Commander did not emit a distinct plan line; see trace.jsonl for the live tool-call sequence.\n"
+
+
+def _extract_packet_from_fs(state_values):
+    """Look for a packet.md the Commander wrote into the deepagents virtual filesystem.
+
+    State shape in deepagents: state.get("files", {}) may map path -> content. Older
+    versions use "virtual_files" or embed files in a dedicated field. We probe
+    heuristically.
+    """
+    if not isinstance(state_values, dict):
+        return None
+    for key in ("files", "virtual_files", "fs", "filesystem"):
+        files = state_values.get(key)
+        if isinstance(files, dict):
+            for path, content in files.items():
+                if isinstance(path, str) and path.endswith("packet.md") and isinstance(content, str) and content.strip():
+                    return content
+    return None
+
+
+def _render_packet_fallback(intake, brief, location, site, route, audit):
+    """Minimal markdown stitcher for when the Commander did not write packet.md itself.
+
+    Works directly from the LLM report dicts (pydantic model_dump shape). Does NOT
+    reuse PacketWriter because that class is coupled to the fallback orchestrator's
+    internal field names. Every claim carries a src tag so audit stays clean.
+    """
+    i = intake or {}
+    addr = i.get("address") or "(no address supplied)"
+    L = [f"# Responder Packet - {addr}", ""]
+    L += ["**Status:** DRAFT - assembled from captured subagent reports (packet.md was not written to the virtual filesystem by the Commander)", ""]
+
+    L += ["## Property (CoStar)"]
+    if brief:
+        L += [
+            f"- Building id: `{brief.get('building_id', 'unknown')}` [src:records.building_id]",
+            f"- Address: {brief.get('address', addr)} [src:records.address]",
+        ]
+        contact = brief.get("contact")
+        if contact:
+            name = contact.get("name", "(unnamed)")
+            method = contact.get("method", "?")
+            L += [f"- Point of contact: {name} via {method} [src:records.contact]"]
+        tenants = brief.get("tenants") or []
+        if tenants:
+            L += [f"- Tenants on record: {len(tenants)} [src:records.tenants]"]
+    else:
+        L += ["- Records subagent did not return a RecordsReport [src:records.missing]"]
+    L += [""]
+
+    L += ["## Location (Matterport)"]
+    if location:
+        L += [
+            f"- Node: `{location.get('node_id', 'unknown')}` [src:location.node_id]",
+            f"- Room: {location.get('room_label') or location.get('room_id', '(unknown)')} [src:location.room_id]",
+            f"- Belief: {float(location.get('belief', 0.0) or 0.0):.2f} [src:location.belief]",
+            f"- Caller questions asked: {int(location.get('questions_asked', 0) or 0)} [src:location.questions_asked]",
+        ]
+        ep = location.get("evidence_path")
+        if ep:
+            L += [f"- Matched pano evidence: `{ep}` [src:location.evidence_path]"]
+    else:
+        L += ["- Locator subagent did not return a LocationReport [src:location.missing]"]
+    L += [""]
+
+    L += ["## Staging (Vexcel)"]
+    if site:
+        entrances = site.get("entrances") or []
+        L += [f"- Entrances considered: {len(entrances)} [src:site.entrances]"]
+        for e in entrances[:3]:
+            label = e.get("label") or e.get("id") or "(unlabeled)"
+            L += [f"  - {label} [src:site.entrance]"]
+        tile = site.get("aerial_tile_path")
+        if tile:
+            L += [f"- Aerial reference: `{tile}` [src:site.aerial_tile_path]"]
+    else:
+        L += ["- Site subagent did not return a SiteReport [src:site.missing]"]
+    L += [""]
+
+    L += ["## Route"]
+    if route and route.get("best_entry_id"):
+        L += [
+            f"- Stage at: `{route.get('best_entry_id')}` [src:route.best_entry_id]",
+            f"- Path meters: {route.get('meters', '?')} [src:route.meters]",
+            f"- Estimated seconds: {route.get('seconds', '?')} [src:route.seconds]",
+        ]
+        hazards = route.get("hazards") or []
+        if hazards:
+            L += [f"- Hazards along the path: {len(hazards)} [src:route.hazards]"]
+    else:
+        L += ["- Router did not produce a route (best_entry_under_belief / route calls were not made) [src:route.missing]"]
+    L += [""]
+
+    L += ["## Audit"]
+    if audit:
+        total = audit.get("claims_total", 0)
+        sourced = audit.get("claims_sourced", 0)
+        unsup = audit.get("unsupported") or []
+        L += [
+            f"- Status: {audit.get('status', '?')} [src:verifier.status]",
+            f"- Claims checked: {total}, sourced: {sourced}, unsupported: {len(unsup)} [src:verifier.tally]",
+        ]
+        if unsup:
+            L += [f"- Unsupported claims: {len(unsup)} [src:verifier.unsupported]"]
+    else:
+        L += ["- Verifier did not run; packet is not audit-approved [src:verifier.missing]"]
+    L += [""]
+
+    return "\n".join(L)
+
+
+def _audit_from_trace(trace_path: Path):
+    """Build an audit tally from trace.jsonl verify_section events if VerifierReport missing."""
+    import json as _j
+    if not trace_path.exists():
+        return None
+    claims_total = claims_sourced = 0
+    unsupported = []
+    for line in trace_path.read_text().splitlines():
+        try:
+            r = _j.loads(line)
+        except Exception:
+            continue
+        tool = r.get("tool", "")
+        if "verify_section" in tool:
+            rs = r.get("result_summary")
+            if isinstance(rs, str) and rs.startswith("dict"):
+                continue
+            if isinstance(rs, dict):
+                claims_total += int(rs.get("claims_total", 0) or 0)
+                claims_sourced += int(rs.get("claims_sourced", 0) or 0)
+                unsupported.extend(rs.get("unsupported", []) or [])
+    if claims_total == 0:
+        return None
+    return {
+        "status": "OK" if not unsupported else "DEGRADED",
+        "claims_total": claims_total,
+        "claims_sourced": claims_sourced,
+        "unsupported": unsupported,
+    }
+
+
+def _persist_artifacts(agent, config, intake, incident_dir):
+    """Write the 9 incident artifacts to incident_dir, best-effort."""
+    incident_dir = Path(incident_dir)
+
+    # Collect messages from final state.
+    state_values = {}
+    messages = []
+    try:
+        state = agent.get_state(config)
+        state_values = getattr(state, "values", {}) or {}
+        messages = state_values.get("messages", []) or []
+    except Exception as e:
+        _LOG.info("could not read agent state for persist: %s", type(e).__name__)
+
+    # Extract each subagent's report from the message history.
+    brief    = _extract_report(messages, "RecordsReport")
+    location = _extract_report(messages, "LocationReport")
+    site     = _extract_report(messages, "SiteReport")
+    route    = _extract_report(messages, "RouteReport")
+    audit    = _extract_report(messages, "VerifierReport")
+
+    def _safe_write(name, writer):
+        try:
+            writer()
+        except Exception as e:
+            _LOG.info("artifact %s not written: %s", name, type(e).__name__)
+            trace.log("commander", f"artifact_write_failed:{name}",
+                      args={"error": str(e)[:200]}, phase="post")
+
+    _safe_write("intake.json",     lambda: util.write_json(incident_dir / "intake.json", intake or {}))
+    _safe_write("plan.md",         lambda: (incident_dir / "plan.md").write_text(_extract_plan(messages)))
+    _safe_write("brief.json",      lambda: util.write_json(incident_dir / "brief.json", brief or {"status": "not_captured"}))
+    if location:
+        _safe_write("location.json",   lambda: util.write_json(incident_dir / "location.json", location))
+        _safe_write("candidates.json", lambda: util.write_json(incident_dir / "candidates.json", location.get("candidates", [])))
+    else:
+        _safe_write("location.json",   lambda: util.write_json(incident_dir / "location.json", {"status": "not_captured"}))
+        _safe_write("candidates.json", lambda: util.write_json(incident_dir / "candidates.json", []))
+    _safe_write("site.json",       lambda: util.write_json(incident_dir / "site.json", site or {"status": "not_captured"}))
+    if route:
+        _safe_write("route.json",  lambda: util.write_json(incident_dir / "route.json", route))
+    else:
+        _safe_write("route.json",  lambda: util.write_json(incident_dir / "route.json",
+            {"status": "not_computed", "reason": "router subagent not invoked"}))
+    if audit:
+        _safe_write("audit.json",  lambda: util.write_json(incident_dir / "audit.json", audit))
+    else:
+        derived = _audit_from_trace(incident_dir / "trace.jsonl")
+        _safe_write("audit.json",  lambda: util.write_json(incident_dir / "audit.json",
+            derived or {"status": "not_captured", "claims_total": 0, "claims_sourced": 0, "unsupported": []}))
+
+    # packet.md: prefer what the Commander wrote to the virtual fs; else render from reports.
+    packet_text = _extract_packet_from_fs(state_values)
+    if not packet_text:
+        packet_text = _render_packet_fallback(intake, brief, location, site, route, audit)
+    _safe_write("packet.md", lambda: (incident_dir / "packet.md").write_text(packet_text))
 
 def _drain(stream_iter, incident_dir: Path):
     # Forward stream chunks; return interrupt payload if any.
