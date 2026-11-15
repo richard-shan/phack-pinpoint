@@ -31,7 +31,10 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `model3d.py` | Prepares each scan's 3D model for the console's 3D route page (`app/live-3d.html`). |
 | `examples.py` | Fills the console with ten ready-made incidents to click through, six of them in buildings with more than one level. |
 
-Nothing in `agent/` or `perception/` was changed to make this work. `app/` has
+Nothing in `perception/` was changed to make this work. `agent/` has one small change,
+in `agent/pinpoint/deep_agent.py`: the LLM run takes an `approve_fn` like the
+orchestrator's, saves the model's draft before each approval gate, and reads the
+framework's approval requests correctly (it logged every gate as `unknown`). `app/` has
 three small changes so the 3D route view opens for any building that has a scan graph
 in `app/data/<PropertyId>-scan.json`, not only the two it was built around.
 
@@ -101,15 +104,50 @@ Not real, and labelled in the packet where it applies:
   building contact is never notified.
 
 Not connected yet:
-- **The agent's LLM path has not made a run.** `live.run --llm` starts it
-  (`agent/pinpoint/deep_agent.py`: a deepagents Commander with five subagents) on the
-  real tools, and a test confirms the agent constructs with them. An actual run needs an
-  Anthropic API key (`ANTHROPIC_API_KEY`, or an `anthropic_api_key:` line in `api.txt`),
-  which the machine this was built on does not have. Everything measured above used the
-  agent's deterministic orchestrator. With its own stub tools the LLM path does not
-  construct at all on deepagents 0.7.38, because `agent/pinpoint/routing.py:route` has
-  no docstring and deepagents requires one on every tool.
 - a real phone channel. The caller types in the console's caller view.
+
+## With a model in charge (`--llm`)
+
+By default the agent's deterministic orchestrator runs the steps. `live.run --llm` runs
+lane C's deepagents path instead (`agent/pinpoint/deep_agent.py`): a Commander model and
+five subagents decide which tools to call, on the same real tools. It needs
+`ANTHROPIC_API_KEY` in the environment and the packages in `agent/requirements.txt`.
+Lane C defaults every role to Claude Haiku and stops at a cumulative spend of 5 USD
+(`agent/pinpoint/budget.py`, state in `agent/.pinpoint_cost.json`).
+
+```sh
+ANTHROPIC_API_KEY=... .venv/bin/python -m live.run --building 6550930 \
+    --photo demo/6550930_3ymmrb.jpg --text "collapsed outside the surgery office" --console --llm
+```
+
+What the model decides, and what it does not:
+
+- **It decides where the caller is**, by calling the photo match, looking around the scan
+  and asking the caller in its own words, and it decides when the packet is ready.
+- **It does not write the packet.** When it asks to send, `live/run.py` takes the
+  position it reported, uses it only if the photo match returned that position (otherwise
+  the best match is used and the packet says the model was overruled), has lane A route
+  to it, and writes the packet with `live/packet.py` from records, the scan and the
+  graph. The agent's Verifier checks every tagged line, as on the deterministic path.
+- **The dispatcher approves that packet**, in the console when one is attached. The
+  model's request to contact the building is always declined.
+- The packet says which door the model's own report named and whether the routing code
+  agrees. What the model itself wrote is kept in `agent/incidents/<id>/llm/`.
+- A wrong argument from the model (an address where a building id belongs, a made-up
+  position) comes back to it as an error it can read, not a crash.
+
+`live.run --watch --llm` puts the model in charge of incidents started in the console.
+
+What has been run, on 7900 Fannin St on 14 November with a real key (Claude Haiku, lane
+C's default): one incident from a rendered caller photo through the console took 139 s,
+71 s of it the photo match on a busy CPU, and cost about 0.19 USD. The model chose the
+true position and its report named the same door as the routing code; 31 of 31 packet
+lines traced to a source. A second incident with the position given took 93 s and
+0.18 USD; there the model called `look` about thirty times and `match_photo` with
+made-up photo paths before settling on the right position. Two incidents show the path
+works end to end. They do not show how often the model is right, and every accuracy
+figure below is from the deterministic path. The model path is three to five times
+slower than the deterministic one (about 32 s per incident, almost all of it the match).
 
 ## Demo walkthrough
 
@@ -216,7 +254,7 @@ Other measurements:
 | `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
-| `--llm` | run the agent's LLM path instead of its deterministic orchestrator (needs an Anthropic API key; approval is asked in the terminal) |
+| `--llm` | put a model in charge of the tool calls (lane C's deepagents path; needs `ANTHROPIC_API_KEY`). The packet is still written from tool results: see "With a model in charge" |
 
 Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
 `brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,

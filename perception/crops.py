@@ -24,10 +24,16 @@ FACES = {
 
 
 def load_faces(paths):
-    """Six face images as BGR arrays, in file order 0..5."""
-    faces = [cv2.imread(p) for p in paths]
-    if len(faces) != 6 or any(f is None for f in faces):
-        raise ValueError("need six readable cube faces, got %r" % (paths,))
+    """Six face images as BGR arrays, in file order 0..5. The up and down faces (0, 5)
+    may be missing (bulk downloads of lower-priority scans skip them to save image
+    requests); they are filled with flat grey, so steeply tilted views lose ceiling or
+    floor detail. The four side faces are required."""
+    faces = [cv2.imread(p) if p else None for p in paths]
+    if len(faces) != 6 or any(faces[i] is None for i in (1, 2, 3, 4)):
+        raise ValueError("need the four side cube faces, got %r" % (paths,))
+    for i in (0, 5):
+        if faces[i] is None:
+            faces[i] = cv2.blur(faces[1], (1, 1)) * 0 + 128
     return faces
 
 

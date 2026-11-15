@@ -62,6 +62,108 @@ class _Base(unittest.TestCase):
                 for p in d.iterdir() if p.suffix in (".json", ".md")}
 
 
+class _ScriptedModel:
+    """Stands in for the model on the agent's LLM path, so that path is tested without an
+    API key: it calls the tools the agent's wrappers call, writes its reports where the
+    agent writes them (before each approval gate and at the end), and asks to send."""
+
+    def __init__(self, node=None, door="door_made_up", belief=0.5, asks_to_send=True, question=None):
+        self.node, self.door, self.belief = node, door, belief
+        self.asks_to_send, self.question = asks_to_send, question
+        self.decisions, self.mistake = [], None
+
+    def _report(self, idir, node):
+        (idir / "location.json").write_text(json.dumps(
+            {"node_id": node, "room_id": "r", "room_label": "somewhere", "belief": self.belief,
+             "candidates": [], "questions_asked": 0, "evidence_path": ""}))
+        (idir / "route.json").write_text(json.dumps({"best_entry_id": self.door, "path_nodes": []}))
+        (idir / "packet.md").write_text("# the model's own packet\n")
+
+    def __call__(self, intake, idir, auto_approve=True, approve_fn=None):
+        from pinpoint import trace
+        idir = Path(idir)
+        idir.mkdir(parents=True, exist_ok=True)
+        trace.start(idir)
+        cands = stubs.match_photo(intake["incident_id"], intake["caller_photo_path"], 10)   # wrong id in the slot
+        stubs.detect_site_features(intake["building_id"])
+        self.mistake = stubs.look("not-a-position")
+        if self.question:
+            stubs.ask_caller(intake["incident_id"], self.question)
+        node = self.node or cands[0]["node_id"]
+        if self.asks_to_send:
+            for action in ("send_packet", "notify_contact"):
+                self._report(idir, node)
+                self.decisions.append(approve_fn(intake["incident_id"], [action]))
+        self._report(idir, node)
+        return {"interrupts": len(self.decisions), "cost_usd": 0.0}
+
+
+class ModelInCharge(_Base):
+    """`live.run --llm` with a scripted model: what the model may decide, and what it may not."""
+
+    def setUp(self):
+        super().setUp()
+        from pinpoint import budget, deep_agent
+        self.deep_agent = deep_agent
+        self.saved = (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent,
+                      budget.check_budget, run.INCIDENTS)
+        deep_agent._ensure_api_key = lambda: "placeholder"
+        deep_agent.build_agent = lambda *a, **k: None
+        budget.check_budget = lambda: (5.0, False)
+        run.INCIDENTS = orchestrator.INCIDENTS
+
+    def tearDown(self):
+        from pinpoint import budget
+        (self.deep_agent.run_real_agent, self.deep_agent._ensure_api_key, self.deep_agent.build_agent,
+         budget.check_budget, run.INCIDENTS) = self.saved
+        super().tearDown()
+
+    def run_with(self, model, **kw):
+        self.deep_agent.run_real_agent = model
+        res = run.run_llm_incident(BUILDING, None, "collapsed by the surgery office", position=TARGET, **kw)
+        return res, self.files(res)
+
+    def test_packet_is_written_from_the_tools_not_by_the_model(self):
+        best = A.best_entry(BUILDING, TARGET, "foot")
+        model = _ScriptedModel(door=best["entrance_id"])
+        res, f = self.run_with(model)
+        self.assertEqual(model.decisions, ["approve", "reject"])       # the packet; contacting the building
+        self.assertIn("error", model.mistake)                          # a bad argument comes back as a result
+        self.assertEqual((res["decision"], res["position"], res["door"]), ("approve", TARGET, best["entrance_id"]))
+        self.assertEqual(f["audit"]["status"], "OK")
+        self.assertEqual(f["audit"]["unsupported"], [])
+        self.assertIn("## Enter here", f["packet"])
+        self.assertIn("Position chosen by the agent's model", f["packet"])
+        self.assertIn("The model's report names the same door.", f["packet"])
+        self.assertNotIn("the model's own packet", f["packet"])
+        kept = Path(res["dir"]) / "llm"
+        self.assertIn("the model's own packet", (kept / "packet.md").read_text())
+        self.assertEqual(json.loads((kept / "location.json").read_text())["node_id"], TARGET)
+        self.assertEqual(f["route"]["foot"]["entrance_id"], best["entrance_id"])
+
+    def test_a_position_the_match_did_not_return_is_not_used(self):
+        res, f = self.run_with(_ScriptedModel(node=SOUTH))
+        self.assertEqual((res["position"], res["model_position"]), (TARGET, SOUTH))
+        self.assertIn("which the photo match did not return", f["packet"])
+        self.assertIn("names a different door (door_made_up)", f["packet"])
+        self.assertEqual(f["audit"]["unsupported"], [])
+
+    def test_a_model_that_never_asks_to_send_still_gets_a_packet(self):
+        model = _ScriptedModel(asks_to_send=False)
+        res, f = self.run_with(model)
+        self.assertEqual(model.decisions, [])
+        self.assertTrue(res["model_never_asked_to_send"])
+        self.assertEqual(res["decision"], "approve")
+        self.assertIn("## Enter here", f["packet"])
+
+    def test_the_models_own_question_goes_out_as_written(self):
+        res, f = self.run_with(_ScriptedModel(question="Which shop is nearest to you?"))
+        asked = tools.SESSION["asked"][0]
+        self.assertEqual(asked["question"], "Which shop is nearest to you?")
+        self.assertTrue(asked["source"].startswith("not asked"))        # no caller is connected in this run
+        self.assertIn("the model did not put a question to the caller", f["packet"])
+
+
 class WithoutConsole(_Base):
     def test_incident_runs_on_real_records_and_routing(self):
         res = run.run_incident(BUILDING, None, "caller text", position=TARGET, auto_approve=True)
@@ -295,6 +397,39 @@ class WithConsole(_Base):
         self.assertIn("## Enter here", inc["packetMarkdown"])
         self.assertEqual(res["console_decision"]["decision"], "left for review")
         self.assertNotIn("APPROVED", (Path(res["dir"]) / "packet.md").read_text().split("\n")[2])
+
+    def test_model_run_waits_for_the_dispatcher_in_the_console(self):
+        from pinpoint import budget, deep_agent
+        saved = (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
+                 run.INCIDENTS)
+        model = _ScriptedModel()
+        deep_agent.run_real_agent, deep_agent._ensure_api_key = model, (lambda: "placeholder")
+        deep_agent.build_agent, budget.check_budget = (lambda *a, **k: None), (lambda: (5.0, False))
+        run.INCIDENTS = orchestrator.INCIDENTS
+        try:
+            box = {}
+            t = threading.Thread(target=lambda: box.update(run.run_llm_incident(
+                BUILDING, None, position=TARGET, console=self.console, ask="simulate", approve_timeout_s=30)))
+            t.start()
+            end, cid = time.time() + 20, None
+            while time.time() < end and cid is None:
+                rows = self.console.incidents()
+                if rows and "trace to a source" in (self.console.get(rows[0]["id"]).get("notes") or ""):
+                    cid = rows[0]["id"]
+                time.sleep(0.2)
+            self.assertIsNotNone(cid, "the packet never reached the console")
+            self.assertTrue(t.is_alive(), "the run did not wait at the approval gate")
+            inc = self.console.get(cid)
+            self.assertIn("with a model in charge", inc["notes"])
+            self.assertIn("Position chosen by the agent's model", inc["packetMarkdown"])
+            self.assertEqual(inc["spatialRoute"]["destination"], TARGET)
+            self.console.decide(cid, "approved")
+            t.join(timeout=20)
+            self.assertEqual((box["decision"], model.decisions), ("approve", ["approve", "reject"]))
+            self.assertEqual(self.console.get(cid)["status"], "approved")
+        finally:
+            (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
+             run.INCIDENTS) = saved
 
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()

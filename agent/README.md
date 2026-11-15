@@ -64,14 +64,13 @@ Signatures are the contract; swapping a stub for a real impl does not change cal
 
 ## Two execution paths (why both exist)
 
-- **`orchestrator.py`** — the runnable spine. Deterministic, stdlib, real thread parallelism, real
-  interrupt. This is what runs today and in the demo fallback.
-- **`deep_agent.py`** — the real `create_deep_agent(...)` wiring (Commander + 5 subagents, verified
-  fields in `DEEPAGENTS_NOTES.md`). Needs `pip install -r requirements.txt` + an API key, and the
-  async-subagents API confirmed for true parallelism. Same tool layer → switching is one line.
+| Path | File | Role |
+|---|---|---|
+| Default demo | `orchestrator.py` → `pipeline.py` | Deterministic steps, ThreadPool parallel, no LLM |
+| Real LLM | `deep_agent.py` ← `agent_spec.py` | `create_deep_agent` + 5 subagents + HITL |
 
-See `DEEPAGENTS_NOTES.md` for the verified deepagents API and the one unconfirmed gap (parallel
-subagents).
+Both call the same tools (`stubs` / `routing` / `localization`).  
+**deepagents owns delegation; pipeline owns the work.** See `pinpoint/__init__.py` for the full layout.
 
 ## Demo building (fabricated, internally consistent)
 
