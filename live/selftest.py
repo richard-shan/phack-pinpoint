@@ -30,7 +30,8 @@ def _console(state_dir):
     script = ("import { createLocalServer } from './app/local-server.mjs';"
               "const s = createLocalServer({stateDirectory: process.argv[1]});"
               "s.listen(0, '127.0.0.1', () => console.log(s.address().port));")
-    proc = subprocess.Popen(["node", "--input-type=module", "-e", script, str(state_dir)], cwd=ROOT,
+    node = shutil.which("node") or str(Path.home() / ".local" / "node" / "bin" / "node")   # gpu.sh's install
+    proc = subprocess.Popen([node, "--input-type=module", "-e", script, str(state_dir)], cwd=ROOT,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return proc, f"http://localhost:{proc.stdout.readline().strip()}"
 
