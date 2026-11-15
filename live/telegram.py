@@ -13,7 +13,7 @@ import uuid
 
 from .console_api import Console, ConsoleError
 from env.graph import list_buildings
-from .delivery import packet_text
+from .delivery import approved_packet, packet_text
 
 STATE = Path(__file__).resolve().parent.parent / 'cache' / 'telegram.json'
 MAX_DOWNLOAD = 20 * 1024 * 1024
@@ -23,6 +23,10 @@ WELCOME = (
     "I’ll look for a match in the buildings I know and prepare the location and route for dispatcher review. "
     "You can add details after your photo."
 )
+
+
+CONFIRMED = ("Responders have your exact location and the best way in, and they are on the way.\n\n"
+             "Stay where you are if it’s safe. Keep this thread open; text us if anything changes.")
 
 
 def received_with_location(address):
@@ -320,6 +324,15 @@ class Bridge:
                             self.send(chat, prefix + message['text'], f'dispatcher:{message["id"]}')
                             sent.append(message['id'])
                             self.save()
+                    if not record.get('confirmed_sent') and approved_packet(self.console, inc):
+                        # Closure for the caller. The packet itself stays with dispatch.
+                        self.send(chat, CONFIRMED, f'confirmed:{record["incident"]}')
+                        record['confirmed_sent'] = True
+                        self.save()
+                        try:
+                            self.console.message(record['incident'], 'auto', CONFIRMED)
+                        except ConsoleError:
+                            pass
                 except (ConsoleError, OSError, TelegramError):
                     print('Could not relay an incident message; will retry.', flush=True)
 

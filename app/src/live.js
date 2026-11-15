@@ -9,6 +9,20 @@ const imageList = p => (p.models || []).filter(m => m.joinStatus === 'verified')
 const isSpatial = p => !!p && (p.id === PRINCETON_ID || p.id === LA_DEMO_ID || p.spatial === true);
 const statusText = s => ({review:'Pending review',approved:'Confirmed',rejected:'Returned'}[s] || s);
 const incNo = i => 'INC-'+i.id.slice(4,10).toUpperCase();
+// Triage from the caller's own words, the way a call-taker codes a call. P1 = life threat.
+const P1=/not breathing|can'?t breathe|unconscious|unresponsive|not responding|collapsed|passed out|cardiac|heart attack|seizure|bleeding|blood|fire|smoke|gun|shot|stab|choking|overdose|dying|help me|attack/i;
+const P2=/fell|fall|fallen|injur|hurt|pain|broken|trapped|stuck|dizzy|faint|sick|allergic|burn/i;
+function priority(i){const said=[i.callerText,...(i.messages||[]).filter(m=>m.role==='caller').map(m=>m.text)].join(' ');return P1.test(said)?1:P2.test(said)?2:3;}
+const pBadge=i=>{const p=priority(i);return `<span class="prio prio-${p}" title="Priority ${p}">P${p}</span>`;};
+let seenCalls=null;
+function alertNewCalls(list){
+  const ids=new Set(list.map(i=>i.id));
+  if(seenCalls){const fresh=list.filter(i=>!seenCalls.has(i.id));if(fresh.length){
+    try{const ctx=alertNewCalls.ctx||(alertNewCalls.ctx=new AudioContext());[0,0.22].forEach(t=>{const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=880;g.gain.setValueAtTime(0.0001,ctx.currentTime+t);g.gain.exponentialRampToValueAtTime(0.25,ctx.currentTime+t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+t+0.18);o.connect(g).connect(ctx.destination);o.start(ctx.currentTime+t);o.stop(ctx.currentTime+t+0.2);});}catch{/* audio needs one click on the page first */}
+    alertNewCalls.flash=new Set(fresh.map(i=>i.id));document.title=`(${fresh.length}) New call · Pinpoint CAD`;setTimeout(()=>{if(!location.hash.slice(1))document.title='Call queue · Pinpoint CAD';},8000);
+  }}
+  seenCalls=ids;
+}
 const place = label => String(label||'').replace(/^Scan \d+ · /,'');
 const time = value => value ? new Date(value).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
 const pretty = value => value == null ? 'Not provided' : Number(value).toLocaleString();
@@ -74,10 +88,12 @@ function home() {
 function renderInbox(force=false){
   const rows=document.querySelector('#inbox-rows');if(!rows)return;
   const sig=recent.map(i=>i.id+i.updatedAt).join();if(!force&&sig===inboxSig)return;inboxSig=sig;
-  const threads=[...recent].sort((a,b)=>b.createdAt.localeCompare(a.createdAt));
+  alertNewCalls(recent);
+  // Open calls first, most urgent first, newest first; confirmed/returned calls drop below.
+  const threads=[...recent].sort((a,b)=>((a.status!=='review')-(b.status!=='review'))||(priority(a)-priority(b))||b.createdAt.localeCompare(a.createdAt));
   if(!threads.some(i=>i.id===inboxOpen))inboxOpen=threads[0]?.id||null;
   const count=document.querySelector('#queue-count');if(count)count.textContent=`${threads.filter(i=>i.status==='review').length} pending · ${threads.length} total`;
-  rows.innerHTML=threads.length?threads.map(i=>{const p=propertyOf(i);return `<button class="inbox-row" role="listitem" data-action="thread" data-id="${e(i.id)}" aria-pressed="${i.id===inboxOpen}">${i.photo?`<img src="${e(photoURL(i))}" alt="" loading="lazy">`:'<span class="inbox-noimg" aria-hidden="true"></span>'}<span class="inbox-text"><span class="inbox-top"><strong>${e(incNo(i))}</strong><time data-elapsed="${e(i.createdAt)}">${e(elapsed(i.createdAt))}</time></span><span class="inbox-where">${e(i.channel?.location?.address||p?.address||i.propertyId)}</span><span class="inbox-caller">${i.channel?`<span class="platform">${e(PLATFORM[i.channel.platform]||i.channel.platform)}</span>`:''}${e(callerName(i))}</span><span class="inbox-last">${e(lastLine(i))}</span></span><span class="inbox-status status-${e(i.status)}">${e(statusText(i.status))}</span></button>`;}).join(''):'<div class="empty-state inbox-empty"><h3>No active calls</h3></div>';
+  rows.innerHTML=threads.length?threads.map(i=>{const p=propertyOf(i);return `<button class="inbox-row${alertNewCalls.flash?.has(i.id)?' new-call':''}" role="listitem" data-action="thread" data-id="${e(i.id)}" aria-pressed="${i.id===inboxOpen}">${i.photo?`<img src="${e(photoURL(i))}" alt="" loading="lazy">`:'<span class="inbox-noimg" aria-hidden="true"></span>'}<span class="inbox-text"><span class="inbox-top"><strong>${pBadge(i)}${e(incNo(i))}</strong><time data-elapsed="${e(i.createdAt)}">${e(elapsed(i.createdAt))}</time></span><span class="inbox-where">${e(i.channel?.location?.address||p?.address||i.propertyId)}</span><span class="inbox-caller">${i.channel?`<span class="platform">${e(PLATFORM[i.channel.platform]||i.channel.platform)}</span>`:''}${e(callerName(i))}</span><span class="inbox-last">${e(lastLine(i))}</span></span><span class="inbox-status status-${e(i.status)}">${e(statusText(i.status))}</span></button>`;}).join(''):'<div class="empty-state inbox-empty"><h3>No active calls</h3></div>';
   renderThread();
 }
 function renderThread(){
@@ -85,7 +101,7 @@ function renderThread(){
   const i=recent.find(x=>x.id===inboxOpen);
   if(!i){pane.innerHTML='';return;}
   const p=propertyOf(i),scroll=pane.querySelector('.thread-log')?.scrollTop;
-  pane.innerHTML=`<header class="thread-head"><div><h2>${e(incNo(i))}</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))} · `:''}${e(time(i.createdAt))}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))}</span></header>${locationCard(i,p)||`<section class="location-card"><div><h3>Location</h3><p class="location-address">${e(p?.address||i.propertyId)}</p></div></section>`}<div class="thread-log">${threadHTML(i)}</div><div class="actions thread-actions"><a class="button primary" href="#incident/${e(i.id)}">Open incident</a></div>`;
+  pane.innerHTML=`<header class="thread-head"><div><h2>${pBadge(i)}${e(incNo(i))}</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))} · `:''}${e(time(i.createdAt))}</p></div><span class="status status-${e(i.status)}">${e(statusText(i.status))}</span></header>${locationCard(i,p)||`<section class="location-card"><div><h3>Location</h3><p class="location-address">${e(p?.address||i.propertyId)}</p></div></section>`}<div class="thread-log">${threadHTML(i)}</div><div class="actions thread-actions"><a class="button primary" href="#incident/${e(i.id)}">Open incident</a></div>`;
   const log=pane.querySelector('.thread-log');log.scrollTop=scroll??log.scrollHeight;
 }
 function renderList() {
@@ -116,7 +132,7 @@ function renderSpatialCase() {
   const existing=spatialView?.incidentId===i.id && spatialView.el?.isConnected;
   if(!existing){
     spatialView?.dispose();
-    main.innerHTML=`<div class="destination"><div><p class="inc-no">${e(incNo(i))} · ${e(time(i.createdAt))}</p><h1>${e(i.channel?.location?.address||p.address)}</h1><p>${e(p.name)}</p></div><span class="status" id="princeton-status"></span></div><div class="case-toolbar"><a href="#">← Call queue</a><div class="actions"><span id="model3d-slot"></span><button class="small" data-action="scroll-review">Review</button><button class="small" data-action="scroll-chat">Caller</button></div></div><div id="location-slot"></div><div class="workspace"><div><div id="spatial-slot"></div><section id="review" class="review-section"></section><details class="trace"><summary>Building record</summary><p>${e(p.name)} · ${e(p.address)}</p>${sourceLink(p)}</details></div><aside class="chat-column" id="conversation" tabindex="-1"><h2>Caller</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))}`:'No messaging channel'}</p><div id="chat-log" class="chat-log"></div>${composer('dispatcher',i.channel)}<details class="trace"><summary>Activity log</summary><ol id="princeton-events"></ol></details></aside></div>`;
+    main.innerHTML=`<div class="destination"><div><p class="inc-no">${pBadge(i)}${e(incNo(i))} · ${e(time(i.createdAt))}</p><h1>${e(i.channel?.location?.address||p.address)}</h1><p>${e(p.name)}</p></div><span class="status" id="princeton-status"></span></div><div class="case-toolbar"><a href="#">← Call queue</a><div class="actions"><span id="model3d-slot"></span><button class="small" data-action="scroll-review">Review</button><button class="small" data-action="scroll-chat">Caller</button></div></div><div id="location-slot"></div><div class="workspace"><div><div id="spatial-slot"></div><section id="review" class="review-section"></section><details class="trace"><summary>Building record</summary><p>${e(p.name)} · ${e(p.address)}</p>${sourceLink(p)}</details></div><aside class="chat-column" id="conversation" tabindex="-1"><h2>Caller</h2><p class="muted">${i.channel?`${e(PLATFORM[i.channel.platform]||'')} · ${e(callerName(i))}`:'No messaging channel'}</p><div id="chat-log" class="chat-log"></div>${composer('dispatcher',i.channel)}<details class="trace"><summary>Activity log</summary><ol id="princeton-events"></ol></details></aside></div>`;
     spatialView=new SpatialView({property:p,onUpdate:async data=>{
       const id=incident.id,revision=incident.revision;
       const next=await api(`/incidents/${id}/route`,'POST',{expectedRevision:revision,...data});
@@ -280,7 +296,7 @@ document.addEventListener('click',ev=>{
     if(name==='source'&&b.dataset.property===PRINCETON_ID){const record=await api('/spatial/model');openDialog('Building record',`<p>Rabinowitz Hall · Princeton University</p><pre class="record">${e(JSON.stringify(record.provenance,null,2))}</pre>`);return;}
     if(name==='source'){const p=catalog.properties.find(v=>v.id===b.dataset.property);const url=safeLink(p.source?.recordUrl||`/data/records/${p.id}.json`);const response=await fetch(url);if(!response.ok)throw new Error('Source record could not be loaded.');const record=await response.json();openDialog('Building record',`<p class="muted">CoStar ${e(p.id)}</p><pre class="record">${e(JSON.stringify(record,null,2))}</pre>`);}
     if(name==='refresh'){if(!catalog){location.reload();return;}const draft=document.querySelector('#message')?.value||'';await navigate();const input=document.querySelector('#message');if(input)input.value=draft;}
-    if(name==='approve'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:incident.revision,decision:'approved'});renderCase();toast('Confirmed. Packet sent.');}
+    if(name==='approve'){incident=await writeAPI('/incidents/'+incident.id+'/decision','POST',{expectedRevision:incident.revision,decision:'approved'});renderCase();toast('Confirmed. Caller notified.');}
     if(name==='copy-packet')await copyLink('packet');
     if(name==='copy-caller')await copyLink('caller');
     if(name==='html')await portable();

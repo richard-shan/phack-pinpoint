@@ -166,6 +166,12 @@ export function createLocalStore({ directory, getCatalog }) {
       const messageText = text(body.text, 'Message', 4000, true);
       const incident = await current(id, body.expectedRevision);
       if (incident.messages.length >= 200) fail(400, 'MESSAGE_LIMIT', 'This local incident has reached its 200-message limit.');
+      if (body.role === 'auto') {            // a record of an automatic text: keeps the current review state
+        incident.updatedAt = now();
+        incident.messages.push({ id: randomUUID(), role: 'auto', text: messageText, at: incident.updatedAt });
+        incident.events.push({ type: 'message', text: 'Auto-reply sent.', at: incident.updatedAt });
+        await atomic(id, incident); return clone(incident);
+      }
       revise(incident, { type: 'message', text: body.role === 'auto' ? 'Auto-reply sent.' : body.role === 'caller' ? 'Caller message.' : 'Message sent to caller.' });
       incident.messages.push({ id: randomUUID(), role: body.role, text: messageText, at: incident.updatedAt });
       await atomic(id, incident); return clone(incident);
