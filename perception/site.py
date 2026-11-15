@@ -161,7 +161,7 @@ def pick_footprint(prop, loc):
         return None, None
     pt = Point(loc["lon"], loc["lat"])
     best = None
-    for s in prop["properties"].get("structures", []):
+    for s in (prop.get("properties") or {}).get("structures") or []:
         if not s.get("footprint.wkt"):
             continue
         g = shapely_wkt.loads(s["footprint.wkt"])
