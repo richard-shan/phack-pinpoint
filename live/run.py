@@ -59,11 +59,11 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     simulate_match  stand in for the matcher with an uncertain match around this position
     truth           where the photo was really taken, for a simulated caller's answers"""
     building_id = str(building_id)
-    prop = A.get_property(building_id)
-    if not prop.get("building_id"):
-        raise SystemExit(f"no CoStar record for {building_id}")
     if building_id not in list_buildings():
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
+    prop = A.get_property(building_id)
+    if not prop.get("building_id"):                      # a scanned building that is not in the CoStar kit
+        prop = tools.no_costar_record(building_id)
     address = address or ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
     address = " ".join(w.capitalize() if w.isalpha() and w.islower() and len(w) > 2 else w for w in address.split(" "))
     truth, position = _node(building_id, truth), _node(building_id, position)
@@ -121,6 +121,41 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     if status and status != "OK":
         out["problem"] = f"{status}: " + (tools.SESSION.get("match_error") or "see packet.md")
         print(f"  NOT A FULL PACKET. {out['problem']}", file=sys.stderr, flush=True)
+    return out
+
+
+def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, console: Console | None = None,
+                     truth: str | None = None, position: str | None = None, auto_approve: bool = False) -> dict:
+    """The same incident on the agent's LLM path (agent/pinpoint/deep_agent.py): a deepagents
+    Commander with five subagents calling the real tools. Needs the packages in
+    agent/requirements.txt and an Anthropic API key (ANTHROPIC_API_KEY, or an
+    `anthropic_api_key:` line in api.txt). Approval is asked in the terminal.
+
+    Not exercised end to end by the team yet: the agent is known to construct with the real
+    tools (see live/tests), but no run with a real key has been made on real data."""
+    building_id = str(building_id)
+    prop = A.get_property(building_id)
+    if not prop.get("building_id") or building_id not in list_buildings():
+        raise SystemExit(f"no record or no graph for building {building_id}")
+    truth, position = _node(building_id, truth), _node(building_id, position)
+    tools.install()
+    tools.reset(building_id=building_id, truth_node=truth or position, given_position=position,
+                console=console, console_incident=None, ask="simulate" if (truth or position) else "none")
+    from pinpoint import deep_agent
+    address = ", ".join(x for x in (prop.get("address"), prop.get("city"), prop.get("state")) if x)
+    intake = {"address": address, "building_id": building_id, "caller_photo_path": photo or "(position given)",
+              "caller_text": text, "incident_id": time.strftime("inc-%Y%m%d-%H%M%S-llm")}
+    idir = INCIDENTS / intake["incident_id"]
+    try:
+        out = deep_agent.run_real_agent(intake, idir, auto_approve=auto_approve)
+    except deep_agent.DeepAgentsNotConfigured as exc:
+        raise SystemExit(f"the agent's LLM path cannot run here: {exc}")
+    packet = idir / "packet.md"
+    if console is not None and packet.exists():
+        cid = console.create(building_id, text or "Caller sent a photo.", photo)["id"]
+        console.update(cid, updatedBy="agent", packetMarkdown=packet.read_text()[:102400],
+                       notes="Written by the agent's LLM path (deepagents). Its lines were not checked by live/packet.py.")
+        out["console_incident"] = cid
     return out
 
 
@@ -197,6 +232,8 @@ def main(argv=None) -> None:
     ap.add_argument("--ask", choices=("console", "simulate", "none"), help="who answers the agent's questions")
     ap.add_argument("--ask-timeout", type=float, default=90.0, help="seconds to wait for the caller's reply")
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
+    ap.add_argument("--llm", action="store_true", help="run the agent's LLM path (deepagents; needs an Anthropic "
+                    "API key) instead of its deterministic orchestrator")
     a = ap.parse_args(argv)
 
     console = Console(a.console or "http://localhost:4175") if (a.console or a.watch) else None
@@ -205,6 +242,10 @@ def main(argv=None) -> None:
         return
     if not a.building or not (a.photo or a.position or a.simulate_match):
         ap.error("give --building and --photo (or --position), or --watch")
+    if a.llm:
+        print(json.dumps(run_llm_incident(a.building, a.photo, a.text, console=console, truth=a.truth,
+                                          position=a.position, auto_approve=a.auto_approve), indent=1))
+        return
     res = run_incident(a.building, a.photo, a.text, console=console, truth=a.truth, position=a.position,
                        simulate_match=a.simulate_match, ask=a.ask, auto_approve=a.auto_approve,
                        ask_timeout_s=a.ask_timeout)

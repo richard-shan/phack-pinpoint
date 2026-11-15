@@ -81,9 +81,14 @@ Not real, and labelled in the packet where it applies:
   building contact is never notified.
 
 Not connected yet:
-- the agent's LLM path (`agent/pinpoint/deep_agent.py`). `live/` drives the agent's
-  deterministic orchestrator; the LLM path uses the same tools but has not been run on
-  real data;
+- **The agent's LLM path has not made a run.** `live.run --llm` starts it
+  (`agent/pinpoint/deep_agent.py`: a deepagents Commander with five subagents) on the
+  real tools, and a test confirms the agent constructs with them. An actual run needs an
+  Anthropic API key (`ANTHROPIC_API_KEY`, or an `anthropic_api_key:` line in `api.txt`),
+  which the machine this was built on does not have. Everything measured above used the
+  agent's deterministic orchestrator. With its own stub tools the LLM path does not
+  construct at all on deepagents 0.7.38, because `agent/pinpoint/routing.py:route` has
+  no docstring and deepagents requires one on every tool.
 - a real phone channel. The caller types in the console's caller view.
 
 ## Demo walkthrough
@@ -110,29 +115,56 @@ Not connected yet:
 
 The first photo in a session takes longer because the matcher's two models load.
 
-## Measured
+## Measured, and how far to trust it
 
-`.venv/bin/python -m live.evaluate <building> --n <count>`, on a laptop CPU with no GPU.
+`.venv/bin/python -m live.evaluate <building> --n <count>` on a laptop CPU with no GPU.
 Each incident renders a photo at a random scanned position, runs the whole chain with a
 simulated caller, and compares the result with where the photo was taken.
 
-| Building | Photos located at the exact position | Right door | Packet lines without a source |
-|---|---|---|---|
-| 7900 Fannin St (lobby, 35 positions) | 14 of 14 | 14 of 14 | 0 |
-| 3160 Geneva St (one bare floor, 23 positions) | 8 of 8 | 8 of 8 | 0 |
-| 12814 Willow Centre Dr (two floors, 114 positions) | 8 of 8 | 8 of 8 | 0 |
+**The plain run flatters the matcher.** The photo is cut from the same panorama the
+index holds views of, so the right answer is a near-copy of the question:
 
-Time per incident, photo to draft packet: about 32 s, nearly all of it photo matching.
-Lane B reports about 2.5 s per photo on a laptop with a GPU.
+| Building | Located at the exact position | Right door |
+|---|---|---|
+| 7900 Fannin St (lobby, 35 positions) | 14 of 14 | 14 of 14 |
+| 3160 Geneva St (one bare floor, 23 positions) | 8 of 8 | 8 of 8 |
+| 12814 Willow Centre Dr (two floors, 114 positions) | 8 of 8 | 8 of 8 |
 
-These photos are rendered from the scan on a scanned position, so the match is easier
-than it would be for a real phone photo; treat 30 of 30 as an upper bound. With a
-dark, blurred, zoomed photo (`demo/6550930_3ymmrb_h200_hard.jpg`) the matcher was 53%
-sure, the agent asked three questions (furniture, kind of room, elevator doors in
-view), and it ended on the right position at 81%.
+**The held-out run is the one to quote** (`--held-out`). It deletes the photo's own
+position from the index first, so the matcher only knows the place from neighbouring
+positions one to three meters away, as it would for a caller standing between scanned
+spots. The exact position can no longer be the answer; what counts is the distance:
 
-A separate sweep of 31 incidents with the position given, across all seven buildings,
-had no crash, no audit failure, and the same door as `best_entry` in every packet.
+| Building | Within 3 m | Within 5 m | Right floor | Right door |
+|---|---|---|---|---|
+| 7900 Fannin St | 10 of 12 | 11 of 12 | 12 of 12 | 10 of 12 |
+| 12814 Willow Centre Dr | 8 of 12 | 9 of 12 | 11 of 12 | 10 of 12 |
+| Both | 18 of 24 | 20 of 24 | 23 of 24 | 20 of 24 |
+
+What the misses looked like:
+- At Fannin St one photo, taken at the end of one arm of the cross corridor, was placed
+  21 m away in the other arm, which looks the same, at 84% confidence. The agent did not
+  ask a question, because it was confident. This is the failure to worry about: wrong,
+  sure of itself, and through the wrong door.
+- At Willow Centre the three far misses (8 to 12 m) came with 40 to 42% confidence, so
+  the packet said "below the confidence threshold" and the questions had been asked. One
+  of them was on the wrong floor.
+
+Still not tested by either run: a different camera, different lighting, people and
+furniture that have moved since the scan. Both runs use photos rendered from the scan,
+so both are upper bounds on what a real phone photo would do. The only building where
+the team can take real photos is Rabinowitz Hall at Princeton.
+
+Other measurements:
+- Time per incident, photo to draft packet: 32 to 45 s on this CPU, nearly all of it
+  photo matching. Lane B reports about 2.5 s per photo on a laptop with a GPU.
+- With a dim, soft, zoomed-in photo (`demo/6550930_3ymmrb_hard.jpg`) an earlier version
+  of that photo was matched at 53%; the agent asked three questions (furniture, kind of
+  room, elevator doors in view) and ended on the right position at 81%.
+- A sweep of 31 incidents with the position given, across all seven buildings, had no
+  crash, no audit failure, and the same door as `best_entry` in every packet.
+- No packet in any run had a line without a source. That check is weaker than it sounds:
+  see "What the Verifier does and does not check".
 
 ## Options for `live.run`
 
@@ -146,6 +178,7 @@ had no crash, no audit failure, and the same door as `best_entry` in every packe
 | `--simulate-match NODE` | stand in for the matcher with an uncertain match around this position, to exercise the agent's questions without the matcher installed |
 | `--ask console\|simulate\|none` | who answers the agent's questions |
 | `--auto-approve` | do not wait for the dispatcher |
+| `--llm` | run the agent's LLM path instead of its deterministic orchestrator (needs an Anthropic API key; approval is asked in the terminal) |
 
 Each run writes `agent/incidents/<id>/` with the agent's files: `intake.json`, `plan.md`,
 `brief.json`, `candidates.json`, `location.json`, `site.json`, `route.json`,

@@ -339,7 +339,10 @@ class LivePacketWriter(PacketWriter):
 
         # ---- building brief
         L += ["## Building brief (CoStar)"]
-        if b:
+        if b and b.get("not_in_costar"):
+            L += [f"- {b.get('name')}: not in the CoStar kit, so there is no record of its use, tenants, "
+                  "occupancy risks or contact. [src:brief.note]"]
+        elif b:
             use = b.get("use_type") or "use not on record"
             if b.get("use_subtype") and str(b["use_subtype"]).lower() != "unknown":
                 use += f" ({str(b['use_subtype']).replace('_', ' ').lower()})"
@@ -416,7 +419,8 @@ class LivePacketWriter(PacketWriter):
         if self.brief is not None:
             if not self.brief.get("scan_date"):
                 out.append("The scan has no date on record.")
-            out.append("Tenant list is CoStar's record, not current occupancy.")
+            out.append("Who occupies the building: no CoStar record exists for it." if self.brief.get("not_in_costar")
+                       else "Tenant list is CoStar's record, not current occupancy.")
         return out
 
     # ------------------------------------------------------------ console copy
