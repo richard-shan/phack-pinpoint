@@ -438,8 +438,28 @@ class LivePacketWriter(PacketWriter):
             if tools.SESSION.get("console") and tools.SESSION.get("console_incident"):
                 where = tools.publish(out, "route.jpg")
             self._route_image = (target, where)
+            self._write_route3d(foot)
         except Exception as exc:                 # a picture is a convenience, never a reason to fail
             trace.log("router", "route_image_failed", result_summary=str(exc)[:200], phase="render")
+
+    def _write_route3d(self, foot):
+        """route3d.json: the same route for the console's 3D model page."""
+        import json
+        from . import model3d
+        lo, b = self.location or {}, str(self.intake["building_id"])
+        st = (self.route or {}).get("stretcher") or {}
+        lines = [f"On foot: about {_secs(foot.get('seconds'))}, {round(foot.get('meters') or 0)} m."]
+        if st.get("entrance_id") and st.get("seconds"):
+            lines.append(f"Stretcher: about {_secs(st['seconds'])}"
+                         + ("." if st["entrance_id"] == foot.get("entrance_id") else f", through {self._label(st['entrance_id'])}."))
+        elif st:
+            lines.append("A stretcher cannot reach this position.")
+        data = model3d.route_json(b, foot.get("path") or [], title="Route to the caller: " + str(self.intake.get("address") or b),
+                                  lines=lines, caller=f"{self._place(lo['node_id'])} (confidence {lo.get('confidence', 0) * 100:.0f}%)")
+        out = self.path.parent / "route3d.json"
+        out.write_text(json.dumps(data))
+        if tools.SESSION.get("console") and tools.SESSION.get("console_incident"):
+            tools.publish(out, "route3d.json")
 
     def flush(self):
         self._draw_route()

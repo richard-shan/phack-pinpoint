@@ -11,6 +11,8 @@ What it writes (all git-ignored, all rebuilt from what is in the repo):
 - `app/data/<PropertyId>-scan.json`: lane A's graph for each building, in the console's
   format, so its 3D view draws lane A's doors and routes.
 - `app/vendor/matterport/`: the Matterport viewer the 3D view runs in.
+- `app/assets/real/models/<PropertyId>/`: each scan's 3D mesh and floor images, for the
+  console's 3D route page (`live/model3d.py`).
 
 It does not write API keys anywhere. `python3 -m live.serve` hands them to the console
 at start, from `api.txt`.
@@ -154,6 +156,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--no-viewer", action="store_true")
+    ap.add_argument("--no-models", action="store_true", help="skip the 3D models (about 1.5 MB download per building)")
     ap.add_argument("--force-catalog", action="store_true", help="rebuild the catalog even if one exists")
     a = ap.parse_args()
     if not a.check:
@@ -162,6 +165,18 @@ def main() -> None:
             print("scan graph", line)
         if not a.no_viewer:
             print(fetch_viewer())
+        if not a.no_models:
+            from . import model3d
+            try:
+                model3d.fetch_three()
+                for b in buildings():
+                    try:
+                        r = model3d.build(b)
+                        print(f"3D model {b}: {r['floors']} level(s), {r['mesh_kb']} kB")
+                    except Exception as exc:
+                        print(f"3D model {b}: skipped ({type(exc).__name__}: {str(exc)[:120]})")
+            except Exception as exc:
+                print(f"3D models skipped: {type(exc).__name__}: {str(exc)[:160]}")
     state = check()
     print(json.dumps(state, indent=1))
     if not state["photo_matching_packages"]:

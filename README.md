@@ -52,7 +52,7 @@ uv pip install --python .venv/bin/python -r perception/requirements.txt huggingf
 Then run one incident from a photo:
 
 ```sh
-.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9_h095.jpg --console
+.venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9.jpg --console
 ```
 
 or leave the agent watching the console and start incidents there (pick a building,

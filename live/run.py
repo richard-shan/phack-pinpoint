@@ -1,7 +1,7 @@
 """Run one incident end to end on real data, or watch the console for new ones.
 
     # one incident from a photo, shown in the console, dispatcher approves there
-    .venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9_h095.jpg --console
+    .venv/bin/python -m live.run --building 6550930 --photo demo/6550930_gbqgw9.jpg --console
 
     # pick up incidents the dispatcher starts in the console (a caller photo is required)
     .venv/bin/python -m live.run --watch

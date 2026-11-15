@@ -92,9 +92,9 @@ Not connected yet:
    another. Open `http://localhost:4175/live.html` (use `localhost`: the Matterport
    viewer key is tied to that name).
 2. Search for `7900 Fannin`, select it, and press **Start incident**. Type what the
-   caller said and attach `demo/6550930_gbqgw9_h095.jpg` (taken near the restrooms) or
-   `demo/6550930_3ymmrb_h020.jpg` (at the Suite 1200 door). For a photo the matcher is
-   unsure about, so that the agent asks questions, use `demo/6550930_3ymmrb_h200_hard.jpg`.
+   caller said and attach `demo/6550930_gbqgw9.jpg` (the lobby seen from near the restrooms) or
+   `demo/6550930_3ymmrb.jpg` (at the Suite 1200 door). For a photo the matcher is
+   unsure about, so that the agent asks questions, use `demo/6550930_3ymmrb_hard.jpg` (dim, soft and zoomed in).
 3. The watcher terminal prints that it is running the agent. In the console, the
    incident fills in: **Destination** and **Entry & route**, the route drawn on the
    floor of the 3D scan from the door the agent chose, **Route on the floor plan** (one

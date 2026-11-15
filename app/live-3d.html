@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pinpoint · 3D route</title>
+    <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/src/tokens.css">
+    <link rel="stylesheet" href="/src/live-3d.css">
+  </head>
+  <body class="model3d">
+    <header class="m3-bar">
+      <a class="m3-brand" href="/live.html"><img src="/assets/mark.svg" alt="" width="24" height="24">Pinpoint</a>
+      <h1 id="m3-title">3D route</h1>
+      <div class="m3-controls" role="group" aria-label="View">
+        <span id="m3-floors"></span>
+        <button id="m3-top" type="button">Top view</button>
+        <button id="m3-reset" type="button">Reset view</button>
+        <a id="m3-back" class="m3-link" href="/live.html">Back to incident</a>
+      </div>
+    </header>
+    <main class="m3-stage">
+      <canvas id="m3-canvas" aria-label="3D model of the scanned building with the route to the caller"></canvas>
+      <div id="m3-labels" aria-hidden="true"></div>
+      <aside class="m3-panel">
+        <ul id="m3-legend"></ul>
+        <div id="m3-lines"></div>
+        <p class="m3-hint">Drag to turn · scroll to zoom · shift-drag to move. The model is the scan's own geometry; the route is drawn through walls so it stays visible.</p>
+      </aside>
+      <p id="m3-status" role="status">Loading the model…</p>
+    </main>
+    <script type="module" src="/src/live-3d.js"></script>
+  </body>
+</html>
