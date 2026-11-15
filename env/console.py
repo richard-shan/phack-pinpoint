@@ -159,6 +159,7 @@ def scan_graph(building_id: str, target: str | None = None) -> dict:
         d = g.nodes[n]
         seq = d.get("floor") or 0
         where = g.label(n) or g.room(n)
+        where = where[:1].upper() + where[1:] if where else where
         nodes.append({"id": n, "index": i, "floor": seq, "position": _sdk(d["xyz"]),
                       "label": " · ".join(x for x in (where, floor_label(seq)) if x) if where
                                else f"{floor_label(seq)} · position {i}"})
