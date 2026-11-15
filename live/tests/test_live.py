@@ -19,7 +19,7 @@ from live.console_api import Console
 
 from env import console as console_export
 from env import tools as A
-from pinpoint import orchestrator, stubs
+from pinpoint import learning, orchestrator, stubs
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 BUILDING = "6550930"                       # 7900 Fannin St: lobby scan, four doors, 17 health care tenants
@@ -430,6 +430,20 @@ class WithConsole(_Base):
         finally:
             (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
              run.INCIDENTS) = saved
+
+    def test_corrected_room_is_recorded_after_rejection(self):
+        old_buildings = learning.BUILDINGS
+        learning.BUILDINGS = Path(self.tmp.name) / "buildings"
+        try:
+            t, box, cid = self._run_in_thread()
+            self.console.decide(cid, "rejected", "wrong room", corrected_room_id="Suite 1200")
+            t.join(timeout=20)
+            self.assertFalse(t.is_alive())
+            self.assertEqual(box["decision"], "reject")
+            self.assertEqual(box["console_decision"]["corrected_room_id"], "Suite 1200")
+            self.assertEqual(learning.read_corrections(BUILDING)[0]["corrected"], "Suite 1200")
+        finally:
+            learning.BUILDINGS = old_buildings
 
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()
