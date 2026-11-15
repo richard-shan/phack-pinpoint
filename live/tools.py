@@ -397,9 +397,11 @@ def hazards_along(building_id, path):
 # ------------------------------------------------------------------ the caller (lane D)
 def _parse_reply(attr, text, values):
     """A typed reply -> one of the values the candidates hold for this attribute."""
-    t = (text or "").strip().lower()
+    t = (text or "").strip().lower().replace("\u2019", "'")
     if not t:
         return None
+    if re.search(r"\b(don'?t know|do not know|not sure|unsure|no idea|idk|can'?t tell|dunno)\b", t):
+        return None                                  # "I don't know" is not a "no"
     if all(isinstance(v, bool) for v in values):
         if re.search(r"\b(no|nope|not|don't|dont|can't|cant|none|neither)\b", t):
             return False
@@ -417,6 +419,37 @@ def _parse_reply(attr, text, values):
         if attr == "floor" and n is not None and re.search(rf"\b{n}\b", s):
             return v
     return None
+
+
+def _post_route(node_id, reason):
+    """Show the crew a route to `node_id` now, while the caller is still being asked: the
+    first one to the best photo match, then a reroute whenever an answer changes the best
+    remaining position. The agent's final route replaces it when locating is done."""
+    console, cid = SESSION.get("console"), SESSION.get("console_incident")
+    if not (console and cid and SESSION.get("console_scan") and node_id) or SESSION.get("route_preview") == node_id:
+        return
+    try:
+        from env import console as console_export
+        body = console_export.route_update(str(SESSION["building_id"]), node_id, "foot")
+        if body.get("reachable") is False:
+            return
+        body["reason"] = (reason + " " + body.get("reason", ""))[:500]
+        console.route(cid, body)
+        SESSION["route_preview"] = node_id
+        trace.log("console", "route_preview", result_summary=reason, phase="console")
+    except Exception as exc:                          # a preview must never stop the questions
+        trace.log("console", "route_preview_failed", result_summary=str(exc)[:200], phase="console")
+
+
+def _still_possible():
+    """Candidates consistent with every answer so far (an unknown answer rules nothing out)."""
+    cands = SESSION.get("candidates") or []
+    for q in SESSION.get("asked") or []:
+        if q.get("raw") is None:
+            continue
+        kept = [c for c in cands if c["attributes"].get(q["attribute"]) in (None, q["raw"])]
+        cands = kept or cands                         # never reroute to nowhere
+    return cands
 
 
 def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
@@ -439,6 +472,8 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     raw, reply, source = None, "(no answer)", "none"
     silent = SESSION.get("caller_silent") or mode == "none"
     if console and cid and not silent:
+        if not SESSION.get("route_preview") and SESSION.get("candidates"):
+            _post_route(SESSION["candidates"][0]["node_id"], "Initial route to the best photo match; confirming with the caller.")
         console.message(cid, "dispatcher", f"Pinpoint asks: {question}")
     if silent:
         source = "not asked: the caller did not answer the previous question" if SESSION.get("caller_silent") else "none"
@@ -460,6 +495,10 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
                 console.message(cid, "caller", f"{reply}  [simulated caller]")
     SESSION["asked"].append({"attribute": attr, "question": question, "reply": reply, "raw": raw,
                              "source": source, "options": values})
+    if raw is not None and SESSION.get("route_preview"):
+        best = (_still_possible() or [{}])[0].get("node_id")
+        if best and best != SESSION["route_preview"]:
+            _post_route(best, f"Rerouted: caller answered \"{str(reply)[:60]}\".")
     trace.log("commander", "ask_caller", args={"attribute": attr, "question": question},
               result_summary=f"{reply!r} ({source})", dt_ms=round((time.time() - t0) * 1000, 1))
     return {"reply": reply, "raw": raw, "images": images or [], "question": question, "source": source}
