@@ -1,87 +1,43 @@
-"""Real deepagents wiring for Pinpoint. Runs behind the `--real-llm` flag on
-run_incident.py; the fallback orchestrator remains the default.
-
-Fields verified against DEEPAGENTS_NOTES.md (overview, subagents, HITL docs).
-
-Install (Python 3.11+ required by deepagents):
-    pip install -r agent/requirements.txt
-    export ANTHROPIC_API_KEY=...   # or put it in api.txt as `anthropic_api_key: sk-...`
-"""
+# LLM path (--real-llm). Spec in agent_spec.py. Needs Python 3.11+ + ANTHROPIC_API_KEY.
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
 from pathlib import Path
-from typing import Any, Optional
+from typing import Optional
 
-from . import stubs, routing, localization, trace, streaming
-from .config import AGENT_DIR
+from . import stubs, trace, streaming, budget
+from .agent_spec import (
+    COMMANDER_SYSTEM_PROMPT,
+    COMMANDER_SYSTEM_PROMPT_NO_TODOS,
+    COMMANDER_MODEL,
+    INTERRUPT_ON,
+    build_subagents,
+)
+from .config import AGENT_DIR, INCIDENTS
 
-DEFAULT_COMMANDER_MODEL = os.environ.get(
-    "PINPOINT_COMMANDER_MODEL", "anthropic:claude-sonnet-5-5"
-)
-DEFAULT_WORKER_MODEL = os.environ.get(
-    "PINPOINT_WORKER_MODEL", "anthropic:claude-haiku-5-5"
-)
-DEFAULT_LOCATOR_MODEL = os.environ.get(
-    "PINPOINT_LOCATOR_MODEL", "anthropic:claude-sonnet-5-5"
-)
+__all__ = [
+    "DeepAgentsNotConfigured",
+    "COMMANDER_SYSTEM_PROMPT",
+    "COMMANDER_SYSTEM_PROMPT_NO_TODOS",
+    "build_subagents",
+    "build_agent",
+    "run_real_agent",
+    "run_incident",
+    "_load_api_key_from_file",
+    "_load_env_local_key",
+]
+
+_LOG = logging.getLogger("pinpoint.deep_agent")
 
 
 class DeepAgentsNotConfigured(RuntimeError):
-    """Raised when the real deepagents path cannot run (missing install or key)."""
-
-
-COMMANDER_SYSTEM_PROMPT = """You are the Commander for Pinpoint, a 911 dispatch assistant.
-You turn one caller photo plus a street address into a one-page responder packet and stop
-for dispatcher approval before anything leaves the system.
-
-Operating rules:
-
-1. Write your plan BEFORE delegating. Call `write_todos` with the five steps: records,
-   locator, site, router, verifier. Mark each one `in_progress` when you start and
-   `completed` when its subagent returns.
-
-2. Delegate `records`, `locator`, and `site` in parallel. Issue all three `task` tool
-   calls in the SAME turn so the runtime can dispatch them concurrently. Do not wait for
-   one to return before calling the next.
-
-3. Only after records, locator, and site have ALL returned, delegate `router`.
-
-4. After router returns, delegate `verifier`. The verifier audits that every claim in the
-   packet cites a source. You do not send a packet whose audit did not pass.
-
-5. Before you call `send_packet`, re-read the packet file and confirm the verifier's
-   audit status is "OK". If the audit is DEGRADED or UNABLE, you still submit the packet,
-   but the status field must reflect that honestly.
-
-6. You never do graph math, image matching, or source lookups yourself. You delegate and
-   read the JSON that subagents return. You never invent a fact a subagent did not
-   provide.
-
-7. `send_packet` and `notify_contact` will pause for dispatcher approval. That is by
-   design. Do not try to work around it.
-
-8. Keep your own context small. Write intermediate state to the incident folder via the
-   filesystem tools and reference it by path.
-"""
-
-
-_VERIFIER_PROMPT = """You are the Verifier. For each sentence in the draft packet, confirm
-it cites a source (a file path, record ID, or `src:<tag>`). If a sentence has no source,
-flag it as unsupported. Write audit.json with the form {claims: N, sourced: M,
-unsourced: K, status: "OK" | "DEGRADED" | "UNABLE"}. Status is OK iff K is zero and no
-required section was dropped. Do not add new facts. Do not rewrite the packet. Report
-what you see."""
+    pass
 
 
 def _load_api_key_from_file(path: Path) -> Optional[str]:
-    """Scan api.txt for an Anthropic key. Supports two shapes:
-      anthropic_api_key: sk-ant-...
-      ANTHROPIC_API_KEY=sk-ant-...
-    Returns the key if found, else None. Never prints the key.
-    """
     if not path.exists():
         return None
     text = path.read_text()
@@ -96,183 +52,135 @@ def _load_api_key_from_file(path: Path) -> Optional[str]:
     return m.group(1) if m else None
 
 
+def _load_env_local_key(path: Path) -> bool:
+    """Parse a dotenv-style file for ANTHROPIC_API_KEY and promote to os.environ.
+
+    Never returns, prints, or logs the key value. On success sets the env var and
+    returns True. On any failure returns False and logs a generic message that
+    does not name the file.
+    """
+    try:
+        if not path.exists():
+            return False
+        text = path.read_text()
+    except OSError:
+        _LOG.info("env file not readable")
+        return False
+    pat = re.compile(
+        r"""(?mx)
+        ^\s*(?:export\s+)?ANTHROPIC_API_KEY\s*=\s*
+        (?:
+            "(?P<dq>[^"\n]+)"    # double-quoted
+          | '(?P<sq>[^'\n]+)'    # single-quoted
+          | (?P<raw>\S+)         # bare
+        )
+        \s*$
+        """
+    )
+    for m in pat.finditer(text):
+        val = m.group("dq") or m.group("sq") or m.group("raw")
+        if val:
+            os.environ["ANTHROPIC_API_KEY"] = val
+            return True
+    return False
+
+
 def _ensure_api_key() -> str:
-    """Return a usable Anthropic key or raise DeepAgentsNotConfigured. Sets os.environ as
-    a side effect so langchain-anthropic picks it up. Never prints the key."""
+    # Priority: existing env var, then api.txt, then .env.local at repo root.
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        key = _load_api_key_from_file(AGENT_DIR.parent / "api.txt")
+        if key:
+            os.environ["ANTHROPIC_API_KEY"] = key
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        _load_env_local_key(AGENT_DIR.parent / ".env.local")
     key = os.environ.get("ANTHROPIC_API_KEY")
-    if key:
-        return key
-    api_txt = AGENT_DIR.parent / "api.txt"
-    key = _load_api_key_from_file(api_txt)
     if not key:
         raise DeepAgentsNotConfigured(
-            "ANTHROPIC_API_KEY not set and no `anthropic_api_key:` line found in "
-            "api.txt. Set the env var or add the key to api.txt before using --real-llm."
+            "ANTHROPIC_API_KEY not set (checked env, api.txt, .env.local)."
         )
-    os.environ["ANTHROPIC_API_KEY"] = key
     return key
 
 
-def build_subagents() -> list[dict[str, Any]]:
-    """Five dict-based subagents, fields per DEEPAGENTS_NOTES.md."""
-    return [
-        {
-            "name": "records",
-            "description": "Pull the CoStar property record for the caller's address.",
-            "system_prompt": (
-                "Call `get_property(address)` and return a brief JSON object with the "
-                "building_id, use_type, stories, year_built, sqft, tenants, and contact. "
-                "Flag any clinic, daycare, or lab tenant on the identified floor. Cite "
-                "the CoStar record ID as the evidence_path for every field you return."
-            ),
-            "tools": [stubs.get_property],
-            "model": DEFAULT_WORKER_MODEL,
-            "mode": "isolated",
-        },
-        {
-            "name": "locator",
-            "description": (
-                "Match the caller photo to a position inside the building; ask the "
-                "caller follow-up questions only when they would change the answer."
-            ),
-            "system_prompt": (
-                "Call `match_photo(building_id, image_path, k=10)` to get candidates. "
-                "Normalize via `update_belief` with no answer to establish the prior. "
-                "While the top candidate's belief is below 0.80 and you have questions "
-                "left, call `best_question(candidates)` to pick the highest-info-gain "
-                "attribute, phrase it naturally, call `ask_caller` with the phrasing, "
-                "then call `update_belief(candidates, attribute, answer)` with the "
-                "response. Stop early when the top candidate passes threshold. Return "
-                "location.json with the predicted node_id, room_id, belief, and the "
-                "evidence_path from the top candidate."
-            ),
-            "tools": [
-                stubs.match_photo,
-                stubs.look,
-                localization.best_question,
-                localization.update_belief,
-                stubs.ask_caller,
-            ],
-            "model": DEFAULT_LOCATOR_MODEL,
-            "mode": "isolated",
-        },
-        {
-            "name": "site",
-            "description": (
-                "Read the aerial tile for this building's address; return entrances, "
-                "staging candidates, and obstructions."
-            ),
-            "system_prompt": (
-                "Call `detect_site_features(building_id, address=..., lat=..., "
-                "lon=...)` and return site.json with entrances, staging areas, "
-                "obstructions, and an `aerial_tile_path` evidence_path when Vexcel data "
-                "is available. On Vexcel fallback, cite the fixture tile path instead."
-            ),
-            "tools": [stubs.detect_site_features],
-            "model": DEFAULT_WORKER_MODEL,
-            "mode": "isolated",
-        },
-        {
-            "name": "router",
-            "description": (
-                "Pick the best responder staging door given the belief; produce the "
-                "route and any hazards along it. Compare to the front-door baseline for "
-                "the meters-saved number."
-            ),
-            "system_prompt": (
-                "Call `best_entry_under_belief` with the candidate set to pick the "
-                "staging door. Call `route` for the main path and `backup_route` for an "
-                "alternative. Call `hazards_along(building_id, path)` to decorate "
-                "hazards. Return route.json with the chosen door_id, the meters saved "
-                "against the front-door baseline, and the hazard list. Every field "
-                "cites the graph node or edge it came from."
-            ),
-            "tools": [
-                routing.best_entry_under_belief,
-                routing.route,
-                stubs.hazards_along,
-                routing.backup_route,
-            ],
-            "model": DEFAULT_WORKER_MODEL,
-            "mode": "isolated",
-        },
-        {
-            "name": "verifier",
-            "description": "Audit the draft packet: every claim needs a source or it is flagged.",
-            "system_prompt": _VERIFIER_PROMPT,
-            "tools": [],
-            "model": DEFAULT_WORKER_MODEL,
-            "mode": "isolated",
-        },
-    ]
+def _probe_todo_middleware():
+    """Return TodoListMiddleware class or None if not importable."""
+    for mod_name, attr in (
+        ("deepagents.middleware", "TodoListMiddleware"),
+        ("deepagents", "TodoListMiddleware"),
+    ):
+        try:
+            return getattr(__import__(mod_name, fromlist=[attr]), attr)
+        except (ImportError, AttributeError):
+            continue
+    return None
 
 
-def build_agent(checkpointer=None):
-    """Construct the deep agent. Raises DeepAgentsNotConfigured with a one-line
-    remediation if deepagents or langgraph is not importable."""
-    try:
-        from deepagents import create_deep_agent
-    except ImportError as e:
-        raise DeepAgentsNotConfigured(
-            "deepagents not installed. Run `pip install -r agent/requirements.txt` "
-            f"(needs Python 3.11+). Import error: {e}"
-        )
+def build_agent(checkpointer=None, create_agent_fn=None):
+    """Build the real deepagents agent.
+
+    When TodoListMiddleware is not available, swap the Commander's system prompt to a
+    variant that does not instruct `write_todos`. The model would otherwise call a tool
+    that does not exist and crash on first real run. Graceful degradation is better here
+    than a hard raise: the fallback orchestrator remains default, and real-llm mode
+    still works without live todos.
+    """
+    if create_agent_fn is None:
+        try:
+            from deepagents import create_deep_agent as create_agent_fn
+        except ImportError as e:
+            raise DeepAgentsNotConfigured(f"deepagents not installed (needs Python 3.11+): {e}")
     try:
         from langgraph.checkpoint.memory import MemorySaver
     except ImportError as e:
-        raise DeepAgentsNotConfigured(
-            "langgraph not installed. Run `pip install -r agent/requirements.txt`. "
-            f"Import error: {e}"
+        raise DeepAgentsNotConfigured(f"langgraph not installed: {e}")
+
+    TodoListMiddleware = _probe_todo_middleware()
+
+    if TodoListMiddleware is not None:
+        middleware = [TodoListMiddleware()]
+        system_prompt = COMMANDER_SYSTEM_PROMPT
+    else:
+        _LOG.warning(
+            "TodoListMiddleware not found; falling back to COMMANDER_SYSTEM_PROMPT_NO_TODOS "
+            "so the model does not call a missing write_todos tool."
         )
-    TodoListMiddleware = None
-    try:
-        from deepagents.middleware import TodoListMiddleware as _T
-        TodoListMiddleware = _T
-    except ImportError:
-        try:
-            from deepagents import TodoListMiddleware as _T
-            TodoListMiddleware = _T
-        except ImportError:
-            pass
-    middleware = [TodoListMiddleware()] if TodoListMiddleware else []
+        middleware = []
+        system_prompt = COMMANDER_SYSTEM_PROMPT_NO_TODOS
+
     if checkpointer is None:
         checkpointer = MemorySaver()
-    return create_deep_agent(
-        model=DEFAULT_COMMANDER_MODEL,
-        system_prompt=COMMANDER_SYSTEM_PROMPT,
+
+    return create_agent_fn(
+        model=COMMANDER_MODEL,
+        system_prompt=system_prompt,
         tools=[stubs.send_packet, stubs.notify_contact],
         subagents=build_subagents(),
         middleware=middleware,
-        interrupt_on={
-            "send_packet": {"allowed_decisions": ["approve", "reject"]},
-            "notify_contact": {"allowed_decisions": ["approve", "reject"]},
-        },
+        interrupt_on=INTERRUPT_ON,
         checkpointer=checkpointer,
+        memory=["AGENTS.md"],
     )
 
 
 def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) -> dict:
-    """Live end-to-end on the real deepagents runtime.
-
-    Raises DeepAgentsNotConfigured if deepagents / langgraph are missing or no API key is
-    reachable. In mock mode (auto_approve=True) resumes every interrupt with approve. In
-    interactive mode prompts on stdin.
-
-    Writes packet.md into incident_dir; returns a summary dict:
-        {thread_id, elapsed_s, interrupts, dir}
-
-    Streaming: iterates ``agent.stream(..., stream_mode=["updates", "messages"])`` so
-    node deltas and LLM tokens flow to trace.jsonl + events.jsonl as they fire. D's
-    console tails events.jsonl.
-    """
+    # Stream a live deepagents run into trace + events.jsonl.
     incident_dir = Path(incident_dir)
     incident_dir.mkdir(parents=True, exist_ok=True)
-
     _ensure_api_key()
+
+    # Pre-flight budget check: refuse to boot if cumulative spend crossed cap.
+    remaining, exceeded = budget.check_budget()
+    if exceeded:
+        raise budget.BudgetExceeded(
+            f"cumulative spend crossed cap of ${budget.BUDGET_USD:.2f}; "
+            f"remaining: ${remaining:.4f}. Reset agent/.pinpoint_cost.json to continue."
+        )
+    _LOG.info("budget: $%.4f remaining of $%.2f cap", remaining, budget.BUDGET_USD)
+
     agent = build_agent()
+
     try:
         from langgraph.types import Command
-    except ImportError as e:  # pragma: no cover
+    except ImportError as e:
         raise DeepAgentsNotConfigured(f"langgraph.types.Command missing: {e}")
 
     trace.start(incident_dir)
@@ -280,97 +188,123 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
 
     thread_id = intake.get("incident_id") or f"inc-{int(time.time())}"
     config = {"configurable": {"thread_id": thread_id}}
-
     user_msg = (
-        f"Incident at {intake.get('address','UNKNOWN')}. "
-        f"Caller photo: {intake.get('caller_photo_path','')}. "
-        f"Caller said: {intake.get('caller_text','')}. "
-        f"Produce the responder packet. Write it to "
-        f"{incident_dir / 'packet.md'}."
+        f"Incident at {intake.get('address', 'UNKNOWN')}. "
+        f"Caller photo: {intake.get('caller_photo_path', '')}. "
+        f"Caller said: {intake.get('caller_text', '')}. "
+        f"Produce the responder packet. Write it to {incident_dir / 'packet.md'}."
     )
 
     t0 = time.time()
-    trace.log("commander", "real_agent:start",
-              args={"thread_id": thread_id}, phase="start")
+    trace.log("commander", "real_agent:start", args={"thread_id": thread_id}, phase="start")
 
-    def _drain(stream_iter):
-        """Forward every chunk; return the __interrupt__ payload if one was seen."""
-        pending = None
-        for item in stream_iter:
-            if (isinstance(item, tuple) and len(item) == 2
-                    and isinstance(item[0], str)):
-                mode, chunk = item
-            else:
-                mode, chunk = "updates", item
-            streaming.forward_chunk(mode, chunk, incident_dir)
-            if mode == "updates" and streaming.chunk_is_interrupt(chunk):
-                pending = chunk["__interrupt__"]
-        return pending
-
-    def _interrupt_requests(pending):
-        """Pull the list of action_requests out of an Interrupt payload. Tolerates
-        both the Interrupt object shape (`.value`) and the plain-dict shape used by
-        test mocks."""
-        if not pending:
-            return []
-        first = pending[0] if isinstance(pending, list) and pending else pending
-        if hasattr(first, "value"):
-            v = first.value or {}
-        elif isinstance(first, dict):
-            v = first.get("value", first)
-        else:
-            v = {}
-        return v.get("action_requests", []) if isinstance(v, dict) else []
-
-    stream_iter = agent.stream(
-        {"messages": [{"role": "user", "content": user_msg}]},
-        config=config,
-        stream_mode=["updates", "messages"],
+    pending = _drain(
+        agent.stream(
+            {"messages": [{"role": "user", "content": user_msg}]},
+            config=config,
+            stream_mode=["updates", "messages"],
+        ),
+        incident_dir,
     )
-    pending = _drain(stream_iter)
 
     interrupt_count = 0
     while pending:
         interrupt_count += 1
         req = _interrupt_requests(pending)
-        actions = [r.get("action") or r.get("tool")
-                   for r in req if isinstance(r, dict)]
+        actions = [r.get("action") or r.get("tool") for r in req if isinstance(r, dict)]
         trace.log(
             "commander",
             f"interrupt:{','.join(str(a) for a in actions) or 'unknown'}",
             args={"n_requests": len(req)},
             phase="interrupt",
         )
-        n_decisions = max(len(req), 1)
+        n = max(len(req), 1)
         if auto_approve:
-            decisions = [{"type": "approve"} for _ in range(n_decisions)]
+            decisions = [{"type": "approve"} for _ in range(n)]
         else:
             ans = input(f"[APPROVAL GATE] approve {actions}? [y/N] ").strip().lower()
-            dec = "approve" if ans == "y" else "reject"
-            decisions = [{"type": dec} for _ in range(n_decisions)]
-        stream_iter = agent.stream(
-            Command(resume={"decisions": decisions}),
-            config=config,
-            stream_mode=["updates", "messages"],
+            decisions = [{"type": "approve" if ans == "y" else "reject"} for _ in range(n)]
+        pending = _drain(
+            agent.stream(
+                Command(resume={"decisions": decisions}),
+                config=config,
+                stream_mode=["updates", "messages"],
+            ),
+            incident_dir,
         )
-        pending = _drain(stream_iter)
 
     elapsed = time.time() - t0
-    trace.log("commander", "real_agent:done",
-              args={"interrupts": interrupt_count,
-                    "elapsed_s": round(elapsed, 2)},
-              phase="milestone")
 
+    # Tally token usage from the final agent state and record against the cap.
+    in_tok = out_tok = 0
+    try:
+        state = agent.get_state(config)
+        messages = getattr(state, "values", {}).get("messages", []) if state else []
+        for m in messages:
+            usage = getattr(m, "usage_metadata", None) or (m.get("usage_metadata") if isinstance(m, dict) else None)
+            if not usage:
+                continue
+            in_tok += int(usage.get("input_tokens", 0) or 0)
+            out_tok += int(usage.get("output_tokens", 0) or 0)
+    except Exception as e:  # pragma: no cover - best-effort accounting
+        _LOG.info("budget: usage aggregation skipped (%s)", type(e).__name__)
+
+    cost = budget.estimate_cost(in_tok, out_tok, COMMANDER_MODEL)
+    try:
+        state_after = budget.record_usage(in_tok, out_tok, COMMANDER_MODEL)
+        print(f"[budget] run cost ${cost:.4f}; cumulative ${state_after.cumulative_usd:.4f} of ${budget.BUDGET_USD:.2f}")
+    except Exception as e:  # pragma: no cover
+        _LOG.warning("budget: record_usage failed (%s)", type(e).__name__)
+        state_after = None
+
+    trace.log("commander", "real_agent:done",
+              args={
+                  "interrupts": interrupt_count,
+                  "elapsed_s": round(elapsed, 2),
+                  "input_tokens": in_tok,
+                  "output_tokens": out_tok,
+                  "cost_usd": cost,
+              },
+              phase="milestone")
     return {
         "thread_id": thread_id,
         "elapsed_s": round(elapsed, 2),
         "interrupts": interrupt_count,
         "dir": str(incident_dir),
+        "input_tokens": in_tok,
+        "output_tokens": out_tok,
+        "cost_usd": cost,
+        "cumulative_usd": state_after.cumulative_usd if state_after else None,
     }
 
 
-def run_incident(intake: dict):  # pragma: no cover - legacy entrypoint
-    """Legacy entrypoint kept so the earlier `--real` CLI path still resolves."""
-    from .config import INCIDENTS
+def run_incident(intake: dict):  # pragma: no cover
     idir = INCIDENTS / (intake.get("incident_id") or f"inc-{int(time.time())}")
     return run_real_agent(intake, idir, auto_approve=False)
+
+
+def _drain(stream_iter, incident_dir: Path):
+    # Forward stream chunks; return interrupt payload if any.
+    pending = None
+    for item in stream_iter:
+        if isinstance(item, tuple) and len(item) == 2 and isinstance(item[0], str):
+            mode, chunk = item
+        else:
+            mode, chunk = "updates", item
+        streaming.forward_chunk(mode, chunk, incident_dir)
+        if mode == "updates" and streaming.chunk_is_interrupt(chunk):
+            pending = chunk["__interrupt__"]
+    return pending
+
+
+def _interrupt_requests(pending):
+    if not pending:
+        return []
+    first = pending[0] if isinstance(pending, list) and pending else pending
+    if hasattr(first, "value"):
+        v = first.value or {}
+    elif isinstance(first, dict):
+        v = first.get("value", first)
+    else:
+        v = {}
+    return v.get("action_requests", []) if isinstance(v, dict) else []

@@ -1,23 +1,9 @@
-"""Per-building learned corrections. Judge story: when a dispatcher rejects the top room on
-D's console and picks the correct one, that lesson is appended to agent/buildings/<id>/AGENTS.md
-in a human-readable form. On the next incident at the same building, the orchestrator reads the
-most recent entries and surfaces them in packet.md as 'Dispatcher notes for this building'. The
-agent is learning on the job from corrections, per-building.
-
-Design notes:
-  * AGENTS.md is append-only markdown so a human can skim it. No JSON, no DB.
-  * append_correction opens in append mode: concurrent rejections from two incidents cannot
-    overwrite each other, and a mid-write crash leaves a partial trailing entry at worst.
-  * read_corrections parses back the entries lazily via a simple header split. The parser is
-    forgiving: unknown fields are ignored and malformed entries are skipped.
-  * Belief reweighting from corrections is OUT OF SCOPE for this module. We surface, not bias.
-"""
+# Per-building AGENTS.md corrections from dispatcher rejects.
 import re
 from pathlib import Path
 from datetime import datetime, timezone
 
 from .config import BUILDINGS
-
 
 ENTRY_RE = re.compile(r"^## (\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[^\s]*)\s+correction logged", re.M)
 
@@ -28,9 +14,7 @@ def agents_md_path(building_id: str) -> Path:
 
 def append_correction(building_id: str, rejected_room_id, corrected_room_id,
                       caller_text: str = "", timestamp_iso: str = None) -> Path:
-    """Append one correction entry to agent/buildings/<id>/AGENTS.md. Returns the file path.
-    Creates the folder on first use. Open-in-append-mode means a crash loses at most this entry,
-    never any prior one."""
+    # Append one correction; open('a') so a crash only loses this entry.
     path = agents_md_path(building_id)
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -54,17 +38,14 @@ def append_correction(building_id: str, rejected_room_id, corrected_room_id,
     with path.open("a", encoding="utf-8") as f:
         if needs_prelude:
             f.write(f"# Dispatcher corrections for {building_id}\n\n"
-                    "Append-only log. Each entry is one dispatcher-made correction at the\n"
-                    "approval gate. Read by the orchestrator on the next incident at this\n"
-                    "building and surfaced in packet.md.\n\n")
+                    "Append-only. Surfaced on the next incident at this building.\n\n")
         f.write(header)
         f.write(body)
     return path
 
 
 def read_corrections(building_id: str, limit: int = 5) -> list:
-    """Return the most recent N corrections as list of dicts. Oldest-to-newest ordering is
-    reversed, so index 0 is the most recent. Missing file yields []."""
+    # Most recent N corrections (index 0 = newest).
     path = agents_md_path(building_id)
     if not path.exists():
         return []
@@ -95,9 +76,7 @@ def read_corrections(building_id: str, limit: int = 5) -> list:
 
 
 def summarize_for_packet(corrections: list) -> list:
-    """Return markdown lines (no header) suitable for the packet.md 'Dispatcher notes for this
-    building' section. Each line carries an inline [src:corrections] tag so the Verifier marks
-    it sourced. Empty input yields []."""
+    # Markdown bullets with [src:corrections] for the packet.
     if not corrections:
         return []
     lines = []
