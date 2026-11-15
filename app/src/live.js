@@ -11,7 +11,7 @@ const statusText = s => ({review:'Pending review',approved:'Confirmed',rejected:
 const incNo = i => 'INC-'+i.id.slice(4,10).toUpperCase();
 // Triage from the caller's own words, the way a call-taker codes a call. P1 = life threat.
 const P1=/not breathing|can'?t breathe|unconscious|unresponsive|not responding|collapsed|passed out|cardiac|heart attack|seizure|bleeding|blood|fire|smoke|gun|shot|stab|choking|overdose|dying|help me|attack/i;
-const P2=/fell|fall|fallen|injur|hurt|pain|broken|trapped|stuck|dizzy|faint|sick|allergic|burn/i;
+const P2=/fell|fall|fallen|injur|hurt|pain|broken|trapped|stuck|dizzy|faint|sick|allergic|burn|\bhelp\b|emergency|scared/i;
 function priority(i){const said=[i.callerText,...(i.messages||[]).filter(m=>m.role==='caller').map(m=>m.text)].join(' ');return P1.test(said)?1:P2.test(said)?2:3;}
 const pBadge=i=>{const p=priority(i);return `<span class="prio prio-${p}" title="Priority ${p}">P${p}</span>`;};
 let seenCalls=null;
@@ -89,12 +89,17 @@ function renderInbox(force=false){
   const rows=document.querySelector('#inbox-rows');if(!rows)return;
   const sig=recent.map(i=>i.id+i.updatedAt).join();if(!force&&sig===inboxSig)return;inboxSig=sig;
   alertNewCalls(recent);
-  // Open calls first, most urgent first, newest first; confirmed/returned calls drop below.
-  const threads=[...recent].sort((a,b)=>((a.status!=='review')-(b.status!=='review'))||(priority(a)-priority(b))||b.createdAt.localeCompare(a.createdAt));
+  // A call that just came in sits on top (like an incoming-call banner); then open calls,
+  // most urgent first, newest first; confirmed/returned calls drop below.
+  const fresh=i=>i.status==='review'&&Date.now()-new Date(i.createdAt)<3*60*1000;
+  const threads=[...recent].sort((a,b)=>(fresh(b)-fresh(a))||((a.status!=='review')-(b.status!=='review'))||(priority(a)-priority(b))||b.createdAt.localeCompare(a.createdAt));
+  const arrived=alertNewCalls.flash&&threads.find(i=>alertNewCalls.flash.has(i.id));
+  if(arrived&&!alertNewCalls.opened?.has(arrived.id)){inboxOpen=arrived.id;(alertNewCalls.opened||(alertNewCalls.opened=new Set())).add(arrived.id);}   // a new call opens by itself
   if(!threads.some(i=>i.id===inboxOpen))inboxOpen=threads[0]?.id||null;
   const count=document.querySelector('#queue-count');if(count)count.textContent=`${threads.filter(i=>i.status==='review').length} pending · ${threads.length} total`;
   rows.innerHTML=threads.length?threads.map(i=>{const p=propertyOf(i);return `<button class="inbox-row${alertNewCalls.flash?.has(i.id)?' new-call':''}" role="listitem" data-action="thread" data-id="${e(i.id)}" aria-pressed="${i.id===inboxOpen}">${i.photo?`<img src="${e(photoURL(i))}" alt="" loading="lazy">`:'<span class="inbox-noimg" aria-hidden="true"></span>'}<span class="inbox-text"><span class="inbox-top"><strong>${pBadge(i)}${e(incNo(i))}</strong><time data-elapsed="${e(i.createdAt)}">${e(elapsed(i.createdAt))}</time></span><span class="inbox-where">${e(i.channel?.location?.address||p?.address||i.propertyId)}</span><span class="inbox-caller">${i.channel?`<span class="platform">${e(PLATFORM[i.channel.platform]||i.channel.platform)}</span>`:''}${e(callerName(i))}</span><span class="inbox-last">${e(lastLine(i))}</span></span><span class="inbox-status status-${e(i.status)}">${e(statusText(i.status))}</span></button>`;}).join(''):'<div class="empty-state inbox-empty"><h3>No active calls</h3></div>';
   renderThread();
+  rows.querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest'});
 }
 function renderThread(){
   const pane=document.querySelector('#inbox-thread');if(!pane)return;
