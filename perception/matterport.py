@@ -51,12 +51,44 @@ def _ipv4_only():
 BACKOFFS = {}      # HTTP status -> times we backed off, for monitoring rate limits
 
 
+class _Gate:
+    """Caps concurrent requests to Matterport's image server (it rate-limits by
+    caller and answers an overshoot with a long block). The cap can be changed while
+    downloads run; perception.bulk raises it slowly while no 429 comes back."""
+
+    def __init__(self, limit):
+        import threading
+        self.limit, self.active = limit, 0
+        self.cv = threading.Condition()
+
+    def set(self, limit):
+        with self.cv:
+            self.limit = limit
+            self.cv.notify_all()
+
+    def __enter__(self):
+        with self.cv:
+            while self.active >= self.limit:
+                self.cv.wait()
+            self.active += 1
+
+    def __exit__(self, *a):
+        with self.cv:
+            self.active -= 1
+            self.cv.notify_all()
+
+
+CDN_GATE = _Gate(int(os.environ.get("PINPOINT_CDN_LIMIT", "4")))
+
+
 def _fetch(req_or_url, timeout, tries=7):
     """GET or POST with IPv4 only, backing off on rate limits and transient errors.
     429 = rate limited (the key and the image server are shared by the whole team)."""
+    import contextlib
+    gate = CDN_GATE if isinstance(req_or_url, str) else contextlib.nullcontext()   # str = image server
     for attempt in range(tries):
         try:
-            with _ipv4_only():
+            with gate, _ipv4_only():
                 with urllib.request.urlopen(req_or_url, timeout=timeout) as r:
                     return r.read()
         except urllib.error.HTTPError as e:
@@ -143,6 +175,9 @@ class Matterport:
         paths = [os.path.join(d, "%d.jpg" % i) for i in range(6)]
         if all(os.path.exists(p) for p in paths):
             return paths
+        partial = os.path.join(self.cache_dir, model_id, "pano", resolution, "faces.json")
+        if os.path.exists(partial) and all(os.path.exists(paths[i]) for i in json.load(open(partial))["faces"]):
+            return [p if os.path.exists(p) else None for p in paths]
         locs = self.query(SKYBOX_QUERY % (model_id, resolution))["model"]["locations"]
         loc = next((l for l in locs if l["id"] == sweep_id), None)
         if not loc or not loc["panos"] or not loc["panos"][0].get("skybox"):
@@ -193,7 +228,7 @@ class Matterport:
       assets { meshes { format resolution status filename url }
                floorplans { format status filename url } } } }"""
 
-    def fetch_all(self, model_id, resolution="2k"):
+    def fetch_all(self, model_id, resolution="2k", faces=(0, 1, 2, 3, 4, 5)):
         """Everything for one scan with ONE API call (the API is the rate-limited part):
         positions, rooms, panoramas and meshes/floor plans. Writes the same cache files
         as sweeps(), rooms(), prefetch_panos() and assets(). Returns the position count."""
@@ -218,7 +253,7 @@ class Matterport:
             os.makedirs(d, exist_ok=True)
             n += 1
             jobs += [(u, os.path.join(d, "%d.jpg" % i)) for i, u in enumerate(urls)
-                     if not os.path.exists(os.path.join(d, "%d.jpg" % i))]
+                     if i in faces and not os.path.exists(os.path.join(d, "%d.jpg" % i))]
         adir = os.path.join(base, "assets")
         os.makedirs(adir, exist_ok=True)
         saved, seen = [], set()
@@ -245,6 +280,8 @@ class Matterport:
 
         with ThreadPoolExecutor(int(os.environ.get("PINPOINT_CDN_THREADS", "16"))) as pool:
             list(pool.map(get, jobs))
+        if tuple(faces) != (0, 1, 2, 3, 4, 5):
+            json.dump({"faces": list(faces)}, open(os.path.join(base, "pano", resolution, "faces.json"), "w"))
         for f in saved:
             f["bytes"] = os.path.getsize(os.path.join(adir, f["file"]))
         json.dump(saved, open(os.path.join(adir, "assets.json"), "w"), indent=1)

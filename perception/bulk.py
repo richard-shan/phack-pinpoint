@@ -43,9 +43,37 @@ def _past(until):
     return (now.tm_hour, now.tm_min) >= (h, m)
 
 
-def download(buildings, connections=None, until=None):
-    """until: stop starting new scans at this UTC time ("HH:MM")."""
+def _pacer(start, ceiling, every_s=900):
+    """Raise the image-server cap by one every `every_s` seconds while no 429 has come
+    back; on a 429, fall back to the last cap that ran clean and stop raising."""
+    import threading
+    from . import matterport as M
+
+    def run():
+        good, seen = start, M.BACKOFFS.get(429, 0)
+        M.CDN_GATE.set(start)
+        while True:
+            time.sleep(every_s)
+            now = M.BACKOFFS.get(429, 0)
+            if now > seen:
+                M.CDN_GATE.set(good)
+                print("pacer: rate-limited at %d concurrent images; holding at %d" % (M.CDN_GATE.limit, good),
+                      flush=True)
+                return
+            good = M.CDN_GATE.limit
+            if good >= ceiling:
+                return
+            M.CDN_GATE.set(good + 1)
+            print("pacer: %d concurrent images ran clean; trying %d" % (good, good + 1), flush=True)
+
+    threading.Thread(target=run, daemon=True).start()
+
+
+def download(buildings, connections=None, until=None, faces=(0, 1, 2, 3, 4, 5)):
+    """until: stop starting new scans at this UTC time ("HH:MM"). faces: which cube
+    faces to fetch; (1, 2, 3, 4) saves a third of the image requests."""
     connections = connections or int(os.environ.get("PINPOINT_BULK_CONNECTIONS", "2"))
+    _pacer(int(os.environ.get("PINPOINT_CDN_LIMIT", "4")), int(os.environ.get("PINPOINT_CDN_CEILING", "12")))
     mp = Matterport(timeout=90)
     jobs = []
     for b in buildings:
@@ -61,7 +89,7 @@ def download(buildings, connections=None, until=None):
             return
         for attempt in range(4):
             try:
-                n = mp.fetch_all(m)                   # one API call: positions, rooms, panoramas, meshes
+                n = mp.fetch_all(m, faces=faces)      # one API call: positions, rooms, panoramas, meshes
                 _mark(m, "done")
                 _mark(m, "assets")
                 count[0] += 1
@@ -264,7 +292,7 @@ if __name__ == "__main__":
     args = sys.argv[3:]
     opt = lambda k: args[args.index(k) + 1] if k in args else None
     if sys.argv[1] == "download":
-        download(B, until=opt("--until"))
+        download(B, until=opt("--until"), faces=(1, 2, 3, 4) if "--side-faces" in args else tuple(range(6)))
     elif sys.argv[1] == "assets":
         assets(B, until=opt("--until"))
     elif sys.argv[1] == "index":
