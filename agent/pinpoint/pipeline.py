@@ -4,8 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from . import stubs, routing, localization, trace
-from .config import CONFIDENCE_THRESHOLD, MAX_QUESTIONS
+from . import stubs, routing, localization, trace, preplan
+from .config import CONFIDENCE_THRESHOLD, MAX_QUESTIONS, EARLY_EXIT_THRESHOLD
 from .errors import EmptyCandidates
 from .util import write_json
 
@@ -28,6 +28,13 @@ Steps 1–3 run in parallel. Step 4 needs all three.
 
 
 def run_records(idir: Path, intake: dict) -> dict:
+    # Preplan touch: counts as a hit if orchestrator warmed it, else miss.
+    bid = intake.get("building_id")
+    if bid:
+        try:
+            preplan.get_preplan(bid)
+        except Exception:
+            pass  # non-fatal; stubs.get_property still handles its own errors
     rec = stubs.get_property(intake["address"])
     located_suite = next(
         (t for t in rec["tenants"] if t.get("floor") == 2 and t.get("use") == "clinic"),
@@ -78,6 +85,10 @@ def _ground_truth_attrs(building_id: str, intake: dict | None = None) -> dict:
 
 def run_locator(idir: Path, intake: dict, mock_llm: bool = True, blacklist=None) -> dict:
     building_id = intake["building_id"]
+    try:
+        preplan.get_preplan(building_id)
+    except Exception:
+        pass
     cands = stubs.match_photo(building_id, intake["caller_photo_path"], k=10)
     if blacklist:
         cands = [c for c in cands if c.get("node_id") not in blacklist]
@@ -119,6 +130,13 @@ def run_locator(idir: Path, intake: dict, mock_llm: bool = True, blacklist=None)
             result_summary=f"conf->{localization.top_confidence(cands):.2f}",
             phase="subagent",
         )
+        if localization.top_confidence(cands) > EARLY_EXIT_THRESHOLD:
+            trace.log(
+                "commander", "locator_early_exit",
+                result_summary=f"top_conf={localization.top_confidence(cands):.3f} > {EARLY_EXIT_THRESHOLD}",
+                phase="optimization",
+            )
+            break
 
     cands_sorted = sorted(cands, key=lambda c: c["belief"], reverse=True)
     top = cands_sorted[0]
@@ -145,6 +163,10 @@ def run_locator(idir: Path, intake: dict, mock_llm: bool = True, blacklist=None)
 
 
 def run_site(idir: Path, building_id: str, address=None, lat=None, lon=None) -> dict:
+    try:
+        preplan.get_preplan(building_id)
+    except Exception:
+        pass  # non-fatal; detect_site_features still runs
     feats = stubs.detect_site_features(building_id, address=address, lat=lat, lon=lon)
     write_json(idir / "site.json", feats)
     return feats
@@ -177,6 +199,10 @@ def empty_location(failure_mode: str) -> dict:
 
 
 def run_router(idir: Path, building_id: str, location: dict, site: dict) -> dict:
+    try:
+        preplan.get_preplan(building_id)
+    except Exception:
+        pass
     target = location["node_id"]
     candidates = json.loads((idir / "candidates.json").read_text())["candidates"]
 
@@ -218,8 +244,8 @@ def run_router(idir: Path, building_id: str, location: dict, site: dict) -> dict
     return bundle
 
 
-def run_verifier(idir: Path, packet, brief, location, site, route_bundle,
-                 corrections=None, extra_sources=None) -> dict:
+def build_sources(brief, location, site, route_bundle, corrections=None,
+                  extra_sources=None) -> dict:
     sources = {
         "brief": brief,
         "location": location,
@@ -230,14 +256,56 @@ def run_verifier(idir: Path, packet, brief, location, site, route_bundle,
     }
     if extra_sources:
         sources.update(extra_sources)
-    results = [stubs.check_claim(c, sources) for c in packet.tagged_claims()]
-    unsupported = [r for r in results if not r["supported"]]
-    audit = {
-        "checked": len(results),
-        "supported": len(results) - len(unsupported),
-        "unsupported": unsupported,
-        "claims": results,
+    return sources
+
+
+def empty_audit_state() -> dict:
+    return {"claims": [], "claims_total": 0, "claims_sourced": 0,
+            "unsupported": [], "verified_set": set()}
+
+
+def audit_from_state(state: dict) -> dict:
+    return {
+        "checked": state["claims_total"],
+        "supported": state["claims_sourced"],
+        "unsupported": list(state["unsupported"]),
+        "claims": list(state["claims"]),
     }
+
+
+def run_verifier_section(section_name: str, section_claims: list, audit_state: dict,
+                         *, sources: dict) -> dict:
+    # Verify one packet section's claims and update the running audit_state in place.
+    # Idempotent per claim string: a claim seen in a prior section is not re-checked.
+    new_in_section = 0
+    for claim in section_claims:
+        if claim in audit_state["verified_set"]:
+            continue
+        result = stubs.check_claim(claim, sources)
+        audit_state["claims"].append(result)
+        audit_state["claims_total"] += 1
+        if result["supported"]:
+            audit_state["claims_sourced"] += 1
+        else:
+            audit_state["unsupported"].append(result)
+        audit_state["verified_set"].add(claim)
+        new_in_section += 1
+    trace.log(
+        "commander", f"verify_section:{section_name}",
+        args={"section": section_name},
+        result_summary=f"+{new_in_section} claim(s); running {audit_state['claims_sourced']}/{audit_state['claims_total']}",
+        phase="verify",
+    )
+    return audit_state
+
+
+def run_verifier(idir: Path, packet, brief, location, site, route_bundle,
+                 corrections=None, extra_sources=None) -> dict:
+    # Back-compat wrapper: single-shot audit of every tagged claim in the packet.
+    sources = build_sources(brief, location, site, route_bundle, corrections, extra_sources)
+    state = empty_audit_state()
+    run_verifier_section("all", packet.tagged_claims(), state, sources=sources)
+    audit = audit_from_state(state)
     write_json(idir / "audit.json", audit)
     trace.log(
         "verifier", "check_claim",

@@ -20,5 +20,6 @@ ELEVATOR_SECONDS_PER_FLOOR = 6.0
 CONFIDENCE_THRESHOLD = 0.80
 MAX_QUESTIONS = 3
 ANSWER_RELIABILITY = 0.85  # P(caller answers correctly)
+EARLY_EXIT_THRESHOLD = 0.95  # top candidate so dominant; stop asking even if MAX not reached
 
 DEMO_BUILDING = "bayou-medical-plaza"
