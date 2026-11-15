@@ -135,6 +135,75 @@ def fetch_viewer() -> str:
     return f"viewer installed ({len(blob) // 1_000_000} MB)" if VIEWER.exists() else "viewer archive did not contain showcase.html"
 
 
+PRINCETON_MODEL = "P3S6VUTP3qB"
+# The console's own Princeton demo annotations, copied from app/scripts/setup-princeton.mjs:
+# which scan positions are joined, by position number.
+_PRINCETON_CHAINS = [[0, 1, 2, 7, 8, 23, 29, 30, 31], [0, 4, 33, 3], [0, 5, 6, 7], [5, 9, 10, 24, 25, 26, 28, 29],
+                     [10, 11, 12, 13, 14, 15, 16, 17, 18], [18, 19, 20, 21, 22, 32, 31], [22, 8], [6, 27, 28],
+                     [33, 34, 1], [35, 8],
+                     [37, 38, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 44],
+                     [38, 39, 40, 41, 59, 56], [59, 60, 57], [41, 42, 43, 40]]
+_PRINCETON_NAMES = {25: "Northwest corridor · scan boundary", 31: "Southwest corridor · scan boundary",
+                    35: "Main stair · lower landing", 36: "Main stair · half landing",
+                    37: "Main stair · upper landing", 55: "Upper gallery · demo caller"}
+
+
+def write_princeton_demo() -> str:
+    """The console's built-in Princeton demo graph (`app/data/princeton-scan.json`).
+
+    The console's own script builds it from Matterport's public tour page, which answers
+    403 on some machines. This builds the same file from the Model API instead, with the
+    same hand annotations. It is the console's illustrative graph, not lane A's: once
+    `buildings/princeton-rabinowitz/` has marked entrances, `write_scans()` exports lane
+    A's graph and the console prefers that."""
+    out = DATA / "princeton-scan.json"
+    if out.exists():
+        return f"kept existing {out.relative_to(ROOT)}"
+    from env import matterport as mp
+    try:
+        m = mp._gql('{ model(id:"%s") { floors { id label sequence } panoLocations { id label '
+                    'anchor { position { x y z } floor { sequence } } } } }' % PRINCETON_MODEL)["model"]
+    except Exception as exc:
+        return f"Princeton demo graph skipped: {type(exc).__name__}: {str(exc)[:120]}"
+    by = {int(p["label"]): p for p in m["panoLocations"] if str(p.get("label", "")).isdigit()}
+    if len(by) < 66:
+        return "Princeton demo graph skipped: the scan no longer has the 66 positions the annotations expect"
+    pos = lambda i: {"x": by[i]["anchor"]["position"]["x"], "y": by[i]["anchor"]["position"]["z"],
+                     "z": -by[i]["anchor"]["position"]["y"]}
+    nodes = []
+    for i in sorted(by):
+        seq = by[i]["anchor"]["floor"]["sequence"]
+        nodes.append({"id": by[i]["id"], "index": i, "floor": seq, "position": pos(i),
+                      "label": _PRINCETON_NAMES.get(i) or f"Scan {i} · {'Atrium level' if seq == 1 else 'Upper gallery'}"})
+    edge = lambda a, b, kind: {"id": f"{min(a, b)}-{max(a, b)}", "a": by[a]["id"], "b": by[b]["id"], "kind": kind,
+                               "source": "visible-stair-flight" if kind == "stairs" else "demo-reviewed-corridor"}
+    edges = [edge(c[k], c[k + 1], "walk") for c in _PRINCETON_CHAINS for k in range(len(c) - 1)]
+    edges += [edge(35, 36, "stairs"), edge(36, 37, "stairs")]
+    note = ("Aerial anchor is illustrative. 3D route begins at the captured corridor boundary; "
+            "the exterior doorway is not scanned.")
+    def entry(eid, label, i, approach):
+        return {"id": eid, "label": label, "nodeId": by[i]["id"], "position": pos(i), **approach[-1],
+                "approach": approach, "calibration": note}
+    entries = [entry("southwest", "Southwest approach", 31, [{"lat": 40.34873, "lng": -74.65566},
+                                                             {"lat": 40.34887, "lng": -74.65566},
+                                                             {"lat": 40.34894, "lng": -74.65566}]),
+               entry("northwest", "Northwest approach", 25, [{"lat": 40.34940, "lng": -74.65576},
+                                                             {"lat": 40.34922, "lng": -74.65576},
+                                                             {"lat": 40.34922, "lng": -74.65566}])]
+    data = {"modelId": PRINCETON_MODEL, "name": "Princeton · Rabinowitz Hall", "georeference": None,
+            "floors": [{"id": f["id"], "sequence": f["sequence"], "label": f["label"]} for f in m["floors"]],
+            "nodes": nodes, "edges": edges, "entries": entries, "defaultDestination": by[55]["id"],
+            "provenance": {"url": f"https://my.matterport.com/show?m={PRINCETON_MODEL}",
+                           "retrieved": time.strftime("%Y-%m-%d"),
+                           "source": "Matterport Model API, with the annotations from app/scripts/setup-princeton.mjs",
+                           "routing": "Demonstration corridor chains, visually checked main stair; not a validated "
+                                      "evacuation or accessibility graph.",
+                           "aerial": "Vexcel. Approach waypoints are illustrative, not surveyed."}}
+    DATA.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, indent=2))
+    return f"wrote {out.relative_to(ROOT)}: {len(nodes)} positions, {len(edges)} annotated links (the console's demo graph)"
+
+
 def check() -> dict:
     """What is ready on this machine."""
     from importlib.util import find_spec
@@ -163,6 +232,7 @@ def main() -> None:
         print(write_catalog(a.force_catalog))
         for line in write_scans():
             print("scan graph", line)
+        print(write_princeton_demo())
         if not a.no_viewer:
             print(fetch_viewer())
         if not a.no_models:
