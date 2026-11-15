@@ -775,3 +775,36 @@ if __name__ == "__main__":
             print("  disaster: %s %s water=%s approach=%s | %s" % (
                 ev["event_name"], (ev["captured"][1] or "")[:10], ev.get("water_visible"),
                 ev.get("approach_affected"), (ev.get("summary") or ev.get("error") or "")[:110]))
+
+
+def fetch_imagery(building_id, refresh=False):
+    """Every Vexcel image the site pass uses (overhead tile, angled views, post-disaster
+    tiles), with no Claude calls, so imagery can be pulled for every building and
+    analysed later. Writes imagery.json beside the files."""
+    d = site_dir(building_id)
+    loc = locate(building_id)
+    prop = property_record(loc, d, refresh)
+    footprint, _ = pick_footprint(prop, loc)
+    rect = tile_rect(loc, footprint)
+    out = {"building_id": str(building_id), "latlon": [loc["lat"], loc["lon"]] if "lat" in loc else None,
+           "footprint": footprint is not None, "files": []}
+    if fetch_tile(rect, os.path.join(d, "ortho.jpg"), refresh) is not None:
+        out["files"].append("ortho.jpg")
+    collections(loc, d, LAYERS, "collections.json", refresh)
+    try:
+        out["files"] += [os.path.basename(p) for p in (fetch_obliques(loc, footprint, rect, d, refresh) or {}).values()]
+    except Exception as e:
+        out["obliques_error"] = str(e)[:120]
+    seen = set()
+    for c in collections(loc, d, DISASTER_LAYER, "graysky_collections.json", refresh) or []:
+        event = c.get("graysky-event") or "unidentified event (%s)" % c["collection"]
+        if event in seen:
+            continue
+        seen.add(event)
+        name = "disaster_%s.jpg" % c["collection"]
+        if fetch_tile(rect, os.path.join(d, name), refresh, layer=DISASTER_LAYER,
+                      collection=c["collection"]) is not None:
+            out["files"].append(name)
+            out.setdefault("disasters", []).append(EVENT_NAMES.get(event, event))
+    json.dump(out, open(os.path.join(d, "imagery.json"), "w"), indent=1)
+    return out

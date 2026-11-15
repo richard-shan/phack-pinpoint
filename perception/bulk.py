@@ -287,6 +287,32 @@ def enrich(buildings, budget, wait=True, site=True):
     print("ENRICH FINISHED: $%.2f spent" % ledger["dollars"], flush=True)
 
 
+def vexcel(buildings, workers=4, until=None):
+    """Vexcel imagery for every building in the list (no Claude calls). Resumable."""
+    from .site import fetch_imagery, site_dir
+    todo = [b["building_id"] for b in buildings
+            if not os.path.exists(os.path.join(site_dir(b["building_id"]), "imagery.json"))]
+    print("%d buildings need Vexcel imagery" % len(todo), flush=True)
+    t0, count = time.time(), [0, 0]
+
+    def go(bid):
+        if _past(until):
+            return
+        try:
+            fetch_imagery(bid)
+            count[0] += 1
+        except Exception as e:
+            count[1] += 1
+            print("vexcel failed %s: %s" % (bid, repr(e)[:120]), flush=True)
+
+    with ThreadPoolExecutor(workers) as ex:
+        for i, _ in enumerate(ex.map(go, todo)):
+            if i % 25 == 0:
+                print("vexcel imagery for %d buildings (%d failed), %.0f min" % (
+                    count[0], count[1], (time.time() - t0) / 60), flush=True)
+    print("VEXCEL FINISHED: %d buildings, %d failed" % (count[0], count[1]), flush=True)
+
+
 def status(buildings):
     scans = {m for b in buildings for m in b["models"]}
     done = sum(_is(m, "done") for m in scans)
@@ -313,6 +339,8 @@ if __name__ == "__main__":
         download(B, until=opt("--until"),
                  faces=tuple(ov.get("faces") or ((1, 2, 3, 4) if "--side-faces" in args else range(6))),
                  resolution=ov.get("resolution", "2k"), per_room=ov.get("per_room"))
+    elif sys.argv[1] == "vexcel":
+        vexcel(B, until=opt("--until"))
     elif sys.argv[1] == "assets":
         assets(B, until=opt("--until"))
     elif sys.argv[1] == "index":
