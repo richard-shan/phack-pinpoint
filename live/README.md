@@ -29,17 +29,36 @@ entrances, staging (env/, graph) ─────────┘    under uncerta
 | `route_image.py` | Draws the route to the caller on the floor plan, with the caller's photo. Every incident gets one as `route.jpg`; `demo/route_*.jpg` are two examples. |
 | `evaluate.py` | Runs a batch of incidents from rendered photos and scores position and door; `--held-out` is the fairer test. |
 | `model3d.py` | Prepares each scan's 3D model for the console's 3D route page (`app/live-3d.html`). |
+| `examples.py` | Fills the console with ten ready-made incidents to click through, six of them in buildings with more than one level. |
 
 Nothing in `agent/` or `perception/` was changed to make this work. `app/` has
 three small changes so the 3D route view opens for any building that has a scan graph
 in `app/data/<PropertyId>-scan.json`, not only the two it was built around.
 
+## Quick look, with nothing to type in the console
+
+```sh
+.venv/bin/python -m live.serve          # terminal 1
+.venv/bin/python -m live.examples       # terminal 2: about a minute per example on a CPU
+```
+
+Then open `http://localhost:4175/live.html`. The examples are under **Recent
+incidents**, each awaiting review. In an incident, **Follow route** walks the route in
+the Matterport scan facing the way the crew walks, and **Open 3D model with route**
+shows the whole building as a model with the route drawn through it.
+
 ## Buildings
 
-Any building with a graph under `buildings/` works: 6550930 (7900 Fannin St, Houston),
-10352309, 259587, 234036, 248351, 248192, 5956257. `env/README.md` describes each.
-7900 Fannin St is the one to demo: a medical office building with 17 health care
-tenants on record, four doors, and a best door that is not the street-address door.
+Any building with a graph under `buildings/` works. `env/README.md` describes each.
+
+| Building | Levels in the scan | Why use it |
+|---|---|---|
+| 6550930, 7900 Fannin St, Houston | 1 (lobby) | 17 health care tenants on record, four doors, and the best door is not the street-address door |
+| 10352309, 12814 Willow Centre Dr, Houston | 2 | stairs only: a stretcher cannot reach the upper floor, and the packet says where to leave it |
+| 259587, 911 Broxton Ave, Los Angeles | 5 | elevator to every level, including two basements |
+| 248351, 3800 Barham Blvd, Los Angeles | 2 | an internal stair; the stretcher goes round by the building elevator |
+| princeton-rabinowitz, Rabinowitz Hall, Princeton | 2 | the team can stand in it: stair on foot, elevator for a stretcher. Not in the CoStar kit |
+| 234036, 248192, 5956257 | 1 each | an upper-floor suite reached by elevator (two of them) and a stripped floor |
 
 ## What the Verifier does and does not check
 
