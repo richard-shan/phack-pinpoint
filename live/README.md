@@ -146,7 +146,11 @@ spots. The exact position can no longer be the answer; what counts is the distan
 |---|---|---|---|---|
 | 7900 Fannin St | 10 of 12 | 11 of 12 | 12 of 12 | 10 of 12 |
 | 12814 Willow Centre Dr | 8 of 12 | 9 of 12 | 11 of 12 | 10 of 12 |
-| Both | 18 of 24 | 20 of 24 | 23 of 24 | 20 of 24 |
+| Rabinowitz Hall, Princeton | 4 of 10 | 8 of 10 | 10 of 10 | 10 of 10 |
+| All three | 22 of 34 | 28 of 34 | 33 of 34 | 30 of 34 |
+
+Scanned positions at Rabinowitz Hall are further apart (the nearest one is typically
+2.7 m away, against 1.2 m at Willow Centre), so "within 3 m" is a harder bar there.
 
 What the misses looked like:
 - At Fannin St one photo, taken at the end of one arm of the cross corridor, was placed
@@ -156,11 +160,17 @@ What the misses looked like:
 - At Willow Centre the three far misses (8 to 12 m) came with 40 to 42% confidence, so
   the packet said "below the confidence threshold" and the questions had been asked. One
   of them was on the wrong floor.
+- At Rabinowitz Hall one photo taken at the north stair door was placed at the south
+  stair door, 16 m away, at 80% confidence after two questions. The two doors look the
+  same and nothing the caller was asked tells them apart.
 
 Still not tested by either run: a different camera, different lighting, people and
 furniture that have moved since the scan. Both runs use photos rendered from the scan,
 so both are upper bounds on what a real phone photo would do. The only building where
-the team can take real photos is Rabinowitz Hall at Princeton.
+the team can take real photos is Rabinowitz Hall at Princeton: open the console's
+caller view on a phone on the same machine's network, or run
+`.venv/bin/python -m live.run --building princeton-rabinowitz --photo <file> --console`.
+No real photo had been tried when this was written.
 
 Other measurements:
 - Time per incident, photo to draft packet: 32 to 45 s on this CPU, nearly all of it
