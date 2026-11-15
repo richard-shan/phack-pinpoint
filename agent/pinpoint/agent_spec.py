@@ -5,6 +5,7 @@ import os
 from typing import Any
 
 from . import stubs, routing, localization
+from . import tool_wrappers as tw
 
 COMMANDER_MODEL = os.environ.get("PINPOINT_COMMANDER_MODEL", "anthropic:claude-haiku-5-5")
 WORKER_MODEL = os.environ.get("PINPOINT_WORKER_MODEL", "anthropic:claude-haiku-5-5")
@@ -253,7 +254,7 @@ def build_subagents() -> list[dict[str, Any]]:
                 "Flag any clinic, daycare, or lab tenant on the identified floor. Cite "
                 "the CoStar record ID as the evidence_path for every field you return."
             ),
-            "tools": [stubs.get_property],
+            "tools": [tw.get_property],
             "model": WORKER_MODEL,
             "mode": "isolated",
         }, RecordsReport),
@@ -275,11 +276,11 @@ def build_subagents() -> list[dict[str, Any]]:
                 "evidence_path from the top candidate."
             ),
             "tools": [
-                stubs.match_photo,
-                stubs.look,
-                localization.best_question,
-                localization.update_belief,
-                stubs.ask_caller,
+                tw.match_photo,
+                tw.look,
+                tw.best_question,
+                tw.update_belief,
+                tw.ask_caller,
             ],
             "model": LOCATOR_MODEL,
             "mode": "isolated",
@@ -296,7 +297,7 @@ def build_subagents() -> list[dict[str, Any]]:
                 "obstructions, and an `aerial_tile_path` evidence_path when Vexcel data "
                 "is available. On Vexcel fallback, cite the fixture tile path instead."
             ),
-            "tools": [stubs.detect_site_features],
+            "tools": [tw.detect_site_features],
             "model": WORKER_MODEL,
             "mode": "isolated",
         }, SiteReport),
@@ -316,10 +317,10 @@ def build_subagents() -> list[dict[str, Any]]:
                 "cites the graph node or edge it came from."
             ),
             "tools": [
-                routing.best_entry_under_belief,
-                routing.route,
-                stubs.hazards_along,
-                routing.backup_route,
+                tw.best_entry_under_belief,
+                tw.route,
+                tw.hazards_along,
+                tw.backup_route,
             ],
             "model": WORKER_MODEL,
             "mode": "isolated",

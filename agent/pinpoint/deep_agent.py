@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Optional
 
 from . import stubs, trace, streaming, budget
+from . import tool_wrappers as tw
 from .agent_spec import (
     COMMANDER_SYSTEM_PROMPT,
     COMMANDER_SYSTEM_PROMPT_NO_TODOS,
@@ -152,7 +153,7 @@ def build_agent(checkpointer=None, create_agent_fn=None):
     return create_agent_fn(
         model=COMMANDER_MODEL,
         system_prompt=system_prompt,
-        tools=[stubs.send_packet, stubs.notify_contact],
+        tools=[tw.send_packet, tw.notify_contact],
         subagents=build_subagents(),
         middleware=middleware,
         interrupt_on=INTERRUPT_ON,
