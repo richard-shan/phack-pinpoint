@@ -35,6 +35,31 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "cache" / "live"
 
 
+def _usable_photo(path: str | None) -> str | None:
+    """A phone photo in a form every lane can read. iPhones save HEIC, which the matcher
+    reads only on macOS: convert it to JPEG here when a converter is available."""
+    if not path or not str(path).lower().endswith((".heic", ".heif")):
+        return path
+    out = STATE / "converted" / (Path(path).stem + ".jpg")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        import pillow_heif
+        from PIL import Image, ImageOps
+        pillow_heif.register_heif_opener()
+        ImageOps.exif_transpose(Image.open(path)).convert("RGB").save(out, "JPEG", quality=92)
+        return str(out)
+    except ImportError:
+        pass
+    import shutil
+    import subprocess
+    for tool in (["magick", str(path), str(out)], ["heif-convert", str(path), str(out)],
+                 ["sips", "-s", "format", "jpeg", str(path), "--out", str(out)]):
+        if shutil.which(tool[0]) and subprocess.run(tool, capture_output=True).returncode == 0 and out.exists():
+            return str(out)
+    raise SystemExit(f"{path} is a HEIC photo and nothing here can convert it. Export it as JPEG from the phone "
+                     "(or `uv pip install --python .venv/bin/python pillow-heif`) and run again.")
+
+
 def _node(building_id: str, prefix: str | None) -> str | None:
     """A full node id from a unique prefix."""
     if not prefix:
@@ -68,6 +93,7 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
     address = " ".join(w.capitalize() if w.isalpha() and w.islower() and len(w) > 2 else w for w in address.split(" "))
     truth, position = _node(building_id, truth), _node(building_id, position)
     simulate_match = _node(building_id, simulate_match)
+    photo = _usable_photo(photo)
 
     if console is not None and not console.alive():
         raise SystemExit(f"the console is not answering at {console.base}: start it with `python3 -m live.serve`")
