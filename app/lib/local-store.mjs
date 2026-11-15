@@ -39,6 +39,30 @@ export function validatePhoto(value) {
   return { name, dataUrl: `data:${match[1]};base64,${bytes.toString('base64')}` };
 }
 
+const PLATFORMS = { imessage: 'iMessage', telegram: 'Telegram', sms: 'SMS' };
+function finite(value, label, min, max) {
+  if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) fail(400, 'INVALID_FIELD', `${label} is out of range.`);
+  return value;
+}
+// Where a messaged-in incident came from, and the caller's device location.
+function channel(value) {
+  if (value == null) return null;
+  object(value, ['platform', 'handle', 'location']);
+  if (!Object.hasOwn(PLATFORMS, value.platform)) fail(400, 'INVALID_FIELD', 'Channel platform must be imessage, telegram, or sms.');
+  const out = { platform: value.platform, handle: text(value.handle ?? '', 'Channel handle', 200) };
+  if (value.location != null) {
+    object(value.location, ['building_id', 'latitude', 'longitude', 'address', 'distanceM', 'source']);
+    out.location = {
+      latitude: finite(value.location.latitude, 'Latitude', -90, 90),
+      longitude: finite(value.location.longitude, 'Longitude', -180, 180),
+      address: text(value.location.address ?? '', 'Location address', 300),
+      distanceM: value.location.distanceM == null ? null : finite(value.location.distanceM, 'Distance', 0, 100000),
+      source: text(value.location.source ?? 'simulated-device', 'Location source', 60),
+    };
+  }
+  return out;
+}
+
 export function createLocalStore({ directory, getCatalog }) {
   let pending = Promise.resolve();
   const run = task => { const result = pending.then(task); pending = result.catch(() => {}); return result; };
@@ -81,10 +105,18 @@ export function createLocalStore({ directory, getCatalog }) {
       return incidents.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)).map(({ photo: image, ...incident }) => ({ ...incident, photo: image ? { name: image.name } : null }));
     },
     async get(id) { await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.'); return clone(await read(id)); },
+    async photo(id) {
+      await pending; if (!id.startsWith('inc-')) fail(404, 'NOT_FOUND', 'Incident not found.');
+      const image = (await read(id)).photo;
+      if (!image) fail(404, 'NOT_FOUND', 'This incident has no photo.');
+      const [, type, data] = /^data:(image\/[a-z]+);base64,(.*)$/.exec(image.dataUrl);
+      return { type, bytes: Buffer.from(data, 'base64') };
+    },
     async packet(id) { await pending; if (!id.startsWith('pkt-')) fail(404, 'NOT_FOUND', 'Packet not found.'); return clone(await read(id)); },
     create(body) { return run(async () => {
-      object(body, ['propertyId', 'callerText', 'photo', 'demoMatch']);
+      object(body, ['propertyId', 'callerText', 'photo', 'demoMatch', 'channel']);
       if (body.demoMatch !== undefined && typeof body.demoMatch !== 'boolean') fail(400, 'INVALID_FIELD', 'demoMatch must be a boolean.');
+      const via = channel(body.channel);
       const propertyId = text(body.propertyId, 'Property ID', 100, true);
       const callerText = text(body.callerText ?? '', 'Caller text', 4000);
       const image = validatePhoto(body.photo);
@@ -95,11 +127,18 @@ export function createLocalStore({ directory, getCatalog }) {
       const timestamp = now();
       const incident = {
         id: `inc-${randomUUID()}`, propertyId, revision: 1, status: 'review', createdAt: timestamp, updatedAt: timestamp,
-        callerText, photo: image, notes: '', unconfirmed: [...new Set(property.unknowns?.length ? property.unknowns : ['Caller room and floor are not confirmed.', 'Entrance, staging, and route have not been verified.', 'Equipment and hazards have not been verified.'])].slice(0,50),
+        callerText, photo: image, notes: '', unconfirmed: ['Exact room and floor', 'Entry and route', 'Hazards on scene'],
         location: '', route: '', packetMarkdown: '', messages: callerText ? [{ id: randomUUID(), role: 'caller', text: callerText, at: timestamp }] : [],
-        events: [{ type: 'intake', text: 'Local intake received. No external message was sent.', at: timestamp }, { type: 'record', text: body.demoMatch ? `Demo photo suggested property ${propertyId}; dispatcher confirmation required.` : `Loaded CoStar property record ${propertyId}. Location and route await confirmation.`, at: timestamp }],
+        events: [{ type: 'intake', text: 'Call received.', at: timestamp }, { type: 'record', text: body.demoMatch ? `Demo photo suggested property ${propertyId}; dispatcher confirmation required.` : `Building record loaded (${propertyId}).`, at: timestamp }],
         decision: null, packetId: null,
       };
+      if (via) {
+        incident.channel = via;
+        const who = via.handle ? ` from ${via.handle}` : '';
+        incident.events = [{ type: 'intake', text: `Photo received via ${PLATFORMS[via.platform]}${who}.`, at: timestamp },
+          ...(via.location ? [{ type: 'location', text: `Device location: ${via.location.address || `${via.location.latitude}, ${via.location.longitude}`}.`, at: timestamp }] : []),
+          incident.events[1]];
+      }
       await atomic(incident.id, incident); return clone(incident);
     }); },
     update(id, body) { return run(async () => {
@@ -110,7 +149,7 @@ export function createLocalStore({ directory, getCatalog }) {
       for (const [key, max] of [['notes', 10000], ['location', 1000], ['route', 10000], ['packetMarkdown', 102400]]) if (own(body,key)) incident[key] = text(body[key], key, max);
       if (own(body, 'photo')) incident.photo = validatePhoto(body.photo);
       if (own(body, 'unconfirmed')) incident.unconfirmed = unknowns(body.unconfirmed);
-      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated locally. A new packet approval is required.' : body.updatedBy === 'agent' ? 'Agent updated the packet. Dispatcher approval is required.' : 'Dispatcher edited the packet. A new approval is required.' });
+      revise(incident, { type: 'edit', text: own(body, 'photo') ? 'Caller photo updated.' : body.updatedBy === 'agent' ? 'Packet updated.' : 'Edited by dispatcher.' });
       await atomic(id, incident); return clone(incident);
     }); },
     setRoute(id, revision, spatialRoute, route, location) { return run(async () => {
@@ -118,30 +157,37 @@ export function createLocalStore({ directory, getCatalog }) {
       incident.spatialRoute = clone(spatialRoute);
       incident.route = route;
       incident.location = location;
-      revise(incident, { type: 'route', text: `${spatialRoute.updatedBy === 'agent' ? 'Agent' : 'Dispatcher'} updated the 3D route. ${spatialRoute.reason || spatialRoute.message}` });
+      revise(incident, { type: 'route', text: `Route updated. ${spatialRoute.reason || spatialRoute.message}` });
       incident.spatialRoute.revision = incident.revision;
       await atomic(id, incident); return clone(incident);
     }); },
     message(id, body) { return run(async () => {
       object(body, ['expectedRevision', 'role', 'text']);
-      if (!['caller', 'dispatcher'].includes(body.role)) fail(400, 'INVALID_ROLE', 'Message role must be caller or dispatcher.');
+      if (!['caller', 'dispatcher', 'auto'].includes(body.role)) fail(400, 'INVALID_ROLE', 'Message role must be caller, dispatcher, or auto.');
       const messageText = text(body.text, 'Message', 4000, true);
       const incident = await current(id, body.expectedRevision);
       if (incident.messages.length >= 200) fail(400, 'MESSAGE_LIMIT', 'This local incident has reached its 200-message limit.');
-      revise(incident, { type: 'message', text: `${body.role === 'caller' ? 'Caller' : 'Dispatcher'} message saved locally. Packet needs review.` });
+      if (body.role === 'auto') {            // a record of an automatic text: keeps the current review state
+        incident.updatedAt = now();
+        incident.messages.push({ id: randomUUID(), role: 'auto', text: messageText, at: incident.updatedAt });
+        incident.events.push({ type: 'message', text: 'Auto-reply sent.', at: incident.updatedAt });
+        await atomic(id, incident); return clone(incident);
+      }
+      revise(incident, { type: 'message', text: body.role === 'auto' ? 'Auto-reply sent.' : body.role === 'caller' ? 'Caller message.' : 'Message sent to caller.' });
       incident.messages.push({ id: randomUUID(), role: body.role, text: messageText, at: incident.updatedAt });
       await atomic(id, incident); return clone(incident);
     }); },
     decide(id, body) { return run(async () => {
-      object(body, ['expectedRevision', 'decision', 'reason']);
+      object(body, ['expectedRevision', 'decision', 'reason', 'correctedRoomId']);
       if (!['approved', 'rejected'].includes(body.decision)) fail(400, 'INVALID_DECISION', 'Decision must be approved or rejected.');
       const reason = text(body.reason ?? '', 'Reason', 2000, body.decision === 'rejected');
+      const correctedRoomId = text(body.correctedRoomId ?? '', 'Corrected room', 500, false);
       const incident = await current(id, body.expectedRevision);
       if (incident.status !== 'review') fail(409, 'DECISION_EXISTS', 'This revision already has a decision. Edit it before reviewing again.');
       incident.status = body.decision;
       incident.updatedAt = now();
-      incident.decision = { kind: body.decision, revision: incident.revision, reason, at: incident.updatedAt };
-      incident.events.push({ type: 'decision', text: body.decision === 'approved' ? 'Dispatcher approved this revision locally. No external delivery occurred.' : `Dispatcher rejected this revision: ${reason}`, at: incident.updatedAt });
+      incident.decision = { kind: body.decision, revision: incident.revision, reason, correctedRoomId, at: incident.updatedAt };
+      incident.events.push({ type: 'decision', text: body.decision === 'approved' ? 'Confirmed by dispatcher.' : `Returned: ${reason}`, at: incident.updatedAt });
       if (body.decision === 'approved') {
         const catalog = await getCatalog();
         const property = catalog.properties.find(p => String(p.id) === incident.propertyId);

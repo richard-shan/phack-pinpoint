@@ -96,15 +96,16 @@ Real, from sponsor data:
 Not real, and labelled in the packet where it applies:
 - **The caller photo.** Nobody can stand in these buildings, so demo photos are views
   rendered from the scan (`demo_photo.py`). That is easier than a real phone photo.
-- **The caller's answers**, unless someone types them in the console's caller view. With
+- **The caller's answers**, unless someone replies through the console or messaging bridge. With
   `--truth NODE` a simulated caller answers from that position.
 - **Travel times.** Speeds and door delays are assumptions in `env/config.py`.
 - **Staging spots** are placed by eye on the aerial image.
-- **Delivery.** Approval is recorded in the console. Nothing is sent to anyone, and the
-  building contact is never notified.
+- **Delivery.** Approval saves an immutable snapshot. With a connected Photon or
+  Telegram bridge, that snapshot is sent to the caller; without one it stays local.
+  The building contact is never notified.
 
 Not connected yet:
-- a real phone channel. The caller types in the console's caller view.
+- SMS and voice calls. Telegram callers can use the messaging bridges below.
 
 ## With a model in charge (`--llm`)
 
@@ -285,3 +286,93 @@ location and conflicting image evidence must remain visible to the dispatcher an
 must not prevent intake. Photos do not reliably carry GPS metadata; browser image
 resizing may remove it. Emergency service location information requires an actual
 integration with the relevant emergency communications provider.
+
+## Telegram caller channel
+
+`live.telegram` connects private Telegram chats to the same console intake and caller
+conversation used by the agent. It uses the [Telegram Bot API](https://core.telegram.org/bots/api)
+with polling; no public server or webhook is needed. Create a bot with
+[@BotFather](https://t.me/BotFather), then export `TELEGRAM_BOT_TOKEN` in the terminal
+that will run the bridge, or put it in the root `.env`, loaded at startup. Optionally set
+`TELEGRAM_ALLOWED_CHAT_IDS` as comma-separated numeric private chat IDs; by default
+any private chat can use the bot. Group messages are ignored.
+
+Run these in three terminals from the repository root:
+
+```sh
+.venv/bin/python -m live.serve
+.venv/bin/python -m live.run --watch --ask console
+.venv/bin/python -m live.telegram
+```
+
+In your bot's Telegram chat:
+
+1. Send a photo **as a photo**, optionally with a caption. Every photo starts a
+   separate incident; no `/new` or building selection is required.
+2. The bot searches every locally available index for a routable building. Strong,
+   distinct geometric evidence creates an incident for the detected building.
+   Weak or ambiguous evidence returns **Unknown** and creates no incident.
+3. If you already know the building, `/building 6550930` selects it for the **next
+   photo only** and bypasses automatic building identification. `/buildings` lists routable IDs;
+   some may not yet have a local photo index.
+4. Answer follow-up questions in Telegram. Dispatcher messages are forwarded to the
+   chat, and text replies appear in the console as caller messages.
+5. Text after a photo belongs to that photo until the next photo arrives, including
+   while detection runs. It appears under that incident's caller conversation on the
+   site once identified. Sending another photo immediately switches subsequent text
+   to the new photo, without canceling earlier processing.
+6. `/status` checks the latest photo. `/new` clears a pending manual building selection;
+   it does not change which photo receives follow-up text or cancel queued work.
+
+Dispatchers review and approve packets in `http://localhost:4175/live.html`.
+The bridge sends the immutable approved packet to the originating Telegram chat as a
+Markdown document. Rejected drafts and unattended auto-approvals are not delivered.
+The watcher must be running for matching and questions. This remains a demo and does
+not contact emergency services. See [Photon 2.0 setup and verification](PHOTON.md)
+for the sponsor-integrated transport and delivery recovery details.
+
+Use `--console URL` for another local console and `--state PATH` for another state
+file. Chat associations, forwarded-message IDs, and the update offset survive restart
+in ignored `cache/telegram.json`; bot credentials are not saved there. Run only one
+bridge process per bot, with a separate state file for each bot. Existing webhooks
+are detected at startup and are not removed automatically. Transient transport errors
+are retried without printing credential-bearing URLs. As with most polling bridges,
+a crash between a remote write and local state persistence can replay a message;
+this is not an exactly-once delivery system.
+
+Validation: `.venv/bin/python -m unittest live.tests.test_telegram -v` runs the real
+console server in temporary storage with a fake Telegram transport. A live smoke test
+requires your token: send a fresh photo and verify its caption and image in the console,
+then send a dispatcher question and answer it in Telegram.
+
+
+### Automatic building identification
+
+`perception.identify` embeds the photo once and searches all available local building
+indexes. For each building it checks the two best views of the top three positions
+using LoFTR geometry, one pair at a time to limit GPU memory. Acceptance requires at
+least 60 inliers, 0.25 pooled embedding similarity, 50% inliers among raw matches,
+4% query-image bounding-box coverage, a combined-score lead of 0.08, and 1.5 times
+the strongest competing building's inlier count. These are conservative heuristic
+gates, **not calibrated probabilities or a guarantee of identifying arbitrary photos**.
+Only buildings with a local index and routing graph can be recognized. A model/index
+failure is reported as unavailable, separately from an unknown match.
+
+Identification runs in a single background worker while Telegram polling and message
+relay continue. Pending photos survive bridge restarts and are removed after a result
+is sent. Multiple photos can queue independently, each retaining its own caption,
+text replies, detection result, and incident ID. Dispatcher messages from all linked
+incidents are relayed without internal IDs; older incident messages explicitly say
+that incoming text still goes to the latest photo. Unknown photos do not enter the
+site incident-processing queue, but their text stays in their own saved record and
+never falls through to the previous incident. Once a building is identified, the existing watcher
+performs the more detailed within-building localization and dispatcher review.
+
+Tests: `.venv/bin/python -m unittest live.tests.test_identify live.tests.test_telegram -v`.
+
+Local smoke checks used four available building indexes: photos from buildings
+6550930 and 5956257 identified correctly; the tested photo from 10352309 returned
+unknown (31 inliers with little image coverage). An unrelated lobby image, random noise, and a blank image
+also returned unknown. Searches took about 24–36 seconds on this laptop, excluding
+subsequent within-building processing. This small demo check does not measure the
+false-accept rate on real out-of-catalog phone photos.

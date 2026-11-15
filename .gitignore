@@ -22,3 +22,5 @@ agent/pinpoint/fixtures/*/vexcel_tile.*
 .env.local
 .pinpoint_cost.json
 agent/.pinpoint_cost.json
+demo-tagged/
+.venv

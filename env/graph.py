@@ -16,6 +16,8 @@ Edges are undirected and there is at most one edge between two nodes.
 from __future__ import annotations
 
 import json
+
+from .config import ROUTING
 import math
 from pathlib import Path
 
@@ -85,6 +87,8 @@ class Graph:
         """Seconds for this profile, or None when the profile cannot cross the edge."""
         if not edge["passable"].get(profile, False):
             return None
+        if edge.get("type") == "elevator" and ROUTING["avoid_elevators"]:
+            return None                                  # never route through an elevator
         return edge["seconds"][profile]
 
     def kind(self, node_id: str) -> str:

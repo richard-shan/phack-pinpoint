@@ -9,10 +9,11 @@ test('blocking a corridor reroutes; blocking the only stair clears all stale geo
  assert.deepEqual(planRoute(graph,{blockedEdges:['ab']}).nodeIds,['a','d','b','c']);
  const r=planRoute(graph,{blockedEdges:['bc']});assert.equal(r.status,'unavailable');assert.deepEqual(r.segments,[]);
 });
-test('step-free hard-excludes stairs and requires explicitly confirmed elevator',()=>{
+test('step-free hard-excludes stairs, and routes never use elevators even when confirmed',()=>{
  assert.equal(planRoute(graph,{profile:'stretcher'}).status,'unavailable');
  assert.throws(()=>planRoute(graph,{connectors:[{a:'a',b:'c',kind:'elevator'}]}),/confirmation/);
- const r=planRoute(graph,{profile:'stretcher',connectors:[{a:'a',b:'c',kind:'elevator',confirmed:true}]});assert.equal(r.status,'ready');assert(!r.segments.some(s=>s.kind==='stairs'));assert.equal(r.segments[1].kind,'elevator');assert.equal(r.segments[1].points[1].y,3);
+ const r=planRoute(graph,{profile:'stretcher',connectors:[{a:'a',b:'c',kind:'elevator',confirmed:true}]});assert.equal(r.status,'unavailable');assert.match(r.message,/without elevators/);
+ const foot=planRoute(graph,{connectors:[{a:'a',b:'c',kind:'elevator',confirmed:true}]});assert.equal(foot.status,'ready');assert(!foot.segments.some(s=>s.kind==='elevator'));
 });
 test('agent cannot submit disconnected, blocked, or wrong-entry paths',()=>{
  for(const nodeIds of [['b','c'],['a','c'],['a','unknown','c']])assert.throws(()=>planRoute(graph,{nodeIds}));

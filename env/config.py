@@ -38,6 +38,11 @@ ROUTING = {
     "backup_penalty": 3.0,              # cost multiplier on the first route's edges
     "blocked_detour_s": 60.0,           # assumed cost of meeting a blocked edge and turning back
     "ask_threshold_s": 15.0,            # ask the caller again if knowing the room saves more than this
+    # Elevators are never routed through: they stall, get recalled in a fire, and a crew
+    # cannot see one is broken until they are waiting at it. Stairs only; a stretcher that
+    # cannot take stairs is carried from the closest point it can reach. Set
+    # PINPOINT_ALLOW_ELEVATORS=1 to route through them again.
+    "avoid_elevators": os.environ.get("PINPOINT_ALLOW_ELEVATORS") != "1",
 }
 
 

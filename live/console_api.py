@@ -66,6 +66,9 @@ class Console:
     def get(self, incident_id: str) -> dict:
         return self._call("GET", f"/incidents/{incident_id}")
 
+    def packet(self, packet_id: str) -> dict:
+        return self._call("GET", f"/packets/{packet_id}")
+
     def incidents(self) -> list[dict]:
         return self._call("GET", "/incidents").get("incidents", [])
 
@@ -78,11 +81,21 @@ class Console:
             return False
 
     # ------------------------------------------------------------ writes
-    def create(self, property_id: str, caller_text: str = "", photo_path: str | None = None) -> dict:
+    def create(self, property_id: str, caller_text: str = "", photo_path: str | None = None,
+               channel: dict | None = None) -> dict:
+        """channel: {"platform", "handle", "location"} for incidents that arrived by message."""
         body = {"propertyId": str(property_id), "callerText": caller_text or ""}
         if photo_path:
             body["photo"] = photo_payload(photo_path)
-        return self._call("POST", "/incidents", body)
+        if channel:
+            body["channel"] = channel
+        try:
+            return self._call("POST", "/incidents", body)
+        except ConsoleError as e:
+            if e.code != "UNKNOWN_FIELD" or "channel" not in body:
+                raise
+            body.pop("channel")                # a console from before that field existed
+            return self._call("POST", "/incidents", body)
 
     def update(self, incident_id: str, **fields) -> dict:
         """fields: location, route, notes, unconfirmed (list), packetMarkdown, and
@@ -101,10 +114,12 @@ class Console:
     def route(self, incident_id: str, body: dict) -> dict:
         return self._write(incident_id, "POST", "/route", body)
 
-    def decide(self, incident_id: str, decision: str, reason: str = "") -> dict:
+    def decide(self, incident_id: str, decision: str, reason: str = "", corrected_room_id: str = "") -> dict:
         body = {"decision": decision}
         if reason:
             body["reason"] = reason
+        if corrected_room_id:
+            body["correctedRoomId"] = corrected_room_id
         return self._write(incident_id, "POST", "/decision", body)
 
     # ------------------------------------------------------------ waiting on people
@@ -127,7 +142,7 @@ class Console:
             d = inc.get("decision")
             if d and inc.get("status") in ("approved", "rejected"):
                 return {"decision": d["kind"], "reason": d.get("reason") or "", "revision": d.get("revision"),
-                        "packet_id": inc.get("packetId")}
+                        "packet_id": inc.get("packetId"), "corrected_room_id": d.get("correctedRoomId") or ""}
             time.sleep(poll_s)
         return {"decision": "timeout", "reason": "", "revision": None}
 

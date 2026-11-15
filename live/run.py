@@ -156,7 +156,13 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
                 console=console, console_incident=console_incident, ask=ask, ask_timeout_s=ask_timeout_s,
                 console_scan=bool(console and console.has_scan(building_id)), drafted_by=drafted_by)
 
-    approve, decision_box = _gate(console, console_incident, auto_approve, leave_for_review, approve_timeout_s)
+    gate, decision_box = _gate(console, console_incident, auto_approve, leave_for_review, approve_timeout_s)
+
+    def approve(incident_id, packet_path):
+        decision = gate(incident_id, packet_path)
+        if decision == "reject" and decision_box.get("decision") == "rejected":
+            return {"decision": "reject", "corrected_room_id": decision_box.get("corrected_room_id")}
+        return decision
 
     intake = {"address": address, "building_id": building_id, "caller_photo_path": photo or "(position given)",
               "caller_text": text, "ground_truth_node_id": truth or position or simulate_match,
@@ -302,7 +308,7 @@ def _write_pieces(idir: Path, built: dict) -> None:
 def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, console: Console | None = None,
                      console_incident: str | None = None, truth: str | None = None, position: str | None = None,
                      ask: str | None = None, auto_approve: bool = False, approve_timeout_s: float | None = None,
-                     ask_timeout_s: float = 90.0, **_ignored) -> dict:
+                     ask_timeout_s: float = 90.0, leave_for_review: bool = False, **_ignored) -> dict:
     """The same incident with a model in charge (agent/pinpoint/deep_agent.py): a deepagents
     Commander and five subagents decide which tools to call, on the same real tools. Needs
     the packages in agent/requirements.txt and an Anthropic API key (ANTHROPIC_API_KEY in
@@ -364,7 +370,8 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
     # Its tools need the building id, so that rides along with the address.
     kick = dict(intake, address=f"{address} (building_id {building_id})",
                 caller_photo_path=photo or "(none: the dispatcher gave the position; call match_photo once to get it)")
-    gate, decision_box = _gate(console, console_incident, auto_approve, approve_timeout_s=approve_timeout_s)
+    gate, decision_box = _gate(console, console_incident, auto_approve, leave_for_review=leave_for_review,
+                               approve_timeout_s=approve_timeout_s)
     built: dict = {}
 
     def build() -> None:
@@ -558,6 +565,7 @@ def main(argv=None) -> None:
     ap.add_argument("--ask", choices=("console", "simulate", "none"), help="who answers the agent's questions")
     ap.add_argument("--ask-timeout", type=float, default=90.0, help="seconds to wait for the caller's reply")
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
+    ap.add_argument("--leave-for-review", action="store_true", help="draft packets without waiting for dispatcher approval")
     mode = ap.add_mutually_exclusive_group()
     mode.add_argument("--llm", dest="llm", action="store_true", help="prefer DeepAgents with deterministic fallback (the default)")
     mode.add_argument("--deterministic", dest="llm", action="store_false", help="skip the model and use the deterministic orchestrator")
@@ -566,7 +574,9 @@ def main(argv=None) -> None:
 
     console = Console(a.console or "http://localhost:4175") if (a.console or a.watch) else None
     if a.watch:
-        watch(console, once=a.once, llm=a.llm, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
+        extra = {"leave_for_review": True} if a.leave_for_review else {}
+        watch(console, once=a.once, llm=a.llm, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout,
+              **extra)
         return
     if not a.building or not (a.photo or a.position or a.simulate_match):
         ap.error("give --building and --photo (or --position), or --watch")

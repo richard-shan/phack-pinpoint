@@ -48,7 +48,7 @@ test('local intake persists across restarts with explicit unknowns and no synthe
   const f = await fixture(t); const result = await create(f);
   assert.equal(result.status,201); const incident = result.body;
   assert.equal(incident.revision,1); assert.equal(incident.location,''); assert.equal(incident.route,'');
-  assert(incident.unconfirmed.includes('Contact is not confirmed.'));
+  assert.deepEqual(incident.unconfirmed,['Exact room and floor','Entry and route','Hazards on scene']);
   assert.equal(incident.messages[0].role,'caller');
   await f.restart();
   assert.deepEqual((await f.api(`/api/incidents/${incident.id}`)).body,incident);

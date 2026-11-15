@@ -20,7 +20,7 @@ from live.console_api import Console
 
 from env import console as console_export
 from env import tools as A
-from pinpoint import orchestrator, stubs
+from pinpoint import learning, orchestrator, stubs, trace
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 BUILDING = "6550930"                       # 7900 Fannin St: lobby scan, four doors, 17 health care tenants
@@ -41,6 +41,7 @@ def _ambiguous(building_id, truth, k):
 
 class _Base(unittest.TestCase):
     def setUp(self):
+        self.old_trace = dict(trace._ACTIVE)
         self.old_sim = tools._simulated_candidates
         tools._simulated_candidates = _ambiguous
         self.tmp = tempfile.TemporaryDirectory()
@@ -51,6 +52,8 @@ class _Base(unittest.TestCase):
         self.old_state, run.STATE = run.STATE, Path(self.tmp.name) / "state"     # the watcher's record of handled incidents
 
     def tearDown(self):
+        trace._ACTIVE.clear()
+        trace._ACTIVE.update(self.old_trace)
         tools.uninstall()
         tools._simulated_candidates = self.old_sim
         orchestrator.INCIDENTS, tools.ASSETS = self.old_incidents, self.old_assets
@@ -307,7 +310,7 @@ class WithConsole(_Base):
         self.assertIn(f"/assets/real/live/{inc['id']}/route.jpg", inc["packetMarkdown"])
         self.assertNotIn("**Status:**", inc["packetMarkdown"])   # the console shows its own status
         texts = [e["text"] for e in inc["events"]]
-        self.assertTrue(any(t.startswith("Agent updated the packet") for t in texts))
+        self.assertTrue(any(t.startswith("Packet updated") for t in texts))
         self.assertFalse(any(t.startswith("Dispatcher edited") for t in texts))
         sr = inc["spatialRoute"]
         best = A.best_entry(BUILDING, TARGET, "foot")
@@ -470,6 +473,20 @@ class WithConsole(_Base):
         finally:
             (deep_agent.run_real_agent, deep_agent._ensure_api_key, deep_agent.build_agent, budget.check_budget,
              run.INCIDENTS) = saved
+
+    def test_corrected_room_is_recorded_after_rejection(self):
+        old_buildings = learning.BUILDINGS
+        learning.BUILDINGS = Path(self.tmp.name) / "buildings"
+        try:
+            t, box, cid = self._run_in_thread()
+            self.console.decide(cid, "rejected", "wrong room", corrected_room_id="Suite 1200")
+            t.join(timeout=20)
+            self.assertFalse(t.is_alive())
+            self.assertEqual(box["decision"], "reject")
+            self.assertEqual(box["console_decision"]["corrected_room_id"], "Suite 1200")
+            self.assertEqual(learning.read_corrections(BUILDING)[0]["corrected"], "Suite 1200")
+        finally:
+            learning.BUILDINGS = old_buildings
 
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()

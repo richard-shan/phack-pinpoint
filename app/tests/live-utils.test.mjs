@@ -43,12 +43,12 @@ test('packet export uses the supplied source snapshot and preserves unknowns wit
   assert(output.includes('Year built: Not provided'));
   assert(output.includes('- Door access unknown\n- No equipment confirmed'));
   assert(output.includes('Imported packet (requires source verification)'));
-  assert(output.includes('No emergency service or external delivery is connected.'));
+  assert(!/demo|local review/i.test(output));
   assert(!output.includes('PP-1042'));
   assert(!output.includes('undefined'));
   const unknown=packetText({...incident,location:'',route:''},property);
-  assert(unknown.includes('Caller location not confirmed.'));
-  assert(unknown.includes('Entrance, staging, and route not confirmed.'));
+  assert(unknown.includes('## Caller location\nUnknown'));
+  assert(unknown.includes('## Entry and route\nNo route'));
   assert.equal(known(0),'0'); assert.equal(known(null),'Not provided');
   const scan=packetText(incident,{...property,id:'scan-building',source:{file:'Matterport public scan'},models:[{id:'scan-123'}]});
   assert(scan.includes('Building record — Matterport scan scan-123'));

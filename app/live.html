@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Review building records, caller evidence, and access routes in Pinpoint. Prepare and approve responder packets in a local dispatch workspace.">
+    <meta name="description" content="Pinpoint computer-aided dispatch.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Pinpoint · Dispatch workspace">
-    <meta property="og:description" content="Building context. Caller evidence. A clear responder packet for review.">
+    <meta property="og:title" content="Pinpoint CAD">
+    <meta property="og:description" content="Computer-aided dispatch with caller location, indoor routes and responder packets.">
     <meta property="og:image" content="/assets/social-preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Pinpoint — Building context, caller evidence, and responder packets.">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Pinpoint · Dispatch workspace</title>
+    <title>Call queue · Pinpoint CAD</title>
     <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
     <link rel="preload" href="/assets/fonts/public-sans.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/src/tokens.css">
     <link rel="stylesheet" href="/src/live.css">
     <link rel="stylesheet" href="/src/live-spatial.css">
     <link rel="stylesheet" href="/src/live-system.css">
+    <link rel="stylesheet" href="/src/live-inbox.css">
   </head>
   <body class="live-app">
     <a class="skip" href="#main">Skip to workspace</a>
     <header class="topbar">
-      <a class="brand" href="/live.html"><img src="/assets/mark.svg" alt="" width="28" height="28">Pinpoint</a>
+      <a class="brand" href="/live.html"><img src="/assets/mark.svg" alt="" width="28" height="28">Pinpoint <span class="brand-cad">CAD</span></a>
       <nav aria-label="Main navigation">
-        <a href="/live.html" data-nav="dispatch" aria-current="page">Dispatch</a>
-        <a href="/live.html#los-angeles" data-nav="los-angeles">Los Angeles demo</a>
-        <a href="/live.html#princeton" data-nav="princeton">Princeton 3D</a>
+        <a href="/live.html" data-nav="dispatch" aria-current="page">Incidents</a>
       </nav>
+      <div class="cad-status" aria-label="System status"><span class="cad-online">Online</span><time id="cad-clock"></time></div>
     </header>
     <div id="feedback" role="status" aria-live="polite"></div>
     <main id="main" tabindex="-1">
       <div class="loading-state" role="status">
-        <p>Loading building records…</p>
+        <p>Loading…</p>
         <div class="skeleton-grid" aria-hidden="true"><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton"></div></div>
       </div>
     </main>

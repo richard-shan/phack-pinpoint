@@ -159,8 +159,10 @@ def scan_graph(building_id: str, target: str | None = None) -> dict:
         d = g.nodes[n]
         seq = d.get("floor") or 0
         where = g.label(n) or g.room(n)
+        where = where[:1].upper() + where[1:] if where else where
         nodes.append({"id": n, "index": i, "floor": seq, "position": _sdk(d["xyz"]),
-                      "label": " · ".join(x for x in (f"Scan {i}", floor_label(seq), where) if x)})
+                      "label": " · ".join(x for x in (where, floor_label(seq)) if x) if where
+                               else f"{floor_label(seq)} · position {i}"})
 
     edges = []
     for (a, b), e in g.edges.items():
@@ -293,7 +295,8 @@ def route_update(building_id: str, target: str, profile: str = "foot",
     if front and not front.get("is_best"):
         reason += f" The front door would take {round(front['seconds_saved'])} s longer."
     body = {"profile": profile, "entryId": entry["id"], "destination": target, "nodeIds": node_ids,
-            "updatedBy": "agent", "reason": reason[:500]}
+            "updatedBy": "agent", "reason": reason[:500],
+            "avoidElevators": bool(routing.ROUTING["avoid_elevators"])}
     if front and any(e["id"] == front["entrance_id"] for e in scan["entries"]):
         body["entranceComparison"] = {"frontEntryId": front["entrance_id"],
                                       "frontSeconds": front["seconds"],
