@@ -76,11 +76,14 @@ class TestSubagentStructure(unittest.TestCase):
         self.assertIn("source", p)
         self.assertIn("audit", p)
 
-    def test_locator_uses_sonnet_others_haiku(self):
+    def test_all_subagents_use_haiku(self):
+        """Pinpoint is locked to haiku-only to stay inside the $5 spend cap.
+        Env vars PINPOINT_*_MODEL still let Connor swap models for one-off
+        tests, but the module defaults must remain haiku."""
         m = {s["name"]: s["model"] for s in self.subs}
-        self.assertIn("sonnet", m["locator"].lower())
-        for n in ("records", "site", "router", "verifier"):
-            self.assertIn("haiku", m[n].lower())
+        for n in ("records", "locator", "site", "router", "verifier"):
+            self.assertIn("haiku", m[n].lower(),
+                          f"{n} subagent must default to haiku, got {m[n]}")
 
 
 class TestCommanderSystemPrompt(unittest.TestCase):

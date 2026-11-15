@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 from typing import Optional
 
-from . import stubs, trace, streaming
+from . import stubs, trace, streaming, budget
 from .agent_spec import (
     COMMANDER_SYSTEM_PROMPT,
     COMMANDER_SYSTEM_PROMPT_NO_TODOS,
@@ -27,6 +27,7 @@ __all__ = [
     "run_real_agent",
     "run_incident",
     "_load_api_key_from_file",
+    "_load_env_local_key",
 ]
 
 _LOG = logging.getLogger("pinpoint.deep_agent")
@@ -51,13 +52,52 @@ def _load_api_key_from_file(path: Path) -> Optional[str]:
     return m.group(1) if m else None
 
 
+def _load_env_local_key(path: Path) -> bool:
+    """Parse a dotenv-style file for ANTHROPIC_API_KEY and promote to os.environ.
+
+    Never returns, prints, or logs the key value. On success sets the env var and
+    returns True. On any failure returns False and logs a generic message that
+    does not name the file.
+    """
+    try:
+        if not path.exists():
+            return False
+        text = path.read_text()
+    except OSError:
+        _LOG.info("env file not readable")
+        return False
+    pat = re.compile(
+        r"""(?mx)
+        ^\s*(?:export\s+)?ANTHROPIC_API_KEY\s*=\s*
+        (?:
+            "(?P<dq>[^"\n]+)"    # double-quoted
+          | '(?P<sq>[^'\n]+)'    # single-quoted
+          | (?P<raw>\S+)         # bare
+        )
+        \s*$
+        """
+    )
+    for m in pat.finditer(text):
+        val = m.group("dq") or m.group("sq") or m.group("raw")
+        if val:
+            os.environ["ANTHROPIC_API_KEY"] = val
+            return True
+    return False
+
+
 def _ensure_api_key() -> str:
-    key = os.environ.get("ANTHROPIC_API_KEY") or _load_api_key_from_file(AGENT_DIR.parent / "api.txt")
+    # Priority: existing env var, then api.txt, then .env.local at repo root.
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        key = _load_api_key_from_file(AGENT_DIR.parent / "api.txt")
+        if key:
+            os.environ["ANTHROPIC_API_KEY"] = key
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        _load_env_local_key(AGENT_DIR.parent / ".env.local")
+    key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise DeepAgentsNotConfigured(
-            "ANTHROPIC_API_KEY not set and no anthropic_api_key in api.txt."
+            "ANTHROPIC_API_KEY not set (checked env, api.txt, .env.local)."
         )
-    os.environ["ANTHROPIC_API_KEY"] = key
     return key
 
 
@@ -126,6 +166,16 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
     incident_dir = Path(incident_dir)
     incident_dir.mkdir(parents=True, exist_ok=True)
     _ensure_api_key()
+
+    # Pre-flight budget check: refuse to boot if cumulative spend crossed cap.
+    remaining, exceeded = budget.check_budget()
+    if exceeded:
+        raise budget.BudgetExceeded(
+            f"cumulative spend crossed cap of ${budget.BUDGET_USD:.2f}; "
+            f"remaining: ${remaining:.4f}. Reset agent/.pinpoint_cost.json to continue."
+        )
+    _LOG.info("budget: $%.4f remaining of $%.2f cap", remaining, budget.BUDGET_USD)
+
     agent = build_agent()
 
     try:
@@ -184,14 +234,47 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
         )
 
     elapsed = time.time() - t0
+
+    # Tally token usage from the final agent state and record against the cap.
+    in_tok = out_tok = 0
+    try:
+        state = agent.get_state(config)
+        messages = getattr(state, "values", {}).get("messages", []) if state else []
+        for m in messages:
+            usage = getattr(m, "usage_metadata", None) or (m.get("usage_metadata") if isinstance(m, dict) else None)
+            if not usage:
+                continue
+            in_tok += int(usage.get("input_tokens", 0) or 0)
+            out_tok += int(usage.get("output_tokens", 0) or 0)
+    except Exception as e:  # pragma: no cover - best-effort accounting
+        _LOG.info("budget: usage aggregation skipped (%s)", type(e).__name__)
+
+    cost = budget.estimate_cost(in_tok, out_tok, COMMANDER_MODEL)
+    try:
+        state_after = budget.record_usage(in_tok, out_tok, COMMANDER_MODEL)
+        print(f"[budget] run cost ${cost:.4f}; cumulative ${state_after.cumulative_usd:.4f} of ${budget.BUDGET_USD:.2f}")
+    except Exception as e:  # pragma: no cover
+        _LOG.warning("budget: record_usage failed (%s)", type(e).__name__)
+        state_after = None
+
     trace.log("commander", "real_agent:done",
-              args={"interrupts": interrupt_count, "elapsed_s": round(elapsed, 2)},
+              args={
+                  "interrupts": interrupt_count,
+                  "elapsed_s": round(elapsed, 2),
+                  "input_tokens": in_tok,
+                  "output_tokens": out_tok,
+                  "cost_usd": cost,
+              },
               phase="milestone")
     return {
         "thread_id": thread_id,
         "elapsed_s": round(elapsed, 2),
         "interrupts": interrupt_count,
         "dir": str(incident_dir),
+        "input_tokens": in_tok,
+        "output_tokens": out_tok,
+        "cost_usd": cost,
+        "cumulative_usd": state_after.cumulative_usd if state_after else None,
     }
 
 
