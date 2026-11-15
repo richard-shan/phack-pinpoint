@@ -6,9 +6,28 @@ from typing import Any
 
 from . import stubs, routing, localization
 
-COMMANDER_MODEL = os.environ.get("PINPOINT_COMMANDER_MODEL", "anthropic:claude-sonnet-5-5")
+COMMANDER_MODEL = os.environ.get("PINPOINT_COMMANDER_MODEL", "anthropic:claude-haiku-5-5")
 WORKER_MODEL = os.environ.get("PINPOINT_WORKER_MODEL", "anthropic:claude-haiku-5-5")
-LOCATOR_MODEL = os.environ.get("PINPOINT_LOCATOR_MODEL", "anthropic:claude-sonnet-5-5")
+LOCATOR_MODEL = os.environ.get("PINPOINT_LOCATOR_MODEL", "anthropic:claude-haiku-5-5")
+
+
+def _assert_haiku_only() -> None:
+    """Log a warning when a non-haiku model is wired in (env-var override kept available
+    but should not be the default for Pinpoint)."""
+    import logging as _logging
+    for name, model in (
+        ("COMMANDER_MODEL", COMMANDER_MODEL),
+        ("WORKER_MODEL", WORKER_MODEL),
+        ("LOCATOR_MODEL", LOCATOR_MODEL),
+    ):
+        if "haiku" not in (model or "").lower():
+            _logging.getLogger("pinpoint.agent_spec").warning(
+                "non-haiku model wired: %s=%s (Pinpoint budget assumes haiku-only)",
+                name, model,
+            )
+
+
+_assert_haiku_only()
 
 # ---------- Pydantic response_format models ----------
 # Probed at import time. When pydantic is not installed in the environment, the
