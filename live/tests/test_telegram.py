@@ -12,7 +12,7 @@ from live.console_api import Console
 from live.telegram import Bridge, Telegram, TelegramError
 
 ROOT = Path(__file__).resolve().parents[2]
-JPEG = (ROOT / 'demo/6550930_3ymmrb_h020.jpg').read_bytes()
+JPEG = (ROOT / 'demo/6550930_3ymmrb.jpg').read_bytes()
 
 
 class FakeTelegram:
