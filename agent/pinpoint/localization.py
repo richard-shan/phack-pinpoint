@@ -1,16 +1,7 @@
-"""Active localization — the part of Part C that is REAL code, not a stub (plan 4, 'active
-localization'). The Locator keeps a BELIEF over candidate positions and treats questions as
-ACTIONS. These two functions are C's own IP:
-
-  best_question(candidates)                 -> attribute with highest expected information gain
-  update_belief(candidates, attribute, ans) -> reweighted, renormalized candidates
-
-The LLM phrases the question and relays the caller's answer; the math lives here. ~both ~60 lines.
-"""
+# Belief over candidate rooms + which question to ask next.
 import math
 from .config import ANSWER_RELIABILITY
 
-# Human phrasings for the attributes perception (Person B) attaches to each node.
 QUESTION_HINTS = {
     "floor":         "What floor are you on, or how many flights did you come up?",
     "has_window":    "Is there a window near you?",
@@ -21,7 +12,6 @@ QUESTION_HINTS = {
 
 
 def normalize_belief(candidates):
-    """Return candidates with a normalized 'belief' field (derived from 'score' first time)."""
     raw = [max(c.get("belief", c.get("score", 0.0)), 1e-9) for c in candidates]
     total = sum(raw)
     for c, r in zip(candidates, raw):
@@ -39,26 +29,22 @@ def _entropy(weights):
 
 
 def best_question(candidates, exclude=None):
-    """Pick the attribute whose answer is expected to shrink the belief's entropy the most
-    (max expected information gain). Only attributes present on every candidate are eligible,
-    so the partition is well defined. `exclude` skips already-asked attributes (don't re-ask).
-    Returns the attribute + a phrasing hint + diagnostics."""
+    # Attribute with highest expected info gain. Only attrs present on every candidate.
+    """Choose the caller question whose answer is expected to shrink the belief entropy the most across the current candidate set. Returns the attribute, a phrasing hint, and the expected information gain."""
     normalize_belief(candidates)
     prior_h = _entropy([c["belief"] for c in candidates])
 
     attrs = set(candidates[0].get("attributes", {}))
     for c in candidates[1:]:
         attrs &= set(c.get("attributes", {}))
-    attrs -= set(exclude or ())  # never re-ask what the caller already answered
+    attrs -= set(exclude or ())
 
     best = None
     for attr in sorted(attrs):
-        # group candidate belief mass by the answer that candidate implies
         groups = {}
         for c in candidates:
             v = c["attributes"][attr]
             groups.setdefault(_key(v), []).append(c["belief"])
-        # expected posterior entropy = sum_v P(v) * H(belief | v)
         exp_post = 0.0
         for mass in groups.values():
             p_v = sum(mass)
@@ -72,34 +58,31 @@ def best_question(candidates, exclude=None):
             "question_hint": QUESTION_HINTS.get(attr, f"Can you tell me about: {attr}?"),
             "expected_info_gain": round(gain, 4),
             "split": {k: round(sum(m), 3) for k, m in groups.items()},
-            "eligible": len(groups) > 1,  # a question with one answer teaches nothing
+            "eligible": len(groups) > 1,
         }
         if cand["eligible"] and (best is None or gain > best["expected_info_gain"]):
             best = cand
 
-    if best is None:  # everything agrees on every attribute — no question helps
+    if best is None:
         return {"attribute": None, "question_hint": None, "expected_info_gain": 0.0,
                 "split": {}, "eligible": False}
     return best
 
 
 def update_belief(candidates, attribute, answer):
-    """Soft Bayesian reweight given the caller's answer. A candidate whose attribute matches the
-    answer is boosted by the answer-reliability r; mismatches are damped by (1-r). This is soft on
-    purpose — callers under stress mis-answer, so a single answer never zeroes a candidate out."""
+    # Soft Bayes update — mismatches damp, never zero (callers mis-answer under stress).
+    """Soft-update candidate beliefs given the caller's answer. Matching candidates boosted by answer-reliability; non-matching dampened; nothing zeroed. Returns the re-sorted candidates."""
     normalize_belief(candidates)
     r = ANSWER_RELIABILITY
     ans = _key(answer)
     for c in candidates:
         matches = _key(c.get("attributes", {}).get(attribute)) == ans
-        likelihood = r if matches else (1.0 - r)
-        c["belief"] = c["belief"] * likelihood
+        c["belief"] = c["belief"] * (r if matches else (1.0 - r))
     normalize_belief(candidates)
     return sorted(candidates, key=lambda c: c["belief"], reverse=True)
 
 
 def _key(v):
-    """Canonicalize an attribute value for comparison (bools, numbers, strings)."""
     if isinstance(v, bool):
         return "yes" if v else "no"
     if isinstance(v, (int, float)):

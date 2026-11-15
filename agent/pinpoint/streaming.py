@@ -1,15 +1,4 @@
-"""Live event streaming for the deepagents --real-llm path.
-
-Fans out events to two places:
-
-1. trace.jsonl via the existing `trace.log` helper (same file every tool call writes to).
-2. A leaner `events.jsonl` next to it, optimized for a dashboard consumer (D's console).
-   Each line is a self-contained JSON object with `t_ms` (elapsed from incident start),
-   `kind` ("update" or "token"), `source` (node name), and `payload` (compact dict).
-
-`events.jsonl` is append-only, flushed per line, and stays valid JSONL even if the
-stream is interrupted mid-run. D's console can tail it like a log.
-"""
+# Fan deepagents stream chunks into trace.jsonl + events.jsonl for D's console.
 from __future__ import annotations
 
 import json
@@ -27,7 +16,7 @@ def _events_path(incident_dir: Path) -> Path:
 
 
 def start_events_file(incident_dir: Path) -> None:
-    """Truncate `events.jsonl` and write a header event (t_ms from trace)."""
+    # Reset events.jsonl with a header line.
     p = _events_path(incident_dir)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text("")
@@ -40,17 +29,7 @@ def start_events_file(incident_dir: Path) -> None:
 
 
 def forward_chunk(stream_mode: str, chunk: Any, incident_dir: Path) -> None:
-    """Dispatch one streamed chunk from `agent.stream(..., stream_mode=[...])` to
-    both trace.jsonl and events.jsonl.
-
-    Accepted shapes:
-    - stream_mode == "updates": `chunk` is a dict `{node_name: state_delta}`. A
-      `__interrupt__` key is forwarded with `interrupt=True` in the payload so D's
-      console can surface the gate.
-    - stream_mode == "messages": `chunk` is either `(msg_chunk, metadata)` or the raw
-      message. The content delta is extracted; empty deltas are skipped; longer than
-      `_TOKEN_LIMIT` are truncated with an ellipsis.
-    """
+    # One stream chunk → trace + events. updates = node deltas; messages = tokens.
     p = _events_path(incident_dir)
 
     if stream_mode == "updates":
@@ -101,9 +80,7 @@ def forward_chunk(stream_mode: str, chunk: Any, incident_dir: Path) -> None:
 
 
 def tail_events(incident_dir: Path) -> Iterator[dict]:
-    """Yield every parsed event currently on disk in `events.jsonl`, oldest first.
-    Skips lines that are not valid JSON (partial writes should not happen because of
-    `_append`, but we tolerate them anyway)."""
+    # Yield events.jsonl lines oldest-first; skip bad JSON.
     p = _events_path(incident_dir)
     if not p.exists():
         return
@@ -119,7 +96,6 @@ def tail_events(incident_dir: Path) -> Iterator[dict]:
 
 
 def chunk_is_interrupt(chunk: Any) -> bool:
-    """True iff a stream_mode='updates' chunk carries an __interrupt__ payload."""
     return isinstance(chunk, dict) and "__interrupt__" in chunk
 
 

@@ -1,9 +1,4 @@
-"""PacketWriter — renders packet.md and rewrites it on every flush() so Person D's console sees
-the one-page packet FILL IN section-by-section as subagents return (plan 11: 'the packet filling
-in'). Claims that must be source-checked carry a [src:...] tag the Verifier reads (check_claim).
-
-Packet sections follow plan 3 ('the responder packet').
-"""
+# Renders packet.md; flush() rewrites so the console can watch it fill in.
 from pathlib import Path
 
 PENDING = "_⏳ pending…_"
@@ -14,13 +9,13 @@ class PacketWriter:
         self.path = Path(path)
         self.intake = intake
         self.brief = self.location = self.site = self.route = self.audit = None
-        self.correction_notes = []  # markdown lines from learning.summarize_for_packet
+        self.correction_notes = []
         self.sent = False
-        self.status = "OK"             # OK | DEGRADED | UNABLE
+        self.status = "OK"  # OK | DEGRADED | UNABLE
         self.failure_mode = None
         self.failure_sentence = None
-        self.failure_cite_tag = None   # resolves under sources
-        self.attempted_fields = {}     # {field: value} cited by [src:intake.*]
+        self.failure_cite_tag = None
+        self.attempted_fields = {}
 
     def set_brief(self, b): self.brief = b
     def set_location(self, l): self.location = l
@@ -29,10 +24,9 @@ class PacketWriter:
     def set_audit(self, a): self.audit = a
     def set_correction_notes(self, lines): self.correction_notes = list(lines or [])
     def mark_sent(self): self.sent = True
+
     def set_failure(self, status, mode, sentence, cite_tag, attempted=None):
-        """Record a failure so render() produces an UNABLE/DEGRADED packet with a
-        sourced claim. cite_tag is the dotted [src:...] key (e.g. 'costar.lookup_miss'),
-        which the orchestrator must also populate in the verifier's sources dict."""
+        # UNABLE/DEGRADED line; cite_tag must exist in verifier sources.
         self.status = status
         self.failure_mode = mode
         self.failure_sentence = sentence
@@ -43,7 +37,6 @@ class PacketWriter:
     def flush(self):
         self.path.write_text(self.render())
 
-    # ---- claims the verifier checks (every line with a [src:] tag) ----
     def tagged_claims(self):
         return [ln.strip("- ").strip() for ln in self.render().splitlines() if "[src:" in ln]
 

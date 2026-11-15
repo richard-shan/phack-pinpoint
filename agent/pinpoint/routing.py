@@ -1,24 +1,57 @@
-"""Routing tools (plan 4A). These belong to Person A's lane, but Part C owns the TOY-GRAPH
-version (4A build-order item 1: 'toy graph by hand ... all routing code is tested against this
-first'). Real Dijkstra over the fixture graph so the stub pipeline is internally consistent —
-the loading-dock door genuinely beats the front door, and the stretcher route genuinely differs.
-
-Swap: Person A replaces this module's data source (load_graph) with real per-building graphs;
-the function signatures are the contract and do not change.
-"""
+# Graph routing over the toy building (A swaps load_graph for real data later).
 import json
 import heapq
 import math
 from functools import lru_cache
 from .config import (FIXTURES, WALK_SPEED, VEHICLE_SPEED, DOOR_DELAY, LOCKED_DOOR_DELAY,
                      STAIR_SECONDS_PER_FLIGHT, ELEVATOR_WAIT, ELEVATOR_SECONDS_PER_FLOOR)
+from .errors import MatterportUnavailable
 
 IMPASSABLE = float("inf")
+
+# Semantic building_id -> on-disk fixture folder.
+_FIXTURE_ALIASES = {
+    "bayou-medical-plaza": "building_bayou",
+}
+
+
+def _looks_like_address(s):
+    """Heuristic: a string is probably an address if it has a comma or a trailing state code."""
+    if not isinstance(s, str):
+        return False
+    low = s.lower()
+    return ("," in s) or any(tok in low for tok in (" st ", " ave ", " rd ", " blvd ",
+                                                       " dr ", " ln ", " way ", " pl "))
+
+
+def _resolve_fixture_dir(building_id):
+    # Try <id>/, then alias, then building_<id>/. If the input looks like an
+    # address (LLM sometimes passes intake.address here by mistake), resolve
+    # via get_property to a real building_id and try again.
+    candidates = [
+        FIXTURES / building_id,
+        FIXTURES / _FIXTURE_ALIASES.get(building_id, building_id),
+        FIXTURES / f"building_{building_id}",
+    ]
+    for c in candidates:
+        if (c / "graph.json").exists():
+            return c
+    if _looks_like_address(building_id):
+        try:
+            from . import stubs  # local import avoids circular at module load
+            prop = stubs.get_property(building_id)
+            resolved = prop.get("building_id") if prop else None
+            if resolved and resolved != building_id:
+                return _resolve_fixture_dir(resolved)
+        except Exception:
+            pass
+    raise MatterportUnavailable(f"no graph for building {building_id}")
 
 
 @lru_cache(maxsize=8)
 def load_graph(building_id):
-    data = json.loads((FIXTURES / "building_bayou" / "graph.json").read_text())
+    fdir = _resolve_fixture_dir(building_id)
+    data = json.loads((fdir / "graph.json").read_text())
     nodes = {n["id"]: n for n in data["nodes"]}
     adj = {nid: [] for nid in nodes}
     for e in data["edges"]:
@@ -53,8 +86,7 @@ def edge_seconds(graph, edge, profile, blocked=None):
 
 
 def _dijkstra(graph, source, profile, blocked=None):
-    """Single-source shortest TIME over the whole graph (incl. exterior). Plan 4A step 3:
-    one reverse search from the caller gives time from every entrance in one pass."""
+    # Shortest time from source (one pass → every entrance).
     dist = {source: 0.0}
     prev = {}
     pq = [(0.0, source)]
@@ -97,6 +129,7 @@ def _uses(graph, seq, etype):
 
 
 def route(building_id, from_node, to_node, profile, blocked_edges=None):
+    """Compute the shortest path from from_node to to_node on the building graph under a stretcher or foot profile. Returns path_nodes, meters, and seconds."""
     g = load_graph(building_id)
     blocked = set(blocked_edges or [])
     dist, prev = _dijkstra(g, from_node, profile, blocked)
@@ -109,8 +142,7 @@ def route(building_id, from_node, to_node, profile, blocked_edges=None):
 
 
 def best_entry(building_id, target, profile):
-    """One reverse Dijkstra from the caller gives time from every entrance + staging. Best door =
-    entrance with lowest (outside + inside) time. Plan 4A step 3 — no per-door search."""
+    # Best door = lowest time from target to any entrance (reverse Dijkstra).
     g = load_graph(building_id)
     dist, prev = _dijkstra(g, target, profile)
     entrances = [nid for nid, n in g["nodes"].items() if n.get("is_entrance")]
@@ -133,11 +165,32 @@ def best_entry(building_id, target, profile):
 
 
 def best_entry_under_belief(building_id, candidates, profile):
-    """Plan 4A step 4.1: route under LOCATION uncertainty. Expected time from each entrance over
-    the belief; pick the door with lowest expected time. If candidates route to the SAME best door,
-    tell the Commander a question is NOT worth asking (the latency-saver from our discussion)."""
+    """Pick the responder-staging entrance that minimizes expected graph distance under weighted candidate rooms. Accepts candidates as list of {node_id, belief} dicts; tolerates 'node', 'id', 'room_id' as aliases and defaults a missing belief to uniform. Returns best_entry_id, expected meters, and alternatives."""
     g = load_graph(building_id)
     from .localization import normalize_belief
+    # Normalize candidate shapes: the LLM may not match our exact schema.
+    _norm = []
+    for c in (candidates or []):
+        if isinstance(c, str):
+            _norm.append({"node_id": c, "belief": 1.0})
+            continue
+        if not isinstance(c, dict):
+            continue
+        nid = c.get("node_id") or c.get("node") or c.get("id") or c.get("room_id")
+        if not nid or nid not in g["nodes"]:
+            continue
+        belief = c.get("belief", c.get("score", 1.0))
+        try:
+            belief = float(belief)
+        except (TypeError, ValueError):
+            belief = 1.0
+        _norm.append({"node_id": nid, "belief": belief})
+    if not _norm:
+        return {"entrance_id": None, "expected_seconds": None, "spread_seconds": 0.0,
+                "all_candidates_same_door": False, "question_worth_asking": True,
+                "per_candidate_best_door": {},
+                "error": "no valid candidates (need at least node_id matching a graph node)"}
+    candidates = _norm
     normalize_belief(candidates)
     entrances = [nid for nid, n in g["nodes"].items() if n.get("is_entrance")]
     exp = {e: 0.0 for e in entrances}
@@ -159,14 +212,13 @@ def best_entry_under_belief(building_id, candidates, profile):
 
 
 def backup_route(building_id, from_node, to_node, profile, avoid_path):
-    """Second route sharing as few edges as possible: triple the cost of avoid_path edges, research.
-    Plan 4A step 3 — simpler than Yen's, actually different."""
+    # Alternate path: 3x cost on edges from the first route.
+    """Compute an alternative path from from_node to to_node that avoids the given nodes. Returns the alternative or None if no path exists."""
     g = load_graph(building_id)
     avoid = set()
     ap = avoid_path or []
     for a, b in zip(ap, ap[1:]):
         avoid.add(frozenset((a, b)))
-    # temporary penalty by blocking then allowing with x3 — emulate via blocked=None + penalty graph
     dist, prev = _dijkstra_penalized(g, from_node, profile, avoid, penalty=3.0)
     seq = _path(prev, from_node, to_node)
     if seq is None:
@@ -199,8 +251,7 @@ def _dijkstra_penalized(graph, source, profile, avoid_pairs, penalty):
 
 
 def replan(building_id, current_node, to_node, profile, blocked_edges):
-    """Crew texts 'door locked' -> mark edge impassable, re-search from current position.
-    Plan 4A step 4.3 (live replanning)."""
+    # Door locked mid-run → search again from current_node.
     r = route(building_id, current_node, to_node, profile, blocked_edges=blocked_edges)
     r["replanned_from"] = current_node
     r["blocked_edges"] = list(blocked_edges)
@@ -208,7 +259,7 @@ def replan(building_id, current_node, to_node, profile, blocked_edges):
 
 
 def exit_route(building_id, from_node, profile):
-    """Fastest way OUT — same search, nearest reachable entrance. Plan 4A step 4.5."""
+    # Nearest exit from from_node.
     g = load_graph(building_id)
     dist, prev = _dijkstra(g, from_node, profile)
     entrances = [nid for nid, n in g["nodes"].items() if n.get("is_entrance")]
@@ -222,9 +273,7 @@ def exit_route(building_id, from_node, profile):
 
 
 def directions(building_id, path):
-    """Node-id list -> human steps. Geometry gives left/right + distance; node attributes give the
-    landmark phrase (the vision model only writes landmarks — plan 4A step 5). Floor changes stated.
-    Thumbnails = each node's pano_path."""
+    # Node ids → turn-by-turn steps with landmarks.
     g = load_graph(building_id)
     nodes = g["nodes"]
     if not path or len(path) < 2:

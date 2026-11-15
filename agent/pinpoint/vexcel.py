@@ -1,12 +1,4 @@
-"""Real Vexcel API 2.0 integration — aerial tile + property attributes for Site layer.
-
-Uses the ortho/extract and property/extract endpoints (see the hackathon quickstart).
-Returns a compact dict of site features drawn from Vexcel's structured property attributes;
-no CV is run here on purpose, per Part C scope.
-
-Any failure (network, auth, empty response, timeout > 5s) raises VexcelUnavailable so the
-Site stub can cleanly fall back to the fixture layer without poisoning the packet.
-"""
+# Vexcel aerial tile + property attrs. Raises VexcelUnavailable → fixture fallback.
 import json
 import math
 import os
@@ -16,20 +8,16 @@ import requests
 
 from .config import FIXTURES
 from .trace import log
+from .errors import VexcelUnavailable  # noqa: F401
 
 API = "https://api.vexcelgroup.com/v2"
 LAYERS = "urban,urban-r,wide-area,urban-g"
-TIMEOUT = 5.0  # strict: Site runs on the critical parallel path
-
-# api.txt lives at repo root (two dirs above FIXTURES which is agent/pinpoint/fixtures)
-_API_TXT = FIXTURES.parent.parent.parent / "api.txt"
-
-
-from .errors import VexcelUnavailable  # noqa: F401
+TIMEOUT = 5.0  # site is on the critical path
+_API_TXT = FIXTURES.parent.parent.parent / "api.txt"  # repo-root api.txt
 
 
 def _load_key():
-    """Parse api.txt: the Vexcel key is the first non-empty line after the 'api_key' label."""
+    # api_key line in api.txt, then the next non-empty value.
     try:
         lines = _API_TXT.read_text().splitlines()
     except OSError as e:
@@ -43,7 +31,7 @@ def _load_key():
 
 
 def _square_wkt(lat, lon, half_m):
-    """WKT POLYGON centered on lat/lon, half_m meters to each edge."""
+    # Rough meter box around lat/lon as WKT.
     dlat = half_m / 111_320.0
     dlon = half_m / (111_320.0 * math.cos(math.radians(lat)))
     w, e = lon - dlon, lon + dlon
@@ -52,8 +40,7 @@ def _square_wkt(lat, lon, half_m):
 
 
 def _extract_features(property_response):
-    """Turn Vexcel property.extract JSON into a compact site-features dict.
-    No CV: we read the structured attributes Vexcel already computed."""
+    # Pull the few fields we care about from property/extract.
     out = {
         "source": "vexcel.property/extract",
         "structure_count": None,
@@ -89,12 +76,7 @@ def _extract_features(property_response):
 
 
 def fetch_aerial(address, lat, lon, building_id="unknown"):
-    """Fetch an ortho aerial tile + extracted property features for a lat/lon.
-    Returns {tile_path, features, tile_url, address}.
-    Raises VexcelUnavailable on ANY failure (network, auth, timeout, empty response).
-
-    Tile is cached under agent/pinpoint/fixtures/<building_id>/vexcel_tile.jpg.
-    """
+    # Ortho tile + features; caches jpeg under fixtures/<building_id>/.
     try:
         key = _load_key()
     except VexcelUnavailable:
