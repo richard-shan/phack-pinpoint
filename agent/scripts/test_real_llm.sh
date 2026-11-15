@@ -7,6 +7,10 @@ set -u
 REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 cd "$REPO" || { echo "cannot cd to repo"; exit 1; }
 
+# marker so stage 6 can tell a new incident folder from a stale one
+SCRIPT_START_MARKER=$(mktemp)
+trap 'rm -f "$SCRIPT_START_MARKER"' EXIT
+
 FAIL=0
 pass() { printf "\033[32m  pass\033[0m  %s\n" "$1"; }
 fail() { printf "\033[31m  fail\033[0m  %s\n" "$1"; FAIL=$((FAIL+1)); }
@@ -76,18 +80,33 @@ fi
 
 # ------ 4. Deps available or installable ------------------------------
 stage "4/6 python deps"
-if [ "$PY" = "UV" ]; then
+RUNNER=()
+if command -v uv > /dev/null; then
+  pass "uv available (fastest path)"
   RUNNER=(uv run --python 3.11 --with-requirements agent/requirements.txt python3)
-  pass "using uv-managed env"
-else
+elif [ -n "$PY" ]; then
   if "$PY" -c "import deepagents, pydantic" 2>/dev/null; then
-    pass "deepagents + pydantic importable"
+    pass "deepagents + pydantic already importable on system python"
+    RUNNER=("$PY")
   else
-    note "installing from agent/requirements.txt (one-time)..."
-    "$PY" -m pip install -q -r agent/requirements.txt && \
-      pass "install succeeded" || fail "pip install failed"
+    VENV="$REPO/.venv"
+    if [ ! -d "$VENV" ]; then
+      note "creating venv at .venv (PEP 668 safe)..."
+      "$PY" -m venv "$VENV" && pass "venv created" || fail "venv creation failed"
+    else
+      pass "venv at .venv already exists"
+    fi
+    if [ -f "$VENV/bin/python3" ]; then
+      note "installing requirements into .venv ..."
+      "$VENV/bin/python3" -m pip install -q --upgrade pip > /dev/null 2>&1
+      "$VENV/bin/python3" -m pip install -q -r agent/requirements.txt && \
+        pass "deps installed into .venv" || fail "pip install into .venv failed"
+      RUNNER=("$VENV/bin/python3")
+    fi
   fi
-  RUNNER=("$PY")
+fi
+if [ "${#RUNNER[@]}" -eq 0 ]; then
+  fail "no runner resolved"
 fi
 
 # ------ 5. The real run -----------------------------------------------
@@ -95,6 +114,7 @@ stage "5/6 running --real-llm"
 if [ "$FAIL" -ne 0 ]; then
   note "skipping run; $FAIL prerequisite failure(s) above"
 else
+  RUN_INCIDENT_STARTED=1
   OUT=$(mktemp)
   "${RUNNER[@]}" agent/run_incident.py --real-llm > "$OUT" 2>&1
   RC=$?
@@ -117,19 +137,25 @@ fi
 
 # ------ 6. Incident folder artifacts ----------------------------------
 stage "6/6 incident artifacts"
-LATEST=$(ls -td agent/incidents/*/ 2>/dev/null | head -1)
-if [ -z "$LATEST" ]; then
-  fail "no agent/incidents/<id>/ folder found"
+if [ -z "${RUN_INCIDENT_STARTED:-}" ]; then
+  note "skipping (stage 5 did not run)"
 else
-  pass "latest incident: $LATEST"
-  MISSING=""
-  for f in intake.json plan.md brief.json candidates.json location.json site.json route.json audit.json packet.md trace.jsonl events.jsonl; do
-    [ -f "${LATEST}${f}" ] || MISSING="$MISSING $f"
-  done
-  if [ -z "$MISSING" ]; then
-    pass "all 11 expected artifacts present"
+  # only look at an incident folder newer than when this script started
+  # so stale folders from previous runs don't pollute the check
+  LATEST=$(find agent/incidents -maxdepth 1 -mindepth 1 -type d -newer "$SCRIPT_START_MARKER" 2>/dev/null | sort | tail -1)
+  if [ -z "$LATEST" ]; then
+    fail "no new agent/incidents/<id>/ folder created by this run"
   else
-    fail "missing artifacts:$MISSING"
+    pass "incident created this run: $LATEST"
+    MISSING=""
+    for f in intake.json plan.md brief.json candidates.json location.json site.json route.json audit.json packet.md trace.jsonl events.jsonl; do
+      [ -f "${LATEST}/${f}" ] || MISSING="$MISSING $f"
+    done
+    if [ -z "$MISSING" ]; then
+      pass "all 11 expected artifacts present"
+    else
+      fail "missing artifacts:$MISSING"
+    fi
   fi
 fi
 
