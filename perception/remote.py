@@ -10,6 +10,7 @@ no models, no cache, no installs.
     python3 -m perception.remote sync                       # push this laptop's perception/ code to the GPU
     python3 -m perception.remote run perception.index 12345 # run any perception command on the GPU
     python3 -m perception.remote restart                    # restart the GPU service after a sync
+    python3 -m perception.remote budget [dollars]           # show or raise the overnight Claude spend cap
 
 Needs your SSH key on the instance (ask whoever runs it to add your public key).
 The first call opens an SSH tunnel to the service in the background. Settings:
@@ -151,6 +152,19 @@ def run(*args):
     return subprocess.run(SSH + [HOST, cmd]).returncode
 
 
+def budget(dollars=None):
+    """Show the Claude spend of the overnight attributes-and-site job, or raise its cap.
+    The running job picks up a new cap within a minute."""
+    py = ("import json,os; s=json.load(open('cache/bulk/spend.json')) if os.path.exists('cache/bulk/spend.json') "
+          "else {'dollars':0,'buildings':{}}; b=open('enrich_budget.txt').read().strip() "
+          "if os.path.exists('enrich_budget.txt') else '12'; "
+          "print('spent $%.2f of $%s cap, %d buildings done' % (s['dollars'], b, len(s['buildings'])))")
+    set_cmd = "echo %.2f > enrich_budget.txt && " % float(dollars) if dollars is not None else ""
+    out = subprocess.run(SSH + [HOST, "cd %s && %spython3 -c \"%s\"" % (DIR, set_cmd, py)],
+                         capture_output=True, text=True)
+    return (out.stdout or out.stderr).strip()
+
+
 def restart():
     """(Re)start the GPU service; waits until it answers."""
     cmd = ("cd %s && for p in $(pgrep -u $(whoami) -f 'python -m perception[.]server'); do "
@@ -183,6 +197,8 @@ if __name__ == "__main__":
         sys.exit(run(*a[1:]))
     elif a[0] == "restart":
         print(restart())
+    elif a[0] == "budget":
+        print(budget(a[1] if len(a) > 1 else None))
     elif a[0] == "health":
         print(health())
     else:

@@ -230,14 +230,25 @@ def enrich(buildings, budget, wait=True, site=True):
     from .site import detect_site_features, site_dir
     os.makedirs(STATE, exist_ok=True)
     ledger = _spend()
-    print("budget $%.2f, already spent $%.2f" % (budget, ledger["dollars"]), flush=True)
+    budget_file = os.path.join(REPO, "enrich_budget.txt")
+
+    def current_budget():
+        """The cap can be raised while this runs: python3 -m perception.remote budget <dollars>."""
+        try:
+            return max(budget, float(open(budget_file).read().strip()))
+        except (OSError, ValueError):
+            return budget
+
+    print("budget $%.2f, already spent $%.2f" % (current_budget(), ledger["dollars"]), flush=True)
     while True:
         did = 0
         for b in buildings:
             bid = b["building_id"]
-            if ledger["dollars"] >= budget:
-                print("BUDGET REACHED: $%.2f spent" % ledger["dollars"], flush=True)
-                return
+            if ledger["dollars"] >= current_budget():
+                print("budget reached at $%.2f; waiting for a higher cap" % ledger["dollars"], flush=True)
+                while ledger["dollars"] >= current_budget():
+                    time.sleep(60)
+                print("cap raised to $%.2f; continuing" % current_budget(), flush=True)
             if bid in ledger["buildings"] or not _indexed(bid) or ledger.get("failures", {}).get(bid, 0) >= 2:
                 continue
             cost, notes = 0.0, []
