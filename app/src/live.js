@@ -162,7 +162,7 @@ function renderSpatialCase() {
   const routeImage = /\/assets\/real\/live\/[\w.-]+\/route\.jpg/.exec(i.packetMarkdown||'');
   const matchImage = /\/assets\/real\/live\/[\w.-]+\/match\.jpg/.exec(i.packetMarkdown||'');
   // The 3D model page loads the route the agent writes, so it is ready once the agent has run.
-  document.querySelector('#model3d-slot').innerHTML=routeImage?`<a class="button small primary" href="/live-3d.html#${e(i.id)}" target="_blank" rel="noopener">3D model</a>`:i.channel?'<button class="small" disabled>3D model · loading…</button>':'';
+  document.querySelector('#model3d-slot').innerHTML=routeImage?`<a class="button small" href="/live-3d.html#${e(i.id)}" target="_blank" rel="noopener">3D full screen</a>`:i.channel?'<button class="small" disabled>3D model · loading…</button>':'';
   document.querySelector('#review').innerHTML=`
     <div class="section-heading"><h2>Review</h2><strong class="status-${e(i.status)}">${e(statusText(i.status))}</strong></div>
     ${courtHTML(i)}
