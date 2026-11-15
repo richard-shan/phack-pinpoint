@@ -61,10 +61,9 @@ def download(buildings, connections=None, until=None):
             return
         for attempt in range(4):
             try:
-                mp.sweeps(m)
-                mp.rooms(m)
-                n = mp.prefetch_panos(m)
+                n = mp.fetch_all(m)                   # one API call: positions, rooms, panoramas, meshes
                 _mark(m, "done")
+                _mark(m, "assets")
                 count[0] += 1
                 count[1] += n
                 return
@@ -81,10 +80,41 @@ def download(buildings, connections=None, until=None):
     with ThreadPoolExecutor(connections) as ex:
         for i, _ in enumerate(ex.map(go, jobs)):
             if i % 10 == 0:
-                print("downloaded %d scans, %d positions, %.0f min" % (count[0], count[1], (time.time() - t0) / 60),
-                      flush=True)
+                from .matterport import BACKOFFS
+                print("downloaded %d scans, %d positions, %.0f min, backoffs %s" % (
+                    count[0], count[1], (time.time() - t0) / 60, BACKOFFS), flush=True)
     print("DOWNLOAD FINISHED: %d scans, %d positions, %.0f min" % (count[0], count[1], (time.time() - t0) / 60),
           flush=True)
+
+
+def assets(buildings, connections=2, until=None):
+    """Meshes and floor plans for scans whose panoramas are already downloaded."""
+    mp = Matterport(timeout=120)
+    todo = []
+    for b in buildings:
+        for m in b["models"]:
+            if m not in todo and _is(m, "done") and not _is(m, "assets"):
+                todo.append(m)
+    print("%d scans need meshes and floor plans" % len(todo), flush=True)
+    t0, count = time.time(), [0, 0]
+
+    def go(m):
+        if _past(until):
+            return
+        try:
+            files = mp.assets(m)
+            _mark(m, "assets")
+            count[0] += 1
+            count[1] += sum(f["bytes"] for f in files)
+        except Exception as e:
+            print("assets failed %s: %s" % (m, repr(e)[:100]), flush=True)
+
+    with ThreadPoolExecutor(connections) as ex:
+        for i, _ in enumerate(ex.map(go, todo)):
+            if i % 25 == 0:
+                print("assets for %d scans, %.1f GB, %.0f min" % (count[0], count[1] / 1e9, (time.time() - t0) / 60),
+                      flush=True)
+    print("ASSETS FINISHED: %d scans, %.1f GB" % (count[0], count[1] / 1e9), flush=True)
 
 
 def _indexed(building_id):
@@ -223,7 +253,8 @@ def status(buildings):
     for b in idx:
         from .index import index_dir
         positions += len({r["node_id"] for r in json.load(open(os.path.join(index_dir(b["building_id"]), "meta.json")))["rows"]})
-    print("scans: %d downloaded, %d unavailable, %d to go (of %d)" % (done, skip, len(scans) - done - skip, len(scans)))
+    print("scans: %d downloaded, %d unavailable, %d to go (of %d); meshes and floor plans for %d" % (
+        done, skip, len(scans) - done - skip, len(scans), sum(_is(m, "assets") for m in scans)))
     print("buildings indexed: %d of %d (%d positions)" % (len(idx), len(buildings), positions))
 
 
@@ -234,6 +265,8 @@ if __name__ == "__main__":
     opt = lambda k: args[args.index(k) + 1] if k in args else None
     if sys.argv[1] == "download":
         download(B, until=opt("--until"))
+    elif sys.argv[1] == "assets":
+        assets(B, until=opt("--until"))
     elif sys.argv[1] == "index":
         index(B)
     elif sys.argv[1] == "enrich":
