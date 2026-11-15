@@ -13,7 +13,7 @@ import uuid
 
 from .console_api import Console, ConsoleError
 from env.graph import list_buildings
-from .delivery import approved_packet, packet_text
+from .delivery import packet_text
 
 STATE = Path(__file__).resolve().parent.parent / 'cache' / 'telegram.json'
 MAX_DOWNLOAD = 20 * 1024 * 1024
@@ -319,26 +319,6 @@ class Bridge:
                                 prefix = 'About an earlier photo (your replies go with your latest photo):\n\n'
                             self.send(chat, prefix + message['text'], f'dispatcher:{message["id"]}')
                             sent.append(message['id'])
-                            self.save()
-                    packet_id = inc.get('packetId')
-                    deliveries = record.setdefault('packets', {})
-                    if packet_id and packet_id not in deliveries and hasattr(self.telegram, 'send_packet'):
-                        snapshot = approved_packet(self.console, inc)
-                        if snapshot:
-                            # Bot API uploads have no idempotency key. If a request times
-                            # out after Telegram accepted it, automatic retry can double-send.
-                            retry_safe = getattr(self.telegram, 'packet_idempotent', False)
-                            if not retry_safe:
-                                deliveries[packet_id] = {'status': 'sending'}
-                                self.save()
-                            try:
-                                deliveries[packet_id] = self.telegram.send_packet(chat, snapshot)
-                            except TelegramError:
-                                if not retry_safe:
-                                    deliveries[packet_id] = {'status': 'uncertain',
-                                        'action': 'Check Telegram before manually retrying this packet.'}
-                                    self.save()
-                                raise
                             self.save()
                 except (ConsoleError, OSError, TelegramError):
                     print('Could not relay an incident message; will retry.', flush=True)

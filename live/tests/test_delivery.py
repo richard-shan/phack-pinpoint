@@ -22,32 +22,14 @@ class DeliveryTests(unittest.TestCase):
         self.bridge.poll()
         return self.bridge.active(self.bridge.state['chats']['42'])['incident']
 
-    def test_direct_document_only_once_after_approval(self):
+    def test_approved_packet_is_never_sent(self):
         cid = self.intake()
-        with patch.object(self.bot, 'send_packet', create=True,
-                          return_value={'status': 'accepted', 'messageId': 7}) as send:
+        with patch.object(self.bot, 'send_packet', create=True) as send:
+            self.console.update(cid, packetMarkdown='Reviewed content', route='Reviewed stairs')
+            self.console.decide(cid, 'approved')
+            self.bridge.relay()
             self.bridge.relay()
             send.assert_not_called()
-            self.console.update(cid, packetMarkdown='Full content ' * 1000, route='Reviewed stairs')
-            inc = self.console.decide(cid, 'approved')
-            self.bridge.relay()
-            self.bridge.relay()
-            send.assert_called_once()
-            self.assertEqual(send.call_args.args[0], '42')
-            self.assertEqual(send.call_args.args[1]['id'], inc['packetId'])
-            self.console.update(cid, route='Unreviewed change')
-            self.bridge.relay()
-            send.assert_called_once()
-
-    def test_ambiguous_bot_upload_is_not_retried(self):
-        cid = self.intake()
-        inc = self.console.decide(cid, 'approved')
-        with patch.object(self.bot, 'send_packet', create=True, side_effect=TelegramError('timeout')) as send:
-            self.bridge.relay()
-            self.bridge.relay()
-            send.assert_called_once()
-        record = self.bridge.active(self.bridge.state['chats']['42'])
-        self.assertEqual(record['packets'][inc['packetId']]['status'], 'uncertain')
 
     def test_edit_during_snapshot_fetch_cancels_delivery(self):
         cid = self.intake()
