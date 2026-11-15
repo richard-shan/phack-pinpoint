@@ -76,13 +76,15 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
                  console_incident: str | None = None, truth: str | None = None, position: str | None = None,
                  simulate_match: str | None = None, ask: str | None = None, auto_approve: bool = False,
                  approve_timeout_s: float | None = None, ask_timeout_s: float = 90.0,
-                 address: str | None = None) -> dict:
+                 address: str | None = None, leave_for_review: bool = False) -> dict:
     """-> the agent's summary, plus `console_incident` and `console_decision` when a console
     is attached, and `problem` when the packet is not a full one (no match, no record).
 
     position        the caller's position is known: no matching, no questions
     simulate_match  stand in for the matcher with an uncertain match around this position
-    truth           where the photo was really taken, for a simulated caller's answers"""
+    truth           where the photo was really taken, for a simulated caller's answers
+    leave_for_review  draft the packet in the console and stop there, without waiting: the
+                    incident stays "awaiting review" for someone to approve or reject later"""
     building_id = str(building_id)
     if building_id not in list_buildings():
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
@@ -99,7 +101,9 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         raise SystemExit(f"the console is not answering at {console.base}: start it with `python3 -m live.serve`")
     if console is not None and console_incident is None:
         said = text or ("Caller sent a photo." if photo else "Position given by the dispatcher; no photo.")
-        console_incident = console.create(building_id, said, photo)["id"]
+        made = console.create(building_id, said, photo)
+        console_incident = made["id"]
+        _mark(_seen(), console_incident, _photo_key(made))     # a watcher must not run this one too
     if ask is None:
         ask = "console" if (console is not None and not truth and not auto_approve) else "simulate"
 
@@ -116,6 +120,9 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         this run never contacts anyone."""
         if decision_box:
             return "reject"
+        if leave_for_review and console is not None:
+            decision_box["decision"] = "left for review"
+            return "reject"                  # nothing is sent; the console still shows it awaiting review
         if console is None or auto_approve:
             decision_box["decision"] = "auto"
             tools.SESSION["auto_approved"] = True
@@ -186,6 +193,11 @@ def run_llm_incident(building_id: str, photo: str | None, text: str = "", *, con
 
 
 # ------------------------------------------------------------------ watch mode
+def _photo_key(incident: dict) -> str:
+    photo = incident.get("photo") or {}
+    return photo.get("name", "") + str(len(photo.get("dataUrl", "")))
+
+
 def _seen() -> dict:
     try:
         return json.loads((STATE / "seen.json").read_text())
@@ -203,10 +215,10 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
     """Run the agent on each console incident that has a caller photo and a building lane
     A has a graph for. An incident is run once per photo."""
     have = set(list_buildings())
-    seen = _seen()
     print(f"watching {console.base} for incidents with a caller photo; buildings with a graph: "
           f"{', '.join(sorted(have - {'toy'}))}", flush=True)
     while True:
+        seen = _seen()                       # other runs on this machine record what they are handling
         try:
             rows = console.incidents()
         except (ConsoleError, OSError) as exc:
@@ -216,7 +228,7 @@ def watch(console: Console, poll_s: float = 1.5, once: bool = False, **kw) -> No
             if row.get("propertyId") not in have or not row.get("photo"):
                 continue
             inc = console.get(row["id"])
-            photo_key = (inc.get("photo") or {}).get("name", "") + str(len((inc.get("photo") or {}).get("dataUrl", "")))
+            photo_key = _photo_key(inc)
             if seen.get(inc["id"]) == photo_key:
                 continue
             first_sight = inc["id"] not in seen
