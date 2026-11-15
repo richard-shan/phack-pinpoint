@@ -76,13 +76,15 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
                  console_incident: str | None = None, truth: str | None = None, position: str | None = None,
                  simulate_match: str | None = None, ask: str | None = None, auto_approve: bool = False,
                  approve_timeout_s: float | None = None, ask_timeout_s: float = 90.0,
-                 address: str | None = None) -> dict:
+                 address: str | None = None, leave_for_review: bool = False) -> dict:
     """-> the agent's summary, plus `console_incident` and `console_decision` when a console
     is attached, and `problem` when the packet is not a full one (no match, no record).
 
     position        the caller's position is known: no matching, no questions
     simulate_match  stand in for the matcher with an uncertain match around this position
-    truth           where the photo was really taken, for a simulated caller's answers"""
+    truth           where the photo was really taken, for a simulated caller's answers
+    leave_for_review  draft the packet in the console and stop there, without waiting: the
+                    incident stays "awaiting review" for someone to approve or reject later"""
     building_id = str(building_id)
     if building_id not in list_buildings():
         raise SystemExit(f"no graph for building {building_id}; lane A has: {', '.join(list_buildings())}")
@@ -116,6 +118,9 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
         this run never contacts anyone."""
         if decision_box:
             return "reject"
+        if leave_for_review and console is not None:
+            decision_box["decision"] = "left for review"
+            return "reject"                  # nothing is sent; the console still shows it awaiting review
         if console is None or auto_approve:
             decision_box["decision"] = "auto"
             tools.SESSION["auto_approved"] = True

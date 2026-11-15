@@ -278,6 +278,15 @@ class WithConsole(_Base):
         finally:
             run.STATE = state
 
+    def test_leave_for_review_drafts_and_does_not_wait(self):
+        res = run.run_incident(BUILDING, None, "example", position=TARGET, console=self.console,
+                               leave_for_review=True)
+        inc = self.console.get(res["console_incident"])
+        self.assertEqual(inc["status"], "review")                # still open for a dispatcher
+        self.assertIn("## Enter here", inc["packetMarkdown"])
+        self.assertEqual(res["console_decision"]["decision"], "left for review")
+        self.assertNotIn("APPROVED", (Path(res["dir"]) / "packet.md").read_text().split("\n")[2])
+
     def test_dispatcher_rejection_stops_the_send(self):
         t, box, cid = self._run_in_thread()
         self.console.decide(cid, "rejected", "wrong wing")
