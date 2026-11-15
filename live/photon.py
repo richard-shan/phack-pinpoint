@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import urllib.error
 import urllib.request
+import urllib.parse
 
 from .console_api import Console, ConsoleError
 from .telegram import Bridge, InvalidPhoto, MAX_DOWNLOAD, Telegram, TelegramError, WELCOME
@@ -65,6 +66,30 @@ class Photon:
         except (OSError, ValueError):
             raise PhotonError('Photon request failed; check connectivity and configuration') from None
 
+    def imessage_assignments(self):
+        assignments, token = [], None
+        while True:
+            suffix = '/platforms/imessage/assignments?pageSize=200'
+            if token:
+                suffix += '&pageToken=' + urllib.parse.quote(token, safe='')
+            page = self.call('GET', suffix)
+            assignments.extend(page['assignments'])
+            token = page.get('nextPageToken')
+            if not token:
+                return assignments
+
+    def assign_imessage(self, handle):
+        handle = handle.strip()
+        if not (re.fullmatch(r'\+[1-9][0-9]{6,14}', handle)
+                or re.fullmatch(r'[^\s@]+@[^\s@]+\.[^\s@]+', handle)):
+            raise ValueError('Use an E.164 phone number (+countrycode...) or iMessage email.')
+        for assignment in self.imessage_assignments():
+            if assignment['handle'] == handle and not assignment.get('releasedAt'):
+                return assignment
+        identity = hashlib.sha256(f'{self.project}:{handle}'.encode()).hexdigest()
+        return self.call('POST', '/platforms/imessage/assignments', {'handle': handle},
+                         key='pinpoint-imessage:' + identity)
+
     def upload_document(self, raw, filename, key):
         boundary = 'pinpoint-' + hashlib.sha256(key.encode()).hexdigest()[:40]
         metadata = json.dumps({'contentType': 'application/pdf', 'sizeBytes': len(raw), 'filename': filename})
@@ -108,10 +133,10 @@ class PhotonTransport:
 
     def send_once(self, chat, text, key):
         bridge = self.bridge
-        if text == WELCOME and self.packet_bot is not None:
+        route = bridge.state['routes'][str(chat)]
+        if text == WELCOME and self.packet_bot is not None and route['platform'] == 'telegram':
             text += ('\n\nApproved packets arrive from our packet bot. Start it once before your demo: '
                      f'https://t.me/{self.packet_bot.username}')
-        route = bridge.state['routes'][str(chat)]
         identity = hashlib.sha256(f'{chat}:{key}'.encode()).hexdigest()
         receipts = bridge.state['outbound']
         if identity in receipts:
@@ -127,9 +152,9 @@ class PhotonTransport:
         return receipt
 
     def send_packet(self, chat, snapshot):
-        if self.packet_bot is not None:
-            route = self.bridge.state['routes'][str(chat)]
-            if route['platform'] != 'telegram' or not route['callerHandle'].isdigit():
+        route = self.bridge.state['routes'][str(chat)]
+        if self.packet_bot is not None and route['platform'] == 'telegram':
+            if not route['callerHandle'].isdigit():
                 raise TelegramError('The configured Telegram packet bot needs a Telegram caller')
             return self.packet_bot.send_packet(route['callerHandle'], snapshot)
         from .packet_document import packet_pdf
@@ -307,16 +332,31 @@ def main(argv=None):
     parser.add_argument('--console', default='http://localhost:4175')
     parser.add_argument('--state', type=Path, default=STATE)
     parser.add_argument('--check', action='store_true', help='Verify credentials and platform configuration without sending')
+    parser.add_argument('--assign-imessage', metavar='HANDLE', help='Enroll a caller and print their iMessage destination; sends no message')
+    parser.add_argument('--platform', choices=('imessage', 'telegram'), default='imessage',
+                        help='Channel to verify with --check (default: imessage)')
     args = parser.parse_args(argv)
     key, project = os.getenv('PHOTON_API_KEY', ''), os.getenv('PHOTON_PROJECT_ID', '')
     if not key or not project:
         parser.error('Set PHOTON_API_KEY and PHOTON_PROJECT_ID in .env or the environment.')
     try:
         api = Photon(key, project)
+        if args.assign_imessage:
+            assignment = api.assign_imessage(args.assign_imessage)
+            print(json.dumps(assignment, indent=2))
+            print('Start the bridge, then send a photo in Messages to ' + assignment['assignedPhoneNumber'])
+            return
+        if args.check and args.platform == 'imessage':
+            assignments = api.imessage_assignments()
+            print(json.dumps({'projectId': project, 'assignments': assignments}, indent=2))
+            if not assignments:
+                parser.exit(1, 'No iMessage callers enrolled. Run --assign-imessage +YOUR_NUMBER first.\n')
+            print('Each caller must message their own assignedPhoneNumber to opt in.')
+            return
         if args.check:
             resources = api.call('GET', '/platforms/resources').get('resources', [])
             print(json.dumps({'projectId': project, 'resources': resources}, indent=2))
-            if not any(r.get('state') == 'active' for r in resources):
+            if not any(r.get('state') == 'active' and r.get('type') == 'telegram_bot' for r in resources):
                 parser.exit(1, 'No active Photon channel. Complete channel setup in the dashboard.\n')
             return
         console = Console(args.console)

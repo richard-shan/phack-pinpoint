@@ -5,6 +5,31 @@ It does not use the legacy Spectrum SDK. Both Telegram and iMessage direct
 conversations are supported. Photon is the actual ingress and reply transport,
 not just a dependency listed in the submission.
 
+## Send your photo through iMessage
+
+Enroll the phone number (E.164, including `+` and country code) or Apple ID email
+that you send iMessages from. This requires `platforms:read` and `platforms:write`:
+
+```sh
+python -m live.photon --assign-imessage +15555550123
+python -m live.photon --check
+```
+
+Enrollment prints your `assignedPhoneNumber`, reuses an existing assignment,
+and sends no invitation or message. Each caller may get a different destination.
+Start the console, agent, and bridge using the commands below, then open Messages
+on your iPhone and send a photo to **your assigned number**. Your first message
+opts you in. Text accompanying the image is included; later replies follow the
+latest photo. Dispatcher questions and the approved PDF return to that same
+iMessage conversation, even if the legacy Telegram packet override is enabled.
+Use JPEG or PNG if your phone's original image format cannot be decoded.
+
+Leave `PHOTON_AGENT_HANDLE` blank when callers have different assigned lines.
+If `PHOTON_ALLOWED_HANDLES` is set, include your exact enrolled handle. Clear old
+Telegram-only values when switching. `--check` now checks iMessage enrollment;
+it prints opt-in state and does not prove live delivery. Use
+`--check --platform telegram` for the existing Telegram channel.
+
 ## Run
 
 Install the existing environment/perception requirements plus
@@ -30,7 +55,7 @@ Run in separate terminals:
 .venv/bin/python -m live.photon
 ```
 
-Connect the Telegram bot through the Photon dashboard first. The current Beta
+For Telegram instead, connect the bot through the Photon dashboard first. The current Beta
 `POST /platforms/telegram/bots` takes an empty body and returns a managed-bot
 setup link; it does **not** accept an arbitrary BotFather token. Do not run
 `live.telegram` polling against a bot whose webhook is owned by Photon. The
@@ -150,3 +175,13 @@ The document contains the approved summary and full reviewed content, including 
 and source references. It does not fetch local evidence URLs from the recipient’s phone.
 `live.packet_document` uses deterministic PDF output so upload retries keep identical bytes.
 Install `live/requirements.txt` before starting the bridge.
+
+## iMessage verification — November 14, 2026
+
+Enrolled a caller using the Photon dashboard and received a real photo through
+that caller's assigned shared iMessage line. The bridge downloaded and processed
+the image. Building identification returned `unknown` with `weak_evidence`, so
+no dispatch incident was created. This verifies live photo transport, not a
+successful location match or live approved-PDF delivery. The existing API key
+could list assignments but returned HTTP 403 when creating one; dashboard
+enrollment worked without changing the key.

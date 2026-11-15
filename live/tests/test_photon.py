@@ -66,6 +66,61 @@ class PhotonTests(unittest.TestCase):
     def tearDown(self):
         telegram_tests.BridgeTests.tearDown(self)
 
+    def test_imessage_photo_reply_and_packet_with_telegram_override(self):
+        from unittest.mock import Mock
+        bot = Mock()
+        self.bridge.telegram.packet_bot = bot
+        def event(number, content):
+            value = incoming(number, content)
+            value['data']['object']['platform'] = 'imessage'
+            for field in ('sentBy', 'receivedBy', 'space'):
+                value['data']['object'][field]['platform'] = 'imessage'
+            return value
+        self.bridge.process(event(1, text('/building 6550930')), 1)
+        self.bridge.process(event(2, {'type': 'group', 'parts': [text('Near the lift'),
+            {'type': 'attachment', 'attachmentId': pid('att', 1)}]}), 2)
+        self.bridge.finish_jobs()
+        cid = self.bridge.active(self.bridge.state['chats'][pid('spc', 1)])['incident']
+        self.assertEqual(self.console.get(cid)['callerText'], 'Near the lift')
+        self.console.message(cid, 'dispatcher', 'Which floor?')
+        self.bridge.relay()
+        self.bridge.process(event(3, text('Second floor')), 3)
+        self.assertEqual(self.console.get(cid)['messages'][-1]['text'], 'Second floor')
+        self.console.decide(cid, 'approved')
+        self.bridge.relay()
+        packet = self.api.sent[-1][1]
+        self.assertEqual(packet['content']['type'], 'attachment')
+        self.assertNotIn('telegram', packet)
+        self.assertEqual(packet['spaceId'], pid('spc', 1))
+        self.assertEqual(packet['senderId'], pid('usr', 2))
+        bot.send_packet.assert_not_called()
+        count = len(self.api.sent)
+        self.bridge.process(event(2, {'type': 'attachment', 'attachmentId': pid('att', 1)}), 4)
+        self.bridge.relay()
+        self.assertEqual(len(self.api.sent), count)
+        self.assertEqual(len(self.console.incidents()), 1)
+
+    def test_imessage_assignment_pagination_and_reuse(self):
+        api = Photon('test-key', PROJECT)
+        existing = {'handle': '+15555550123', 'assignedPhoneNumber': '+15555550999'}
+        with patch.object(api, 'call', side_effect=[
+                {'assignments': [], 'nextPageToken': 'a/b'},
+                {'assignments': [existing]}]) as call:
+            self.assertEqual(api.assign_imessage('+15555550123'), existing)
+        self.assertEqual(call.call_count, 2)
+        self.assertIn('pageToken=a%2Fb', call.call_args.args[1])
+
+    def test_imessage_assignment_creation_is_idempotent_and_sends_no_invite(self):
+        api = Photon('test-key', PROJECT)
+        with patch.object(api, 'imessage_assignments', return_value=[]), patch.object(api, 'call') as call:
+            api.assign_imessage('person@example.com')
+            first = call.call_args
+            api.assign_imessage('person@example.com')
+            self.assertEqual(call.call_args, first)
+            self.assertEqual(first.args[2], {'handle': 'person@example.com'})
+        with self.assertRaises(ValueError):
+            api.assign_imessage('5551234')
+
     def test_pdf_upload_has_two_parts_and_valid_stable_boundary(self):
         from email.parser import BytesParser
         from email.policy import default
