@@ -25,7 +25,8 @@ if str(ROOT / "agent") not in sys.path:
 
 from env import tools as A                                  # noqa: E402
 from env.graph import Graph                                 # noqa: E402
-from pinpoint import orchestrator, routing, stubs, trace    # noqa: E402
+from pinpoint import failures, orchestrator, routing, stubs, trace    # noqa: E402
+from pinpoint.util import write_json                        # noqa: E402
 from pinpoint.errors import EmptyCandidates, MatterportUnavailable, PropertyNotFound  # noqa: E402
 
 # One incident at a time: what the tools need to know about the run in progress.
@@ -53,6 +54,45 @@ QUESTIONS = {
     "has_exit_sign": "Can you see a lit EXIT sign? (yes or no)",
     "has_fire_extinguisher": "Can you see a fire extinguisher? (yes or no)",
 }
+
+
+def _tool(actor: str):
+    """Trace a tool, and make it safe for a model to call. The deterministic orchestrator
+    relies on tools raising (it catches PropertyNotFound and friends); a model-driven run
+    needs the failure back as a result it can read and correct, or one bad argument ends
+    the whole incident."""
+    import functools
+
+    def deco(fn):
+        traced = trace.traced(actor)(fn)
+
+        @functools.wraps(fn)
+        def wrap(*args, **kwargs):
+            if not SESSION.get("llm"):
+                return traced(*args, **kwargs)
+            try:
+                return traced(*args, **kwargs)
+            except Exception as exc:                       # includes the agent's own failure types
+                trace.log(actor, f"{fn.__name__}:error", result_summary=f"{type(exc).__name__}: {exc}"[:200])
+                return {"error": f"{type(exc).__name__}: {exc}"[:400],
+                        "building_id": SESSION.get("building_id"),
+                        "hint": "Check the arguments. building_id is the CoStar PropertyId for this incident; "
+                                "node ids come from match_photo or look."}
+        return wrap
+    return deco
+
+
+def _bid(building_id) -> str:
+    """The building this run is about. A model sometimes passes something else in that
+    slot (an incident id, an address); every run is about one building, so use it."""
+    known = SESSION.get("building_id")
+    try:
+        _graph(building_id)
+        return str(building_id)
+    except Exception:
+        if known:
+            return str(known)
+        raise
 
 
 def reset(**values) -> dict:
@@ -165,7 +205,7 @@ def _floor_number(g: Graph, node_id) -> int | None:
 
 
 # ------------------------------------------------------------------ records (lane A)
-@trace.traced("records")
+@_tool("records")
 def get_property(address):
     """CoStar record for an address (or PropertyId): use type, stories, year built, area, tenants with risk flags, contact. Raises PropertyNotFound when the address is not in the kit."""
     rec = A.get_property(address) if address else {}
@@ -193,21 +233,23 @@ def no_costar_record(building_id) -> dict | None:
             "note": "This building is not in the CoStar kit: no use, tenant, risk or contact record exists for it."}
 
 
-@trace.traced("records")
+@_tool("records")
 def get_tenants(building_id):
     """Current tenants of a building from CoStar, each with suite, floor and risk flags."""
+    building_id = _bid(building_id)
     return A.get_tenants(str(building_id))
 
 
-@trace.traced("locator")
+@_tool("locator")
 def look(node_id):
     """What is at one scanned position: its panorama, room, attributes, equipment and neighbouring positions."""
     return A.look(node_id, SESSION.get("building_id"))
 
 
-@trace.traced("site")
+@_tool("site")
 def entrances(building_id):
     """Every marked way into the scanned area: door id, label, lat/lon, whether it is the street-address door, and its evidence image."""
+    building_id = _bid(building_id)
     return A.entrances(str(building_id))
 
 
@@ -281,15 +323,20 @@ def _publish(path, rank):
         return str(path)
 
 
-@trace.traced("locator")
+@_tool("locator")
 def match_photo(building_id, image_path, k=10):
     """photo -> ranked positions [{node_id, score, evidence_path, attributes}] with node ids
     as the graph spells them. Positions in a scan the graph does not cover are dropped."""
+    building_id = _bid(building_id)
     building_id = str(building_id)
+    key = (building_id, str(image_path))
+    if SESSION.get("llm") and SESSION.get("matched") == key and SESSION.get("candidates"):
+        return SESSION["candidates"][:k]           # a model may ask twice; the match takes half a minute
     try:
         cands = _match(building_id, image_path, k)
     except (MatterportUnavailable, EmptyCandidates) as exc:
-        SESSION["match_error"] = str(exc)          # the packet and the terminal say why
+        if not (SESSION.get("llm") and SESSION.get("candidates")):
+            SESSION["match_error"] = str(exc)      # the packet and the terminal say why
         raise
     g = _graph(building_id)
     out = []
@@ -301,14 +348,15 @@ def match_photo(building_id, image_path, k=10):
                         evidence_path=_publish(c.get("evidence_path"), len(out))))
     if not out:
         raise EmptyCandidates("no matched position is inside the scan this building's graph covers")
-    SESSION["candidates"] = out
+    SESSION["candidates"], SESSION["matched"] = out, key
     return out
 
 
-@trace.traced("site")
+@_tool("site")
 def detect_site_features(building_id, address=None, lat=None, lon=None):
     """Entrances and staging spots as the graph has them (marked by hand from the scan
     and the aerial tile). Lane B's aerial reading is attached when it has been run."""
+    building_id = _bid(building_id)
     building_id = str(building_id)
     g = _graph(building_id)
     staging = [{"staging_id": n["id"], "node_id": n["id"], "label": n.get("label") or n["id"],
@@ -326,9 +374,10 @@ def detect_site_features(building_id, address=None, lat=None, lon=None):
     return out
 
 
-@trace.traced("router")
+@_tool("router")
 def find_equipment(building_id, type, near_node):
     """Nearest equipment of one type (aed, fire_extinguisher, fire_alarm_pull_station, ...) to a position, by walking time through the graph."""
+    building_id = _bid(building_id)
     hits = A.find_equipment(str(building_id), type, near_node)
     if isinstance(hits, dict):
         return []
@@ -337,9 +386,10 @@ def find_equipment(building_id, type, near_node):
             for h in hits]
 
 
-@trace.traced("router")
+@_tool("router")
 def hazards_along(building_id, path):
     """Hazards on a route: things lane B saw in view at positions on the path, locked doors, and links the scan could not confirm."""
+    building_id = _bid(building_id)
     hz = A.hazards_along(str(building_id), path or [])
     return hz if isinstance(hz, list) else []
 
@@ -370,10 +420,14 @@ def _parse_reply(attr, text, values):
 
 
 def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
-    """Ask the caller about one attribute and return {"reply", "raw"}. `text` is the
-    attribute name the agent's question picker chose; the wording comes from QUESTIONS."""
+    """Ask the caller a question and return {"reply", "raw"}. The agent's question picker
+    passes an attribute name and the wording comes from QUESTIONS. A model on the LLM path
+    writes the question itself: that is asked as written, and only a real caller can
+    answer it."""
     attr = (text or "").strip()
-    question = QUESTIONS.get(attr, f"Can you tell me about: {attr}?")
+    known = attr in QUESTIONS or any(attr in c["attributes"] for c in SESSION.get("candidates") or [])
+    own_words = not known and (" " in attr or attr.endswith("?"))
+    question = attr if own_words else QUESTIONS.get(attr, f"Can you tell me about: {attr}?")
     values = sorted({str(c["attributes"].get(attr)) for c in SESSION.get("candidates") or []})
     typed = [c["attributes"].get(attr) for c in SESSION.get("candidates") or [] if attr in c["attributes"]]
     if typed and not all(isinstance(v, bool) for v in typed) and "(" not in question:
@@ -391,10 +445,12 @@ def ask_caller(incident_id, text, images=None, _mock_truth_attrs=None):
     elif mode == "console" and console and cid:
         got = console.wait_for_caller(cid, timeout_s=SESSION.get("ask_timeout_s", 90.0))
         if got:
-            reply, raw, source = got, _parse_reply(attr, got, typed), "caller, typed in the console"
+            reply, raw, source = got, (got if own_words else _parse_reply(attr, got, typed)), "caller, typed in the console"
         else:
             SESSION["caller_silent"] = True          # do not keep the crew waiting on more questions
             source = f"no reply within {round(SESSION.get('ask_timeout_s', 90.0))} s"
+    elif mode == "simulate" and own_words:
+        source = "not asked: no caller is connected, and a simulated caller answers only the fixed questions"
     elif mode == "simulate" and SESSION.get("truth_node"):
         raw = question_attributes(SESSION["building_id"], SESSION["truth_node"]).get(attr)
         if raw is not None:
@@ -415,16 +471,25 @@ def send_packet(incident_id):
     return {"status": "sent", "incident_id": incident_id, "channel": where}
 
 
+def notify_contact(incident_id, contact=None):
+    """Contact the building's point of contact. This run never contacts anyone: it says so
+    instead of recording a notification that did not happen."""
+    return {"status": "not_sent", "incident_id": incident_id,
+            "reason": "nothing leaves this machine: no call, text or email is made to the building contact"}
+
+
 # ------------------------------------------------------------------ routing (lane A)
+@_tool("router")
 def load_graph(building_id):
     """The building graph as {nodes, adj, edges}."""
-    return A.load_graph(str(building_id))
+    return A.load_graph(_bid(building_id))
 
 
+@_tool("router")
 def route(building_id, from_node, to_node, profile, blocked_edges=None):
     """`ext_main` is the agent's name for the front door: it becomes the entrance marked
     as the street-address door, and the time includes getting to that door from outside."""
-    building_id = str(building_id)
+    building_id = _bid(building_id)
     g = _graph(building_id)
     if from_node == "ext_main" and "ext_main" not in g.nodes:
         front = (A.best_entry(building_id, to_node, profile) or {}).get("front_door")
@@ -437,34 +502,40 @@ def route(building_id, from_node, to_node, profile, blocked_edges=None):
     return A.route(building_id, from_node, to_node, profile, blocked_edges)
 
 
+@_tool("router")
 def best_entry(building_id, target, profile):
     """The door with the lowest outside-plus-inside time to a position, for profile "foot" or "stretcher", with the route, the runner-up door and the front-door comparison."""
-    return A.best_entry(str(building_id), target, profile)
+    return A.best_entry(_bid(building_id), target, profile)
 
 
+@_tool("router")
 def best_entry_under_belief(building_id, candidates, profile):
     """Best door when the caller's position is uncertain: candidates carry a belief; returns the door, the expected time, and whether another question to the caller is worth asking."""
-    return A.best_entry_under_belief(str(building_id), candidates, profile)
+    return A.best_entry_under_belief(_bid(building_id), candidates, profile)
 
 
+@_tool("router")
 def backup_route(building_id, from_node, to_node, profile, avoid_path=None):
     """A second route between two nodes that avoids the first route's links where it can."""
-    return A.backup_route(str(building_id), from_node, to_node, profile, avoid_path)
+    return A.backup_route(_bid(building_id), from_node, to_node, profile, avoid_path)
 
 
+@_tool("router")
 def replan(building_id, current_node, to_node, profile, blocked_edges):
     """A new route from where the crew is now, avoiding links reported blocked."""
-    return A.replan(str(building_id), current_node, to_node, profile, blocked_edges)
+    return A.replan(_bid(building_id), current_node, to_node, profile, blocked_edges)
 
 
+@_tool("router")
 def exit_route(building_id, from_node, profile):
     """Fastest way out from a position, and the nearest stair or outside door."""
-    return A.exit_route(str(building_id), from_node, profile)
+    return A.exit_route(_bid(building_id), from_node, profile)
 
 
+@_tool("router")
 def directions(building_id, path):
     """Turn-by-turn steps for a route, with meters and what is in view at each turn."""
-    d = A.directions(str(building_id), path or [])
+    d = A.directions(_bid(building_id), path or [])
     return d if isinstance(d, list) else []
 
 
@@ -480,38 +551,44 @@ def records(idir, intake):
     brief["tenants"] = [{k: t.get(k) for k in ("name", "suite", "floor", "floor_name", "industry", "risk_flags")}
                         for t in rec.get("tenants") or [] if t.get("name")]
     brief["located_tenant"] = None
-    orchestrator._write(Path(idir) / "brief.json", brief)
+    write_json(Path(idir) / "brief.json", brief)
     return brief
 
 
 # ------------------------------------------------------------------ install
 _STUBS = ("get_property", "get_tenants", "look", "entrances", "match_photo", "detect_site_features",
-          "find_equipment", "hazards_along", "ask_caller", "send_packet")
+          "find_equipment", "hazards_along", "ask_caller", "send_packet", "notify_contact")
 _ROUTING = ("load_graph", "route", "best_entry", "best_entry_under_belief", "backup_route", "replan",
             "exit_route", "directions")
 _original: dict = {}
 
 
 def install() -> None:
-    """Point the agent at the real tools. Safe to call twice."""
+    """Point the agent at the real tools. Safe to call twice.
+
+    The agent's steps (`pinpoint/pipeline.py`) and its LLM-facing wrappers
+    (`pinpoint/tool_wrappers.py`) look their tools up on `stubs` and `routing` at call
+    time, so replacing the names there covers both paths. The Records step and the packet
+    writer are looked up on the modules that use them."""
     from .packet import LivePacketWriter
     me = sys.modules[__name__]
     if not _original:
         _original.update({("stubs", n): getattr(stubs, n) for n in _STUBS})
         _original.update({("routing", n): getattr(routing, n) for n in _ROUTING})
-        _original[("orchestrator", "_records")] = orchestrator._records
+        _original[("orchestrator", "run_records")] = orchestrator.run_records
         _original[("orchestrator", "PacketWriter")] = orchestrator.PacketWriter
+        _original[("failures", "PacketWriter")] = failures.PacketWriter
     for n in _STUBS:
         setattr(stubs, n, getattr(me, n))
     for n in _ROUTING:
         setattr(routing, n, getattr(me, n))
-    orchestrator._records = records
-    orchestrator.PacketWriter = LivePacketWriter
+    orchestrator.run_records = records
+    orchestrator.PacketWriter = failures.PacketWriter = LivePacketWriter
 
 
 def uninstall() -> None:
     """Put the agent's stub tools back (the agent's own tests expect them)."""
-    mods = {"stubs": stubs, "routing": routing, "orchestrator": orchestrator}
+    mods = {"stubs": stubs, "routing": routing, "orchestrator": orchestrator, "failures": failures}
     for (mod, name), fn in _original.items():
         setattr(mods[mod], name, fn)
     _original.clear()

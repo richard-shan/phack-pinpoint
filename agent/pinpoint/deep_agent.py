@@ -164,8 +164,10 @@ def build_agent(checkpointer=None, create_agent_fn=None):
     )
 
 
-def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) -> dict:
+def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True, approve_fn=None) -> dict:
     # Stream a live deepagents run into trace + events.jsonl.
+    # approve_fn(incident_id, actions) -> "approve" | "reject": the same hook
+    # orchestrator.run_incident takes, so a console can answer the gates.
     incident_dir = Path(incident_dir)
     incident_dir.mkdir(parents=True, exist_ok=True)
     _ensure_api_key()
@@ -217,7 +219,7 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
         actions = []
         for r in req:
             if isinstance(r, dict):
-                a = r.get("action") or r.get("tool") or r.get("action_name")
+                a = r.get("name") or r.get("action") or r.get("tool") or r.get("action_name")
                 if a:
                     actions.append(str(a))
         tag = ",".join(actions) if actions else "unknown"
@@ -228,7 +230,16 @@ def run_real_agent(intake: dict, incident_dir: Path, auto_approve: bool = True) 
             phase="interrupt",
         )
         n = max(len(req), 1)
-        if auto_approve:
+        if approve_fn is not None:
+            try:  # whoever answers the gate reads the draft from disk, as on the fallback path
+                _persist_artifacts(agent, config, intake, incident_dir)
+            except Exception as e:
+                _LOG.info("artifact persist before gate skipped: %s", type(e).__name__)
+            ok = approve_fn(thread_id, actions) == "approve"
+            decisions = [{"type": "approve"} if ok else
+                         {"type": "reject", "message": "The dispatcher declined this action. Do not retry it."}
+                         for _ in range(n)]
+        elif auto_approve:
             decisions = [{"type": "approve"} for _ in range(n)]
         else:
             ans = input(f"[APPROVAL GATE] approve {actions}? [y/N] ").strip().lower()
@@ -605,7 +616,7 @@ def _drain(stream_iter, incident_dir: Path):
 def _interrupt_requests(pending):
     if not pending:
         return []
-    first = pending[0] if isinstance(pending, list) and pending else pending
+    first = pending[0] if isinstance(pending, (list, tuple)) and pending else pending
     if hasattr(first, "value"):
         v = first.value or {}
     elif isinstance(first, dict):
