@@ -1,0 +1,576 @@
+{
+ "floor_offset": -1,
+ "scope": "Levels 100 and 200 around the central atrium only (the scan calls them Floor 2 and Floor 3): the stone arcade inside the west entrance, the atrium floor, the ring corridors on both levels, the open atrium stair between them and Room 217. Not scanned: the west entrance hall and its outside door, Campus Level A below the atrium (seen from the railings; the scan's Floor 1), Level 300 above, the two enclosed stairwells, the elevator car, the office suites, and the wings that the corridors run on into at all four corners of both levels. Floor numbers are from signs: the jambs of elevator PE1 read 1 and 2, the directory beside it lists Level 300, Level 200, Level 100 and Campus Level A, and room signs read 118 to 120 on the lower level and 200 and 217 to 219 on the upper.",
+ "remove_nodes": [
+  "door_ttu12npb_0",
+  "door_hfr74i7d_0",
+  "door_ad9d7cu6_0",
+  "door_h8106eh3_0"
+ ],
+ "remove_nodes_note": "All four builder candidates were on level 200 and none leads outside. door_ttu12npb and door_hfr74i7d are the two grey leaves of the cross-corridor fire doors held open at the mouth of the northeast corridor (seen from c9t63 at headings 65 and 330). door_ad9d7cu6 is the landing door of elevator PE1 (seen from haipx at heading 281), now marked under elevators. door_h8106eh3 is the glass door of Room 200, signed Economics Lounge (seen from haipx at heading 150).",
+ "add_nodes": [
+  {
+   "id": "door_west_main",
+   "near": "n0ppizy9u8xcadypd2bawceyc",
+   "heading_deg": 227,
+   "distance_m": 2.3,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "primary": true,
+   "confidence": 0.9,
+   "label": "the south glass door from the west entrance hall",
+   "note": "Single glass door in a black frame set in a stone arch on the west side of the arcade: long pull bar, powered operator on the header, and a steel post with a wheelchair push button beside it; a red EXIT sign hangs over the arcade at this door. Through the glass: a stone entrance hall with a beamed ceiling, wall lanterns, a directory board and walk-off mats, and at its far end an arched doorway with glazed doors and daylight, about 13 m from the arcade (two sight lines: sweep 0f2a2 at heading 198 and sweep pr6uq at heading 164). The hall and that outside door are not scanned. Marked as the main entrance because of the hall, the directory and the powered door; picking this door over the north one, 3 m away into the same hall, is a judgment. Not seen: whether it locks after hours, and whether there are steps outside. Width is an estimate from the panorama.",
+   "source": "hand: glass door seen in the panoramas; the wall plan records no opening there",
+   "approach": {
+    "note": "the way from the street is not in the scan: across the paved forecourt (read off the aerial) and through the west entrance hall (seen through the glass). The link from the staging spot carries the distance"
+   }
+  },
+  {
+   "id": "door_west_north",
+   "near": "n0ppizy9u8xcadypd2bawceyc",
+   "heading_deg": 133,
+   "distance_m": 2.3,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "confidence": 0.9,
+   "label": "the north glass door from the west entrance hall",
+   "note": "Single glass door in a black frame set in a stone arch on the west side of the arcade, with a long pull bar and a closer; a red EXIT sign hangs over the arcade at this door. It opens from the same stone entrance hall as the south glass door (walk-off mats and a notice board are seen through it). The hall and its outside door are not scanned. No push-button post is seen at this door. Width is an estimate from the panorama.",
+   "source": "hand: glass door seen in the panoramas; the wall plan records no opening there",
+   "approach": {
+    "note": "the way from the street is not in the scan: across the paved forecourt (read off the aerial) and through the west entrance hall (seen through the glass). The link from the staging spot carries the distance"
+   }
+  },
+  {
+   "id": "corridor_nw",
+   "near": "ufgr14zs7pbz0pig3kp07r7hd",
+   "heading_deg": 94,
+   "distance_m": 2.5,
+   "edge_type": "open",
+   "is_entrance": true,
+   "confidence": 0.4,
+   "label": "the corridor from the north wing (rooms 101 to 110)",
+   "note": "Where the scan starts, not a door. From the northwest corner the corridor runs on north between wood panelling and service doors for about 22 m to a room with a window; an EXIT sign hangs about 15 m along. The wall sign at the corner points this way for Bendheim Center for Finance 103-108, Meeting Rooms 101-102 and Department of Economics 110. Which outside door this corridor comes from is not seen.",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 55,
+    "note": "not scanned, and 55 m is a guess, not a measurement. The aerial shows a path from the west street to the corner where the north wing meets the west front, about 27 m from the forecourt curb, and the corridor from there to here would be 25 m or more. No outside door on that side is seen in the scan"
+   }
+  },
+  {
+   "id": "corridor_sw",
+   "near": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "heading_deg": 267,
+   "distance_m": 2.25,
+   "edge_type": "open",
+   "is_entrance": true,
+   "confidence": 0.4,
+   "label": "the corridor from the south wing",
+   "note": "Where the scan starts, not a door. From the southwest corner the corridor runs on south about 19 m to a wood door with a glass side panel under two EXIT signs. What is past that door is not seen.",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 65,
+    "note": "not scanned, and 65 m is a guess, not a measurement. On the aerial the far end of this corridor falls where the south wing meets the west front, about 38 m along the front from the forecourt curb; add the 19 m of corridor seen from here and the door at its end. No outside door on that side is seen in the scan"
+   }
+  },
+  {
+   "id": "corridor_ne",
+   "near": "81tg3n7bd96pyfp31pzd7mada",
+   "heading_deg": 5,
+   "distance_m": 1.6,
+   "edge_type": "open",
+   "is_entrance": true,
+   "confidence": 0.4,
+   "label": "the corridor from the northeast wing",
+   "note": "Where the scan starts, not a door. From the northeast corner the corridor runs on east past a restroom door (woman and wheelchair symbols) about 12 m to a seating area under a window, with an EXIT sign on the ceiling. Grey cross-corridor fire doors stand open against both walls at its mouth; expect them to swing shut on a fire alarm. Where the corridor goes after the window is not seen.",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 80,
+    "note": "not scanned, and 80 m is a guess, not a measurement. On the aerial the building runs on about 60 m east of here; no outside door or street on that side has been identified"
+   }
+  },
+  {
+   "id": "corridor_se",
+   "near": "2qe44cteny5g297zquh4gpgcd",
+   "heading_deg": 0,
+   "distance_m": 1.6,
+   "edge_type": "open",
+   "is_entrance": true,
+   "confidence": 0.4,
+   "label": "the corridor from the southeast wing",
+   "note": "Where the scan starts, not a door. From the southeast corner the corridor runs on east for 28 m or more, past a restroom door (man and wheelchair symbols), a wall directory and further EXIT signs. Grey cross-corridor fire doors stand open against both walls at its mouth; expect them to swing shut on a fire alarm. Where it reaches an outside door is not seen.",
+   "source": "hand: the corridor is seen continuing past the last scanned position",
+   "approach": {
+    "via": "corridor",
+    "walk_m": 80,
+    "note": "not scanned, and 80 m is a guess, not a measurement. On the aerial the building runs on about 60 m east of here; no outside door or street on that side has been identified"
+   }
+  },
+  {
+   "id": "stair_north_f1",
+   "near": "ht0bbyeyc69qwxm7did6ycbuc",
+   "heading_deg": 74,
+   "distance_m": 3.3,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "confidence": 0.7,
+   "label": "the north stair door on level 100",
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside two fixed glass panels; a small EXIT plate and a fire alarm pull station are on the pier to its right. Through the glass the stair is seen going both up and down. On the stair wall a steel cabinet is lettered 2.5\" FIRE DEPARTMENT VALVE & FIRE EXTINGUISHER, next to a floor sign reading 1. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the north stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   }
+  },
+  {
+   "id": "stair_south_f1",
+   "near": "panr3bktyzufic6e6xb4mtuub",
+   "heading_deg": 273,
+   "distance_m": 3.0,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "confidence": 0.7,
+   "label": "the south stair door on level 100",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside a fixed glass panel; a fire alarm pull station is on the pier to its left, next to the drinking fountains. Through the glass the stair is seen going up, with a floor sign reading LEVEL 1 and a steel wall cabinet whose lettering begins SPRINKLER CONTROL ASSEMBLY 2.5\" FIRE (the rest is not legible). The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the south stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   }
+  },
+  {
+   "id": "stair_atrium_from_a",
+   "near": "xq7dhrun14q0789iwk5epwtkb",
+   "heading_deg": 85,
+   "distance_m": 2.4,
+   "edge_type": "open",
+   "is_entrance": true,
+   "confidence": 0.6,
+   "label": "the top of the open atrium stair from Campus Level A",
+   "note": "Top of the open stair that goes down from the atrium floor to Campus Level A, alongside the foot of the stair up to level 200; glass railings on both sides. Only its top steps are seen. Campus Level A is seen from the railings but is not scanned.",
+   "source": "hand: stair seen in the panoramas, not walked by the scan",
+   "approach": {
+    "via": "stairs",
+    "floors": 1,
+    "walk_m": 80,
+    "note": "the open atrium stair, one level up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   }
+  },
+  {
+   "id": "stair_north_f2",
+   "near": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "heading_deg": 77,
+   "distance_m": 2.1,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "confidence": 0.7,
+   "label": "the north stair door on level 200",
+   "equipment": [
+    "fire_extinguisher"
+   ],
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside two fixed glass panels; an EXIT plate and a fire alarm pull station are on the pier to its right. Through the glass the stair is seen going down and up. On the stair wall a steel cabinet is lettered 2.5\" FIRE DEPARTMENT VALVE & FIRE EXTINGUISHER, next to a floor sign reading 2. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "approach": {
+    "via": "stairs",
+    "floors": 2,
+    "walk_m": 80,
+    "note": "the north stair, two levels up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   }
+  },
+  {
+   "id": "stair_south_f2",
+   "near": "9xmtamt4c9trdkf242ttr6dwb",
+   "heading_deg": 276,
+   "distance_m": 2.9,
+   "edge_type": "door",
+   "width_m": 0.9,
+   "attributes": {
+    "door_width_m": 0.9
+   },
+   "is_entrance": true,
+   "confidence": 0.7,
+   "label": "the south stair door on level 200",
+   "note": "Glazed aluminium door with a push bar on the corridor side, beside a fixed glass panel; an EXIT plate and a fire alarm pull station are on the pier to its left, next to the drinking fountains. Through the glass the stair is seen going up and down, with a floor sign reading LEVEL 2 and a steel wall cabinet whose lettering is not legible. The stairwell is not scanned. Whether the door opens from the stair side is not seen. Width is an estimate from the panorama.",
+   "source": "hand: stair door seen in the panorama; the wall plan records no opening there",
+   "approach": {
+    "via": "stairs",
+    "floors": 2,
+    "walk_m": 80,
+    "note": "the south stair, two levels up from Campus Level A. Campus Level A and the way from outside to the foot of this stair are not scanned: 80 m is a placeholder guess, not a measurement"
+   }
+  },
+  {
+   "id": "stage_west_curb",
+   "kind": "staging",
+   "floor": 1,
+   "label": "the curb on the street west of the building, at the paved forecourt",
+   "latlon": [
+    40.3489804,
+    -74.6559047
+   ],
+   "source": "hand: curb read off the aerial tile",
+   "confirmed": false,
+   "note": "East curb of the street that runs along the west front, where the paved forecourt meets it. The forecourt leads to the middle of the west front, in line with the entrance hall seen from the arcade. The street is taken to be Washington Road from general knowledge of the campus; no street sign is read in the scan or on the aerial."
+  }
+ ],
+ "add_edges": [
+  {
+   "a": "stage_west_curb",
+   "b": "door_west_main",
+   "type": "exterior_foot",
+   "meters": 35,
+   "note": "about 22 m across the paved forecourt (measured on the aerial) and about 13 m through the west entrance hall (sight lines from the arcade). Neither is scanned; the outside door of the hall is passed on the way and any steps there are not seen"
+  },
+  {
+   "a": "stage_west_curb",
+   "b": "door_west_north",
+   "type": "exterior_foot",
+   "meters": 35,
+   "note": "about 22 m across the paved forecourt (measured on the aerial) and about 13 m through the west entrance hall (sight lines from the arcade). Neither is scanned; the outside door of the hall is passed on the way and any steps there are not seen"
+  },
+  {
+   "a": "stair_atrium_from_a",
+   "b": "36aa2eubht8idy9kr2k8aubac",
+   "type": "open",
+   "meters": 1.2,
+   "confidence": 0.8,
+   "assumed": false,
+   "note": "the stair top is beside the foot of the stair up to level 200; seen from 36aa2 at heading 300"
+  }
+ ],
+ "elevators": [
+  {
+   "id": "elev_pe1",
+   "label": "elevator PE1",
+   "offset_xy": [
+    0.45,
+    -2.35
+   ],
+   "stops": {
+    "1": "w5kacr4ci0d92c5wkzrfs4erd",
+    "2": "haipxtu4fuppeii5f8iik4btc"
+   },
+   "source": "hand: elevator doors and call buttons seen on both levels",
+   "note": "One stainless elevator door on the south wall of the southwest corridor, in the same place on both levels, tagged PE1 above the door. The jamb plate reads 1 on level 100 (seen from w5kac at heading 281) and 2 on level 200 (seen from haipx at heading 281). Up and down call buttons are to the right of the door on both levels, under an IN CASE OF FIRE sign; a card reader is on the wall left of the door on level 100. The down button on level 100 and the up button on level 200, with the directory beside the door, say it also serves Campus Level A and Level 300, which are not scanned. The car is not seen: whether it takes a stretcher is not known."
+  }
+ ],
+ "remove_edges": [
+  [
+   "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "duhb1en75fgewsniip8byupza"
+  ],
+  [
+   "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "e9e4rxumug0x0dz4xyhgenakd"
+  ],
+  [
+   "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "gaxq605gdd559tf073aubympc"
+  ],
+  [
+   "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "b1q6mcf0edqwd7xwzk6497maa"
+  ],
+  [
+   "qu4unpew77rnmdcas4c9npyzc",
+   "ufgr14zs7pbz0pig3kp07r7hd"
+  ],
+  [
+   "qf5w019hhy47ybsiu9fyu43kd",
+   "yfn0c6232s1yxzgxqmqw7n6zb"
+  ],
+  [
+   "1k478kza39tbfu1uhbttg5ybb",
+   "h13rg3tuxedbm5zzknqadu73b"
+  ],
+  [
+   "28b2c48p1q2tgni83r5qkdc2b",
+   "8h1u5sb6x8sabzcssd91exwna"
+  ],
+  [
+   "28b2c48p1q2tgni83r5qkdc2b",
+   "h13rg3tuxedbm5zzknqadu73b"
+  ],
+  [
+   "a6ce5xzf6mf48hy21cmu3q3ma",
+   "w5kacr4ci0d92c5wkzrfs4erd"
+  ],
+  [
+   "36aa2eubht8idy9kr2k8aubac",
+   "gaxq605gdd559tf073aubympc"
+  ],
+  [
+   "ht0bbyeyc69qwxm7did6ycbuc",
+   "2yy18y2trz8tgisf5r9s1tfpc"
+  ],
+  [
+   "684rbi72ft03adydwabgicmpb",
+   "panr3bktyzufic6e6xb4mtuub"
+  ],
+  [
+   "9f45hxprghib9bgxnzkd87f6b",
+   "rfuwtwdh07qm2ct0m04b3sb2a"
+  ],
+  [
+   "7dsusre8f794uicd3gsb1q5yd",
+   "y8rya39xwbarmpmfakn2qaimc"
+  ],
+  [
+   "9xmtamt4c9trdkf242ttr6dwb",
+   "ubrr49s35m2uxuy9y5rwh74sb"
+  ],
+  [
+   "da9quipa0a6ny84ky8e6s3ptb",
+   "r5cp1eut86x1rc9yepd4ysxwd"
+  ]
+ ],
+ "remove_edges_note": "Seventeen links the builder drew through glass guardrails that the wall plan does not record. Each was checked in a view along the link. (1) The atrium stair is one straight run with glass rails on both sides: foot at 36aa2, half landing at b8ckm, top at 3xprh. The landing's other four stairs links (to duhb1 and e9e4r under the stair, to gaxq6 across the gap on level 100 and to b1q6m across the gap on level 200) do not exist. (2) On level 100 the atrium floor joins the ring corridor only by the two wood-floored bridges at its northwest and southwest corners (ed5xx to qu4un, xq7dh to gprsw and 36aa2) and by the opening from the arcade; everywhere else a glass rail and a drop to Campus Level A lie between. Removed: qu4un-ufgr1, qf5w0-yfn0c, 1k478-h13rg, 28b2c-8h1u5, 28b2c-h13rg, a6ce5-w5kac, 36aa2-gaxq6, and da9qu-r5cp1, which clips the railed corner beside the opening from the arcade. (3) Diagonals that cut an inside corner of the ring corridor across the railed drop: ht0bb-2yy18 and 684rb-panr3 on level 100, 9f45h-rfuwt, 7dsus-y8rya and 9xmta-ubrr4 on level 200. The corner positions 81tg3, 2qe44, haipx, eqpgx and s959d carry the real way round.",
+ "nodes": {
+  "n0ppizy9u8xcadypd2bawceyc": {
+   "label": "the stone arcade at the donor plaque",
+   "note": "bronze plaque on the stone pier at heading 180 (In grateful recognition of the generous support provided to the Department of Chemistry by ...); the two glass doors from the west entrance hall are at headings 133 and 227"
+  },
+  "0f2a2fyf5iibscursb5gkyu9a": {
+   "label": "the north end of the stone arcade",
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier at heading 34. The arch at heading 180 is fixed glass with a guard rail, not a door. Wrought-iron gates to the northwest corner at heading 90, open in the scan"
+  },
+  "pr6uqwurqfw4xg6ghnx2q1zmb": {
+   "label": "the south end of the stone arcade",
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier at heading 325, under a framed notice. The arch at heading 180 is fixed glass with a guard rail, not a door. Wrought-iron gates to the southwest corner at heading 270, open in the scan"
+  },
+  "da9quipa0a6ny84ky8e6s3ptb": {
+   "label": "the opening from the arcade into the atrium",
+   "room_label": "the Perel Atrium"
+  },
+  "ufgr14zs7pbz0pig3kp07r7hd": {
+   "label": "the northwest corner of level 100",
+   "note": "wall sign at heading 58: ahead (north) Bendheim Center for Finance 103-108, Meeting Rooms 101-102, Department of Economics 110; right (east) Center for Health and Wellbeing 118, 119, 122-125, Department of Economics 112-116, Princeton Institute for International and Regional Studies, Research Program in Development Economics 120, 126-132, Meeting Room 144, Restrooms. Bench alcoves at headings 180 and 225"
+  },
+  "yfn0c6232s1yxzgxqmqw7n6zb": {
+   "note": "flush blank double panel in the wall at heading 90, no call buttons: not an elevator"
+  },
+  "5yqp8itw3r5s4iw3kuf4nqdsc": {
+   "label": "the southwest corner of level 100"
+  },
+  "w5kacr4ci0d92c5wkzrfs4erd": {
+   "label": "the level 100 elevator lobby",
+   "note": "elevator PE1 at heading 281; building directory on the wall left of it at heading 262: Level 300, Level 200, Level 100 (Department of Economics Main Office 112-116) and Campus Level A"
+  },
+  "h13rg3tuxedbm5zzknqadu73b": {
+   "label": "the Department of Economics main office",
+   "note": "glass front lettered DEPARTMENT OF ECONOMICS MAIN OFFICE at heading 90, with an EXIT sign above its glass door; the directory gives it rooms 112-116"
+  },
+  "ht0bbyeyc69qwxm7did6ycbuc": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier right of the north stair door, heading 72"
+  },
+  "81tg3n7bd96pyfp31pzd7mada": {
+   "label": "the northeast corner of level 100, by the drinking fountains",
+   "note": "two drinking fountains in the alcove at heading 95"
+  },
+  "2yy18y2trz8tgisf5r9s1tfpc": {
+   "label": "the corridor outside Room 120",
+   "note": "door sign 120 at heading 30; card reader on the door"
+  },
+  "umf4kucuf8hn4ipb9az044yxc": {
+   "label": "the corridor outside Room 119",
+   "note": "door sign 119 at heading 30; card reader on the door"
+  },
+  "684rbi72ft03adydwabgicmpb": {
+   "label": "the corridor outside Room 118",
+   "note": "door sign 118 at heading 24; card reader on the door"
+  },
+  "2qe44cteny5g297zquh4gpgcd": {
+   "label": "the southeast corner of level 100, by the drinking fountains",
+   "note": "two drinking fountains in the alcove at heading 290"
+  },
+  "panr3bktyzufic6e6xb4mtuub": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier left of the south stair door, heading 297"
+  },
+  "36aa2eubht8idy9kr2k8aubac": {
+   "label": "the atrium stair",
+   "room_label": "the Perel Atrium",
+   "note": "foot of the stair up to level 200, which rises east at heading 0; the open stair down to Campus Level A starts beside it at heading 300"
+  },
+  "b8ckm0ge7yzdxbq0f5tkeswyd": {
+   "label": "the half landing of the atrium stair"
+  },
+  "3xprhtpgyi8tqttrrqhmghw6b": {
+   "label": "the atrium stair",
+   "note": "top of the stair from level 100, which goes down west at heading 180; door sign 217, Economics Department Meeting Room, at heading 50"
+  },
+  "p8q154uncpnbn9zz3pf0utc1d": {
+   "label": "the bridge to the north door of Room 217",
+   "note": "door sign 217 at heading 313"
+  },
+  "wd46bmmxqkzpyw35raqsdx2db": {
+   "label": "Room 217, by its north door",
+   "room_label": "Room 217"
+  },
+  "bd3dzdmm4w3twrznh1ydgfq8b": {
+   "label": "Room 217, by its south door",
+   "room_label": "Room 217"
+  },
+  "2eum01wmtxcin1q8grtnmc0ra": {
+   "label": "Room 217, northwest corner",
+   "room_label": "Room 217"
+  },
+  "mk5198wdpzeqzp73ese8h4pbb": {
+   "label": "Room 217, southwest corner",
+   "room_label": "Room 217"
+  },
+  "qu4unpew77rnmdcas4c9npyzc": {
+   "room_label": "the Perel Atrium"
+  },
+  "g28dnxza8f193q5nzhdaxf2hd": {
+   "room_label": "the Perel Atrium"
+  },
+  "qf5w019hhy47ybsiu9fyu43kd": {
+   "room_label": "the Perel Atrium"
+  },
+  "a6ce5xzf6mf48hy21cmu3q3ma": {
+   "room_label": "the Perel Atrium"
+  },
+  "r5cp1eut86x1rc9yepd4ysxwd": {
+   "room_label": "the Perel Atrium"
+  },
+  "gprsw6xcqigh6reqseh3rmcrc": {
+   "room_label": "the Perel Atrium"
+  },
+  "y9da08g1g5b77bdscnw7n3fya": {
+   "room_label": "the Perel Atrium"
+  },
+  "duhb1en75fgewsniip8byupza": {
+   "room_label": "the Perel Atrium"
+  },
+  "az0h181td1h01x8x9gxhnp47a": {
+   "room_label": "the Perel Atrium"
+  },
+  "e9e4rxumug0x0dz4xyhgenakd": {
+   "room_label": "the Perel Atrium"
+  },
+  "28b2c48p1q2tgni83r5qkdc2b": {
+   "room_label": "the Perel Atrium"
+  },
+  "1gmnh1czf97m0y4s6119pfs1d": {
+   "room_label": "the Perel Atrium"
+  },
+  "1k478kza39tbfu1uhbttg5ybb": {
+   "room_label": "the Perel Atrium",
+   "note": "lettering PEREL ATRIUM and a bronze plaque with the same name on the pier at heading 117"
+  },
+  "haipxtu4fuppeii5f8iik4btc": {
+   "label": "the level 200 elevator lobby",
+   "note": "elevator PE1 at heading 281. Glass door of Room 200, signed Economics Lounge, at heading 150. Past the corner the corridor runs on south at heading 215 and is not scanned: on this level that is where the scan stops, and how to reach it from outside is not seen. Wall sign at heading 225: ahead Department of Economics and International Economics Section; left Center for Health and Wellbeing 218B, 219, Griswold Center 241-244, Industrial Relations Section, Restrooms"
+  },
+  "eqpgxz0sb38saf4rcuxng6uud": {
+   "label": "the northwest corner of level 200",
+   "note": "north glass door of Room 200 (Economics Lounge) at heading 207. Past the corner the corridor runs on north at heading 150 and is not scanned: on this level that is where the scan stops, and how to reach it from outside is not seen. Flush blank double panel at heading 90, no call buttons: not an elevator. Wall sign at heading 135 carries a numeral 2"
+  },
+  "ih6tueuzaxnyw3f47m5ygeccd": {
+   "label": "the Julis-Rabinowitz Center suite doors",
+   "note": "wood suite doors at heading 100 with a Julis-Rabinowitz Center for Public Policy & Finance banner; EXIT sign above"
+  },
+  "4z3dsh3hzihrqcr8fsxqdkf6c": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier right of the north stair door, heading 57"
+  },
+  "c9t63yrk0m9rmufcmnebs24zb": {
+   "label": "the northeast corner of level 200, by the drinking fountains",
+   "note": "two drinking fountains at heading 95. The corridor runs on east at heading 25, past a men's restroom, to a window about 12 m away and is not scanned; grey cross-corridor fire doors stand open against its walls at headings 65 and 330. On this level that is where the scan stops, and how to reach it from outside is not seen"
+  },
+  "8c32s7nkt2849ty7f2xzdunda": {
+   "label": "the corridor outside Room 219",
+   "note": "door sign 219 at heading 60"
+  },
+  "0nunhdpcx0wq1xc8umazai0fd": {
+   "label": "the corridor outside Room 218B",
+   "note": "door sign 218B at heading 35"
+  },
+  "ubrr49s35m2uxuy9y5rwh74sb": {
+   "label": "the corridor outside Room 218A",
+   "note": "door sign 218A at heading 322"
+  },
+  "s959dys4uwha3mmrpkf6c5ddc": {
+   "label": "the southeast corner of level 200, by the drinking fountains",
+   "note": "two drinking fountains at heading 290. The corridor runs on east at heading 15 for about 15 m to glass doors and is not scanned; grey cross-corridor fire doors stand open against its walls. On this level that is where the scan stops, and how to reach it from outside is not seen"
+  },
+  "9xmtamt4c9trdkf242ttr6dwb": {
+   "equipment": [
+    "fire_alarm_pull_station"
+   ],
+   "note": "fire alarm pull station on the pier left of the south stair door, heading 292"
+  },
+  "elev_pe1_f1": {
+   "note": "level 100 stop of elevator PE1: jamb plate 1, up and down call buttons right of the door, card reader on the wall left of it. Seen from w5kac at heading 281. The car is not seen: whether it takes a stretcher is not known"
+  },
+  "elev_pe1_f2": {
+   "note": "level 200 stop of elevator PE1: jamb plate 2, up and down call buttons right of the door. Seen from haipx at heading 281. The car is not seen: whether it takes a stretcher is not known"
+  }
+ },
+ "edges": [
+  {
+   "a": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "b": "m50u46kpe0src2rqk6xmmri5d",
+   "type": "open",
+   "note": "stone archway at the south end of the arcade with wrought-iron gates, folded back open in the scan; if the gates are shut this way is closed. The builder typed it a door from the wall plan; set to open like the matching archway at the north end, since there is no leaf to open"
+  },
+  {
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "ufgr14zs7pbz0pig3kp07r7hd",
+   "note": "stone archway at the north end of the arcade with wrought-iron gates, standing open in the scan; if the gates are shut this way is closed"
+  },
+  {
+   "a": "85ekq5i5e02pxxe0se65sr5sc",
+   "b": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "note": "south door of Room 217, open in the scan"
+  },
+  {
+   "a": "mk5198wdpzeqzp73ese8h4pbb",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "note": "north door of Room 217; the link runs the length of the room between the tables"
+  }
+ ]
+}

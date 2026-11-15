@@ -1,0 +1,15 @@
+{
+ "path": "buildings/princeton-rabinowitz/aerial.jpg",
+ "bbox_wsen": [
+  -74.6563761478491,
+  40.348412204614775,
+  -74.6544902108968,
+  40.34984950249476
+ ],
+ "size": [
+  1280,
+  1280
+ ],
+ "meters_per_pixel": 0.125,
+ "north_up": true
+}
