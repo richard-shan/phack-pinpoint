@@ -5,12 +5,13 @@ import concurrent.futures as cf
 import time
 from pathlib import Path
 
-from . import stubs, learning, trace
+from . import stubs, learning, trace, pipeline, preplan
 from .config import INCIDENTS
 from .errors import PropertyNotFound, MatterportUnavailable, EmptyCandidates
 from .packet import PacketWriter
 from .pipeline import (
     plan_md, run_records, run_locator, run_site, run_router, run_verifier,
+    run_verifier_section, build_sources, empty_audit_state, audit_from_state,
     should_skip_questions,
 )
 from .gates import approval_gate, parse_decision, notify_contact_gate
@@ -54,9 +55,21 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
     packet.set_correction_notes(learning.summarize_for_packet(corrections))
     packet.flush()
 
+    # Warm the building preplan (graph + property + site) before the parallel fan-out.
+    # Best-effort: real failures bubble up again when a subagent actually hits the data.
+    preplan.warmup_preplan(building_id)
+    trace.log("commander", "preplan_warmed",
+              args={"building_id": building_id},
+              result_summary=str(preplan.cache_stats()), phase="warmup")
+
     brief, location, site, route_bundle = None, None, None, None
     records_failure, locator_failure = None, None
     failure_sources = {}
+
+    # Running audit state for incremental verification. Populated after each section flush
+    # on the happy path; discarded on failure paths (which fall back to a final sweep).
+    audit_state = empty_audit_state()
+    live_sources = build_sources(None, None, None, None, corrections)
 
     # records / locator / site together
     trace.log("commander", "task:parallel", args=["records", "locator", "site"], phase="delegate")
@@ -83,13 +96,21 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
             if kind == "records":
                 brief = result
                 packet.set_brief(brief)
+                live_sources["brief"] = brief
+                live_sources["records"] = {"contact": (brief or {}).get("contact")}
             elif kind == "locator":
                 location = result
                 packet.set_location(location)
+                live_sources["location"] = location
             else:
                 site = result
                 packet.set_site(site)
+                live_sources["site"] = site
             packet.flush()
+            # Incremental audit: verify any newly-tagged claims on the current packet
+            # render. Idempotent by claim-string, so repeat calls are cheap.
+            run_verifier_section(kind, packet.tagged_claims(), audit_state,
+                                 sources=live_sources)
 
     if records_failure is not None:
         location, failure_sources = apply_records_failure(packet, intake, records_failure)
@@ -102,15 +123,30 @@ def run_incident(intake: dict, mock_llm=True, auto_approve=True, approve_fn=None
         route_bundle = run_router(idir, building_id, location, site)
         packet.set_route(route_bundle)
         packet.flush()
+        live_sources["route"] = route_bundle
+        run_verifier_section("router", packet.tagged_claims(), audit_state,
+                             sources=live_sources)
 
-    audit = run_verifier(
-        idir, packet,
-        brief if records_failure is None else {"failure_mode": "property_not_found"},
-        location,
-        site if records_failure is None else {},
-        route_bundle if (records_failure is None or locator_failure is not None) else None,
-        corrections, extra_sources=failure_sources,
-    )
+    if records_failure is not None or locator_failure is not None:
+        # Failure paths do a final sweep; packet body is re-rendered for UNABLE/DEGRADED.
+        audit = run_verifier(
+            idir, packet,
+            brief if records_failure is None else {"failure_mode": "property_not_found"},
+            location,
+            site if records_failure is None else {},
+            route_bundle if (records_failure is None or locator_failure is not None) else None,
+            corrections, extra_sources=failure_sources,
+        )
+    else:
+        # Happy path: audit is the running state at this point.
+        audit = audit_from_state(audit_state)
+        write_json(idir / "audit.json", audit)
+        trace.log(
+            "verifier", "check_claim",
+            result_summary=f"{audit['supported']}/{audit['checked']} supported (incremental)",
+            phase="subagent",
+        )
+
     if records_failure is not None:
         audit["status"] = "UNABLE"
     elif locator_failure is not None:
