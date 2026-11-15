@@ -154,7 +154,13 @@ def run_incident(building_id: str, photo: str | None, text: str = "", *, console
                 console=console, console_incident=console_incident, ask=ask, ask_timeout_s=ask_timeout_s,
                 console_scan=bool(console and console.has_scan(building_id)))
 
-    approve, decision_box = _gate(console, console_incident, auto_approve, leave_for_review, approve_timeout_s)
+    gate, decision_box = _gate(console, console_incident, auto_approve, leave_for_review, approve_timeout_s)
+
+    def approve(incident_id, packet_path):
+        decision = gate(incident_id, packet_path)
+        if decision == "reject" and decision_box.get("decision") == "rejected":
+            return {"decision": "reject", "corrected_room_id": decision_box.get("corrected_room_id")}
+        return decision
 
     intake = {"address": address, "building_id": building_id, "caller_photo_path": photo or "(position given)",
               "caller_text": text, "ground_truth_node_id": truth or position or simulate_match,

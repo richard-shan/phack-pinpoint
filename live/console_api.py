@@ -101,10 +101,12 @@ class Console:
     def route(self, incident_id: str, body: dict) -> dict:
         return self._write(incident_id, "POST", "/route", body)
 
-    def decide(self, incident_id: str, decision: str, reason: str = "") -> dict:
+    def decide(self, incident_id: str, decision: str, reason: str = "", corrected_room_id: str = "") -> dict:
         body = {"decision": decision}
         if reason:
             body["reason"] = reason
+        if corrected_room_id:
+            body["correctedRoomId"] = corrected_room_id
         return self._write(incident_id, "POST", "/decision", body)
 
     # ------------------------------------------------------------ waiting on people
@@ -127,7 +129,7 @@ class Console:
             d = inc.get("decision")
             if d and inc.get("status") in ("approved", "rejected"):
                 return {"decision": d["kind"], "reason": d.get("reason") or "", "revision": d.get("revision"),
-                        "packet_id": inc.get("packetId")}
+                        "packet_id": inc.get("packetId"), "corrected_room_id": d.get("correctedRoomId") or ""}
             time.sleep(poll_s)
         return {"decision": "timeout", "reason": "", "revision": None}
 

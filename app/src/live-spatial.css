@@ -18,3 +18,11 @@
 
 .spatial-view-controls [hidden]{display:none!important}
 .match-evidence{display:block;max-width:100%;height:auto;border-radius:6px;margin-top:8px}
+
+.review-section .section-heading p{margin-top:4px;font-size:var(--text-xs)}
+.review-section .route-summary p{white-space:pre-wrap}
+.review-section .review-actions{margin-top:var(--space-5)}
+.review-details{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--border)}
+.review-details summary{cursor:pointer;font-weight:600}
+.review-details>details{margin-top:var(--space-4)}
+.review-details>details summary{font-weight:400}

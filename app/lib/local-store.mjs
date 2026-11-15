@@ -132,14 +132,15 @@ export function createLocalStore({ directory, getCatalog }) {
       await atomic(id, incident); return clone(incident);
     }); },
     decide(id, body) { return run(async () => {
-      object(body, ['expectedRevision', 'decision', 'reason']);
+      object(body, ['expectedRevision', 'decision', 'reason', 'correctedRoomId']);
       if (!['approved', 'rejected'].includes(body.decision)) fail(400, 'INVALID_DECISION', 'Decision must be approved or rejected.');
       const reason = text(body.reason ?? '', 'Reason', 2000, body.decision === 'rejected');
+      const correctedRoomId = text(body.correctedRoomId ?? '', 'Corrected room', 500, false);
       const incident = await current(id, body.expectedRevision);
       if (incident.status !== 'review') fail(409, 'DECISION_EXISTS', 'This revision already has a decision. Edit it before reviewing again.');
       incident.status = body.decision;
       incident.updatedAt = now();
-      incident.decision = { kind: body.decision, revision: incident.revision, reason, at: incident.updatedAt };
+      incident.decision = { kind: body.decision, revision: incident.revision, reason, correctedRoomId, at: incident.updatedAt };
       incident.events.push({ type: 'decision', text: body.decision === 'approved' ? 'Dispatcher approved this revision locally. No external delivery occurred.' : `Dispatcher rejected this revision: ${reason}`, at: incident.updatedAt });
       if (body.decision === 'approved') {
         const catalog = await getCatalog();
