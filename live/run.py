@@ -519,13 +519,18 @@ def main(argv=None) -> None:
     ap.add_argument("--ask", choices=("console", "simulate", "none"), help="who answers the agent's questions")
     ap.add_argument("--ask-timeout", type=float, default=90.0, help="seconds to wait for the caller's reply")
     ap.add_argument("--auto-approve", action="store_true", help="do not wait for the dispatcher")
+    ap.add_argument("--leave-for-review", action="store_true",
+                    help="with --watch: draft each packet and move on to the next incident instead of waiting "
+                         "for the dispatcher's decision (the messaging bridge delivers it once approved)")
     ap.add_argument("--llm", action="store_true", help="put a model in charge of the tool calls (the agent's "
                     "deepagents path; needs ANTHROPIC_API_KEY) instead of its deterministic orchestrator")
     a = ap.parse_args(argv)
 
     console = Console(a.console or "http://localhost:4175") if (a.console or a.watch) else None
     if a.watch:
-        watch(console, once=a.once, llm=a.llm, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout)
+        extra = {"leave_for_review": True} if a.leave_for_review else {}
+        watch(console, once=a.once, llm=a.llm, ask=a.ask, auto_approve=a.auto_approve, ask_timeout_s=a.ask_timeout,
+              **extra)
         return
     if not a.building or not (a.photo or a.position or a.simulate_match):
         ap.error("give --building and --photo (or --position), or --watch")
