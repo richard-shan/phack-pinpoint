@@ -1,0 +1,1737 @@
+{
+ "modelId": "P3S6VUTP3qB",
+ "propertyId": "princeton-rabinowitz",
+ "name": "Princeton - Rabinowitz Hall",
+ "faceRoute": true,
+ "supportsOverview": true,
+ "georeference": null,
+ "floors": [
+  {
+   "id": "1",
+   "sequence": 1,
+   "label": "Floor 1"
+  },
+  {
+   "id": "2",
+   "sequence": 2,
+   "label": "Floor 2"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "da9quipa0a6ny84ky8e6s3ptb",
+   "index": 0,
+   "floor": 1,
+   "position": {
+    "x": -8.603,
+    "y": -0.002,
+    "z": 3.837
+   },
+   "label": "Scan 0 \u00b7 Floor 1 \u00b7 the opening from the arcade into the atrium"
+  },
+  {
+   "id": "g28dnxza8f193q5nzhdaxf2hd",
+   "index": 1,
+   "floor": 1,
+   "position": {
+    "x": -4.627,
+    "y": -0.007,
+    "z": 0.348
+   },
+   "label": "Scan 1 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "gaxq605gdd559tf073aubympc",
+   "index": 2,
+   "floor": 1,
+   "position": {
+    "x": 2.641,
+    "y": -0.014,
+    "z": 13.456
+   },
+   "label": "Scan 2 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "haipxtu4fuppeii5f8iik4btc",
+   "index": 3,
+   "floor": 2,
+   "position": {
+    "x": -8.12,
+    "y": 3.949,
+    "z": 13.286
+   },
+   "label": "Scan 3 \u00b7 Floor 2 \u00b7 the level 200 elevator lobby"
+  },
+  {
+   "id": "ht0bbyeyc69qwxm7did6ycbuc",
+   "index": 4,
+   "floor": 1,
+   "position": {
+    "x": 11.368,
+    "y": -0.006,
+    "z": -3.943
+   },
+   "label": "Scan 4 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "panr3bktyzufic6e6xb4mtuub",
+   "index": 5,
+   "floor": 1,
+   "position": {
+    "x": 12.102,
+    "y": -0.011,
+    "z": 12.275
+   },
+   "label": "Scan 5 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "akkrtige2btw2mmn2ghr2z9za",
+   "index": 6,
+   "floor": 2,
+   "position": {
+    "x": -8.233,
+    "y": 3.958,
+    "z": 4.244
+   },
+   "label": "Scan 6 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "duhb1en75fgewsniip8byupza",
+   "index": 7,
+   "floor": 1,
+   "position": {
+    "x": -0.504,
+    "y": -0.017,
+    "z": 6.102
+   },
+   "label": "Scan 7 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "mk5198wdpzeqzp73ese8h4pbb",
+   "index": 8,
+   "floor": 2,
+   "position": {
+    "x": 2.779,
+    "y": 3.971,
+    "z": 6.25
+   },
+   "label": "Scan 8 \u00b7 Floor 2 \u00b7 Room 217, southwest corner"
+  },
+  {
+   "id": "qu4unpew77rnmdcas4c9npyzc",
+   "index": 9,
+   "floor": 1,
+   "position": {
+    "x": -4.832,
+    "y": -0.01,
+    "z": -2.342
+   },
+   "label": "Scan 9 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "ubrr49s35m2uxuy9y5rwh74sb",
+   "index": 10,
+   "floor": 2,
+   "position": {
+    "x": 13.889,
+    "y": 4.106,
+    "z": 7.947
+   },
+   "label": "Scan 10 \u00b7 Floor 2 \u00b7 the corridor outside Room 218A"
+  },
+  {
+   "id": "1k478kza39tbfu1uhbttg5ybb",
+   "index": 11,
+   "floor": 1,
+   "position": {
+    "x": 0.011,
+    "y": -0.027,
+    "z": -0.013
+   },
+   "label": "Scan 11 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "umf4kucuf8hn4ipb9az044yxc",
+   "index": 12,
+   "floor": 1,
+   "position": {
+    "x": 13.615,
+    "y": -0.025,
+    "z": 4.111
+   },
+   "label": "Scan 12 \u00b7 Floor 1 \u00b7 the corridor outside Room 119"
+  },
+  {
+   "id": "8c32s7nkt2849ty7f2xzdunda",
+   "index": 13,
+   "floor": 2,
+   "position": {
+    "x": 13.773,
+    "y": 4.101,
+    "z": -0.1
+   },
+   "label": "Scan 13 \u00b7 Floor 2 \u00b7 the corridor outside Room 219"
+  },
+  {
+   "id": "8cnnit59dnzb02y2nekixp6hc",
+   "index": 14,
+   "floor": 2,
+   "position": {
+    "x": 8.841,
+    "y": 3.97,
+    "z": 9.963
+   },
+   "label": "Scan 14 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "index": 15,
+   "floor": 2,
+   "position": {
+    "x": 8.033,
+    "y": 3.959,
+    "z": 6.094
+   },
+   "label": "Scan 15 \u00b7 Floor 2 \u00b7 Room 217, by its south door"
+  },
+  {
+   "id": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "index": 16,
+   "floor": 1,
+   "position": {
+    "x": -4.536,
+    "y": -0.009,
+    "z": -5.413
+   },
+   "label": "Scan 16 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "m50u46kpe0src2rqk6xmmri5d",
+   "index": 17,
+   "floor": 1,
+   "position": {
+    "x": -10.881,
+    "y": -0.003,
+    "z": 11.218
+   },
+   "label": "Scan 17 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "r5cp1eut86x1rc9yepd4ysxwd",
+   "index": 18,
+   "floor": 1,
+   "position": {
+    "x": -6.584,
+    "y": 0.01,
+    "z": 9.536
+   },
+   "label": "Scan 18 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "w5kacr4ci0d92c5wkzrfs4erd",
+   "index": 19,
+   "floor": 1,
+   "position": {
+    "x": -8.04,
+    "y": -0.002,
+    "z": 13.05
+   },
+   "label": "Scan 19 \u00b7 Floor 1 \u00b7 the level 100 elevator lobby"
+  },
+  {
+   "id": "wd46bmmxqkzpyw35raqsdx2db",
+   "index": 20,
+   "floor": 2,
+   "position": {
+    "x": 8.245,
+    "y": 3.974,
+    "z": 1.005
+   },
+   "label": "Scan 20 \u00b7 Floor 2 \u00b7 Room 217, by its north door"
+  },
+  {
+   "id": "xdym22pw82n1ius7pazhttd1a",
+   "index": 21,
+   "floor": 2,
+   "position": {
+    "x": 9.669,
+    "y": 3.936,
+    "z": -2.562
+   },
+   "label": "Scan 21 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "0nunhdpcx0wq1xc8umazai0fd",
+   "index": 22,
+   "floor": 2,
+   "position": {
+    "x": 13.848,
+    "y": 4.094,
+    "z": 4.008
+   },
+   "label": "Scan 22 \u00b7 Floor 2 \u00b7 the corridor outside Room 218B"
+  },
+  {
+   "id": "3ny35zcnrdiw2ham0z1sptyqd",
+   "index": 23,
+   "floor": 2,
+   "position": {
+    "x": -7.591,
+    "y": 3.967,
+    "z": 7.449
+   },
+   "label": "Scan 23 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "3xprhtpgyi8tqttrrqhmghw6b",
+   "index": 24,
+   "floor": 2,
+   "position": {
+    "x": 6.27,
+    "y": 3.962,
+    "z": 9.067
+   },
+   "label": "Scan 24 \u00b7 Floor 2 \u00b7 the atrium stair"
+  },
+  {
+   "id": "7dsusre8f794uicd3gsb1q5yd",
+   "index": 25,
+   "floor": 2,
+   "position": {
+    "x": -7.613,
+    "y": 3.977,
+    "z": -2.161
+   },
+   "label": "Scan 25 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "85ekq5i5e02pxxe0se65sr5sc",
+   "index": 26,
+   "floor": 2,
+   "position": {
+    "x": 8.923,
+    "y": 3.959,
+    "z": 7.813
+   },
+   "label": "Scan 26 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "9xmtamt4c9trdkf242ttr6dwb",
+   "index": 27,
+   "floor": 2,
+   "position": {
+    "x": 11.911,
+    "y": 4.093,
+    "z": 12.445
+   },
+   "label": "Scan 27 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "index": 28,
+   "floor": 1,
+   "position": {
+    "x": -4.555,
+    "y": -0.0,
+    "z": 7.358
+   },
+   "label": "Scan 28 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "gprsw6xcqigh6reqseh3rmcrc",
+   "index": 29,
+   "floor": 1,
+   "position": {
+    "x": -5.371,
+    "y": 0.008,
+    "z": 9.993
+   },
+   "label": "Scan 29 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "2yy18y2trz8tgisf5r9s1tfpc",
+   "index": 30,
+   "floor": 1,
+   "position": {
+    "x": 13.284,
+    "y": -0.004,
+    "z": -0.878
+   },
+   "label": "Scan 30 \u00b7 Floor 1 \u00b7 the corridor outside Room 120"
+  },
+  {
+   "id": "2eum01wmtxcin1q8grtnmc0ra",
+   "index": 31,
+   "floor": 2,
+   "position": {
+    "x": 2.812,
+    "y": 3.969,
+    "z": 1.404
+   },
+   "label": "Scan 31 \u00b7 Floor 2 \u00b7 Room 217, northwest corner"
+  },
+  {
+   "id": "36aa2eubht8idy9kr2k8aubac",
+   "index": 32,
+   "floor": 1,
+   "position": {
+    "x": -3.433,
+    "y": 0.001,
+    "z": 9.924
+   },
+   "label": "Scan 32 \u00b7 Floor 1 \u00b7 the atrium stair"
+  },
+  {
+   "id": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "index": 33,
+   "floor": 1,
+   "position": {
+    "x": -10.834,
+    "y": -0.003,
+    "z": 13.572
+   },
+   "label": "Scan 33 \u00b7 Floor 1 \u00b7 the southwest corner of level 100"
+  },
+  {
+   "id": "az0h181td1h01x8x9gxhnp47a",
+   "index": 34,
+   "floor": 1,
+   "position": {
+    "x": 1.66,
+    "y": -0.031,
+    "z": 3.001
+   },
+   "label": "Scan 34 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "eqpgxz0sb38saf4rcuxng6uud",
+   "index": 35,
+   "floor": 2,
+   "position": {
+    "x": -8.118,
+    "y": 3.988,
+    "z": -5.255
+   },
+   "label": "Scan 35 \u00b7 Floor 2 \u00b7 the northwest corner of level 200"
+  },
+  {
+   "id": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "index": 36,
+   "floor": 2,
+   "position": {
+    "x": 6.893,
+    "y": 3.95,
+    "z": -5.231
+   },
+   "label": "Scan 36 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "qf5w019hhy47ybsiu9fyu43kd",
+   "index": 37,
+   "floor": 1,
+   "position": {
+    "x": -4.623,
+    "y": -0.012,
+    "z": 3.725
+   },
+   "label": "Scan 37 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "index": 38,
+   "floor": 2,
+   "position": {
+    "x": -3.798,
+    "y": 3.968,
+    "z": 12.642
+   },
+   "label": "Scan 38 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "ufgr14zs7pbz0pig3kp07r7hd",
+   "index": 39,
+   "floor": 1,
+   "position": {
+    "x": -10.777,
+    "y": -0.011,
+    "z": -4.993
+   },
+   "label": "Scan 39 \u00b7 Floor 1 \u00b7 the northwest corner of level 100"
+  },
+  {
+   "id": "xq7dhrun14q0789iwk5epwtkb",
+   "index": 40,
+   "floor": 1,
+   "position": {
+    "x": -3.798,
+    "y": 0.002,
+    "z": 13.337
+   },
+   "label": "Scan 40 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "index": 41,
+   "floor": 1,
+   "position": {
+    "x": -8.05,
+    "y": -0.01,
+    "z": -5.172
+   },
+   "label": "Scan 41 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "0f2a2fyf5iibscursb5gkyu9a",
+   "index": 42,
+   "floor": 1,
+   "position": {
+    "x": -11.033,
+    "y": 0.017,
+    "z": -0.08
+   },
+   "label": "Scan 42 \u00b7 Floor 1 \u00b7 the north end of the stone arcade"
+  },
+  {
+   "id": "2qe44cteny5g297zquh4gpgcd",
+   "index": 43,
+   "floor": 1,
+   "position": {
+    "x": 14.063,
+    "y": -0.006,
+    "z": 13.62
+   },
+   "label": "Scan 43 \u00b7 Floor 1 \u00b7 the southeast corner of level 100, by the drinking fountains"
+  },
+  {
+   "id": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "index": 44,
+   "floor": 2,
+   "position": {
+    "x": 11.857,
+    "y": 4.108,
+    "z": -5.449
+   },
+   "label": "Scan 44 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "9f45hxprghib9bgxnzkd87f6b",
+   "index": 45,
+   "floor": 2,
+   "position": {
+    "x": -7.588,
+    "y": 3.959,
+    "z": 10.408
+   },
+   "label": "Scan 45 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "index": 46,
+   "floor": 2,
+   "position": {
+    "x": 1.391,
+    "y": 1.986,
+    "z": 9.125
+   },
+   "label": "Scan 46 \u00b7 Floor 2 \u00b7 the half landing of the atrium stair"
+  },
+  {
+   "id": "n0ppizy9u8xcadypd2bawceyc",
+   "index": 47,
+   "floor": 1,
+   "position": {
+    "x": -10.946,
+    "y": 0.003,
+    "z": 4.142
+   },
+   "label": "Scan 47 \u00b7 Floor 1 \u00b7 the stone arcade at the donor plaque"
+  },
+  {
+   "id": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "index": 48,
+   "floor": 1,
+   "position": {
+    "x": -10.915,
+    "y": 0.001,
+    "z": 8.062
+   },
+   "label": "Scan 48 \u00b7 Floor 1 \u00b7 the south end of the stone arcade"
+  },
+  {
+   "id": "p8q154uncpnbn9zz3pf0utc1d",
+   "index": 49,
+   "floor": 2,
+   "position": {
+    "x": 6.675,
+    "y": 3.943,
+    "z": -2.573
+   },
+   "label": "Scan 49 \u00b7 Floor 2 \u00b7 the bridge to the north door of Room 217"
+  },
+  {
+   "id": "y8rya39xwbarmpmfakn2qaimc",
+   "index": 50,
+   "floor": 2,
+   "position": {
+    "x": -4.128,
+    "y": 3.971,
+    "z": -3.908
+   },
+   "label": "Scan 50 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "1gmnh1czf97m0y4s6119pfs1d",
+   "index": 51,
+   "floor": 1,
+   "position": {
+    "x": 4.86,
+    "y": -0.039,
+    "z": 3.366
+   },
+   "label": "Scan 51 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "28b2c48p1q2tgni83r5qkdc2b",
+   "index": 52,
+   "floor": 1,
+   "position": {
+    "x": 4.729,
+    "y": -0.033,
+    "z": 0.336
+   },
+   "label": "Scan 52 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "684rbi72ft03adydwabgicmpb",
+   "index": 53,
+   "floor": 1,
+   "position": {
+    "x": 13.225,
+    "y": -0.008,
+    "z": 9.13
+   },
+   "label": "Scan 53 \u00b7 Floor 1 \u00b7 the corridor outside Room 118"
+  },
+  {
+   "id": "b1q6mcf0edqwd7xwzk6497maa",
+   "index": 54,
+   "floor": 2,
+   "position": {
+    "x": 1.609,
+    "y": 3.981,
+    "z": 13.335
+   },
+   "label": "Scan 54 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "c9t63yrk0m9rmufcmnebs24zb",
+   "index": 55,
+   "floor": 2,
+   "position": {
+    "x": 14.034,
+    "y": 4.108,
+    "z": -4.776
+   },
+   "label": "Scan 55 \u00b7 Floor 2 \u00b7 the northeast corner of level 200, by the drinking fountains"
+  },
+  {
+   "id": "e9e4rxumug0x0dz4xyhgenakd",
+   "index": 56,
+   "floor": 1,
+   "position": {
+    "x": 4.524,
+    "y": -0.009,
+    "z": 6.186
+   },
+   "label": "Scan 56 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "h13rg3tuxedbm5zzknqadu73b",
+   "index": 57,
+   "floor": 1,
+   "position": {
+    "x": 1.613,
+    "y": -0.004,
+    "z": -5.268
+   },
+   "label": "Scan 57 \u00b7 Floor 1 \u00b7 the Department of Economics main office"
+  },
+  {
+   "id": "ih6tueuzaxnyw3f47m5ygeccd",
+   "index": 58,
+   "floor": 2,
+   "position": {
+    "x": 1.61,
+    "y": 3.964,
+    "z": -5.313
+   },
+   "label": "Scan 58 \u00b7 Floor 2 \u00b7 the Julis-Rabinowitz Center suite doors"
+  },
+  {
+   "id": "s959dys4uwha3mmrpkf6c5ddc",
+   "index": 59,
+   "floor": 2,
+   "position": {
+    "x": 13.975,
+    "y": 4.125,
+    "z": 13.433
+   },
+   "label": "Scan 59 \u00b7 Floor 2 \u00b7 the southeast corner of level 200, by the drinking fountains"
+  },
+  {
+   "id": "thaxyfyip9r71h69gkck885aa",
+   "index": 60,
+   "floor": 1,
+   "position": {
+    "x": 6.751,
+    "y": -0.019,
+    "z": 13.176
+   },
+   "label": "Scan 60 \u00b7 Floor 1 \u00b7 Hallway"
+  },
+  {
+   "id": "t9wqkieqytkbx8egqum168w6b",
+   "index": 61,
+   "floor": 2,
+   "position": {
+    "x": 7.111,
+    "y": 3.979,
+    "z": 13.357
+   },
+   "label": "Scan 61 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "y9da08g1g5b77bdscnw7n3fya",
+   "index": 62,
+   "floor": 1,
+   "position": {
+    "x": -0.705,
+    "y": -0.023,
+    "z": 3.555
+   },
+   "label": "Scan 62 \u00b7 Floor 1 \u00b7 the Perel Atrium"
+  },
+  {
+   "id": "6hxpxut4nuzsug4625z1dk7bd",
+   "index": 63,
+   "floor": 2,
+   "position": {
+    "x": -7.627,
+    "y": 3.967,
+    "z": 0.902
+   },
+   "label": "Scan 63 \u00b7 Floor 2 \u00b7 Hallway"
+  },
+  {
+   "id": "81tg3n7bd96pyfp31pzd7mada",
+   "index": 64,
+   "floor": 1,
+   "position": {
+    "x": 14.047,
+    "y": -0.001,
+    "z": -5.204
+   },
+   "label": "Scan 64 \u00b7 Floor 1 \u00b7 the northeast corner of level 100, by the drinking fountains"
+  },
+  {
+   "id": "8h1u5sb6x8sabzcssd91exwna",
+   "index": 65,
+   "floor": 1,
+   "position": {
+    "x": 6.468,
+    "y": -0.006,
+    "z": -4.929
+   },
+   "label": "Scan 65 \u00b7 Floor 1 \u00b7 Hallway"
+  }
+ ],
+ "edges": [
+  {
+   "id": "18-29",
+   "a": "gprsw6xcqigh6reqseh3rmcrc",
+   "b": "r5cp1eut86x1rc9yepd4ysxwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "29-32",
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "gprsw6xcqigh6reqseh3rmcrc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-26",
+   "a": "85ekq5i5e02pxxe0se65sr5sc",
+   "b": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "14-26",
+   "a": "85ekq5i5e02pxxe0se65sr5sc",
+   "b": "8cnnit59dnzb02y2nekixp6hc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "44-55",
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "c9t63yrk0m9rmufcmnebs24zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-59",
+   "a": "9xmtamt4c9trdkf242ttr6dwb",
+   "b": "s959dys4uwha3mmrpkf6c5ddc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-33",
+   "a": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "b": "m50u46kpe0src2rqk6xmmri5d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-47",
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "n0ppizy9u8xcadypd2bawceyc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-43",
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "panr3bktyzufic6e6xb4mtuub",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-62",
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-62",
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "36-49",
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "p8q154uncpnbn9zz3pf0utc1d",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-9",
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-24",
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "8cnnit59dnzb02y2nekixp6hc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-41",
+   "a": "ufgr14zs7pbz0pig3kp07r7hd",
+   "b": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-29",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "gprsw6xcqigh6reqseh3rmcrc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-32",
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-56",
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "19-33",
+   "a": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "b": "w5kacr4ci0d92c5wkzrfs4erd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-26",
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "85ekq5i5e02pxxe0se65sr5sc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-45",
+   "a": "9f45hxprghib9bgxnzkd87f6b",
+   "b": "haipxtu4fuppeii5f8iik4btc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "23-45",
+   "a": "3ny35zcnrdiw2ham0z1sptyqd",
+   "b": "9f45hxprghib9bgxnzkd87f6b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-64",
+   "a": "81tg3n7bd96pyfp31pzd7mada",
+   "b": "ht0bbyeyc69qwxm7did6ycbuc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "18-28",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "r5cp1eut86x1rc9yepd4ysxwd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-49",
+   "a": "p8q154uncpnbn9zz3pf0utc1d",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "51-52",
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "28b2c48p1q2tgni83r5qkdc2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-63",
+   "a": "6hxpxut4nuzsug4625z1dk7bd",
+   "b": "7dsusre8f794uicd3gsb1q5yd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-16",
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "25-35",
+   "a": "7dsusre8f794uicd3gsb1q5yd",
+   "b": "eqpgxz0sb38saf4rcuxng6uud",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "17-48",
+   "a": "m50u46kpe0src2rqk6xmmri5d",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-51",
+   "a": "1gmnh1czf97m0y4s6119pfs1d",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-23",
+   "a": "3ny35zcnrdiw2ham0z1sptyqd",
+   "b": "akkrtige2btw2mmn2ghr2z9za",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-37",
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "6-63",
+   "a": "6hxpxut4nuzsug4625z1dk7bd",
+   "b": "akkrtige2btw2mmn2ghr2z9za",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-40",
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-34",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-41",
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "yfn0c6232s1yxzgxqmqw7n6zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-44",
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-37",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-62",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "29-40",
+   "a": "gprsw6xcqigh6reqseh3rmcrc",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-34",
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "duhb1en75fgewsniip8byupza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "14-61",
+   "a": "8cnnit59dnzb02y2nekixp6hc",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "21-36",
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "47-48",
+   "a": "n0ppizy9u8xcadypd2bawceyc",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "37-62",
+   "a": "qf5w019hhy47ybsiu9fyu43kd",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-22",
+   "a": "0nunhdpcx0wq1xc8umazai0fd",
+   "b": "ubrr49s35m2uxuy9y5rwh74sb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-37",
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-52",
+   "a": "28b2c48p1q2tgni83r5qkdc2b",
+   "b": "az0h181td1h01x8x9gxhnp47a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-22",
+   "a": "0nunhdpcx0wq1xc8umazai0fd",
+   "b": "8c32s7nkt2849ty7f2xzdunda",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-60",
+   "a": "gaxq605gdd559tf073aubympc",
+   "b": "thaxyfyip9r71h69gkck885aa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "35-50",
+   "a": "eqpgxz0sb38saf4rcuxng6uud",
+   "b": "y8rya39xwbarmpmfakn2qaimc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "42-47",
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "n0ppizy9u8xcadypd2bawceyc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-28",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "duhb1en75fgewsniip8byupza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "19-40",
+   "a": "w5kacr4ci0d92c5wkzrfs4erd",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "34-56",
+   "a": "az0h181td1h01x8x9gxhnp47a",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-61",
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "3-38",
+   "a": "haipxtu4fuppeii5f8iik4btc",
+   "b": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "30-64",
+   "a": "2yy18y2trz8tgisf5r9s1tfpc",
+   "b": "81tg3n7bd96pyfp31pzd7mada",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "43-53",
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "684rbi72ft03adydwabgicmpb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-42",
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "da9quipa0a6ny84ky8e6s3ptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-11",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "g28dnxza8f193q5nzhdaxf2hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "13-55",
+   "a": "8c32s7nkt2849ty7f2xzdunda",
+   "b": "c9t63yrk0m9rmufcmnebs24zb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-52",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "28b2c48p1q2tgni83r5qkdc2b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-37",
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-32",
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "duhb1en75fgewsniip8byupza",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-48",
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "pr6uqwurqfw4xg6ghnx2q1zmb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-31",
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "mk5198wdpzeqzp73ese8h4pbb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "57-65",
+   "a": "8h1u5sb6x8sabzcssd91exwna",
+   "b": "h13rg3tuxedbm5zzknqadu73b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "27-61",
+   "a": "9xmtamt4c9trdkf242ttr6dwb",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "39-42",
+   "a": "0f2a2fyf5iibscursb5gkyu9a",
+   "b": "ufgr14zs7pbz0pig3kp07r7hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "36-44",
+   "a": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "b": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-30",
+   "a": "2yy18y2trz8tgisf5r9s1tfpc",
+   "b": "umf4kucuf8hn4ipb9az044yxc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "4-65",
+   "a": "8h1u5sb6x8sabzcssd91exwna",
+   "b": "ht0bbyeyc69qwxm7did6ycbuc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "7-56",
+   "a": "duhb1en75fgewsniip8byupza",
+   "b": "e9e4rxumug0x0dz4xyhgenakd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "1-62",
+   "a": "g28dnxza8f193q5nzhdaxf2hd",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-20",
+   "a": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "24-46",
+   "a": "3xprhtpgyi8tqttrrqhmghw6b",
+   "b": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "8-15",
+   "a": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "b": "mk5198wdpzeqzp73ese8h4pbb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "32-46",
+   "a": "36aa2eubht8idy9kr2k8aubac",
+   "b": "b8ckm0ge7yzdxbq0f5tkeswyd",
+   "kind": "stairs",
+   "source": "lane-a:stairs"
+  },
+  {
+   "id": "36-58",
+   "a": "f7ryu7kyugtp7bx4dm3qa1dec",
+   "b": "ih6tueuzaxnyw3f47m5ygeccd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-1",
+   "a": "da9quipa0a6ny84ky8e6s3ptb",
+   "b": "g28dnxza8f193q5nzhdaxf2hd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "9-11",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "qu4unpew77rnmdcas4c9npyzc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "0-28",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "da9quipa0a6ny84ky8e6s3ptb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "28-62",
+   "a": "a6ce5xzf6mf48hy21cmu3q3ma",
+   "b": "y9da08g1g5b77bdscnw7n3fya",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "5-60",
+   "a": "panr3bktyzufic6e6xb4mtuub",
+   "b": "thaxyfyip9r71h69gkck885aa",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "20-31",
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "38-54",
+   "a": "b1q6mcf0edqwd7xwzk6497maa",
+   "b": "rfuwtwdh07qm2ct0m04b3sb2a",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "10-59",
+   "a": "s959dys4uwha3mmrpkf6c5ddc",
+   "b": "ubrr49s35m2uxuy9y5rwh74sb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "54-61",
+   "a": "b1q6mcf0edqwd7xwzk6497maa",
+   "b": "t9wqkieqytkbx8egqum168w6b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "50-58",
+   "a": "ih6tueuzaxnyw3f47m5ygeccd",
+   "b": "y8rya39xwbarmpmfakn2qaimc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "11-37",
+   "a": "1k478kza39tbfu1uhbttg5ybb",
+   "b": "qf5w019hhy47ybsiu9fyu43kd",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "16-57",
+   "a": "ed5xxn70mz1xe5q15ts4fqcpa",
+   "b": "h13rg3tuxedbm5zzknqadu73b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "2-40",
+   "a": "gaxq605gdd559tf073aubympc",
+   "b": "xq7dhrun14q0789iwk5epwtkb",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "15-31",
+   "a": "2eum01wmtxcin1q8grtnmc0ra",
+   "b": "bd3dzdmm4w3twrznh1ydgfq8b",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-20",
+   "a": "mk5198wdpzeqzp73ese8h4pbb",
+   "b": "wd46bmmxqkzpyw35raqsdx2db",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "12-43",
+   "a": "2qe44cteny5g297zquh4gpgcd",
+   "b": "umf4kucuf8hn4ipb9az044yxc",
+   "kind": "walk",
+   "source": "lane-a:open"
+  },
+  {
+   "id": "8-21",
+   "a": "mk5198wdpzeqzp73ese8h4pbb",
+   "b": "xdym22pw82n1ius7pazhttd1a",
+   "kind": "walk",
+   "source": "lane-a:door"
+  },
+  {
+   "id": "3-19",
+   "a": "haipxtu4fuppeii5f8iik4btc",
+   "b": "w5kacr4ci0d92c5wkzrfs4erd",
+   "kind": "elevator",
+   "source": "lane-a:via elev_pe1_f2, elev_pe1_f1",
+   "points": [
+    {
+     "x": -8.12,
+     "y": 3.949,
+     "z": 13.286
+    },
+    {
+     "x": -7.67,
+     "y": 3.949,
+     "z": 15.636
+    },
+    {
+     "x": -7.59,
+     "y": -0.002,
+     "z": 15.4
+    },
+    {
+     "x": -8.04,
+     "y": -0.002,
+     "z": 13.05
+    }
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "door_west_main",
+   "label": "South glass door from the west entrance hall",
+   "nodeId": "n0ppizy9u8xcadypd2bawceyc",
+   "position": {
+    "x": -12.515,
+    "y": 0.003,
+    "z": 5.824
+   },
+   "lat": 40.34905709187675,
+   "lng": -74.65558031857486,
+   "approach": [
+    {
+     "lat": 40.3489804,
+     "lng": -74.6559047
+    },
+    {
+     "lat": 40.34905709187675,
+     "lng": -74.65558031857486
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": true,
+   "confirmed": true,
+   "stagingId": "stage_west_curb",
+   "stagingLabel": "the curb on the street west of the building, at the paved forecourt"
+  },
+  {
+   "id": "door_west_north",
+   "label": "North glass door from the west entrance hall",
+   "nodeId": "n0ppizy9u8xcadypd2bawceyc",
+   "position": {
+    "x": -12.515,
+    "y": 0.003,
+    "z": 2.46
+   },
+   "lat": 40.34908512047081,
+   "lng": -74.65559525929798,
+   "approach": [
+    {
+     "lat": 40.3489804,
+     "lng": -74.6559047
+    },
+    {
+     "lat": 40.34908512047081,
+     "lng": -74.65559525929798
+    }
+   ],
+   "calibration": "Staging spot placed by eye on the aerial; not confirmed on site. Door position comes from the scan's own georeference, which can be 20 m or more off.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": "stage_west_curb",
+   "stagingLabel": "the curb on the street west of the building, at the paved forecourt"
+  },
+  {
+   "id": "corridor_sw",
+   "label": "Corridor from the south wing",
+   "nodeId": "5yqp8itw3r5s4iw3kuf4nqdsc",
+   "position": {
+    "x": -10.952,
+    "y": -0.003,
+    "z": 15.819
+   },
+   "lat": 40.34897905896721,
+   "lng": -74.65551883958727,
+   "approach": [
+    {
+     "lat": 40.34897905896721,
+     "lng": -74.65551883958727
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by corridor through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "corridor_nw",
+   "label": "Corridor from the north wing (rooms 101 to 110)",
+   "nodeId": "ufgr14zs7pbz0pig3kp07r7hd",
+   "position": {
+    "x": -10.951,
+    "y": -0.011,
+    "z": -7.487
+   },
+   "lat": 40.349173185078676,
+   "lng": -74.65562233886678,
+   "approach": [
+    {
+     "lat": 40.349173185078676,
+     "lng": -74.65562233886678
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by corridor through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_north_f2",
+   "label": "North stair door on level 200",
+   "nodeId": "4z3dsh3hzihrqcr8fsxqdkf6c",
+   "position": {
+    "x": 12.329,
+    "y": 4.108,
+    "z": -7.495
+   },
+   "lat": 40.34928351971317,
+   "lng": -74.65536786186868,
+   "approach": [
+    {
+     "lat": 40.34928351971317,
+     "lng": -74.65536786186868
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "corridor_se",
+   "label": "Corridor from the southeast wing",
+   "nodeId": "2qe44cteny5g297zquh4gpgcd",
+   "position": {
+    "x": 15.663,
+    "y": -0.006,
+    "z": 13.62
+   },
+   "lat": 40.34908744455357,
+   "lng": -74.65523763363417,
+   "approach": [
+    {
+     "lat": 40.34908744455357,
+     "lng": -74.65523763363417
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by corridor through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_south_f2",
+   "label": "South stair door on level 200",
+   "nodeId": "9xmtamt4c9trdkf242ttr6dwb",
+   "position": {
+    "x": 12.214,
+    "y": 4.093,
+    "z": 15.329
+   },
+   "lat": 40.34909284768337,
+   "lng": -74.6552677503025,
+   "approach": [
+    {
+     "lat": 40.34909284768337,
+     "lng": -74.6552677503025
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "corridor_ne",
+   "label": "Corridor from the northeast wing",
+   "nodeId": "81tg3n7bd96pyfp31pzd7mada",
+   "position": {
+    "x": 15.641,
+    "y": -0.001,
+    "z": -5.343
+   },
+   "lat": 40.34924540679582,
+   "lng": -74.65532209499345,
+   "approach": [
+    {
+     "lat": 40.34924540679582,
+     "lng": -74.65532209499345
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by corridor through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_atrium_from_a",
+   "label": "Top of the open atrium stair from Campus Level A",
+   "nodeId": "36aa2eubht8idy9kr2k8aubac",
+   "position": {
+    "x": -3.589,
+    "y": 0.002,
+    "z": 10.946
+   },
+   "lat": 40.34904462091945,
+   "lng": -74.65545998521661,
+   "approach": [
+    {
+     "lat": 40.34904462091945,
+     "lng": -74.65545998521661
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_south_f1",
+   "label": "South stair door on level 100",
+   "nodeId": "panr3bktyzufic6e6xb4mtuub",
+   "position": {
+    "x": 12.259,
+    "y": -0.011,
+    "z": 15.271
+   },
+   "lat": 40.34906212845805,
+   "lng": -74.65526751580157,
+   "approach": [
+    {
+     "lat": 40.34906212845805,
+     "lng": -74.65526751580157
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  },
+  {
+   "id": "stair_north_f1",
+   "label": "North stair door on level 100",
+   "nodeId": "ht0bbyeyc69qwxm7did6ycbuc",
+   "position": {
+    "x": 12.278,
+    "y": -0.006,
+    "z": -7.115
+   },
+   "lat": 40.34924874966515,
+   "lng": -74.65536673166264,
+   "approach": [
+    {
+     "lat": 40.34924874966515,
+     "lng": -74.65536673166264
+    }
+   ],
+   "calibration": "No staging spot is marked for this door. Door position comes from the scan's own georeference, which can be 20 m or more off. Reached by stairs through parts of the building that are not scanned.",
+   "primary": false,
+   "confirmed": true,
+   "stagingId": null,
+   "stagingLabel": null
+  }
+ ],
+ "defaultDestination": "y8rya39xwbarmpmfakn2qaimc",
+ "scope": "Levels 100 and 200 around the central atrium only (the scan calls them Floor 2 and Floor 3): the stone arcade inside the west entrance, the atrium floor, the ring corridors on both levels, the open atrium stair between them and Room 217. Not scanned: the west entrance hall and its outside door, Campus Level A below the atrium (seen from the railings; the scan's Floor 1), Level 300 above, the two enclosed stairwells, the elevator car, the office suites, and the wings that the corridors run on into at all four corners of both levels. Floor numbers are from signs: the jambs of elevator PE1 read 1 and 2, the directory beside it lists Level 300, Level 200, Level 100 and Campus Level A, and room signs read 118 to 120 on the lower level and 200 and 217 to 219 on the upper.",
+ "provenance": {
+  "source": "lane A graph (env/build_graph.py), exported by env/console.py",
+  "generated": "2026-11-14T20:38:42",
+  "coordinates": "Matterport scan positions at floor level, (x, y, z) to viewer (x, z, -y).",
+  "routing": "Links are the scan's line-of-sight links with the ones that cross a wall, a floor void or more than 7 m of unmapped floor removed. Doors and elevators are marked by hand from the panoramas. Nobody has walked these routes.",
+  "aerial": "Vexcel. Staging spots are placed by eye."
+ }
+}

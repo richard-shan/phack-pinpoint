@@ -27,6 +27,7 @@ with known answers.
 | 248351 | 3800 Barham Blvd, LA | ground and 2nd floor of one suite | 20 to 30 m off; do not draw it on a map |
 | 248192 | 3250 Wilshire Blvd, LA | Suite 301 and its corridor, floor 3 | looks off: plots over the street beside the tower |
 | 5956257 | 3160 Geneva St, LA | ground floor of the north wing (stripped to concrete) | scan is about 25 m off; doors and staging are placed by hand |
+| princeton-rabinowitz | Rabinowitz Hall, Princeton University (no CoStar record) | the atrium core on Levels 100 and 200 | scan is 3 to 5 m off; staging placed by hand |
 
 Per building, under `buildings/<id>/`:
 
