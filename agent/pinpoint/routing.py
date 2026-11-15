@@ -15,8 +15,19 @@ _FIXTURE_ALIASES = {
 }
 
 
+def _looks_like_address(s):
+    """Heuristic: a string is probably an address if it has a comma or a trailing state code."""
+    if not isinstance(s, str):
+        return False
+    low = s.lower()
+    return ("," in s) or any(tok in low for tok in (" st ", " ave ", " rd ", " blvd ",
+                                                       " dr ", " ln ", " way ", " pl "))
+
+
 def _resolve_fixture_dir(building_id):
-    # Try <id>/, then alias, then building_<id>/, else raise.
+    # Try <id>/, then alias, then building_<id>/. If the input looks like an
+    # address (LLM sometimes passes intake.address here by mistake), resolve
+    # via get_property to a real building_id and try again.
     candidates = [
         FIXTURES / building_id,
         FIXTURES / _FIXTURE_ALIASES.get(building_id, building_id),
@@ -25,6 +36,15 @@ def _resolve_fixture_dir(building_id):
     for c in candidates:
         if (c / "graph.json").exists():
             return c
+    if _looks_like_address(building_id):
+        try:
+            from . import stubs  # local import avoids circular at module load
+            prop = stubs.get_property(building_id)
+            resolved = prop.get("building_id") if prop else None
+            if resolved and resolved != building_id:
+                return _resolve_fixture_dir(resolved)
+        except Exception:
+            pass
     raise MatterportUnavailable(f"no graph for building {building_id}")
 
 
